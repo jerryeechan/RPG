@@ -1,0 +1,58 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &194558
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 494558}
+  - 114: {fileID: 11494558}
+  m_Layer: 0
+  m_Name: numberGenerator
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &494558
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 194558}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+--- !u!114 &11494558
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 194558}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64090607b61004854b8625eebd5c2abf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  numSprites: {fileID: 11400000, guid: 18e69c833e76040d886bc82a078f738d, type: 2}
+  DamageSprites: {fileID: 11400000, guid: e9318cf2199a746d593c42046119441e, type: 2}
+  manaSprites: {fileID: 11400000, guid: 307416f371a65417ebbd653ff9ebecd6, type: 2}
+  cdSprites: {fileID: 11400000, guid: 18e69c833e76040d886bc82a078f738d, type: 2}
+  damageNumPrefab: {fileID: 100000, guid: 699cfb76606744abcb2c4e4b673223f4, type: 2}
+  spriteWidth: 6
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 194558}
+  m_IsPrefabParent: 1

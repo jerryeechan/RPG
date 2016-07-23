@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: c4d10fc375373474292cd0bf312de8d0
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - heartPrefab: {fileID: 100000, guid: a07547d6b42694da7ae16a83ebd1e0f2, type: 2}
+  - applePrefab: {instanceID: 0}
+  - stonePrefab: {instanceID: 0}
+  - largeStonePrefab: {instanceID: 0}
+  - fensPrefab: {instanceID: 0}
+  - chicken: {instanceID: 0}
+  - bg1: {instanceID: 0}
+  - bg2: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
