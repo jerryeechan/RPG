@@ -41,7 +41,7 @@ public class SkillEffect : MonoBehaviour {
 	void Awake()
 	{
 		setLevel(level);
-		
+		//print(GetType().ToString());
 	}
 	public virtual void setLevel(int level)
 	{
@@ -142,6 +142,11 @@ public class SkillEffect : MonoBehaviour {
 	public virtual void ApplyOnWithDependency()
 	{
 		
+	}
+	public string getDescription()
+	{
+		
+		return SkillEffectManager.instance.descriptionDict[GetType().ToString()];
 	}
 }
 public interface ISkillEffect{

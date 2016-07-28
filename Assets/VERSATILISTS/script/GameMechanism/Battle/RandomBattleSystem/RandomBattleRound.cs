@@ -5,9 +5,9 @@ using System.Collections.Generic;
 public class RandomBattleRound : Singleton<RandomBattleRound> {
 	public List<Character> enemies;
 	public List<Character> players;
-	Queue<Character> chQueue;
+	public Queue<Character> chQueue;
 
-	void Awake()
+	void Start()
 	{
 		//prepare characters from character data
 		List<CharacterData> enemyData =  GetComponent<MonsterDataEditor>().characterDataList;
@@ -20,33 +20,42 @@ public class RandomBattleRound : Singleton<RandomBattleRound> {
 			Character newPlayer = chData.genCharacter(); 
 			players.Add(newPlayer);
 			chQueue.Enqueue(newPlayer);
-			ActionLogger.Log(newPlayer.name+"參戰\n");
+			ActionLogger.Log(newPlayer.name+"參戰");
 		} 
 		foreach(CharacterData chData in enemyData)
 		{
 			Character enemy = chData.genCharacter(); 
 			enemies.Add(enemy);
 			chQueue.Enqueue(enemy);
-			ActionLogger.Log(enemy.name+"參戰\n");
+			ActionLogger.Log(enemy.name+"參戰");
 			enemy.side = Character.CharacterSide.Enemy;
 		}
 		
 		selectedEnemy = enemies[0];
-		
+			Round();	
 	}
-	void Start()
+	
+	
+	
+	public void NextRound()
 	{
-		Round();
+		Invoke("Round",1);
 	}
 	public void Round(){
+		print("Round");
+		if(chQueue.Count<=1)
+			return;
 		Character ch = chQueue.Dequeue();
+		
+		ActionLogger.Log(ch.name+"'s turn");
 		if(ch.isDead)
 		{
-			ActionLogger.Log(ch.name+" is Dead\n");
-			Round();
+			ActionLogger.Log(ch.name+" is Dead!!");
+			//Round();
 		}
 		else
 		{
+			chQueue.Enqueue(ch);
 			if(ch.side == Character.CharacterSide.Player)
 			{
 				//prepare to roll dice
@@ -57,8 +66,7 @@ public class RandomBattleRound : Singleton<RandomBattleRound> {
 			else
 			{
 				ch.useAction((int)Random.value*6);
-			}
-			chQueue.Enqueue(ch);
+			}	
 		}
 	}
 									

@@ -29,7 +29,7 @@ public class ActionLogger : Singleton<ActionLogger> {
 	{
 		lines.Add(line);
 		count++;
-		if(count>3)
+		if(count>10)
 		{
 			lines.RemoveAt(0);
 			count--;
@@ -46,6 +46,7 @@ public class ActionLogger : Singleton<ActionLogger> {
 	}
 	public static void Log(string line)
 	{
-		instance.newLine(line);
+		instance.newLine(line+"\n");
+		print(line+"\n");
 	}
 }

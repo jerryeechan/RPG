@@ -15,10 +15,10 @@ public class Skill : MonoBehaviour {
 	Character caster;
 	public Character castBy{get {return caster;}}
 	
-	public GameObject skillEffectAnimationPrefab;
+	public string hitAnimationID;
 	
 	//WHEN CAST THE SKILL, CHARACTER DO RESPONSE ANIMATION
-	public Character.CharacterAnimation chAnimation;
+	
 	
 	//if the skill needs to wait until the animation to hit enemy or show the effect use wait signal
 	//Testing skill use Instant
@@ -29,7 +29,13 @@ public class Skill : MonoBehaviour {
 	bool isCasting;
 	List<Character> hitTargets = new List<Character>();
 
-	
+	void Awake()
+	{
+		if(mainEffect==null)
+		{
+			mainEffect = transform.Find("main").GetComponent<SkillEffect>();
+		}
+	}
 	public void init(Character caster) {
 		this.caster = caster;
 		_effects = new List<SkillEffect>();
@@ -61,46 +67,48 @@ public class Skill : MonoBehaviour {
 	
 	*/
 	
-	public void StartCastAnimation(List<Character> targets)
+	//hit animation
+	public void PlayAnimation(Character target)
 	{
 		isSkillDoneEffect = false;
 		
-		hitTargets.Add(targets[0]);
+		//hitTargets.Add(target);
 		
 		//caster.setCD(cd);
 		//Debug.Log("skill have cd:"+cd);
 		
-		if(skillEffectAnimationPrefab!=null)
+		if(hitAnimationID!=null)
 		{
-			GameObject seAnim = (GameObject)Instantiate(skillEffectAnimationPrefab);
-			seAnim.GetComponentInChildren<SkillAnimation>().SetSkill(this);
-			seAnim.transform.position = hitTargets[0].transform.position;
+			GameObject seAnim = SkillHitAnimationManager.instance.genSkillAnimation(hitAnimationID);
+			print(hitAnimationID);
+			if(seAnim)
+			{
+				SkillHitAnimation skillhitAnim = seAnim.GetComponentInChildren<SkillHitAnimation>();
+				skillhitAnim.SetSkill(this,target);
+				//TODO characterUI
+				seAnim.transform.position = target.chRenderer.transform.position;
+			}
+			else
+			{
+				Debug.LogError("null hit animation");
+			}
+			
+			
 		}
-		if(castTiming== CastTiming.Instant)
-		{
-			SkillDoEffect();
-		}
+		
 		//else wait signal to call SkillDoEffect
 	}
 	
 	//wait when animation to send Info
-	public void SkillDoEffect()
-	{
-		Use();
-		
-		/*
-		if(isSkillDoneEffect==false)
-		BattleManager.instance.SkillApplyResult();
-		else
-		{
-			throw new UnityException("double calculate effect result");
-		}
-		*/
-	}
 	
 	//first and oneturn
 	public float criticalBonus = 1;
-	public virtual void Use()
+	
+	public void OnAnimationDone()
+	{
+		DoEffect();
+	}
+	public void DoEffect()
 	{
 		//apply effects on caster
 		
@@ -110,6 +118,9 @@ public class Skill : MonoBehaviour {
 		//things to apply last: dmg, value change,restore
 		
 		//1. apply those affect the skill, won't miss
+		
+		
+		//calulate accuracy for each target
 		foreach (SkillEffect effect in _effects)
 		{
 			effect.FirstApply(caster);
@@ -117,21 +128,25 @@ public class Skill : MonoBehaviour {
 		float acc_final = accuracy + caster.battleStat.accuracy;
 		criticalBonus = caster.battleStat.calCriticalBonus();
 		mainEffect.useBy(caster);
+		
 		switch (mainEffect.effectRange)
 		{
 			case SkillEffect.EffectRange.Target:
 				Character target = caster.attackTarget();
+				PlayAnimation(target);
 				if(mainEffect.FirstApply(target,acc_final,true))
 					targetHit(target);
 			break;
 			case SkillEffect.EffectRange.AOE:
 				foreach (Character ch in caster.attackTargets())
 				{
+					PlayAnimation(ch);
 					if(mainEffect.FirstApply(ch,acc_final,true))
 						targetHit(ch);
 				}
 			break;
 			case SkillEffect.EffectRange.Self:
+				PlayAnimation(caster);
 				if(mainEffect.FirstApply(caster,acc_final,false))
 					targetHit(caster);
 			break;
@@ -144,25 +159,29 @@ public class Skill : MonoBehaviour {
 			case SkillEffect.EffectRange.Random:
 			break;
 		}
-		
-		//calulate accuracy for each target
-		
-		
-		
-		//isSkillDoneEffect = true;
-		//CheckSkillDone();
 	}
+
 	void targetHit(Character ch)
 	{
+		ch.updateRenderer();
+		if(ch.chRenderer)
+			ch.chRenderer.HitAnimation();
+
+		if(ch.isDead)
+		{
+			print("charater die");
+			ch.die();
+		}
+
 		hitTargets.Add(ch);
 		if(followSkill)
 		{
 			followSkill.init(caster);
-			followSkill.Use();
+			followSkill.DoEffect();
 		}
 		else
 		{
-			RandomBattleRound.instance.Round();
+			RandomBattleRound.instance.NextRound();
 		}
 		
 	}

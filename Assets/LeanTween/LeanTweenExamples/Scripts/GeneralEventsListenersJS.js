@@ -35,7 +35,7 @@ function changeColor( e:LTEvent ){
 	var tran:Transform = e.data as Transform;
 	var distance:float = Vector3.Distance( tran.position, transform.position);
 	var to:Vector3 = new Vector3(Random.Range(0f,1f),0f,Random.Range(0f,1f));
-	LeanTween.value( gameObject, updateColor, fromColor, to, 0.8f ).setRepeat(2).setLoopPingPong().setDelay(distance*0.05f);
+	LeanTween.value( gameObject, updateColor, fromColor, to, 0.8f ).setLoopPingPong(1).setDelay(distance*0.05f);
 }
 
 function updateColor( v:Vector3 ){
@@ -46,7 +46,7 @@ function updateColor( v:Vector3 ){
 
 function OnCollisionEnter(collision:Collision) {
 	if(collision.gameObject.layer!=2)
-		towardsRotation = new Vector3(0f, 0f, Random.Range(-180, 180));
+		towardsRotation = new Vector3(0f, Random.Range(-180, 180), 0f);
 }
 
  function OnCollisionStay( collision:Collision ) {
@@ -62,7 +62,7 @@ function FixedUpdate(){
 		turnForIter += Time.deltaTime;
 	}
 
-	GetComponent.<Rigidbody>().AddRelativeForce(Vector3.down * 4.5f);
+	GetComponent.<Rigidbody>().AddRelativeForce(Vector3.forward * 4.5f);
 }
 
 // ****** Key and clicking detection

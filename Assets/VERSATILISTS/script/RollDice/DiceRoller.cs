@@ -81,7 +81,7 @@ public class DiceRoller : MonoBehaviour {
 	public void Roll()
 	{
 		CombatUIManager.instance.UseActionDone();
-		ActionLogger.Log("躑骰\n");
+		
 		
 //		ActionUIManager.instance.lockAllSkillBtn();
 		Vector3 force = Random.onUnitSphere*rollForce;

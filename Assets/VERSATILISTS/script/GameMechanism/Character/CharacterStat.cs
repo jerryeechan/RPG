@@ -7,14 +7,18 @@ using System.Runtime.Serialization.Formatters.Binary;
 using System.IO;
 [System.SerializableAttribute]
 public class CharacterStat{
-	
+	public CharacterStat(string name)
+	{
+		chName = name;
+	}
+	public string chName;
 	public string statname;
 	public int strValue = 1;
 	public int intValue = 1;
 	public int dexValue = 1;
 	
 	//basic
-	int _hp;
+	public int _hp;
 	public int maxHP;
 	public int hp{
 		get{return _hp;}
@@ -52,8 +56,8 @@ public class CharacterStat{
 	
 	//Attack
 	
-	public float phyAtk = 0;
-	public float magAtk = 0;
+	public float phyAtk = 1;
+	public float magAtk = 1;
 
 	public float lowestPhyDmg = 0.4f;
 	public float lowestMagDmg = 0.4f;
@@ -84,12 +88,12 @@ public class CharacterStat{
 	/*
 	Defense
 	*/
-	public float phyDefense=100;  //for physical damage
-	public float magDefense=100;
+	public float phyDefense=0;  //for physical damage
+	public float magDefense=0;
 
 	public float ignorePhyDefensePer = 0;
 	public float ignoreMagDefensePer = 0;
-	public float block; //ignore damage totally;
+	public float block = 0; //ignore damage totally;
 	
 	/*
 	public void ApplyEffects(List<SkillEffect> effects)
@@ -109,12 +113,12 @@ public class CharacterStat{
 	}*/
 	public CharacterStat Clone()
     {
-		
         IFormatter formatter = new BinaryFormatter();
         Stream stream = new MemoryStream();
-            formatter.Serialize(stream, this);
-            stream.Seek(0, SeekOrigin.Begin);
-            return (CharacterStat)formatter.Deserialize(stream);
+        formatter.Serialize(stream, this);
+        stream.Seek(0, SeekOrigin.Begin);
+		CharacterStat statCloned = (CharacterStat)formatter.Deserialize(stream);
+        return statCloned;
      }
 //check up to here
 	public float calCriticalBonus()

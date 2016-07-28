@@ -7,7 +7,7 @@ public class UIManager : MonoBehaviour {
 	{
 		canvas = GetComponent<Canvas>();
 		canvas.pixelPerfect = true;
-		if(Screen.width>=960)
-		canvas.scaleFactor = 2;
+		//if(Screen.width>=960)
+		//canvas.scaleFactor = 2;
 	}
 }

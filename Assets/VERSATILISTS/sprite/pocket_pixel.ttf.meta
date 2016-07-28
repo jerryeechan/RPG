@@ -4,14 +4,14 @@ timeCreated: 1468344363
 licenseType: Free
 TrueTypeFontImporter:
   serializedVersion: 3
-  fontSize: 80
-  forceTextureCase: 0
+  fontSize: 200
+  forceTextureCase: -2
   characterSpacing: 1
   characterPadding: 0
   includeFontData: 1
   fontNames: []
   fallbackFontReferences: []
-  customCharacters: 
+  customCharacters: ce10
   fontRenderingMode: 2
   ascentCalculationMode: 1
   userData: 

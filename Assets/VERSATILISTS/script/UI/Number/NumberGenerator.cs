@@ -15,7 +15,7 @@ public class NumberGenerator : MonoBehaviour {
 	void Awake()
 	{
 		instance = this;
-		DontDestroyOnLoad(gameObject);
+//		DontDestroyOnLoad(gameObject);
 	}
 	public int spriteWidth;
 	public Sprite getManaSprite(int num)

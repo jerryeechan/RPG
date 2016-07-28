@@ -40,7 +40,7 @@ public class GeneralEventsListenersCS : MonoBehaviour {
 		Transform tran = (Transform)e.data;
 		float distance = Vector3.Distance( tran.position, transform.position);
 		Color to = new Color(Random.Range(0f,1f),0f,Random.Range(0f,1f));
-		LeanTween.value( gameObject, fromColor, to, 0.8f ).setRepeat(2).setLoopPingPong().setDelay(distance*0.05f).setOnUpdate(
+		LeanTween.value( gameObject, fromColor, to, 0.8f ).setLoopPingPong(1).setDelay(distance*0.05f).setOnUpdate(
 			(Color col)=>{
 				GetComponent<Renderer>().material.color = col;
 			}
@@ -51,7 +51,7 @@ public class GeneralEventsListenersCS : MonoBehaviour {
 
 	void OnCollisionEnter(Collision collision) {
 		if(collision.gameObject.layer!=2)
-			towardsRotation = new Vector3(0f, 0f, Random.Range(-180, 180));
+			towardsRotation = new Vector3(0f, Random.Range(-180, 180), 0f);
     }
 
      void OnCollisionStay(Collision collision) {
@@ -67,7 +67,7 @@ public class GeneralEventsListenersCS : MonoBehaviour {
 			turnForIter += Time.deltaTime;
 		}
 
-		GetComponent<Rigidbody>().AddRelativeForce(Vector3.down * 4.5f);
+		GetComponent<Rigidbody>().AddRelativeForce(Vector3.forward * 4.5f);
 	}
 
 	// ****** Key and clicking detection

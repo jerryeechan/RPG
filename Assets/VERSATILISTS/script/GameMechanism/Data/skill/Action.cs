@@ -4,10 +4,11 @@ using System.Collections.Generic;
 public class Action : MonoBehaviour {
 	Skill[] skills;
 	public string description;
-	
+	public CharacterAnimation chAnimation;
 	[HideInInspector]
 	public ActionData actionData;
 	public Character caster;
+	
 	void Awake()
 	{
 		//foreach (Skill skill in  GetComponentsInChildren<Skill>())
@@ -15,7 +16,18 @@ public class Action : MonoBehaviour {
 	}
 	public void move()
 	{
+		PlayActionAnimation();
+	}
+	void PlayActionAnimation()
+	{
+		//TODO:
+
+		//temp
+		OnActionAnimationDone();
+	}
+	void OnActionAnimationDone()
+	{
 		skills[0].init(caster);
-		skills[0].Use();
+		skills[0].DoEffect();
 	}
 }

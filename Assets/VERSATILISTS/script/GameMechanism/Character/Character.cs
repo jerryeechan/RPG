@@ -7,6 +7,7 @@ public class Character : MonoBehaviour{
 	// Use this for initialization≥
 	
 	CharacterData chData;
+	public CharacterRenderer chRenderer;
 	public CharacterStat initStat;
 	public CharacterStat equipStat;
 	public CharacterStat battleStat;
@@ -20,10 +21,7 @@ public class Character : MonoBehaviour{
 	public enum CharacterSide{Player,Enemy};
 	public CharacterSide side;
 	
-	public CharacterButton button;
-	
-	public enum CharacterAnimation{idle,spell,melee,die,hurt,defense}
-	public Animator anim;
+
 	#endregion
 	
 	
@@ -38,10 +36,9 @@ public class Character : MonoBehaviour{
 		//initCharacter();
 		equipTransform = transform.Find("Equips");
 	}
-	public void generate(int hp, int mp,int sp,int strValue,int intValue,int dexValue)
+	public void init(int hp, int mp,int sp,int strValue,int intValue,int dexValue)
 	{
-		
-		initStat = new CharacterStat();
+		initStat = new CharacterStat(name);
 		initStat.statname = "initstat";
 		initStat.maxHP = hp;
 		initStat.maxMP = mp;
@@ -89,7 +86,15 @@ public class Character : MonoBehaviour{
 			effect.ApplyOn(equipStat);
 		}
 	}
-	
+	public void updateRenderer()
+	{
+		if(chRenderer)
+			chRenderer.updateRenderer(battleStat);
+		else
+		{
+			Debug.LogError("no Renderer");
+		}
+	}
 	public bool isDead
 	{
 		get{ return battleStat.hp==0?true:false;}
@@ -99,39 +104,36 @@ public class Character : MonoBehaviour{
 	public Action useAction(int index)
 	{
 		usingAction = actionData[index].genAction(this);
-		ActionLogger.Log(usingAction.name);
+		//ActionLogger.Log(usingAction.name);
 		actionUsed.Add(usingAction);
 		/*
 		
 		for testing, no animation, play skill directly
 		or wait animation invoke function
 		*/
-		/*
-		if(anim)
-			PlayAnimation(usingAction.chAnimation);
-		else
-			PlaySkillEffect();
-		*/
+		if(chRenderer)
+			chRenderer.PlayCharacterAnimation(usingAction.chAnimation);
+		//PlayCharacterAnimation(usingAction.chAnimation);
+		//TODO evnet of animation done;
+		OnCharacterAnimationDone();
+		
 		//PlayCharacterAnimation();
-		PlayActionHitAnimation();
-			
+		
+		
 		return usingAction;
 		//wait the animation moment to send message
 	}
-	public void PlayCharacterAnimation(CharacterAnimation chAnimation)
-	{
-		Debug.Log("play skill action");
-		if(anim)
-			anim.Play(chAnimation.ToString());
-		//will call playSkill with animation event;
-	}
 	
-	//animation of character move done 
-	void PlayActionHitAnimation()
+	public void die()
 	{
-		Debug.Log("play skill effect");
+		chRenderer.PlayCharacterAnimation(CharacterAnimation.die);
+	}
+	void OnCharacterAnimationDone()
+	{
 		usingAction.move();
 	}
+	//animation of character move done 
+	
 	/*
 	public SkillApplyStat hitBySkill(Skill skill)
 	{

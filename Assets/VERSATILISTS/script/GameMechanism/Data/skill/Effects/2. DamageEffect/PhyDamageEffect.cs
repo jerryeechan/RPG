@@ -20,8 +20,10 @@ public class PhyDamageEffect : SkillEffect {
 		calEffectValue = baseValue;
 		calEffectValue *= casterStat.phyAtk;
 		calEffectValue *= casterStat.phyDmgBuff;
+		print("buff and atk cal:"+calEffectValue);
 		calEffectValue *= Random.Range(casterStat.lowestPhyDmg,1);
 		calEffectValue *= parentSkill.criticalBonus;
+		print("damage cal:"+calEffectValue);
 		
 	}
 	public override void ApplyOn (CharacterStat stat)
@@ -29,11 +31,11 @@ public class PhyDamageEffect : SkillEffect {
 		base.ApplyOn(stat);
 		float defense = stat.phyDefense/5;
 		defense *= (1-casterStat.ignorePhyDefensePer);//caster's ignore defense
-		
+		print("defense:"+defense);
 		
 		applyResult = Mathf.Clamp(calEffectValue-defense,1,10000);
-		print(casterStat.statname+" casue damage: "+(int)applyResult);
-		ActionLogger.Log(casterStat.statname+"造成傷害"+(int)applyResult);
+		//print(" casue damage: "+(int)applyResult);
+		ActionLogger.Log(casterStat.chName+" do @"+(int)applyResult+" damage to "+stat.chName);
 		stat.hp -= (int)applyResult;
 	}	
 }

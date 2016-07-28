@@ -1,12 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class UIExampleCS : MonoBehaviour {
+public class GeneralSimpleUiCS : MonoBehaviour {
 	#if !UNITY_3_5 && !UNITY_4_0 && !UNITY_4_0_1 && !UNITY_4_1 && !UNITY_4_2 && !UNITY_4_3 && !UNITY_4_5
 
 	public RectTransform button;
 
 	void Start () {
+		Debug.Log("For better examples see the 4.6_Examples folder!");
 		if(button==null){
 			Debug.LogError("Button not assigned! Create a new button via Hierarchy->Create->UI->Button. Then assign it to the button variable");
 			return;
@@ -14,8 +15,8 @@ public class UIExampleCS : MonoBehaviour {
 		
 		// Tweening various values in a block callback style
 		LeanTween.value(button.gameObject, button.anchoredPosition, new Vector2(200f,100f), 1f ).setOnUpdate( 
-			(Vector3 val)=>{
-				button.anchoredPosition = new Vector2(val.x, val.y);
+			(Vector2 val)=>{
+				button.anchoredPosition = val;
 			}
 		);
 

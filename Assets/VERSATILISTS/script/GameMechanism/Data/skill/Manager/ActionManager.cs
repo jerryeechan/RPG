@@ -17,7 +17,16 @@ public class ActionManager : Singleton<ActionManager> {
 
 	public Action GenAction(string name)
 	{
-		Action action = Instantiate(actionPool[name]);
-		return action;
+		if(actionPool[name])
+		{
+			Action action = Instantiate(actionPool[name]);
+			return action;
+		}	
+		else
+		{
+			Debug.LogError("No action:"+name);
+			return null;
+		}
+		
 	}
 }
