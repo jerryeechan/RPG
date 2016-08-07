@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using com.jerry.rpg;
 public class ActionButton : MonoBehaviour {
 
 	// Use this for initialization

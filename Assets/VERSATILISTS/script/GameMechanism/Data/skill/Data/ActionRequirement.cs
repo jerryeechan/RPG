@@ -1,13 +1,16 @@
 ﻿using UnityEngine;
 using System.Collections;
-using System;
 
-[Serializable]
+
+
+[System.SerializableAttribute]
+
 public class ActionRequirement : MonoBehaviour {
-
-	string skillID;
-	
-	int totalUseReq;
-	int totalUseCurrent;
-
+	string requireSkillID;
+	public int totalUseReq;
+	public int totalUseCurrent;
+	public bool checkRequirement()
+	{
+		return totalUseCurrent>=totalUseReq;
+	}
 }

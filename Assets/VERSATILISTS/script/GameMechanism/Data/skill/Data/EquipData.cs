@@ -2,17 +2,17 @@
 using System.Collections.Generic;
 
 [System.SerializableAttribute]
-public class EquipData {
-	string name;
-
-    
-    public void WearEquip(Character ch)
-    {
-        EquipManager.instance.getEquip(name);
-        
-    }
+public class EquipData:ItemData {
     //generate from equip the property may be different
-    int[] hasEffects;
-    List<SkillEffect> extraEffects;
-//    public static EquipData 
+
+    //TODO: hasEffects randomable 
+    int[] hasEffects = new int[1]{0};
+    //string specialEffect;
+    public Equip genEquip()
+    {
+        Equip eq = EquipManager.instance.getEquip(id); 
+        if(eq)
+            eq.setEffect(hasEffects);
+        return eq;
+    }
 }

@@ -6,6 +6,7 @@ public class CharacterRenderer : MonoBehaviour {
 	public Character bindCh;
 	HealthBar bar;
 	
+	public Animator[] equipAnims;
 	public Animator anim;
 
 	public EquipRenderer helmetUI;
@@ -15,15 +16,24 @@ public class CharacterRenderer : MonoBehaviour {
 	public Dictionary<EquipType,EquipRenderer> equipUIDicts;
 	void Awake()
 	{
-		bar = GetComponentInChildren<HealthBar>();
 		anim = GetComponentInChildren<Animator>();
+		bar = GetComponentInChildren<HealthBar>();
+		Transform equipTransform =transform.Find("equip");
+		if(equipTransform)
+		{
+			equipAnims = equipTransform.GetComponentsInChildren<Animator>();
+			foreach (var eqanim in equipAnims)
+			{
+				eqanim.speed = 0.25f;
+			}
+		}
 		
 	}
-	public void changeEquip(EquipGraphicData equipGraphic)
+	public void wearEquip(EquipGraphicAsset equipGraphic)
 	{
 		EquipType type = equipGraphic.type;
-		equipUIDicts[type].changeEquip(equipGraphic.equipAnimations);
-		equipUIDicts[type].changeEquip(equipGraphic.equipSprite);
+		equipUIDicts[type].wearEquip(equipGraphic.equipAnimations);
+		equipUIDicts[type].wearEquip(equipGraphic.equipSprite);
 	}
 	public void updateRenderer(CharacterStat stat)
 	{
@@ -31,9 +41,10 @@ public class CharacterRenderer : MonoBehaviour {
 	}
 	public void PlayCharacterAnimation(CharacterAnimation chAnimation)
 	{
-		Debug.Log("play skill action");
+		//Debug.Log("play skill action");
 		if(anim)
 			anim.Play(chAnimation.ToString());
+		
 		//will call playSkill with animation event;
 	}
 	//select the characeter
@@ -41,7 +52,6 @@ public class CharacterRenderer : MonoBehaviour {
 	{
 		if(!bindCh)
 		{
-
 
 		}
 		else

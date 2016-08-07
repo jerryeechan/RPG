@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
-
+using com.jerry.rpg;
 public class ActionManager : Singleton<ActionManager> {
 
 	public List<Action> actionList;

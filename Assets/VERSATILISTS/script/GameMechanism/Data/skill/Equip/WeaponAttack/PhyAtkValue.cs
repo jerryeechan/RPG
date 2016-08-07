@@ -4,19 +4,16 @@ using System.Collections;
   public class PhyAtkValue : SkillEffect{
 
 	//FOR WEAPON
-	public int atkPower = 1;
-	void Awake()
+
+	public override void setLevel (int level)
 	{
-		setLevel(level);
+		baseValue = level*5+1;
+		base.setLevel(level);
 	}
 	public override void ApplyOn (CharacterStat stat)
 	{
-		stat.phyAtk+=atkPower;
-		base.ApplyOn (stat);
+		stat.phyAtk+=baseValue;
+		base.ApplyOn(stat);
 	}
-	public override void setLevel (int level)
-	{
-		atkPower = level*5;
-		base.setLevel(level);
-	}
+	
 }

@@ -6,7 +6,7 @@ using System.Runtime.Serialization;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.IO;
 [System.SerializableAttribute]
-public class CharacterStat{
+public class CharacterStat:StringfyProperty{
 	public CharacterStat(string name)
 	{
 		chName = name;
@@ -18,26 +18,26 @@ public class CharacterStat{
 	public int dexValue = 1;
 	
 	//basic
-	public int _hp;
-	public int maxHP;
-	public int hp{
+	public float _hp;
+	public float maxHP;
+	public float hp{
 		get{return _hp;}
 		set{
 			_hp = Mathf.Clamp(value,0,maxHP);	
 		}
 	} 
-	public int maxMP;
-	public int maxSP;
-	int _mp;
-	public int mp{
+	public float maxMP;
+	public float maxSP;
+	public float _mp;
+	public float mp{
 		get{return _mp;}
 		set{
 			_mp = Mathf.Clamp(value,0,maxMP);	
 		}
 	} 
 	
-	int _sp;
-	public int sp{
+	float _sp;
+	public float sp{
 		get{return _sp;}
 		set{
 			_sp = Mathf.Clamp(value,0,maxSP);	
@@ -45,9 +45,9 @@ public class CharacterStat{
 	} 
 
 
-	public int hpRecoverPerRound = 0;
-	public int mpRecoverPerRound = 1;
-	public int spRecoverPerRound = 2;
+	public float hpRecoverPerRound = 0;
+	public float mpRecoverPerRound = 1;
+	public float spRecoverPerRound = 2;
 	
 	
 	//skill
@@ -56,8 +56,8 @@ public class CharacterStat{
 	
 	//Attack
 	
-	public float phyAtk = 1;
-	public float magAtk = 1;
+	public float phyAtk = 0;
+	public float magAtk = 0;
 
 	public float lowestPhyDmg = 0.4f;
 	public float lowestMagDmg = 0.4f;
@@ -76,7 +76,7 @@ public class CharacterStat{
 	/*
 	defense
 	*/
-	public float avoidance=0;	//ignore damage totally;
+	public float dodge=0;	//ignore damage totally;
 	public float damageUpBound = 0;//doesn't take the damage higher than it
 	public float damageLowerBound = 0;//doesn't take the damage lower than it
 	
@@ -132,7 +132,7 @@ public class CharacterStat{
 	}
 	public bool testHit(float accuracy)
 	{
-		accuracy -= avoidance;
+		accuracy -= dodge;
 		return (accuracy > Random.Range(0,100)); 
 	}
 	

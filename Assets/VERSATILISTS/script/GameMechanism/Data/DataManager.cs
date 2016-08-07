@@ -4,9 +4,14 @@ using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 public class DataManager : Singleton<DataManager> {
 	public PlayerData[] playerData;
+	public PlayerData curPlayerData;
+	public static CharacterData curChData;
 	void Awake()
 	{
+		curPlayerData = playerData[0];
+		curChData = curPlayerData.chData[0];
 		//Load();
+		SaveTemplate();
 		//Save();
 		//ResetSave();
 		//SaveTemplate();
@@ -17,6 +22,7 @@ public class DataManager : Singleton<DataManager> {
 		BinaryFormatter formatter = new BinaryFormatter();
 		playerData = formatter.Deserialize(readFile) as PlayerData[];
 		readFile.Close();
+		GameManager.instance.StartGame();
 	}
 
 	public void Save()
@@ -33,11 +39,12 @@ public class DataManager : Singleton<DataManager> {
 		formatter.Serialize(saveFile,playerData);
 		saveFile.Close();
 	}
-	public void ResetSave()
+	public void Reset()
 	{
 		FileStream readFile = File.OpenRead("Save/template.binary");
 		BinaryFormatter formatter = new BinaryFormatter();
 		playerData = formatter.Deserialize(readFile) as PlayerData[];
 		readFile.Close();
+		GameManager.instance.StartGame();
 	}
 }

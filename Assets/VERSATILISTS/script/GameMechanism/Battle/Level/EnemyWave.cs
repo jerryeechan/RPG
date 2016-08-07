@@ -3,8 +3,10 @@ using System.Collections;
 using System.Collections.Generic;
 public class EnemyWave : MonoBehaviour {
 
-	public List<Character> enemyTemplates;
+	public List<CharacterData> enemyData;
 	// Use this for initialization
+
+	/*
 	public List<Character> getEnemyWave()
 	{
 		List<Character> enemyGened = new List<Character>();
@@ -17,4 +19,5 @@ public class EnemyWave : MonoBehaviour {
 		}
 		return enemyGened;
 	}
+	*/
 }

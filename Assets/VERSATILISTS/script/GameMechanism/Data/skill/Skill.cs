@@ -171,19 +171,21 @@ public class Skill : MonoBehaviour {
 		{
 			print("charater die");
 			ch.die();
-		}
-
-		hitTargets.Add(ch);
-		if(followSkill)
-		{
-			followSkill.init(caster);
-			followSkill.DoEffect();
+			RandomBattleRound.instance.NextRound();
 		}
 		else
 		{
-			RandomBattleRound.instance.NextRound();
-		}
-		
+			hitTargets.Add(ch);
+			if(followSkill)
+			{
+				followSkill.init(caster);
+				followSkill.DoEffect();
+			}
+			else
+			{
+				RandomBattleRound.instance.NextRound();
+			}
+		}		
 	}
 	//timing of apply effects, possibility of success apply, 
 	

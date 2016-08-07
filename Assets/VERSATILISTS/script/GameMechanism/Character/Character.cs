@@ -1,12 +1,11 @@
 ﻿using UnityEngine;
-using System;
-using System.Collections;
 using System.Collections.Generic;
+using com.jerry.rpg;
 public class Character : MonoBehaviour{
 #region VARIABLES
 	// Use this for initialization≥
 	
-	CharacterData chData;
+	public CharacterData chData;
 	public CharacterRenderer chRenderer;
 	public CharacterStat initStat;
 	public CharacterStat equipStat;
@@ -17,6 +16,19 @@ public class Character : MonoBehaviour{
 	public List<SkillEffect> effectsOnMe;
 	//the skill this character can use, total 6
 	public List<ActionData> actionData;
+	 /*
+	public List<ActionData> actionData{
+		get{return _actionData;} 
+		set{
+			actionDict = new Dictionary<string,ActionData>();
+			foreach (var item in value)
+			{
+				actionDict.Add(item.id,item);
+			}
+			_actionData = value;
+		}
+	}*/
+	//public Dictionary<string,ActionData> actionDict = new Dictionary<string,ActionData>();
 	
 	public enum CharacterSide{Player,Enemy};
 	public CharacterSide side;
@@ -55,32 +67,26 @@ public class Character : MonoBehaviour{
 		actionData = new List<ActionData>();
 		actionData.Capacity = 6;
 
-		ApplyEquipEffects();
+		//ApplyEquipEffects();
+		EquipStart();
 	}
 	
-	public void ApplyEquipEffects()
+	public void EquipStart()
 	{
 		equipStat = initStat.Clone();
 		equipStat.statname = "equipstat";
-		if(equipTransform)
-		{
-			Equip[] equips = equipTransform.GetComponentsInChildren<Equip>();
-			if(equips.Length==0)
-				Debug.Log("No equip");
-			//Debug.Log("equip num:"+equipSkill.Length);
-			foreach(Equip equipment in equips)
-			{
-				wear(equipment);
-			}
-		}
 		
-		
+	}
+	public void BattleStart()
+	{
 		battleStat = equipStat.Clone(); 
 		battleStat.statname = name+"_battlestat";
 	}
-
+	
 	public void wear(Equip equip)
 	{
+		equip.transform.SetParent(transform);
+
 		foreach(SkillEffect effect in equip.effects)
 		{
 			effect.ApplyOn(equipStat);

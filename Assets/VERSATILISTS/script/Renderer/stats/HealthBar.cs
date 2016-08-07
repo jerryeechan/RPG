@@ -7,8 +7,8 @@ public class HealthBar : MonoBehaviour {
 	Transform healthbar;
 	SpriteRenderer healthBarSpr;
 
-	int fullValue;
-	int nowValue;
+	float fullValue;
+	float nowValue;
 	public void init(int fvalue)
 	{
 		fullValue = fvalue;
@@ -21,7 +21,7 @@ public class HealthBar : MonoBehaviour {
 		SetNowValue(fullValue);
 		//SelfTest();
 	}
-	public void SetFullValue(int fv)
+	public void SetFullValue(float fv)
 	{
 		fullValue = fv;
 		//healthBarSpr.color = new Color32(123,195,113,255);//green
@@ -33,7 +33,7 @@ public class HealthBar : MonoBehaviour {
 			nowValue = fullValue;
 		if()
 	}*/
-	public void SetNowValue(int value)
+	public void SetNowValue(float value)
 	{
 		nowValue = value;
 		healthbar.localScale = new Vector3((float)nowValue/fullValue,1);

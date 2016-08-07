@@ -13,15 +13,15 @@ public class EquipRenderer : MonoBehaviour {
 		anim = GetComponent<Animator>();
 		overrideController = new AnimatorOverrideController();
 		overrideController.runtimeAnimatorController = anim.runtimeAnimatorController;
-		changeEquip(clips);
+		//changeEquip(clips);
 	}
-	public void changeEquip(Sprite sp)
+	public void wearEquip(Sprite sp)
 	{
 		if(sp==null)
 		return;
 		spr.sprite = sp;
 	}
-	public void changeEquip(AnimationClip[] clips)
+	public void wearEquip(AnimationClip[] clips)
 	{
 		if(clips==null)
 			return;

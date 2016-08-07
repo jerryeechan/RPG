@@ -10,7 +10,7 @@ public class ActionUIManager : Singleton<ActionUIManager> {
 	}
 	public void unlockSkill(int index)
 	{
-		print(index);
+//		print(index);
 		actionBtns[index].Unlock();
 	}
 	//use Skill
@@ -46,7 +46,7 @@ public class ActionUIManager : Singleton<ActionUIManager> {
 	{
 		for(int i=0;i<skillNum;i++)
 		{
-			actionBtns[i].skillNameText.text = ch.actionData[i].name;
+			actionBtns[i].skillNameText.text = ch.actionData[i].id;
 		}
 	}
 }

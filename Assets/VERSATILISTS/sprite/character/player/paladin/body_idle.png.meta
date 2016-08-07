@@ -1,0 +1,190 @@
+fileFormatVersion: 2
+guid: ff438fa1885614d5e9a82a6a80f33198
+timeCreated: 1470551210
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: body_idle_0
+    21300002: body_idle_1
+    21300004: body_idle_2
+    21300006: body_idle_3
+    21300008: body_idle_4
+    21300010: body_idle_5
+    21300012: body_idle_6
+    21300014: body_idle_7
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -3
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: 0
+    aniso: -1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 7
+  spritePivot: {x: 0.5, y: 0}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 1
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: body_idle_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 21, y: 24}
+        - {x: 16, y: 22}
+        - {x: 16, y: 0}
+        - {x: 31, y: 0}
+        - {x: 31, y: 23}
+        - {x: 25, y: 24}
+    - name: body_idle_1
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 0
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 21, y: 25}
+        - {x: 16, y: 22}
+        - {x: 16, y: 4}
+        - {x: 18, y: 0}
+        - {x: 28, y: 0}
+        - {x: 31, y: 3}
+        - {x: 31, y: 17}
+        - {x: 28, y: 25}
+    - name: body_idle_2
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 18, y: 25}
+        - {x: 16, y: 17}
+        - {x: 16, y: 1}
+        - {x: 18, y: 0}
+        - {x: 28, y: 0}
+        - {x: 30, y: 4}
+        - {x: 30, y: 24}
+        - {x: 27, y: 25}
+    - name: body_idle_3
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 0
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 21, y: 24}
+        - {x: 16, y: 22}
+        - {x: 16, y: 0}
+        - {x: 31, y: 0}
+        - {x: 31, y: 23}
+        - {x: 25, y: 24}
+    - name: body_idle_4
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 27, y: 23}
+        - {x: 21, y: 23}
+        - {x: 16, y: 21}
+        - {x: 16, y: 2}
+        - {x: 17, y: 0}
+        - {x: 30, y: 0}
+        - {x: 31, y: 5}
+        - {x: 31, y: 7}
+        - {x: 29, y: 19}
+    - name: body_idle_5
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 0
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: body_idle_6
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 0
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: body_idle_7
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 0
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

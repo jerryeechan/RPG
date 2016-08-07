@@ -7,32 +7,34 @@ public class RandomBattleRound : Singleton<RandomBattleRound> {
 	public List<Character> players;
 	public Queue<Character> chQueue;
 
-	void Start()
+	public void StartGame()
 	{
 		//prepare characters from character data
 		List<CharacterData> enemyData =  GetComponent<MonsterDataEditor>().characterDataList;
 		players = new List<Character>();
+		enemies = new List<Character>();
 		chQueue = new Queue<Character>();
 
-
-		foreach(CharacterData chData in DataManager.instance.playerData[0].chData)
+		foreach(Character ch in GameManager.instance.chs)
 		{
-			Character newPlayer = chData.genCharacter(); 
-			players.Add(newPlayer);
-			chQueue.Enqueue(newPlayer);
-			ActionLogger.Log(newPlayer.name+"參戰");
-		} 
-		foreach(CharacterData chData in enemyData)
+			players.Add(ch);
+			chQueue.Enqueue(ch);
+			ActionLogger.Log(ch.name+"參戰");
+			ch.BattleStart();
+		}
+		
+		foreach(Character enemy in GameManager.instance.enemies)
 		{
-			Character enemy = chData.genCharacter(); 
 			enemies.Add(enemy);
 			chQueue.Enqueue(enemy);
 			ActionLogger.Log(enemy.name+"參戰");
-			enemy.side = Character.CharacterSide.Enemy;
+			enemy.BattleStart();
 		}
 		
-		selectedEnemy = enemies[0];
-			Round();	
+		if(enemies.Count>0)
+			selectedEnemy = enemies[0];
+		currentPlayer = players[0];
+		Round();	
 	}
 	
 	

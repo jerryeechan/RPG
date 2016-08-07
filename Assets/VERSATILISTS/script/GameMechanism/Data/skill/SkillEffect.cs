@@ -23,9 +23,14 @@ public class SkillEffect : MonoBehaviour {
 	public WithDependency dependency;
 	
 	public float baseValue;
+	[HideInInspector]
 	public float calEffectValue;
+
+	[HideInInspector]
 	public float applyResult;
 	protected bool hasLevelSet = false;
+
+	[HideInInspector]
 	public bool hit = true;
 	bool isApplying=false;
 

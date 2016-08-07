@@ -1,7 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
-using System;
-
+using com.jerry.rpg;
 public enum ActionType
 {
 	Melee,Magic
@@ -9,19 +8,23 @@ public enum ActionType
 public enum ActionState{
 	Locked,Learned,Mastered
 }
-[SerializableAttribute]
+[System.SerializableAttribute]
 public class ActionData {
-	public ActionData(string name)
+	public ActionData(string id)
 	{
-		this.name = name;
+		this.id = id;
 	}
 	//the skill data of characters, can be saved and loaded
-	public string name;
+	public string id;
+	public ActionRequirement[] requirements;
 	ActionState state = ActionState.Locked;
 	int rank;//1~6, can be put on dice
 	int availableRank = 1;
 	int masterLevel = 0;
 	static int masterLevelMax = 100;
+
+	
+	
 	int genDiceAvailableMask(int from, int to)
 	{
 		int mask = 0;
@@ -50,7 +53,7 @@ public class ActionData {
 
 	public Action genAction(Character ch)
 	{
-		Action action = ActionManager.instance.GenAction(name);
+		Action action = ActionManager.instance.GenAction(id);
 		action.actionData = this;
 		action.caster = ch;
 		return	action;
