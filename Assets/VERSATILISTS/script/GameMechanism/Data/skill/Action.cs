@@ -14,6 +14,10 @@ namespace com.jerry.rpg
 		{
 			//foreach (Skill skill in  GetComponentsInChildren<Skill>())
 			skills = GetComponentsInChildren<Skill>();
+			foreach (var skill in skills)
+			{
+				skill.parentAction = this;
+			}
 		}
 		public void move()
 		{

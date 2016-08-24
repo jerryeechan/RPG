@@ -1,0 +1,135 @@
+fileFormatVersion: 2
+guid: 36df27017cb824fc88de7c1c1f782b6a
+timeCreated: 1471433298
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: paladin_run_0
+    21300002: paladin_run_1
+    21300004: paladin_run_2
+    21300006: paladin_run_3
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -3
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: 0
+    aniso: -1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 7
+  spritePivot: {x: 0.5, y: 0}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 1
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: paladin_run_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0.3176891, y: 0.0811775}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 2.7509232, y: 22.10348}
+        - {x: -7.249077, y: 22.10348}
+        - {x: -14.249077, y: 10.103479}
+        - {x: -14.249077, y: -3.8965206}
+        - {x: 21.750923, y: -3.8965206}
+        - {x: 23.750923, y: -2.8965206}
+        - {x: 23.750923, y: 13.103479}
+        - {x: 5.750923, y: 21.10348}
+    - name: paladin_run_1
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 0
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0.31768918, y: 0.10088679}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 3.7509193, y: 22.157434}
+        - {x: -8.249081, y: 22.157434}
+        - {x: -12.249081, y: 20.157434}
+        - {x: -14.249081, y: 8.157434}
+        - {x: -14.249081, y: -4.8425655}
+        - {x: 23.75092, y: -4.8425655}
+        - {x: 23.75092, y: 10.157434}
+    - name: paladin_run_2
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0.32754374, y: 0.08610483}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 2.2779007, y: 21.866968}
+        - {x: -7.7220993, y: 21.866968}
+        - {x: -14.722099, y: 13.866968}
+        - {x: -14.722099, y: 0.86696815}
+        - {x: -13.722099, y: -4.133032}
+        - {x: 23.2779, y: -4.133032}
+        - {x: 23.2779, y: 12.866968}
+        - {x: 5.2779007, y: 20.866968}
+    - name: paladin_run_3
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 0
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0.32261658, y: 0.10581412}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 8.514404, y: 21.920921}
+        - {x: -9.485596, y: 21.920921}
+        - {x: -14.485596, y: 15.920921}
+        - {x: -14.485596, y: -5.0790787}
+        - {x: 23.514404, y: -5.0790787}
+        - {x: 23.514404, y: 6.9209213}
+        - {x: 22.514404, y: 9.920921}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

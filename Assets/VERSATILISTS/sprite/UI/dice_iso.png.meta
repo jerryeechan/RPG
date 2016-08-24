@@ -1,0 +1,471 @@
+fileFormatVersion: 2
+guid: 12206e55e0219487b989efb395874c45
+timeCreated: 1471716352
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: dice_iso_0
+    21300002: dice_iso_1
+    21300004: dice_iso_1
+    21300006: dice_iso_2
+    21300008: dice_iso_2
+    21300010: dice_iso_3
+    21300012: dice_iso_4
+    21300014: dice_iso_5
+    21300016: dice_iso_6
+    21300018: dice_iso_7
+    21300020: dice_iso_8
+    21300022: dice_iso_9
+    21300024: dice_iso_10
+    21300026: dice_iso_11
+    21300028: dice_iso_12
+    21300030: dice_iso_13
+    21300032: dice_iso_14
+    21300034: dice_iso_15
+    21300036: dice_iso_16
+    21300038: dice_iso_17
+    21300040: dice_iso_18
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -3
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: 0
+    aniso: -1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 7
+  spritePivot: {x: 0.5, y: 0}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 1
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: dice_iso_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 11, y: 10}
+        - {x: -4, y: 10}
+        - {x: -8, y: 9}
+        - {x: -12, y: 2}
+        - {x: -12, y: -15}
+        - {x: -8, y: -16}
+        - {x: 11, y: -16}
+        - {x: 15, y: -11}
+        - {x: 15, y: 3}
+    - name: dice_iso_1
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 10, y: 10}
+        - {x: -5, y: 10}
+        - {x: -9, y: 9}
+        - {x: -13, y: 2}
+        - {x: -13, y: -15}
+        - {x: -9, y: -16}
+        - {x: 10, y: -16}
+        - {x: 14, y: -11}
+        - {x: 14, y: 3}
+    - name: dice_iso_2
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -2, y: 9}
+        - {x: -8, y: 8}
+        - {x: -12, y: 4}
+        - {x: -12, y: -16}
+        - {x: 11, y: -16}
+        - {x: 15, y: -14}
+        - {x: 15, y: 1}
+        - {x: 7, y: 9}
+    - name: dice_iso_3
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -6, y: 9}
+        - {x: -12, y: 8}
+        - {x: -16, y: 4}
+        - {x: -16, y: -16}
+        - {x: 7, y: -16}
+        - {x: 11, y: -14}
+        - {x: 11, y: 1}
+        - {x: 3, y: 9}
+      - - {x: 12, y: 2}
+        - {x: 12, y: -10}
+        - {x: 13, y: -13}
+        - {x: 16, y: -13}
+        - {x: 16, y: 3}
+        - {x: 15, y: 3}
+    - name: dice_iso_4
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 1, y: 9}
+        - {x: -11, y: 9}
+        - {x: -16, y: 7}
+        - {x: -16, y: -16}
+        - {x: 2, y: -16}
+        - {x: 7, y: -10}
+        - {x: 7, y: 2}
+      - - {x: 8, y: 3}
+        - {x: 8, y: -12}
+        - {x: 10, y: -16}
+        - {x: 16, y: -16}
+        - {x: 16, y: 6}
+        - {x: 14, y: 6}
+    - name: dice_iso_5
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -14, y: 9}
+        - {x: -16, y: 7}
+        - {x: -16, y: -16}
+        - {x: 0, y: -16}
+        - {x: 3, y: -10}
+        - {x: 3, y: 4}
+        - {x: -4, y: 9}
+    - name: dice_iso_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -11, y: 8}
+        - {x: -13, y: 6}
+        - {x: -13, y: -13}
+        - {x: -12, y: -16}
+        - {x: 9, y: -16}
+        - {x: 12, y: -13}
+        - {x: 12, y: 4}
+        - {x: 11, y: 8}
+    - name: dice_iso_7
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 5, y: 8}
+        - {x: -10, y: 8}
+        - {x: -12, y: 2}
+        - {x: -12, y: -15}
+        - {x: -11, y: -16}
+        - {x: 13, y: -16}
+        - {x: 13, y: 1}
+        - {x: 8, y: 6}
+    - name: dice_iso_8
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -11, y: 8}
+        - {x: -13, y: 6}
+        - {x: -13, y: -13}
+        - {x: -12, y: -16}
+        - {x: 9, y: -16}
+        - {x: 12, y: -13}
+        - {x: 12, y: 4}
+        - {x: 11, y: 8}
+      - - {x: -5, y: 16}
+        - {x: -4, y: 13}
+        - {x: 5, y: 13}
+        - {x: 7, y: 15}
+        - {x: 7, y: 16}
+    - name: dice_iso_9
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 5, y: 8}
+        - {x: -10, y: 8}
+        - {x: -12, y: 2}
+        - {x: -12, y: -15}
+        - {x: -11, y: -16}
+        - {x: 13, y: -16}
+        - {x: 13, y: 1}
+        - {x: 8, y: 6}
+      - - {x: -9, y: 16}
+        - {x: -8, y: 13}
+        - {x: 1, y: 13}
+        - {x: 3, y: 15}
+        - {x: 3, y: 16}
+    - name: dice_iso_10
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 4, y: 8}
+        - {x: -11, y: 8}
+        - {x: -13, y: 2}
+        - {x: -13, y: -15}
+        - {x: -12, y: -16}
+        - {x: 12, y: -16}
+        - {x: 12, y: 1}
+        - {x: 7, y: 6}
+      - - {x: -13, y: 16}
+        - {x: -12, y: 13}
+        - {x: -3, y: 13}
+        - {x: -1, y: 15}
+        - {x: -1, y: 16}
+    - name: dice_iso_11
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -5, y: 8}
+        - {x: -11, y: 5}
+        - {x: -11, y: -15}
+        - {x: -10, y: -16}
+        - {x: 11, y: -16}
+        - {x: 14, y: -13}
+        - {x: 14, y: 1}
+        - {x: 11, y: 8}
+      - - {x: -16, y: 16}
+        - {x: -16, y: 13}
+        - {x: -7, y: 13}
+        - {x: -5, y: 15}
+        - {x: -5, y: 16}
+    - name: dice_iso_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -5, y: 12}
+        - {x: -14, y: 3}
+        - {x: -14, y: -11}
+        - {x: -10, y: -16}
+        - {x: 8, y: -16}
+        - {x: 13, y: -14}
+        - {x: 13, y: 7}
+        - {x: 3, y: 12}
+    - name: dice_iso_13
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -5, y: 12}
+        - {x: -14, y: 3}
+        - {x: -14, y: -11}
+        - {x: -10, y: -16}
+        - {x: 8, y: -16}
+        - {x: 13, y: -14}
+        - {x: 13, y: 7}
+        - {x: 3, y: 12}
+    - name: dice_iso_14
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -5, y: 12}
+        - {x: -14, y: 3}
+        - {x: -14, y: -11}
+        - {x: -10, y: -16}
+        - {x: 8, y: -16}
+        - {x: 13, y: -14}
+        - {x: 13, y: 7}
+        - {x: 3, y: 12}
+    - name: dice_iso_15
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -5, y: 12}
+        - {x: -14, y: 3}
+        - {x: -14, y: -11}
+        - {x: -10, y: -16}
+        - {x: 8, y: -16}
+        - {x: 13, y: -14}
+        - {x: 13, y: 7}
+        - {x: 3, y: 12}
+    - name: dice_iso_16
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -5, y: 12}
+        - {x: -14, y: 3}
+        - {x: -14, y: -11}
+        - {x: -10, y: -16}
+        - {x: 8, y: -16}
+        - {x: 13, y: -14}
+        - {x: 13, y: 7}
+        - {x: 3, y: 12}
+    - name: dice_iso_17
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -5, y: 12}
+        - {x: -14, y: 3}
+        - {x: -14, y: -11}
+        - {x: -10, y: -16}
+        - {x: 8, y: -16}
+        - {x: 13, y: -14}
+        - {x: 13, y: 7}
+        - {x: 3, y: 12}
+    - name: dice_iso_18
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -5, y: 12}
+        - {x: -14, y: 3}
+        - {x: -14, y: -11}
+        - {x: -10, y: -16}
+        - {x: 8, y: -16}
+        - {x: 13, y: -14}
+        - {x: 13, y: 7}
+        - {x: 3, y: 12}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

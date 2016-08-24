@@ -15,6 +15,10 @@ public class EquipRenderer : MonoBehaviour {
 		overrideController.runtimeAnimatorController = anim.runtimeAnimatorController;
 		//changeEquip(clips);
 	}
+	public void restart()
+	{
+		anim.Play("idle");
+	}
 	public void wearEquip(Sprite sp)
 	{
 		if(sp==null)

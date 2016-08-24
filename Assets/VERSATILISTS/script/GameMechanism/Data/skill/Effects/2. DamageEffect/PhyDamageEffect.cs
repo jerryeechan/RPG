@@ -9,7 +9,7 @@ public class PhyDamageEffect : SkillEffect {
 	}
 	public override void setLevel (int level)
 	{
-		baseValue = (100+20*level)/100;
+		baseValue = (100f+5*level)/100f;
 		//mpCost = level*1;
 		spCost = level*2;
 		base.setLevel(level);
@@ -18,8 +18,11 @@ public class PhyDamageEffect : SkillEffect {
 	{
 		base.useBy(ch);
 		calEffectValue = baseValue;
+		print("baseValue:"+baseValue);
 		calEffectValue *= casterStat.phyAtk;
+		print("phyAtk:"+casterStat.phyAtk);
 		calEffectValue *= casterStat.phyDmgBuff;
+		print("dmgBuff:"+casterStat.phyDmgBuff);
 		print("buff and atk cal:"+calEffectValue);
 		calEffectValue *= Random.Range(casterStat.lowestPhyDmg,1);
 		calEffectValue *= parentSkill.criticalBonus;

@@ -1,10 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
+using com.jerry.rpg;
 //Skill is the 
 
 public class Skill : MonoBehaviour {
 
 	//the corresponding skill data of player
+	public Action parentAction;
 	public Skill followSkill;
 	public enum SkillType{Attack,Buff,ETC};
 	public SkillEffect mainEffect;
@@ -183,6 +185,7 @@ public class Skill : MonoBehaviour {
 			}
 			else
 			{
+				
 				RandomBattleRound.instance.NextRound();
 			}
 		}		
@@ -239,9 +242,10 @@ public class Skill : MonoBehaviour {
 	//is
 	public void checkDone()  
 	{
-		if(isDone)
+		if(isDone&&!followSkill)
 		{
-			Destroy(gameObject);
+			Destroy(parentAction.gameObject);
+			//Destroy(gameObject);
 		}
 	}
 	

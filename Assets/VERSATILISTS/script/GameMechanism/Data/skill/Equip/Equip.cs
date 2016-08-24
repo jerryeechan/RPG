@@ -10,6 +10,7 @@ public class Equip:MonoBehaviour {
 	public Character ch;
 	[HideInInspector]
 	public EquipData equipData;
+	public EquipGraphicAsset bindGraphic;
 	public List<SkillEffect> effects;
 	void Awake()
 	{

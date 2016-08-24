@@ -91,6 +91,10 @@ public class PixelSnap : MonoBehaviour
         {
             float assetPPU = pixelPerfectCamera.assetsPixelsPerUnit;
             float assetUPP = 1.0f / assetPPU;
+            if(sprite == null)
+            {
+                Debug.Log(name);
+            }
             float camPixelsPerAssetPixel = cameraPPU / sprite.pixelsPerUnit;
 
             offset.x /= camPixelsPerAssetPixel; // zero or half a screen pixel in texture pixels

@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 public class EnemyWave : MonoBehaviour {
 
-	public List<CharacterData> enemyData;
+	public List<EnemyPreset> enemyPreset;
 	// Use this for initialization
 
 	/*

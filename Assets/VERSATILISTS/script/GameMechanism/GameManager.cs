@@ -45,9 +45,10 @@ public class GameManager : Singleton<GameManager> {
 	}
 	void loadEnemy(EnemyWave wave)
 	{
-		foreach(CharacterData chData in wave.enemyData)
+		foreach(var preset in wave.enemyPreset)
 		{
-			Character newCh = chData.genCharacter();
+
+			Character newCh = preset.chData.genCharacter();
 			newCh.transform.SetParent(saveTransform); 
 			enemies.Add(newCh);
 			newCh.side = Character.CharacterSide.Enemy;
@@ -70,14 +71,75 @@ public class GameManager : Singleton<GameManager> {
 		currentCh = ch;
 	}
 
+	public void DungeonMapMode()
+	{
+		keymode = KeyMode.Dungeon;
+	}
+	public void DungeonOptionMode()
+	{
+		keymode = KeyMode.DungeonSelect;
+	}
+	public void CombatMode()
+	{
+		keymode = KeyMode.Combat;
+	}
 	bool isMenuActive = true;
+	public KeyMode keymode = KeyMode.Dungeon;
+	//KeyCode[] keylist = {KeyCode.A,KeyCode.D,KeyCode.W,KeyCode.S};
+	KeyCode[] keylist = {KeyCode.LeftArrow,KeyCode.RightArrow,KeyCode.UpArrow,KeyCode.DownArrow,KeyCode.Z,KeyCode.X};
 	void Update() {
         if (Input.GetKeyDown(KeyCode.Escape))
 		{
 			isMenuActive = !isMenuActive;
 			menu.gameObject.SetActive(isMenuActive);
 		}
-            
-        
+
+		Transform chRenTransform = currentCh.chRenderer.transform;
+		/*
+        if(Input.GetKey(KeyCode.LeftArrow))
+		{
+			chRenTransform.transform.Translate(Vector3.left/2);
+			chRenTransform.localScale = new Vector3(-1,1,1);
+		}
+		else if(Input.GetKey(KeyCode.RightArrow))
+		{
+			chRenTransform.Translate(Vector3.right/2);
+			chRenTransform.localScale = new Vector3(1,1,1);
+		}
+		
+		if(Input.GetKey(KeyCode.UpArrow))
+		{
+			chRenTransform.Translate(Vector3.up/4);
+		}        
+		else if(Input.GetKey(KeyCode.DownArrow))
+		{
+			chRenTransform.Translate(Vector3.down/4);
+		}*/
+		foreach(var key in keylist)
+		{
+			if(Input.GetKey(key))
+			{
+				switch(keymode)
+				{
+					case KeyMode.Dungeon:
+						DungeonManager.instance.keyPress(key);
+					break;
+				}
+			}
+			if(Input.GetKeyDown(key))
+			{
+				switch(keymode)
+				{
+					case KeyMode.Dungeon:
+						DungeonManager.instance.keyDown(key);
+					break;
+					case KeyMode.DungeonSelect:
+						DungeonOptionSelector.instance.keydown(key);
+					break;
+				}
+			}
+		}
     }
 }
+
+public enum KeyMode{Combat,Dungeon,DungeonSelect};

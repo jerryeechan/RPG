@@ -9,10 +9,10 @@ public class CharacterRenderer : MonoBehaviour {
 	public Animator[] equipAnims;
 	public Animator anim;
 
-	public EquipRenderer helmetUI;
-	public EquipRenderer armorUI;
-	public EquipRenderer weaponUI;
-	public EquipRenderer shieldUI;
+	public EquipRenderer helmetRenderer;
+	public EquipRenderer armorRenderer;
+	public EquipRenderer weaponRenderer;
+	public EquipRenderer shieldRenderer;
 	public Dictionary<EquipType,EquipRenderer> equipUIDicts;
 	void Awake()
 	{
@@ -26,14 +26,34 @@ public class CharacterRenderer : MonoBehaviour {
 			{
 				eqanim.speed = 0.25f;
 			}
+			equipUIDicts = new Dictionary<EquipType,EquipRenderer>();
+			equipUIDicts.Add(EquipType.Armor,armorRenderer);
+			equipUIDicts.Add(EquipType.Helmet,helmetRenderer);
+			equipUIDicts.Add(EquipType.Weapon,weaponRenderer);
+			equipUIDicts.Add(EquipType.Shield,shieldRenderer);
 		}
-		
 	}
 	public void wearEquip(EquipGraphicAsset equipGraphic)
 	{
-		EquipType type = equipGraphic.type;
-		equipUIDicts[type].wearEquip(equipGraphic.equipAnimations);
-		equipUIDicts[type].wearEquip(equipGraphic.equipSprite);
+		if(equipGraphic)
+		{
+			EquipType type = equipGraphic.type;
+			equipUIDicts[type].wearEquip(equipGraphic.equipAnimations);
+			equipUIDicts[type].wearEquip(equipGraphic.equipSprite);
+		}
+		else
+		{
+			Debug.LogError("no equip render graphic");
+		}
+		syncAnimation();
+		
+	}
+	public void syncAnimation()
+	{
+		foreach(var eqRenderer in equipUIDicts.Values)
+		{
+			eqRenderer.restart();
+		}
 	}
 	public void updateRenderer(CharacterStat stat)
 	{

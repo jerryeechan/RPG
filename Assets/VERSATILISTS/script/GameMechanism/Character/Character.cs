@@ -85,12 +85,14 @@ public class Character : MonoBehaviour{
 	
 	public void wear(Equip equip)
 	{
-		equip.transform.SetParent(transform);
-
+		print("wear:"+equip.name);
+		equip.transform.SetParent(transform.Find("Equips"));
+		
 		foreach(SkillEffect effect in equip.effects)
 		{
 			effect.ApplyOn(equipStat);
 		}
+		chRenderer.wearEquip(equip.bindGraphic);
 	}
 	public void updateRenderer()
 	{

@@ -22,7 +22,7 @@ public class CharacterManager :Singleton<CharacterManager> {
 	}
 	public Character generateCharacter(string name,string UITemplateID)
 	{
-		Character ch = GameObject.Instantiate(CharacterManager.instance.chTemplate);
+		Character ch = GameObject.Instantiate(chTemplate);
 
 		CharacterRenderer chRend;
 		if(UITemplateID!="")

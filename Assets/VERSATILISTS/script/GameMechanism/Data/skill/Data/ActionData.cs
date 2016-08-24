@@ -19,8 +19,9 @@ public class ActionData {
 	public ActionRequirement[] requirements;
 	ActionState state = ActionState.Locked;
 	int rank;//1~6, can be put on dice
-	int availableRank = 1;
+	//int availableRank = 1;
 	int masterLevel = 0;
+	public int energyCost = 1;
 	static int masterLevelMax = 100;
 
 	

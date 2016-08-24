@@ -66,7 +66,7 @@ public class DiceRoller : MonoBehaviour {
 			
 			if(allReady)
 			{
-				CombatUIManager.instance.DiceRollDone();
+				//CombatUIManager.instance.DiceRollDone();
 				ActionUIManager.instance.lockAllSkillBtn();
 				isDiceReady = true;
 				for(int i=0;i<diceNum;i++)

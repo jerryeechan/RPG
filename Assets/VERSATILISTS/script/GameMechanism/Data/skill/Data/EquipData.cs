@@ -10,7 +10,7 @@ public class EquipData:ItemData {
     //string specialEffect;
     public Equip genEquip()
     {
-        Equip eq = EquipManager.instance.getEquip(id); 
+        Equip eq = EquipManager.instance.getEquip(id,imageID); 
         if(eq)
             eq.setEffect(hasEffects);
         return eq;

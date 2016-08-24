@@ -7,6 +7,7 @@ public class RandomBattleRound : Singleton<RandomBattleRound> {
 	public List<Character> players;
 	public Queue<Character> chQueue;
 
+	public int energyPoints;
 	public void StartGame()
 	{
 		//prepare characters from character data
@@ -71,7 +72,14 @@ public class RandomBattleRound : Singleton<RandomBattleRound> {
 			}	
 		}
 	}
-									
+	public void selectAction(int index)
+	{
+		//currentPlayer.actionData[index].energyCost;
+	}	
+	public void deSelectAction(int index)
+	{
+		
+	}				
 	CharacterData currentPlayerCharacterData;
 	public Character currentPlayer;
 	public Character selectedEnemy;	

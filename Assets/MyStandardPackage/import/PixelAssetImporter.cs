@@ -7,9 +7,11 @@
 // - in this script                                                  -
 // -------------------------------------------------------------------
 
-
+#if UNITY_EDITOR_OSX
 using UnityEngine;
+
 using UnityEditor;  // Most of the utilities we are going to use are contained in the UnityEditor namespace
+
 using System.IO;
 using System.Collections.Generic;
 // We inherit from the AssetPostProcessor class which contains all the exposed variables and event triggers for asset importing pipeline
@@ -90,3 +92,4 @@ internal sealed class PixelAssetImporter : AssetPostprocessor {
    
     #endregion
 }
+#endif
