@@ -9,6 +9,7 @@ public class UIManager : Singleton<UIManager>{
 	{
 		canvas = GetComponent<Canvas>();
 		canvas.pixelPerfect = true;
+		
 		//canvas.scaleFactor = 1;
 		//if(Screen.width>=960)
 		//canvas.scaleFactor = 2;
@@ -18,6 +19,10 @@ public class UIManager : Singleton<UIManager>{
 			panelsDict.Add(panel.name,panel);
 		}	
 		cover = getPanel("cover"); 
+	}
+	public void setCanvasScale(float s)
+	{
+		canvas.scaleFactor = s;
 	}
 	void Start()
 	{

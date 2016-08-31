@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 0ab4b20b3a40d47919b8a306897c1877
-timeCreated: 1471423690
+timeCreated: 1472324594
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -102,10 +102,10 @@ TextureImporter:
     - name: dice_3
       rect:
         serializedVersion: 2
-        x: 48
-        y: 16
-        width: 16
-        height: 16
+        x: 54
+        y: 22
+        width: 5
+        height: 5
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -113,10 +113,10 @@ TextureImporter:
     - name: dice_4
       rect:
         serializedVersion: 2
-        x: 64
-        y: 16
-        width: 16
-        height: 16
+        x: 70
+        y: 22
+        width: 5
+        height: 5
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}

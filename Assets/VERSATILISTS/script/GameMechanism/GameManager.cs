@@ -2,17 +2,30 @@
 using System.Collections.Generic;
 
 public class GameManager : Singleton<GameManager> {
-
+	
 	public Character currentCh;
 	public List<Character> chs;
 	public List<Character> enemies;
 	public Transform menu;
 	public EnemyWave[] enemyWaves;
 	Transform saveTransform;
+
+	public bool testMode = true;
+	public static float playerAnimationSpeed = 0.5f;
 	void Start()
 	{
+		//testMode = false;
 		
 		StartGame();
+		if(testMode)
+		{
+			RandomBattleRound.instance.StartBattle(MonsterDataEditor.instance.getMonsterSet("test"));
+		}
+		else
+		{
+			DungeonMode();
+		}
+		
 	}
 	public void StartGame()
 	{
@@ -22,38 +35,35 @@ public class GameManager : Singleton<GameManager> {
 
 		CharacterManager.instance.StartGame();
 		loadCharacter();
-		loadEnemy(enemyWaves[0]);
-		loadItem();
+		
+		//loadItem();
 
-		RandomBattleRound.instance.StartGame();
+		
+		//DungeonMapKeyMode();
+		//DungeonMode();
 	}
 	void loadCharacter()
 	{
 		//create player characters
 		chs = new List<Character>();
-		foreach(CharacterData chData in DataManager.instance.playerData[0].chData)
+		List<CharacterData> chDataList = DataManager.instance.playerData[0].chData;
+		for(int i=0;i<chDataList.Count;i++)
 		{
+			CharacterData chData = chDataList[i];
 			Character newPlayer = chData.genCharacter();
-			newPlayer.transform.SetParent(saveTransform); 
 			chs.Add(newPlayer);
+			newPlayer.chUI = DungeonPlayerStateUI.instance.chUIs[i];
+			newPlayer.transform.SetParent(saveTransform); 
+			
 		} 
 		selectCh(chs[0]);
 		
 
 		//update stat ui
-		CharacterStatUIManager.instance.viewCharacter(GameManager.instance.currentCh);
+		//CharacterStatUIManager.instance.viewCharacter(GameManager.instance.currentCh);
+		
 	}
-	void loadEnemy(EnemyWave wave)
-	{
-		foreach(var preset in wave.enemyPreset)
-		{
-
-			Character newCh = preset.chData.genCharacter();
-			newCh.transform.SetParent(saveTransform); 
-			enemies.Add(newCh);
-			newCh.side = Character.CharacterSide.Enemy;
-		} 
-	}
+	
 	void loadItem()
 	{
 		int i=0;
@@ -70,16 +80,27 @@ public class GameManager : Singleton<GameManager> {
 	{
 		currentCh = ch;
 	}
-
-	public void DungeonMapMode()
+	public void LockMode()
+	{
+		keymode = KeyMode.Lock;
+	}
+	public void DungeonMapKeyMode()
 	{
 		keymode = KeyMode.Dungeon;
+		
 	}
-	public void DungeonOptionMode()
+	public void DungeonMode()
+	{
+		UIManager.instance.getPanel("dungeonMap").gameObject.SetActive(true);
+		DungeonPlayerStateUI.instance.DungeonMode();
+		DungeonMapKeyMode();
+		CursorManager.instance.NormalMode();
+	}
+	public void DungeonOptionKeyMode()
 	{
 		keymode = KeyMode.DungeonSelect;
 	}
-	public void CombatMode()
+	public void CombatKeyMode()
 	{
 		keymode = KeyMode.Combat;
 	}
@@ -94,7 +115,7 @@ public class GameManager : Singleton<GameManager> {
 			menu.gameObject.SetActive(isMenuActive);
 		}
 
-		Transform chRenTransform = currentCh.chRenderer.transform;
+//		Transform chRenTransform = currentCh.chRenderer.transform;
 		/*
         if(Input.GetKey(KeyCode.LeftArrow))
 		{
@@ -142,4 +163,4 @@ public class GameManager : Singleton<GameManager> {
     }
 }
 
-public enum KeyMode{Combat,Dungeon,DungeonSelect};
+public enum KeyMode{Lock,Combat,Dungeon,DungeonSelect};

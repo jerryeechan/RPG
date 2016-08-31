@@ -16,8 +16,20 @@ public class DungeonGenerator : MonoBehaviour {
 		tileGenerator = GetComponent<DungeonTileGenerator>();
 	}
 	// Update is called once per frame
-	
-	static int tileSize = 16;
+	void setEvents()
+	{
+		foreach(var tile in edgeTiles)
+		{
+			if(Random.value>0.2)
+				tileGenerator.setTile(tile,DungeonEventType.Gold);
+		}
+		tileGenerator.setTile(edgeTiles[edgeTiles.Count-1],DungeonEventType.Exit);
+		tileGenerator.setTile(edgeTiles[edgeTiles.Count-2],DungeonEventType.Boss);
+		tileGenerator.setTile(edgeTiles[0],DungeonEventType.Exp);
+		tileGenerator.setTile(edgeTiles[1],DungeonEventType.Exp);
+	}
+
+	static int tileSize = 32;
 	public RoomTile[,] generateMap(int w,int h)
 	{
 		if(tileMap!=null)
@@ -47,16 +59,7 @@ public class DungeonGenerator : MonoBehaviour {
 		//transform.parent.GetComponent<RectTransform>().sizeDelta = new Vector2(tileSize*width*2,tileSize*height*2);
 		return tileMap;
 	}
-	void setEvents()
-	{
-		foreach(var tile in edgeTiles)
-		{
-			if(Random.value>0.2)
-				tileGenerator.setTile(tile,DungeonEventType.Gold);
-		}
-		tileGenerator.setTile(edgeTiles[edgeTiles.Count-1],DungeonEventType.Exit);
-		tileGenerator.setTile(edgeTiles[edgeTiles.Count-2],DungeonEventType.Boss);
-	}
+	
 	public int[] randomArray()
 	{
 		int[] array = new int[4];
@@ -272,4 +275,4 @@ public class DungeonGenerator : MonoBehaviour {
 	}
 	
 }
-public enum DungeonEventType{None,Monster,Boss,Tressure,Trap,Exit,Gold};
+public enum DungeonEventType{None,Monster,Boss,Tressure,Trap,Exit,Gold,Exp};

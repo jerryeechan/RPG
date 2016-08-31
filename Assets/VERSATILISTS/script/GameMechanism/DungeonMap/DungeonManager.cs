@@ -7,34 +7,35 @@ public class DungeonManager : Singleton<DungeonManager> {
 	public DungeonGenerator dungeonGenerator;
 	RoomTile[,] tileMap;
 	RectTransform map;
-	public CompositeText descriptionText;
 	// Use this for initialization
 	public CharacterTile player;
-	int x;
-	int y;
+	int level;
 	void Awake()
 	{
 		map = transform.Find("map").GetComponent<RectTransform>();
 	}
 	
 	void Start () {
+		level = 0;
 		genMap();
 		//player.SetParent(dungeonGenerator.transform,false); 
 	}
-	public void genMap()
+	public int genMap()
 	{
+		
 		Debug.Log("generate new map");
+		level++;
 		tileMap = dungeonGenerator.generateMap(9,9);
 		player.x = 4;
 		player.y = 4;
 		tileMap[player.x,player.y].reveal();
 		map.anchoredPosition = player.rect.anchoredPosition = darkness.anchoredPosition = Vector2.zero;
-		
+		return level;
 	}
-	int dis = 16;
+	int dis = 32;
 	public void keyPress(KeyCode key)
 	{
-//		print("dungeon"+key);
+//		print("dungeon:"+key);
 		switch(key)
 		{
 			case KeyCode.UpArrow:
@@ -70,8 +71,8 @@ public class DungeonManager : Singleton<DungeonManager> {
 		}
 	}
 	Vector2[] dirMapVec={Vector3.up,Vector3.left,Vector3.down,Vector3.right};
-	int[] xMoveMap={0,-1,0,1};
-	int[] yMoveMap={1,0,-1,0};
+//	int[] xMoveMap={0,-1,0,1};
+//	int[] yMoveMap={1,0,-1,0};
 	bool isplaying = false;
 	public RectTransform darkness;
 	public bool testMove(CharacterTile tile,int dir)
@@ -100,8 +101,12 @@ public class DungeonManager : Singleton<DungeonManager> {
 		return isOpen==1;
 	}
 	
-	public void dungeonEventComplete(){
-		tileMap[player.x,player.y].removeEvent();
+	public void dungeonEventComplete(bool removeTile = false){
+		if(removeTile)
+			tileMap[player.x,player.y].removeEvent();
+		GameManager.instance.DungeonMapKeyMode();
 	}
+
+	
 
 }

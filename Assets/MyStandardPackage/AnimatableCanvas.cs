@@ -39,6 +39,7 @@ public class AnimatableCanvas : MonoBehaviour {
                     isAnimating = false;
                     if(completeEvent!=null)
                     completeEvent();
+                    gameObject.SetActive(false);
                 });
             }
         }

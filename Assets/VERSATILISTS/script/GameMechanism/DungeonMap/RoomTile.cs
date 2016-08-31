@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
-
+using DG.Tweening;
 public class RoomTile : MonoBehaviour {
 
 	public int[] side;
@@ -20,7 +20,8 @@ public class RoomTile : MonoBehaviour {
 	}
 	public void reveal()
 	{
-		transform.Find("cover").gameObject.SetActive(false);
+		//transform.Find("cover").gameObject.SetActive(false);
+		transform.Find("cover").GetComponent<Image>().DOFade(0,0.5f);
 	}
 	public void playEvent()
 	{
@@ -30,10 +31,12 @@ public class RoomTile : MonoBehaviour {
 	{
 		if(dungeonEvent&&dungeonEvent.type!= DungeonEventType.None)
 		{
-			DungeonManager.instance.descriptionText.text = dungeonEvent.descriptionText;
+			dungeonEvent.encounter();
 			DungeonOptionSelector.instance.showPanel(dungeonEvent);
-			GameManager.instance.keymode = KeyMode.DungeonSelect;
-			
+		}
+		else
+		{
+			//DungeonManager.instance.showFloor();
 		}
 		//dungeonEvent
 	}

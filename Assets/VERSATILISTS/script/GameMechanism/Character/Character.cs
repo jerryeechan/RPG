@@ -1,6 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
+using System.Collections;
 using com.jerry.rpg;
+using DG.Tweening;
+using UnityEngine.EventSystems;
 public class Character : MonoBehaviour{
 #region VARIABLES
 	// Use this for initialization≥
@@ -11,11 +14,20 @@ public class Character : MonoBehaviour{
 	public CharacterStat equipStat;
 	public CharacterStat battleStat;
 
-
+	DungeonCharacterUI ui;
+	public DungeonCharacterUI chUI{
+		get{
+			return ui;
+		}
+		set{
+			ui = value;
+			ui.bindCh = this;
+		}
+	}
 	List<Action> actionUsed;
 	public List<SkillEffect> effectsOnMe;
 	//the skill this character can use, total 6
-	public List<ActionData> actionData;
+	public List<ActionData> actionDataList;
 	 /*
 	public List<ActionData> actionData{
 		get{return _actionData;} 
@@ -30,7 +42,7 @@ public class Character : MonoBehaviour{
 	}*/
 	//public Dictionary<string,ActionData> actionDict = new Dictionary<string,ActionData>();
 	
-	public enum CharacterSide{Player,Enemy};
+	
 	public CharacterSide side;
 	
 
@@ -64,8 +76,8 @@ public class Character : MonoBehaviour{
 		initStat.dexValue = dexValue;
 
 		actionUsed = new List<Action>();
-		actionData = new List<ActionData>();
-		actionData.Capacity = 6;
+		actionDataList = new List<ActionData>();
+		actionDataList.Capacity = 4;
 
 		//ApplyEquipEffects();
 		EquipStart();
@@ -81,6 +93,7 @@ public class Character : MonoBehaviour{
 	{
 		battleStat = equipStat.Clone(); 
 		battleStat.statname = name+"_battlestat";
+		chRenderer.init(battleStat);
 	}
 	
 	public void wear(Equip equip)
@@ -96,11 +109,26 @@ public class Character : MonoBehaviour{
 	}
 	public void updateRenderer()
 	{
-		if(chRenderer)
-			chRenderer.updateRenderer(battleStat);
-		else
+		//scene chRenderer update
+		if(!chRenderer)
 		{
 			Debug.LogError("no Renderer");
+		}
+		else
+		{
+			chRenderer.updateRenderer(battleStat);
+		}		
+	}
+	public void updateDungeonUI()
+	{
+		//dungeon UI update
+		if(!chUI)
+		{
+			Debug.LogError("no chUI");
+		}
+		else
+		{
+			chUI.updateUI(battleStat);
 		}
 	}
 	public bool isDead
@@ -109,9 +137,16 @@ public class Character : MonoBehaviour{
 	}
 	Action usingAction;
 	List<Character> targets;
+	
+	static float chmove_to_action_delay = 0.2f;
 	public Action useAction(int index)
 	{
-		usingAction = actionData[index].genAction(this);
+		if(actionDataList.Count<=index)
+		{
+			Debug.LogError("no action");
+			return null;
+		}
+		usingAction = actionDataList[index].genAction(this);
 		//ActionLogger.Log(usingAction.name);
 		actionUsed.Add(usingAction);
 		/*
@@ -121,48 +156,27 @@ public class Character : MonoBehaviour{
 		*/
 		if(chRenderer)
 			chRenderer.PlayCharacterAnimation(usingAction.chAnimation);
+		
 		//PlayCharacterAnimation(usingAction.chAnimation);
 		//TODO evnet of animation done;
-		OnCharacterAnimationDone();
+		
+		this.myInvoke(chmove_to_action_delay,OnCharacterAnimationDone);
 		
 		//PlayCharacterAnimation();
-		
 		
 		return usingAction;
 		//wait the animation moment to send message
 	}
 	
-	public void die()
-	{
-		chRenderer.PlayCharacterAnimation(CharacterAnimation.die);
-	}
+
+
+	//animation of character's  move done
 	void OnCharacterAnimationDone()
 	{
-		usingAction.move();
+		usingAction.start();
 	}
-	//animation of character move done 
+	 
 	
-	/*
-	public SkillApplyStat hitBySkill(Skill skill)
-	{
-		//skillOnMe.Add(skill);
-		
-		SkillApplyStat stat = battleStat.hitBySkill(skill.skillStats);
-		stat.applyTarget = this;
-		//if(stat.damageCause>0)
-		//{
-			NumberGenerator.instance.GetDamageNum(transform.position,stat.damageCause);
-			//JPoolManager.instance.GetObject("strike").transform.position = transform.position;
-		//}
-		
-		healthBar.SetNowValue(stat.healthLeft);
-		if(isDead)
-		{
-			if(anim)
-			anim.Play("die");
-		}
-		return stat;
-	}*/
 	public void HitByEffect(SkillEffect effect)
 	{
 		effectsOnMe.Add(effect);
@@ -187,6 +201,14 @@ public class Character : MonoBehaviour{
 			return RandomBattleRound.instance.players[0];
 		}
 	}
+
+	public void die()
+	{
+		chRenderer.PlayCharacterAnimation(CharacterAnimation.die);
+		if(side == CharacterSide.Enemy)
+			RandomBattleRound.instance.EnemyDie(this);
+	}
+
 	public List<Character> allies()
 	{
 		if(side==CharacterSide.Player)
@@ -229,3 +251,4 @@ public class Character : MonoBehaviour{
 		}
 	}
 }
+public enum CharacterSide{Player,Enemy};

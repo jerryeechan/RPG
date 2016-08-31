@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using DG;
 public class DiceRoller2D : Singleton<DiceRoller2D> {
 
 	// Use this for initialization
@@ -18,7 +19,6 @@ public class DiceRoller2D : Singleton<DiceRoller2D> {
 	{
 		 panel.gameObject.SetActive(true);
 		 diceRollDelegate+=d;
-		 
 		 StartCoroutine("randomDice");
 		 
 	}
@@ -31,7 +31,7 @@ public class DiceRoller2D : Singleton<DiceRoller2D> {
 			{
 				RollDice(i);
 			}
-		 
+//			print("dice roll");
 			yield return new WaitForSeconds(0.1f);
 		}
 		yield return new WaitForSeconds(0.5f);
@@ -60,6 +60,7 @@ public class DiceRoller2D : Singleton<DiceRoller2D> {
 		int r = Random.Range(0,6);
 		diceImages[index].sprite = diceSprites[r];
 		diceValues[index] = r; 
+		
 		return r;
 	}
 	DiceRollDelegate diceRollDelegate;

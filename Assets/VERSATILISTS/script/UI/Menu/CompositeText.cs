@@ -24,7 +24,36 @@ public class CompositeText : MonoBehaviour {
 			}
 		}
 	}
-	public void animateValue(int startValue,int diff)
+	public void DOText(string str)
+	{
+		foreach(Text t in texts)
+		{
+			t.text = "";
+			t.DOText(str,1f);
+		}
+	}
+	public void PopText(string str)
+	{
+		
+		foreach(Text t in texts)
+		{
+			//print("pop text");
+			t.text = str;
+			t.DOFade(0,0);
+			pop(t);
+		}
+
+
+		
+
+	}
+	void pop(Text t)
+	{	
+		t.DOFade(1,0.5f).OnComplete(()=>{
+			t.DOFade(0,0.5f).SetDelay(1);	
+		});
+	}
+	public void DOValue(int startValue,int diff)
 	{
 		this.startValue = startValue;
 		this.diff = diff; 
@@ -41,7 +70,7 @@ public class CompositeText : MonoBehaviour {
 			{
 				string newString = "";
 					if(prefix!="")
-						newString = prefix+":";
+						newString = prefix;
 					newString += (int)i +postfix;
 					t.text = newString;
 			}

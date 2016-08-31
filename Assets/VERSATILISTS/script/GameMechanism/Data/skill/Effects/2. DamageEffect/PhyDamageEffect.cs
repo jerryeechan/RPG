@@ -19,6 +19,7 @@ public class PhyDamageEffect : SkillEffect {
 		base.useBy(ch);
 		calEffectValue = baseValue;
 		print("baseValue:"+baseValue);
+		calEffectValue += casterStat.strValue/5;
 		calEffectValue *= casterStat.phyAtk;
 		print("phyAtk:"+casterStat.phyAtk);
 		calEffectValue *= casterStat.phyDmgBuff;
@@ -38,7 +39,7 @@ public class PhyDamageEffect : SkillEffect {
 		
 		applyResult = Mathf.Clamp(calEffectValue-defense,1,10000);
 		//print(" casue damage: "+(int)applyResult);
-		ActionLogger.Log(casterStat.chName+" do @"+(int)applyResult+" damage to "+stat.chName);
+		print(casterStat.chName+" do @"+(int)applyResult+" damage to "+stat.chName);
 		stat.hp -= (int)applyResult;
 	}	
 }

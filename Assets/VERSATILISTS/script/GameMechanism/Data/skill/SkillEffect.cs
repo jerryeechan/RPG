@@ -83,6 +83,8 @@ public class SkillEffect : MonoBehaviour {
 	{
 		return acc>=Random.Range(0,100);
 	}
+
+	//apply all kinds of effects
 	public virtual void ApplyOn(CharacterStat stat)
 	{
 		onStat = stat;

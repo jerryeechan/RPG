@@ -12,7 +12,7 @@ public class SPEffect : SkillEffect{
 	{
 		base.ApplyOn(stat);
 		stat.sp+=(int)calEffectValue;
-		ActionLogger.Log(casterStat.chName+"recover SP @"+calEffectValue);
+		print(casterStat.chName+"recover SP @"+calEffectValue);
 	}
 	
 }

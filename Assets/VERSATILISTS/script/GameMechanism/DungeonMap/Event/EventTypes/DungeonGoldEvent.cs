@@ -3,7 +3,11 @@ using System.Collections;
 
 public class DungeonGoldEvent : DungeonEvent {
 
-override public void confirm(){
+	void Awake()
+	{
+		descriptionText = "You found some gold...";
+	}
+	override public void confirm(){
 		base.confirm();
 		//enter battle
 		DiceRoller2D.instance.Roll(gambleEvent);
@@ -12,8 +16,9 @@ override public void confirm(){
 	override public void cancel()
 	{
 		base.cancel();
+		describe("You got 10 golds");
 		DungeonPlayerStateUI.instance.getGold(10);
-		DungeonManager.instance.dungeonEventComplete();
+		DungeonManager.instance.dungeonEventComplete(true);
 		//Destroy(gameObject);
 		
 	}
@@ -21,12 +26,14 @@ override public void confirm(){
 	{
 		if(sum>6)
 		{
+			describe("You win");
 			DungeonPlayerStateUI.instance.getGold(15);
 		}
 		else{
+			describe("You loose");
 			DungeonPlayerStateUI.instance.getGold(5);
 		}
-		DungeonManager.instance.dungeonEventComplete();
+		DungeonManager.instance.dungeonEventComplete(true);
 	}
 		
 }

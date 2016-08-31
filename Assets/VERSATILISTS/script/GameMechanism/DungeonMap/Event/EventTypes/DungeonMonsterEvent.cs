@@ -2,6 +2,7 @@
 using System.Collections;
 
 public class DungeonMonsterEvent : DungeonEvent {
+	
 	override public void confirm(){
 		base.confirm();
 		//enter battle
@@ -15,9 +16,10 @@ public class DungeonMonsterEvent : DungeonEvent {
 	public void confirmEvent()
 	{
 		UIManager.instance.getPanel("dungeonMap").gameObject.SetActive(false);
-		RandomBattleRound.instance.StartGame();
-		UIManager.instance.HideCover();
-		GameManager.instance.CombatMode();
+		UIManager.instance.getPanel("combat").gameObject.SetActive(true);
+		
+		RandomBattleRound.instance.StartBattle(MonsterDataEditor.instance.getMonsterSet());
+		UIManager.instance.HideCover(); 
 	}
 	public void cancelEvent(int sum)
 	{
@@ -25,6 +27,8 @@ public class DungeonMonsterEvent : DungeonEvent {
 		{
 			//succeed
 			Debug.Log("Run away succeed");
+			DungeonManager.instance.dungeonEventComplete();
+			
 		}
 		else
 		{

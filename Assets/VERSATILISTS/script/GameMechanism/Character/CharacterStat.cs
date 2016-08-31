@@ -18,7 +18,7 @@ public class CharacterStat:StringfyProperty{
 	public int dexValue = 1;
 	
 	//basic
-	public float _hp;
+	float _hp;
 	public float maxHP;
 	public float hp{
 		get{return _hp;}
@@ -28,7 +28,7 @@ public class CharacterStat:StringfyProperty{
 	} 
 	public float maxMP;
 	public float maxSP;
-	public float _mp;
+	float _mp;
 	public float mp{
 		get{return _mp;}
 		set{

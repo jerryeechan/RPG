@@ -1,10 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
-public enum CharacterAnimation{idle,spell,melee,die,hurt,defense}
+using DG.Tweening;
 public class CharacterRenderer : MonoBehaviour {
 
 	public Character bindCh;
 	HealthBar bar;
+	
 	
 	public Animator[] equipAnims;
 	public Animator anim;
@@ -24,13 +25,14 @@ public class CharacterRenderer : MonoBehaviour {
 			equipAnims = equipTransform.GetComponentsInChildren<Animator>();
 			foreach (var eqanim in equipAnims)
 			{
-				eqanim.speed = 0.25f;
+				eqanim.speed = GameManager.playerAnimationSpeed;
 			}
 			equipUIDicts = new Dictionary<EquipType,EquipRenderer>();
 			equipUIDicts.Add(EquipType.Armor,armorRenderer);
 			equipUIDicts.Add(EquipType.Helmet,helmetRenderer);
 			equipUIDicts.Add(EquipType.Weapon,weaponRenderer);
 			equipUIDicts.Add(EquipType.Shield,shieldRenderer);
+			
 		}
 	}
 	public void wearEquip(EquipGraphicAsset equipGraphic)
@@ -38,8 +40,17 @@ public class CharacterRenderer : MonoBehaviour {
 		if(equipGraphic)
 		{
 			EquipType type = equipGraphic.type;
-			equipUIDicts[type].wearEquip(equipGraphic.equipAnimations);
-			equipUIDicts[type].wearEquip(equipGraphic.equipSprite);
+			EquipRenderer eqr = equipUIDicts[type]; 
+			if(!eqr)
+			{
+				Debug.LogError("no eqr");
+			}
+			else
+			{
+				eqr.wearEquip(equipGraphic.equipAnimations);
+				eqr.wearEquip(equipGraphic.equipSprite);
+			}
+			
 		}
 		else
 		{
@@ -55,40 +66,93 @@ public class CharacterRenderer : MonoBehaviour {
 			eqRenderer.restart();
 		}
 	}
+
+	public void init(CharacterStat stat)
+	{
+		if(bar)
+			bar.SetFullValue(stat.hp);
+		
+	}
 	public void updateRenderer(CharacterStat stat)
 	{
 		bar.SetNowValue(stat.hp);
+
 	}
 	public void PlayCharacterAnimation(CharacterAnimation chAnimation)
 	{
-		//Debug.Log("play skill action");
+		
 		if(anim)
 			anim.Play(chAnimation.ToString());
+		foreach(var equipAnim in equipAnims)
+		{
+			equipAnim.speed = AnimationManager.getChAnimSpeed(chAnimation);
+			equipAnim.Play(chAnimation.ToString());
+		}
 		
 		//will call playSkill with animation event;
 	}
 	//select the characeter
+	void OnMouseEnter()
+	{
+		CursorManager.instance.AttackMode();
+		//Cursor.SetCursor()
+	}
+	void OnMouseExit()
+	{
+		CursorManager.instance.NormalMode();
+	}
+	bool isMouseDown;
+	void OnMouseOver()
+	{
+		if(isMouseDown)
+		{
+			pressCount+=Time.deltaTime;
+			if(pressCount>1)
+			{
+				print("Mouse press");
+				pressCount = 0;	
+				isLongPress = true;
+			}
+		}
+	}
+	float pressCount;
+	bool isLongPress;
 	void OnMouseDown()
+	{
+		isMouseDown = true;
+		//clean
+		isLongPress = false;
+	}
+	void OnMouseUp()
+	{
+		pressCount = 0;
+		isMouseDown = false;
+	}
+	void OnMouseUpAsButton()
 	{
 		if(!bindCh)
 		{
 
 		}
+		else if(isLongPress)
+		{
+
+		}
 		else
 		{
-			
 			RandomBattleRound.instance.selectedEnemy = bindCh;	
+			ActionUIManager.instance.useAction();
 		}
 		
-		print("click");
+		//print("click ch Render");
 	}
-
 	public void HitAnimation()
 	{
-		print("hit");
-		
-		LeanTween.alpha(gameObject,0,0.05f).setDelay(0.1f).setRepeat(6).setLoopPingPong();
-		iTween.ShakePosition(gameObject,Vector3.one,0.2f);
+		print(GetComponentInChildren<SpriteRenderer>().gameObject);
+		LeanTween.alpha(gameObject,0,0.05f).setDelay(0.1f).setLoopPingPong().setLoopCount(6);
+		//GetComponentInChildren<SpriteRenderer>().DOColor(Color.red,0);//.SetDelay(0.1f).SetLoops(6,LoopType.Yoyo);
+		//iTween.ShakePosition(gameObject,Vector3.one,0.2f);
+		transform.DOShakePosition(0.2f,4,100);
 		//d.loopCount = 4;
 		
 	}
@@ -98,10 +162,10 @@ public class CharacterRenderer : MonoBehaviour {
         spr.color = new Color(1f,1f,1f,val);
     }
 
-	public void Die()
+	public void DieComplete()
 	{
 		print("die");
-		//Destroy(bindCh.gameObject);
+		Destroy(bindCh.gameObject);
 		Destroy(gameObject);
 	}
 	
@@ -110,3 +174,6 @@ public class CharacterRenderer : MonoBehaviour {
 		transform.parent.SendMessage("PlaySkillEffect");
 	}
 }
+
+public enum CharacterAnimation{idle,spell,melee,die,hurt,defense}
+public delegate void OnHitAnimationDone(Character ch);

@@ -3,20 +3,22 @@ using System.Collections.Generic;
 
 
 //as Equipment template and also the runtime equip to character
-public class Equip:MonoBehaviour {
+public class Equip:Item {
 	EquipState state = EquipState.Template;
 	TemplateEffectSet[] templateEffectSets;
 	[HideInInspector]
 	public Character ch;
 	[HideInInspector]
-	public EquipData equipData;
 	public EquipGraphicAsset bindGraphic;
 	public List<SkillEffect> effects;
 	void Awake()
 	{
 		templateEffectSets = GetComponentsInChildren<TemplateEffectSet>();
-		
-		
+	}
+	void Reset()
+	{
+		stackable = false;
+		consumable = false;
 	}
 	public void setEffect(int[] available)
 	{

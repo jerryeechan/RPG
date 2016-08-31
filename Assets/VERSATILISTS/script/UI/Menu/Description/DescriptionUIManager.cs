@@ -8,7 +8,7 @@ public class DescriptionUIManager : Singleton<DescriptionUIManager> {
 	public void showItem(Item item)
 	{
 		ItemData itemData = item.bindData;
-		nameText.text = itemData.itemName;
+		nameText.text = item.itemName;
 		descriptionText.text = item.description;
 	}
 }

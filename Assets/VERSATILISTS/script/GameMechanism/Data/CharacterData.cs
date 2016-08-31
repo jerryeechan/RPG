@@ -6,7 +6,7 @@ using System;
 public class CharacterData:StringfyProperty{
 	
 	public string name;
-	public int level = 0;
+	public int level = 1;
 	public int exp = 0;
 	//public Dictionary<string,int> statValues = new Dictionary<string,int>(){{"str",1},{"int",1},{"dex",1}};
 	//public SerializableDictionary<string,int> statValues;
@@ -56,7 +56,7 @@ public class CharacterData:StringfyProperty{
 		ch.chData = this;
 		ch.init(hp,mp,sp,strVal,intVal,dexVal);
 		genAndWearEquip(ch);
-		ch.actionData = currentActionData;
+		ch.actionDataList = currentActionData;
 		return ch;
 	}
 

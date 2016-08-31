@@ -129,8 +129,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 559c081501d564701ad04332e9a8adc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  description: Kill You
+  icon: {fileID: 21300002, guid: fe5260ff6edd74691b2caa79354fee98, type: 3}
+  actionAnimationID: hammerMelee
+  chAnimation: 2
   actionData:
-    name: 
+    id: 
+    requirements: []
+    energyCost: 0
+    cd: 0
+    cd_count: 0
   caster: {fileID: 0}
 --- !u!114 &11486954
 MonoBehaviour:
@@ -146,7 +154,7 @@ MonoBehaviour:
   effectRange: 0
   effectType: 0
   targetCount: 0
-  level: 0
+  level: 1
   mpCost: 0
   spCost: 0
   duration: 1
@@ -168,13 +176,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d915518966a0f4025bc01cbb392699ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  parentAction: {fileID: 0}
+  parentSkill: {fileID: 0}
   followSkill: {fileID: 0}
-  mainEffect: {fileID: 0}
+  mainEffect: {fileID: 11486954}
   accuracy: 1
-  skillEffectAnimationPrefab: {fileID: 0}
-  chAnimation: 0
+  hitAnimationID: strike
   castTiming: 0
   icon: {fileID: 0}
+  skillState: 0
   criticalBonus: 1
 --- !u!1001 &100100000
 Prefab:

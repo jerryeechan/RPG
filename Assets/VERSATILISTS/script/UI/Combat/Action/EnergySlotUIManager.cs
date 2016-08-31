@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-using System.Collections.Generic;
+using System.Collections;
 
 public class EnergySlotUIManager : Singleton<EnergySlotUIManager> {
 
@@ -17,6 +17,13 @@ public class EnergySlotUIManager : Singleton<EnergySlotUIManager> {
 			slot.occupy();
 		}
 	}
+
+	public int energy{
+		get{
+			return energyLeft;
+		}
+	}
+
 	public bool occupyTest(int cost)
 	{
 		if(energyLeft>=cost)
@@ -44,9 +51,15 @@ public class EnergySlotUIManager : Singleton<EnergySlotUIManager> {
 	{
 		Debug.Log("generate energy:"+v);
 		energyLeft = v;
+		StartCoroutine(recover());
+	}
+
+	IEnumerator recover()
+	{
 		for(int i=0;i<energyLeft;i++)
 		{
 			energySlots[i].recover();
+			yield return new WaitForSeconds(0.1f);
 		}
 	}
 }

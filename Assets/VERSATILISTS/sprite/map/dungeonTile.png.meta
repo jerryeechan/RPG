@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: ba201130c8c1c43f681462246df95c4d
-timeCreated: 1471801350
+timeCreated: 1472665851
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -44,6 +44,46 @@ TextureImporter:
     21300074: dungeonTile_21
     21300076: dungeonTile_22
     21300078: dungeonTile_23
+    21300080: dungeonTile_24
+    21300082: dungeonTile_25
+    21300084: dungeonTile_26
+    21300086: dungeonTile_27
+    21300088: dungeonTile_28
+    21300090: dungeonTile_29
+    21300092: dungeonTile_30
+    21300094: dungeonTile_31
+    21300096: dungeonTile_32
+    21300098: dungeonTile_33
+    21300100: dungeonTile_34
+    21300102: dungeonTile_35
+    21300104: dungeonTile_36
+    21300106: dungeonTile_37
+    21300108: dungeonTile_38
+    21300110: dungeonTile_39
+    21300112: dungeonTile_40
+    21300114: dungeonTile_41
+    21300116: dungeonTile_42
+    21300118: dungeonTile_43
+    21300120: dungeonTile_44
+    21300122: dungeonTile_45
+    21300124: dungeonTile_46
+    21300126: dungeonTile_47
+    21300128: dungeonTile_48
+    21300130: dungeonTile_49
+    21300132: dungeonTile_50
+    21300134: dungeonTile_51
+    21300136: dungeonTile_52
+    21300138: dungeonTile_53
+    21300140: dungeonTile_54
+    21300142: dungeonTile_55
+    21300144: dungeonTile_56
+    21300146: dungeonTile_57
+    21300148: dungeonTile_58
+    21300150: dungeonTile_59
+    21300152: dungeonTile_60
+    21300154: dungeonTile_61
+    21300156: dungeonTile_62
+    21300158: dungeonTile_63
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -94,264 +134,936 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 32
-        width: 16
-        height: 16
+        y: 224
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
+      outline:
+      - - {x: -12, y: 13}
+        - {x: -15, y: 12}
+        - {x: -15, y: 1}
+        - {x: -1, y: 1}
+        - {x: -1, y: 12}
+        - {x: -4, y: 13}
     - name: dungeonTile_1
       rect:
         serializedVersion: 2
-        x: 16
-        y: 32
-        width: 16
-        height: 16
+        x: 32
+        y: 224
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
+      outline:
+      - - {x: -16, y: 14}
+        - {x: -16, y: 1}
+        - {x: -1, y: 1}
+        - {x: 0, y: 8}
+        - {x: 0, y: 13}
+        - {x: -1, y: 14}
     - name: dungeonTile_2
       rect:
         serializedVersion: 2
-        x: 32
-        y: 32
-        width: 16
-        height: 16
+        x: 64
+        y: 224
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
+      outline:
+      - - {x: -6, y: 15}
+        - {x: -11, y: 15}
+        - {x: -14, y: 12}
+        - {x: -14, y: 3}
+        - {x: -12, y: 1}
+        - {x: -6, y: 1}
+        - {x: -3, y: 4}
+        - {x: -2, y: 8}
+        - {x: -3, y: 12}
     - name: dungeonTile_3
       rect:
         serializedVersion: 2
-        x: 48
-        y: 32
-        width: 16
-        height: 16
+        x: 96
+        y: 224
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
+      outline:
+      - - {x: -6, y: 2}
+        - {x: -9, y: 2}
+        - {x: -13, y: 0}
+        - {x: -14, y: -4}
+        - {x: -14, y: -14}
+        - {x: -13, y: -16}
+        - {x: -5, y: -16}
+        - {x: -3, y: -15}
+        - {x: -3, y: -9}
+        - {x: -5, y: -1}
+      - - {x: 3, y: 3}
+        - {x: 1, y: 2}
+        - {x: 1, y: -16}
+        - {x: 15, y: -16}
+        - {x: 15, y: -5}
+        - {x: 6, y: 3}
+      - - {x: -4, y: 15}
+        - {x: -10, y: 15}
+        - {x: -14, y: 14}
+        - {x: -14, y: 4}
+        - {x: -13, y: 2}
+        - {x: -5, y: 2}
+        - {x: -2, y: 6}
+        - {x: -2, y: 11}
     - name: dungeonTile_4
       rect:
         serializedVersion: 2
-        x: 64
-        y: 32
-        width: 16
-        height: 16
+        x: 128
+        y: 224
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
     - name: dungeonTile_5
       rect:
         serializedVersion: 2
-        x: 80
-        y: 32
-        width: 16
-        height: 16
+        x: 160
+        y: 224
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
+      outline:
+      - - {x: -1, y: 11}
+        - {x: -5, y: 9}
+        - {x: -5, y: -6}
+        - {x: -3, y: -8}
+        - {x: 2, y: -8}
+        - {x: 5, y: -6}
+        - {x: 5, y: 8}
+        - {x: 3, y: 11}
     - name: dungeonTile_6
       rect:
         serializedVersion: 2
-        x: 96
-        y: 32
-        width: 16
-        height: 16
+        x: 192
+        y: 224
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
+      outline:
+      - - {x: -8, y: -6}
+        - {x: -6, y: -9}
+        - {x: 3, y: -9}
+        - {x: 8, y: -7}
+        - {x: 8, y: 5}
+        - {x: 7, y: 9}
+        - {x: 1, y: 11}
+        - {x: -3, y: 11}
+        - {x: -8, y: 6}
     - name: dungeonTile_7
       rect:
         serializedVersion: 2
-        x: 112
-        y: 32
-        width: 16
-        height: 16
+        x: 224
+        y: 224
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
+      outline:
+      - - {x: -10, y: 14}
+        - {x: -14, y: 10}
+        - {x: -14, y: 5}
+        - {x: -10, y: 1}
+        - {x: -5, y: 1}
+        - {x: -1, y: 5}
+        - {x: -1, y: 10}
+        - {x: -5, y: 14}
     - name: dungeonTile_8
       rect:
         serializedVersion: 2
         x: 0
-        y: 16
-        width: 16
-        height: 16
+        y: 192
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
+      outline:
+      - - {x: -15, y: 14}
+        - {x: -15, y: 2}
+        - {x: -3, y: 2}
+        - {x: -1, y: 4}
+        - {x: -1, y: 12}
+        - {x: -3, y: 14}
     - name: dungeonTile_9
       rect:
         serializedVersion: 2
-        x: 16
-        y: 16
-        width: 16
-        height: 16
+        x: 32
+        y: 192
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
+      outline:
+      - - {x: -10, y: 13}
+        - {x: -13, y: 12}
+        - {x: -13, y: 3}
+        - {x: -2, y: 3}
+        - {x: -2, y: 12}
+        - {x: -3, y: 13}
     - name: dungeonTile_10
       rect:
         serializedVersion: 2
-        x: 32
-        y: 16
-        width: 16
-        height: 16
+        x: 64
+        y: 192
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
+      outline:
+      - - {x: -13, y: 16}
+        - {x: -16, y: 14}
+        - {x: -16, y: 9}
+        - {x: -15, y: 4}
+        - {x: -13, y: 1}
+        - {x: -5, y: 1}
+        - {x: 0, y: 3}
+        - {x: 0, y: 13}
+        - {x: -3, y: 16}
     - name: dungeonTile_11
       rect:
         serializedVersion: 2
-        x: 48
-        y: 16
-        width: 16
-        height: 16
+        x: 96
+        y: 192
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
+      outline:
+      - - {x: -10, y: 9}
+        - {x: -14, y: -4}
+        - {x: -14, y: -6}
+        - {x: -10, y: -10}
+        - {x: -3, y: -14}
+        - {x: 9, y: -14}
+        - {x: 12, y: -13}
+        - {x: 12, y: -4}
+        - {x: 8, y: 8}
+        - {x: 1, y: 14}
+        - {x: -1, y: 14}
+        - {x: -3, y: 13}
     - name: dungeonTile_12
       rect:
         serializedVersion: 2
-        x: 64
-        y: 16
-        width: 16
-        height: 16
+        x: 128
+        y: 192
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
+      outline:
+      - - {x: 1, y: 8}
+        - {x: -3, y: 8}
+        - {x: -7, y: 4}
+        - {x: -7, y: -3}
+        - {x: -6, y: -6}
+        - {x: -2, y: -8}
+        - {x: 2, y: -8}
+        - {x: 8, y: -1}
+        - {x: 8, y: 5}
+        - {x: 7, y: 7}
     - name: dungeonTile_13
       rect:
         serializedVersion: 2
-        x: 80
-        y: 16
-        width: 16
-        height: 16
+        x: 160
+        y: 192
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
+      outline:
+      - - {x: -12, y: 13}
+        - {x: -14, y: 12}
+        - {x: -15, y: 7}
+        - {x: -11, y: 3}
+        - {x: -5, y: 3}
+        - {x: -1, y: 6}
+        - {x: -1, y: 9}
+        - {x: -3, y: 13}
     - name: dungeonTile_14
       rect:
         serializedVersion: 2
-        x: 96
-        y: 16
-        width: 16
-        height: 16
+        x: 192
+        y: 192
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
+      outline:
+      - - {x: -2, y: 6}
+        - {x: -5, y: 4}
+        - {x: -6, y: 1}
+        - {x: -6, y: -4}
+        - {x: -4, y: -6}
+        - {x: 5, y: -6}
+        - {x: 5, y: 3}
+        - {x: 1, y: 6}
     - name: dungeonTile_15
       rect:
         serializedVersion: 2
-        x: 112
-        y: 16
-        width: 16
-        height: 16
+        x: 224
+        y: 192
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
+      outline:
+      - - {x: -4, y: 8}
+        - {x: -5, y: 6}
+        - {x: -5, y: -3}
+        - {x: -4, y: -5}
+        - {x: -2, y: -6}
+        - {x: 4, y: -6}
+        - {x: 4, y: 7}
+        - {x: 1, y: 8}
     - name: dungeonTile_16
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
-        width: 16
-        height: 16
+        y: 160
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
+      outline:
+      - - {x: -5, y: 8}
+        - {x: -7, y: 6}
+        - {x: -7, y: -5}
+        - {x: -5, y: -7}
+        - {x: 5, y: -7}
+        - {x: 7, y: -5}
+        - {x: 7, y: 6}
+        - {x: 5, y: 8}
     - name: dungeonTile_17
       rect:
         serializedVersion: 2
-        x: 16
-        y: 0
+        x: 32
+        y: 176
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -11, y: 14}
+        - {x: -13, y: 10}
+        - {x: -13, y: 5}
+        - {x: -9, y: 3}
+        - {x: -6, y: 3}
+        - {x: -2, y: 5}
+        - {x: -2, y: 11}
+        - {x: -3, y: 14}
+    - name: dungeonTile_18
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 160
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -14, y: 14}
+        - {x: -14, y: 2}
+        - {x: -5, y: 2}
+        - {x: -2, y: 5}
+        - {x: -2, y: 10}
+        - {x: -4, y: 14}
+    - name: dungeonTile_19
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 160
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -10, y: 11}
+        - {x: -10, y: -7}
+        - {x: 6, y: -7}
+        - {x: 7, y: -5}
+        - {x: 7, y: 9}
+        - {x: 6, y: 11}
+    - name: dungeonTile_20
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 160
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -2, y: 6}
+        - {x: -6, y: 0}
+        - {x: -6, y: -6}
+        - {x: -4, y: -7}
+        - {x: 6, y: -7}
+        - {x: 8, y: -6}
+        - {x: 8, y: 0}
+        - {x: 4, y: 6}
+    - name: dungeonTile_21
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 160
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 2, y: 7}
+        - {x: -3, y: 7}
+        - {x: -6, y: 6}
+        - {x: -6, y: -5}
+        - {x: 3, y: -5}
+        - {x: 6, y: -1}
+        - {x: 6, y: 3}
+    - name: dungeonTile_22
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 160
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 3, y: 6}
+        - {x: -2, y: 6}
+        - {x: -5, y: 5}
+        - {x: -5, y: -6}
+        - {x: 4, y: -6}
+        - {x: 7, y: -2}
+        - {x: 7, y: 2}
+    - name: dungeonTile_23
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 160
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -4, y: 16}
+        - {x: -11, y: 16}
+        - {x: -15, y: 15}
+        - {x: -15, y: 5}
+        - {x: -14, y: 0}
+        - {x: -3, y: 0}
+        - {x: 0, y: 4}
+        - {x: 0, y: 12}
+    - name: dungeonTile_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: dungeonTile_18
+    - name: dungeonTile_25
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -9, y: 8}
+        - {x: -9, y: -10}
+        - {x: 7, y: -10}
+        - {x: 8, y: -7}
+        - {x: 8, y: 5}
+        - {x: 6, y: 8}
+    - name: dungeonTile_26
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -11, y: 9}
+        - {x: -13, y: 6}
+        - {x: -13, y: -4}
+        - {x: -7, y: -9}
+        - {x: 10, y: -9}
+        - {x: 12, y: -5}
+        - {x: 12, y: 7}
+        - {x: 8, y: 9}
+    - name: dungeonTile_27
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -7, y: 8}
+        - {x: -7, y: -9}
+        - {x: 5, y: -9}
+        - {x: 7, y: -7}
+        - {x: 7, y: 6}
+        - {x: 5, y: 8}
+    - name: dungeonTile_28
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 12, y: -12}
+        - {x: 14, y: -15}
+        - {x: 16, y: -14}
+        - {x: 16, y: -11}
+        - {x: 14, y: -10}
+      - - {x: -8, y: 9}
+        - {x: -8, y: -9}
+        - {x: 7, y: -9}
+        - {x: 7, y: 9}
+    - name: dungeonTile_29
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 1, y: 10}
+        - {x: -1, y: 10}
+        - {x: -5, y: 7}
+        - {x: -5, y: -3}
+        - {x: -3, y: -7}
+        - {x: 2, y: -7}
+        - {x: 6, y: -3}
+        - {x: 6, y: 6}
+    - name: dungeonTile_30
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: dungeonTile_31
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: dungeonTile_32
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: dungeonTile_33
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: dungeonTile_34
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: dungeonTile_35
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: dungeonTile_36
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: dungeonTile_37
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: dungeonTile_38
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: dungeonTile_39
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: dungeonTile_40
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: dungeonTile_41
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: dungeonTile_42
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: dungeonTile_43
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: dungeonTile_44
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: dungeonTile_45
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: dungeonTile_46
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: dungeonTile_47
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: dungeonTile_48
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: dungeonTile_49
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: dungeonTile_50
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: dungeonTile_51
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: dungeonTile_52
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: dungeonTile_53
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: dungeonTile_54
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: dungeonTile_55
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: dungeonTile_56
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: dungeonTile_57
       rect:
         serializedVersion: 2
         x: 32
         y: 0
-        width: 16
-        height: 16
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: dungeonTile_19
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-    - name: dungeonTile_20
+    - name: dungeonTile_58
       rect:
         serializedVersion: 2
         x: 64
         y: 0
-        width: 16
-        height: 16
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: dungeonTile_21
-      rect:
-        serializedVersion: 2
-        x: 80
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-    - name: dungeonTile_22
+    - name: dungeonTile_59
       rect:
         serializedVersion: 2
         x: 96
         y: 0
-        width: 16
-        height: 16
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: dungeonTile_23
+    - name: dungeonTile_60
       rect:
         serializedVersion: 2
-        x: 112
+        x: 128
         y: 0
-        width: 16
-        height: 16
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: dungeonTile_61
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: dungeonTile_62
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: dungeonTile_63
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
     outline: []

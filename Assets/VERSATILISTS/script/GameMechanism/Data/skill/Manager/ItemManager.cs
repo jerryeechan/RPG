@@ -28,4 +28,12 @@ public class ItemManager : Singleton<ItemManager> {
 		item.asset = itemGraphicDict[data.imageID];
 		return item;
 	} 
+	public void createItemData(Item item)
+	{
+		ItemData data = new ItemData();
+		data.id = item.name;
+		data.imageID = item.asset.name;
+		DataManager.instance.curPlayerData.itemDataList.Add(data);
+		item.bindData = data;
+	}
 }

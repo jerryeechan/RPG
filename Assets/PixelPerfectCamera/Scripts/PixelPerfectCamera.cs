@@ -165,12 +165,21 @@ public class PixelPerfectCamera : MonoBehaviour {
         targetCameraHalfHeight = Math.Max(targetCameraHalfHeight, 0.01f);
         adjustCameraFOV();
     }
-
+    float lastPPU;
+    public Canvas canvas;
 //#if UNITY_EDITOR
     void Update () {
         if (res.width != cam.pixelWidth || res.height != cam.pixelHeight)
         {
             adjustCameraFOV();
+            if(canvas)
+            {
+                if(lastPPU!=cameraPixelsPerUnit)
+                {
+                    canvas.scaleFactor = cameraPixelsPerUnit;
+                    lastPPU = cameraPixelsPerUnit;
+                }
+            }
         }
 	}
  //#endif
@@ -211,6 +220,7 @@ public class PixelPerfectCameraEditor : Editor
     SerializedProperty retroSnap;
     SerializedProperty assetsPixelsPerUnit;
     SerializedProperty showHUD;
+    SerializedProperty canvas;
 
     void OnEnable()
     {
@@ -225,6 +235,7 @@ public class PixelPerfectCameraEditor : Editor
         retroSnap = serializedObject.FindProperty("retroSnap");
         assetsPixelsPerUnit = serializedObject.FindProperty("assetsPixelsPerUnit");
         showHUD = serializedObject.FindProperty("showHUD");
+        canvas = serializedObject.FindProperty("canvas");
     }
 
     public override void OnInspectorGUI()
@@ -268,6 +279,7 @@ public class PixelPerfectCameraEditor : Editor
 
         // Show HUD toggle
         EditorGUILayout.PropertyField(showHUD);
+        EditorGUILayout.PropertyField(canvas);
 
         serializedObject.ApplyModifiedProperties();
 

@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
+using System.Collections;
 using com.jerry.rpg;
 //Skill is the 
 
@@ -7,6 +8,7 @@ public class Skill : MonoBehaviour {
 
 	//the corresponding skill data of player
 	public Action parentAction;
+	public Skill parentSkill;
 	public Skill followSkill;
 	public enum SkillType{Attack,Buff,ETC};
 	public SkillEffect mainEffect;
@@ -30,7 +32,8 @@ public class Skill : MonoBehaviour {
 	public Sprite icon;
 	bool isCasting;
 	List<Character> hitTargets = new List<Character>();
-
+	
+	public SkillState skillState = SkillState.Before;
 	void Awake()
 	{
 		if(mainEffect==null)
@@ -81,13 +84,16 @@ public class Skill : MonoBehaviour {
 		
 		if(hitAnimationID!=null)
 		{
-			GameObject seAnim = SkillHitAnimationManager.instance.genSkillAnimation(hitAnimationID);
+			Animator seAnim = AnimationManager.instance.getSkillHitEffect(hitAnimationID);
+			seAnim.speed = GameManager.playerAnimationSpeed;
 			print(hitAnimationID);
 			if(seAnim)
 			{
-				SkillHitAnimation skillhitAnim = seAnim.GetComponentInChildren<SkillHitAnimation>();
-				skillhitAnim.SetSkill(this,target);
+				//may be useless
+				//SkillHitAnimation skillhitAnim = seAnim.GetComponentInChildren<SkillHitAnimation>();
+				//skillhitAnim.SetSkill(this,target);
 				//TODO characterUI
+				seAnim.gameObject.SetActive(true);
 				seAnim.transform.position = target.chRenderer.transform.position;
 			}
 			else
@@ -110,8 +116,12 @@ public class Skill : MonoBehaviour {
 	{
 		DoEffect();
 	}
+	int doingTargetCnt = 0;
 	public void DoEffect()
 	{
+		
+		skillState = SkillState.Doing;
+		doingTargetCnt = 0;
 		//apply effects on caster
 		
 		//things to calculate first: critical, accuracy, 
@@ -134,61 +144,112 @@ public class Skill : MonoBehaviour {
 		switch (mainEffect.effectRange)
 		{
 			case SkillEffect.EffectRange.Target:
+				doingTargetCnt = 1;
 				Character target = caster.attackTarget();
 				PlayAnimation(target);
 				if(mainEffect.FirstApply(target,acc_final,true))
-					targetHit(target);
+					targetAfterHit(target);
+				else
+					miss(target);
+				
 			break;
 			case SkillEffect.EffectRange.AOE:
+				doingTargetCnt = caster.attackTargets().Count;
 				foreach (Character ch in caster.attackTargets())
 				{
 					PlayAnimation(ch);
 					if(mainEffect.FirstApply(ch,acc_final,true))
-						targetHit(ch);
+						targetAfterHit(ch);
+					else
+						miss(ch);
+					
 				}
 			break;
 			case SkillEffect.EffectRange.Self:
+				doingTargetCnt = 1;
 				PlayAnimation(caster);
 				if(mainEffect.FirstApply(caster,acc_final,false))
-					targetHit(caster);
+					targetAfterHit(caster);
+				else
+					miss(caster);
+				
 			break;
 			case SkillEffect.EffectRange.Allies:
+				doingTargetCnt = caster.allies().Count;
 				foreach(Character ch in caster.allies()){
 					if(mainEffect.FirstApply(ch,acc_final,false))
-						targetHit(ch);
+						targetAfterHit(ch);
+					else
+						miss(ch);
+					//yield return new WaitForSeconds(2);
 				}
 			break;
 			case SkillEffect.EffectRange.Random:
 			break;
 		}
+		//StartCoroutine(this.CheckSkillDone());
+		
 	}
 
-	void targetHit(Character ch)
+	
+
+	bool isSkillDone{
+		get{
+//			print(doingTargetCnt);
+			return doingTargetCnt==0;
+		}
+	}
+
+	void CheckSkillDone()
+	{
+		//yield return new WaitUntil(() => isSkillDone);
+		if(isSkillDone)
+		SkillDone();
+	}
+
+	void SkillDone()
+	{
+		skillState = SkillState.Done;
+		parentAction.checkSkillDone();
+	}
+	
+
+	
+	void targetAfterHit(Character ch)
 	{
 		ch.updateRenderer();
 		if(ch.chRenderer)
 			ch.chRenderer.HitAnimation();
-
 		if(ch.isDead)
 		{
 			print("charater die");
 			ch.die();
-			RandomBattleRound.instance.NextRound();
+			//RandomBattleRound.instance.NextAction();
 		}
-		else
+		
+		hitTargets.Add(ch);
+		//OnTargetHitDone();
+		this.myInvoke(1,OnTargetHitDone);		
+	}
+	void miss(Character ch)
+	{
+		//TODO:
+		//play miss animation
+		//oncomplete set doingTargetCnt--
+		doingTargetCnt--;
+		CheckSkillDone();
+	}
+
+	void OnTargetHitDone()
+	{
+		if(followSkill)
 		{
-			hitTargets.Add(ch);
-			if(followSkill)
-			{
-				followSkill.init(caster);
-				followSkill.DoEffect();
-			}
-			else
-			{
-				
-				RandomBattleRound.instance.NextRound();
-			}
-		}		
+			followSkill.init(caster);
+			followSkill.DoEffect();
+		}
+		//	RandomBattleRound.instance.NextAction();
+		doingTargetCnt--;
+		CheckSkillDone();
 	}
 	//timing of apply effects, possibility of success apply, 
 	
@@ -240,6 +301,13 @@ public class Skill : MonoBehaviour {
 	}
 
 	//is
+	
+	
+	public void effectDone(SkillEffect effect)
+	{
+		effects.Remove(effect);
+		//checkDone();
+	}
 	public void checkDone()  
 	{
 		if(isDone&&!followSkill)
@@ -248,13 +316,9 @@ public class Skill : MonoBehaviour {
 			//Destroy(gameObject);
 		}
 	}
-	
-	public void effectDone(SkillEffect effect)
-	{
-		effects.Remove(effect);
-		checkDone();
-	}
 }
+
+public enum SkillState{Before,Doing,Done}
 
 public class SkillHitStat
 {

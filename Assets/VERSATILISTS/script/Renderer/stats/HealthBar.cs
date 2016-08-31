@@ -17,13 +17,12 @@ public class HealthBar : MonoBehaviour {
 	void Awake () {
 		healthbar = transform.Find("healthbarIn");
 		healthBarSpr = healthbar.GetComponent<SpriteRenderer>();
-		SetFullValue(20);
-		SetNowValue(fullValue);
 		//SelfTest();
 	}
 	public void SetFullValue(float fv)
 	{
 		fullValue = fv;
+		
 		//healthBarSpr.color = new Color32(123,195,113,255);//green
 	}
 	/*void ChangeValue(int d)

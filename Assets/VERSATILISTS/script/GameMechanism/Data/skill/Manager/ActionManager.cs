@@ -29,4 +29,17 @@ public class ActionManager : Singleton<ActionManager> {
 		}
 		
 	}
+	public Action getAction(string name)
+	{
+		if(actionPool[name])
+		{
+			Action action = actionPool[name];
+			return action;
+		}	
+		else
+		{
+			Debug.LogError("No action:"+name);
+			return null;
+		}
+	}
 }

@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 9bed8ebafe30f4572ba8c7f3e19763ef
-timeCreated: 1470230375
+timeCreated: 1472380099
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -100,12 +100,12 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 110
-        y: 112
+        y: 113
         width: 25
-        height: 16
+        height: 15
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 0, y: 1, z: 0, w: 0}
       outline: []
     - name: rpgUI_5
       rect:
@@ -116,7 +116,7 @@ TextureImporter:
         height: 7
       alignment: 1
       pivot: {x: 0, y: 1}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 1, y: 1, z: 1, w: 1}
       outline: []
     - name: rpgUI_6
       rect:
@@ -138,7 +138,7 @@ TextureImporter:
         height: 5
       alignment: 1
       pivot: {x: 0, y: 1}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 0, y: 1, z: 0, w: 1}
       outline: []
     - name: rpgUI_7
       rect:

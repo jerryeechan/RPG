@@ -20,8 +20,12 @@ public class ActionData {
 	ActionState state = ActionState.Locked;
 	int rank;//1~6, can be put on dice
 	//int availableRank = 1;
-	int masterLevel = 0;
+	
 	public int energyCost = 1;
+	public int cd = 0;
+	public int cd_count;
+
+	int masterLevel = 0;
 	static int masterLevelMax = 100;
 
 	
@@ -52,11 +56,16 @@ public class ActionData {
 			masterLevel+=2;
 	}
 
+	public Action getActionRef()
+	{
+		Action action = ActionManager.instance.getAction(id);
+		return action;
+	}
 	public Action genAction(Character ch)
 	{
 		Action action = ActionManager.instance.GenAction(id);
 		action.actionData = this;
 		action.caster = ch;
-		return	action;
+		return action;
 	}
 }

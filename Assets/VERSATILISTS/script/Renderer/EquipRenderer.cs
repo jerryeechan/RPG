@@ -13,6 +13,7 @@ public class EquipRenderer : MonoBehaviour {
 		anim = GetComponent<Animator>();
 		overrideController = new AnimatorOverrideController();
 		overrideController.runtimeAnimatorController = anim.runtimeAnimatorController;
+		
 		//changeEquip(clips);
 	}
 	public void restart()
@@ -29,9 +30,11 @@ public class EquipRenderer : MonoBehaviour {
 	{
 		if(clips==null)
 			return;
+			
 		for(int i=0;i<clips.Length;i++)
 		{
-			overrideController[overrideController.clips[0].originalClip.name] = clips[i];
+			print(clips[i].name);
+			overrideController[overrideController.clips[i].originalClip.name] = clips[i];
 		}
 		anim.runtimeAnimatorController = overrideController;
 		

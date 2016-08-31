@@ -47,4 +47,14 @@ public static class Extensions
 	{
 		anim[anim.clip.name].speed = newSpeed; 
 	}
+
+	public static void myInvoke(this MonoBehaviour mb, float seconds,System.Action completeEvent)
+	{
+		mb.StartCoroutine(waitSeconds(seconds,completeEvent));
+	}
+	public static IEnumerator waitSeconds(float seconds,System.Action completeEvent)
+	{
+		yield return new WaitForSeconds(seconds);
+		completeEvent();
+	}
 }

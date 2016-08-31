@@ -1,12 +1,12 @@
 ﻿using System;
-
+using System.Collections.Generic;
 [Serializable]
 public class PlayerData{
 	public string name;
-	public CharacterData[] chData;
+	public List<CharacterData> chData;
 	
 	public CharacterData curChData;
-	public ItemData[] itemDataList;
+	public List<ItemData> itemDataList;
 	public int gold;
 	
 	void Awake(){

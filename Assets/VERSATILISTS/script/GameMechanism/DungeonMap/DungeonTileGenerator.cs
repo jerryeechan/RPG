@@ -13,6 +13,10 @@ public class DungeonTileGenerator : MonoBehaviour {
 		dungeonEventDict = new Dictionary<DungeonEventType,DungeonEvent>();
 		foreach (var de in events)
 		{
+			if(dungeonEventDict.ContainsKey(de.type))
+			{
+				Debug.Log("Same dungeon event type!");
+			}
 			dungeonEventDict.Add(de.type,de);
 		}
 

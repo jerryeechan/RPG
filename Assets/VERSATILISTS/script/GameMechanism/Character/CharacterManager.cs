@@ -18,7 +18,7 @@ public class CharacterManager :Singleton<CharacterManager> {
 	}
 	public void StartGame()
 	{
-		chDict = new Dictionary<string,Character>();
+		//chDict = new Dictionary<string,Character>();
 	}
 	public Character generateCharacter(string name,string UITemplateID)
 	{
@@ -36,11 +36,11 @@ public class CharacterManager :Singleton<CharacterManager> {
 			chRend = Instantiate(chUITemplatesDict["empty"]);
 		}
 		chRend.transform.SetParent(ch.transform);
-			chRend.bindCh = ch;
-			ch.chRenderer = chRend;
+		chRend.bindCh = ch;
+		ch.chRenderer = chRend;
 		
 		ch.name = name;
-		chDict.Add(name,ch);
+		//chDict.Add(name,ch);
 		return ch;
 	}
 	
