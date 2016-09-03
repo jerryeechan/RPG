@@ -7,6 +7,7 @@ public class RoomTile : MonoBehaviour {
 	public int[] side;
 	public int x;
 	public int y;
+	bool hasReveal = false;
 	public DungeonEvent dungeonEvent;
 	public void setEvent(DungeonEvent de)
 	{
@@ -20,8 +21,15 @@ public class RoomTile : MonoBehaviour {
 	}
 	public void reveal()
 	{
-		//transform.Find("cover").gameObject.SetActive(false);
-		transform.Find("cover").GetComponent<Image>().DOFade(0,0.5f);
+		if(!hasReveal)
+		{
+			transform.Find("cover").GetComponent<Image>().DOFade(0,0.5f);
+			foreach(var chUI in DungeonPlayerStateUI.instance.chUIs)
+				chUI.getExp(1);
+			hasReveal = true;
+		}
+			
+		
 	}
 	public void playEvent()
 	{
@@ -32,7 +40,7 @@ public class RoomTile : MonoBehaviour {
 		if(dungeonEvent&&dungeonEvent.type!= DungeonEventType.None)
 		{
 			dungeonEvent.encounter();
-			DungeonOptionSelector.instance.showPanel(dungeonEvent);
+			
 		}
 		else
 		{

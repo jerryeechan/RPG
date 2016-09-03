@@ -9,6 +9,9 @@ public class PlayerData{
 	public List<ItemData> itemDataList;
 	public int gold;
 	
+	//when reach 100, bad things happens
+	public int doom;
+	
 	void Awake(){
 		chData[0].knowNewActionData("strike");
 		curChData = chData[0];

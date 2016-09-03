@@ -1,0 +1,416 @@
+fileFormatVersion: 2
+guid: 78bba3e2909394b2591cc5c53c8b9feb
+timeCreated: 1472744528
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: monst_0
+    21300002: monst_1
+    21300004: monst_2
+    21300006: monst_3
+    21300008: monst_4
+    21300010: monst_1
+    21300012: monst_2
+    21300014: monst_3
+    21300016: monst_4
+    21300018: monst_5
+    21300020: monst_2
+    21300022: monst_3
+    21300024: monst_4
+    21300026: monst_5
+    21300028: monst_6
+    21300030: monst_3
+    21300032: monst_4
+    21300034: monst_5
+    21300036: monst_6
+    21300038: monst_7
+    21300040: monst_4
+    21300042: monst_5
+    21300044: monst_6
+    21300046: monst_7
+    21300048: monst_8
+    21300050: monst_5
+    21300052: monst_6
+    21300054: monst_7
+    21300056: monst_8
+    21300058: monst_9
+    21300060: monst_6
+    21300062: monst_7
+    21300064: monst_8
+    21300066: monst_9
+    21300068: monst_10
+    21300070: monst_7
+    21300072: monst_8
+    21300074: monst_9
+    21300076: monst_10
+    21300078: monst_11
+    21300080: monst_8
+    21300082: monst_9
+    21300084: monst_10
+    21300086: monst_11
+    21300088: monst_12
+    21300090: monst_9
+    21300092: monst_10
+    21300094: monst_11
+    21300096: monst_12
+    21300098: monst_13
+    21300100: monst_10
+    21300102: monst_11
+    21300104: monst_12
+    21300106: monst_13
+    21300108: monst_14
+    21300110: monst_11
+    21300112: monst_12
+    21300114: monst_13
+    21300116: monst_14
+    21300118: monst_15
+    21300120: monst_12
+    21300122: monst_13
+    21300124: monst_14
+    21300126: monst_15
+    21300128: monst_16
+    21300130: monst_13
+    21300132: monst_14
+    21300134: monst_15
+    21300136: monst_16
+    21300138: monst_17
+    21300140: monst_14
+    21300142: monst_15
+    21300144: monst_16
+    21300146: monst_17
+    21300148: monst_18
+    21300150: monst_15
+    21300152: monst_16
+    21300154: monst_17
+    21300156: monst_18
+    21300158: monst_19
+    21300160: monst_16
+    21300162: monst_17
+    21300164: monst_18
+    21300166: monst_19
+    21300168: monst_20
+    21300170: monst_17
+    21300172: monst_18
+    21300174: monst_19
+    21300176: monst_20
+    21300178: monst_21
+    21300180: monst_18
+    21300182: monst_19
+    21300184: monst_20
+    21300186: monst_21
+    21300188: monst_22
+    21300190: monst_19
+    21300192: monst_20
+    21300194: monst_21
+    21300196: monst_22
+    21300198: monst_23
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -3
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: 0
+    aniso: -1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 7
+  spritePivot: {x: 0.5, y: 0}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 1
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: monst_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 160
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 32, y: 54}
+        - {x: 10, y: 54}
+        - {x: 9, y: 53}
+        - {x: 10, y: 48}
+        - {x: -16, y: 54}
+        - {x: -40, y: 54}
+        - {x: -64, y: 40}
+        - {x: -64, y: -52}
+        - {x: 27, y: -52}
+        - {x: 52, y: -43}
+        - {x: 52, y: 31}
+        - {x: 48, y: 50}
+    - name: monst_1
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 160
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 36, y: 54}
+        - {x: -64, y: 54}
+        - {x: -64, y: -52}
+        - {x: 40, y: -52}
+        - {x: 52, y: -45}
+        - {x: 52, y: 9}
+        - {x: 40, y: 44}
+    - name: monst_2
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 160
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 24, y: 54}
+        - {x: -47, y: 54}
+        - {x: -62, y: 35}
+        - {x: -62, y: -51}
+        - {x: -58, y: -52}
+        - {x: 36, y: -52}
+        - {x: 52, y: -42}
+        - {x: 52, y: 9}
+        - {x: 50, y: 17}
+    - name: monst_3
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 160
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 46, y: 56}
+        - {x: 12, y: 56}
+        - {x: 12, y: 54}
+        - {x: 4, y: 56}
+        - {x: -55, y: 56}
+        - {x: -62, y: 37}
+        - {x: -62, y: -49}
+        - {x: -52, y: -52}
+        - {x: 35, y: -52}
+        - {x: 51, y: -40}
+        - {x: 52, y: -26}
+        - {x: 52, y: -1}
+    - name: monst_4
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 160
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 42, y: 58}
+        - {x: 3, y: 58}
+        - {x: -21, y: 48}
+        - {x: -25, y: 46}
+        - {x: -25, y: 58}
+        - {x: -54, y: 58}
+        - {x: -62, y: 38}
+        - {x: -62, y: -50}
+        - {x: -50, y: -52}
+        - {x: 28, y: -52}
+        - {x: 48, y: -38}
+        - {x: 52, y: -28}
+        - {x: 52, y: 2}
+    - name: monst_5
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 160
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 32, y: 58}
+        - {x: 10, y: 58}
+        - {x: 9, y: 57}
+        - {x: 10, y: 52}
+        - {x: -16, y: 58}
+        - {x: -62, y: 58}
+        - {x: -62, y: -52}
+        - {x: 22, y: -52}
+        - {x: 29, y: -50}
+        - {x: 52, y: -39}
+        - {x: 52, y: 36}
+        - {x: 48, y: 54}
+    - name: monst_6
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 160
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 24, y: 58}
+        - {x: -47, y: 58}
+        - {x: -60, y: 45}
+        - {x: -62, y: 36}
+        - {x: -62, y: 13}
+        - {x: -42, y: 2}
+        - {x: -62, y: -12}
+        - {x: -62, y: -43}
+        - {x: -56, y: -46}
+        - {x: -36, y: -52}
+        - {x: 35, y: -52}
+        - {x: 52, y: -40}
+        - {x: 52, y: 29}
+        - {x: 46, y: 53}
+    - name: monst_7
+      rect:
+        serializedVersion: 2
+        x: 1120
+        y: 160
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -51, y: 56}
+        - {x: -64, y: 30}
+        - {x: -64, y: -50}
+        - {x: -56, y: -52}
+        - {x: 32, y: -52}
+        - {x: 54, y: -34}
+        - {x: 54, y: 15}
+        - {x: 29, y: 56}
+    - name: monst_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -66, y: -33}
+        - {x: -61, y: -52}
+        - {x: 26, y: -52}
+        - {x: 54, y: -43}
+        - {x: 54, y: 38}
+        - {x: 49, y: 54}
+        - {x: -56, y: 54}
+        - {x: -66, y: 33}
+    - name: monst_9
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 0
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 5, y: 52}
+        - {x: 7, y: 45}
+        - {x: -22, y: 52}
+        - {x: -50, y: 52}
+        - {x: -68, y: 19}
+        - {x: -68, y: -29}
+        - {x: -66, y: -52}
+        - {x: 47, y: -52}
+        - {x: 54, y: -38}
+        - {x: 54, y: 21}
+        - {x: 28, y: 52}
+    - name: monst_10
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 0
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 40, y: -8}
+        - {x: 36, y: -8}
+        - {x: 37, y: -7}
+        - {x: 46, y: 9}
+        - {x: 25, y: 50}
+        - {x: -45, y: 50}
+        - {x: -68, y: 29}
+        - {x: -68, y: -41}
+        - {x: -62, y: -52}
+        - {x: 23, y: -52}
+        - {x: 54, y: -24}
+        - {x: 54, y: -12}
+        - {x: 53, y: -10}
+    - name: monst_11
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 0
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 39, y: 52}
+        - {x: -66, y: 52}
+        - {x: -66, y: -48}
+        - {x: -52, y: -52}
+        - {x: 39, y: -52}
+        - {x: 52, y: -43}
+        - {x: 52, y: 7}
+        - {x: 43, y: 43}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

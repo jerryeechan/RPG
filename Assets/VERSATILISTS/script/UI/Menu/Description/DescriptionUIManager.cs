@@ -7,8 +7,12 @@ public class DescriptionUIManager : Singleton<DescriptionUIManager> {
 	public CompositeText descriptionText;
 	public void showItem(Item item)
 	{
-		ItemData itemData = item.bindData;
-		nameText.text = item.itemName;
-		descriptionText.text = item.description;
+		if(item)
+		{
+			ItemData itemData = item.bindData;
+			nameText.text = item.itemName;
+			descriptionText.text = item.description;
+		}
+		
 	}
 }

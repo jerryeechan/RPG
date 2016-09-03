@@ -65,8 +65,10 @@ public class DungeonGenerator : MonoBehaviour {
 		int[] array = new int[4];
 		for(int i=0;i<4;i++)
 		{
-			if(Random.value>0.7f)
+			if(Random.value>0.9f)
 				array[i] = 1;//Mathf.RoundToInt(Random.value);
+			else if(Random.value>0.7f)
+				array[i] = 2;
 			else
 				array[i] = 0;
 		}
@@ -275,4 +277,4 @@ public class DungeonGenerator : MonoBehaviour {
 	}
 	
 }
-public enum DungeonEventType{None,Monster,Boss,Tressure,Trap,Exit,Gold,Exp};
+public enum DungeonEventType{None,Monster,Boss,Tressure,Trap,Exit,Gold,Exp,Doom};

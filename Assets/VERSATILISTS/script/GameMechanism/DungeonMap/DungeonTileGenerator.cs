@@ -42,9 +42,10 @@ public class DungeonTileGenerator : MonoBehaviour {
 		bool someOpen = false;
 		foreach(var side in open)
 		{
-			if(side==1)
+			if(side>0)
 			{
 				someOpen = true;
+				break;
 			}
 		}
 		if(someOpen)
@@ -54,13 +55,19 @@ public class DungeonTileGenerator : MonoBehaviour {
 				Image side;
 				if(open[i]==1)
 				{
-					side = Instantiate(openSidePrefabs[i]);	
+					side = Instantiate(openSidePrefabs[i]);
+					side.transform.SetParent(tile.transform);	
+				}
+				else if(open[i]==0)
+				{
+					side = Instantiate(closeSidePrefabs[i]);
+					side.transform.SetParent(tile.transform);
 				}
 				else
 				{
-					side = Instantiate(closeSidePrefabs[i]);
+					//no wall nor path, connect room
 				}
-				side.transform.SetParent(tile.transform);
+				
 				//side.transform.localScale = new Vector3(1,1,1);
 			}
 			tile.transform.Find("cover").SetAsLastSibling();

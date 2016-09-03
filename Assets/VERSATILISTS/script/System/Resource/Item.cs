@@ -11,8 +11,13 @@ public class Item : MonoBehaviour {
 	public string itemName;
 	public int price;
 	public bool stackable = true;
-	public bool consumable = true;
+	public ItemType type;
 	
+	protected virtual void Reset()
+	{
+		
+	}
+
 	public virtual void use()
 	{
 		
@@ -33,4 +38,27 @@ public class Item : MonoBehaviour {
 			}
 		}
 	}
+
+
+
+	public string getUseText()
+	{
+		switch(type)
+		{
+			case ItemType.Consume:
+				return "Use";
+			case ItemType.Equip:
+				return "Equip";
+			case ItemType.Quest:
+				return "..";
+
+			default:
+				return "NONE";
+		}
+		
+	}
+}
+public enum ItemType
+{
+	Consume,Equip,Quest
 }

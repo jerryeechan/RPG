@@ -6,7 +6,7 @@ public class GameManager : Singleton<GameManager> {
 	public Character currentCh;
 	public List<Character> chs;
 	public List<Character> enemies;
-	public Transform menu;
+	public InfoManager bag;
 	public EnemyWave[] enemyWaves;
 	Transform saveTransform;
 
@@ -25,7 +25,7 @@ public class GameManager : Singleton<GameManager> {
 		{
 			DungeonMode();
 		}
-		
+		Cursor.visible = true;
 	}
 	public void StartGame()
 	{
@@ -35,9 +35,8 @@ public class GameManager : Singleton<GameManager> {
 
 		CharacterManager.instance.StartGame();
 		loadCharacter();
-		
-		//loadItem();
-
+		//
+		DungeonManager.instance.newDungeon();
 		
 		//DungeonMapKeyMode();
 		//DungeonMode();
@@ -64,17 +63,7 @@ public class GameManager : Singleton<GameManager> {
 		
 	}
 	
-	void loadItem()
-	{
-		int i=0;
-		foreach(var itemData in DataManager.instance.curPlayerData.itemDataList)
-		{
-			Item item = ItemManager.instance.getItem(itemData);
-			item.transform.SetParent(saveTransform);
-			ItemUIManager.instance.setItem(item,i);
-			i++;
-		}
-	}
+	
 
 	void selectCh(Character ch)
 	{
@@ -104,15 +93,21 @@ public class GameManager : Singleton<GameManager> {
 	{
 		keymode = KeyMode.Combat;
 	}
-	bool isMenuActive = true;
 	public KeyMode keymode = KeyMode.Dungeon;
 	//KeyCode[] keylist = {KeyCode.A,KeyCode.D,KeyCode.W,KeyCode.S};
 	KeyCode[] keylist = {KeyCode.LeftArrow,KeyCode.RightArrow,KeyCode.UpArrow,KeyCode.DownArrow,KeyCode.Z,KeyCode.X};
 	void Update() {
         if (Input.GetKeyDown(KeyCode.Escape))
 		{
-			isMenuActive = !isMenuActive;
-			menu.gameObject.SetActive(isMenuActive);
+			
+			//bag.gameObject.SetActive(isMenuActive);
+			if(!bag.isOpen)
+			{
+				bag.Show();
+			}
+			else
+				bag.Hide();
+			
 		}
 
 //		Transform chRenTransform = currentCh.chRenderer.transform;

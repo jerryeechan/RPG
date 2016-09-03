@@ -73,7 +73,7 @@ public class Skill : MonoBehaviour {
 	*/
 	
 	//hit animation
-	public void PlayAnimation(Character target)
+	public void PlayAnimation(Character target,bool isHit = true)
 	{
 		isSkillDoneEffect = false;
 		
@@ -84,9 +84,19 @@ public class Skill : MonoBehaviour {
 		
 		if(hitAnimationID!=null)
 		{
-			Animator seAnim = AnimationManager.instance.getSkillHitEffect(hitAnimationID);
+			
+		}
+		if(!isHit)
+		{
+			PlayEffectAnimation(target,"miss");
+		}
+		//else wait signal to call SkillDoEffect
+	}
+	public void PlayEffectAnimation(Character target,string animID)
+	{
+			Animator seAnim = AnimationManager.instance.getSkillHitEffect(animID);
 			seAnim.speed = GameManager.playerAnimationSpeed;
-			print(hitAnimationID);
+			//print(hitAnimationID);
 			if(seAnim)
 			{
 				//may be useless
@@ -100,11 +110,6 @@ public class Skill : MonoBehaviour {
 			{
 				Debug.LogError("null hit animation");
 			}
-			
-			
-		}
-		
-		//else wait signal to call SkillDoEffect
 	}
 	
 	//wait when animation to send Info
@@ -141,28 +146,32 @@ public class Skill : MonoBehaviour {
 		criticalBonus = caster.battleStat.calCriticalBonus();
 		mainEffect.useBy(caster);
 		
+		bool hit;
 		switch (mainEffect.effectRange)
 		{
+			
 			case SkillEffect.EffectRange.Target:
 				doingTargetCnt = 1;
 				Character target = caster.attackTarget();
-				PlayAnimation(target);
-				if(mainEffect.FirstApply(target,acc_final,true))
+				
+				hit = mainEffect.FirstApply(target,acc_final,true);
+				if(hit) 
 					targetAfterHit(target);
 				else
 					miss(target);
+				PlayAnimation(target,hit);
 				
 			break;
 			case SkillEffect.EffectRange.AOE:
 				doingTargetCnt = caster.attackTargets().Count;
 				foreach (Character ch in caster.attackTargets())
 				{
-					PlayAnimation(ch);
-					if(mainEffect.FirstApply(ch,acc_final,true))
+					hit = mainEffect.FirstApply(ch,acc_final,true);
+					if(hit)
 						targetAfterHit(ch);
 					else
 						miss(ch);
-					
+					PlayAnimation(ch,hit);
 				}
 			break;
 			case SkillEffect.EffectRange.Self:
@@ -236,6 +245,7 @@ public class Skill : MonoBehaviour {
 		//TODO:
 		//play miss animation
 		//oncomplete set doingTargetCnt--
+
 		doingTargetCnt--;
 		CheckSkillDone();
 	}

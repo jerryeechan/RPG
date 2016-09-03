@@ -3,6 +3,12 @@ using System.Collections;
 
 public class DungeonExpEvent : DungeonEvent {
 
+	void Awake()
+	{
+		confirmText = "RIP";
+		cancelText = "absorb";
+		descriptionText = "You found a lonely soul..";
+	}
 	override public void confirm(){
 		base.confirm();
 		DiceRoller2D.instance.Roll(gamble);
@@ -12,11 +18,14 @@ public class DungeonExpEvent : DungeonEvent {
 	override public void cancel()
 	{
 		base.cancel();
-		DungeonPlayerStateUI.instance.chUIs[0].getExp(5);
+		foreach(var chUI in DungeonPlayerStateUI.instance.chUIs)
+			chUI.getExp(5);
+		DungeonManager.instance.dungeonEventComplete(true);
+
 	}
 
 	void gamble(int num)
 	{
-		
+
 	}
 }

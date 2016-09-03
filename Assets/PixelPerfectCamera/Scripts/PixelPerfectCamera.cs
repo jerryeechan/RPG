@@ -144,6 +144,7 @@ public class PixelPerfectCamera : MonoBehaviour {
         float cameraSize = calculatePixelPerfectCameraSize(pixelPerfect, res, assetsPixelsPerUnit, maxCameraHalfWidthReq, maxCameraHalfHeightReq, targetCameraHalfWidth, targetCameraHalfHeight, targetDimension);
 
         cam.orthographicSize = cameraSize;
+        canvas.scaleFactor = cameraPixelsPerUnit;
     }
 
  //   // Use this for initialization
@@ -155,6 +156,7 @@ public class PixelPerfectCamera : MonoBehaviour {
     void OnEnable()
     {
         adjustCameraFOV();
+        canvas.scaleFactor = cameraPixelsPerUnit;
     }
 
 
@@ -164,6 +166,8 @@ public class PixelPerfectCamera : MonoBehaviour {
         targetCameraHalfWidth = Math.Max(targetCameraHalfWidth, 0.01f);
         targetCameraHalfHeight = Math.Max(targetCameraHalfHeight, 0.01f);
         adjustCameraFOV();
+        
+        
     }
     float lastPPU;
     public Canvas canvas;

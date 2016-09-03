@@ -64,10 +64,14 @@ public class RandomBattleRound : Singleton<RandomBattleRound> {
 		print("action Done");
 		if(enemyDiedThisTurn.Count>0)
 		{
+			int exp = 0;
 			foreach(var enemy in enemyDiedThisTurn)
 			{
 				//sum exp...
+				exp+=20;
 			}
+			DungeonPlayerStateUI.instance.getExp(exp);
+
 			enemyDiedThisTurn.Clear();
 			//play get exp animation
 			this.myInvoke(1,NextAction);

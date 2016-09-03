@@ -15,10 +15,10 @@ public class DungeonManager : Singleton<DungeonManager> {
 		map = transform.Find("map").GetComponent<RectTransform>();
 	}
 	
-	void Start () {
+	public void newDungeon()
+	{
 		level = 0;
 		genMap();
-		//player.SetParent(dungeonGenerator.transform,false); 
 	}
 	public int genMap()
 	{
@@ -81,8 +81,10 @@ public class DungeonManager : Singleton<DungeonManager> {
 			return false;
 		int isOpen = tileMap[tile.x,tile.y].side[dir];
 		
-		if(isOpen == 1)
+		if(isOpen > 0)
 		{
+			DungeonPlayerStateUI.instance.getDoom(10);
+
 			RectTransform tileTF = tile.GetComponent<RectTransform>();
 			//tileTF.anchoredPosition += dirMapVec[dir]*dis;
 			
@@ -95,10 +97,12 @@ public class DungeonManager : Singleton<DungeonManager> {
 				tileMap[player.x,player.y].encounter();
 			});
 			isplaying = true;
+
+			
 			//transform.DOMove(new Vector3(2,3,4), 1);
 			//LeanTween.move(tileTF,dirMapVec[dir]*dis,0.5f);	
 		}
-		return isOpen==1;
+		return isOpen>0;
 	}
 	
 	public void dungeonEventComplete(bool removeTile = false){

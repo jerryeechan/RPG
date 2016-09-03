@@ -18,7 +18,7 @@ public class CompositeText : MonoBehaviour {
 			{
 				string newString = "";
 				if(prefix!="")
-					newString = prefix+":";
+					newString = prefix;
 				newString+= value+postfix;
 				t.text = newString;
 			}
@@ -55,15 +55,17 @@ public class CompositeText : MonoBehaviour {
 	}
 	public void DOValue(int startValue,int diff)
 	{
-		this.startValue = startValue;
-		this.diff = diff; 
-		StartCoroutine("number");
+		StopCoroutine(number(startValue,diff));
+		StartCoroutine(number(startValue,diff));
 	}
-	int startValue;
-	int diff;
-	IEnumerator number()
+	IEnumerator number(int startValue,int diff)
 	{
-		float inc = (float)diff/10;
+		float inc = 1;
+		if(diff>5)
+		{
+			inc = (float)diff/10;
+		}
+		
 		for(float i=startValue;i<=startValue+diff;i+=inc)
 		{
 			foreach(Text t in texts)

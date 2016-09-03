@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 4527f4f7cb5bd4b5fb1fb69442a043e7
-timeCreated: 1472303213
+timeCreated: 1472845334
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -9,14 +9,14 @@ TextureImporter:
     21300004: dungeon_1
     21300006: dungeon_2
     21300008: dungeon_3
-    21300010: dungeon_4
-    21300012: dungeon_5
-    21300014: dungeon_6
-    21300016: dungeon_7
-    21300018: dungeon_8
-    21300020: dungeon_9
-    21300022: dungeon_10
-    21300024: dungeon_11
+    21300010: open_bottom
+    21300012: close_bottom
+    21300014: close_top
+    21300016: open_top
+    21300018: close_left
+    21300020: open_left
+    21300022: close_right
+    21300024: open_right
     21300026: dungeon_12
     21300028: dungeon_13
     21300030: dungeon_14
@@ -26,6 +26,11 @@ TextureImporter:
     21300038: dungeon_15
     21300040: dungeon_0
     21300042: dungeon_19
+    21300044: dungeon_4
+    21300046: dungeon_5
+    21300048: dungeon_6
+    21300050: dungeon_7
+    21300052: dungeon_8
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -75,8 +80,8 @@ TextureImporter:
     - name: dungeon_1
       rect:
         serializedVersion: 2
-        x: 32
-        y: 222
+        x: 0
+        y: 209
         width: 32
         height: 2
       alignment: 9
@@ -116,36 +121,36 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: -12, y: -4}
-        - {x: -14, y: -6}
-        - {x: -14, y: -12}
-        - {x: -12, y: -14}
-        - {x: -6, y: -14}
-        - {x: -4, y: -12}
-        - {x: -4, y: -10}
-        - {x: -9, y: -5}
-      - - {x: 10, y: -4}
-        - {x: 5, y: -9}
-        - {x: 4, y: -12}
-        - {x: 6, y: -14}
-        - {x: 12, y: -14}
-        - {x: 14, y: -12}
-        - {x: 14, y: -6}
-        - {x: 12, y: -4}
-      - - {x: -14, y: 12}
-        - {x: -14, y: 6}
-        - {x: -12, y: 4}
-        - {x: -9, y: 5}
-        - {x: -4, y: 11}
-        - {x: -5, y: 14}
-        - {x: -12, y: 14}
-      - - {x: 4, y: 12}
-        - {x: 4, y: 10}
-        - {x: 11, y: 4}
-        - {x: 14, y: 5}
-        - {x: 14, y: 12}
-        - {x: 12, y: 14}
-        - {x: 6, y: 14}
+      - - {x: -13, y: -4}
+        - {x: -15, y: -6}
+        - {x: -15, y: -12}
+        - {x: -13, y: -14}
+        - {x: -7, y: -14}
+        - {x: -5, y: -12}
+        - {x: -5, y: -10}
+        - {x: -10, y: -5}
+      - - {x: 11, y: -4}
+        - {x: 6, y: -9}
+        - {x: 5, y: -12}
+        - {x: 7, y: -14}
+        - {x: 13, y: -14}
+        - {x: 15, y: -12}
+        - {x: 15, y: -6}
+        - {x: 13, y: -4}
+      - - {x: -15, y: 9}
+        - {x: -15, y: 3}
+        - {x: -13, y: 1}
+        - {x: -10, y: 2}
+        - {x: -5, y: 8}
+        - {x: -6, y: 11}
+        - {x: -13, y: 11}
+      - - {x: 5, y: 9}
+        - {x: 5, y: 7}
+        - {x: 12, y: 1}
+        - {x: 15, y: 2}
+        - {x: 15, y: 9}
+        - {x: 13, y: 11}
+        - {x: 7, y: 11}
     - name: dungeon_16
       rect:
         serializedVersion: 2
@@ -156,7 +161,21 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
+      outline:
+      - - {x: -20, y: -17}
+        - {x: -20, y: -24}
+        - {x: 0, y: -24}
+        - {x: 0, y: -22}
+        - {x: -8, y: -15}
+        - {x: -18, y: -15}
+      - - {x: -18, y: 17}
+        - {x: -20, y: 15}
+        - {x: -20, y: -1}
+        - {x: -18, y: -3}
+        - {x: -8, y: -3}
+        - {x: -5, y: -1}
+        - {x: -5, y: 15}
+        - {x: -7, y: 17}
     - name: dungeon_17
       rect:
         serializedVersion: 2
@@ -189,7 +208,12 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 3, y: 3, z: 3, w: 3}
-      outline: []
+      outline:
+      - - {x: -24, y: 24}
+        - {x: -24, y: 13}
+        - {x: -18, y: 13}
+        - {x: -16, y: 15}
+        - {x: -16, y: 24}
     - name: dungeon_0
       rect:
         serializedVersion: 2
@@ -200,7 +224,13 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
+      outline:
+      - - {x: -16, y: 9}
+        - {x: -16, y: -11}
+        - {x: -10, y: -11}
+        - {x: -8, y: -9}
+        - {x: -8, y: 7}
+        - {x: -10, y: 9}
     - name: dungeon_19
       rect:
         serializedVersion: 2
@@ -212,6 +242,179 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 4, y: 4, z: 4, w: 4}
       outline: []
+    - name: open_bottom
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 224
+        width: 32
+        height: 3
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: close_bottom
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 224
+        width: 32
+        height: 3
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: close_top
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 218
+        width: 32
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: open_top
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 208
+        width: 32
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: close_left
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 224
+        width: 2
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: open_left
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 224
+        width: 2
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: close_right
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 224
+        width: 2
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: open_right
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 224
+        width: 2
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: dungeon_4
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 250
+        width: 10
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: dungeon_5
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 240
+        width: 2
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: dungeon_6
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 234
+        width: 10
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: dungeon_7
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 240
+        width: 2
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: dungeon_8
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 224
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -10, y: -1}
+        - {x: -15, y: -7}
+        - {x: -15, y: -13}
+        - {x: -13, y: -15}
+        - {x: -8, y: -15}
+        - {x: -5, y: -11}
+        - {x: -5, y: -5}
+        - {x: -7, y: -1}
+      - - {x: 5, y: -11}
+        - {x: 8, y: -15}
+        - {x: 13, y: -15}
+        - {x: 15, y: -14}
+        - {x: 15, y: -4}
+        - {x: 11, y: -2}
+        - {x: 6, y: -2}
+        - {x: 5, y: -5}
+      - - {x: -15, y: 10}
+        - {x: -15, y: 6}
+        - {x: -14, y: 4}
+        - {x: -12, y: 4}
+        - {x: -8, y: 8}
+        - {x: -9, y: 11}
+        - {x: -13, y: 11}
+      - - {x: 8, y: 9}
+        - {x: 8, y: 8}
+        - {x: 12, y: 4}
+        - {x: 15, y: 5}
+        - {x: 15, y: 9}
+        - {x: 13, y: 11}
+        - {x: 10, y: 11}
     outline: []
   spritePackingTag: 
   userData: 

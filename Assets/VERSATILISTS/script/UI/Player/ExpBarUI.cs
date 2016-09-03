@@ -15,6 +15,9 @@ public class ExpBarUI : MonoBehaviour {
 	public int expValue
 	{
 		set{
+			if(bindData==null)
+				return;
+			
 			if(value>=fullValue)
 			{
 				curValue = value%fullValue;
@@ -22,6 +25,8 @@ public class ExpBarUI : MonoBehaviour {
 				bindData.level+=levelIncrease;
 				fillImage.DOFillAmount(1,1).OnComplete(()=>{
 					//level up
+					fillImage.fillAmount = 0;
+					fullValue = getLevelFullExp(bindData.level);
 					fillImage.DOFillAmount((float)curValue/fullValue,1);
 					expText.text = bindData.level.ToString();
 				});
@@ -63,6 +68,6 @@ public class ExpBarUI : MonoBehaviour {
 
 	public int getLevelFullExp(int level)
 	{
-		return level*10;
+		return level*50;
 	}
 }

@@ -21,6 +21,8 @@ public class ItemManager : Singleton<ItemManager> {
 			itemDict.Add(item.name,item);
 		}
 	}
+	
+
 	public Item getItem(ItemData data)
 	{
 		Item item = Instantiate(itemDict[data.id]);
@@ -36,4 +38,6 @@ public class ItemManager : Singleton<ItemManager> {
 		DataManager.instance.curPlayerData.itemDataList.Add(data);
 		item.bindData = data;
 	}
+
+	
 }

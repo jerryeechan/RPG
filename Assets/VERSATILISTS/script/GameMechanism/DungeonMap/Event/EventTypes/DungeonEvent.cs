@@ -10,14 +10,17 @@ public class DungeonEvent : MonoBehaviour {
 	public string descriptionText;
 	public virtual void encounter()
 	{
-		describe(descriptionText);
 		GameManager.instance.keymode = KeyMode.DungeonSelect;
+		DungeonOptionSelector.instance.showPanel(this);
+		describe(descriptionText);
+		
 	}
 	// Use this for initialization
 	public virtual void confirm()
 	{
 		GameManager.instance.LockMode();
 		DungeonOptionSelector.instance.hidePanel();
+		DungeonManager.instance.dungeonEventComplete();
 	}
 	public virtual void cancel()
 	{

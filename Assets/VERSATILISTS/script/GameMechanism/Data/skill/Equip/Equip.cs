@@ -18,7 +18,7 @@ public class Equip:Item {
 	void Reset()
 	{
 		stackable = false;
-		consumable = false;
+		type = ItemType.Equip;
 	}
 	public void setEffect(int[] available)
 	{
