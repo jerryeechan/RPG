@@ -4,28 +4,60 @@ using System.Collections.Generic;
 public class GameManager : Singleton<GameManager> {
 	
 	public Character currentCh;
-	public List<Character> chs;
+	public int chCount;
+	public List<Character> chs;	
 	public List<Character> enemies;
-	public InfoManager bag;
-	public EnemyWave[] enemyWaves;
+	public InfoManager info;
 	Transform saveTransform;
 
-	public bool testMode = true;
+	public TestMode testMode;
 	public static float playerAnimationSpeed = 0.5f;
 	void Start()
 	{
-		//testMode = false;
-		
+		DataManager.instance.newPlayerData();
 		StartGame();
-		if(testMode)
+		switch(testMode)
+		{
+			case TestMode.Release:
+				InfoManager.instance.Hide();
+				UIManager.instance.getPanel("mainmenu").show();
+			break;
+			case TestMode.Battle:
+				BattleMode();
+				InfoManager.instance.Hide();
+				RandomBattleRound.instance.StartBattle(MonsterDataEditor.instance.getMonsterSet());
+				//DungeonManager.instance.
+			break;
+			case TestMode.ActionTree:
+			break;
+			case TestMode.Stat:
+			break;
+		}
+		//testMode = false;
+		/*
+		StartGame();
+		if(startWithBattle)
 		{
 			RandomBattleRound.instance.StartBattle(MonsterDataEditor.instance.getMonsterSet("test"));
 		}
 		else
 		{
 			DungeonMode();
+			DungeonManager.instance.newDungeon();
 		}
 		Cursor.visible = true;
+		*/
+	}
+	public void StartNewDungeon()
+	{
+		DataManager.instance.newPlayerData();
+		StartGame();
+		DungeonMode();
+		DungeonManager.instance.newDungeon();
+		UIManager.instance.ShowCover(()=>{
+			UIManager.instance.getPanel("mainmenu").hide();
+			UIManager.instance.HideCover();
+		});
 	}
 	public void StartGame()
 	{
@@ -35,28 +67,27 @@ public class GameManager : Singleton<GameManager> {
 
 		CharacterManager.instance.StartGame();
 		loadCharacter();
-		//
-		DungeonManager.instance.newDungeon();
-		
 		//DungeonMapKeyMode();
 		//DungeonMode();
 	}
 	void loadCharacter()
 	{
 		//create player characters
-		chs = new List<Character>();
-		List<CharacterData> chDataList = DataManager.instance.playerData[0].chData;
-		for(int i=0;i<chDataList.Count;i++)
+		chs = CharacterManager.instance.loadPlayerCharacter();
+		chCount = chs.Count;
+		foreach(var ch in chs)
 		{
-			CharacterData chData = chDataList[i];
-			Character newPlayer = chData.genCharacter();
-			chs.Add(newPlayer);
-			newPlayer.chUI = DungeonPlayerStateUI.instance.chUIs[i];
-			newPlayer.transform.SetParent(saveTransform); 
-			
-		} 
-		selectCh(chs[0]);
+			ch.transform.SetParent(saveTransform);
+		}
+		currentCh = chs[0];
 		
+		/*
+		if(InfoManager.instance)
+			InfoManager.instance.init();
+		
+		if(ActionTree.instance)
+			ActionTree.instance.setCharacter(currentCh);
+		*/
 
 		//update stat ui
 		//CharacterStatUIManager.instance.viewCharacter(GameManager.instance.currentCh);
@@ -65,19 +96,21 @@ public class GameManager : Singleton<GameManager> {
 	
 	
 
-	void selectCh(Character ch)
-	{
-		currentCh = ch;
-	}
+	
 	public void LockMode()
 	{
-		keymode = KeyMode.Lock;
+		gamemode = GameMode.Lock;
 	}
 	public void DungeonMapKeyMode()
 	{
-		keymode = KeyMode.Dungeon;
+		gamemode = GameMode.Dungeon;
 		
 	}
+	public void BagMode(){
+
+		gamemode = GameMode.Bag;
+	}
+	
 	public void DungeonMode()
 	{
 		UIManager.instance.getPanel("dungeonMap").gameObject.SetActive(true);
@@ -85,28 +118,75 @@ public class GameManager : Singleton<GameManager> {
 		DungeonMapKeyMode();
 		CursorManager.instance.NormalMode();
 	}
+	public void BattleMode()
+	{
+		UIManager.instance.getPanel("dungeonMap").gameObject.SetActive(false);
+		UIManager.instance.getPanel("combat").gameObject.SetActive(true);
+		DungeonPlayerStateUI.instance.CombatMode();
+	}
 	public void DungeonOptionKeyMode()
 	{
-		keymode = KeyMode.DungeonSelect;
+		gamemode = GameMode.DungeonSelect;
 	}
 	public void CombatKeyMode()
 	{
-		keymode = KeyMode.Combat;
+		gamemode = GameMode.Combat;
 	}
-	public KeyMode keymode = KeyMode.Dungeon;
+	GameMode lastMode;
+	GameMode _gameMode;
+	public GameMode gamemode{
+		set{
+			if(lastMode != _gameMode)
+			{lastMode = _gameMode;}
+			_gameMode = value;
+		}
+		get{
+			return _gameMode;
+		}
+	}
+	public void SwitchBackGameMode()
+	{
+		gamemode = lastMode;
+	}
+
+	public void characterDied(Character ch)
+	{
+		chCount --;
+		if(chCount == 0)
+		{
+			GameOver();
+		}
+	}
+	public void GameOver()
+	{
+		
+	}
 	//KeyCode[] keylist = {KeyCode.A,KeyCode.D,KeyCode.W,KeyCode.S};
 	KeyCode[] keylist = {KeyCode.LeftArrow,KeyCode.RightArrow,KeyCode.UpArrow,KeyCode.DownArrow,KeyCode.Z,KeyCode.X};
 	void Update() {
         if (Input.GetKeyDown(KeyCode.Escape))
 		{
-			
-			//bag.gameObject.SetActive(isMenuActive);
-			if(!bag.isOpen)
+			/*
+			if(gamemode == GameMode.Combat)
 			{
-				bag.Show();
+
 			}
-			else
-				bag.Hide();
+			else{
+				*/
+				//bag.gameObject.SetActive(isMenuActive);
+				if(!info.isOpen)
+				{
+					BagMode();
+					info.Show();
+				}
+				else
+				{
+					info.Hide();
+					DungeonMapKeyMode();
+				}
+			//}
+			
+				
 			
 		}
 
@@ -135,21 +215,21 @@ public class GameManager : Singleton<GameManager> {
 		{
 			if(Input.GetKey(key))
 			{
-				switch(keymode)
+				switch(gamemode)
 				{
-					case KeyMode.Dungeon:
+					case GameMode.Dungeon:
 						DungeonManager.instance.keyPress(key);
 					break;
 				}
 			}
 			if(Input.GetKeyDown(key))
 			{
-				switch(keymode)
+				switch(gamemode)
 				{
-					case KeyMode.Dungeon:
+					case GameMode.Dungeon:
 						DungeonManager.instance.keyDown(key);
 					break;
-					case KeyMode.DungeonSelect:
+					case GameMode.DungeonSelect:
 						DungeonOptionSelector.instance.keydown(key);
 					break;
 				}
@@ -158,4 +238,5 @@ public class GameManager : Singleton<GameManager> {
     }
 }
 
-public enum KeyMode{Lock,Combat,Dungeon,DungeonSelect};
+public enum GameMode{Lock,Combat,Dungeon,DungeonSelect,Bag,ActionTree};
+public enum TestMode{Release,Battle,Dungeon,ActionTree,Stat};

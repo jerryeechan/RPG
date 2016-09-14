@@ -15,8 +15,7 @@ public class DungeonMonsterEvent : DungeonEvent {
 	}
 	public void confirmEvent()
 	{
-		UIManager.instance.getPanel("dungeonMap").gameObject.SetActive(false);
-		UIManager.instance.getPanel("combat").gameObject.SetActive(true);
+		GameManager.instance.BattleMode();
 		
 		RandomBattleRound.instance.StartBattle(MonsterDataEditor.instance.getMonsterSet());
 		UIManager.instance.HideCover(); 
@@ -28,7 +27,6 @@ public class DungeonMonsterEvent : DungeonEvent {
 			//succeed
 			Debug.Log("Run away succeed");
 			DungeonManager.instance.dungeonEventComplete();
-			
 		}
 		else
 		{

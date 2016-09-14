@@ -4,12 +4,12 @@ using UnityEngine.UI;
 using DG.Tweening;
 public class ActionUIManager : Singleton<ActionUIManager> {
 
-	public ActionButton[] actionBtns;
+	public ActionCombatButton[] actionBtns;
 	public ActionDetailPanel detailPanel;
 	RectTransform selectMask;
 	void Awake()
 	{
-		actionBtns = GetComponentsInChildren<ActionButton>();
+		actionBtns = GetComponentsInChildren<ActionCombatButton>();
 		selectMask = transform.Find("selectMask").GetComponent<RectTransform>();
 	}
 	void Start()
@@ -56,10 +56,10 @@ public class ActionUIManager : Singleton<ActionUIManager> {
 	{
 		print("set ch");	
 		isReadyToDoAction = true;
-		actionNum = ch.actionDataList.Count;
+		actionNum = ch.actionList.Count;
 		for(int i=0;i<actionNum;i++)
 		{
-			bool btnEnable = actionBtns[i].setAction(i,ch,ch.actionDataList[i]);
+			bool btnEnable = actionBtns[i].setAction(i,ch,ch.actionList[i]);
 			if(selectedActionIndex==i&&btnEnable == false)
 			{
 				selectedActionIndex = -1;
@@ -81,7 +81,7 @@ public class ActionUIManager : Singleton<ActionUIManager> {
 //			print("use action");
 			if(actionBtns[selectedActionIndex].isEnable)
 			{
-				if(EnergySlotUIManager.instance.occupyTest(actionBtns[selectedActionIndex].bindData.energyCost))
+				if(EnergySlotUIManager.instance.occupyTest(actionBtns[selectedActionIndex].bindAction.energyCost))
 				{
 					actionBtns[selectedActionIndex].useAction();
 					

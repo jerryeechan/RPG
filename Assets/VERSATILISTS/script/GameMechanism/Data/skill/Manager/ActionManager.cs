@@ -3,16 +3,41 @@ using System.Collections.Generic;
 using com.jerry.rpg;
 public class ActionManager : Singleton<ActionManager> {
 
-	public List<Action> actionList;
+	
 	Dictionary<string,Action> actionPool;
+	public Action[] actions;
 	//Dictionary<string,SkillData> skillDataPool;
+	
 	void Awake()
 	{
 		actionPool = new Dictionary<string,Action>();
-		foreach(Action action in actionList)
+		actions = GetComponentsInChildren<Action>();		
+		foreach(Action action in actions)
 		{
 			actionPool.Add(action.name,action);
 		}
+	}
+
+	public List<Action> getActions(List<string> ids)
+	{
+		List<Action> actionList = new List<Action>();
+		int i = 0;
+		foreach(var id in ids)
+		{
+			if(actionPool.ContainsKey(id))
+			{
+				actionList.Add(actionPool[id]);
+				i++;
+			}
+			else{
+				Debug.LogError("Character's action does not exist anymore");
+			}
+		}
+		for(;i<4;i++)
+		{
+			actionList.Add(null);
+		}
+		return actionList;
 	}
 
 	public Action GenAction(string name)

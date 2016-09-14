@@ -28,36 +28,22 @@ public class RandomBattleRound : Singleton<RandomBattleRound> {
 			ch.BattleStart();
 		}
 		
-		loadEnemy(monsterSet.getNextWave());
+		enemies = CharacterManager.instance.loadEnemy(monsterSet.getNextWave());
 		foreach(Character enemy in enemies)
 		{
 			print(enemy.name+"參戰");
 			enemy.BattleStart();
 		}
 
-
-		
 		if(enemies.Count>0)
 			selectedEnemy = enemies[0];
 		currentPlayer = players[0];
 
 		//UI
-		DungeonPlayerStateUI.instance.CombatMode();
-
 		Round();	
 	}
 	
-	void loadEnemy(EnemyWave wave)
-	{
-		Transform saveTransform = GameObject.Find("Save").transform;
-		foreach(var preset in wave.enemyPreset)
-		{
-			Character newCh = preset.chData.genCharacter();
-			newCh.transform.SetParent(saveTransform);
-			enemies.Add(newCh);
-			newCh.side = CharacterSide.Enemy;
-		} 
-	}
+	
 	
 	public void ActionDone()
 	{
@@ -70,16 +56,17 @@ public class RandomBattleRound : Singleton<RandomBattleRound> {
 				//sum exp...
 				exp+=20;
 			}
-			DungeonPlayerStateUI.instance.getExp(exp);
+			foreach(var ch in GameManager.instance.chs)
+				ch.getExp(exp);
 
 			enemyDiedThisTurn.Clear();
 			//play get exp animation
 			this.myInvoke(1,NextAction);
 		}
-		checkGameOver();
+		checkBattleOver();
 		
 	}
-	 void checkGameOver()
+	 void checkBattleOver()
 	{
 		foreach(var enemy in enemies)
 		{
@@ -100,6 +87,10 @@ public class RandomBattleRound : Singleton<RandomBattleRound> {
 	}
 	void EndofBattle()
 	{
+		foreach(var ch in players)
+		{
+			ch.BattleEnd();
+		}
 		UIManager.instance.ShowCover(()=>{
 			GameManager.instance.DungeonMode();
 			UIManager.instance.HideCover();
@@ -107,7 +98,7 @@ public class RandomBattleRound : Singleton<RandomBattleRound> {
 	}
 	public void NextAction()
 	{	
-		if(playerTurn)
+		if(isPlayerTurn)
 		{
 			NextPlayerAction();
 		}
@@ -123,18 +114,20 @@ public class RandomBattleRound : Singleton<RandomBattleRound> {
 		ActionUIManager.instance.setCharacter(currentPlayer);
 	}
 	
-	bool playerTurn = true;
+	bool isPlayerTurn = true;
 	public void Round()
 	{
-		if(playerTurn)
+		if(isPlayerTurn)
 		{
 			DungeonPlayerStateUI.instance.popUpText("Your turn");
 			foreach(var ch in players)
 			{
-				foreach(var actionData in ch.actionDataList)
+				foreach(var action in ch.actionList)
 				{
-					if(actionData.cd_count!=0)
-						actionData.cd_count--;
+					if(action==null||action.isPassive)
+						continue;
+					else if(action.cd_count!=0)
+						action.cd_count--;
 				}
 			}
 			DiceRoller2D.instance.Roll(OnDiceRollDone);
@@ -210,11 +203,12 @@ public class RandomBattleRound : Singleton<RandomBattleRound> {
 	
 	public void PlayerRoundDone()
 	{
-		RoundDone();
+		if(isPlayerTurn)
+			RoundDone();
 	}
 	void RoundDone()
 	{
-		playerTurn = !playerTurn;
+		isPlayerTurn = !isPlayerTurn;
 		Round();
 	}
 

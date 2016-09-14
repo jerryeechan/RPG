@@ -24,13 +24,14 @@ public class RoomTile : MonoBehaviour {
 		if(!hasReveal)
 		{
 			transform.Find("cover").GetComponent<Image>().DOFade(0,0.5f);
-			foreach(var chUI in DungeonPlayerStateUI.instance.chUIs)
-				chUI.getExp(1);
+			foreach(var ch in GameManager.instance.chs)
+				ch.getExp(1);
 			hasReveal = true;
 		}
 			
 		
 	}
+	
 	public void playEvent()
 	{
 

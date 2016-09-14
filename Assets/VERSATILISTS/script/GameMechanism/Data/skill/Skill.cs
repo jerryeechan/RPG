@@ -8,7 +8,7 @@ public class Skill : MonoBehaviour {
 
 	//the corresponding skill data of player
 	public Action parentAction;
-	public Skill parentSkill;
+	//public Skill parentSkill;
 	public Skill followSkill;
 	public enum SkillType{Attack,Buff,ETC};
 	public SkillEffect mainEffect;
@@ -45,13 +45,17 @@ public class Skill : MonoBehaviour {
 		this.caster = caster;
 		_effects = new List<SkillEffect>();
 		
-		SkillEffect[] effectArray = transform.Find("bonus").GetComponents<SkillEffect>();
-		int l= effectArray.Length;
-		for(int i=0;i<l;i++)
+		Transform addonTransform = transform.Find("addon");
+		if(addonTransform)
 		{
-			_effects.Add(effectArray[i]);
-			effectArray[i].init();
+			SkillEffect[] effectArray = addonTransform.GetComponents<SkillEffect>();
+			foreach(var effect in effectArray)
+			{
+				_effects.Add(effect);
+				effect.init();
+			}
 		}
+		
 	}
 	public Skill GenCopy(Character caster)
 	{

@@ -6,6 +6,7 @@ public class DungeonPlayerStateUI : Singleton<DungeonPlayerStateUI> {
 	public CompositeText descriptionText;
 	public CompositeText goldText;
 	public CompositeText doomText;
+	AnimatableCanvas doomPanel;
 	AnimatableCanvas goldPanel;
 	public DungeonCharacterUI[] chUIs;
 	
@@ -13,6 +14,8 @@ public class DungeonPlayerStateUI : Singleton<DungeonPlayerStateUI> {
 	void Start () {
 		chUIs = GetComponentsInChildren<DungeonCharacterUI>();
 		goldPanel = goldText.GetComponentInParent<AnimatableCanvas>();
+		doomPanel = doomText.GetComponentInParent<AnimatableCanvas>();
+		lastUI = chUIs[0];
 		//descriptionText.gameObject.SetActive(true);
 	}
 	
@@ -30,13 +33,7 @@ public class DungeonPlayerStateUI : Singleton<DungeonPlayerStateUI> {
 		DataManager.instance.curPlayerData.gold+=g;
 	}
 
-	public void getExp(int exp)
-	{
-		foreach(var ch in chUIs)
-		{
-			ch.getExp(exp);
-		}
-	}
+	
 
 	public DungeonDoomEvent doomEvent;
 	public void getDoom(int doom)
@@ -55,9 +52,14 @@ public class DungeonPlayerStateUI : Singleton<DungeonPlayerStateUI> {
 	public void CombatMode()
 	{
 		goldPanel.hide(0.5f);
+		doomPanel.hide(0.5f);
 	}
 	public void DungeonMode()
 	{
 		goldPanel.show(0.5f);
+		doomPanel.show(0.5f);
 	}
+
+	public DungeonCharacterUI lastUI;
+	
 }

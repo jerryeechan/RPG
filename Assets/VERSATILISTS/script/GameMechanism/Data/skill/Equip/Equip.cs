@@ -4,6 +4,7 @@ using System.Collections.Generic;
 
 //as Equipment template and also the runtime equip to character
 public class Equip:Item {
+	public static EquipType[] AllEquipType ={EquipType.Armor,EquipType.Helmet,EquipType.Weapon,EquipType.Shield}; 
 	EquipState state = EquipState.Template;
 	TemplateEffectSet[] templateEffectSets;
 	[HideInInspector]
@@ -11,14 +12,17 @@ public class Equip:Item {
 	[HideInInspector]
 	public EquipGraphicAsset bindGraphic;
 	public List<SkillEffect> effects;
+	public EquipType equipType;
 	void Awake()
 	{
 		templateEffectSets = GetComponentsInChildren<TemplateEffectSet>();
+		itemType = ItemType.Equip;
+		stackable = false;
 	}
-	void Reset()
+	override protected void Reset()
 	{
 		stackable = false;
-		type = ItemType.Equip;
+		itemType = ItemType.Equip;
 	}
 	public void setEffect(int[] available)
 	{

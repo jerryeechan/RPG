@@ -13,9 +13,9 @@ public class AccuracyBuffEffect : SkillEffect {
 		stat.accuracy += calEffectValue;
 	}
 	
-	public override void RemoveEffect(Character ch)
+	public override void RemoveEffect()
 	{
 		onStat.accuracy -= calEffectValue;
-		base.RemoveEffect(ch);
+		base.RemoveEffect();
 	}
 }

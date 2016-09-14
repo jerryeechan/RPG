@@ -26,7 +26,7 @@ public class MagDamageEffect :SkillEffect{
 	public override void ApplyOn (CharacterStat stat)
 	{
 		base.ApplyOn(stat);
-		float defense = stat.magDefense/5;//defense
+		float defense = stat.magDef/5;//defense
 		defense *= (1-casterStat.ignoreMagDefensePer);//caster's ignore defense
 		
 		applyResult = Mathf.Clamp(calEffectValue-defense,1,10000);

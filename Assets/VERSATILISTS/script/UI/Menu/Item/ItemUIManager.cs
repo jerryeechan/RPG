@@ -4,33 +4,41 @@ using UnityEngine.UI;
 using System.Collections.Generic;
 using UnityEngine.EventSystems;
 using DG.Tweening;
-public class ItemUIManager : Singleton<ItemUIManager> {
+public class ItemUIManager : Singleton<ItemUIManager>,IDisplayable {
 	ItemSlot[] itemSlots;
-	public Image dragItem;
+	public Image dragTempSlot;
 	public RectTransform buttonPanel;
 	void Awake()
 	{
-		itemSlots = GetComponentsInChildren<ItemSlot>();
+		
+		itemSlots = transform.Find("bg").GetComponentsInChildren<ItemSlot>();
 		for(int i=0;i<itemSlots.Length;i++)
 		{
 			itemSlots[i].index = i;
 		}
 
-		dragItem = transform.Find("dragItem").GetComponent<Image>();
+		dragTempSlot = transform.Find("dragTempSlot").GetComponent<Image>();
 	}
-	void Start()
-	{	
+	public void Show()
+	{
 		loadItems(DataManager.instance.curPlayerData.itemDataList);
+	}
+	public void Hide()
+	{
+
 	}
 	public void loadItems(List<ItemData> itemList)
 	{
 		int i=0;
-		foreach(var itemData in itemList)
-		{
-			Item item = ItemManager.instance.getItem(itemData);
-			//item.transform.SetParent(saveTransform);
-			ItemUIManager.instance.setItem(item,i);
-			i++;
+		if(itemList!=null)
+		{	
+			foreach(var itemData in itemList)
+			{
+				Item item = ItemManager.instance.getItem(itemData);
+				//item.transform.SetParent(saveTransform);
+				ItemUIManager.instance.setItem(item,i);
+				i++;
+			}
 		}
 		for(;i<itemSlots.Length;i++)
 		{
@@ -39,7 +47,7 @@ public class ItemUIManager : Singleton<ItemUIManager> {
 	}
 	public void setItem(Item item,int slotIndex)
 	{
-		itemSlots[slotIndex].setItem(item);
+		itemSlots[slotIndex].bindItem = item;
 	}
 	int findNextEmptySlot()
 	{
@@ -53,63 +61,111 @@ public class ItemUIManager : Singleton<ItemUIManager> {
 		}
 		return -1;
 	}
-	ItemSlot selectedItem;
+	public ItemSlot selectedSlot;
 	int nextEmptyIndex = 0;
-	public void itemTouched(int id)
+	public void itemTouched(ItemSlot slot)
 	{
-		selectedItem = itemSlots[id];
-		//select the item
-		selected();
+		selectedSlot =  slot;
 	}
 	ItemSlot draggingSlot;
 	bool dropSuccess;
+	bool startDrag = false;
+
+	Item draggingItem;
 	public void itemBeginDrag(ItemSlot slot)
 	{
+		startDrag = true;
 		dropSuccess = false;
-		dragItem.sprite = slot.bindItem.asset.iconSprite;
-		dragItem.enabled = true;
-		dragItem.transform.position = slot.transform.position;
+		draggingItem = slot.bindItem;
+		dragTempSlot.enabled = true;
+		dragTempSlot.sprite = draggingItem.asset.iconSprite;
+		
+		//dragItem.enabled = true;
+		dragTempSlot.transform.position = slot.transform.position;
 		draggingSlot = slot;
 	}
 	public void itemOnDrag(PointerEventData eventData)
 	{
 		
 		//this is the ui element
-		RectTransform UI_Element = dragItem.GetComponent<RectTransform>();
-		//first you need the RectTransform component of your canvas
-		
+		RectTransform rectT = dragTempSlot.GetComponent<RectTransform>();
 		float scale = UIManager.instance.GetComponent<Canvas>().scaleFactor;
 		Vector2 d = eventData.delta/scale;
-		UI_Element.anchoredPosition+=d;
+		rectT.anchoredPosition+=d;
 	}
 	
-	public void itemOnDrop()
+	public void itemOnDrop(ItemSlot dropSlot)
 	{
-		dropSuccess = true;
-		Item item = draggingSlot.bindItem;
-		print("dragItem"+item);
-		print("dropbSlot"+currentHoverSlot.bindItem);
-		draggingSlot.setItem(currentHoverSlot.bindItem);
-		currentHoverSlot.setItem(item);
+		switch(draggingSlot.slotType)
+		{
+			//in bag
+			case ItemSlotType.Item:
+				
+				if(dropSlot.slotType==ItemSlotType.Item)
+				{	
+					//itemslot to itemslot: switch
+					print("itemslot to itemslot: switch");
+					dropSuccess = true;
+				}
+				else if((draggingItem as Equip)&&dropSlot.slotType == ItemSlotType.Equip)
+				{
+					//equip to equipslot  :wear or switch
+					//is a equipslot, and the equip are same part
+					if((draggingItem as Equip).equipType == (dropSlot as EquipSlot).equipType)
+					{
+						
+						dropSuccess = true;
+					}
+				}
+			break;
+			case ItemSlotType.Equip:
+				//equipslot to empty   : takeoff
+				if(dropSlot.isEmpty&&dropSlot.slotType == ItemSlotType.Item)
+				{
+					
+					dropSuccess = true;
+				}
+			break;
+			
+		}
+		if(dropSuccess == true)
+		{
+			print(draggingItem);
+			print(dropSlot.bindItem);	
+			draggingSlot.bindItem = dropSlot.bindItem;
+			dropSlot.bindItem = draggingItem;
+		}
+		
 	}
 	public bool itemEndDrag()
-	{
-		dragItem.enabled = false;
+	{	
+		startDrag = false;
+		draggingItem = null;
+		dragTempSlot.enabled = false;
 		return dropSuccess;
 	}
-	ItemSlot currentHoverSlot;
-	public void OnPointerEnter(ItemSlot item)
+
+	
+	
+	//equip to equipslot  :wear or switch
+	
+	public void OnPointerEnter(ItemSlot hoverSlot)
 	{
-		currentHoverSlot = item;
-	}
-	public void selected()
-	{
-		//show description
-		DescriptionUIManager.instance.showItem(selectedItem.bindItem);
 		
-		showButton();
+			
 		
 	}
+	public void showItem(bool doshowButton)
+	{
+		DescriptionUIManager.instance.showItem(selectedSlot.bindItem);
+		if(doshowButton)
+		{
+			if(selectedSlot.bindItem!=null)
+				showButton();
+		
+		}
+	}
+	
 
 	void useBtnTouched()
 	{
@@ -126,7 +182,7 @@ public class ItemUIManager : Singleton<ItemUIManager> {
 		
 		buttonPanel.DOAnchorPosY(0,0.5f,true);
 		
-		buttonPanel.Find("Use button").GetComponentInChildren<CompositeText>().text = selectedItem.bindItem.getUseText();
+		buttonPanel.Find("Use button").GetComponentInChildren<CompositeText>().text = selectedSlot.bindItem.getUseText();
 		buttonPanel.Find("Drop button").GetComponentInChildren<CompositeText>().text = "Drop";
 	}
 	void hideButton()
@@ -140,16 +196,19 @@ public class ItemUIManager : Singleton<ItemUIManager> {
 		
 		remove();
 	}
+	public void takeOff(EquipSlot eqSlot)
+	{
+
+	}
 
 	public void useItem()
 	{
 		//use 
-
-		remove();
+		selectedSlot.remove();
 	}
 	public void dropItem()
 	{
-		
+		selectedSlot.remove();
 	}
 	public ItemSlot findItem(Item item)
 	{

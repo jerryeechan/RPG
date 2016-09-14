@@ -12,16 +12,17 @@ public class CharacterData:StringfyProperty{
 	//public SerializableDictionary<string,int> statValues;
 	
 	public int statPoints;
-	public int strVal;
-	public int intVal;
-	public int dexVal;
-	public int hp = 50;
-	public int mp = 10;
-	public int sp = 10;
+	public int strVal = 5;
+	public int conVal = 5;
+	public int intVal = 5;
+	public int dexVal = 5;
 	
 	public string UITemplateID="";
-	public List<ActionData> currentActionData = new List<ActionData>();
-	public List<ActionData> availableActionData = new List<ActionData>();
+	//public List<ActionData> currentActionData = new List<ActionData>();
+	public List<string> actionIDs = new List<string>();
+	//TODO: complex with actionBundle, add feature to action of each ch.
+
+	//public List<ActionData> availableActionData = new List<ActionData>();
 
 	public EquipData weapon; 
 	public EquipData helmet; 
@@ -31,6 +32,8 @@ public class CharacterData:StringfyProperty{
 	
 	//public List<Equip> currentEquips;
 	// public List<Equip> availableEquips;
+
+	/*
 	public void knowNewActionData(string name)
 	{
 		ActionData skilldata = new ActionData(name);
@@ -42,7 +45,7 @@ public class CharacterData:StringfyProperty{
 		currentActionData.Remove(target);
 		currentActionData.Add(replaceWith);
 	}
-	
+	*/
 	public Character genCharacter()
 	{
 		equipDatas = new EquipData[4];
@@ -53,13 +56,34 @@ public class CharacterData:StringfyProperty{
 		//return Character;
 		Character ch = CharacterManager.instance.generateCharacter(name,UITemplateID);
 		//statValues["str"] = 1;
-		ch.chData = this;
-		ch.init(hp,mp,sp,strVal,intVal,dexVal);
-		genAndWearEquip(ch);
-		ch.actionDataList = currentActionData;
+		ch.chData = this;		
+		ch.init(genStat(),genEquips(),ActionManager.instance.getActions(actionIDs));
+		
 		return ch;
 	}
+	public CharacterStat genStat()
+	{
+		CharacterStat stat = new CharacterStat(name);
+		stat.statname = "initstat";
+		stat.strValue = strVal;
+		stat.dexValue = dexVal;
+		stat.intValue = intVal;
+		stat.conValue = conVal;
+		return stat;
+	}
+	public List<Equip> genEquips()
+	{
+		List<Equip> equips = new List<Equip>();
 
+		foreach(EquipData eqData in equipDatas)
+		{
+		   	Equip eq = eqData.genEquip();
+			if(eq)
+				equips.Add(eq);
+		}
+		return equips;
+	}
+	/*
 	public void genAndWearEquip(Character ch)
 	{
 		foreach(EquipData eqData in equipDatas)
@@ -69,5 +93,6 @@ public class CharacterData:StringfyProperty{
 				ch.wear(eq);
 		}
 	}
+	*/
 
 }

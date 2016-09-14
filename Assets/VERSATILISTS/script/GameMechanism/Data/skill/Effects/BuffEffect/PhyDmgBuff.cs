@@ -34,9 +34,9 @@ public class PhyDmgBuff : SkillEffect {
 		Debug.Log("phydamageBuff");
 		
 	}
-	public override void RemoveEffect(Character ch)
+	public override void RemoveEffect()
 	{
-		base.RemoveEffect(ch);
+		base.RemoveEffect();
 		//base.RemoveFrom (stat);
 		onStat.phyDmgBuff-=calEffectValue;
 	}

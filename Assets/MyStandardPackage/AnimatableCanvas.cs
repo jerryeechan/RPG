@@ -7,7 +7,8 @@ public class AnimatableCanvas : MonoBehaviour {
     public AnimatableGraphic[] graphics;
     public bool includeInChildren = true;
     public bool isAnimating = false;
-	public virtual void Awake()
+    public float duration;
+	protected virtual void Awake()
 	{
         if(includeInChildren)
 		graphics = GetComponentsInChildren<AnimatableGraphic>(true);
@@ -23,6 +24,10 @@ public class AnimatableCanvas : MonoBehaviour {
           graphics = GetComponents<AnimatableGraphic>();
     }
 	
+    public virtual void hide()
+    {
+        hide(duration);
+    }
 	public void hide(float duration,OnCompleteDelegate completeEvent=null)
 	{
         if(!isAnimating)
@@ -44,7 +49,7 @@ public class AnimatableCanvas : MonoBehaviour {
             }
         }
         else{
-            Debug.LogError("Fuck animating");
+            Debug.LogError(name+" animating");
         }
 	}
 	protected virtual void hideDone()
@@ -52,6 +57,10 @@ public class AnimatableCanvas : MonoBehaviour {
         isAnimating = false;
 		gameObject.SetActive(false);
 	}
+    public virtual void show()
+    {
+        show(duration);
+    }
 	public void show(float duration,OnCompleteDelegate completeEvent=null)
 	{
         if(!isAnimating)

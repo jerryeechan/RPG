@@ -18,8 +18,8 @@ public class DungeonExpEvent : DungeonEvent {
 	override public void cancel()
 	{
 		base.cancel();
-		foreach(var chUI in DungeonPlayerStateUI.instance.chUIs)
-			chUI.getExp(5);
+		foreach(var ch in GameManager.instance.chs)
+			ch.getExp(5);
 		DungeonManager.instance.dungeonEventComplete(true);
 
 	}

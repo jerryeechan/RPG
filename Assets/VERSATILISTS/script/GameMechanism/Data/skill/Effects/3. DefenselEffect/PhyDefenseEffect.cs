@@ -7,13 +7,13 @@ public class PhyDefenseEffect : SkillEffect {
 	public override void ApplyOn (CharacterStat stat)
 	{
 		base.ApplyOn (stat);
-		stat.phyDefense+=calEffectValue;
+		stat.phyDef+=calEffectValue;
 		duration = 1;
 	}
-	public override void RemoveEffect (Character ch)
+	public override void RemoveEffect ()
 	{
-		base.RemoveEffect(ch);
-		onStat.phyDefense-=calEffectValue;
+		base.RemoveEffect();
+		onStat.phyDef-=calEffectValue;
 		//Debug.Log("Defense over");
 	}
 }

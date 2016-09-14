@@ -68,19 +68,21 @@ internal sealed class PixelAssetImporter : AssetPostprocessor {
             SliceHeight = 64;
         } 
         
-        for (int i = 0; i < texture.width; i += SliceWidth)
-         {
+        int cnt = 0;
+        
              for(int j = texture.height; j > 0;  j -= SliceHeight)
              {
+                 for (int i = 0; i < texture.width; i += SliceWidth)
+                {
                  SpriteMetaData smd = new SpriteMetaData();
                  smd.pivot = new Vector2(0f, 0f);
                  smd.alignment = 9;
-                 smd.name = Path.GetFileNameWithoutExtension(importer.assetPath)+"_"+((texture.height - j)/SliceHeight + i/SliceWidth);
+                 smd.name = Path.GetFileNameWithoutExtension(importer.assetPath)+"_"+cnt++;
                  smd.rect = new Rect(i, j-SliceHeight, SliceWidth, SliceHeight);
  
                  newData.Add(smd);
-             }
-         }
+                }
+            }
  
          importer.spritesheet = newData.ToArray();
 

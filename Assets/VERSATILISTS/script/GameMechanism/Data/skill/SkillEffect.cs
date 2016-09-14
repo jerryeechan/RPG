@@ -8,7 +8,6 @@ public class SkillEffect : MonoBehaviour {
 	public enum EffectType{Value,PositiveBuff,NegativeBuff};//Value can't be removed, only with hp, mp, sp
 	public EffectRange effectRange;
 	public EffectType effectType;
-	public int targetCount = 0;//0 is all
 	
 	// Use this for initialization
 	public int level = 0;
@@ -23,6 +22,7 @@ public class SkillEffect : MonoBehaviour {
 	public WithDependency dependency;
 	
 	public float baseValue;
+	public float initValue;
 	[HideInInspector]
 	public float calEffectValue;
 
@@ -38,14 +38,16 @@ public class SkillEffect : MonoBehaviour {
 	//--------------------------------------------------
 	public Skill parentSkill;
 	//--------------------------------------------------
-	protected virtual void Reset()
+	protected virtual void OnValidate()
 	{
 		parentSkill = transform.parent.GetComponent<Skill>();
-		print("Reset");
+		initValue = baseValue * (1+level*0.1f);
 	}
-	void Awake()
+	protected virtual void Awake()
 	{
-		setLevel(level);
+		//setLevel(level);
+		parentSkill = transform.parent.GetComponent<Skill>();
+		initValue = baseValue * (1+level*0.1f);
 		//print(GetType().ToString());
 	}
 	public virtual void setLevel(int level)
@@ -56,8 +58,10 @@ public class SkillEffect : MonoBehaviour {
 	
 	//public int roundLeft = 0;
 	
+	protected Character onCh;
 	public bool FirstApply(Character ch,float acc = 100,bool avoidable = false)
 	{
+		
 		bool hit;
 		if(avoidable)
 		{
@@ -71,6 +75,7 @@ public class SkillEffect : MonoBehaviour {
 		if(hit)
 		{
 			ch.HitByEffect(this);
+			onCh = ch;
 			OneTurn(ch);
 			return true;
 		}
@@ -120,7 +125,8 @@ public class SkillEffect : MonoBehaviour {
 
 		if(isEffectOver)
 		{
-			RemoveEffect(ch);
+			RemoveEffect();
+			ch.RemoveEffect(this);
 		}
 		
 	}
@@ -137,11 +143,12 @@ public class SkillEffect : MonoBehaviour {
 	}
 	//true as over, remove from stat
 
-	public virtual void RemoveEffect(Character ch)
+	
+	public virtual void RemoveEffect()
 	{
 		//virtual method, for remove debuff or buff
 		parentSkill.effectDone(this);
-		ch.RemoveEffect(this);
+		//ch.RemoveEffect(this);
 	}
 	// is there OnDestroy??
 	

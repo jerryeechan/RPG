@@ -57,6 +57,18 @@ public class DungeonManager : Singleton<DungeonManager> {
 			break;
 		}
 		tileMap[player.x,player.y].reveal();
+		showTile(player.x,player.y);
+	}
+	void showTile(int x,int y)
+	{
+		for(int i=0;i<4;i++)
+		{
+			int open = tileMap[x,y].side[i];
+			if(open!=0)
+			{
+				tileMap[x+xMoveMap[i],y+yMoveMap[i]].reveal();
+			}
+		}
 	}
 	public void keyDown(KeyCode key)
 	{
@@ -71,8 +83,8 @@ public class DungeonManager : Singleton<DungeonManager> {
 		}
 	}
 	Vector2[] dirMapVec={Vector3.up,Vector3.left,Vector3.down,Vector3.right};
-//	int[] xMoveMap={0,-1,0,1};
-//	int[] yMoveMap={1,0,-1,0};
+	int[] xMoveMap={0,-1,0,1};
+	int[] yMoveMap={1,0,-1,0};
 	bool isplaying = false;
 	public RectTransform darkness;
 	public bool testMove(CharacterTile tile,int dir)

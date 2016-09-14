@@ -3,8 +3,8 @@ using System.Collections;
 using UnityEngine.UI;
 public class HealthBarUI : MonoBehaviour {
 	Image fillImage;
-	int fullValue;
-	int curValue;
+	int fullValue = 0;
+	int curValue = 0;
 	CompositeText text;
 
 	public int healthValue
@@ -29,7 +29,16 @@ public class HealthBarUI : MonoBehaviour {
 	void Awake()
 	{
 		text = GetComponentInChildren<CompositeText>();
+		if(text==null)
+		{
+			Debug.LogError("HealthbarUI no text");
+		}
 		fillImage = transform.Find("fill").GetComponent<Image>();
+
+		if(fillImage==null)
+		{
+			Debug.LogError("HealthbarUI no fillImage");
+		}
 	}
 
 	public void init(int fullValue)

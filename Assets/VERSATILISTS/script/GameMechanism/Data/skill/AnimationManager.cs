@@ -12,16 +12,14 @@ public class AnimationManager : Singleton<AnimationManager> {
 		skillAnimationDict = new Dictionary<string,Animator>();
 		actionAnimationDict = new Dictionary<string,Animator>();
 		foreach(var anim in actionAnims)
-		{
-			print(anim.name);
-			
+		{	
 			actionAnimationDict.Add(anim.name,anim);
 			
 		}
 
 		foreach(var anim in skillAnims)
 		{
-			print(anim.name);
+//acti			print(anim.name);
 			skillAnimationDict.Add(anim.name,anim);
 		}
 

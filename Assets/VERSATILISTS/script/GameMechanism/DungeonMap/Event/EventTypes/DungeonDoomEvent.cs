@@ -5,7 +5,7 @@ public class DungeonDoomEvent : DungeonEvent {
 	override public void encounter()
 	{
 		describe(descriptionText);
-		GameManager.instance.keymode = KeyMode.DungeonSelect;
+		GameManager.instance.gamemode = GameMode.DungeonSelect;
 
 		DiceRoller2D.instance.Roll(diceResult);
 

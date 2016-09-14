@@ -13,6 +13,13 @@ public class Character : MonoBehaviour{
 	public CharacterStat initStat;
 	public CharacterStat equipStat;
 	public CharacterStat battleStat;
+	
+	Dictionary<EquipType,Equip> equipsDict; 
+
+	public Equip getEquip(EquipType type)
+	{
+		return equipsDict[type];
+	}
 
 	DungeonCharacterUI ui;
 	public DungeonCharacterUI chUI{
@@ -24,23 +31,61 @@ public class Character : MonoBehaviour{
 			ui.bindCh = this;
 		}
 	}
-	List<Action> actionUsed;
+	
 	public List<SkillEffect> effectsOnMe;
-	//the skill this character can use, total 6
-	public List<ActionData> actionDataList;
-	 /*
-	public List<ActionData> actionData{
-		get{return _actionData;} 
+	
+	//the skill this character can use, total 4
+	List<Action> _actions;
+	public List<Action> actionList{
+		get{return _actions;}
 		set{
-			actionDict = new Dictionary<string,ActionData>();
-			foreach (var item in value)
+			print("ActionList modified");
+			_actions = value;
+			foreach(var action in _actions)
 			{
-				actionDict.Add(item.id,item);
+				if(action)
+				{
+					action.caster = this;
+					if(action.isPassive)
+					{
+						action.PassiveApply();
+					}
+				}
 			}
-			_actionData = value;
 		}
-	}*/
-	//public Dictionary<string,ActionData> actionDict = new Dictionary<string,ActionData>();
+	}
+	public void changeAction(int index, Action action)
+	{
+		print("change action");
+		Action replaceAction = actionList[index];
+		if(replaceAction)
+		{
+			if(replaceAction.isPassive)
+			replaceAction.PassiveRemove();
+		}
+
+		//replace with new one
+		actionList[index] = action;
+		if(action.isPassive)
+		{
+			action.PassiveApply();
+		}
+	}
+	public void removeAction(int index)
+	{
+		Action action = actionList[index];
+		if(action)
+		{
+			if(action.isPassive)
+			{
+				action.PassiveApply();
+			}
+		}
+		actionList[index].PassiveRemove();
+		actionList[index] = null;
+	}
+	public List<Action> actionUsed;
+	//public List<ActionData> actionDataList;
 	
 	
 	public CharacterSide side;
@@ -48,64 +93,69 @@ public class Character : MonoBehaviour{
 
 	#endregion
 	
-	
 	//permanent property
-	void Reset()
-	{
-
-	}
 	Transform equipTransform;
 	void Awake () {
 		
 		//initCharacter();
 		equipTransform = transform.Find("Equips");
+		equipsDict = new Dictionary<EquipType,Equip>();
 	}
-	public void init(int hp, int mp,int sp,int strValue,int intValue,int dexValue)
+	public List<Equip> equipList;
+	public void init(CharacterStat stat,List<Equip> equips,List<Action> actions)
 	{
-		initStat = new CharacterStat(name);
-		initStat.statname = "initstat";
-		initStat.maxHP = hp;
-		initStat.maxMP = mp;
-		initStat.maxSP = sp;
-		initStat.hp = hp;
-		initStat.mp = mp;
-		initStat.sp = sp;
-		
-		initStat.strValue = strValue;
-		initStat.intValue = intValue;
-		initStat.dexValue = dexValue;
-
-		actionUsed = new List<Action>();
-		actionDataList = new List<ActionData>();
-		actionDataList.Capacity = 4;
-
-		//ApplyEquipEffects();
+		stat.hp = stat.maxHP;
+		initStat = stat;
+		equipList = equips;
 		EquipStart();
+		actionList = actions;
+		actionUsed = new List<Action>();
 	}
 	
+	public void updateValues()
+	{
+		int hp = equipStat.hp;
+		initStat = chData.genStat();
+		initStat.hp = hp;
+		EquipStart();
+	}
 	public void EquipStart()
 	{
+		print("equip start");
 		equipStat = initStat.Clone();
 		equipStat.statname = "equipstat";
-		
+		equipsDict = new Dictionary<EquipType,Equip>();
+		wearEquips(equipList);
 	}
+
 	public void BattleStart()
 	{
 		battleStat = equipStat.Clone(); 
 		battleStat.statname = name+"_battlestat";
 		chRenderer.init(battleStat);
 	}
-	
+
+	public void BattleEnd()
+	{
+		equipStat.hp = battleStat.hp;
+	}
+	public void wearEquips(List<Equip> equips)
+	{
+		foreach(Equip eq in equips)
+			wear(eq);
+		
+		chRenderer.syncAnimation();
+	}
 	public void wear(Equip equip)
 	{
 		print("wear:"+equip.name);
 		equip.transform.SetParent(transform.Find("Equips"));
-		
+		equipsDict.Add(equip.equipType,equip);
 		foreach(SkillEffect effect in equip.effects)
 		{
 			effect.ApplyOn(equipStat);
 		}
-		chRenderer.wearEquip(equip.bindGraphic);
+		chRenderer.wearEquip(equip);
 	}
 	public void updateRenderer()
 	{
@@ -131,6 +181,10 @@ public class Character : MonoBehaviour{
 			chUI.updateUI(battleStat);
 		}
 	}
+	public void getExp(int exp)
+	{
+		chUI.getExp(exp);
+	}
 	public bool isDead
 	{
 		get{ return battleStat.hp==0?true:false;}
@@ -141,12 +195,19 @@ public class Character : MonoBehaviour{
 	static float chmove_to_action_delay = 0.2f;
 	public Action useAction(int index)
 	{
-		if(actionDataList.Count<=index)
+		/*
+		if(actionList.Count<=index)
 		{
 			Debug.LogError("no action");
 			return null;
+		}*/
+		if(actionList[index]==null)
+		{
+			Debug.LogError("action null");
+			return null;
 		}
-		usingAction = actionDataList[index].genAction(this);
+		usingAction = actionList[index].genAction();
+		
 		//ActionLogger.Log(usingAction.name);
 		actionUsed.Add(usingAction);
 		/*
@@ -207,6 +268,12 @@ public class Character : MonoBehaviour{
 		chRenderer.PlayCharacterAnimation(CharacterAnimation.die);
 		if(side == CharacterSide.Enemy)
 			RandomBattleRound.instance.EnemyDie(this);
+		else
+		{
+
+			GameManager.instance.characterDied(this);
+		}
+			
 	}
 
 	public List<Character> allies()

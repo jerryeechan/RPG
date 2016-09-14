@@ -7,13 +7,13 @@ public class MagDefenseEffect : SkillEffect {
 	public override void ApplyOn (CharacterStat stat)
 	{
 		base.ApplyOn (stat);
-		stat.magDefense+=calEffectValue;
+		stat.magDef+=calEffectValue;
 		duration = 1;
 	}
-	public override void RemoveEffect (Character ch)
+	public override void RemoveEffect ()
 	{
-		base.RemoveEffect(ch);
-		onStat.magDefense-=calEffectValue;
+		base.RemoveEffect();
+		onStat.magDef-=calEffectValue;
 		//Debug.Log("Defense over");
 	}
 }

@@ -9,11 +9,8 @@ public class CharacterRenderer : MonoBehaviour {
 	
 	public Animator[] equipAnims;
 	public Animator anim;
-
-	public EquipRenderer helmetRenderer;
-	public EquipRenderer armorRenderer;
-	public EquipRenderer weaponRenderer;
-	public EquipRenderer shieldRenderer;
+	public EquipRenderer[] equipRs;
+	public SpriteRenderer indicater;
 	public Dictionary<EquipType,EquipRenderer> equipUIDicts;
 	void Awake()
 	{
@@ -25,21 +22,30 @@ public class CharacterRenderer : MonoBehaviour {
 			equipAnims = equipTransform.GetComponentsInChildren<Animator>();
 			foreach (var eqanim in equipAnims)
 			{
+
 				eqanim.speed = GameManager.playerAnimationSpeed;
 			}
 			equipUIDicts = new Dictionary<EquipType,EquipRenderer>();
+			equipRs = equipTransform.GetComponentsInChildren<EquipRenderer>();
+			foreach(var eqR in equipRs)
+			{
+				print(eqR);
+				equipUIDicts.Add(eqR.type,eqR);	
+			}
+/*
 			equipUIDicts.Add(EquipType.Armor,armorRenderer);
 			equipUIDicts.Add(EquipType.Helmet,helmetRenderer);
 			equipUIDicts.Add(EquipType.Weapon,weaponRenderer);
 			equipUIDicts.Add(EquipType.Shield,shieldRenderer);
-			
+			*/
 		}
 	}
-	public void wearEquip(EquipGraphicAsset equipGraphic)
+	public void wearEquip(Equip equip)
 	{
+		EquipGraphicAsset equipGraphic = equip.bindGraphic;
 		if(equipGraphic)
 		{
-			EquipType type = equipGraphic.type;
+			EquipType type = equip.equipType;
 			EquipRenderer eqr = equipUIDicts[type]; 
 			if(!eqr)
 			{
@@ -56,15 +62,23 @@ public class CharacterRenderer : MonoBehaviour {
 		{
 			Debug.LogError("no equip render graphic");
 		}
-		syncAnimation();
+		
 		
 	}
 	public void syncAnimation()
 	{
-		foreach(var eqRenderer in equipUIDicts.Values)
+		print("sync");
+		
+		if(equipUIDicts==null)
+			return;
+
+		/*
+		foreach(var eqRenderer in equipUIDicts)
 		{
-			eqRenderer.restart();
+			print(eqRenderer);
+			eqRenderer.Value.restart();
 		}
+		*/
 	}
 
 	public void init(CharacterStat stat)
@@ -76,11 +90,9 @@ public class CharacterRenderer : MonoBehaviour {
 	public void updateRenderer(CharacterStat stat)
 	{
 		bar.SetNowValue(stat.hp);
-
 	}
 	public void PlayCharacterAnimation(CharacterAnimation chAnimation)
 	{
-		
 		if(anim)
 			anim.Play(chAnimation.ToString());
 		foreach(var equipAnim in equipAnims)
@@ -88,7 +100,6 @@ public class CharacterRenderer : MonoBehaviour {
 			equipAnim.speed = AnimationManager.getChAnimSpeed(chAnimation);
 			equipAnim.Play(chAnimation.ToString());
 		}
-		
 		//will call playSkill with animation event;
 	}
 	//select the characeter
@@ -100,6 +111,14 @@ public class CharacterRenderer : MonoBehaviour {
 	void OnMouseExit()
 	{
 		CursorManager.instance.NormalMode();
+	}
+	public void selectByUI()
+	{
+		indicater.gameObject.SetActive(true);
+	}
+	public void deselect()
+	{
+		indicater.gameObject.SetActive(false);
 	}
 	bool isMouseDown;
 	void OnMouseOver()

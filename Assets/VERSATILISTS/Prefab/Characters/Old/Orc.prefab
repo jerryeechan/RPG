@@ -552,8 +552,8 @@ MonoBehaviour:
     damageUpBound: 0
     damageLowerBound: 0
     durationBuff: 0
-    phyDefense: 0
-    magDefense: 0
+    phyDef: 0
+    magDef: 0
     ignorePhyDefensePer: 0
     ignoreMagDefensePer: 0
     block: 0
@@ -586,8 +586,8 @@ MonoBehaviour:
     damageUpBound: 0
     damageLowerBound: 0
     durationBuff: 0
-    phyDefense: 0
-    magDefense: 0
+    phyDef: 0
+    magDef: 0
     ignorePhyDefensePer: 0
     ignoreMagDefensePer: 0
     block: 0
@@ -620,8 +620,8 @@ MonoBehaviour:
     damageUpBound: 0
     damageLowerBound: 0
     durationBuff: 0
-    phyDefense: 0
-    magDefense: 0
+    phyDef: 0
+    magDef: 0
     ignorePhyDefensePer: 0
     ignoreMagDefensePer: 0
     block: 0

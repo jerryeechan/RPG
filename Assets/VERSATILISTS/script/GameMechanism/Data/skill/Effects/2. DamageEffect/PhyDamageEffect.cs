@@ -2,22 +2,24 @@
 using System.Collections;
 
 public class PhyDamageEffect : SkillEffect {
-	override protected void Reset()
+	override protected void Awake()
 	{
-		base.Reset();
 		parentSkill.mainEffect = this;
 	}
+		
+	
 	public override void setLevel (int level)
 	{
-		baseValue = (100f+5*level)/100f;
+		//one level 10 %;
+		initValue = baseValue * (1+level*0.1f);
 		//mpCost = level*1;
-		spCost = level*2;
+		//spCost = level*2;
 		base.setLevel(level);
 	}
 	public override void useBy(Character ch)
 	{
 		base.useBy(ch);
-		calEffectValue = baseValue;
+		calEffectValue = initValue;
 		print("baseValue:"+baseValue);
 		calEffectValue += casterStat.strValue/5;
 		calEffectValue *= casterStat.phyAtk;
@@ -28,12 +30,11 @@ public class PhyDamageEffect : SkillEffect {
 		calEffectValue *= Random.Range(casterStat.lowestPhyDmg,1);
 		calEffectValue *= parentSkill.criticalBonus;
 		print("damage cal:"+calEffectValue);
-		
 	}
 	public override void ApplyOn (CharacterStat stat)
 	{
 		base.ApplyOn(stat);
-		float defense = stat.phyDefense/5;
+		float defense = stat.phyDef/5;
 		defense *= (1-casterStat.ignorePhyDefensePer);//caster's ignore defense
 		print("defense:"+defense);
 		

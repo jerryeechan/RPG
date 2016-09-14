@@ -6,10 +6,24 @@ public class CompositeText : MonoBehaviour {
 
 	public string prefix;
 	public string postfix;
+
 	Text[] texts;
+
+	void OnValidate()
+	{
+		texts = GetComponentsInChildren<Text>();
+		foreach(Text t in texts)
+		{
+			t.raycastTarget = false;
+		}
+	}
 	void Awake()
 	{
 		texts = GetComponentsInChildren<Text>();
+		foreach(Text t in texts)
+		{
+			t.raycastTarget = false;
+		}
 	}
 
 	public string text{
@@ -21,6 +35,18 @@ public class CompositeText : MonoBehaviour {
 					newString = prefix;
 				newString+= value+postfix;
 				t.text = newString;
+				
+			}
+		}
+		get{
+			return texts[0].text;
+		}
+	}
+	public Color color{
+		set{
+			foreach(Text t in texts)
+			{
+				t.color = value;
 			}
 		}
 	}
@@ -42,10 +68,6 @@ public class CompositeText : MonoBehaviour {
 			t.DOFade(0,0);
 			pop(t);
 		}
-
-
-		
-
 	}
 	void pop(Text t)
 	{	

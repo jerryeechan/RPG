@@ -5,26 +5,66 @@ using DG.Tweening;
 namespace com.jerry.rpg
 {
 	public class Action : MonoBehaviour {
-		Skill[] skills;
+		public ActionType type;
+		public Skill[] skills;
 		public string description;
 		public Sprite icon;
 		public string actionAnimationID;
 		public CharacterAnimation chAnimation;
-		[HideInInspector]
 		public ActionData actionData;
+		[HideInInspector]
 		public Character caster;
 		
-		
+		public int energyCost = 1;
+		public int cd = 0;
+		[HideInInspector]
+		public int cd_count;
+		void OnValidate()
+		{
+			actionData.id = name;
+			if(isPassive)
+			{
+				cd = 0;
+				energyCost = 0;
+			}
+		}
 		void Awake()
 		{
-			//foreach (Skill skill in  GetComponentsInChildren<Skill>())
 			skills = GetComponentsInChildren<Skill>();
 			foreach (var skill in skills)
 			{
 				skill.parentAction = this;
 			}
+			actionData.id = name;
+			if(isPassive)
+			{
+				cd = 0;
+				energyCost = 0;
+			}
 		}
-		
+
+		public void PassiveApply()
+		{
+			foreach(var skill in skills)
+			{
+				foreach(var effect in skill.effects)
+				{
+					effect.ApplyOn(caster.equipStat);
+				}	
+			}
+		}
+		public void PassiveRemove()
+		{
+			foreach(var skill in skills)
+			{
+				if(skill.effects==null)
+					continue;
+				foreach(var effect in skill.effects)
+				{
+					effect.RemoveEffect();
+				}	
+			}
+		}
 		public void start()
 		{
 			PlayActionAnimation();
@@ -45,7 +85,11 @@ namespace com.jerry.rpg
 		}
 		void OnActionAnimationDone()
 		{
-			
+			if(skills==null)
+			{
+				Debug.LogError("the action has no skill");
+				return;
+			}
 			foreach(var skill in skills)
 			{
 				skill.skillState = SkillState.Before;
@@ -66,6 +110,11 @@ namespace com.jerry.rpg
 				}
 			}
 			RandomBattleRound.instance.ActionDone();
+		}
+		public Action genAction()
+		{
+			Action action = Instantiate(this);
+			return action;
 		}
 	/*
 		bool isActionDone{
@@ -95,5 +144,15 @@ namespace com.jerry.rpg
 			
 		}
 		*/
+		public bool isPassive
+		{
+			get{return type==ActionType.Passive;}
+		}
 	}
+}
+
+
+public enum ActionType
+{
+	Active,Passive
 }

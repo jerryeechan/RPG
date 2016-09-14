@@ -6,6 +6,7 @@ public class EquipRenderer : MonoBehaviour {
 	Animator anim;
 	AnimatorOverrideController overrideController;
 	public AnimationClip[] clips;
+	public EquipType type;
 	// Use this for initialization
 	void Awake()
 	{
@@ -18,7 +19,9 @@ public class EquipRenderer : MonoBehaviour {
 	}
 	public void restart()
 	{
-		anim.Play("idle");
+		//anim.Stop();
+		anim.StartPlayback();
+		print("restart");
 	}
 	public void wearEquip(Sprite sp)
 	{
@@ -31,10 +34,24 @@ public class EquipRenderer : MonoBehaviour {
 		if(clips==null)
 			return;
 			
-		for(int i=0;i<clips.Length;i++)
+		for(int i=0;i<overrideController.clips.Length;i++)
 		{
-			print(clips[i].name);
-			overrideController[overrideController.clips[i].originalClip.name] = clips[i];
+			print(overrideController.clips[i].originalClip.name);
+
+			switch(overrideController.clips[i].originalClip.name)
+			{
+				case "idle":
+					
+					overrideController[overrideController.clips[i].originalClip.name] = clips[0];
+				break;
+				case "melee":
+					overrideController[overrideController.clips[i].originalClip.name] = clips[1];
+				break;
+				case "magic":
+					overrideController[overrideController.clips[i].originalClip.name] = clips[2];
+				break;
+			}
+//			overrideController[overrideController.clips[i].originalClip.name] = clips[i];
 		}
 		anim.runtimeAnimatorController = overrideController;
 		

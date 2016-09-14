@@ -12,9 +12,6 @@ public class MagDmgBuff : SkillEffect {
 	*/
 	
 	
-	
-	public enum DamageType{Physic,Melee,Direct};
-	
 	public override void setLevel (int level)
 	{
 		baseValue = (120+20*level)/100;
@@ -28,10 +25,9 @@ public class MagDmgBuff : SkillEffect {
 		stat.magDmgBuff+=calEffectValue;
 		Debug.Log("magdamageBuff");
 	}
-	public override void RemoveEffect (Character ch)
+	public override void RemoveEffect ()
 	{
-		base.RemoveEffect(ch);
-		if(ch.battleStat!=onStat)
-			onStat.magDmgBuff-=calEffectValue;
+		base.RemoveEffect();
+		onStat.magDmgBuff-=calEffectValue;
 	}
 }

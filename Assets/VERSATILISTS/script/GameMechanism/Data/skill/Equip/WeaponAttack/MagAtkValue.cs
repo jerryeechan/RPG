@@ -5,8 +5,9 @@ public class MagAtkValue : SkillEffect{
 
 	//FOR WEAPON
 	public int atkPower = 1;
-	void Awake()
+	protected override void Awake()
 	{
+		base.Awake();
 		setLevel(level);
 		mpCost = 0;
 	}
