@@ -1,0 +1,394 @@
+fileFormatVersion: 2
+guid: a517a15793ec94bbaa6c3d4d429f9882
+timeCreated: 1474122562
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: paladin_helmet_0
+    21300002: paladin_helmet_1
+    21300004: paladin_helmet_2
+    21300006: paladin_helmet_3
+    21300008: paladin_helmet_4
+    21300010: paladin_helmet_5
+    21300012: paladin_helmet_6
+    21300014: paladin_helmet_7
+    21300016: paladin_helmet_8
+    21300018: paladin_helmet_9
+    21300020: paladin_helmet_10
+    21300022: paladin_helmet_11
+    21300024: paladin_helmet_12
+    21300026: paladin_helmet_13
+    21300028: paladin_helmet_14
+    21300030: paladin_helmet_15
+    21300032: paladin_helmet_16
+    21300034: paladin_helmet_17
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -3
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: 0
+    aniso: -1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 7
+  spritePivot: {x: 0.5, y: 0}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 1
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: paladin_helmet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 96
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 7, y: 33}
+        - {x: 6, y: 29}
+        - {x: 6, y: 19}
+        - {x: 8, y: 18}
+        - {x: 21, y: 18}
+        - {x: 21, y: 32}
+        - {x: 18, y: 33}
+    - name: paladin_helmet_1
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 96
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 19, y: 34}
+        - {x: 10, y: 34}
+        - {x: 6, y: 32}
+        - {x: 6, y: 20}
+        - {x: 10, y: 19}
+        - {x: 21, y: 19}
+        - {x: 21, y: 33}
+    - name: paladin_helmet_2
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 96
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 19, y: 34}
+        - {x: 10, y: 34}
+        - {x: 6, y: 32}
+        - {x: 6, y: 20}
+        - {x: 10, y: 19}
+        - {x: 21, y: 19}
+        - {x: 21, y: 33}
+    - name: paladin_helmet_3
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 96
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 7, y: 33}
+        - {x: 6, y: 29}
+        - {x: 6, y: 19}
+        - {x: 8, y: 18}
+        - {x: 21, y: 18}
+        - {x: 21, y: 32}
+        - {x: 18, y: 33}
+    - name: paladin_helmet_4
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 96
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 9, y: 32}
+        - {x: 6, y: 30}
+        - {x: 6, y: 21}
+        - {x: 9, y: 17}
+        - {x: 21, y: 17}
+        - {x: 21, y: 30}
+        - {x: 18, y: 32}
+    - name: paladin_helmet_5
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 96
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: paladin_helmet_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 48
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 7, y: 33}
+        - {x: 6, y: 29}
+        - {x: 6, y: 19}
+        - {x: 8, y: 18}
+        - {x: 21, y: 18}
+        - {x: 21, y: 32}
+        - {x: 18, y: 33}
+    - name: paladin_helmet_7
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 48
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 7, y: 33}
+        - {x: 6, y: 29}
+        - {x: 6, y: 19}
+        - {x: 8, y: 18}
+        - {x: 21, y: 18}
+        - {x: 21, y: 32}
+        - {x: 18, y: 33}
+    - name: paladin_helmet_8
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 48
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 18, y: 34}
+        - {x: 9, y: 34}
+        - {x: 5, y: 32}
+        - {x: 5, y: 20}
+        - {x: 9, y: 19}
+        - {x: 20, y: 19}
+        - {x: 20, y: 33}
+    - name: paladin_helmet_9
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 48
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 19, y: 32}
+        - {x: 11, y: 32}
+        - {x: 7, y: 29}
+        - {x: 7, y: 21}
+        - {x: 11, y: 17}
+        - {x: 20, y: 17}
+        - {x: 22, y: 19}
+        - {x: 22, y: 30}
+    - name: paladin_helmet_10
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 48
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 19, y: 31}
+        - {x: 11, y: 31}
+        - {x: 7, y: 28}
+        - {x: 7, y: 20}
+        - {x: 11, y: 16}
+        - {x: 20, y: 16}
+        - {x: 22, y: 18}
+        - {x: 22, y: 29}
+    - name: paladin_helmet_11
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 48
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 10, y: 32}
+        - {x: 7, y: 30}
+        - {x: 7, y: 21}
+        - {x: 10, y: 17}
+        - {x: 22, y: 17}
+        - {x: 22, y: 30}
+        - {x: 19, y: 32}
+    - name: paladin_helmet_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 11, y: 31}
+        - {x: 8, y: 29}
+        - {x: 8, y: 20}
+        - {x: 11, y: 16}
+        - {x: 23, y: 16}
+        - {x: 23, y: 29}
+        - {x: 20, y: 31}
+    - name: paladin_helmet_13
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 0
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 13, y: 31}
+        - {x: 9, y: 27}
+        - {x: 9, y: 20}
+        - {x: 12, y: 16}
+        - {x: 24, y: 16}
+        - {x: 24, y: 29}
+        - {x: 20, y: 31}
+    - name: paladin_helmet_14
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 14, y: 31}
+        - {x: 10, y: 27}
+        - {x: 10, y: 20}
+        - {x: 13, y: 16}
+        - {x: 25, y: 16}
+        - {x: 25, y: 29}
+        - {x: 21, y: 31}
+    - name: paladin_helmet_15
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 0
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 11, y: 32}
+        - {x: 8, y: 30}
+        - {x: 8, y: 21}
+        - {x: 11, y: 17}
+        - {x: 23, y: 17}
+        - {x: 23, y: 30}
+        - {x: 20, y: 32}
+    - name: paladin_helmet_16
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 7, y: 33}
+        - {x: 6, y: 29}
+        - {x: 6, y: 19}
+        - {x: 8, y: 18}
+        - {x: 21, y: 18}
+        - {x: 21, y: 32}
+        - {x: 18, y: 33}
+    - name: paladin_helmet_17
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 0
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 7, y: 33}
+        - {x: 6, y: 29}
+        - {x: 6, y: 19}
+        - {x: 8, y: 18}
+        - {x: 21, y: 18}
+        - {x: 21, y: 32}
+        - {x: 18, y: 33}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

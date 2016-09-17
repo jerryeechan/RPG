@@ -10,7 +10,6 @@ public class DungeonEvent : MonoBehaviour {
 	public string descriptionText;
 	public virtual void encounter()
 	{
-		GameManager.instance.gamemode = GameMode.DungeonSelect;
 		DungeonOptionSelector.instance.showPanel(this);
 		describe(descriptionText);
 		

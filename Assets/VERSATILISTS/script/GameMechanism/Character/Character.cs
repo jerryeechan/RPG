@@ -14,6 +14,7 @@ public class Character : MonoBehaviour{
 	public CharacterStat equipStat;
 	public CharacterStat battleStat;
 	
+	
 	Dictionary<EquipType,Equip> equipsDict; 
 
 	public Equip getEquip(EquipType type)
@@ -246,7 +247,7 @@ public class Character : MonoBehaviour{
 	{
 		foreach (SkillEffect effect in effectsOnMe)
 		{
-			if(effect.effectType==SkillEffect.EffectType.Value)
+			if(effect.effectType==EffectType.Value)
 				effect.ApplyOn(battleStat);
 		}
 	}
@@ -305,9 +306,9 @@ public class Character : MonoBehaviour{
 	}
 	public void RemoveNegativeEffects()
 	{
-		RemoveEffects(SkillEffect.EffectType.NegativeBuff);
+		RemoveEffects(EffectType.NegativeBuff);
 	}
-	public void RemoveEffects(SkillEffect.EffectType type)
+	public void RemoveEffects(EffectType type)
 	{
 		foreach(SkillEffect effect in effectsOnMe)
 		{

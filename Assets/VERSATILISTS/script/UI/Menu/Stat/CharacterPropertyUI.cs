@@ -1,22 +1,27 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.EventSystems;
-public class CharacterPropertyUI : CompositeText,IPointerEnterHandler,IPointerExitHandler{
+using UnityEngine.UI;
+public class CharacterPropertyUI :MonoBehaviour,IPointerEnterHandler,IPointerExitHandler{
 
 	public string title;
 	public string description;
 	
 	public bool isPercentage;
-	
-
+	Text propertyText;
+	CompositeText valueText;
+	void Awake()
+	{
+		valueText = transform.GetComponentInChildren<CompositeText>();
+	}
 	
 	public void setValue(float v)
 	{
-		string vText = v.ToString();
+		string vText = ((int)v).ToString();
 		if(isPercentage)
-			vText = ""+v*100+"%";
+			vText = ""+(int)(v*100)+"%";
 		
-		text = vText;
+		valueText.text = vText; 
 		
 	}
 	public void OnPointerEnter(PointerEventData eventData)

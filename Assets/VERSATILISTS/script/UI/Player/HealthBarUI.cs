@@ -18,7 +18,8 @@ public class HealthBarUI : MonoBehaviour {
 				curValue = value;
 			
 			fillImage.fillAmount  = (float)curValue/fullValue;
-			text.text = curValue.ToString();
+			if(text)
+				text.text = curValue.ToString();
 		}
 		get{
 			return curValue;

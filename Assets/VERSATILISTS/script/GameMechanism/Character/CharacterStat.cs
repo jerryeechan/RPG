@@ -168,8 +168,12 @@ public class CharacterStat:StringfyProperty{
 	//TODO Evasion formula
 	public bool testHit(float accuracy)
 	{
-		accuracy -= evasion;
-		return (accuracy > Random.Range(0,100)); 
+		float hit = accuracy/(accuracy+Mathf.Pow(evasion/2,0.8f));
+		int test =  Random.Range(0,100);
+		Debug.Log("hit chance:"+hit*100+"%,"+test);
+		
+		
+		return (hit*100 >test); 
 	}
 
 

@@ -23,8 +23,9 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 194558}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 58.9, y: 12.6, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -39,11 +40,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64090607b61004854b8625eebd5c2abf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numSprites: {fileID: 11400000, guid: 18e69c833e76040d886bc82a078f738d, type: 2}
+  numSprites: {fileID: 11400000, guid: e9318cf2199a746d593c42046119441e, type: 2}
   DamageSprites: {fileID: 11400000, guid: e9318cf2199a746d593c42046119441e, type: 2}
-  manaSprites: {fileID: 11400000, guid: 307416f371a65417ebbd653ff9ebecd6, type: 2}
   cdSprites: {fileID: 11400000, guid: 18e69c833e76040d886bc82a078f738d, type: 2}
-  damageNumPrefab: {fileID: 100000, guid: 699cfb76606744abcb2c4e4b673223f4, type: 2}
+  damageNumPrefab: {fileID: 11400000, guid: 699cfb76606744abcb2c4e4b673223f4, type: 2}
+  numHodler: {fileID: 166510, guid: 4af8d541f49e744aabd5249a3338077f, type: 2}
   spriteWidth: 6
 --- !u!1001 &100100000
 Prefab:

@@ -12,6 +12,7 @@ public class CharacterRenderer : MonoBehaviour {
 	public EquipRenderer[] equipRs;
 	public SpriteRenderer indicater;
 	public Dictionary<EquipType,EquipRenderer> equipUIDicts;
+	public Vector3 damagePosition;
 	void Awake()
 	{
 		anim = GetComponentInChildren<Animator>();
@@ -39,6 +40,8 @@ public class CharacterRenderer : MonoBehaviour {
 			equipUIDicts.Add(EquipType.Shield,shieldRenderer);
 			*/
 		}
+
+		damagePosition = transform.Find("damagePos").position;
 	}
 	public void wearEquip(Equip equip)
 	{
@@ -108,6 +111,7 @@ public class CharacterRenderer : MonoBehaviour {
 		CursorManager.instance.AttackMode();
 		//Cursor.SetCursor()
 	}
+	
 	void OnMouseExit()
 	{
 		CursorManager.instance.NormalMode();
@@ -141,6 +145,7 @@ public class CharacterRenderer : MonoBehaviour {
 		isMouseDown = true;
 		//clean
 		isLongPress = false;
+		//NumberGenerator.instance.GetDamageNum(transform.position+Vector3.up*20,Random.Range(0,20));
 	}
 	void OnMouseUp()
 	{

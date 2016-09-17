@@ -1,0 +1,413 @@
+fileFormatVersion: 2
+guid: d18bc8a7d0a6143a586afff5bda5d223
+timeCreated: 1474130815
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: whisk_0
+    21300002: whisk_1
+    21300004: whisk_2
+    21300006: whisk_3
+    21300008: whisk_5
+    21300010: whisk_6
+    21300012: whisk_7
+    21300014: whisk_8
+    21300016: whisk_10
+    21300018: whisk_11
+    21300020: whisk_12
+    21300022: whisk_13
+    21300024: whisk_4
+    21300026: whisk_9
+    21300028: whisk_14
+    21300030: whisk_15
+    21300032: whisk_16
+    21300034: whisk_17
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -3
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: 0
+    aniso: -1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 7
+  spritePivot: {x: 0.5, y: 0}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 1
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: whisk_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 144
+        width: 48
+        height: 48
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 23, y: 24}
+        - {x: 17, y: 15}
+        - {x: 17, y: 11}
+        - {x: 19, y: 9}
+        - {x: 28, y: 11}
+        - {x: 29, y: 15}
+        - {x: 29, y: 22}
+        - {x: 26, y: 24}
+    - name: whisk_1
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 144
+        width: 48
+        height: 48
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 23, y: 24}
+        - {x: 17, y: 15}
+        - {x: 17, y: 11}
+        - {x: 19, y: 9}
+        - {x: 28, y: 11}
+        - {x: 29, y: 15}
+        - {x: 29, y: 22}
+        - {x: 26, y: 24}
+    - name: whisk_2
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 144
+        width: 48
+        height: 48
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 23, y: 25}
+        - {x: 17, y: 16}
+        - {x: 17, y: 12}
+        - {x: 19, y: 10}
+        - {x: 28, y: 12}
+        - {x: 29, y: 16}
+        - {x: 29, y: 23}
+        - {x: 26, y: 25}
+    - name: whisk_3
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 144
+        width: 48
+        height: 48
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 23, y: 25}
+        - {x: 17, y: 16}
+        - {x: 17, y: 12}
+        - {x: 19, y: 10}
+        - {x: 28, y: 12}
+        - {x: 29, y: 16}
+        - {x: 29, y: 23}
+        - {x: 26, y: 25}
+    - name: whisk_4
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 144
+        width: 48
+        height: 48
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 33, y: 13}
+        - {x: 33, y: 6}
+        - {x: 36, y: 4}
+        - {x: 41, y: 4}
+        - {x: 42, y: 5}
+        - {x: 42, y: 8}
+        - {x: 40, y: 13}
+        - {x: 35, y: 14}
+    - name: whisk_5
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 144
+        width: 48
+        height: 48
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 32, y: 12}
+        - {x: 29, y: 11}
+        - {x: 29, y: 2}
+        - {x: 32, y: 2}
+        - {x: 36, y: 5}
+        - {x: 36, y: 11}
+        - {x: 35, y: 12}
+    - name: whisk_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 96
+        width: 48
+        height: 48
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 23, y: 30}
+        - {x: 17, y: 21}
+        - {x: 17, y: 17}
+        - {x: 19, y: 15}
+        - {x: 28, y: 17}
+        - {x: 29, y: 21}
+        - {x: 29, y: 28}
+        - {x: 26, y: 30}
+    - name: whisk_7
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 96
+        width: 48
+        height: 48
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 17, y: 22}
+        - {x: 20, y: 17}
+        - {x: 23, y: 18}
+        - {x: 23, y: 21}
+        - {x: 20, y: 25}
+        - {x: 18, y: 25}
+    - name: whisk_8
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 96
+        width: 48
+        height: 48
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 17, y: 19}
+        - {x: 20, y: 20}
+        - {x: 20, y: 23}
+        - {x: 17, y: 24}
+        - {x: 15, y: 22}
+    - name: whisk_9
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 96
+        width: 48
+        height: 48
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 16, y: 20}
+        - {x: 16, y: 14}
+        - {x: 17, y: 11}
+        - {x: 23, y: 9}
+        - {x: 33, y: 9}
+        - {x: 38, y: 11}
+        - {x: 38, y: 20}
+    - name: whisk_10
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 96
+        width: 48
+        height: 48
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 19, y: 17}
+        - {x: 16, y: 15}
+        - {x: 16, y: 12}
+        - {x: 17, y: 11}
+        - {x: 27, y: 9}
+        - {x: 37, y: 9}
+        - {x: 37, y: 16}
+        - {x: 35, y: 17}
+    - name: whisk_11
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 96
+        width: 48
+        height: 48
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 17, y: 14}
+        - {x: 18, y: 11}
+        - {x: 25, y: 6}
+        - {x: 29, y: 6}
+        - {x: 34, y: 8}
+        - {x: 34, y: 13}
+        - {x: 31, y: 17}
+        - {x: 18, y: 17}
+    - name: whisk_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 48
+        width: 48
+        height: 48
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 11, y: 17}
+        - {x: 9, y: 15}
+        - {x: 9, y: 8}
+        - {x: 10, y: 5}
+        - {x: 18, y: 5}
+        - {x: 24, y: 13}
+        - {x: 23, y: 16}
+        - {x: 14, y: 17}
+    - name: whisk_13
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 48
+        width: 48
+        height: 48
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 25, y: 20}
+        - {x: 15, y: 13}
+        - {x: 14, y: 11}
+        - {x: 14, y: 5}
+        - {x: 19, y: 5}
+        - {x: 22, y: 8}
+        - {x: 28, y: 17}
+        - {x: 28, y: 19}
+    - name: whisk_14
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 48
+        width: 48
+        height: 48
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 32, y: 30}
+        - {x: 21, y: 30}
+        - {x: 20, y: 25}
+        - {x: 20, y: 6}
+        - {x: 24, y: 6}
+        - {x: 32, y: 7}
+        - {x: 36, y: 17}
+        - {x: 36, y: 27}
+    - name: whisk_15
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 48
+        width: 48
+        height: 48
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 24, y: 27}
+        - {x: 19, y: 20}
+        - {x: 19, y: 13}
+        - {x: 23, y: 8}
+        - {x: 30, y: 8}
+        - {x: 33, y: 9}
+        - {x: 34, y: 11}
+        - {x: 34, y: 19}
+        - {x: 29, y: 27}
+    - name: whisk_16
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 48
+        width: 48
+        height: 48
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 18, y: 13}
+        - {x: 19, y: 10}
+        - {x: 31, y: 10}
+        - {x: 34, y: 12}
+        - {x: 34, y: 21}
+        - {x: 32, y: 23}
+        - {x: 27, y: 26}
+        - {x: 23, y: 26}
+        - {x: 18, y: 17}
+    - name: whisk_17
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 48
+        width: 48
+        height: 48
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 23, y: 24}
+        - {x: 17, y: 16}
+        - {x: 17, y: 11}
+        - {x: 18, y: 9}
+        - {x: 20, y: 9}
+        - {x: 23, y: 10}
+        - {x: 29, y: 14}
+        - {x: 29, y: 20}
+        - {x: 28, y: 24}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

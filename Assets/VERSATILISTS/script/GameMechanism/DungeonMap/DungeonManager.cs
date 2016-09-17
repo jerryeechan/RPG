@@ -13,6 +13,7 @@ public class DungeonManager : Singleton<DungeonManager> {
 	void Awake()
 	{
 		map = transform.Find("map").GetComponent<RectTransform>();
+		_instance = this;
 	}
 	
 	public void newDungeon()

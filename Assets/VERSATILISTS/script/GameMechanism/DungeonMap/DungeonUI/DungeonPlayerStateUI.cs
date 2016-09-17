@@ -11,7 +11,7 @@ public class DungeonPlayerStateUI : Singleton<DungeonPlayerStateUI> {
 	public DungeonCharacterUI[] chUIs;
 	
 	// Use this for initialization
-	void Start () {
+	void Awake () {
 		chUIs = GetComponentsInChildren<DungeonCharacterUI>();
 		goldPanel = goldText.GetComponentInParent<AnimatableCanvas>();
 		doomPanel = doomText.GetComponentInParent<AnimatableCanvas>();

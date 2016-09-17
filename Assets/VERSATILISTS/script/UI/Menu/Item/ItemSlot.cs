@@ -24,6 +24,8 @@ public class ItemSlot : MonoBehaviour,IPointerClickHandler,IDragHandler,IDropHan
 		_bindItem = item;
 		if(_bindItem)
 		{
+			print(itemImage.sprite);
+			print(item.asset.iconSprite);
 			itemImage.sprite = item.asset.iconSprite;
 			if(item.stackable)
 			{

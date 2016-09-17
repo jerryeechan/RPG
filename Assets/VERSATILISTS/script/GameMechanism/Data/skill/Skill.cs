@@ -99,10 +99,11 @@ public class Skill : MonoBehaviour {
 	public void PlayEffectAnimation(Character target,string animID)
 	{
 			Animator seAnim = AnimationManager.instance.getSkillHitEffect(animID);
-			seAnim.speed = GameManager.playerAnimationSpeed;
+			
 			//print(hitAnimationID);
 			if(seAnim)
 			{
+				seAnim.speed = GameManager.playerAnimationSpeed;
 				//may be useless
 				//SkillHitAnimation skillhitAnim = seAnim.GetComponentInChildren<SkillHitAnimation>();
 				//skillhitAnim.SetSkill(this,target);
@@ -154,50 +155,50 @@ public class Skill : MonoBehaviour {
 		switch (mainEffect.effectRange)
 		{
 			
-			case SkillEffect.EffectRange.Target:
+			case EffectRange.Target:
 				doingTargetCnt = 1;
 				Character target = caster.attackTarget();
 				
 				hit = mainEffect.FirstApply(target,acc_final,true);
 				if(hit) 
-					targetAfterHit(target);
+					targetAfterHit(target,mainEffect);
 				else
 					miss(target);
 				PlayAnimation(target,hit);
 				
 			break;
-			case SkillEffect.EffectRange.AOE:
+			case EffectRange.AOE:
 				doingTargetCnt = caster.attackTargets().Count;
 				foreach (Character ch in caster.attackTargets())
 				{
 					hit = mainEffect.FirstApply(ch,acc_final,true);
 					if(hit)
-						targetAfterHit(ch);
+						targetAfterHit(ch,mainEffect);
 					else
 						miss(ch);
 					PlayAnimation(ch,hit);
 				}
 			break;
-			case SkillEffect.EffectRange.Self:
+			case EffectRange.Self:
 				doingTargetCnt = 1;
 				PlayAnimation(caster);
 				if(mainEffect.FirstApply(caster,acc_final,false))
-					targetAfterHit(caster);
+					targetAfterHit(caster,mainEffect);
 				else
 					miss(caster);
 				
 			break;
-			case SkillEffect.EffectRange.Allies:
+			case EffectRange.Allies:
 				doingTargetCnt = caster.allies().Count;
 				foreach(Character ch in caster.allies()){
 					if(mainEffect.FirstApply(ch,acc_final,false))
-						targetAfterHit(ch);
+						targetAfterHit(ch,mainEffect);
 					else
 						miss(ch);
 					//yield return new WaitForSeconds(2);
 				}
 			break;
-			case SkillEffect.EffectRange.Random:
+			case EffectRange.Random:
 			break;
 		}
 		//StartCoroutine(this.CheckSkillDone());
@@ -228,8 +229,12 @@ public class Skill : MonoBehaviour {
 	
 
 	
-	void targetAfterHit(Character ch)
+	void targetAfterHit(Character ch,SkillEffect effect)
 	{
+		if(effect.effectType == EffectType.Value)
+		{
+			NumberGenerator.instance.GetDamageNum(ch.chRenderer.damagePosition,(int)effect.applyResult);
+		}
 		ch.updateRenderer();
 		if(ch.chRenderer)
 			ch.chRenderer.HitAnimation();

@@ -46,7 +46,6 @@ public class ActionCombatButton : ActionButton,IPointerClickHandler {
 		{
 			
 			Unlock();
-			print("eneergy enough");
 			return true;
 		}
 		
@@ -107,7 +106,6 @@ public class ActionCombatButton : ActionButton,IPointerClickHandler {
 
     public void OnPointerClick(PointerEventData eventData)
     {
-		print(isEnable);
 		if(isEnable)
 			ActionUIManager.instance.actionBtnTouched(skillIndex);
     }

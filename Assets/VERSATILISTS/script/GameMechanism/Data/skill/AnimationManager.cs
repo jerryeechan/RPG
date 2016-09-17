@@ -29,10 +29,24 @@ public class AnimationManager : Singleton<AnimationManager> {
 	}
 	public Animator getSkillHitEffect(string id)
 	{
+		if(skillAnimationDict.ContainsKey(id))
 		return Instantiate(skillAnimationDict[id]);
+		else
+		{
+			Debug.LogError("no skill effect:"+id);
+			return null;
+		}
 	}
 	public Animator getActionEffect(string id){
-		return Instantiate(actionAnimationDict[id]);
+		if(actionAnimationDict.ContainsKey(id))
+		{
+			return Instantiate(actionAnimationDict[id]);	
+		}
+		else
+		{
+			Debug.LogError("no action effect:"+id);
+			return null;
+		}
 	}
 
 	Dictionary<CharacterAnimation,float> chAnimationSpeed;

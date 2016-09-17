@@ -46,10 +46,9 @@ MonoBehaviour:
     exp: 0
     statPoints: 0
     strVal: 0
-    conVal: 0
-    intVal: 0
-    dexVal: 0
-    hp: 50
+    conVal: 5
+    intVal: 5
+    dexVal: 5
     UITemplateID: zombieUI
     actionIDs: []
     weapon:

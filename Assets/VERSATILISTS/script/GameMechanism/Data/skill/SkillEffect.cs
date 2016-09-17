@@ -4,8 +4,7 @@ public class SkillEffect : MonoBehaviour {
 	//issue
 
 	//--------------------------------------------------
-	public enum EffectRange{Target,AOE,ExceptTarget,Self,Allies,Random};
-	public enum EffectType{Value,PositiveBuff,NegativeBuff};//Value can't be removed, only with hp, mp, sp
+	
 	public EffectRange effectRange;
 	public EffectType effectType;
 	
@@ -168,3 +167,6 @@ public interface ISkillEffect{
 	void setLevel(int level);
 	void RemoveEffect();
 }
+
+public enum EffectRange{Target,AOE,ExceptTarget,Self,Allies,Random};
+public enum EffectType{Value,PositiveBuff,NegativeBuff};//Value can't be removed, only with hp, mp, sp

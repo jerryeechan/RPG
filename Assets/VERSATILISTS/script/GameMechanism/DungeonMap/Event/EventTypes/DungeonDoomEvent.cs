@@ -5,13 +5,8 @@ public class DungeonDoomEvent : DungeonEvent {
 	override public void encounter()
 	{
 		describe(descriptionText);
-		GameManager.instance.gamemode = GameMode.DungeonSelect;
-
 		DiceRoller2D.instance.Roll(diceResult);
-
-		
 	}
-	
 	int diceNum;
 	public void diceResult(int num)
 	{

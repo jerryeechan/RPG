@@ -7,10 +7,14 @@ public class InfoManager : Singleton<InfoManager> {
 	public EquipSlot[] equipSlots;
 	Dictionary<InfoTabType,InfoTab> tabDict;
 	public InfoTab[] tabPanels;
+	GameObject panel;
 	
 	void Awake()
 	{
+		_instance = this;
 		isOpen = true;
+		panel = transform.Find("panel").gameObject;
+
 		equipSlotDict = new Dictionary<EquipType,EquipSlot>();
 		foreach(var eqslot in equipSlots)
 		{
@@ -28,6 +32,10 @@ public class InfoManager : Singleton<InfoManager> {
 			}
 		}
 
+		if(currentTab==null)
+		{
+			currentTab = tabDict[InfoTabType.Bag];
+		}
 	}
 	public void init()
 	{
@@ -38,11 +46,13 @@ public class InfoManager : Singleton<InfoManager> {
 	}
 	public void Show()
 	{
-		gameObject.SetActive(true);
+		panel.SetActive(true);
+		currentTab.gameObject.SetActive(true);
+
 		DungeonPlayerStateUI.instance.descriptionText.text = "";
 		isOpen = true;
-		inspectCharacter(GameManager.instance.currentCh);
 		ItemUIManager.instance.Show();
+		inspectCharacter(GameManager.instance.currentCh);
 		CharacterAbilityUIManager.instance.viewCharacter(GameManager.instance.currentCh);
 		
 		if(tabDict[InfoTabType.Action].gameObject.activeSelf == true)
@@ -55,7 +65,7 @@ public class InfoManager : Singleton<InfoManager> {
 	}
 
 	public void Hide(){
-		gameObject.SetActive(false);
+		panel.SetActive(false);
 		isOpen = false;
 	}
 
@@ -63,6 +73,7 @@ public class InfoManager : Singleton<InfoManager> {
 	Dictionary<EquipType,EquipSlot> equipSlotDict;
 	public void inspectCharacter(Character ch)
 	{	
+		
 		if(ch == null)
 			return;
 		foreach(var eqtype in Equip.AllEquipType)
