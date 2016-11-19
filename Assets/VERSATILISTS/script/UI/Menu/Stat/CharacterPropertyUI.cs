@@ -8,7 +8,7 @@ public class CharacterPropertyUI :MonoBehaviour,IPointerEnterHandler,IPointerExi
 	public string description;
 	
 	public bool isPercentage;
-	Text propertyText;
+	// propertyText;
 	CompositeText valueText;
 	void Awake()
 	{

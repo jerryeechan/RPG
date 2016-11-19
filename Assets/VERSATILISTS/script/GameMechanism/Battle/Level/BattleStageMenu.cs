@@ -20,6 +20,6 @@ public class BattleStageMenu : MonoBehaviour {
 	{	
 		//stage = genStage(stageNum);	
 		PlayerPrefs.SetInt("stage",stageNum);
-		Application.LoadLevel("battle");
+//		Application.LoadLevel("battle");
 	}
 }

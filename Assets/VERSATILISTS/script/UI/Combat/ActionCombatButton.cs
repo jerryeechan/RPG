@@ -1,8 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
-using com.jerry.rpg;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+namespace com.jerrch.rpg
+{
 public class ActionCombatButton : ActionButton,IPointerClickHandler {
 	
 	public Character bindCh;
@@ -109,4 +110,5 @@ public class ActionCombatButton : ActionButton,IPointerClickHandler {
 		if(isEnable)
 			ActionUIManager.instance.actionBtnTouched(skillIndex);
     }
+}
 }

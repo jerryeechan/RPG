@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
-
+using com.jerrch.rpg;
 public class TemplateEffectSet:MonoBehaviour
 {
 	public SkillEffect[] effects;

@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
 using System;
-
+using com.jerrch.rpg;
 [SerializableAttribute]
 public class CharacterData:StringfyProperty{
 	

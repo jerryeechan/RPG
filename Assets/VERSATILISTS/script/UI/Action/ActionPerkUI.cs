@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
-using com.jerry.rpg;
-
+namespace com.jerrch.rpg
+{
 
 public class ActionPerkUI : ActionButton, IPointerEnterHandler,IPointerExitHandler,IPointerClickHandler,IDragHandler,IBeginDragHandler,IEndDragHandler
 {
@@ -98,4 +98,5 @@ public class ActionPerkUI : ActionButton, IPointerEnterHandler,IPointerExitHandl
     {
 		ActionTree.instance.OnEndDragActionPerk();
     }
+}
 }

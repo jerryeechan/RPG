@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
-
+namespace com.jerrch.rpg
+{
 public class MagDmgBuff : SkillEffect {
 
 	/*
@@ -30,4 +31,5 @@ public class MagDmgBuff : SkillEffect {
 		base.RemoveEffect();
 		onStat.magDmgBuff-=calEffectValue;
 	}
+}
 }

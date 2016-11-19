@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
-using com.jerry.rpg;
+using com.jerrch.rpg;
 public class DescriptionUIManager : Singleton<DescriptionUIManager> {
 
 	public CompositeText nameText;

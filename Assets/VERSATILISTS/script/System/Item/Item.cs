@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
-
+using com.jerrch.rpg;
 public class Item : MonoBehaviour {
 
 	public ItemData bindData;
@@ -60,5 +60,5 @@ public class Item : MonoBehaviour {
 }
 public enum ItemType
 {
-	Consume,Equip,Quest
+	Consume,Equip,Quest,Place
 }

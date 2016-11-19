@@ -1,27 +1,24 @@
 ﻿using UnityEngine;
-using System.Collections;
-
-public class InfoTab : AnimatableCanvas {
+namespace com.jerrch.rpg
+{
+public class InfoTab :AnimatableCanvas{
 
 	public InfoTabType type;
 	public GameMode gameMode;
 	IDisplayable[] displayables;
-	protected override void Awake()
+	override protected void Awake()
 	{
 		displayables = GetComponentsInChildren<IDisplayable>(true);
-		print(gameObject.name);
-		print(displayables);
 		base.Awake();
 	}
 	void Start()
 	{
 		InfoManager.instance.currentTab = this;
 	}
-
-	public override void show()
-	{
-		base.show();
+	public override void show(OnCompleteDelegate completeEvent=null)
+	{	
 		GameManager.instance.gamemode = gameMode;
+		base.show();
 		//gameObject.SendMessage("Show",SendMessageOptions.DontRequireReceiver);
 		if(displayables==null)
 			return;
@@ -32,7 +29,7 @@ public class InfoTab : AnimatableCanvas {
 		}
 		
 	}
-	public override void hide()
+	public override void hide(OnCompleteDelegate completeEvent=null)
 	{
 		base.hide();
 		if(displayables==null)
@@ -43,4 +40,5 @@ public class InfoTab : AnimatableCanvas {
 			d.Hide();
 		}
 	}
+}
 }

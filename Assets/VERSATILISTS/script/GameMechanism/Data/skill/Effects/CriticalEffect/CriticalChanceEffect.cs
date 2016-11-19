@@ -1,7 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class CriticalChanceEffect : ValueEffect {
+namespace com.jerrch.rpg
+{
+	public class CriticalChanceEffect : ValueEffect {
 
 	public float rate;
 	
@@ -21,4 +23,5 @@ public class CriticalChanceEffect : ValueEffect {
 		onStat.criticalRate-=rate;
 		base.RemoveEffect();
 	}
+}
 }

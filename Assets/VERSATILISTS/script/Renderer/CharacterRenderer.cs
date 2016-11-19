@@ -1,12 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
 using DG.Tweening;
+using com.jerrch.rpg;
 public class CharacterRenderer : MonoBehaviour {
 
 	public Character bindCh;
 	HealthBar bar;
 	
-	
+	static float playerAnimationSpeed = 0.5f;
 	public Animator[] equipAnims;
 	public Animator anim;
 	public EquipRenderer[] equipRs;
@@ -24,7 +25,7 @@ public class CharacterRenderer : MonoBehaviour {
 			foreach (var eqanim in equipAnims)
 			{
 
-				eqanim.speed = GameManager.playerAnimationSpeed;
+				eqanim.speed = playerAnimationSpeed;
 			}
 			equipUIDicts = new Dictionary<EquipType,EquipRenderer>();
 			equipRs = equipTransform.GetComponentsInChildren<EquipRenderer>();

@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
-using com.jerry.rpg;
+using com.jerrch.rpg;
 public class ActionManager : Singleton<ActionManager> {
 
 	

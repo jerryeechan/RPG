@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
-
+namespace com.jerrch.rpg
+{
 public class PhyDmgBuff : SkillEffect {
 
 	/*
@@ -40,4 +41,5 @@ public class PhyDmgBuff : SkillEffect {
 		//base.RemoveFrom (stat);
 		onStat.phyDmgBuff-=calEffectValue;
 	}
+}
 }

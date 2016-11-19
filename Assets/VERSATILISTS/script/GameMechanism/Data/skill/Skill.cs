@@ -1,9 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
 using System.Collections;
-using com.jerry.rpg;
 //Skill is the 
-
+namespace com.jerrch.rpg
+{
 public class Skill : MonoBehaviour {
 
 	//the corresponding skill data of player
@@ -343,4 +343,5 @@ public class SkillHitStat
 {
 	float accuracy;
 	float critical;
+}
 }

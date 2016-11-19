@@ -13,11 +13,13 @@ public class CursorManager : Singleton<CursorManager> {
 	}
 	public void PointerMode()
 	{
+		print("PointerMode");
 		Cursor.SetCursor(cursorPointerTexture,new Vector2(8,0),CursorMode.Auto);
 	}
 
 	public void NormalMode()
 	{
+		print("normalMode");
 		Cursor.SetCursor(cursorNormalTexture,new Vector2(8,0),CursorMode.Auto);
 	}
 	public void AttackMode()

@@ -1,10 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
-using com.jerry.rpg;
+
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using DG.Tweening;
-
+namespace com.jerrch.rpg{
 public class ActionTree : Singleton<ActionTree>,IDisplayable {
 
 	// Use this for initialization
@@ -231,4 +231,6 @@ public class ActionTree : Singleton<ActionTree>,IDisplayable {
 			  perkUIDict[acData.id].bindAction.actionData = acData;
 		}
 	}
+}
+
 }

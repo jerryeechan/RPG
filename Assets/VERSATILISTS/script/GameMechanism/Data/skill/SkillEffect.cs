@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
-
+namespace com.jerrch.rpg
+{
 public class SkillEffect : MonoBehaviour {
 	//issue
 
@@ -170,3 +171,4 @@ public interface ISkillEffect{
 
 public enum EffectRange{Target,AOE,ExceptTarget,Self,Allies,Random};
 public enum EffectType{Value,PositiveBuff,NegativeBuff};//Value can't be removed, only with hp, mp, sp
+}

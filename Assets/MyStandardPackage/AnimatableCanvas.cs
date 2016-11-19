@@ -1,93 +1,80 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 using DG.Tweening;
+[RequireComponent (typeof (CanvasGroup))]
 public class AnimatableCanvas : MonoBehaviour {
-    
-    public AnimatableGraphic[] graphics;
-    public bool includeInChildren = true;
     public bool isAnimating = false;
     public float duration;
+    CanvasGroup canvasGroup;
 	protected virtual void Awake()
 	{
-        if(includeInChildren)
-		graphics = GetComponentsInChildren<AnimatableGraphic>(true);
-        else
-        graphics = GetComponents<AnimatableGraphic>();
+        canvasGroup = GetComponent<CanvasGroup>();
+        if(canvasGroup==null)
+        {
+            gameObject.AddComponent<CanvasGroup>();
+        }
 	}
     
-    protected void loadGraphics()
-    {
-        if(includeInChildren)
-		  graphics = GetComponentsInChildren<AnimatableGraphic>(true);
-        else
-          graphics = GetComponents<AnimatableGraphic>();
-    }
+    
 	
-    public virtual void hide()
+    public virtual void hide(OnCompleteDelegate completeEvent=null)
     {
         hide(duration);
     }
 	public void hide(float duration,OnCompleteDelegate completeEvent=null)
 	{
-        if(!isAnimating)
-        {
-            isAnimating = true;
-            if(graphics!=null)
+            canvasGroup.DOKill(true);   
+            if(canvasGroup)
             {
-                foreach(AnimatableGraphic graphic in graphics)
-                {
-                    graphic.hide(duration);
-                }
-                transform.GetComponent<MaskableGraphic>().DOFade(0,duration).OnComplete(
+                canvasGroup.DOFade(0,duration).OnComplete(
                 ()=>{
-                    isAnimating = false;
                     if(completeEvent!=null)
-                    completeEvent();
+                      completeEvent();
                     gameObject.SetActive(false);
+                    print(name+"hide complete");
                 });
             }
-        }
-        else{
-            Debug.LogError(name+" animating");
-        }
+            else{
+                Debug.LogError(name+"CanvasGroup not exist");
+            }
+            
+        
 	}
-	protected virtual void hideDone()
-	{
-        isAnimating = false;
-		gameObject.SetActive(false);
-	}
-    public virtual void show()
+	
+    public virtual void show(OnCompleteDelegate completeEvent=null)
     {
         show(duration);
     }
 	public void show(float duration,OnCompleteDelegate completeEvent=null)
 	{
-        if(!isAnimating)
+        print(name+"show start");
+        if(canvasGroup==null)
+            canvasGroup = GetComponent<CanvasGroup>();
+        canvasGroup.DOKill(true);
+        canvasGroup.alpha = 0;
+        activate();
+        if(canvasGroup)
         {
-
-            isAnimating = true;
-            activate();
-            foreach(AnimatableGraphic graphic in graphics)
-            {
-                graphic.show(duration);
-            }
-            transform.GetComponent<MaskableGraphic>().DOFade(1,duration).OnComplete(
-                ()=>{
-                    isAnimating = false;
-                    if(completeEvent!=null)
-                    completeEvent();
-                    
-                });
-         
+            canvasGroup.DOFade(1,duration).OnComplete(
+            ()=>{
+                print(name+"show complete");
+                
+                if(completeEvent!=null)
+                completeEvent();
+            });
         }
+        else{
+            Debug.LogError("No canvas Group!");
+        }
+         
+        
 	}
     
 	protected virtual void activate()
 	{
 		gameObject.SetActive(true);
 	}
-    
-   
 }
 public delegate void OnCompleteDelegate();

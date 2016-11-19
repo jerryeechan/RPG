@@ -4,13 +4,15 @@ using UnityEngine.UI;
 using System.Collections.Generic;
 using UnityEngine.EventSystems;
 using DG.Tweening;
+namespace com.jerrch.rpg
+{
 public class ItemUIManager : Singleton<ItemUIManager>,IDisplayable {
 	ItemSlot[] itemSlots;
 	public Image dragTempSlot;
 	public RectTransform buttonPanel;
 	void Awake()
 	{
-		
+		_instance = this;
 		itemSlots = transform.Find("bg").GetComponentsInChildren<ItemSlot>();
 		for(int i=0;i<itemSlots.Length;i++)
 		{
@@ -18,6 +20,10 @@ public class ItemUIManager : Singleton<ItemUIManager>,IDisplayable {
 		}
 
 		dragTempSlot = transform.Find("dragTempSlot").GetComponent<Image>();
+	}
+	void Start()
+	{
+		Show();
 	}
 	public void Show()
 	{
@@ -214,7 +220,7 @@ public class ItemUIManager : Singleton<ItemUIManager>,IDisplayable {
 	{
 		foreach(var slot in itemSlots)
 		{
-			if(slot.bindItem.name == item.name)
+			if(slot.bindItem && slot.bindItem.itemName == item.itemName)
 			{
 				return slot;
 			}
@@ -230,7 +236,7 @@ public class ItemUIManager : Singleton<ItemUIManager>,IDisplayable {
 			{
 				//find new for the slot
 				createItemInNewSlot(item);
-				slot.changeNum(amount-1);
+				//slot.changeNum(amount-1);
 			}
 			else
 			{
@@ -242,8 +248,6 @@ public class ItemUIManager : Singleton<ItemUIManager>,IDisplayable {
 			createItemInNewSlot(item);
 		}
 		//Item item = ItemManager.instance.getItem(data);
-		
-		
 	}
 	public bool createItemInNewSlot(Item item)
 	{
@@ -271,4 +275,6 @@ public class ItemUIManager : Singleton<ItemUIManager>,IDisplayable {
 	{
 		
 	}
+}
+
 }

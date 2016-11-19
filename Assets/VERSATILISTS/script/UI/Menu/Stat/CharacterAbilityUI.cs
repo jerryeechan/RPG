@@ -3,7 +3,7 @@ using System.Collections;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using System;
-
+using com.jerrch.rpg;
 public class CharacterAbilityUI : MonoBehaviour ,IPointerClickHandler{
 
     public AbilityType type;

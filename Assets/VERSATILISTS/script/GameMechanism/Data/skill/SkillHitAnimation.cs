@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
-
+using com.jerrch.rpg;
 public class SkillHitAnimation : MonoBehaviour {
 
 	public void SetSkill(Skill skill,Character target)

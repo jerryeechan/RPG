@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
+
+namespace com.jerrch.rpg{
 public class DataManager : Singleton<DataManager> {
 	public PlayerData[] playerData;
 	public PlayerData curPlayerData;
@@ -83,4 +85,5 @@ public class DataManager : Singleton<DataManager> {
 		readFile.Close();
 		GameManager.instance.StartGame();
 	}
+}
 }

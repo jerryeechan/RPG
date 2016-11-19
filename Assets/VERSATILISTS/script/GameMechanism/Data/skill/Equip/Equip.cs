@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
-
+using com.jerrch.rpg;
 
 //as Equipment template and also the runtime equip to character
 public class Equip:Item {
@@ -13,11 +13,13 @@ public class Equip:Item {
 	public EquipGraphicAsset bindGraphic;
 	public List<SkillEffect> effects;
 	public EquipType equipType;
+	public AbilityRequirement[] abilityReqs;
 	void Awake()
 	{
 		templateEffectSets = GetComponentsInChildren<TemplateEffectSet>();
 		itemType = ItemType.Equip;
 		stackable = false;
+		
 	}
 	override protected void Reset()
 	{
@@ -35,7 +37,24 @@ public class Equip:Item {
 		}
 	}
 
-	
+	public string getEffectString()
+	{
+		string str="";
+		foreach(var effect in effects)
+		{
+			str+=effect.getDescription()+"\n";
+		}
+		return str;
+	}
+	public string getRequirementString()
+	{
+		string str = "";
+		foreach(var req in abilityReqs)
+		{
+			str+=req.ToString()+" ";
+		}
+		return str;
+	}
 	//the effects this equips has;	
 	public void randomEquipStats()
 	{

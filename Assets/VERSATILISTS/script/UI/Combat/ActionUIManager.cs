@@ -2,6 +2,7 @@
 using System.Collections;
 using UnityEngine.UI;
 using DG.Tweening;
+using com.jerrch.rpg;
 public class ActionUIManager : Singleton<ActionUIManager> {
 
 	public ActionCombatButton[] actionBtns;

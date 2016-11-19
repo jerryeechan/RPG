@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
-
+namespace com.jerrch.rpg
+{
 public class MagAtkValue : SkillEffect{
 
 	//FOR WEAPON
@@ -21,4 +22,5 @@ public class MagAtkValue : SkillEffect{
 		atkPower = level*5;
 		base.setLevel(level);
 	}
+}
 }

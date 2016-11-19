@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
-
+namespace com.jerrch.rpg
+{
 public class UIManager : Singleton<UIManager>{
 	Canvas canvas;
 	public AnimatableCanvas[] panels;
@@ -53,4 +54,5 @@ public class UIManager : Singleton<UIManager>{
 	{
 		cover.hide(1,d);
 	}
+}
 }

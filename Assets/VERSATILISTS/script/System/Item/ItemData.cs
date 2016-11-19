@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
-
+using com.jerrch.rpg;
 [System.SerializableAttribute]
 public class ItemData{
 	public string id;

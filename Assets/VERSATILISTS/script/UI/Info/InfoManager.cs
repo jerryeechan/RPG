@@ -1,12 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
 using UnityEngine.UI;
+using com.jerrch.rpg;
 public class InfoManager : Singleton<InfoManager> {
 	public bool isOpen = false;
 	
-	public EquipSlot[] equipSlots;
+	
 	Dictionary<InfoTabType,InfoTab> tabDict;
-	public InfoTab[] tabPanels;
+	InfoTab[] tabPanels;
 	GameObject panel;
 	
 	void Awake()
@@ -14,31 +15,37 @@ public class InfoManager : Singleton<InfoManager> {
 		_instance = this;
 		isOpen = true;
 		panel = transform.Find("panel").gameObject;
-
-		equipSlotDict = new Dictionary<EquipType,EquipSlot>();
-		foreach(var eqslot in equipSlots)
-		{
-			equipSlotDict.Add(eqslot.equipType,eqslot);
-		}
-
+		tabPanels = GetComponentsInChildren<InfoTab>(true);
 		tabDict = new Dictionary<InfoTabType,InfoTab>();
-
 		foreach(var tab in tabPanels)
 		{
 			tabDict.Add(tab.type,tab);
+			
 			if(tab.gameObject.activeSelf)
 			{
 				currentTab = tab;
 			}
+
 		}
 
 		if(currentTab==null)
 		{
-			currentTab = tabDict[InfoTabType.Bag];
+			currentTab = tabDict[InfoTabType.Adventure];
 		}
 	}
+	
 	public void init()
 	{
+
+		foreach(var tab in tabPanels)
+		{
+			if(tab != currentTab)
+			{
+				tab.show();
+				tab.hide();
+			}
+		}
+	
 		if(isOpen)
 		{
 			Show();
@@ -47,22 +54,18 @@ public class InfoManager : Singleton<InfoManager> {
 	public void Show()
 	{
 		panel.SetActive(true);
-		currentTab.gameObject.SetActive(true);
-
-		DungeonPlayerStateUI.instance.descriptionText.text = "";
+		currentTab.show();
+		PlayerStateUI.instance.descriptionText.text = "";
 		isOpen = true;
-		ItemUIManager.instance.Show();
-		inspectCharacter(GameManager.instance.currentCh);
-		CharacterAbilityUIManager.instance.viewCharacter(GameManager.instance.currentCh);
+		//ItemUIManager.instance.Show();
+		//inspectCharacter(GameManager.instance.currentCh);
 		
-		if(tabDict[InfoTabType.Action].gameObject.activeSelf == true)
-		{
-			switchTab(InfoTabType.Action);
-		}
-		else{
-			switchTab(InfoTabType.Bag);
-		}
+		
+		
 	}
+
+
+
 
 	public void Hide(){
 		panel.SetActive(false);
@@ -70,21 +73,11 @@ public class InfoManager : Singleton<InfoManager> {
 	}
 
 	
-	Dictionary<EquipType,EquipSlot> equipSlotDict;
+	
 	public void inspectCharacter(Character ch)
 	{	
-		
 		if(ch == null)
 			return;
-		foreach(var eqtype in Equip.AllEquipType)
-		{
-			Equip eq = ch.getEquip(eqtype);
-			if(eq != null)
-			{
-				equipSlotDict[eqtype].bindItem = eq;	
-			}
-		}
-		CharacterAbilityUIManager.instance.viewCharacter(ch);
 	}
 
 	public InfoTab currentTab;
@@ -99,4 +92,4 @@ public class InfoManager : Singleton<InfoManager> {
 	}
 }
 
-public enum InfoTabType{Bag,Action,Quest};
+public enum InfoTabType{Bag,Action,Adventure};

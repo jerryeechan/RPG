@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
-
+using com.jerrch.rpg;
 public class ItemManager : Singleton<ItemManager> {
 
 	Dictionary<string,ItemGraphicAsset> itemGraphicDict;
@@ -22,7 +22,11 @@ public class ItemManager : Singleton<ItemManager> {
 		}
 	}
 	
-
+	//public Item 
+	public Item getItem(string key)
+	{
+		return itemDict[key];
+	}
 	public Item getItem(ItemData data)
 	{
 		Item item = Instantiate(itemDict[data.id]);
@@ -39,5 +43,4 @@ public class ItemManager : Singleton<ItemManager> {
 		item.bindData = data;
 	}
 
-	
 }

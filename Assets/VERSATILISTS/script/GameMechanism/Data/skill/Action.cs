@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Collections;
 using DG.Tweening;
-namespace com.jerry.rpg
+namespace com.jerrch.rpg
 {
 	public class Action : MonoBehaviour {
 		public ActionType type;

@@ -1,8 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.EventSystems;
-using System;
-
+namespace com.jerrch.rpg
+{
 public class ActionSlot : ActionButton, IDropHandler
 {
 	public int index;
@@ -10,5 +10,7 @@ public class ActionSlot : ActionButton, IDropHandler
     {
         ActionTree.instance.OnDropActionSlot(this);
     }
+
+}
 
 }

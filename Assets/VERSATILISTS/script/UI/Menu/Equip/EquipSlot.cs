@@ -2,7 +2,8 @@
 using UnityEngine.UI;
 using System.Collections;
 using UnityEngine.EventSystems;
-
+namespace com.jerrch.rpg
+{
 public class EquipSlot : ItemSlot {
 	public EquipType equipType;
 	public Image previeImage;
@@ -47,4 +48,5 @@ public class EquipSlot : ItemSlot {
 		
         ItemUIManager.instance.OnPointerEnter(this);
     }
+}
 }

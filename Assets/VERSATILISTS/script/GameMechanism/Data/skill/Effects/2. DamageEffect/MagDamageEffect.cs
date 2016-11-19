@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
-
+namespace com.jerrch.rpg
+{
 public class MagDamageEffect :SkillEffect{
 
 	/*
@@ -33,4 +34,5 @@ public class MagDamageEffect :SkillEffect{
 		stat.hp -= (int)applyResult;
 	}
 	
+}
 }

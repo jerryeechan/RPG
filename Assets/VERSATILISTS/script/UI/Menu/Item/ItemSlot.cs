@@ -4,14 +4,15 @@ using System.Collections;
 using UnityEngine.EventSystems;
 using System;
 
-
+namespace com.jerrch.rpg
+{
 public class ItemSlot : MonoBehaviour,IPointerClickHandler,IDragHandler,IDropHandler,IBeginDragHandler,IPointerEnterHandler,IEndDragHandler{
 	protected Image itemImage;
 	public int index;
 	//Equip equip;
 	public CompositeText numText;
 	//[HideInInspector]
- 	Item _bindItem;
+ 	public Item _bindItem;
 	HandButton btn;
 	public Item bindItem{
 		set{
@@ -24,8 +25,8 @@ public class ItemSlot : MonoBehaviour,IPointerClickHandler,IDragHandler,IDropHan
 		_bindItem = item;
 		if(_bindItem)
 		{
-			print(itemImage.sprite);
-			print(item.asset.iconSprite);
+//			print(itemImage.sprite);
+//			print(item.asset.iconSprite);
 			itemImage.sprite = item.asset.iconSprite;
 			if(item.stackable)
 			{
@@ -162,4 +163,5 @@ public class ItemSlot : MonoBehaviour,IPointerClickHandler,IDragHandler,IDropHan
 
 public enum ItemSlotType{
 	Item,Equip
+}
 }

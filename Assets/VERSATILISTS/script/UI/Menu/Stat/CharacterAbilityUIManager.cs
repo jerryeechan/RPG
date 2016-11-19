@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine.UI;
 
-
+namespace com.jerrch.rpg
+{
 public class CharacterAbilityUIManager : Singleton<CharacterAbilityUIManager>,IDisplayable{
 
 	
@@ -25,13 +26,13 @@ public class CharacterAbilityUIManager : Singleton<CharacterAbilityUIManager>,ID
 	}
 	public void Show()
 	{
-		
+		inspectCharacter(GameManager.instance.currentCh);
 	}
 	public void Hide()
 	{
 
 	}
-	public void viewCharacter(Character ch)
+	public void inspectCharacter(Character ch)
 	{
 		CharacterData chData = ch.chData;
 		if(chData.statPoints>0)
@@ -79,7 +80,7 @@ public class CharacterAbilityUIManager : Singleton<CharacterAbilityUIManager>,ID
 	{
 		GameManager.instance.currentCh.updateValues();
 		GameManager.instance.currentCh.chUI.updateUI(GameManager.instance.currentCh.equipStat);
-		viewCharacter(GameManager.instance.currentCh);
+		inspectCharacter(GameManager.instance.currentCh);
 	}
 	public void enableStatButtons()
 	{
@@ -89,4 +90,5 @@ public class CharacterAbilityUIManager : Singleton<CharacterAbilityUIManager>,ID
 	{
 
 	}
+}
 }

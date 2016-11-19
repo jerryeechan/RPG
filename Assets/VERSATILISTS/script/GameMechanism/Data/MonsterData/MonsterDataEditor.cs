@@ -2,18 +2,18 @@
 using System.Collections.Generic;
 
 public class MonsterDataEditor :Singleton<MonsterDataEditor> {
-    DungeonMonsterSet[] sets;
-    Dictionary<string,DungeonMonsterSet> monsterSetDict;
+    EnemySet[] sets;
+    Dictionary<string,EnemySet> monsterSetDict;
     void Awake()
     {
-        sets = GetComponentsInChildren<DungeonMonsterSet>();
-        monsterSetDict = new Dictionary<string,DungeonMonsterSet>();
+        sets = GetComponentsInChildren<EnemySet>();
+        monsterSetDict = new Dictionary<string,EnemySet>();
         foreach(var monsterSet in sets)
         {
             monsterSetDict.Add(monsterSet.name,monsterSet);
         }
     }
-    public DungeonMonsterSet getMonsterSet(string id)
+    public EnemySet getMonsterSet(string id)
     {
         if(monsterSetDict.ContainsKey(id))
         return monsterSetDict[id];
@@ -23,7 +23,7 @@ public class MonsterDataEditor :Singleton<MonsterDataEditor> {
         }
     }
 
-    public DungeonMonsterSet getMonsterSet()
+    public EnemySet getMonsterSet()
     {
         string id = "test";
         if(monsterSetDict.ContainsKey(id))

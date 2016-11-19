@@ -3,11 +3,11 @@ using System.Collections;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using DG.Tweening;
-public class HandButton : Button{
+public class HandButton : Button,IMoveHandler{
 	
 	override public void OnPointerEnter(PointerEventData eventData)
 	{
-		if(enabled)
+		if(enabled&&interactable)
 		{
 			base.OnPointerEnter(eventData);
 			CursorManager.instance.PointerMode();
@@ -15,7 +15,7 @@ public class HandButton : Button{
 	}
 	override public void OnPointerExit(PointerEventData eventData)
 	{
-		if(enabled)
+		if(enabled&&interactable)
 		{
 			base.OnPointerExit(eventData);
 			CursorManager.instance.NormalMode();

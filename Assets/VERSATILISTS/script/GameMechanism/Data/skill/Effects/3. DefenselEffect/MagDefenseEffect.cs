@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
-
+namespace com.jerrch.rpg
+{
 public class MagDefenseEffect : SkillEffect {
 
 
@@ -16,4 +17,6 @@ public class MagDefenseEffect : SkillEffect {
 		onStat.magDef-=calEffectValue;
 		//Debug.Log("Defense over");
 	}
+}
+
 }

@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
-
+namespace com.jerrch.rpg
+{
 public class HealEffect :SkillEffect {
 
 	// Use this for initialization
@@ -15,4 +16,6 @@ public class HealEffect :SkillEffect {
 		stat.hp += (int)calEffectValue;
 		
 	}
+}
+
 }

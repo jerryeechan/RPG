@@ -2,6 +2,7 @@
 #if UNITY_EDITOR
 using UnityEngine;
 using UnityEditor;
+using UnityEditor.SceneManagement;
 [InitializeOnLoad]
 public class AutosaveOnRun: ScriptableObject
 {
@@ -11,9 +12,12 @@ public class AutosaveOnRun: ScriptableObject
 		{
 			if(EditorApplication.isPlayingOrWillChangePlaymode && !EditorApplication.isPlaying)
 			{
-				Debug.Log("Auto-Saving scene before entering Play mode: " + EditorApplication.currentScene);
-				
-				EditorApplication.SaveScene();
+				//Debug.Log("Auto-Saving scene before entering Play mode: " + EditorApplication.currentScene);
+				if(EditorSceneManager.SaveOpenScenes())
+				{
+					Debug.Log("Scene auto saved");
+				}
+				//EditorApplication.SaveScene();
 				EditorApplication.SaveAssets();
 			}
 		};

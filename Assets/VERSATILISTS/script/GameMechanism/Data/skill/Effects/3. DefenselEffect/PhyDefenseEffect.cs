@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
-
+namespace com.jerrch.rpg
+{
 public class PhyDefenseEffect : SkillEffect {
 
 
@@ -16,4 +17,5 @@ public class PhyDefenseEffect : SkillEffect {
 		onStat.phyDef-=calEffectValue;
 		//Debug.Log("Defense over");
 	}
+}
 }

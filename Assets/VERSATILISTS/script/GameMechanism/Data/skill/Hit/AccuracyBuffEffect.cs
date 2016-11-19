@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
-
+namespace com.jerrch.rpg
+{
 public class AccuracyBuffEffect : SkillEffect {
 
 	// Use this for initialization
@@ -18,4 +19,5 @@ public class AccuracyBuffEffect : SkillEffect {
 		onStat.accuracy -= calEffectValue;
 		base.RemoveEffect();
 	}
+}
 }

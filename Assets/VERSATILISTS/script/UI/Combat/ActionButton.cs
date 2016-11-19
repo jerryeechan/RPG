@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
-using com.jerry.rpg;
+namespace com.jerrch.rpg
+{
 
 public class ActionButton : MonoBehaviour{
 
@@ -65,4 +66,5 @@ public class ActionButton : MonoBehaviour{
 		manaText = transform.Find("mp").GetComponentInChildren<CompositeText>();
 		disableMask = transform.Find("disableMask").GetComponent<Image>();
 	}
+}
 }

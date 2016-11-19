@@ -2,46 +2,87 @@
 using System.Collections;
 using UnityEngine.UI;
 using DG.Tweening;
+using SmartLocalization;
+using com.jerrch.rpg;
 public class CompositeText : MonoBehaviour {
 
 	public string prefix;
 	public string postfix;
-
+	Font ori_font;
 	Text[] texts;
 
+	void init(){
+		if(!isInited)
+		{
+			texts = GetComponentsInChildren<Text>();
+			foreach(Text t in texts)
+			{
+				t.raycastTarget = false;
+			}
+			isInited = true;
+		}
+		text = _textValue;
+		
+	}
+	bool isInited = false;
 	void OnValidate()
 	{
-		texts = GetComponentsInChildren<Text>();
-		foreach(Text t in texts)
-		{
-			t.raycastTarget = false;
-		}
+		init();
 	}
+	
 	void Awake()
 	{
-		texts = GetComponentsInChildren<Text>();
+		init();
+		ori_font = texts[0].font;
+	}
+	void Start()
+	{
+		LanguageManager.Instance.OnChangeLanguage += OnLanguegeChanged;
+	}
+	public bool romanChOnly = true; 
+	void OnLanguegeChanged(LanguageManager languageManager)
+	{
+		text = _textValue;
+		Font font = ori_font;
+		if(!romanChOnly&&languageManager.CurrentlyLoadedCulture.languageCode=="zh-TW")
+		{
+			font = FontManager.instance.GetChineseFont();
+		}
+		
 		foreach(Text t in texts)
 		{
-			t.raycastTarget = false;
+			t.font = font;
+			//t.font = 
 		}
 	}
 
+	public string _textValue;
 	public string text{
 		set{
+			_textValue = value;
 			foreach(Text t in texts)
 			{
 				string newString = "";
 				if(prefix!="")
-					newString = prefix;
-				newString+= value+postfix;
+					newString = GetLocalText(prefix);
+				newString+= GetLocalText(value)+GetLocalText(postfix);
 				t.text = newString;
-				
 			}
 		}
 		get{
-			return texts[0].text;
+			return _textValue;
 		}
 	}
+
+	string GetLocalText(string key)
+	{
+		string text = LanguageManager.Instance.GetTextValue(key);
+		if(text!=null)
+		return text;
+		else 
+		return key;
+	}
+
 	public Color color{
 		set{
 			foreach(Text t in texts)
@@ -50,13 +91,38 @@ public class CompositeText : MonoBehaviour {
 			}
 		}
 	}
+
+	public bool isTyping = false;
 	public void DOText(string str)
 	{
-		foreach(Text t in texts)
+		_textValue = GetLocalText(str);
+		if(isTyping == false)
 		{
-			t.text = "";
-			t.DOText(str,1f);
+			isTyping = true;
+			foreach(Text t in texts)
+			{
+				t.text = "";
+				t.DOText(_textValue,2f,true);
+			}
+			this.myInvoke(2,()=>{
+				isTyping = false;
+			});
 		}
+		else
+		{
+			CompleteText();
+		}
+		
+	}
+	public void CompleteText()
+	{
+		foreach(Text t in texts)
+			{
+				t.text = "";
+				t.DOKill();
+				t.text = _textValue;
+			}
+			isTyping = false;
 	}
 	public void PopText(string str)
 	{
@@ -64,7 +130,7 @@ public class CompositeText : MonoBehaviour {
 		foreach(Text t in texts)
 		{
 			//print("pop text");
-			t.text = str;
+			t.text = LanguageManager.Instance.GetTextValue(str);
 			t.DOFade(0,0);
 			pop(t);
 		}
@@ -94,8 +160,8 @@ public class CompositeText : MonoBehaviour {
 			{
 				string newString = "";
 					if(prefix!="")
-						newString = prefix;
-					newString += (int)i +postfix;
+						newString = LanguageManager.Instance.GetTextValue(prefix);
+					newString += (int)i + LanguageManager.Instance.GetTextValue(postfix);
 					t.text = newString;
 			}
 			yield return new WaitForSeconds(0.05f);
