@@ -24,10 +24,15 @@ public class AnimatableCanvas : MonoBehaviour {
         hide(duration);
     }
 	public void hide(float duration,OnCompleteDelegate completeEvent=null)
-	{
-            canvasGroup.DOKill(true);   
+	{   
+            if(!canvasGroup)
+            {
+                canvasGroup = GetComponentsInChildren<CanvasGroup>(true)[0];
+            }
+            
             if(canvasGroup)
             {
+                canvasGroup.DOKill(true); 
                 canvasGroup.DOFade(0,duration).OnComplete(
                 ()=>{
                     if(completeEvent!=null)

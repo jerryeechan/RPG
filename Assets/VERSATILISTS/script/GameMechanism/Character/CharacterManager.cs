@@ -37,13 +37,14 @@ namespace com.jerrch.rpg{
 				CharacterData chData = chDataList[i];
 				Character newPlayer = chData.genCharacter();
 				chs.Add(newPlayer);
-				newPlayer.chUI = PlayerStateUI.instance.chUIs[i];
+				//newPlayer.chUI = PlayerStateUI.instance.chUIs[i];
 				newPlayer.chRenderer.transform.position = playerChPositions[i].position;
 			}
+			/*
 			for(;i<3;i++)
 			{
 				PlayerStateUI.instance.chUIs[i].gameObject.SetActive(false);
-			} 
+			} */
 			return chs;
 			
 		}
@@ -70,7 +71,7 @@ namespace com.jerrch.rpg{
 			CharacterRenderer chRend = null;
 			if(UITemplateID!="")
 			{
-				//print(UITemplateID);
+				//generate specific character
 				if(!chUITemplatesDict.ContainsKey(UITemplateID))
 				{
 					Debug.LogError(UITemplateID);

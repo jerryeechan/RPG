@@ -54,7 +54,7 @@ public class CharacterUI : MonoBehaviour,IPointerClickHandler {
     public void OnPointerClick(PointerEventData eventData)
     {
         GameManager.instance.currentCh = bindCh;
-		
+		print(GameManager.instance.gamemode);
 		switch(GameManager.instance.gamemode)
 		{
 			case GameMode.Combat:

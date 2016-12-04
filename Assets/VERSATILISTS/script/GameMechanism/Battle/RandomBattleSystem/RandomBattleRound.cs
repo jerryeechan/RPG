@@ -60,8 +60,10 @@ namespace com.jerrch.rpg
 					//sum exp...
 					exp+=20;
 				}
-				foreach(var ch in GameManager.instance.chs)
-					ch.getExp(exp);
+
+				//exp
+				//foreach(var ch in GameManager.instance.chs)
+				//	ch.getExp(exp);
 
 				enemyDiedThisTurn.Clear();
 				//play get exp animation
@@ -116,7 +118,8 @@ namespace com.jerrch.rpg
 
 		void NextPlayerAction()
 		{
-			ActionUIManager.instance.setCharacter(currentPlayer);
+			DiceRollerSingle.instance.Roll(OnDiceRollDone);
+			//ActionUIManager.instance.setCharacter(currentPlayer);
 		}
 		
 		bool isPlayerTurn = true;
@@ -125,8 +128,10 @@ namespace com.jerrch.rpg
 			if(isPlayerTurn)
 			{
 				PlayerStateUI.instance.popUpText("Your turn");
+				//renew action available and count CD  
 				foreach(var ch in players)
 				{
+					ch.doneActionThisRound = false;
 					foreach(var action in ch.actionList)
 					{
 						if(action==null||action.isPassive)
@@ -135,7 +140,8 @@ namespace com.jerrch.rpg
 							action.cd_count--;
 					}
 				}
-				DiceRoller2D.instance.Roll(OnDiceRollDone);
+				//DiceRoller2D.instance.Roll(OnDiceRollDone);
+				DiceRollerSingle.instance.Roll(OnDiceRollDone);
 				print("player turn");
 			}
 			else
@@ -217,13 +223,15 @@ namespace com.jerrch.rpg
 			Round();
 		}
 
-		public void OnDiceRollDone(int sum)
+		int[] diceValues;
+		public void OnDiceRollDone(int[] values)
 		{
-			
+			diceValues = values;
 			//actionPanel.SetActive(true);
-			EnergySlotUIManager.instance.removeAll();
-			EnergySlotUIManager.instance.generateEnergy(sum);
+			//EnergySlotUIManager.instance.removeAll();
+			//EnergySlotUIManager.instance.generateEnergy(sum);
 			ActionUIManager.instance.setCharacter(currentPlayer);
+			//
 			//actionDetailPanel.SetActive(true);
 		}
 		public void EnemyDie(Character ch)

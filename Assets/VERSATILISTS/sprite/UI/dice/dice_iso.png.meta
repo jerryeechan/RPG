@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 12206e55e0219487b989efb395874c45
-timeCreated: 1471716352
+timeCreated: 1479749380
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -25,6 +25,11 @@ TextureImporter:
     21300036: dice_iso_16
     21300038: dice_iso_17
     21300040: dice_iso_18
+    21300042: dice_iso_19
+    21300044: dice_iso_20
+    21300046: dice_iso_21
+    21300048: dice_iso_22
+    21300050: dice_iso_23
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -67,11 +72,14 @@ TextureImporter:
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spritePixelsToUnits: 1
   alphaIsTransparency: 1
+  spriteTessellationDetail: -1
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
+    serializedVersion: 2
     sprites:
-    - name: dice_iso_0
+    - serializedVersion: 2
+      name: dice_iso_0
       rect:
         serializedVersion: 2
         x: 0
@@ -81,17 +89,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 11, y: 10}
-        - {x: -4, y: 10}
-        - {x: -8, y: 9}
-        - {x: -12, y: 2}
-        - {x: -12, y: -15}
-        - {x: -8, y: -16}
-        - {x: 11, y: -16}
-        - {x: 15, y: -11}
-        - {x: 15, y: 3}
-    - name: dice_iso_1
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dice_iso_1
       rect:
         serializedVersion: 2
         x: 32
@@ -101,17 +102,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 10, y: 10}
-        - {x: -5, y: 10}
-        - {x: -9, y: 9}
-        - {x: -13, y: 2}
-        - {x: -13, y: -15}
-        - {x: -9, y: -16}
-        - {x: 10, y: -16}
-        - {x: 14, y: -11}
-        - {x: 14, y: 3}
-    - name: dice_iso_2
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dice_iso_2
       rect:
         serializedVersion: 2
         x: 64
@@ -121,16 +115,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -2, y: 9}
-        - {x: -8, y: 8}
-        - {x: -12, y: 4}
-        - {x: -12, y: -16}
-        - {x: 11, y: -16}
-        - {x: 15, y: -14}
-        - {x: 15, y: 1}
-        - {x: 7, y: 9}
-    - name: dice_iso_3
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dice_iso_3
       rect:
         serializedVersion: 2
         x: 96
@@ -138,24 +126,12 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -6, y: 9}
-        - {x: -12, y: 8}
-        - {x: -16, y: 4}
-        - {x: -16, y: -16}
-        - {x: 7, y: -16}
-        - {x: 11, y: -14}
-        - {x: 11, y: 1}
-        - {x: 3, y: 9}
-      - - {x: 12, y: 2}
-        - {x: 12, y: -10}
-        - {x: 13, y: -13}
-        - {x: 16, y: -13}
-        - {x: 16, y: 3}
-        - {x: 15, y: 3}
-    - name: dice_iso_4
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dice_iso_4
       rect:
         serializedVersion: 2
         x: 128
@@ -165,21 +141,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 1, y: 9}
-        - {x: -11, y: 9}
-        - {x: -16, y: 7}
-        - {x: -16, y: -16}
-        - {x: 2, y: -16}
-        - {x: 7, y: -10}
-        - {x: 7, y: 2}
-      - - {x: 8, y: 3}
-        - {x: 8, y: -12}
-        - {x: 10, y: -16}
-        - {x: 16, y: -16}
-        - {x: 16, y: 6}
-        - {x: 14, y: 6}
-    - name: dice_iso_5
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dice_iso_5
       rect:
         serializedVersion: 2
         x: 160
@@ -189,15 +154,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -14, y: 9}
-        - {x: -16, y: 7}
-        - {x: -16, y: -16}
-        - {x: 0, y: -16}
-        - {x: 3, y: -10}
-        - {x: 3, y: 4}
-        - {x: -4, y: 9}
-    - name: dice_iso_6
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dice_iso_6
       rect:
         serializedVersion: 2
         x: 0
@@ -207,16 +167,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -11, y: 8}
-        - {x: -13, y: 6}
-        - {x: -13, y: -13}
-        - {x: -12, y: -16}
-        - {x: 9, y: -16}
-        - {x: 12, y: -13}
-        - {x: 12, y: 4}
-        - {x: 11, y: 8}
-    - name: dice_iso_7
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dice_iso_7
       rect:
         serializedVersion: 2
         x: 32
@@ -226,16 +180,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 5, y: 8}
-        - {x: -10, y: 8}
-        - {x: -12, y: 2}
-        - {x: -12, y: -15}
-        - {x: -11, y: -16}
-        - {x: 13, y: -16}
-        - {x: 13, y: 1}
-        - {x: 8, y: 6}
-    - name: dice_iso_8
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dice_iso_8
       rect:
         serializedVersion: 2
         x: 64
@@ -243,23 +191,12 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -11, y: 8}
-        - {x: -13, y: 6}
-        - {x: -13, y: -13}
-        - {x: -12, y: -16}
-        - {x: 9, y: -16}
-        - {x: 12, y: -13}
-        - {x: 12, y: 4}
-        - {x: 11, y: 8}
-      - - {x: -5, y: 16}
-        - {x: -4, y: 13}
-        - {x: 5, y: 13}
-        - {x: 7, y: 15}
-        - {x: 7, y: 16}
-    - name: dice_iso_9
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dice_iso_9
       rect:
         serializedVersion: 2
         x: 96
@@ -269,21 +206,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 5, y: 8}
-        - {x: -10, y: 8}
-        - {x: -12, y: 2}
-        - {x: -12, y: -15}
-        - {x: -11, y: -16}
-        - {x: 13, y: -16}
-        - {x: 13, y: 1}
-        - {x: 8, y: 6}
-      - - {x: -9, y: 16}
-        - {x: -8, y: 13}
-        - {x: 1, y: 13}
-        - {x: 3, y: 15}
-        - {x: 3, y: 16}
-    - name: dice_iso_10
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dice_iso_10
       rect:
         serializedVersion: 2
         x: 128
@@ -293,21 +219,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 4, y: 8}
-        - {x: -11, y: 8}
-        - {x: -13, y: 2}
-        - {x: -13, y: -15}
-        - {x: -12, y: -16}
-        - {x: 12, y: -16}
-        - {x: 12, y: 1}
-        - {x: 7, y: 6}
-      - - {x: -13, y: 16}
-        - {x: -12, y: 13}
-        - {x: -3, y: 13}
-        - {x: -1, y: 15}
-        - {x: -1, y: 16}
-    - name: dice_iso_11
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dice_iso_11
       rect:
         serializedVersion: 2
         x: 160
@@ -317,21 +232,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -5, y: 8}
-        - {x: -11, y: 5}
-        - {x: -11, y: -15}
-        - {x: -10, y: -16}
-        - {x: 11, y: -16}
-        - {x: 14, y: -13}
-        - {x: 14, y: 1}
-        - {x: 11, y: 8}
-      - - {x: -16, y: 16}
-        - {x: -16, y: 13}
-        - {x: -7, y: 13}
-        - {x: -5, y: 15}
-        - {x: -5, y: 16}
-    - name: dice_iso_12
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dice_iso_12
       rect:
         serializedVersion: 2
         x: 0
@@ -341,16 +245,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -5, y: 12}
-        - {x: -14, y: 3}
-        - {x: -14, y: -11}
-        - {x: -10, y: -16}
-        - {x: 8, y: -16}
-        - {x: 13, y: -14}
-        - {x: 13, y: 7}
-        - {x: 3, y: 12}
-    - name: dice_iso_13
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dice_iso_13
       rect:
         serializedVersion: 2
         x: 32
@@ -360,16 +258,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -5, y: 12}
-        - {x: -14, y: 3}
-        - {x: -14, y: -11}
-        - {x: -10, y: -16}
-        - {x: 8, y: -16}
-        - {x: 13, y: -14}
-        - {x: 13, y: 7}
-        - {x: 3, y: 12}
-    - name: dice_iso_14
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dice_iso_14
       rect:
         serializedVersion: 2
         x: 64
@@ -379,16 +271,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -5, y: 12}
-        - {x: -14, y: 3}
-        - {x: -14, y: -11}
-        - {x: -10, y: -16}
-        - {x: 8, y: -16}
-        - {x: 13, y: -14}
-        - {x: 13, y: 7}
-        - {x: 3, y: 12}
-    - name: dice_iso_15
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dice_iso_15
       rect:
         serializedVersion: 2
         x: 96
@@ -398,16 +284,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -5, y: 12}
-        - {x: -14, y: 3}
-        - {x: -14, y: -11}
-        - {x: -10, y: -16}
-        - {x: 8, y: -16}
-        - {x: 13, y: -14}
-        - {x: 13, y: 7}
-        - {x: 3, y: 12}
-    - name: dice_iso_16
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dice_iso_16
       rect:
         serializedVersion: 2
         x: 128
@@ -417,16 +297,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -5, y: 12}
-        - {x: -14, y: 3}
-        - {x: -14, y: -11}
-        - {x: -10, y: -16}
-        - {x: 8, y: -16}
-        - {x: 13, y: -14}
-        - {x: 13, y: 7}
-        - {x: 3, y: 12}
-    - name: dice_iso_17
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dice_iso_17
       rect:
         serializedVersion: 2
         x: 160
@@ -436,16 +310,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -5, y: 12}
-        - {x: -14, y: 3}
-        - {x: -14, y: -11}
-        - {x: -10, y: -16}
-        - {x: 8, y: -16}
-        - {x: 13, y: -14}
-        - {x: 13, y: 7}
-        - {x: 3, y: 12}
-    - name: dice_iso_18
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dice_iso_18
       rect:
         serializedVersion: 2
         x: 0
@@ -455,15 +323,73 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -5, y: 12}
-        - {x: -14, y: 3}
-        - {x: -14, y: -11}
-        - {x: -10, y: -16}
-        - {x: 8, y: -16}
-        - {x: 13, y: -14}
-        - {x: 13, y: 7}
-        - {x: 3, y: 12}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dice_iso_19
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dice_iso_20
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dice_iso_21
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dice_iso_22
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dice_iso_23
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
     outline: []
   spritePackingTag: 
   userData: 

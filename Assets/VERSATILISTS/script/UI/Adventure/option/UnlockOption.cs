@@ -10,9 +10,9 @@ public class UnlockOption : AdventureOption {
 		DiceRoller2D.instance.Roll(result);
 	}
 
-	void result(int num)
+	void result(int[] values)
 	{
-		if(num>1)
+		if(values[0]>1)
 		{
 			parentEvent.triggerNextEvent = true;
 			success();

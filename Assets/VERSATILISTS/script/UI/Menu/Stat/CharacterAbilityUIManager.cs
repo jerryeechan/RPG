@@ -79,7 +79,7 @@ public class CharacterAbilityUIManager : Singleton<CharacterAbilityUIManager>,ID
 	public void chDataModified()
 	{
 		GameManager.instance.currentCh.updateValues();
-		GameManager.instance.currentCh.chUI.updateUI(GameManager.instance.currentCh.equipStat);
+		//GameManager.instance.currentCh.chUI.updateUI(GameManager.instance.currentCh.equipStat);
 		inspectCharacter(GameManager.instance.currentCh);
 	}
 	public void enableStatButtons()

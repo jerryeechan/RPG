@@ -43,6 +43,8 @@ public class CharacterRenderer : MonoBehaviour {
 		}
 
 		damagePosition = transform.Find("damagePos").position;
+		indicater.DOFade(1,0);
+		indicater.DOFade(0,0.4f).SetLoops(-1,LoopType.Yoyo);
 	}
 	public void wearEquip(Equip equip)
 	{
@@ -109,20 +111,38 @@ public class CharacterRenderer : MonoBehaviour {
 	//select the characeter
 	void OnMouseEnter()
 	{
-		CursorManager.instance.AttackMode();
+		if(!ActionUIManager.instance.isDraggingAction)
+			return;
+		if(bindCh.side == CharacterSide.Enemy)
+		{
+			CursorManager.instance.AttackMode();
+		}
+		else
+		{
+			CursorManager.instance.PointerMode();
+		}
 		//Cursor.SetCursor()
 	}
 	
 	void OnMouseExit()
 	{
+		//if(!ActionUIManager.instance.isDraggingAction)
+		//	return;
 		CursorManager.instance.NormalMode();
+		ActionUIManager.instance.OverCharacter(null);
 	}
 	public void selectByUI()
 	{
 		indicater.gameObject.SetActive(true);
+		
+		if(lastSelected)
+			lastSelected.deselect();
+		lastSelected = this;
 	}
+	static CharacterRenderer lastSelected;
 	public void deselect()
 	{
+		//indicater.DOKill();
 		indicater.gameObject.SetActive(false);
 	}
 	bool isMouseDown;
@@ -138,6 +158,7 @@ public class CharacterRenderer : MonoBehaviour {
 				isLongPress = true;
 			}
 		}
+		ActionUIManager.instance.OverCharacter(bindCh);
 	}
 	float pressCount;
 	bool isLongPress;
@@ -147,14 +168,22 @@ public class CharacterRenderer : MonoBehaviour {
 		//clean
 		isLongPress = false;
 		//NumberGenerator.instance.GetDamageNum(transform.position+Vector3.up*20,Random.Range(0,20));
+		
 	}
 	void OnMouseUp()
 	{
+		print("mosue up");
 		pressCount = 0;
 		isMouseDown = false;
+		if(ActionUIManager.instance.isDraggingAction)
+		{
+			print("drop action on this ch:"+bindCh.name);
+		}
+		
 	}
 	void OnMouseUpAsButton()
 	{
+
 		if(!bindCh)
 		{
 
@@ -165,8 +194,18 @@ public class CharacterRenderer : MonoBehaviour {
 		}
 		else
 		{
-			RandomBattleRound.instance.selectedEnemy = bindCh;	
-			ActionUIManager.instance.useAction();
+			if(bindCh.side == CharacterSide.Player)
+			{
+				ActionUIManager.instance.setCharacter(bindCh);
+				selectByUI();
+				//PlayerStateUI.instance.lastUI.ch.chRenderer.deselect();
+			}
+			else
+			{
+				RandomBattleRound.instance.selectedEnemy = bindCh;	
+				ActionUIManager.instance.useAction();
+			}
+			
 		}
 		
 		//print("click ch Render");

@@ -3,7 +3,7 @@ using System.Collections;
 [System.SerializableAttribute]
 public class AdventureEvent:MonoBehaviour {
 	public AdventureEventType type;
-	public AdventureEvent  nextEvent;
+	public AdventureEvent nextEvent;
 	public bool triggerNextEvent = false;
 
 	public  AdventureDialogueData dialogue;
@@ -11,22 +11,17 @@ public class AdventureEvent:MonoBehaviour {
 	public AdventureOption[] detailOptions;
 
 	// Use this for initialization
-	void Awake()
+	void OnValidate()
 	{
-		int i=0;
-		foreach(var option in options)
+		for(int i=0;i<options.Length;i++)
 		{
-			option.index = i;
-			option.parentEvent = this;
-			i++;
+			options[i].index = i;
+			options[i].parentEvent = this;
 		}
-
-		i=0;
-		foreach(var detailOption in detailOptions)
+		for(int i=0;i<detailOptions.Length;i++)
 		{
-			detailOption.index = i;
-			detailOption.parentEvent = this;
-			i++;
+			detailOptions[i].index = i;
+			detailOptions[i].parentEvent = this;
 		}
 
 	}

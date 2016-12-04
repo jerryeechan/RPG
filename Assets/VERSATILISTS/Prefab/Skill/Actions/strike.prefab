@@ -26,7 +26,7 @@ GameObject:
   - 4: {fileID: 412886}
   - 114: {fileID: 11497496}
   m_Layer: 0
-  m_Name: doDamage
+  m_Name: NormalDamage_Single
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -57,7 +57,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 446222}
   m_Layer: 0
-  m_Name: bonus
+  m_Name: addon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -129,17 +129,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 559c081501d564701ad04332e9a8adc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  type: 0
+  skills: []
   description: Kill You
   icon: {fileID: 21300002, guid: fe5260ff6edd74691b2caa79354fee98, type: 3}
   actionAnimationID: hammerMelee
   chAnimation: 2
   actionData:
-    id: 
-    requirements: []
-    energyCost: 0
-    cd: 0
-    cd_count: 0
+    id: slash
+    state: 0
+    masterLevel: 0
   caster: {fileID: 0}
+  energyCost: 1
+  minCost: 1
+  maxCost: 3
+  cd: 0
+  cd_count: 0
 --- !u!114 &11486954
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -153,14 +158,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   effectRange: 0
   effectType: 0
-  targetCount: 0
-  level: 1
+  level: 0
   mpCost: 0
   spCost: 0
   duration: 1
   applyDelay: 0
   dependency: 0
-  baseValue: 0
+  baseValue: 1
+  initValue: 1
   calEffectValue: 0
   applyResult: 0
   hit: 1
@@ -177,11 +182,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parentAction: {fileID: 0}
-  parentSkill: {fileID: 0}
   followSkill: {fileID: 0}
   mainEffect: {fileID: 11486954}
   accuracy: 1
-  hitAnimationID: strike
+  hitAnimationID: strikeHitEffect
   castTiming: 0
   icon: {fileID: 0}
   skillState: 0

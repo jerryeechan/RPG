@@ -36,7 +36,7 @@ public class InfoManager : Singleton<InfoManager> {
 	
 	public void init()
 	{
-
+		
 		foreach(var tab in tabPanels)
 		{
 			if(tab != currentTab)

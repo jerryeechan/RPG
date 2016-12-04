@@ -6,6 +6,7 @@ public class HealthBar : MonoBehaviour {
 	public TextMesh[] texts;
 	Transform healthbar;
 	SpriteRenderer healthBarSpr;
+	SpriteRenderer shieldBarSpr;
 
 	float fullValue;
 	float nowValue;
@@ -16,6 +17,8 @@ public class HealthBar : MonoBehaviour {
 	}
 	void Awake () {
 		healthbar = transform.Find("healthbarIn");
+		Transform shieldBar = transform.Find("shieldbarIn");
+		shieldBarSpr = shieldBar.GetComponent<SpriteRenderer>();
 		healthBarSpr = healthbar.GetComponent<SpriteRenderer>();
 		//SelfTest();
 	}

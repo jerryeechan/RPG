@@ -8,9 +8,9 @@ public class EnemyEscapeOption : AdventureOption {
 		print("escape");
 		DiceRoller2D.instance.Roll(cancelEvent);
 	}
-	public void cancelEvent(int sum)
+	public void cancelEvent(int[] values)
 	{
-		if(sum>5)
+		if(values[0]>5)
 		{
 			//succeed
 			Debug.Log("Run away succeed");

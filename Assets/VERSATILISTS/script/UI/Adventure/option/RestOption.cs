@@ -7,9 +7,9 @@ public class RestOption : AdventureOption{
 	{
 		DiceRoller2D.instance.Roll(restResult);
 	}
-	void restResult(int num)
+	void restResult(int[] values)
 	{
-		if(num<5)
+		if(values[0]<3)
 		{
 			fail();
 		}

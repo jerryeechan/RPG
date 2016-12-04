@@ -4,13 +4,19 @@ using UnityEngine.UI;
 using com.jerrch.rpg;
 public class AdventureManager : Singleton<AdventureManager> {
 
+//UI
 	public CompositeText targetName;
 	public CompositeText dialogueLine;
-	public Image targetImage;
-	public Image bgImage;
+	
 	public AnimatableCanvas optionPanel;
 	public AnimatableCanvas optionDisplayerPanel;
 	public AnimatableCanvas dialoguePanel;
+
+//Renderer
+	public SpriteRenderer npcRenderer;
+// vars
+	public AdventureStage[] stages;
+	int currentStageIndex;
 
 	AdventureOptionBtn[] optionBtns;
 	AdventureOptionDisplayer[] optionDisplayers;
@@ -139,23 +145,20 @@ public class AdventureManager : Singleton<AdventureManager> {
 		}
 		else
 		{
-			dialogueLine.DOText(line.text);
-			
-				
+			dialogueLine.DOText(line.text);				
 			if(line.target!=null)
 			{
 				currentTarget = line.target;
 			}
 			targetName.text = currentTarget.targetName;
-			targetImage.sprite = currentTarget.sprite;
-			targetImage.SetNativeSize();
+			changeNPCSprite(currentTarget.sprite);
 		}
-		
 	}
 	
-	public void genAdventureEvents()
+	void changeNPCSprite(Sprite sp)
 	{
-
+		//TODO FADE
+		npcRenderer.sprite = sp;
 	}
 
 	
@@ -168,6 +171,7 @@ public class AdventureManager : Singleton<AdventureManager> {
 				PlayDialogue(advEvent.dialogue);
 			break;
 		}
+		
 		isOptionDisplayed = false;
 		optionPanel.hide();
 		currentEvent = advEvent;
@@ -208,12 +212,15 @@ public class AdventureManager : Singleton<AdventureManager> {
 	}
 	bool currentEventDone = false;
 
-	public AdventureEvent getEvent()
-	{
-		//TODO:
-		//generate random events
-		return testEvent;
+	AdventureStage currentStage{
+		get{return stages[currentStageIndex];}
 	}
+	
+	void nextStage()
+	{
+		currentStageIndex++;
+	}
+	
 	
 	public void NextEvent()
 	{	
@@ -223,12 +230,31 @@ public class AdventureManager : Singleton<AdventureManager> {
 		}
 		else
 		{
+			if(currentStage.shouldMoveToNextStage)
+			{
+				nextStage();
+			}
 			UIManager.instance.ShowCover(()=>{
-				encounterEvent(getEvent());
+				//TODO:
+				currentScene = currentStage.getScene();
+				encounterEvent(currentScene.getEvent());
+				
+				encounterEvent(testEvent);
 				UIManager.instance.HideCover();
 			});
 		}
-		
+	}
+
+	AdventureScene _cur_scene;
+	AdventureScene currentScene{
+		get{
+			return _cur_scene;
+		}
+		set{
+			_cur_scene.gameObject.SetActive(false);
+			value.gameObject.SetActive(true);
+			_cur_scene = value;
+		}
 	}
 	
 }

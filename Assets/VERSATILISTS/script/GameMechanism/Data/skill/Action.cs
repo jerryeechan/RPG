@@ -6,6 +6,7 @@ namespace com.jerrch.rpg
 {
 	public class Action : MonoBehaviour {
 		public ActionType type;
+		public ActionDiceType diceType;
 		public Skill[] skills;
 		public string description;
 		public Sprite icon;
@@ -15,7 +16,8 @@ namespace com.jerrch.rpg
 		[HideInInspector]
 		public Character caster;
 		
-		public int energyCost = 1;
+		//public int energyCost = 1;
+		
 		public int cd = 0;
 		[HideInInspector]
 		public int cd_count;
@@ -25,7 +27,7 @@ namespace com.jerrch.rpg
 			if(isPassive)
 			{
 				cd = 0;
-				energyCost = 0;
+				//energyCost = 0;
 			}
 		}
 		void Awake()
@@ -39,7 +41,7 @@ namespace com.jerrch.rpg
 			if(isPassive)
 			{
 				cd = 0;
-				energyCost = 0;
+				//energyCost = 0;
 			}
 		}
 
@@ -155,4 +157,8 @@ namespace com.jerrch.rpg
 public enum ActionType
 {
 	Active,Passive
+}
+
+public enum ActionDiceType{
+	Attack = 0 , Defense = 1, Special = 2
 }

@@ -26,7 +26,7 @@ namespace com.jerrch.rpg
 			
 			// DataManager.instance.newPlayerData();
 			StartGame();
-			
+			InfoManager.instance.init();
 			switch(testMode)
 			{
 				case TestMode.Release:
@@ -39,6 +39,7 @@ namespace com.jerrch.rpg
 					stage.transform.SetParent(stageTransform);
 					EnemySet testEnemySet = stage.enemySet;
 					RandomBattleRound.instance.StartBattle(testEnemySet);
+					
 					//DungeonManager.instance.
 				break;
 				case TestMode.Adventure:
@@ -48,7 +49,7 @@ namespace com.jerrch.rpg
 				case TestMode.Stat:
 				break;
 			}
-			InfoManager.instance.init();
+			
 			//testMode = false;
 			/*
 			StartGame();
@@ -80,7 +81,7 @@ namespace com.jerrch.rpg
 			if(stageTransform)
 				Destroy(stageTransform.gameObject);
 			stageTransform = new GameObject("CombatStageContainer").transform;
-			CharacterManager.instance.StartGame();
+			//CharacterManager.instance.StartGame();
 			loadCharacter();
 			//DungeonMapKeyMode();
 			//DungeonMode();
@@ -127,11 +128,13 @@ namespace com.jerrch.rpg
 		}
 		public void CombatMode()
 		{
+			gamemode = GameMode.Combat;
 			print("Combat Mode");
 			stageTransform.gameObject.SetActive(true);
 			UIManager.instance.getPanel("combat").show();
 			PlayerStateUI.instance.CombatMode();
 			InfoManager.instance.Hide();
+			
 		}
 		GameMode lastMode;
 		GameMode _gameMode;

@@ -15,7 +15,7 @@ public class PlayerStateUI : Singleton<PlayerStateUI> {
 		chUIs = GetComponentsInChildren<CharacterUI>();
 		goldPanel = goldText.GetComponentInParent<AnimatableCanvas>();
 		doomPanel = doomText.GetComponentInParent<AnimatableCanvas>();
-		lastUI = chUIs[0];
+		//lastUI = chUIs[0];
 		//descriptionText.gameObject.SetActive(true);
 	}
 	

@@ -41,15 +41,15 @@ public class DiceRoller2D : Singleton<DiceRoller2D> {
 	void Result()
 	{
 		//ActionUIManager.instance.lockAllSkillBtn();
-		int sum = 0;
+//		int sum = 0;
 		//isDiceReady = true;
-		for(int i=0;i<diceImages.Length;i++)
-		{
-		//	ActionUIManager.instance.unlockSkill(diceValues[i]);
-			sum+=diceValues[i]+1;
-		}
+		
+		//for(int i=0;i<diceImages.Length;i++)
+		//{
+		//	sum+=diceValues[i]+1;
+		//}
 		if(diceRollDelegate != null)
-			diceRollDelegate(sum);
+			diceRollDelegate(diceValues);
 
 		panel.gameObject.SetActive(false);
 		diceRollDelegate = null;
@@ -57,7 +57,7 @@ public class DiceRoller2D : Singleton<DiceRoller2D> {
 	
 	int RollDice(int index)
 	{
-		int r = Random.Range(0,6);
+		int r = Random.Range(0,3);
 		diceImages[index].sprite = diceSprites[r];
 		diceValues[index] = r; 
 		
@@ -66,4 +66,4 @@ public class DiceRoller2D : Singleton<DiceRoller2D> {
 	DiceRollDelegate diceRollDelegate;
 }
 
-public delegate void DiceRollDelegate(int sum);
+public delegate void DiceRollDelegate(int[] values);

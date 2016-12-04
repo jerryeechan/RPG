@@ -12,23 +12,33 @@ public class ActionButton : MonoBehaviour{
 	public CompositeText cdText;
 	public CompositeText manaText;
 	public Image skillIcon;
+	public Image diceTypeImage;
 	protected Image disableMask;
-	public Action _action;
+
+
+	//should not use in public
+	[SerializeField]
+	Action _action;
 	public Action bindAction{
 		set{
+			print("set bind action");
 			_action = value;
 			if(_action==null)
 			{
 				skillIcon.sprite = SpriteManager.instance.emptySprite;
-				disableMask.enabled = true;
+				//disableMask.enabled = true;
+				if(diceTypeImage)
+					diceTypeImage.color = Color.black;
 				manaText.transform.parent.gameObject.SetActive(false);
 				cdText.transform.parent.gameObject.SetActive(false);
 			}
 			else 
 			{
 				skillIcon.sprite = _action.icon;
-				disableMask.enabled = false;
-
+				print(_action.icon);
+				//disableMask.enabled = false;
+				if(diceTypeImage)
+					diceTypeImage.color = ActionManager.getDiceTypeColor(_action.diceType);
 				if(_action.isPassive)
 				{
 					showManaCD(false);
@@ -36,11 +46,10 @@ public class ActionButton : MonoBehaviour{
 				else
 				{
 					showManaCD(true);
-					manaText.text = _action.energyCost.ToString();
+					//manaText.text = ""+_action.minCost+"-"+_action.maxCost; 
+					//_action.energyCost.ToString();
 					cdText.text = _action.cd.ToString();
-		
 				}			
-		
 			}
 		}
 		get{

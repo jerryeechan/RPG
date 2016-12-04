@@ -13,7 +13,7 @@ namespace com.jerrch.rpg
 		public CharacterStat equipStat;
 		public CharacterStat battleStat;
 		
-		
+		public bool doneActionThisRound = false;
 		Dictionary<EquipType,Equip> equipsDict; 
 
 		public Equip getEquip(EquipType type)
@@ -21,6 +21,7 @@ namespace com.jerrch.rpg
 			return equipsDict[type];
 		}
 
+		/*
 		CharacterUI ui;
 		public CharacterUI chUI{
 			get{
@@ -30,12 +31,12 @@ namespace com.jerrch.rpg
 				ui = value;
 				ui.bindCh = this;
 			}
-		}
+		}*/
 		
 		public List<SkillEffect> effectsOnMe;
 		
 		//the skill this character can use, total 4
-		List<Action> _actions;
+		public List<Action> _actions;
 		public List<Action> actionList{
 			get{return _actions;}
 			set{
@@ -169,6 +170,7 @@ namespace com.jerrch.rpg
 				chRenderer.updateRenderer(battleStat);
 			}		
 		}
+		/*
 		public void updateDungeonUI()
 		{
 			//dungeon UI update
@@ -184,7 +186,7 @@ namespace com.jerrch.rpg
 		public void getExp(int exp)
 		{
 			chUI.getExp(exp);
-		}
+		}*/
 		public bool isDead
 		{
 			get{ return battleStat.hp==0?true:false;}

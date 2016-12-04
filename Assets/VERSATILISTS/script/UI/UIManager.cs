@@ -3,7 +3,7 @@ using System.Collections.Generic;
 namespace com.jerrch.rpg
 {
 public class UIManager : Singleton<UIManager>{
-	Canvas canvas;
+	public Canvas canvas;
 	public AnimatableCanvas[] panels;
 	Dictionary<string,AnimatableCanvas> panelsDict;
 	void Awake()
