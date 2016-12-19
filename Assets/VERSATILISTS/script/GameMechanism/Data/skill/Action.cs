@@ -67,26 +67,39 @@ namespace com.jerrch.rpg
 				}	
 			}
 		}
+
+		//start action when start
 		public void start()
 		{
 			PlayActionAnimation();
 		}
 
-		//TODO:XXX no need for aciton animation, direct call skills.doeffect
+		//????? TODO:XXX no need for aciton animation, direct call skills.doeffect
 		void PlayActionAnimation()
 		{
-
-			//TODO:
-			this.myInvoke(1/6f,OnActionAnimationDone);
-			//temp
-			Animator a = AnimationManager.instance.getActionEffect(actionAnimationID);
-			a.speed = AnimationManager.getChAnimSpeed(chAnimation);
-			a.transform.position = caster.chRenderer.transform.position+Vector3.right*10;
-			a.gameObject.SetActive(true);
+			AnimationUnit a = AnimationManager.instance.getActionEffect(actionAnimationID);
+			
+			if(a)
+			{
+				print(actionAnimationID);
+				a.OnCompleteEvent = ()=>{
+					OnActionAnimationDone();
+				};
+				a.gameObject.SetActive(true);
+				a.speed = AnimationManager.getChAnimSpeed(chAnimation);
+				a.transform.position = caster.chRenderer.transform.position+Vector3.right*10;
+				
+			}
+			else{
+//				Debug.LogError("no action effect:"+actionAnimationID);
+				OnActionAnimationDone();
+			}
 			
 		}
 		void OnActionAnimationDone()
 		{
+			//TODO: only attack action shake camera, or new attribute to 
+			
 			if(skills==null)
 			{
 				Debug.LogError("the action has no skill");
@@ -96,11 +109,23 @@ namespace com.jerrch.rpg
 			{
 				skill.skillState = SkillState.Before;
 			}
-			//StartCoroutine(CheckActionDone());
-			skills[0].init(caster);
-			skills[0].DoEffect();
-			Camera.main.DOShakePosition(0.2f,5,30);
+			playSkill();
 		}
+		void playSkill()
+		{
+			skills[currentSkillIndex].init(caster);
+			skills[currentSkillIndex].DoEffect();
+			currentSkillIndex++;
+		}
+		int currentSkillIndex = 0;
+		public void nextSkill()
+		{
+			if(currentSkillIndex<skills.Length)
+				playSkill();
+			else 
+				RandomBattleRound.instance.ActionDone();
+		}
+		//TODO: remove this function, instead use next skill
 		public void checkSkillDone()
 		{
 			foreach(var skill in skills)

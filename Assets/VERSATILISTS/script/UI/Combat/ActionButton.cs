@@ -10,10 +10,11 @@ public class ActionButton : MonoBehaviour{
 	
 	//CharacterButton chButton;
 	public CompositeText cdText;
-	public CompositeText manaText;
+	//public CompositeText manaText;
 	public Image skillIcon;
 	public Image diceTypeImage;
 	protected Image disableMask;
+
 
 
 	//should not use in public
@@ -21,7 +22,7 @@ public class ActionButton : MonoBehaviour{
 	Action _action;
 	public Action bindAction{
 		set{
-			print("set bind action");
+//			print("set bind action");
 			_action = value;
 			if(_action==null)
 			{
@@ -29,13 +30,12 @@ public class ActionButton : MonoBehaviour{
 				//disableMask.enabled = true;
 				if(diceTypeImage)
 					diceTypeImage.color = Color.black;
-				manaText.transform.parent.gameObject.SetActive(false);
+				//manaText.transform.parent.gameObject.SetActive(false);
 				cdText.transform.parent.gameObject.SetActive(false);
 			}
 			else 
 			{
 				skillIcon.sprite = _action.icon;
-				print(_action.icon);
 				//disableMask.enabled = false;
 				if(diceTypeImage)
 					diceTypeImage.color = ActionManager.getDiceTypeColor(_action.diceType);
@@ -58,22 +58,26 @@ public class ActionButton : MonoBehaviour{
 	}
 	void showManaCD(bool b)
 	{
-		manaText.transform.parent.gameObject.SetActive(b);
+		//manaText.transform.parent.gameObject.SetActive(b);
 		cdText.transform.parent.gameObject.SetActive(b);	
+	}
+	void link()
+	{
+		skillIcon = transform.Find("icon").GetComponentInChildren<Image>();
+		cdText = transform.Find("cd").GetComponentInChildren<CompositeText>();
+		//manaText = transform.Find("mp").GetComponentInChildren<CompositeText>();
+		Transform disableMaskT = transform.Find("disableMask"); 
+		if(disableMaskT)
+			disableMask = disableMaskT.GetComponent<Image>();
+		diceTypeImage = transform.Find("type").GetComponent<Image>();
 	}
 	protected virtual void OnValidate()
 	{
-		skillIcon = transform.Find("icon").GetComponentInChildren<Image>();
-		cdText = transform.Find("cd").GetComponentInChildren<CompositeText>();
-		manaText = transform.Find("mp").GetComponentInChildren<CompositeText>();
-		disableMask = transform.Find("disableMask").GetComponent<Image>();
+		link();
 	}
 	protected virtual void Awake()
 	{
-		skillIcon = transform.Find("icon").GetComponentInChildren<Image>();
-		cdText = transform.Find("cd").GetComponentInChildren<CompositeText>();
-		manaText = transform.Find("mp").GetComponentInChildren<CompositeText>();
-		disableMask = transform.Find("disableMask").GetComponent<Image>();
+		link();
 	}
 }
 }

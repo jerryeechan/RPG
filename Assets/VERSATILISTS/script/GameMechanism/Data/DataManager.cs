@@ -12,7 +12,7 @@ public class DataManager : Singleton<DataManager> {
 	{
 		curPlayerData = playerData[0];
 		//Load();
-		SaveTemplate();
+		//SaveTemplate();
 		//Save();
 		//ResetSave();
 		//SaveTemplate();

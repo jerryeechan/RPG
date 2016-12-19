@@ -36,7 +36,8 @@ namespace com.jerrch.rpg
 		public List<SkillEffect> effectsOnMe;
 		
 		//the skill this character can use, total 4
-		public List<Action> _actions;
+		[SerializeField]
+		List<Action> _actions;
 		public List<Action> actionList{
 			get{return _actions;}
 			set{
@@ -252,19 +253,6 @@ namespace com.jerrch.rpg
 					effect.ApplyOn(battleStat);
 			}
 		}
-		public Character attackTarget()
-		{
-			if(side==CharacterSide.Player)
-			{
-				return RandomBattleRound.instance.selectedEnemy;
-			}
-			else
-			{
-				//TODO: replace with hate
-				return RandomBattleRound.instance.players[0];
-			}
-		}
-
 		public void die()
 		{
 			chRenderer.PlayCharacterAnimation(CharacterAnimation.die);
@@ -277,6 +265,33 @@ namespace com.jerrch.rpg
 			}
 				
 		}
+		
+		public Character enemyTarget()
+		{
+			if(side==CharacterSide.Player)
+			{
+				return RandomBattleRound.instance.selectedEnemy;
+			}
+			else
+			{
+				//TODO: replace with hate
+				return RandomBattleRound.instance.players[0];
+			}
+		}
+		public Character allieTarget()
+		{
+			if(side==CharacterSide.Player)
+			{
+				return RandomBattleRound.instance.selectedAllies;
+			}
+			else
+			{
+				//TODO: replace with ??
+				return RandomBattleRound.instance.enemies[0];
+			}
+		}
+
+		
 
 		public List<Character> allies()
 		{
@@ -289,7 +304,7 @@ namespace com.jerrch.rpg
 				return RandomBattleRound.instance.enemies;
 			}
 		}
-		public List<Character> attackTargets()
+		public List<Character> enemyTargets()
 		{
 			if(side==CharacterSide.Player)
 			{

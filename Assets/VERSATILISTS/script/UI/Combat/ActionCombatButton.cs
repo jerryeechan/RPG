@@ -47,8 +47,7 @@ namespace com.jerrch.rpg{
 			
 			//if(diceValue>=action.minCost&&diceValue<=action.maxCost)
 			//	costValid = true;
-			print(diceValue);
-			print((int)action.diceType);
+
 			if(diceValue == (int)action.diceType)
 			{
 				typeValid = true;
@@ -133,7 +132,7 @@ namespace com.jerrch.rpg{
 
 		public void OnBeginDrag(PointerEventData eventData)
 		{
-			
+			isDragging = true;
 			if(isEnable)
 			{
 				ActionUIManager.instance.OnBeginDrag(eventData,bindAction,transform.GetComponent<RectTransform>().anchoredPosition);
@@ -142,21 +141,24 @@ namespace com.jerrch.rpg{
 			print("begin drag");
 			
 		}
+		bool isDragging = false;
 
         public void OnDrag(PointerEventData eventData)
         {
-            ActionUIManager.instance.OnDrag(eventData);
+			if(isDragging)
+            	ActionUIManager.instance.OnDrag(eventData);
         }
 
         public void OnEndDrag(PointerEventData eventData)
         {
+			isDragging = false;
             print("end drag");
 			if(isEnable)
 			{
 				if(ActionUIManager.instance.testDrop())
 				{
-					useAction();
 					ActionUIManager.instance.lockAllSkillBtn();
+					this.myInvoke(0.5f,useAction);
 				}
 			}
 			

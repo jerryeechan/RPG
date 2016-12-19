@@ -5,7 +5,7 @@ public class EnemyEscapeOption : AdventureOption {
 	
 	override public void choose()
 	{	
-		print("escape");
+		print("逃跑");
 		DiceRoller2D.instance.Roll(cancelEvent);
 	}
 	public void cancelEvent(int[] values)

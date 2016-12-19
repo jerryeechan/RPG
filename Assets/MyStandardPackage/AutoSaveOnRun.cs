@@ -18,7 +18,7 @@ public class AutosaveOnRun: ScriptableObject
 					Debug.Log("Scene auto saved");
 				}
 				//EditorApplication.SaveScene();
-				EditorApplication.SaveAssets();
+				AssetDatabase.SaveAssets();
 			}
 		};
 	}

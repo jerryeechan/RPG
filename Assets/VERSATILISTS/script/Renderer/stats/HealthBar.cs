@@ -3,8 +3,7 @@ using System.Collections;
 using UnityEngine.UI;
 
 public class HealthBar : MonoBehaviour {
-	public TextMesh[] texts;
-	Transform healthbar;
+	// public TextMesh[] texts;
 	SpriteRenderer healthBarSpr;
 	SpriteRenderer shieldBarSpr;
 
@@ -16,7 +15,7 @@ public class HealthBar : MonoBehaviour {
 		nowValue = fvalue;
 	}
 	void Awake () {
-		healthbar = transform.Find("healthbarIn");
+		Transform healthbar = transform.Find("healthbarIn");
 		Transform shieldBar = transform.Find("shieldbarIn");
 		shieldBarSpr = shieldBar.GetComponent<SpriteRenderer>();
 		healthBarSpr = healthbar.GetComponent<SpriteRenderer>();
@@ -38,12 +37,14 @@ public class HealthBar : MonoBehaviour {
 	public void SetNowValue(float value)
 	{
 		nowValue = value;
-		healthbar.localScale = new Vector3((float)nowValue/fullValue,1);
+		healthBarSpr.transform.localScale = new Vector3((float)nowValue/fullValue,1);
+
+		/*
 		foreach (TextMesh t in texts)
 		{
 			t.text = value.ToString();
 		}
-		
+		*/
 	}
 	
 	

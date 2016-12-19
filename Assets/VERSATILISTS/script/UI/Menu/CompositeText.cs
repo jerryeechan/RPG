@@ -99,14 +99,16 @@ public class CompositeText : MonoBehaviour {
 		if(isTyping == false)
 		{
 			isTyping = true;
+			float duration = _textValue.Length*0.1f;
 			foreach(Text t in texts)
 			{
 				t.text = "";
-				t.DOText(_textValue,2f,true);
+				
+				t.DOText(_textValue,duration,true).OnComplete(()=>
+				{
+					isTyping = false;
+				});
 			}
-			this.myInvoke(2,()=>{
-				isTyping = false;
-			});
 		}
 		else
 		{

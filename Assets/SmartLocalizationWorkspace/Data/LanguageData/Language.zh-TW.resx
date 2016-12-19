@@ -125,11 +125,26 @@
 	<data name="event_enemy_ogre" xml:space="preserve">
 		<value>食人魔出現了</value>
 	</data>
+	<data name="event_enemy_zombies" xml:space="preserve">
+		<value>殭屍群出現了！！</value>
+	</data>
+	<data name="fight_btn" xml:space="preserve">
+		<value>戰鬥！</value>
+	</data>
 	<data name="ignore" xml:space="preserve">
 		<value>忽略</value>
 	</data>
 	<data name="INT" xml:space="preserve">
 		<value>智力</value>
+	</data>
+	<data name="line_ch0_lord_of_soil_1" xml:space="preserve">
+		<value>那就先麻煩你們處理一下城外的殭屍們，讓各位熟悉一下新的力量。</value>
+	</data>
+	<data name="line_ch0_lord_of_soil_2" xml:space="preserve">
+		<value>諸位真是厲害啊！老夫果然沒有看錯人呢！呵呵呵</value>
+	</data>
+	<data name="line_ch0_lord_of_soil_3" xml:space="preserve">
+		<value>這是我給各位的一點心意，請務必收下。</value>
 	</data>
 	<data name="STR" xml:space="preserve">
 		<value>力量</value>

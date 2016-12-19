@@ -1,0 +1,228 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1000012640977734}
+  m_IsPrefabParent: 1
+--- !u!1 &1000010067332310
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 4000012609694484}
+  m_Layer: 0
+  m_Name: addon
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1000012640977734
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 4000013223392168}
+  - 114: {fileID: 114000014122724514}
+  m_Layer: 0
+  m_Name: elemental_blessing
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1000013081684024
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 4000013236597064}
+  - 114: {fileID: 114000010989339808}
+  - 114: {fileID: 114000012147312674}
+  m_Layer: 0
+  m_Name: main
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1000014202406932
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 4000012261569554}
+  - 114: {fileID: 114000011069316206}
+  m_Layer: 0
+  m_Name: NormalDamage_AOE
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4000012261569554
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000014202406932}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.7511368, y: 32.1, z: -652.12445}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children:
+  - {fileID: 4000013236597064}
+  - {fileID: 4000012609694484}
+  m_Father: {fileID: 4000013223392168}
+  m_RootOrder: 0
+--- !u!4 &4000012609694484
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010067332310}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children: []
+  m_Father: {fileID: 4000012261569554}
+  m_RootOrder: 1
+--- !u!4 &4000013223392168
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000012640977734}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.7511368, y: -32.1, z: 652.12445}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children:
+  - {fileID: 4000012261569554}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+--- !u!4 &4000013236597064
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013081684024}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children: []
+  m_Father: {fileID: 4000012261569554}
+  m_RootOrder: 0
+--- !u!114 &114000010989339808
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013081684024}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59eb89416074947bda2bf44b5176f223, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  effectRange: 0
+  effectType: 0
+  level: 0
+  mpCost: 0
+  spCost: 0
+  duration: 1
+  applyDelay: 0
+  dependency: 0
+  baseValue: 0
+  initValue: 0
+  calEffectValue: 0
+  applyResult: 0
+  hit: 1
+  parentSkill: {fileID: 114000011069316206}
+--- !u!114 &114000011069316206
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000014202406932}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d915518966a0f4025bc01cbb392699ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parentAction: {fileID: 0}
+  followSkill: {fileID: 0}
+  mainEffect: {fileID: 114000013013414996, guid: 2f8ac86aa3f7c46d7a008468e0ffd584,
+    type: 2}
+  accuracy: 1
+  hitAnimationID: strikeHitEffect
+  castTiming: 0
+  icon: {fileID: 0}
+  skillState: 0
+  criticalBonus: 1
+--- !u!114 &114000012147312674
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013081684024}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 207c5a2b2cdb840a2b173d951dd91ad5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  effectRange: 0
+  effectType: 0
+  level: 0
+  mpCost: 0
+  spCost: 0
+  duration: 1
+  applyDelay: 0
+  dependency: 0
+  baseValue: 0
+  initValue: 0
+  calEffectValue: 0
+  applyResult: 0
+  hit: 1
+  parentSkill: {fileID: 114000011069316206}
+--- !u!114 &114000014122724514
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000012640977734}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 559c081501d564701ad04332e9a8adc4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 0
+  diceType: 0
+  skills: []
+  description: Increase damage
+  icon: {fileID: 21300046, guid: fe5260ff6edd74691b2caa79354fee98, type: 3}
+  actionAnimationID: none
+  chAnimation: 1
+  actionData:
+    id: elemental_blessing
+    state: 0
+    masterLevel: 0
+  caster: {fileID: 0}
+  cd: 0
+  cd_count: 0

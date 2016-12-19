@@ -6,6 +6,8 @@ using com.jerrch.rpg;
 public class CharacterData:StringfyProperty{
 	
 	public string name;
+	public string nickName;
+	public string classID;
 	public int level = 1;
 	public int exp = 0;
 	//public Dictionary<string,int> statValues = new Dictionary<string,int>(){{"str",1},{"int",1},{"dex",1}};
@@ -17,7 +19,7 @@ public class CharacterData:StringfyProperty{
 	public int intVal = 5;
 	public int dexVal = 5;
 	
-	public string UITemplateID="";
+	public string UITemplateID="player";
 	//public List<ActionData> currentActionData = new List<ActionData>();
 	public List<string> actionIDs = new List<string>();
 	//TODO: complex with actionBundle, add feature to action of each ch.
@@ -56,7 +58,7 @@ public class CharacterData:StringfyProperty{
 		//return Character;
 		Character ch = CharacterManager.instance.generateCharacter(name,UITemplateID);
 		//statValues["str"] = 1;
-		ch.chData = this;		
+		ch.chData = this;
 		ch.init(genStat(),genEquips(),ActionManager.instance.getActions(actionIDs));
 		
 		return ch;

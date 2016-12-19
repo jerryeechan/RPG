@@ -107,7 +107,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000013173570970}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.7511368, y: 32.1, z: -652.12445}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
@@ -122,7 +122,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000013206334420}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.7511368, y: -32.1, z: 652.12445}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
@@ -144,7 +144,8 @@ MonoBehaviour:
   followSkill: {fileID: 0}
   mainEffect: {fileID: 114000013013414996}
   accuracy: 1
-  hitAnimationID: strikeHitEffect
+  skillAnimationID: fireball
+  hitAnimationID: fireblast
   castTiming: 0
   icon: {fileID: 0}
   skillState: 0
@@ -161,17 +162,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 0
+  diceType: 0
   skills: []
-  description: Kill You
+  description: Throw a fireball to an enemy
   icon: {fileID: 21300034, guid: fe5260ff6edd74691b2caa79354fee98, type: 3}
-  actionAnimationID: fireBall
+  actionAnimationID: none
   chAnimation: 2
   actionData:
     id: fireball
     state: 0
     masterLevel: 0
   caster: {fileID: 0}
-  energyCost: 1
   cd: 0
   cd_count: 0
 --- !u!114 &114000013013414996
@@ -185,7 +186,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c430d85959f8d4274a1d8c8ec33b39b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  effectRange: 1
+  effectRange: 0
   effectType: 0
   level: 0
   mpCost: 0

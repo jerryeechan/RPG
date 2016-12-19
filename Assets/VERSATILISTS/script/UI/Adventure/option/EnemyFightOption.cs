@@ -3,7 +3,7 @@ using System.Collections;
 using com.jerrch.rpg;
 public class EnemyFightOption: AdventureOption {
 
-	public EnemySet specificEnemySet;
+	public string enemySetID;
 	void Awake()
 	{
 		
@@ -13,22 +13,24 @@ public class EnemyFightOption: AdventureOption {
 	}
 	void init()
 	{
-		text = "Fight";
+		
 	}
 	override public void choose()
 	{
-		print("Fight");
-		UIManager.instance.ShowCover(chooseEvent);
 		success();
+		this.myInvoke(1,
+		()=>{
+			UIManager.instance.ShowCover(chooseEvent);
+		});	
 	}
 	
 	
 	public void chooseEvent()
 	{
-		if(specificEnemySet==null)
-			specificEnemySet = MonsterDataEditor.instance.getMonsterSet();
-
-		RandomBattleRound.instance.StartBattle(specificEnemySet);
+		EnemySet enemySet;
+		print(enemySetID);
+		enemySet = MonsterDataEditor.instance.getMonsterSet(enemySetID);
+		RandomBattleRound.instance.StartBattle(enemySet);
 		UIManager.instance.HideCover(); 
 	}
 

@@ -17,14 +17,32 @@ namespace com.jerrch.rpg{
 			chUITemplatesDict = new Dictionary<string,CharacterRenderer>();
 			foreach(CharacterRenderer ui in chUITemplates)
 			{
-	//			print(ui.name);
 				chUITemplatesDict.Add(ui.name,ui);
 			}
-			
 		}
 		public void StartGame()
 		{
 			//chDict = new Dictionary<string,Character>();
+		}
+
+		public List<Character> loadPlayerCharacter(List<CharacterData> chDataList)
+		{
+			List<Character> chs = new List<Character>();
+			int i;
+			for(i=0;i<chDataList.Count;i++)
+			{
+				CharacterData chData = chDataList[i];
+				Character newPlayer = chData.genCharacter();
+				chs.Add(newPlayer);
+				//newPlayer.chUI = PlayerStateUI.instance.chUIs[i];
+				newPlayer.chRenderer.transform.position = playerChPositions[i].position;
+			}
+			/*
+			for(;i<3;i++)
+			{
+				PlayerStateUI.instance.chUIs[i].gameObject.SetActive(false);
+			} */
+			return chs;
 		}
 		public List<Character> loadPlayerCharacter()
 		{

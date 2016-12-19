@@ -3,6 +3,7 @@ using System.Collections;
 using com.jerrch.rpg;
 public class Item : MonoBehaviour {
 
+	[HideInInspector]
 	public ItemData bindData;
 	//public ItemUI bindUI;
 	public ItemGraphicAsset asset;

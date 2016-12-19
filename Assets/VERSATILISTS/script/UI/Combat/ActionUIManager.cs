@@ -65,7 +65,6 @@ public class ActionUIManager : Singleton<ActionUIManager> {
 	
 	public void setCharacter(Character ch)
 	{
-		print("set ch");	
 		isReadyToDoAction = true;
 		actionNum = ch.actionList.Count;
 		//print(actionNum);
@@ -80,13 +79,13 @@ public class ActionUIManager : Singleton<ActionUIManager> {
 			{
 				selectedActionIndex = -1;
 				//selectMask.gameObject.SetActive(false);
-				
 			}
 		}
 		for(int i=actionNum;i<ActionManager.action_max_num;i++)
 		{
 			actionBtns[i].disableButton();
 		}
+		ch.chRenderer.selectByUI();
 	}
 	public void useAction()
 	{
@@ -127,10 +126,8 @@ public class ActionUIManager : Singleton<ActionUIManager> {
 		print("OnBeginDrag");
 		isDraggingAction = true; 
 		draggingActionBtn.GetComponent<RectTransform>().anchoredPosition = ori_pos + Vector2.up*20;
-		
 		draggingActionBtn.bindAction = action;
 		draggingActionBtn.gameObject.SetActive(true);
-		
 	}
 	
 	public void OnDrag(PointerEventData eventdata)
@@ -139,18 +136,20 @@ public class ActionUIManager : Singleton<ActionUIManager> {
 	}
 	public bool testDrop()
 	{
-		print(targetCharacter);
+		print("Target character"+targetCharacter);
 		isDraggingAction = false;
 		draggingActionBtn.gameObject.SetActive(false);
 		if(targetCharacter)
 			return true;
 		return false;
 	}
-	Character targetCharacter = null;
+	public Character targetCharacter = null;
 	public void OverCharacter(Character ch)
 	{
 		if(isDraggingAction)
+		{
 			targetCharacter = ch;
+		}
 	}
 
 }

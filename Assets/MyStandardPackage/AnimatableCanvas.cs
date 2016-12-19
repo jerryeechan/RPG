@@ -32,7 +32,7 @@ public class AnimatableCanvas : MonoBehaviour {
             
             if(canvasGroup)
             {
-                canvasGroup.DOKill(true); 
+                //print(canvasGroup.DOKill(true)); 
                 canvasGroup.DOFade(0,duration).OnComplete(
                 ()=>{
                     if(completeEvent!=null)
@@ -54,7 +54,7 @@ public class AnimatableCanvas : MonoBehaviour {
     }
 	public void show(float duration,OnCompleteDelegate completeEvent=null)
 	{
-        print(name+"show start");
+        print(name+" show start");
         if(canvasGroup==null)
             canvasGroup = GetComponent<CanvasGroup>();
         canvasGroup.DOKill(true);

@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: b47cf48bca1d24b58bfcbf4881672701
+timeCreated: 1481645677
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Pocket Pixel
+  fontNames:
+  - Pocket Pixel
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

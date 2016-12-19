@@ -18,18 +18,30 @@ public class DiceRollerSingle : Singleton<DiceRollerSingle> {
 			return diceValues[currentIndex];
 		}
 	}
+	public bool isRoundDone{
+		get{return currentIndex == 3;}
+	}
 	void Awake()
 	{
 		diceValues = new int[diceImages.Length];
 		rollButtonText = rollButton.GetComponentInChildren<CompositeText>();
 		//panel = GetComponentInChildren<AnimatableCanvas>();
 	}
-	
+	public void init()
+	{
+		foreach(var diceImage in diceImages)
+		{
+			diceImage.color = Color.gray;
+		}
+		currentIndex = 0;
+	}
 	public void Roll(DiceRollDelegate d)
 	{
 		 diceRollDelegate+=d;
 		 Roll();
 	}
+
+	//The real roll
 	public void Roll()
 	{
 		 isActionUsed =  false;
@@ -37,6 +49,8 @@ public class DiceRollerSingle : Singleton<DiceRollerSingle> {
 		 indicator.GetComponent<RectTransform>().SetParent(diceImages[currentIndex].transform);
 		 indicator.GetComponent<RectTransform>().anchoredPosition = Vector2.zero;
 		 diceImages[currentIndex].color = Color.white;
+		 //currentSpriteSpin = Random.Range(min,max);
+		 currentSpriteSpin = 0;
 		 StartCoroutine("randomDice");
 		// isActionUsed = true;
 		 rollButtonText.text = "re-roll";
@@ -70,10 +84,9 @@ public class DiceRollerSingle : Singleton<DiceRollerSingle> {
 
 	IEnumerator randomDice()
 	{
-		for(int k=0;k<10;k++)
+		for(int k=0;k<9;k++)
 		{
-			RollDice(currentIndex);
-//			print("dice roll");
+			spinDice(currentIndex);
 			yield return new WaitForSeconds(0.1f);
 		}
 		yield return new WaitForSeconds(0.5f);
@@ -81,14 +94,7 @@ public class DiceRollerSingle : Singleton<DiceRollerSingle> {
 	}
 	void Result()
 	{
-		//ActionUIManager.instance.lockAllSkillBtn();
-//		int sum = 0;
-		//isDiceReady = true;
-		
-		//for(int i=0;i<diceImages.Length;i++)
-		//{
-		//	sum+=diceValues[i]+1;
-		//}
+		diceValues[currentIndex] = currentSpriteSpin;
 		if(diceRollDelegate != null)
 			diceRollDelegate(diceValues);
 		rollButton.enabled = true;
@@ -96,15 +102,16 @@ public class DiceRollerSingle : Singleton<DiceRollerSingle> {
 		//diceRollDelegate = null;
 	}
 	int min = 0;
-	int max = 1;
-	int RollDice(int index)
+	int max = 3;
+
+	int currentSpriteSpin;
+
+	//fake, spin the dice image
+	void spinDice(int index)
 	{
-		
-		int r = Random.Range(min,max);
-		diceImages[index].sprite = diceSprites[r];
-		diceValues[index] = r; 
-		
-		return r;
+		diceImages[index].sprite = diceSprites[++currentSpriteSpin];
+		if(currentSpriteSpin==max)
+			currentSpriteSpin = min;
 	}
 	DiceRollDelegate diceRollDelegate;
 }

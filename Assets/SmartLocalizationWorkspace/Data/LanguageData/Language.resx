@@ -122,16 +122,31 @@
 	<data name="DEX" xml:space="preserve">
 		<value>DEX</value>
 	</data>
+	<data name="event_enemy_ogre" xml:space="preserve">
+		<value>New Value</value>
+	</data>
+	<data name="fight_btn" xml:space="preserve">
+		<value>Fight!</value>
+	</data>
 	<data name="ignore" xml:space="preserve">
 		<value>ignore</value>
 	</data>
 	<data name="INT" xml:space="preserve">
 		<value>INT</value>
 	</data>
+	<data name="line_ch0_lord_of_soil_1" xml:space="preserve">
+		<value>line_ch0_lord_of_soil_1</value>
+	</data>
+	<data name="line_ch0_lord_of_soil_2" xml:space="preserve">
+		<value>line_ch0_lord_of_soil_2</value>
+	</data>
+	<data name="line_ch0_lord_of_soil_3" xml:space="preserve">
+		<value>line_ch0_lord_of_soil_3</value>
+	</data>
 	<data name="STR" xml:space="preserve">
 		<value>STR</value>
 	</data>
-	<data name="event_enemy_ogre" xml:space="preserve">
-		<value>New Value</value>
+	<data name="event_enemy_zombies" xml:space="preserve">
+		<value>encounter zombies</value>
 	</data>
 </root>

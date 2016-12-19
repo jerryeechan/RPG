@@ -52,6 +52,7 @@ public class UIManager : Singleton<UIManager>{
 	
 	public void HideCover(OnCompleteDelegate d=null)
 	{
+		print("hide cover");
 		cover.hide(1,d);
 	}
 }

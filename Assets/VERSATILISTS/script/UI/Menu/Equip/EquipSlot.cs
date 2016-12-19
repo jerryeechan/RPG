@@ -25,7 +25,7 @@ public class EquipSlot : ItemSlot {
 		}
 		else
 		{
-			previeImage.sprite = _bindEquip.bindGraphic.equipSprite;
+			previeImage.sprite = _bindEquip.bindGraphic.iconSprite;
 		}	
 		
 	}

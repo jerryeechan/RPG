@@ -14,7 +14,12 @@ public class TakeItemOption :AdventureOption {
 	public Item item;
 	public Item getItemInfo()
 	{
-		item = RewardManager.instance.getRewards("default");
-		return item;
+		if(item != null)
+		{
+			return item;
+		}
+		else
+			return RewardManager.instance.getRewards("default");
+		
 	}
 }

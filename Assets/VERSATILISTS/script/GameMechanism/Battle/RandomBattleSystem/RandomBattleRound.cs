@@ -11,10 +11,11 @@ namespace com.jerrch.rpg
 		public List<Character> enemyDiedThisTurn;
 		public int energyPoints;
 		Transform stageTransform;
-		public void StartBattle(EnemySet monsterSet)
+		public void StartBattle(EnemySet enemySet)
 		{
 			GameManager.instance.CombatMode();
-			stageTransform = GameManager.instance.stageTransform;
+			stageTransform = new GameObject("CombatStage").GetComponent<Transform>();
+			//stageTransform.gameObject.SetActive(true);
 			//loadEnemy(enemyWaves[0]);
 			//prepare characters from character data
 			//List<CharacterData> enemyData =  GetComponent<MonsterDataEditor>().characterDataList;
@@ -31,7 +32,7 @@ namespace com.jerrch.rpg
 				ch.BattleStart();
 			}
 			
-			enemies = CharacterManager.instance.loadEnemy(monsterSet.getNextWave());
+			enemies = CharacterManager.instance.loadEnemy(enemySet.getNextWave());
 			foreach(Character enemy in enemies)
 			{
 				print(enemy.name+"參戰");
@@ -100,6 +101,8 @@ namespace com.jerrch.rpg
 			}
 			UIManager.instance.ShowCover(()=>{
 				GameManager.instance.AdventureMode();
+				AdventureManager.instance.NextEvent();
+				Destroy(stageTransform.gameObject);
 				UIManager.instance.HideCover();
 			});
 		}
@@ -118,7 +121,10 @@ namespace com.jerrch.rpg
 
 		void NextPlayerAction()
 		{
-			DiceRollerSingle.instance.Roll(OnDiceRollDone);
+			if(!DiceRollerSingle.instance.isRoundDone)
+				DiceRollerSingle.instance.Roll(OnDiceRollDone);
+			else
+				RoundDone();
 			//ActionUIManager.instance.setCharacter(currentPlayer);
 		}
 		
@@ -141,6 +147,7 @@ namespace com.jerrch.rpg
 					}
 				}
 				//DiceRoller2D.instance.Roll(OnDiceRollDone);
+				DiceRollerSingle.instance.init();
 				DiceRollerSingle.instance.Roll(OnDiceRollDone);
 				print("player turn");
 			}
@@ -167,10 +174,17 @@ namespace com.jerrch.rpg
 			}
 			else 
 			{
-				if(!enemyQueue.Dequeue().useAction(0))
+				//TODO
+				Character enemy = enemyQueue.Dequeue();
+
+				//enemy.useAction(0);
+				int r = Random.Range(0,enemy.actionList.Count);
+				enemy.useAction(r);
+				/* 
+				if(!.useAction(0))
 				{
 					NextEnemyAction();
-				}
+				}*/
 			}
 		}
 		
@@ -227,12 +241,7 @@ namespace com.jerrch.rpg
 		public void OnDiceRollDone(int[] values)
 		{
 			diceValues = values;
-			//actionPanel.SetActive(true);
-			//EnergySlotUIManager.instance.removeAll();
-			//EnergySlotUIManager.instance.generateEnergy(sum);
 			ActionUIManager.instance.setCharacter(currentPlayer);
-			//
-			//actionDetailPanel.SetActive(true);
 		}
 		public void EnemyDie(Character ch)
 		{
@@ -250,5 +259,7 @@ namespace com.jerrch.rpg
 		CharacterData currentPlayerCharacterData;
 		public Character currentPlayer;
 		public Character selectedEnemy;	
+		public Character selectedAllies;
+
 	}
 }

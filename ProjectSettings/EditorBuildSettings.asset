@@ -9,5 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Level.unity
   - enabled: 0
     path: Assets/9 photo/untitled.unity
-  - enabled: 1
+  - enabled: 0
     path: Assets/VERSATILISTS/scene/battle.unity
+  - enabled: 0
+    path: Assets/VERSATILISTS/_scene/start.unity
+  - enabled: 0
+    path: Assets/VERSATILISTS/_scene/CharacterDataScene.unity

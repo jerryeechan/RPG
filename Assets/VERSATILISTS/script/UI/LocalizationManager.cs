@@ -18,12 +18,10 @@ public class LocalizationManager : MonoBehaviour {
 		
 	void Start()
 	{
-		SmartCultureInfo systemLanguage = LanguageManager.Instance.GetDeviceCultureIfSupported();
-		print(systemLanguage);
-		
+		SmartCultureInfo systemLanguage = LanguageManager.Instance.GetDeviceCultureIfSupported();		
 		availableLanguages = LanguageManager.Instance.GetSupportedLanguages();
 		
-		
+		LanguageManager.Instance.ChangeLanguage(availableLanguages[1]);
 	}
 	// Update is called once per frame
 	void Update () {

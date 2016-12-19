@@ -11,9 +11,11 @@ public class AdventureOptionBtn : MonoBehaviour, IPointerClickHandler
     {
         if(interactable)
         {
+            print("option clicked");
+            interactable = false;
             AdventureManager.instance.selectOption(index);
             CursorManager.instance.NormalMode();
-            interactable = false;
+            
         }
     }
     void Awake()

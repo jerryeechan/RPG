@@ -6,17 +6,25 @@ public class AdventureManager : Singleton<AdventureManager> {
 
 //UI
 	public CompositeText targetName;
-	public CompositeText dialogueLine;
+	//public CompositeText dialogueLine;
 	
 	public AnimatableCanvas optionPanel;
 	public AnimatableCanvas optionDisplayerPanel;
 	public AnimatableCanvas dialoguePanel;
-
+	public DialoguePlayer dialoguePlayer;
 //Renderer
-	public SpriteRenderer npcRenderer;
+	
+	public void show()
+	{
+		dialoguePlayer.show();
+	}
+	public void hide()
+	{
+		dialoguePlayer.hide();
+	}
 // vars
 	public AdventureStage[] stages;
-	int currentStageIndex;
+	int currentStageIndex=0;
 
 	AdventureOptionBtn[] optionBtns;
 	AdventureOptionDisplayer[] optionDisplayers;
@@ -34,13 +42,19 @@ public class AdventureManager : Singleton<AdventureManager> {
 	public AdventureEvent testEvent;
 	void Start()
 	{
-		encounterEvent(testEvent);
+		//TODO the first event???
+		currentScene = currentStage.getScene();
+		print(currentScene.name);
+		encounterEvent(currentScene.getEvent());
+		//encounterEvent(testEvent);
 	}
 	public void PlayDialogue(AdventureDialogueData dialogue)
 	{
 		currentDialogue = dialogue;
+		dialoguePanel.show();
 		dialogue.restart();
 		PlayNextLine();
+		
 	}
 	void ShowOptions(int num)
 	{
@@ -57,8 +71,6 @@ public class AdventureManager : Singleton<AdventureManager> {
 			optionBtns[1].GetComponent<RectTransform>().SetPositionX(0);
 			optionBtns[2].gameObject.SetActive(true);
 		}
-		
-		
 	}
 	void ShowOptionDisplayer(int num)
 	{
@@ -86,20 +98,25 @@ public class AdventureManager : Singleton<AdventureManager> {
 	}
 	AdventureTarget currentTarget;
 	bool isOptionDisplayed = false;
-
+	
+	
 	void showDialogueOption()
 	{
-		ShowOptions(currentEvent.options.Length);
-		for(int i = 0;i<currentEvent.options.Length;i++)
+		if(currentEvent.options!=null&&currentEvent.options.Length>0)
 		{
-			optionBtns[i].text.text = currentEvent.options[i].text;
-			optionBtns[i].interactable = true;
+			ShowOptions(currentEvent.options.Length);
+			for(int i = 0;i<currentEvent.options.Length;i++)
+			{
+				optionBtns[i].text.text = currentEvent.options[i].text;
+				optionBtns[i].interactable = true;
+			}
 		}
+		
 	}
 	void showDetailOption()
 	{
 		dialoguePanel.hide();
-		ShowOptions(currentEvent.options.Length);
+		//ShowOptions(currentEvent.options.Length);
 		ShowOptionDisplayer(currentEvent.detailOptions.Length);
 		for(int i=0;i<currentEvent.options.Length;i++)
 		{
@@ -116,19 +133,23 @@ public class AdventureManager : Singleton<AdventureManager> {
 	//dialogues
 	public void PlayNextLine()
 	{
+		AdventureDialogueLineData line = currentDialogue.nextLine();
 		if(currentEventDone)
 		{
 			NextEvent();
 		}
-		AdventureDialogueLineData line = currentDialogue.nextLine();
-		if(dialogueLine.isTyping==true)
-		{
-			dialogueLine.CompleteText();
-		}
+		
 		if(line == null)
-		{
+		{	
+			//temp demo solution
+			if(!currentEvent.hasOption)
+			{
+				NextEvent();
+			}
+			//end of temp demo solution
+			
 			//end of dialogue
-			//display option
+			//display option and wait
 			if(!isOptionDisplayed)
 			{
 				isOptionDisplayed = true;
@@ -137,7 +158,11 @@ public class AdventureManager : Singleton<AdventureManager> {
 					case AdventureEventType.Dialogue:
 						showDialogueOption();
 					break;
-					case AdventureEventType.Reward:
+					case AdventureEventType.ChooseReward:
+						showDialogueOption();
+						showDetailOption();
+					break;
+					case AdventureEventType.OptionReward:
 						showDetailOption();
 					break;
 				}
@@ -145,32 +170,35 @@ public class AdventureManager : Singleton<AdventureManager> {
 		}
 		else
 		{
-			dialogueLine.DOText(line.text);				
+			dialoguePlayer.PlayLine(line);
+			/*
 			if(line.target!=null)
 			{
 				currentTarget = line.target;
 			}
 			targetName.text = currentTarget.targetName;
-			changeNPCSprite(currentTarget.sprite);
+			*/
+			
 		}
 	}
 	
-	void changeNPCSprite(Sprite sp)
-	{
-		//TODO FADE
-		npcRenderer.sprite = sp;
-	}
 
 	
 	public void encounterEvent(AdventureEvent advEvent)
 	{
 		currentEventDone = false;
-		switch(advEvent.type)
+		
+		if(advEvent.dialogue!=null&&advEvent.dialogue.lines.Count>0)
 		{
-			case AdventureEventType.Dialogue:
-				PlayDialogue(advEvent.dialogue);
-			break;
+			switch(advEvent.type)
+			{
+				case AdventureEventType.Dialogue:
+					PlayDialogue(advEvent.dialogue);
+				break;
+			}
 		}
+		
+		//PlayDialogue(advEvent.dialogue);
 		
 		isOptionDisplayed = false;
 		optionPanel.hide();
@@ -181,23 +209,29 @@ public class AdventureManager : Singleton<AdventureManager> {
 	public void selectOption(int index)
 	{
 		currentEvent.options[index].choose();
-		
 	}
 	public void selectDetail(int index)
 	{
 		currentEvent.detailOptions[index].choose();
+		switch(currentEvent.type)
+		{
+			case AdventureEventType.ChooseReward:
+			EventDone();
+			break;
+			case AdventureEventType.OptionReward:
+			break;
+		}
 	}
 
 	void playDescription(string des)
 	{
 		dialoguePanel.show();
 		optionDisplayerPanel.hide();
-		dialogueLine.DOText(des);
+		dialoguePlayer.PlayText(des);
 	}
 	public void optionSuccess(int index)
 	{
 		playDescription(currentEvent.options[index].successStr);
-		EventDone();
 	}
 	
 	public void optionFail(int index){
@@ -209,6 +243,8 @@ public class AdventureManager : Singleton<AdventureManager> {
 	{
 		currentEventDone = true;
 		optionPanel.hide();
+		optionDisplayerPanel.hide();
+		NextEvent();
 	}
 	bool currentEventDone = false;
 
@@ -226,14 +262,18 @@ public class AdventureManager : Singleton<AdventureManager> {
 	{	
 		if(currentEvent.triggerNextEvent)
 		{
+			print("Next Event");
 			encounterEvent(currentEvent.nextEvent);
 		}
 		else
 		{
+			print("Get new stage Event");
+			/*
 			if(currentStage.shouldMoveToNextStage)
 			{
 				nextStage();
 			}
+			*/
 			UIManager.instance.ShowCover(()=>{
 				//TODO:
 				currentScene = currentStage.getScene();
@@ -251,9 +291,11 @@ public class AdventureManager : Singleton<AdventureManager> {
 			return _cur_scene;
 		}
 		set{
-			_cur_scene.gameObject.SetActive(false);
-			value.gameObject.SetActive(true);
+			if(_cur_scene)
+				_cur_scene.gameObject.SetActive(false);
+			
 			_cur_scene = value;
+			_cur_scene.gameObject.SetActive(true);
 		}
 	}
 	

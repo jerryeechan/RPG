@@ -10,6 +10,12 @@ public class AdventureEvent:MonoBehaviour {
 	public AdventureOption[] options;
 	public AdventureOption[] detailOptions;
 
+	public bool hasOption{
+		get{
+			return options.Length>0||detailOptions.Length>0;
+		}
+	}
+
 	// Use this for initialization
 	void OnValidate()
 	{
@@ -23,6 +29,10 @@ public class AdventureEvent:MonoBehaviour {
 			detailOptions[i].index = i;
 			detailOptions[i].parentEvent = this;
 		}
+		if(nextEvent==null)
+		{
+			triggerNextEvent = false;
+		}
 
 	}
 	
@@ -30,4 +40,4 @@ public class AdventureEvent:MonoBehaviour {
 }
 
 
-public enum AdventureEventType{Dialogue,Reward}
+public enum AdventureEventType{Dialogue,ChooseReward,OptionReward}

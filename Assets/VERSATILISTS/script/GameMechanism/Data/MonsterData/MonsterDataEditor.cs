@@ -16,10 +16,11 @@ public class MonsterDataEditor :Singleton<MonsterDataEditor> {
     public EnemySet getMonsterSet(string id)
     {
         if(monsterSetDict.ContainsKey(id))
-        return monsterSetDict[id];
+        return Instantiate(monsterSetDict[id]);
         else{
-            Debug.LogError("No such monster set");
-            return null;
+            Debug.LogError("No such monster set, use default");
+           
+            return getMonsterSet();
         }
     }
 

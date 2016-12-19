@@ -13,9 +13,16 @@ public class CharacterRenderer : MonoBehaviour {
 	public EquipRenderer[] equipRs;
 	public SpriteRenderer indicater;
 	public Dictionary<EquipType,EquipRenderer> equipUIDicts;
-	public Vector3 damagePosition;
+	Transform hitSpot;
+	public Vector2 hitPos
+	{
+		get{
+			return hitSpot.position;
+		}
+	}
 	void Awake()
 	{
+		hitSpot = transform.Find("hitSpot");
 		anim = GetComponentInChildren<Animator>();
 		bar = GetComponentInChildren<HealthBar>();
 		Transform equipTransform =transform.Find("equip");
@@ -42,7 +49,7 @@ public class CharacterRenderer : MonoBehaviour {
 			*/
 		}
 
-		damagePosition = transform.Find("damagePos").position;
+		
 		indicater.DOFade(1,0);
 		indicater.DOFade(0,0.4f).SetLoops(-1,LoopType.Yoyo);
 	}
@@ -60,7 +67,7 @@ public class CharacterRenderer : MonoBehaviour {
 			else
 			{
 				eqr.wearEquip(equipGraphic.equipAnimations);
-				eqr.wearEquip(equipGraphic.equipSprite);
+				//eqr.wearEquip(equipGraphic.equipSprite);
 			}
 			
 		}
@@ -104,23 +111,31 @@ public class CharacterRenderer : MonoBehaviour {
 		foreach(var equipAnim in equipAnims)
 		{
 			equipAnim.speed = AnimationManager.getChAnimSpeed(chAnimation);
-			equipAnim.Play(chAnimation.ToString());
+			equipAnim.Play(chAnimation.ToString(),-1,0);
 		}
 		//will call playSkill with animation event;
 	}
 	//select the characeter
 	void OnMouseEnter()
 	{
-		if(!ActionUIManager.instance.isDraggingAction)
+		if(!isCombatMode)
 			return;
-		if(bindCh.side == CharacterSide.Enemy)
-		{
-			CursorManager.instance.AttackMode();
-		}
-		else
+		if(!ActionUIManager.instance.isDraggingAction)
 		{
 			CursorManager.instance.PointerMode();
 		}
+		else
+		{
+			if(bindCh.side == CharacterSide.Enemy)
+			{
+				CursorManager.instance.AttackMode();
+			}
+			else
+			{
+				CursorManager.instance.PointerMode();
+			}
+		}
+		
 		//Cursor.SetCursor()
 	}
 	
@@ -129,8 +144,11 @@ public class CharacterRenderer : MonoBehaviour {
 		//if(!ActionUIManager.instance.isDraggingAction)
 		//	return;
 		CursorManager.instance.NormalMode();
-		ActionUIManager.instance.OverCharacter(null);
+		if(isCombatMode)
+			ActionUIManager.instance.OverCharacter(null);
 	}
+
+	//only call in ActionUIManger.instance.setCharacter
 	public void selectByUI()
 	{
 		indicater.gameObject.SetActive(true);
@@ -158,7 +176,19 @@ public class CharacterRenderer : MonoBehaviour {
 				isLongPress = true;
 			}
 		}
-		ActionUIManager.instance.OverCharacter(bindCh);
+		if(isCombatMode&&ActionUIManager.instance.isDraggingAction)
+		{
+			ActionUIManager.instance.OverCharacter(bindCh);
+			
+			if(bindCh.side == CharacterSide.Player)
+				RandomBattleRound.instance.selectedAllies = bindCh;
+			else
+				RandomBattleRound.instance.selectedEnemy = bindCh;
+			
+		}
+	}
+	bool isCombatMode{
+		get {return GameManager.instance.gamemode == GameMode.Combat;} 
 	}
 	float pressCount;
 	bool isLongPress;
@@ -172,6 +202,8 @@ public class CharacterRenderer : MonoBehaviour {
 	}
 	void OnMouseUp()
 	{
+		if(!isCombatMode)
+			return;
 		print("mosue up");
 		pressCount = 0;
 		isMouseDown = false;
@@ -181,9 +213,13 @@ public class CharacterRenderer : MonoBehaviour {
 		}
 		
 	}
+
+	
 	void OnMouseUpAsButton()
 	{
-
+		
+		if(!isCombatMode)
+			return;
 		if(!bindCh)
 		{
 
@@ -194,18 +230,13 @@ public class CharacterRenderer : MonoBehaviour {
 		}
 		else
 		{
+			//TODO: click the character, select character 
 			if(bindCh.side == CharacterSide.Player)
 			{
 				ActionUIManager.instance.setCharacter(bindCh);
-				selectByUI();
+				RandomBattleRound.instance.currentPlayer = bindCh;
 				//PlayerStateUI.instance.lastUI.ch.chRenderer.deselect();
 			}
-			else
-			{
-				RandomBattleRound.instance.selectedEnemy = bindCh;	
-				ActionUIManager.instance.useAction();
-			}
-			
 		}
 		
 		//print("click ch Render");
@@ -218,6 +249,7 @@ public class CharacterRenderer : MonoBehaviour {
 		//iTween.ShakePosition(gameObject,Vector3.one,0.2f);
 		transform.DOShakePosition(0.2f,4,100);
 		//d.loopCount = 4;
+		print("hit Animation");
 		
 	}
 	SpriteRenderer spr;
@@ -239,5 +271,5 @@ public class CharacterRenderer : MonoBehaviour {
 	}
 }
 
-public enum CharacterAnimation{idle,spell,melee,die,hurt,defense}
+public enum CharacterAnimation{idle,melee,holdmelee,upmelee,die,hurt,defense}
 public delegate void OnHitAnimationDone(Character ch);

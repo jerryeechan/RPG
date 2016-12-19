@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
 using System.Collections;
+using DG.Tweening;
 //Skill is the 
 namespace com.jerrch.rpg
 {
@@ -19,6 +20,7 @@ public class Skill : MonoBehaviour {
 	Character caster;
 	public Character castBy{get {return caster;}}
 	
+	public string skillAnimationID;
 	public string hitAnimationID;
 	
 	//WHEN CAST THE SKILL, CHARACTER DO RESPONSE ANIMATION
@@ -76,45 +78,81 @@ public class Skill : MonoBehaviour {
 	
 	*/
 	
-	//hit animation
-	public void PlayAnimation(Character target,bool isHit = true)
+	public SkillAnimationPosType posType;
+	public void PlayAnimation(Character target,bool hit = true)
 	{
 		isSkillDoneEffect = false;
+
+		PlaySkillAnimation(target,hit);
 		
-		//hitTargets.Add(target);
-		
-		//caster.setCD(cd);
-		//Debug.Log("skill have cd:"+cd);
-		
-		if(hitAnimationID!=null)
-		{
-			
-		}
-		if(!isHit)
-		{
-			PlayEffectAnimation(target,"miss");
-		}
+			//Debug.LogError("error skill effect animation id");
 		//else wait signal to call SkillDoEffect
 	}
-	public void PlayEffectAnimation(Character target,string animID)
+	
+	public void PlaySkillAnimation(Character target,bool isHit)
 	{
-			Animator seAnim = AnimationManager.instance.getSkillHitEffect(animID);
+		AnimationUnit seAnim = AnimationManager.instance.getActionEffect(skillAnimationID);
+		
+		//print(hitAnimationID);
+		if(seAnim)
+		{
+			seAnim.OnCompleteEvent = ()=>{
+				SkillAnimationDone(target,isHit);
+			};
 			
-			//print(hitAnimationID);
-			if(seAnim)
-			{
-				seAnim.speed = GameManager.playerAnimationSpeed;
-				//may be useless
-				//SkillHitAnimation skillhitAnim = seAnim.GetComponentInChildren<SkillHitAnimation>();
-				//skillhitAnim.SetSkill(this,target);
-				//TODO characterUI
-				seAnim.gameObject.SetActive(true);
+			seAnim.gameObject.SetActive(true);
+			//seAnim.speed = GameManager.playerAnimationSpeed;
+			if(posType == SkillAnimationPosType.Ground)
 				seAnim.transform.position = target.chRenderer.transform.position;
-			}
 			else
-			{
-				Debug.LogError("null hit animation");
-			}
+				seAnim.transform.position = target.chRenderer.hitPos;
+			//may be useless
+			//SkillHitAnimation skillhitAnim = seAnim.GetComponentInChildren<SkillHitAnimation>();
+			//skillhitAnim.SetSkill(this,target);
+			//TODO characterUI
+			
+			
+		}
+		else
+		{
+			SkillAnimationDone(target,isHit);
+			//Debug.LogError("null skill animation");
+		}
+	}
+	void SkillAnimationDone(Character target, bool hit)
+	{
+		//Camera.main.DOShakePosition(0.2f,5,30);
+		if(hit)
+			targetAfterHit(target,mainEffect);
+		else
+			miss(target);
+		playHitEffectAnimation(target,hit);
+	}
+
+	//hit animation
+	void playHitEffectAnimation(Character target,bool hit)
+	{
+		string animID = hitAnimationID;
+		if(!hit)
+		{
+			animID = "miss";
+		}
+		AnimationUnit seAnim = AnimationManager.instance.getSkillHitEffect(animID);
+		if(seAnim)
+		{
+			
+			//may be useless
+			//SkillHitAnimation skillhitAnim = seAnim.GetComponentInChildren<SkillHitAnimation>();
+			//skillhitAnim.SetSkill(this,target);
+			//TODO characterUI
+			seAnim.gameObject.SetActive(true);
+			//seAnim.speed = GameManager.playerAnimationSpeed;
+			seAnim.transform.position = target.chRenderer.hitPos;
+		}
+		else
+		{
+//			Debug.LogError("null hit animation");
+		}
 	}
 	
 	//wait when animation to send Info
@@ -149,34 +187,32 @@ public class Skill : MonoBehaviour {
 		}
 		float acc_final = accuracy + caster.battleStat.accuracy;
 		criticalBonus = caster.battleStat.calCriticalBonus();
-		mainEffect.useBy(caster);
+		
+//		print(name);
+//		print(mainEffect);
+		if(mainEffect)
+			mainEffect.useBy(caster);
 		
 		bool hit;
 		switch (mainEffect.effectRange)
 		{
-			
 			case EffectRange.Target:
 				doingTargetCnt = 1;
-				Character target = caster.attackTarget();
-				
+				Character target = caster.enemyTarget();	
 				hit = mainEffect.FirstApply(target,acc_final,true);
-				if(hit) 
-					targetAfterHit(target,mainEffect);
-				else
-					miss(target);
 				PlayAnimation(target,hit);
-				
 			break;
 			case EffectRange.AOE:
-				doingTargetCnt = caster.attackTargets().Count;
-				foreach (Character ch in caster.attackTargets())
+				doingTargetCnt = caster.enemyTargets().Count;
+				foreach (Character ch in caster.enemyTargets())
 				{
-					hit = mainEffect.FirstApply(ch,acc_final,true);
-					if(hit)
-						targetAfterHit(ch,mainEffect);
-					else
-						miss(ch);
-					PlayAnimation(ch,hit);
+					
+					if(!ch.isDead)
+					{
+						hit = mainEffect.FirstApply(ch,acc_final,true);
+						PlayAnimation(ch,hit);
+					}
+					
 				}
 			break;
 			case EffectRange.Self:
@@ -188,7 +224,13 @@ public class Skill : MonoBehaviour {
 					miss(caster);
 				
 			break;
-			case EffectRange.Allies:
+			case EffectRange.AlliesTarget:
+				doingTargetCnt = 1;
+				target = caster.allieTarget();
+				hit = mainEffect.FirstApply(target,acc_final,true);
+				PlayAnimation(target,hit);
+			break;
+			case EffectRange.AlliesAll:
 				doingTargetCnt = caster.allies().Count;
 				foreach(Character ch in caster.allies()){
 					if(mainEffect.FirstApply(ch,acc_final,false))
@@ -198,7 +240,7 @@ public class Skill : MonoBehaviour {
 					//yield return new WaitForSeconds(2);
 				}
 			break;
-			case EffectRange.Random:
+			case EffectRange.RandomAll:
 			break;
 		}
 		//StartCoroutine(this.CheckSkillDone());
@@ -216,28 +258,32 @@ public class Skill : MonoBehaviour {
 
 	void CheckSkillDone()
 	{
-		//yield return new WaitUntil(() => isSkillDone);
 		if(isSkillDone)
-		SkillDone();
+			SkillDone();
 	}
 
 	void SkillDone()
 	{
 		skillState = SkillState.Done;
-		parentAction.checkSkillDone();
+		//parentAction.checkSkillDone();
+		this.myInvoke(0.5f,()=>
+		{
+			parentAction.nextSkill();
+		});
+		
 	}
-	
-
 	
 	void targetAfterHit(Character ch,SkillEffect effect)
 	{
 		if(effect.effectType == EffectType.Value)
 		{
-			NumberGenerator.instance.GetDamageNum(ch.chRenderer.damagePosition,(int)effect.applyResult);
+			NumberGenerator.instance.GetDamageNum(ch.chRenderer.hitPos,(int)effect.applyResult);
+			if( ch.chRenderer)
+				ch.chRenderer.HitAnimation();
 		}
+		
 		ch.updateRenderer();
-		if(ch.chRenderer)
-			ch.chRenderer.HitAnimation();
+		
 		if(ch.isDead)
 		{
 			print("charater die");
@@ -247,14 +293,14 @@ public class Skill : MonoBehaviour {
 		
 		hitTargets.Add(ch);
 		//OnTargetHitDone();
-		this.myInvoke(1,OnTargetHitDone);		
+		OnTargetHitDone();
 	}
 	void miss(Character ch)
 	{
 		//TODO:
 		//play miss animation
 		//oncomplete set doingTargetCnt--
-
+		Debug.LogError("miss~");
 		doingTargetCnt--;
 		CheckSkillDone();
 	}
@@ -337,11 +383,13 @@ public class Skill : MonoBehaviour {
 	}
 }
 
-public enum SkillState{Before,Doing,Done}
+	public enum SkillState{Before,Doing,Done}
 
-public class SkillHitStat
-{
-	float accuracy;
-	float critical;
-}
+	public class SkillHitStat
+	{
+		float accuracy;
+		float critical;
+	}
+
+	public enum SkillAnimationPosType{HitSpot,Ground};
 }

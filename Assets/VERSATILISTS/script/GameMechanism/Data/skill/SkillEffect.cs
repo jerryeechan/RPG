@@ -61,7 +61,7 @@ public class SkillEffect : MonoBehaviour {
 	protected Character onCh;
 	public bool FirstApply(Character ch,float acc = 100,bool avoidable = false)
 	{
-		
+		print(ch);
 		bool hit;
 		if(avoidable)
 		{
@@ -81,6 +81,7 @@ public class SkillEffect : MonoBehaviour {
 		}
 		else{
 			parentSkill.effectDone(this);
+			Debug.LogError("Miss");
 			return false;
 		}
 	}
@@ -137,7 +138,7 @@ public class SkillEffect : MonoBehaviour {
 	//bool _isOver = false;
 	
 	public bool isEffectOver{get{return duration == 0;}}
-	public void init()
+	public virtual void init()
 	{
 
 	}
@@ -169,6 +170,6 @@ public interface ISkillEffect{
 	void RemoveEffect();
 }
 
-public enum EffectRange{Target,AOE,ExceptTarget,Self,Allies,Random};
+public enum EffectRange{Target,AOE,ExceptTarget,Self,AlliesTarget,AlliesAll,RandomEnemy,RandomAll};
 public enum EffectType{Value,PositiveBuff,NegativeBuff};//Value can't be removed, only with hp, mp, sp
 }
