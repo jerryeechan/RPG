@@ -123,6 +123,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1054987231024804
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4651060732135862}
+  - component: {fileID: 114821754563690228}
+  m_Layer: 0
+  m_Name: defense
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1056821423778422
 GameObject:
   m_ObjectHideFlags: 1
@@ -212,6 +228,22 @@ GameObject:
   - component: {fileID: 114963535076059338}
   m_Layer: 0
   m_Name: passive skill
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1178419742112616
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4435081953599090}
+  - component: {fileID: 114259033090023066}
+  m_Layer: 0
+  m_Name: main
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -402,6 +434,37 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1325522156756084
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4182186105291716}
+  m_Layer: 0
+  m_Name: addon
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1327320138978088
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4410140556722770}
+  - component: {fileID: 114016461338230598}
+  m_Layer: 0
+  m_Name: main
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1347343225129688
 GameObject:
   m_ObjectHideFlags: 1
@@ -428,6 +491,22 @@ GameObject:
   - component: {fileID: 4515888156928678}
   m_Layer: 0
   m_Name: addon
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1376909893934820
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4654174219263632}
+  - component: {fileID: 114781927387064566}
+  m_Layer: 0
+  m_Name: dark_slash
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -602,7 +681,23 @@ GameObject:
   - component: {fileID: 4302171110733612}
   - component: {fileID: 114850050873816224}
   m_Layer: 0
-  m_Name: darkcharge
+  m_Name: dark_charge
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1475630619685378
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4582590168247366}
+  - component: {fileID: 114267640721738874}
+  m_Layer: 0
+  m_Name: HeavyDamage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -956,6 +1051,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1744529940205582
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4845899157082566}
+  - component: {fileID: 114918566490736902}
+  m_Layer: 0
+  m_Name: darks_shield
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1747968688627620
 GameObject:
   m_ObjectHideFlags: 1
@@ -998,6 +1109,21 @@ GameObject:
   - component: {fileID: 114207234531909406}
   m_Layer: 0
   m_Name: firestorm
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1784559557162670
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4392471624288408}
+  m_Layer: 0
+  m_Name: Defend
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1448,6 +1574,19 @@ Transform:
   m_Father: {fileID: 4818135301164724}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4182186105291716
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1325522156756084}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4582590168247366}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4194618978656726
 Transform:
   m_ObjectHideFlags: 1
@@ -1621,6 +1760,20 @@ Transform:
   m_Father: {fileID: 4910693570958438}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4392471624288408
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1784559557162670}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 4845899157082566}
+  m_Father: {fileID: 4597992320120686}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4401455896538816
 Transform:
   m_ObjectHideFlags: 1
@@ -1662,6 +1815,19 @@ Transform:
   m_Father: {fileID: 4698739884547272}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4410140556722770
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1327320138978088}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4582590168247366}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4425192645121120
 Transform:
   m_ObjectHideFlags: 1
@@ -1687,6 +1853,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4120991666476574}
   m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4435081953599090
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1178419742112616}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4651060732135862}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4435658478879362
 Transform:
@@ -1854,6 +2033,21 @@ Transform:
   m_Father: {fileID: 4194618978656726}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4582590168247366
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1475630619685378}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.7511368, y: 32.1, z: -652.12445}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 4410140556722770}
+  - {fileID: 4182186105291716}
+  m_Father: {fileID: 4654174219263632}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4597992320120686
 Transform:
   m_ObjectHideFlags: 1
@@ -1867,6 +2061,7 @@ Transform:
   - {fileID: 4942558257442972}
   - {fileID: 4497897899321808}
   - {fileID: 4721345148342056}
+  - {fileID: 4392471624288408}
   m_Father: {fileID: 4249703622541446}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1929,6 +2124,34 @@ Transform:
   - {fileID: 4680506313312444}
   m_Father: {fileID: 4877753793158868}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4651060732135862
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1054987231024804}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 4435081953599090}
+  m_Father: {fileID: 4845899157082566}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4654174219263632
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1376909893934820}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.7511368, y: -32.1, z: 652.12445}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 4582590168247366}
+  m_Father: {fileID: 4942558257442972}
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4675009223025394
 Transform:
@@ -2146,6 +2369,20 @@ Transform:
   m_Father: {fileID: 4497897899321808}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4845899157082566
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1744529940205582}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 4651060732135862}
+  m_Father: {fileID: 4392471624288408}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4865313985361252
 Transform:
   m_ObjectHideFlags: 1
@@ -2286,6 +2523,7 @@ Transform:
   - {fileID: 4614428849770476}
   - {fileID: 4997395049425046}
   - {fileID: 4302171110733612}
+  - {fileID: 4654174219263632}
   m_Father: {fileID: 4597992320120686}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2384,6 +2622,31 @@ MonoBehaviour:
   applyResult: 0
   hit: 1
   parentSkill: {fileID: 114201027665081042}
+--- !u!114 &114016461338230598
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1327320138978088}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c430d85959f8d4274a1d8c8ec33b39b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  effectRange: 0
+  effectType: 0
+  level: 0
+  mpCost: 0
+  spCost: 0
+  duration: 1
+  applyDelay: 0
+  dependency: 0
+  baseValue: 180
+  initValue: 180
+  calEffectValue: 0
+  applyResult: 0
+  hit: 1
+  parentSkill: {fileID: 114267640721738874}
 --- !u!114 &114046578755416688
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2609,7 +2872,7 @@ MonoBehaviour:
   followSkill: {fileID: 0}
   mainEffect: {fileID: 114177558609070592}
   accuracy: 0.6
-  skillAnimationID: 
+  skillAnimationID: darkcharge_up_anim
   hitAnimationID: strikeHitEffect
   castTiming: 0
   icon: {fileID: 0}
@@ -2881,6 +3144,53 @@ MonoBehaviour:
   applyResult: 0
   hit: 1
   parentSkill: {fileID: 114165776634324162}
+--- !u!114 &114259033090023066
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1178419742112616}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9361d39157ab494e8bbf405d7eda4d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  effectRange: 4
+  effectType: 0
+  level: 0
+  mpCost: 0
+  spCost: 0
+  duration: 1
+  applyDelay: 0
+  dependency: 0
+  baseValue: 0
+  initValue: 0
+  calEffectValue: 0
+  applyResult: 0
+  hit: 1
+  parentSkill: {fileID: 114821754563690228}
+--- !u!114 &114267640721738874
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1475630619685378}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d915518966a0f4025bc01cbb392699ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parentAction: {fileID: 0}
+  followSkill: {fileID: 0}
+  mainEffect: {fileID: 114016461338230598}
+  accuracy: 0.6
+  skillAnimationID: darkslash_large_anim
+  hitAnimationID: strikeHitEffect
+  castTiming: 0
+  icon: {fileID: 0}
+  skillState: 1
+  posType: 0
+  criticalBonus: 1
 --- !u!114 &114294829194984134
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2917,20 +3227,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 296834ad9ff6c4c1a9eadac5b67639ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  actions:
-  - {fileID: 114613996485301642}
-  - {fileID: 114669681286418274}
-  - {fileID: 114790682950713298}
-  - {fileID: 114469396464232418}
-  - {fileID: 114355586254103686}
-  - {fileID: 114345298590462200}
-  - {fileID: 114934373849641258}
-  - {fileID: 114585111323541840}
-  - {fileID: 114472486549961890}
-  - {fileID: 114849100168911734}
-  - {fileID: 114984027923293604}
-  - {fileID: 0}
-  - {fileID: 0}
+  actions: []
 --- !u!114 &114310975860877568
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3467,6 +3764,31 @@ MonoBehaviour:
   applyResult: 0
   hit: 1
   parentSkill: {fileID: 114731978475106732}
+--- !u!114 &114781927387064566
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1376909893934820}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 559c081501d564701ad04332e9a8adc4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 0
+  diceType: 0
+  skills: []
+  description: Kill You
+  icon: {fileID: 21300014, guid: fe5260ff6edd74691b2caa79354fee98, type: 3}
+  actionAnimationID: hammerMelee
+  chAnimation: 1
+  actionData:
+    id: dark_slash
+    state: 0
+    masterLevel: 0
+  caster: {fileID: 0}
+  cd: 0
+  cd_count: 0
 --- !u!114 &114787912057287564
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3517,6 +3839,28 @@ MonoBehaviour:
   caster: {fileID: 0}
   cd: 1
   cd_count: 0
+--- !u!114 &114821754563690228
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1054987231024804}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d915518966a0f4025bc01cbb392699ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parentAction: {fileID: 114918566490736902}
+  followSkill: {fileID: 0}
+  mainEffect: {fileID: 0}
+  accuracy: 1
+  skillAnimationID: darks_shield_anim
+  hitAnimationID: 
+  castTiming: 0
+  icon: {fileID: 0}
+  skillState: 0
+  posType: 0
+  criticalBonus: 1
 --- !u!114 &114849100168911734
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3558,15 +3902,15 @@ MonoBehaviour:
   diceType: 0
   skills: []
   description: Kill You
-  icon: {fileID: 21300006, guid: fe5260ff6edd74691b2caa79354fee98, type: 3}
-  actionAnimationID: hammerMelee
+  icon: {fileID: 21300010, guid: fe5260ff6edd74691b2caa79354fee98, type: 3}
+  actionAnimationID: dark_charge_anim
   chAnimation: 1
   actionData:
-    id: darkcharge
+    id: dark_charge
     state: 0
     masterLevel: 0
   caster: {fileID: 0}
-  cd: 1
+  cd: 0
   cd_count: 0
 --- !u!114 &114915351235142950
 MonoBehaviour:
@@ -3590,6 +3934,32 @@ MonoBehaviour:
   skillState: 0
   posType: 0
   criticalBonus: 1
+--- !u!114 &114918566490736902
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1744529940205582}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 559c081501d564701ad04332e9a8adc4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 0
+  diceType: 0
+  skills:
+  - {fileID: 114821754563690228}
+  description: Taunt your enemy, increase threat
+  icon: {fileID: 21300118, guid: fe5260ff6edd74691b2caa79354fee98, type: 3}
+  actionAnimationID: 
+  chAnimation: 3
+  actionData:
+    id: darks_shield
+    state: 0
+    masterLevel: 0
+  caster: {fileID: 0}
+  cd: 0
+  cd_count: 0
 --- !u!114 &114934373849641258
 MonoBehaviour:
   m_ObjectHideFlags: 1

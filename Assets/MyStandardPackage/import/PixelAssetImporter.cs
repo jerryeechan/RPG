@@ -42,7 +42,8 @@ internal sealed class PixelAssetImporter : AssetPostprocessor {
 		importer.spritePixelsPerUnit = 1;
 		importer.mipmapEnabled = false;
 		importer.filterMode = FilterMode.Point;
-		importer.textureFormat = TextureImporterFormat.AutomaticTruecolor;
+        importer.textureCompression = TextureImporterCompression.Uncompressed;
+		//importer.textureFormat = TextureImporterCompression.Uncompressed;
 
 		// access the TextureImporterSettings to change the spriteAlignment value
         
@@ -50,10 +51,13 @@ internal sealed class PixelAssetImporter : AssetPostprocessor {
 		importer.ReadTextureSettings(textureSettings);
 
         textureSettings.spriteMode = (int)SpriteImportMode.Multiple;
-		textureSettings.spritePivot = new Vector2(0.5f, 0f);
+        if(texture.height%48==0)
+		    textureSettings.spritePivot = new Vector2(0.5f, 0f);
+        else
+            textureSettings.spritePivot = new Vector2(0.5f, 0.5f);
 		textureSettings.spriteAlignment = (int)SpriteAlignment.BottomCenter;
-        
 		importer.SetTextureSettings(textureSettings);
+        
 		
 
 

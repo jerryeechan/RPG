@@ -30,7 +30,7 @@ public class ActionManager : Singleton<ActionManager> {
 				i++;
 			}
 			else{
-				Debug.LogError("Character's action does not exist anymore");
+				Debug.LogError(id+":Character's action does not exist anymore");
 			}
 		}
 		for(;i<action_max_num;i++)

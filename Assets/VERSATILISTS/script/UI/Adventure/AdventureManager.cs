@@ -23,8 +23,7 @@ public class AdventureManager : Singleton<AdventureManager> {
 		dialoguePlayer.hide();
 	}
 // vars
-	public AdventureStage[] stages;
-	int currentStageIndex=0;
+	
 
 	AdventureOptionBtn[] optionBtns;
 	AdventureOptionDisplayer[] optionDisplayers;
@@ -39,11 +38,11 @@ public class AdventureManager : Singleton<AdventureManager> {
 		optionPanel.hide();
 		optionDisplayerPanel.hide();
 	}
-	public AdventureEvent testEvent;
+	//public AdventureEvent testEvent;
 	void Start()
 	{
 		//TODO the first event???
-		currentScene = currentStage.getScene();
+		currentScene = AdventureStageManager.instance.currentStage.getScene();
 		print(currentScene.name);
 		encounterEvent(currentScene.getEvent());
 		//encounterEvent(testEvent);
@@ -187,6 +186,10 @@ public class AdventureManager : Singleton<AdventureManager> {
 	public void encounterEvent(AdventureEvent advEvent)
 	{
 		currentEventDone = false;
+		if(advEvent == null)
+		{
+			Debug.LogError("null event");
+		}
 		
 		if(advEvent.dialogue!=null&&advEvent.dialogue.lines.Count>0)
 		{
@@ -197,7 +200,6 @@ public class AdventureManager : Singleton<AdventureManager> {
 				break;
 			}
 		}
-		
 		//PlayDialogue(advEvent.dialogue);
 		
 		isOptionDisplayed = false;
@@ -248,14 +250,8 @@ public class AdventureManager : Singleton<AdventureManager> {
 	}
 	bool currentEventDone = false;
 
-	AdventureStage currentStage{
-		get{return stages[currentStageIndex];}
-	}
 	
-	void nextStage()
-	{
-		currentStageIndex++;
-	}
+	
 	
 	
 	public void NextEvent()
@@ -276,10 +272,10 @@ public class AdventureManager : Singleton<AdventureManager> {
 			*/
 			UIManager.instance.ShowCover(()=>{
 				//TODO:
-				currentScene = currentStage.getScene();
+				currentScene = AdventureStageManager.instance.currentStage.getScene();
 				encounterEvent(currentScene.getEvent());
 				
-				encounterEvent(testEvent);
+				//encounterEvent(testEvent);
 				UIManager.instance.HideCover();
 			});
 		}
