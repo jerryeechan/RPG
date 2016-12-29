@@ -122,7 +122,8 @@ namespace com.jerrch.rpg
 		void NextPlayerAction()
 		{
 			if(!DiceRollerSingle.instance.isRoundDone)
-				DiceRollerSingle.instance.Roll(OnDiceRollDone);
+				{//DiceRollerSingle.instance.Roll(OnDiceRollDone);
+				}
 			else
 				RoundDone();
 			//ActionUIManager.instance.setCharacter(currentPlayer);
@@ -179,7 +180,7 @@ namespace com.jerrch.rpg
 
 				//enemy.useAction(0);
 				int r = Random.Range(0,enemy.actionList.Count);
-				enemy.useAction(r);
+				//enemy.useAction(r);
 				/* 
 				if(!.useAction(0))
 				{
@@ -263,3 +264,5 @@ namespace com.jerrch.rpg
 
 	}
 }
+
+//6 1 2   b3 b3b3 212

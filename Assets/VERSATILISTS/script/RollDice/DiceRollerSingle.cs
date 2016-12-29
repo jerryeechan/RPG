@@ -13,6 +13,8 @@ public class DiceRollerSingle : Singleton<DiceRollerSingle> {
 	public Button rollButton;
 	CompositeText rollButtonText;
 	public AnimatableCanvas panel;
+
+	
 	public int currentValue{
 		get {
 			return diceValues[currentIndex];
@@ -51,7 +53,7 @@ public class DiceRollerSingle : Singleton<DiceRollerSingle> {
 		 diceImages[currentIndex].color = Color.white;
 		 //currentSpriteSpin = Random.Range(min,max);
 		 currentSpriteSpin = 0;
-		 StartCoroutine("randomDice");
+		 StartCoroutine("diceAnimation");
 		// isActionUsed = true;
 		 rollButtonText.text = "re-roll";
 		 rollButton.enabled = false;
@@ -82,12 +84,17 @@ public class DiceRollerSingle : Singleton<DiceRollerSingle> {
 	}
 	int currentIndex = 0;
 
-	IEnumerator randomDice()
+	IEnumerator diceAnimation()
 	{
+		
 		for(int k=0;k<9;k++)
 		{
-			spinDice(currentIndex);
-			yield return new WaitForSeconds(0.1f);
+			for(int i=0;i<3;i++)
+			{
+				spinDice(i);
+			}
+			currentSpriteSpin++;
+			yield return new WaitForSeconds(0.1f);		
 		}
 		yield return new WaitForSeconds(0.5f);
 		Result();
@@ -109,7 +116,7 @@ public class DiceRollerSingle : Singleton<DiceRollerSingle> {
 	//fake, spin the dice image
 	void spinDice(int index)
 	{
-		diceImages[index].sprite = diceSprites[++currentSpriteSpin];
+		diceImages[index].sprite = diceSprites[currentSpriteSpin];
 		if(currentSpriteSpin==max)
 			currentSpriteSpin = min;
 	}

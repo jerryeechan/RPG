@@ -31,7 +31,23 @@ public class EquipManager :Singleton<EquipManager> {
 			if(equipGraphicDict.ContainsKey(imageID))
 			{
 				eq.bindGraphic = equipGraphicDict[imageID];
-				eq.asset = equipGraphicDict[imageID];
+				//eq.asset = equipGraphicDict[imageID];
+			}
+			return eq;
+		}
+		else
+			return null;
+	}
+	public Equip getEquipFromData(EquipData data)
+	{
+		
+		if(equipDict.ContainsKey(data.id))
+		{
+			Equip eq = Instantiate(equipDict[data.id]);
+			if(equipGraphicDict.ContainsKey(data.imageID))
+			{
+				eq.bindGraphic = equipGraphicDict[data.imageID];
+				//eq.asset = equipGraphicDict[data.imageID];
 			}
 			return eq;
 		}

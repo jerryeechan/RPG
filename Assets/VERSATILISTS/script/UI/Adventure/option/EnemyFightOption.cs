@@ -30,9 +30,12 @@ public class EnemyFightOption: AdventureOption {
 		EnemySet enemySet;
 		print(enemySetID);
 		enemySet = MonsterDataEditor.instance.getMonsterSet(enemySetID);
-		RandomBattleRound.instance.StartBattle(enemySet);
+		//RandomBattleRound.instance.StartBattle(enemySet);
+		TurnBattleManager.instance.StartBattle(enemySet);
 		UIManager.instance.HideCover(); 
 	}
-
-	
 }
+
+
+
+

@@ -10,12 +10,20 @@ public class Equip:Item {
 	[HideInInspector]
 	public Character ch;
 	[HideInInspector]
-	public EquipGraphicAsset bindGraphic;
+	public EquipGraphicAsset bindGraphic{
+		get{
+			return base.asset as EquipGraphicAsset;
+		}
+		set{
+			base.asset = value;
+		}
+	}
 	public List<SkillEffect> effects;
 	public EquipType equipType;
 	public AbilityRequirement[] abilityReqs;
 	void Awake()
 	{
+
 		templateEffectSets = GetComponentsInChildren<TemplateEffectSet>();
 		itemType = ItemType.Equip;
 		stackable = false;
@@ -29,11 +37,15 @@ public class Equip:Item {
 	public void setEffect(int[] available)
 	{
 		effects = new List<SkillEffect>();
-		
-		for(int i=0;i<available.Length;i++)
+		print(name);
+		print(available);
+		if(available!=null)
 		{
-			if(templateEffectSets[i].effects.Length>available[i])
-				effects.Add(templateEffectSets[i].effects[available[i]]);
+			for(int i=0;i<available.Length;i++)
+			{
+				if(templateEffectSets[i].effects.Length>available[i])
+					effects.Add(templateEffectSets[i].effects[available[i]]);
+			}
 		}
 	}
 

@@ -8,6 +8,7 @@ namespace com.jerrch.rpg
 public class Skill : MonoBehaviour {
 
 	//the corresponding skill data of player
+	SkillSpecificFilter targetFilter = SkillSpecificFilter.Random;
 	public Action parentAction;
 	//public Skill parentSkill;
 	public Skill followSkill;
@@ -160,14 +161,16 @@ public class Skill : MonoBehaviour {
 	//first and oneturn
 	public float criticalBonus = 1;
 	
+	/*
 	public void OnAnimationDone()
 	{
 		DoEffect();
-	}
+	}*/
 	int doingTargetCnt = 0;
-	public void DoEffect()
+	OnCompleteDelegate completeFunc;
+	public void DoEffect(OnCompleteDelegate completeFunc)
 	{
-		
+		this.completeFunc = completeFunc;
 		skillState = SkillState.Doing;
 		doingTargetCnt = 0;
 		//apply effects on caster
@@ -198,7 +201,7 @@ public class Skill : MonoBehaviour {
 		{
 			case EffectRange.Target:
 				doingTargetCnt = 1;
-				Character target = caster.enemyTarget();	
+				Character target = caster.enemyTarget(targetFilter);	
 				hit = mainEffect.FirstApply(target,acc_final,true);
 				PlayAnimation(target,hit);
 			break;
@@ -206,13 +209,11 @@ public class Skill : MonoBehaviour {
 				doingTargetCnt = caster.enemyTargets().Count;
 				foreach (Character ch in caster.enemyTargets())
 				{
-					
 					if(!ch.isDead)
 					{
 						hit = mainEffect.FirstApply(ch,acc_final,true);
 						PlayAnimation(ch,hit);
 					}
-					
 				}
 			break;
 			case EffectRange.Self:
@@ -226,7 +227,7 @@ public class Skill : MonoBehaviour {
 			break;
 			case EffectRange.AlliesTarget:
 				doingTargetCnt = 1;
-				target = caster.allieTarget();
+				target = caster.allieTarget(targetFilter);
 				hit = mainEffect.FirstApply(target,acc_final,true);
 				PlayAnimation(target,hit);
 			break;
@@ -268,7 +269,8 @@ public class Skill : MonoBehaviour {
 		//parentAction.checkSkillDone();
 		this.myInvoke(0.5f,()=>
 		{
-			parentAction.nextSkill();
+			completeFunc();
+			//parentAction.SkillDoneAndNext();
 		});
 		
 	}
@@ -310,11 +312,15 @@ public class Skill : MonoBehaviour {
 		if(followSkill)
 		{
 			followSkill.init(caster);
-			followSkill.DoEffect();
+			followSkill.DoEffect(completeFunc);
+		}
+		else{
+			//???
+			doingTargetCnt--;
+			CheckSkillDone();
 		}
 		//	RandomBattleRound.instance.NextAction();
-		doingTargetCnt--;
-		CheckSkillDone();
+		
 	}
 	//timing of apply effects, possibility of success apply, 
 	
@@ -392,4 +398,5 @@ public class Skill : MonoBehaviour {
 	}
 
 	public enum SkillAnimationPosType{HitSpot,Ground};
+	public enum SkillSpecificFilter{Random,LowestHP,HighestHP,HighestLevel};
 }

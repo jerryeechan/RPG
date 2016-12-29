@@ -15,7 +15,7 @@ public class DescriptionUIManager : Singleton<DescriptionUIManager> {
 	{
 		if(item)
 		{
-			ItemData itemData = item.bindData;
+			//ItemData itemData = item.bindData;
 			nameText.text = item.itemName;
 			descriptionText.text = item.description;
 		}

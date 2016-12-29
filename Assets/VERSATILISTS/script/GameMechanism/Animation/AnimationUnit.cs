@@ -4,6 +4,7 @@ using DG.Tweening;
 public class AnimationUnit : MonoBehaviour {
 
 	Animator[] animators;
+	public float delay = 0;
 	
 	public System.Action OnCompleteEvent;
 	
@@ -22,8 +23,13 @@ public class AnimationUnit : MonoBehaviour {
 			Debug.LogError("no animator");
 		}
 	}
+	public AudioClip hitSoundClip;
 	public void shakeCamera()
 	{
+		if(hitSoundClip!=null)
+		{
+			SoundEffectManager.instance.playSound(hitSoundClip);
+		}
 		Camera.main.DOShakePosition(0.2f,5,30);
 		playDone();
 	}

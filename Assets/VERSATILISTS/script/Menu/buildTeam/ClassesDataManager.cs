@@ -3,8 +3,6 @@ using UnityEngine;
 
 public class ClassesDataManager : Singleton<ClassesDataManager>{
 
-	[SerializeField]
-	CharacterDataEditor rosterTemplates;
 	ClassesData[] classesDataList;
 	Dictionary<string,ClassesData> classesDataDict;
 
@@ -17,15 +15,27 @@ public class ClassesDataManager : Singleton<ClassesDataManager>{
 			classesDataDict.Add(classesData.classID,classesData);
 		}
 	}
-
+	int r = 0;
+	public Sprite getClassIcon(string classID)
+	{
+		if(classesDataDict.ContainsKey(classID))
+		return classesDataDict[classID].iconSprite;
+		else{
+			Debug.LogError("no icon sprite");
+			return null;
+		}
+	}
 	public CharacterData generateChData()
 	{
-		int r = 0;
-		CharacterData chData = rosterTemplates.characterDataList[r];
-		ClassesData classesData = classesDataDict[chData.classID];
+		
+		
+		if(r==classesDataList.Length)
+			r=0;
+		//classesDataList[r].getChData();
+		
 		
 		//assign classes actions
-		chData.actionIDs = classesData.getRandomActionIDs();
-		return chData;
+		
+		return classesDataList[r++].getChData();
 	}
 }

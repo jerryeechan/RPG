@@ -17,6 +17,8 @@ public class DataManager : Singleton<DataManager> {
 		//ResetSave();
 		//SaveTemplate();
 	}
+
+	
 	public void newPlayerData()
 	{
 		playerData[0] = new PlayerData();
@@ -25,20 +27,24 @@ public class DataManager : Singleton<DataManager> {
 		newCharacter();
 		curPlayerData = playerData[0];
 	}
+
+	
 	public void newCharacter()
 	{
 		CharacterData newChData = new CharacterData();
 		newChData.UITemplateID = "player";
 
-		EquipData helmet = new EquipData();
-		EquipData weapon = new EquipData();
-		EquipData armor = new EquipData();
-		EquipData shield = new EquipData();
+		EquipData helmet = new EquipData("starter_headband");
+		EquipData weapon = new EquipData("paladin_hammer");
+		EquipData armor = new EquipData("starter_armor");
+		EquipData shield = new EquipData("paladin_shield");
 
+		/*
 		helmet.imageID = helmet.id = "starter_headband";
 		weapon.imageID = weapon.id = "paladin_hammer";
 		armor.imageID = armor.id = "starter_armor";
 		shield.imageID = shield.id = "paladin_shield";
+		*/
 
 		newChData.helmet = helmet;
 		newChData.weapon = weapon;

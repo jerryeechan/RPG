@@ -193,52 +193,39 @@ namespace com.jerrch.rpg
 			get{ return battleStat.hp==0?true:false;}
 		}
 		Action usingAction;
-		List<Character> targets;
 		
 		static float chmove_to_action_delay = 0.2f;
-		public Action useAction(int index)
+
+		public void doActionMove(CharacterAnimation chAnim)
 		{
-			/*
-			if(actionList.Count<=index)
-			{
-				Debug.LogError("no action");
-				return null;
-			}*/
+			if(chRenderer)
+				chRenderer.PlayCharacterAnimation(chAnim);
+			//this.myInvoke(chmove_to_action_delay,OnCharacterAnimationDone);
+		}
+		/*
+		public void useAction(Action action)
+		{
+			
+			usingAction = action.genAction();
+			actionUsed.Add(usingAction);
+			usingAction.start(null);
+			
+		}
+		public void useAction(int index)
+		{
 			if(actionList[index]==null)
 			{
 				Debug.LogError("action null");
-				return null;
 			}
-			usingAction = actionList[index].genAction();
-			
-			//ActionLogger.Log(usingAction.name);
-			actionUsed.Add(usingAction);
-			/*
-			
-			for testing, no animation, play skill directly
-			or wait animation invoke function
-			*/
-			if(chRenderer)
-				chRenderer.PlayCharacterAnimation(usingAction.chAnimation);
-			
-			//PlayCharacterAnimation(usingAction.chAnimation);
-			//TODO evnet of animation done;
-			
-			this.myInvoke(chmove_to_action_delay,OnCharacterAnimationDone);
-			
-			//PlayCharacterAnimation();
-			
-			return usingAction;
-			//wait the animation moment to send message
-		}
+			useAction(actionList[index]);
+		}*/
 		
-
-
 		//animation of character's  move done
+		/*
 		void OnCharacterAnimationDone()
 		{
 			usingAction.start();
-		}
+		}*/
 		
 		
 		public void HitByEffect(SkillEffect effect)
@@ -266,29 +253,17 @@ namespace com.jerrch.rpg
 				
 		}
 		
-		public Character enemyTarget()
+		public Character enemyTarget(SkillSpecificFilter filter)
 		{
-			if(side==CharacterSide.Player)
-			{
-				return RandomBattleRound.instance.selectedEnemy;
-			}
-			else
-			{
+			
 				//TODO: replace with hate
-				return RandomBattleRound.instance.players[0];
-			}
+			return TurnBattleManager.instance.filterEnemy(side,filter);
+			
 		}
-		public Character allieTarget()
+		
+		public Character allieTarget(SkillSpecificFilter filter)
 		{
-			if(side==CharacterSide.Player)
-			{
-				return RandomBattleRound.instance.selectedAllies;
-			}
-			else
-			{
-				//TODO: replace with ??
-				return RandomBattleRound.instance.enemies[0];
-			}
+			return TurnBattleManager.instance.filterAllies(side,filter);
 		}
 
 		
@@ -297,22 +272,22 @@ namespace com.jerrch.rpg
 		{
 			if(side==CharacterSide.Player)
 			{
-				return RandomBattleRound.instance.players;
+				return TurnBattleManager.instance.players;
 			}
 			else
 			{
-				return RandomBattleRound.instance.enemies;
+				return TurnBattleManager.instance.monsters;
 			}
 		}
 		public List<Character> enemyTargets()
 		{
 			if(side==CharacterSide.Player)
 			{
-				return RandomBattleRound.instance.enemies;
+				return TurnBattleManager.instance.monsters;
 			}
 			else
 			{
-				return RandomBattleRound.instance.players;
+				return TurnBattleManager.instance.players;
 			}
 		}
 

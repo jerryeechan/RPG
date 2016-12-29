@@ -87,6 +87,8 @@ public class ActionUIManager : Singleton<ActionUIManager> {
 		}
 		ch.chRenderer.selectByUI();
 	}
+
+	/*
 	public void useAction()
 	{
 		print("use Action");
@@ -103,9 +105,8 @@ public class ActionUIManager : Singleton<ActionUIManager> {
 
 			}
 		}
-		//CombatUIManager.instance.UseActionDone();
-		//RandomBattleRound.instance.PlayerRoundDone();
 	}
+	*/
 
 	public bool isReadyToDoAction = false;
 	int selectedActionIndex = -1;
@@ -134,6 +135,12 @@ public class ActionUIManager : Singleton<ActionUIManager> {
 	{
 		draggingActionBtn.GetComponent<RectTransform>().anchoredPosition += eventdata.delta/UIManager.instance.canvas.scaleFactor;
 	}
+	public void OnEndDrag()
+	{
+		isDraggingAction = false;
+		draggingActionBtn.gameObject.SetActive(false);
+	}
+	/*
 	public bool testDrop()
 	{
 		print("Target character"+targetCharacter);
@@ -142,14 +149,16 @@ public class ActionUIManager : Singleton<ActionUIManager> {
 		if(targetCharacter)
 			return true;
 		return false;
-	}
+	}*/
 	public Character targetCharacter = null;
+
+	/*
 	public void OverCharacter(Character ch)
 	{
 		if(isDraggingAction)
 		{
 			targetCharacter = ch;
 		}
-	}
+	}*/
 
 }

@@ -18,7 +18,7 @@ public class LocalizationManager : MonoBehaviour {
 		
 	void Start()
 	{
-		SmartCultureInfo systemLanguage = LanguageManager.Instance.GetDeviceCultureIfSupported();		
+//		SmartCultureInfo systemLanguage = LanguageManager.Instance.GetDeviceCultureIfSupported();		
 		availableLanguages = LanguageManager.Instance.GetSupportedLanguages();
 		
 		LanguageManager.Instance.ChangeLanguage(availableLanguages[1]);

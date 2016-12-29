@@ -68,11 +68,19 @@ namespace com.jerrch.rpg
 			}
 		}
 
-		//start action when start
-		public void start()
+		//call this as a template
+		public void PlayAction(OnCompleteDelegate completeFunc)
 		{
+			start(completeFunc);
+		}
+
+		//start action when generate a action
+		void start(OnCompleteDelegate completeFunc)
+		{
+			this.completeFunc = completeFunc;
 			PlayActionAnimation();
 		}
+		OnCompleteDelegate completeFunc;
 
 		//????? TODO:XXX no need for aciton animation, direct call skills.doeffect
 		void PlayActionAnimation()
@@ -114,16 +122,21 @@ namespace com.jerrch.rpg
 		void playSkill()
 		{
 			skills[currentSkillIndex].init(caster);
-			skills[currentSkillIndex].DoEffect();
+			skills[currentSkillIndex].DoEffect(SkillDoneAndNext);
 			currentSkillIndex++;
 		}
 		int currentSkillIndex = 0;
-		public void nextSkill()
+		public void SkillDoneAndNext()
 		{
 			if(currentSkillIndex<skills.Length)
 				playSkill();
 			else 
-				RandomBattleRound.instance.ActionDone();
+			{
+				//Done
+				completeFunc();
+				//RandomBattleRound.instance.ActionDone();
+			}
+				
 		}
 		//TODO: remove this function, instead use next skill
 		public void checkSkillDone()
@@ -175,6 +188,7 @@ namespace com.jerrch.rpg
 		{
 			get{return type==ActionType.Passive;}
 		}
+		
 	}
 }
 
@@ -184,6 +198,10 @@ public enum ActionType
 	Active,Passive
 }
 
-public enum ActionDiceType{
-	Attack = 0 , Defense = 1, Special = 2
+
+[System.Flags] public enum ActionDiceType{
+	None = 0,Attack = 1 , Defense = 1<<1, Special = 1<<2,
+	AttackAndDefense = Attack | Defense,
+	AttackAndSpecial = Attack | Special,
+	DefenseAndSpecial = Defense | Special
 }

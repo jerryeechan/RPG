@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using com.jerrch.rpg;
+using DG.Tweening;
 public class RosterBuilder : Singleton<RosterBuilder>{
 
 	// Use this for initialization
@@ -12,6 +13,8 @@ public class RosterBuilder : Singleton<RosterBuilder>{
 	
 	[SerializeField]
 	RosterButton rosterBtnPrefab;
+	[SerializeField]
+	CharacterOptionPanel chPanel;
 	List<CharacterData> selectData;
 	
 	public CompositeText memberNumText;
@@ -26,6 +29,12 @@ public class RosterBuilder : Singleton<RosterBuilder>{
 		rosterButtons = new List<RosterButton>();
 		rosterList = transform.Find("rosterList");
 		//generate ch option panels;
+
+		
+	}
+	
+	void Start()
+	{
 		int t = optionNum/2;
 		for(int i=-t;i<t+1;i++)
 		{
@@ -37,6 +46,8 @@ public class RosterBuilder : Singleton<RosterBuilder>{
 			btn.bindChData = ClassesDataManager.instance.generateChData();	
 		}
 		currentRosterButton = rosterButtons[0];
+		rosterBtnClicked(currentRosterButton);
+		
 	}
 
 	[SerializeField]
@@ -65,6 +76,7 @@ public class RosterBuilder : Singleton<RosterBuilder>{
 			_chData = value;
 			chClassText.text = _chData.classID;
 			chNameText.text = _chData.name;
+			chPanel.setCharacter(_chData);
 		}
 	}
 	
@@ -82,6 +94,7 @@ public class RosterBuilder : Singleton<RosterBuilder>{
 	{
 		currentRosterButton = btn;
 		bindChData = btn.bindChData;
+		
 		bindAction = ActionManager.instance.getActions(btn.bindChData.actionIDs)[0];
 	}
 	RosterButton currentRosterButton;

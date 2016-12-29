@@ -42,18 +42,19 @@ namespace com.jerrch.rpg{
 			}
 
 			// if(bindAction.type == ActionType.Passive||action.energyCost>EnergySlotUIManager.instance.energy||action.cd_count>0)
-			int diceValue = DiceRollerSingle.instance.currentValue;
-			bool typeValid = false;
+			//int diceValue = DiceRollerSingle.instance.currentValue;
+			bool typeValid = true;
 			
 			//if(diceValue>=action.minCost&&diceValue<=action.maxCost)
 			//	costValid = true;
-
+			/*
 			if(diceValue == (int)action.diceType)
 			{
 				typeValid = true;
-			}
+			}*/
 			//||ch.doneActionThisRound==true
-			if(!typeValid||bindAction.type == ActionType.Passive||action.cd_count>0)
+			//||bindAction.type == ActionType.Passive
+			if(!typeValid||action.cd_count>0)
 			{
 				Lock();
 				return false;
@@ -80,13 +81,15 @@ namespace com.jerrch.rpg{
 			bindAction = null;
 			Lock();
 		}
+
+		/*
 		public void useAction()
 		{
 			bindAction.cd_count = bindAction.cd; 
 			bindCh.useAction(skillIndex);
 			bindCh.doneActionThisRound = true;
 			DiceRollerSingle.instance.next();
-		}
+		}*/
 		//Color32 white = new Color32(255,255,255,0);
 		//Color32 black = new Color32(0,0,0,150);
 		//Color32 red = new Color32(255,0,0,150);
@@ -127,7 +130,10 @@ namespace com.jerrch.rpg{
 		public void OnPointerClick(PointerEventData eventData)
 		{
 			if(isEnable)
+			{
 				ActionUIManager.instance.actionBtnTouched(skillIndex);
+				
+			}
 		}
 
 		public void OnBeginDrag(PointerEventData eventData)
@@ -136,6 +142,7 @@ namespace com.jerrch.rpg{
 			if(isEnable)
 			{
 				ActionUIManager.instance.OnBeginDrag(eventData,bindAction,transform.GetComponent<RectTransform>().anchoredPosition);
+				SoundEffectManager.instance.playSound(BasicSound.Press);
 			}
 		
 			print("begin drag");
@@ -151,15 +158,21 @@ namespace com.jerrch.rpg{
 
         public void OnEndDrag(PointerEventData eventData)
         {
+			
 			isDragging = false;
             print("end drag");
+			
 			if(isEnable)
 			{
+				ActionUIManager.instance.OnEndDrag();
+				//**TODO: deprecated
+				/*
 				if(ActionUIManager.instance.testDrop())
 				{
 					ActionUIManager.instance.lockAllSkillBtn();
 					this.myInvoke(0.5f,useAction);
 				}
+				*/
 			}
 			
         }

@@ -36,9 +36,7 @@ public class ItemManager : Singleton<ItemManager> {
 	} 
 	public void createItemData(Item item)
 	{
-		ItemData data = new ItemData();
-		data.id = item.name;
-		data.imageID = item.asset.name;
+		ItemData data = new ItemData(item.name,item.asset.name);
 		DataManager.instance.curPlayerData.itemDataList.Add(data);
 		item.bindData = data;
 	}

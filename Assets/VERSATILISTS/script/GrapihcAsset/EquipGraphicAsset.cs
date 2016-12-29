@@ -8,6 +8,7 @@ public class EquipGraphicAsset : ItemGraphicAsset{
 
 	//idle, attack,
 	public AnimationClip[] equipAnimations;
+	public Sprite chSprite;
 	//public Sprite equipSprite;
 }
 

@@ -13,7 +13,6 @@ namespace com.jerrch.rpg
 		public List<Character> enemies;
 		public InfoManager info;
 		
-
 		public TestMode testMode;
 		public GameObject Canvas;
 		public static float playerAnimationSpeed = 0.5f;
@@ -23,7 +22,6 @@ namespace com.jerrch.rpg
 		}
 		void Start()
 		{
-			
 			// DataManager.instance.newPlayerData();
 			StartGame();
 			InfoManager.instance.init();
@@ -38,7 +36,8 @@ namespace com.jerrch.rpg
 					//CombatStage stage = CombatStageManager.instance.getTestStage();
 					//stage.transform.SetParent(stageTransform);
 					EnemySet testEnemySet = MonsterDataEditor.instance.getMonsterSet("test");
-					RandomBattleRound.instance.StartBattle(testEnemySet);
+					//RandomBattleRound.instance.StartBattle(testEnemySet);
+					TurnBattleManager.instance.StartBattle(testEnemySet);
 					
 					//DungeonManager.instance.
 				break;
@@ -52,7 +51,6 @@ namespace com.jerrch.rpg
 				case TestMode.Stat:
 				break;
 			}
-			
 			//testMode = false;
 			/*
 			StartGame();
@@ -84,7 +82,6 @@ namespace com.jerrch.rpg
 			//if(stageTransform)
 			//	Destroy(stageTransform.gameObject);
 			//stageTransform = new GameObject("CombatStageContainer").transform;
-			
 			loadCharacter();
 		}
 		
@@ -120,7 +117,7 @@ namespace com.jerrch.rpg
 		public void AdventureMode()
 		{
 			print("Adventure Mode");
-			UIManager.instance.getPanel("combat").hide();
+			UIManager.instance.getPanel("BattleManger").hide();
 			InfoManager.instance.Show();
 			InfoManager.instance.switchTab(InfoTabType.Adventure);
 			AdventureManager.instance.show();
@@ -136,7 +133,7 @@ namespace com.jerrch.rpg
 		{
 			gamemode = GameMode.Combat;
 			print("Combat Mode");
-			UIManager.instance.getPanel("combat").show();
+			UIManager.instance.getPanel("BattleManger").show();
 			AdventureManager.instance.hide();
 			PlayerStateUI.instance.CombatMode();
 			InfoManager.instance.Hide();

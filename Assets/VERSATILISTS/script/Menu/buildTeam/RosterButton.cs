@@ -4,8 +4,20 @@ using UnityEngine;
 using UnityEngine.UI;
 public class RosterButton : MonoBehaviour {
 	[SerializeField]
+	Image iconImage;
+	[SerializeField]
 	Image checkImage;
-	public CharacterData bindChData;
+	CharacterData _data;
+	public CharacterData bindChData{
+		set{
+			_data = value;
+			print(_data.classID);
+			iconImage.sprite = ClassesDataManager.instance.getClassIcon(_data.classID);
+		}
+		get{
+			return _data;
+		}
+	}
 	public int index;
 	
 	void Awake()

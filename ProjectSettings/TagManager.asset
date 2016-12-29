@@ -57,13 +57,16 @@ TagManager:
   - name: shadow
     uniqueID: 2178118793
     locked: 0
+  - name: BackEffect
+    uniqueID: 950114945
+    locked: 0
   - name: Character
     uniqueID: 2511236001
     locked: 0
   - name: Armor
     uniqueID: 1094057445
     locked: 0
-  - name: effect
+  - name: FrontEffect
     uniqueID: 3363470833
     locked: 0
   - name: Default

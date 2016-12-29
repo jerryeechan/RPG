@@ -38,7 +38,7 @@ public class CharacterRenderer : MonoBehaviour {
 			equipRs = equipTransform.GetComponentsInChildren<EquipRenderer>();
 			foreach(var eqR in equipRs)
 			{
-				print(eqR);
+//				print(eqR);
 				equipUIDicts.Add(eqR.type,eqR);	
 			}
 /*
@@ -144,8 +144,10 @@ public class CharacterRenderer : MonoBehaviour {
 		//if(!ActionUIManager.instance.isDraggingAction)
 		//	return;
 		CursorManager.instance.NormalMode();
+		/*
 		if(isCombatMode)
 			ActionUIManager.instance.OverCharacter(null);
+			*/
 	}
 
 	//only call in ActionUIManger.instance.setCharacter
@@ -176,6 +178,7 @@ public class CharacterRenderer : MonoBehaviour {
 				isLongPress = true;
 			}
 		}
+		/*
 		if(isCombatMode&&ActionUIManager.instance.isDraggingAction)
 		{
 			ActionUIManager.instance.OverCharacter(bindCh);
@@ -185,7 +188,7 @@ public class CharacterRenderer : MonoBehaviour {
 			else
 				RandomBattleRound.instance.selectedEnemy = bindCh;
 			
-		}
+		}*/
 	}
 	bool isCombatMode{
 		get {return GameManager.instance.gamemode == GameMode.Combat;} 
@@ -234,7 +237,9 @@ public class CharacterRenderer : MonoBehaviour {
 			if(bindCh.side == CharacterSide.Player)
 			{
 				ActionUIManager.instance.setCharacter(bindCh);
-				RandomBattleRound.instance.currentPlayer = bindCh;
+				SoundEffectManager.instance.playSound(BasicSound.UI);
+				TurnBattleManager.instance.selectedPlayer = bindCh;
+				//RandomBattleRound.instance.currentPlayer = bindCh;
 				//PlayerStateUI.instance.lastUI.ch.chRenderer.deselect();
 			}
 		}
