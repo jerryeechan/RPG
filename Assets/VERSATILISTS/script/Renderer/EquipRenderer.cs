@@ -45,12 +45,12 @@ public class EquipRenderer : MonoBehaviour {
 					
 					overrideController[overrideController.clips[i].originalClip.name] = clips[1];
 				break;
-				case "holdmelee":
+				case "upmelee":
 					
 					if(clips.Length>2)
 						overrideController[overrideController.clips[i].originalClip.name] = clips[2];
 				break;
-				case "upmelee":
+				case "holdmelee":
 					
 					if(clips.Length>3)
 						overrideController[overrideController.clips[i].originalClip.name] = clips[3];

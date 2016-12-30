@@ -119,11 +119,17 @@
 	<data name="CON" xml:space="preserve">
 		<value>CON</value>
 	</data>
+	<data name="DarkPaladin" xml:space="preserve">
+		<value />
+	</data>
 	<data name="DEX" xml:space="preserve">
 		<value>DEX</value>
 	</data>
 	<data name="event_enemy_ogre" xml:space="preserve">
 		<value>An ogre showed up!</value>
+	</data>
+	<data name="event_enemy_zombies" xml:space="preserve">
+		<value />
 	</data>
 	<data name="fight_btn" xml:space="preserve">
 		<value>Fight!</value>
@@ -143,10 +149,64 @@
 	<data name="line_ch0_lord_of_soil_3" xml:space="preserve">
 		<value />
 	</data>
+	<data name="Mage" xml:space="preserve">
+		<value />
+	</data>
+	<data name="Paladin" xml:space="preserve">
+		<value />
+	</data>
+	<data name="Priest" xml:space="preserve">
+		<value />
+	</data>
+	<data name="revive" xml:space="preserve">
+		<value />
+	</data>
+	<data name="skill_dark_charge" xml:space="preserve">
+		<value />
+	</data>
+	<data name="skill_dark_shield" xml:space="preserve">
+		<value />
+	</data>
+	<data name="skill_dark_slash" xml:space="preserve">
+		<value />
+	</data>
+	<data name="description_skill_dark_charge" xml:space="preserve">
+		<value />
+	</data>
+	<data name="skill_divine_shield" xml:space="preserve">
+		<value />
+	</data>
+	<data name="skill_elemental_blessing" xml:space="preserve">
+		<value />
+	</data>
+	<data name="skill_fireball" xml:space="preserve">
+		<value />
+	</data>
+	<data name="skill_firestorm" xml:space="preserve">
+		<value />
+	</data>
+	<data name="skill_heal" xml:space="preserve">
+		<value />
+	</data>
+	<data name="skill_holyray" xml:space="preserve">
+		<value />
+	</data>
+	<data name="skill_invincible" xml:space="preserve">
+		<value />
+	</data>
+	<data name="skill_paralyze_talisman" xml:space="preserve">
+		<value />
+	</data>
+	<data name="skill_storm_talisman" xml:space="preserve">
+		<value />
+	</data>
+	<data name="skill_thunder_talisman" xml:space="preserve">
+		<value />
+	</data>
 	<data name="STR" xml:space="preserve">
 		<value>STR</value>
 	</data>
-	<data name="event_enemy_zombies" xml:space="preserve">
+	<data name="TaoistPriest" xml:space="preserve">
 		<value />
 	</data>
 </root>

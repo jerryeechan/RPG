@@ -20,7 +20,7 @@ public class ActionButton : MonoBehaviour{
 	//should not use in public
 	[SerializeField]
 	Action _action;
-	public Action bindAction{
+	public virtual Action bindAction{
 		set{
 //			print("set bind action");
 			_action = value;

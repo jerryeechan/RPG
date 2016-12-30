@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using com.jerrch.rpg;
+using UnityEngine.UI;
 using DG.Tweening;
 public class RosterBuilder : Singleton<RosterBuilder>{
 
@@ -59,7 +60,7 @@ public class RosterBuilder : Singleton<RosterBuilder>{
 	[SerializeField]
 	CompositeText actionName;
 	[SerializeField]
-	ActionButton action_description_panel;
+	ActionDescription action_description_panel;
 
 	Action _action;
 	public Action bindAction{
@@ -67,6 +68,7 @@ public class RosterBuilder : Singleton<RosterBuilder>{
 			_action = value;
 			actionName.text = _action.name;
 			action_description_panel.bindAction = _action;
+			
 		}
 	}
 
@@ -75,7 +77,7 @@ public class RosterBuilder : Singleton<RosterBuilder>{
 		set{
 			_chData = value;
 			chClassText.text = _chData.classID;
-			chNameText.text = _chData.name;
+			chNameText.text = _chData.nickName;
 			chPanel.setCharacter(_chData);
 		}
 	}
@@ -85,8 +87,11 @@ public class RosterBuilder : Singleton<RosterBuilder>{
 	{
 		checkCharaceter(isCheck);
 	}
+	[SerializeField]
+	Image indicator;
 	public void rosterBtnClicked(RosterButton btn)
 	{
+		indicator.rectTransform.anchoredPosition = btn.GetComponent<RectTransform>().anchoredPosition;
 		loadRoster(btn);
 		checkBtn.isChecked = btn.isChecked;
 	}
@@ -108,8 +113,6 @@ public class RosterBuilder : Singleton<RosterBuilder>{
 	}
 	public void checkCharaceter(bool isCheck)
 	{
-		
-	
 		if(isCheck)
 		{
 			checkedPlayerNum++;

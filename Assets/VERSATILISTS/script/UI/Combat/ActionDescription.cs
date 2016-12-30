@@ -4,5 +4,13 @@ using UnityEngine;
 using com.jerrch.rpg;
 using UnityEngine.UI;
 public class ActionDescription : ActionButton{
-	Text text;
+	[SerializeField]
+	CompositeText description;
+	public override Action bindAction
+	{
+		set{
+			base.bindAction = value;
+			description.text = value.description;
+		}
+	}
 }

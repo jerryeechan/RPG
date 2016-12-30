@@ -119,6 +119,9 @@
 	<data name="CON" xml:space="preserve">
 		<value>體質</value>
 	</data>
+	<data name="DarkPaladin" xml:space="preserve">
+		<value>黑騎士</value>
+	</data>
 	<data name="DEX" xml:space="preserve">
 		<value>敏捷</value>
 	</data>
@@ -146,7 +149,64 @@
 	<data name="line_ch0_lord_of_soil_3" xml:space="preserve">
 		<value>這是我給各位的一點心意，請務必收下。</value>
 	</data>
+	<data name="Mage" xml:space="preserve">
+		<value>魔法師</value>
+	</data>
+	<data name="Paladin" xml:space="preserve">
+		<value>聖騎士</value>
+	</data>
+	<data name="Priest" xml:space="preserve">
+		<value>祭司</value>
+	</data>
+	<data name="revive" xml:space="preserve">
+		<value>輪迴詠唱</value>
+	</data>
+	<data name="skill_dark_charge" xml:space="preserve">
+		<value>黑暗衝擊</value>
+	</data>
+	<data name="skill_dark_shield" xml:space="preserve">
+		<value>渾沌之盾</value>
+	</data>
+	<data name="skill_dark_slash" xml:space="preserve">
+		<value>暗冥斬</value>
+	</data>
+	<data name="description_skill_dark_charge" xml:space="preserve">
+		<value />
+	</data>
+	<data name="skill_divine_shield" xml:space="preserve">
+		<value>聖盾術</value>
+	</data>
+	<data name="skill_elemental_blessing" xml:space="preserve">
+		<value>元素加持</value>
+	</data>
+	<data name="skill_fireball" xml:space="preserve">
+		<value>火球術</value>
+	</data>
+	<data name="skill_firestorm" xml:space="preserve">
+		<value>火焰風暴</value>
+	</data>
+	<data name="skill_heal" xml:space="preserve">
+		<value>治癒術</value>
+	</data>
+	<data name="skill_holyray" xml:space="preserve">
+		<value>聖光</value>
+	</data>
+	<data name="skill_invincible" xml:space="preserve">
+		<value>金鋼護體</value>
+	</data>
+	<data name="skill_paralyze_talisman" xml:space="preserve">
+		<value>定身符</value>
+	</data>
+	<data name="skill_storm_talisman" xml:space="preserve">
+		<value>啟豐符</value>
+	</data>
+	<data name="skill_thunder_talisman" xml:space="preserve">
+		<value>役雷符</value>
+	</data>
 	<data name="STR" xml:space="preserve">
 		<value>力量</value>
+	</data>
+	<data name="TaoistPriest" xml:space="preserve">
+		<value>道士</value>
 	</data>
 </root>

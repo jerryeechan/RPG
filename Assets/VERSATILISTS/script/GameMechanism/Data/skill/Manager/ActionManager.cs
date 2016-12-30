@@ -56,7 +56,7 @@ public class ActionManager : Singleton<ActionManager> {
 	}
 	public Action getAction(string name)
 	{
-		if(actionPool[name])
+		if(actionPool.ContainsKey(name))
 		{
 			Action action = actionPool[name];
 			return action;

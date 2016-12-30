@@ -256,7 +256,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 58673832}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.8, y: -45.1, z: -10}
+  m_LocalPosition: {x: -4.3, y: -45.5, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1866664035}
@@ -1419,11 +1419,11 @@ MonoBehaviour:
   retroSnap: 0
   assetsPixelsPerUnit: 100
   showHUD: 0
-  cameraSize: {x: 160, y: 100}
+  cameraSize: {x: 150, y: 100}
   contraintUsed: 0
-  cameraPixelsPerUnit: 4
-  ratio: 0.04
-  nativeAssetResolution: {x: 32000, y: 20000}
+  cameraPixelsPerUnit: 3.16
+  ratio: 0.0316
+  nativeAssetResolution: {x: 30000, y: 20000}
   fovCoverage: 1
   canvas: {fileID: 0}
 --- !u!114 &289895368

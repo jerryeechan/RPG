@@ -589,7 +589,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &27404531
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12200,7 +12200,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 678822608}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 243a781cad112c75d0008dfa8d76c639, type: 3}
   m_Name: 
@@ -16757,20 +16757,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isAnimating: 0
   duration: 0
---- !u!114 &925856260
-MonoBehaviour:
+--- !u!225 &925856260
+CanvasGroup:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 925856255}
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ddc8a33f8bf3a4610987a09c2409ac46, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  showAlpha: 1
-  duration: 0.5
-  delay: 0
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &927305630
 GameObject:
   m_ObjectHideFlags: 0
@@ -21031,7 +21028,7 @@ MonoBehaviour:
   chs: []
   enemies: []
   info: {fileID: 1922866344}
-  testMode: 0
+  testMode: 1
   Canvas: {fileID: 27404530}
 --- !u!1 &1208425215
 GameObject:
@@ -33188,7 +33185,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1922866341
 RectTransform:
   m_ObjectHideFlags: 0

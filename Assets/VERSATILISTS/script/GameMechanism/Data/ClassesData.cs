@@ -6,6 +6,8 @@ public class ClassesData : MonoBehaviour {
 
 	public string classID;
 	public Sprite iconSprite;
+
+	public string[] descriptionCandidates;
 	public string[] attackActionCandidateIDs;
 	public string[] defenseActionCandidateIDs;
 	public string[] specialActionCandidateIDs;
@@ -33,9 +35,11 @@ public class ClassesData : MonoBehaviour {
 	}
 	const int actionNumPerClass = 3;
 
-	public CharacterData getChData()
+	public CharacterData generateChData()
 	{
+		//generate the data of new character
 		CharacterData chData = new CharacterData();
+		chData.nickName = TextTokenGenerator.instance.boyName();
 		chData.actionIDs = getRandomActionIDs();
 		chData.classID = classID;
 		//TODO: temp fixed as first
@@ -48,14 +52,18 @@ public class ClassesData : MonoBehaviour {
 
 	List<string> getRandomActionIDs()
 	{
-		var actionIDs = mergeActionsList();
-		var randomActions = new List<string>();
+		var randomActions = mergeActionsList();
+		//randomActions.Shuffle();
+		
+		// randomActions.Sort();
+		return randomActions.GetRange(0,3);
+	}
+}
+
+/*
 		for(int i=0;i<actionNumPerClass;i++)
 		{
 			int r = Random.Range(0,actionIDs.Count);
 			randomActions.Add(actionIDs[r]);
 			actionIDs.RemoveAt(r);
-		}
-		return randomActions; 
-	}
-}
+		}*/

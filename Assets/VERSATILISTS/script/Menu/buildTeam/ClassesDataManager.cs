@@ -36,6 +36,6 @@ public class ClassesDataManager : Singleton<ClassesDataManager>{
 		
 		//assign classes actions
 		
-		return classesDataList[r++].getChData();
+		return classesDataList[r++].generateChData();
 	}
 }
