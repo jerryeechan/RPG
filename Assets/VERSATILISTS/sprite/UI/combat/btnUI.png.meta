@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: c8f5dd0f27732475ea39457e6b8ceed2
-timeCreated: 1482848676
+timeCreated: 1483093610
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -12,6 +12,13 @@ TextureImporter:
     21300010: btnUI_6
     21300012: btnUI_7
     21300014: empty
+    21300016: btnUI_2
+    21300018: btnUI_8
+    21300020: btnUI_9
+    21300022: btnUI_10
+    21300024: btnUI_11
+    21300026: btnUI_12
+    21300028: btnUI_13
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -86,42 +93,16 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: btnUI_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 25
-        height: 6
-      alignment: 9
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: -1
-    - serializedVersion: 2
       name: btnUI_1
       rect:
         serializedVersion: 2
         x: 2
-        y: 7
+        y: 15
         width: 21
         height: 4
       alignment: 9
       pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: -1
-    - serializedVersion: 2
-      name: empty
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 0
-        width: 16
-        height: 16
-      alignment: 9
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 0, y: 1, z: 0, w: 0}
       outline: []
       tessellationDetail: -1
     - serializedVersion: 2
@@ -129,7 +110,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 36
-        y: 8
+        y: 16
         width: 11
         height: 8
       alignment: 0
@@ -142,7 +123,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 47
-        y: 8
+        y: 16
         width: 11
         height: 8
       alignment: 0
@@ -155,7 +136,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 58
-        y: 5
+        y: 13
         width: 11
         height: 11
       alignment: 0
@@ -168,7 +149,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 39
-        y: 1
+        y: 9
         width: 5
         height: 6
       alignment: 0
@@ -181,12 +162,116 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 46
-        y: 1
+        y: 9
         width: 5
         height: 6
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 1, y: 2, z: 1, w: 2}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: btnUI_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 8
+        width: 25
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 1, y: 1, z: 1, w: 1}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: btnUI_0
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 2
+        width: 23
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: btnUI_8
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 15
+        width: 11
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 3, y: 5, z: 3, w: 3}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: btnUI_9
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 3
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 2, y: 2, z: 2, w: 2}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: btnUI_10
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 3
+        width: 11
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 1, y: 1, z: 1, w: 1}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: btnUI_11
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 3
+        width: 9
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 2, y: 10, z: 2, w: 2}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: btnUI_12
+      rect:
+        serializedVersion: 2
+        x: 118
+        y: 3
+        width: 9
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 2, y: 10, z: 2, w: 2}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: btnUI_13
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 3
+        width: 9
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 2, y: 10, z: 2, w: 2}
       outline: []
       tessellationDetail: 0
     outline: []
