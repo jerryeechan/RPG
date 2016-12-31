@@ -33,7 +33,8 @@ public class DiceSlot : MonoBehaviour {
 	DiceTypeResultDelegate resultCallback;
 	public void Roll(int num,DiceTypeResultDelegate callback)
 	{
-		currentSpriteSpin = Random.Range(0,3);
+		//currentSpriteSpin = Random.Range(0,3);
+		currentSpriteSpin = 0; //Fake
 		resultCallback = callback;
 		rollNum = num;
 		StartCoroutine("diceAnimation");

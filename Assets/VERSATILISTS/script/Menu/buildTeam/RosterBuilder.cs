@@ -56,7 +56,10 @@ public class RosterBuilder : Singleton<RosterBuilder>{
 	[SerializeField]
 	CompositeText chClassText;
 	[SerializeField]
-	CompositeText chSpecialtyText;
+	CompositeText classSpecialtyText;
+	[SerializeField]
+	CompositeText classDescriptionText;
+
 	[SerializeField]
 	CompositeText actionName;
 	[SerializeField]
@@ -78,6 +81,9 @@ public class RosterBuilder : Singleton<RosterBuilder>{
 			_chData = value;
 			chClassText.text = _chData.classID;
 			chNameText.text = _chData.nickName;
+			var classData = ClassesDataManager.instance.getClassData(_chData.classID);
+			classSpecialtyText.text = classData.specialty;
+			classDescriptionText.text = classData.description; 
 			chPanel.setCharacter(_chData);
 		}
 	}
@@ -99,7 +105,6 @@ public class RosterBuilder : Singleton<RosterBuilder>{
 	{
 		currentRosterButton = btn;
 		bindChData = btn.bindChData;
-		
 		bindAction = ActionManager.instance.getActions(btn.bindChData.actionIDs)[0];
 	}
 	RosterButton currentRosterButton;
@@ -134,10 +139,13 @@ public class RosterBuilder : Singleton<RosterBuilder>{
 		
 		
 	}
+	[SerializeField]
+	RectTransform startPanel;
 	public void Ready()
 	{
-		GameManager.instance.loadCharacter(selectData);
-		print("ready");
+		//GameManager.instance.loadCharacter(selectData);
+		//print("ready");
+		startPanel.DOAnchorPos(Vector2.zero,1).SetEase(Ease.OutBack);
 	}
 
 	public void Back()

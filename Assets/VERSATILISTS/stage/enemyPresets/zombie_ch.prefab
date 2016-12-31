@@ -42,6 +42,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   chData:
     name: zombie_ch
+    nickName: 
     classID: 
     level: 0
     exp: 0
@@ -49,7 +50,7 @@ MonoBehaviour:
     strVal: 5
     conVal: 5
     intVal: 0
-    dexVal: 0
+    dexVal: 10
     UITemplateID: zombie_chR
     actionIDs:
     - zombie_scratch

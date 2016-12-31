@@ -7,7 +7,8 @@ public class ClassesData : MonoBehaviour {
 	public string classID;
 	public Sprite iconSprite;
 
-	public string[] descriptionCandidates;
+	public string description;
+	public string specialty;
 	public string[] attackActionCandidateIDs;
 	public string[] defenseActionCandidateIDs;
 	public string[] specialActionCandidateIDs;

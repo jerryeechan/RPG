@@ -23,6 +23,13 @@ public class AnimationUnit : MonoBehaviour {
 			Debug.LogError("no animator");
 		}
 	}
+	public void Restart()
+	{
+		foreach(var anim in animators)
+		{
+			anim.Play("play");
+		}
+	}
 	public AudioClip hitSoundClip;
 	public void shakeCamera()
 	{

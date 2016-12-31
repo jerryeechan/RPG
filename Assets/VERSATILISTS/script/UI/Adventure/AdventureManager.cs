@@ -68,6 +68,7 @@ public class AdventureManager : Singleton<AdventureManager> {
 		{
 			optionBtns[0].GetComponent<RectTransform>().SetPositionX(-85);
 			optionBtns[1].GetComponent<RectTransform>().SetPositionX(0);
+			optionBtns[2].GetComponent<RectTransform>().SetPositionX(85);
 			optionBtns[2].gameObject.SetActive(true);
 		}
 	}
@@ -234,6 +235,7 @@ public class AdventureManager : Singleton<AdventureManager> {
 	public void optionSuccess(int index)
 	{
 		playDescription(currentEvent.options[index].successStr);
+		EventDone();
 	}
 	
 	public void optionFail(int index){
@@ -281,6 +283,7 @@ public class AdventureManager : Singleton<AdventureManager> {
 		}
 	}
 
+	[SerializeField]
 	AdventureScene _cur_scene;
 	AdventureScene currentScene{
 		get{

@@ -13,6 +13,7 @@ namespace com.jerrch.rpg
 		public CharacterStat equipStat;
 		public CharacterStat battleStat;
 		
+		
 		public bool doneActionThisRound = false;
 		Dictionary<EquipType,Equip> equipsDict; 
 

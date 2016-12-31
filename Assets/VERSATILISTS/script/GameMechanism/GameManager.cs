@@ -29,7 +29,7 @@ namespace com.jerrch.rpg
 			{
 				case TestMode.Release:
 					InfoManager.instance.Hide();
-					UIManager.instance.getPanel("mainmenu").show();
+					//UIManager.instance.getPanel("mainmenu").show();
 				break;
 				case TestMode.Combat:
 					CombatMode();
@@ -42,6 +42,7 @@ namespace com.jerrch.rpg
 					//DungeonManager.instance.
 				break;
 				case TestMode.Adventure:
+					TurnBattleManager.instance.gameObject.SetActive(false);
 					this.myInvoke(1,()=>{
 						InfoManager.instance.switchTab(InfoTabType.Adventure);
 					});

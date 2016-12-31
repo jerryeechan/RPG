@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: c8f5dd0f27732475ea39457e6b8ceed2
-timeCreated: 1483093610
+timeCreated: 1483118013
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -12,7 +12,7 @@ TextureImporter:
     21300010: btnUI_6
     21300012: btnUI_7
     21300014: empty
-    21300016: btnUI_2
+    21300016: btnUI_0
     21300018: btnUI_8
     21300020: btnUI_9
     21300022: btnUI_10
@@ -171,29 +171,16 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: btnUI_2
+      name: btnUI_0
       rect:
         serializedVersion: 2
         x: 0
         y: 8
         width: 25
         height: 6
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 6
+      pivot: {x: 0, y: 0}
       border: {x: 1, y: 1, z: 1, w: 1}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: btnUI_0
-      rect:
-        serializedVersion: 2
-        x: 1
-        y: 2
-        width: 23
-        height: 4
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2

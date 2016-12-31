@@ -25,6 +25,10 @@ public class ClassesDataManager : Singleton<ClassesDataManager>{
 			return null;
 		}
 	}
+	public ClassesData getClassData(string classID)
+	{
+		return classesDataDict[classID];
+	}
 	public CharacterData generateChData()
 	{
 		

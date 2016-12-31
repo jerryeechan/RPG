@@ -18,7 +18,8 @@ public class EffectAnimationState : StateMachineBehaviour {
 		AnimationUnit au = animator.GetComponentInParent<AnimationUnit>();
 		if(au)
 			au.playDone();
-		Destroy(animator.gameObject);
+		//Destroy(animator.gameObject);
+		animator.gameObject.SetActive(false);
 	}
 
 	// OnStateMove is called right after Animator.OnAnimatorMove(). Code that processes and affects root motion should be implemented here

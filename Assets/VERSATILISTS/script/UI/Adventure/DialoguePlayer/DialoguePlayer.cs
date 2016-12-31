@@ -36,11 +36,16 @@ public class DialoguePlayer : MonoBehaviour {
 			if(currentTarget)
 			{
 				if(targetNameTextUI)
-				targetNameTextUI.text = currentTarget.targetName;
+					targetNameTextUI.text = currentTarget.targetName;
+				iconSpr.transform.position = currentTarget.transform.position;
 				changeNPCSprite(currentTarget.sprite);
 			}
 		}
 	}
+
+	
+	[SerializeField]
+	SpriteRenderer iconSpr;
 	public void PlayText(string str)
 	{
 		dialogueTextUI.DOText(str);
@@ -49,7 +54,7 @@ public class DialoguePlayer : MonoBehaviour {
 	void changeNPCSprite(Sprite sp)
 	{
 		//TODO FADE
-		if(npcRenderer)
+		if(npcRenderer&&sp!=null)
 			npcRenderer.sprite = sp;
 	}
 	public void completeText()

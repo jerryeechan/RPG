@@ -173,7 +173,7 @@ public class CharacterStat:StringfyProperty{
 		Debug.Log("hit chance:"+hit*100+"%,"+test);
 		
 		
-		return (hit*100 >test); 
+		return true;//Fake (hit*100 >test); 
 	}
 
 

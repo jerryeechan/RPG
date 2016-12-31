@@ -30,7 +30,8 @@ public class AdventureStage : MonoBehaviour {
 		}
 		else
 		{
-			int r = Random.Range(0,normalScenes.Length);
+			//int r = Random.Range(0,normalScenes.Length);
+			int r = 0;//Fake
 			scene = normalScenes[r];
 		}
 		stageEventCount++;

@@ -44,8 +44,32 @@ namespace com.jerrch.rpg{
 			} */
 			return chs;
 		}
+
+		
 		public List<Character> loadPlayerCharacter()
-		{
+		{	
+			//create player characters
+			List<Character> chs = new List<Character>();
+			List<CharacterData> chDataList = DataManager.instance.playerData[0].chData;
+			int count = 3;
+			int i;
+			for(i=0;i<count;i++)
+			{
+				CharacterData chData = ClassesDataManager.instance.generateChData();
+				chData.dexVal = 100;
+				Character newPlayer = chData.genCharacter();
+				chs.Add(newPlayer);
+				//newPlayer.chUI = PlayerStateUI.instance.chUIs[i];
+				newPlayer.chRenderer.transform.position = playerChPositions[i].position;
+			}
+			
+			return chs;
+			
+		}
+
+		/*
+		public List<Character> loadPlayerCharacter()
+		{	
 			//create player characters
 			List<Character> chs = new List<Character>();
 			List<CharacterData> chDataList = DataManager.instance.playerData[0].chData;
@@ -53,19 +77,17 @@ namespace com.jerrch.rpg{
 			for(i=0;i<chDataList.Count;i++)
 			{
 				CharacterData chData = chDataList[i];
+
 				Character newPlayer = chData.genCharacter();
 				chs.Add(newPlayer);
 				//newPlayer.chUI = PlayerStateUI.instance.chUIs[i];
 				newPlayer.chRenderer.transform.position = playerChPositions[i].position;
 			}
-			/*
-			for(;i<3;i++)
-			{
-				PlayerStateUI.instance.chUIs[i].gameObject.SetActive(false);
-			} */
+		
 			return chs;
 			
 		}
+		*/
 		public List<Character> loadEnemy(EnemyWave wave)
 		{
 			

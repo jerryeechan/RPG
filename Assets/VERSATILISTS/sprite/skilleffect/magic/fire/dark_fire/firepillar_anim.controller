@@ -21,7 +21,7 @@ AnimatorController:
     m_IKPass: 0
     m_SyncedLayerAffectsTiming: 0
     m_Controller: {fileID: 9100000}
---- !u!114 &114882660606687448
+--- !u!114 &114041084398363464
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -82,13 +82,13 @@ AnimatorState:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: fire_pillar_dark
+  m_Name: play
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 1101937246687729718}
   m_StateMachineBehaviours:
-  - {fileID: 114882660606687448}
+  - {fileID: 114041084398363464}
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
   m_WriteDefaultValues: 1
