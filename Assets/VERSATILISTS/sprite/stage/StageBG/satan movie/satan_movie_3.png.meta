@@ -1,33 +1,33 @@
 fileFormatVersion: 2
-guid: 9b15f13c249d94dee9296167efbf1336
-timeCreated: 1483115210
+guid: f0d794ffb04c9478b83dbbbd76bed7a6
+timeCreated: 1483115211
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: satan_movie_1_0
-    21300002: satan_movie_1_1
-    21300004: satan_movie_1_2
-    21300006: satan_movie_1_3
-    21300008: satan_movie_1_4
-    21300010: satan_movie_1_5
-    21300012: satan_movie_1_7
-    21300014: satan_movie_1_8
-    21300016: satan_movie_1_9
-    21300018: satan_movie_1_10
-    21300020: satan_movie_1_11
-    21300022: satan_movie_1_12
-    21300024: satan_movie_1_14
-    21300026: satan_movie_1_15
-    21300028: satan_movie_1_16
-    21300030: satan_movie_1_17
-    21300032: satan_movie_1_18
-    21300034: satan_movie_1_19
-    21300036: satan_movie_1_21
-    21300038: satan_movie_1_22
-    21300040: satan_movie_1_23
-    21300042: satan_movie_1_24
-    21300044: satan_movie_1_25
-    21300046: satan_movie_1_26
+    21300000: satan_movie_3_0
+    21300002: satan_movie_3_1
+    21300004: satan_movie_3_2
+    21300006: satan_movie_3_3
+    21300008: satan_movie_3_4
+    21300010: satan_movie_3_5
+    21300012: satan_movie_3_7
+    21300014: satan_movie_3_8
+    21300016: satan_movie_3_9
+    21300018: satan_movie_3_10
+    21300020: satan_movie_3_11
+    21300022: satan_movie_3_12
+    21300024: satan_movie_3_14
+    21300026: satan_movie_3_15
+    21300028: satan_movie_3_16
+    21300030: satan_movie_3_17
+    21300032: satan_movie_3_18
+    21300034: satan_movie_3_19
+    21300036: satan_movie_3_21
+    21300038: satan_movie_3_22
+    21300040: satan_movie_3_23
+    21300042: satan_movie_3_24
+    21300044: satan_movie_3_25
+    21300046: satan_movie_3_26
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -58,10 +58,10 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
-  alignment: 7
+  alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spritePixelsToUnits: 1
@@ -82,11 +82,27 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Android
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: satan_movie_1_0
+      name: satan_movie_3_0
       rect:
         serializedVersion: 2
         x: 0
@@ -99,7 +115,7 @@ TextureImporter:
       outline: []
       tessellationDetail: -1
     - serializedVersion: 2
-      name: satan_movie_1_1
+      name: satan_movie_3_1
       rect:
         serializedVersion: 2
         x: 48
@@ -112,7 +128,7 @@ TextureImporter:
       outline: []
       tessellationDetail: -1
     - serializedVersion: 2
-      name: satan_movie_1_2
+      name: satan_movie_3_2
       rect:
         serializedVersion: 2
         x: 96
@@ -125,7 +141,7 @@ TextureImporter:
       outline: []
       tessellationDetail: -1
     - serializedVersion: 2
-      name: satan_movie_1_3
+      name: satan_movie_3_3
       rect:
         serializedVersion: 2
         x: 144
@@ -138,7 +154,7 @@ TextureImporter:
       outline: []
       tessellationDetail: -1
     - serializedVersion: 2
-      name: satan_movie_1_4
+      name: satan_movie_3_4
       rect:
         serializedVersion: 2
         x: 192
@@ -151,7 +167,7 @@ TextureImporter:
       outline: []
       tessellationDetail: -1
     - serializedVersion: 2
-      name: satan_movie_1_5
+      name: satan_movie_3_5
       rect:
         serializedVersion: 2
         x: 240
@@ -164,7 +180,7 @@ TextureImporter:
       outline: []
       tessellationDetail: -1
     - serializedVersion: 2
-      name: satan_movie_1_6
+      name: satan_movie_3_6
       rect:
         serializedVersion: 2
         x: 288
@@ -177,7 +193,7 @@ TextureImporter:
       outline: []
       tessellationDetail: -1
     - serializedVersion: 2
-      name: satan_movie_1_7
+      name: satan_movie_3_7
       rect:
         serializedVersion: 2
         x: 0
@@ -190,7 +206,7 @@ TextureImporter:
       outline: []
       tessellationDetail: -1
     - serializedVersion: 2
-      name: satan_movie_1_8
+      name: satan_movie_3_8
       rect:
         serializedVersion: 2
         x: 48
@@ -203,7 +219,7 @@ TextureImporter:
       outline: []
       tessellationDetail: -1
     - serializedVersion: 2
-      name: satan_movie_1_9
+      name: satan_movie_3_9
       rect:
         serializedVersion: 2
         x: 96
@@ -216,7 +232,7 @@ TextureImporter:
       outline: []
       tessellationDetail: -1
     - serializedVersion: 2
-      name: satan_movie_1_10
+      name: satan_movie_3_10
       rect:
         serializedVersion: 2
         x: 144
@@ -229,7 +245,7 @@ TextureImporter:
       outline: []
       tessellationDetail: -1
     - serializedVersion: 2
-      name: satan_movie_1_11
+      name: satan_movie_3_11
       rect:
         serializedVersion: 2
         x: 192
@@ -242,7 +258,7 @@ TextureImporter:
       outline: []
       tessellationDetail: -1
     - serializedVersion: 2
-      name: satan_movie_1_12
+      name: satan_movie_3_12
       rect:
         serializedVersion: 2
         x: 240
@@ -255,7 +271,7 @@ TextureImporter:
       outline: []
       tessellationDetail: -1
     - serializedVersion: 2
-      name: satan_movie_1_13
+      name: satan_movie_3_13
       rect:
         serializedVersion: 2
         x: 288
@@ -268,7 +284,7 @@ TextureImporter:
       outline: []
       tessellationDetail: -1
     - serializedVersion: 2
-      name: satan_movie_1_14
+      name: satan_movie_3_14
       rect:
         serializedVersion: 2
         x: 0
@@ -281,7 +297,7 @@ TextureImporter:
       outline: []
       tessellationDetail: -1
     - serializedVersion: 2
-      name: satan_movie_1_15
+      name: satan_movie_3_15
       rect:
         serializedVersion: 2
         x: 48
@@ -294,7 +310,7 @@ TextureImporter:
       outline: []
       tessellationDetail: -1
     - serializedVersion: 2
-      name: satan_movie_1_16
+      name: satan_movie_3_16
       rect:
         serializedVersion: 2
         x: 96
@@ -307,7 +323,7 @@ TextureImporter:
       outline: []
       tessellationDetail: -1
     - serializedVersion: 2
-      name: satan_movie_1_17
+      name: satan_movie_3_17
       rect:
         serializedVersion: 2
         x: 144
@@ -320,7 +336,7 @@ TextureImporter:
       outline: []
       tessellationDetail: -1
     - serializedVersion: 2
-      name: satan_movie_1_18
+      name: satan_movie_3_18
       rect:
         serializedVersion: 2
         x: 192
@@ -333,7 +349,7 @@ TextureImporter:
       outline: []
       tessellationDetail: -1
     - serializedVersion: 2
-      name: satan_movie_1_19
+      name: satan_movie_3_19
       rect:
         serializedVersion: 2
         x: 240
@@ -346,7 +362,7 @@ TextureImporter:
       outline: []
       tessellationDetail: -1
     - serializedVersion: 2
-      name: satan_movie_1_20
+      name: satan_movie_3_20
       rect:
         serializedVersion: 2
         x: 288
@@ -359,7 +375,7 @@ TextureImporter:
       outline: []
       tessellationDetail: -1
     - serializedVersion: 2
-      name: satan_movie_1_21
+      name: satan_movie_3_21
       rect:
         serializedVersion: 2
         x: 0
@@ -372,7 +388,7 @@ TextureImporter:
       outline: []
       tessellationDetail: -1
     - serializedVersion: 2
-      name: satan_movie_1_22
+      name: satan_movie_3_22
       rect:
         serializedVersion: 2
         x: 48
@@ -385,7 +401,7 @@ TextureImporter:
       outline: []
       tessellationDetail: -1
     - serializedVersion: 2
-      name: satan_movie_1_23
+      name: satan_movie_3_23
       rect:
         serializedVersion: 2
         x: 96
@@ -398,7 +414,7 @@ TextureImporter:
       outline: []
       tessellationDetail: -1
     - serializedVersion: 2
-      name: satan_movie_1_24
+      name: satan_movie_3_24
       rect:
         serializedVersion: 2
         x: 144
@@ -411,7 +427,7 @@ TextureImporter:
       outline: []
       tessellationDetail: -1
     - serializedVersion: 2
-      name: satan_movie_1_25
+      name: satan_movie_3_25
       rect:
         serializedVersion: 2
         x: 192
@@ -424,7 +440,7 @@ TextureImporter:
       outline: []
       tessellationDetail: -1
     - serializedVersion: 2
-      name: satan_movie_1_26
+      name: satan_movie_3_26
       rect:
         serializedVersion: 2
         x: 240
@@ -437,7 +453,7 @@ TextureImporter:
       outline: []
       tessellationDetail: -1
     - serializedVersion: 2
-      name: satan_movie_1_27
+      name: satan_movie_3_27
       rect:
         serializedVersion: 2
         x: 288
@@ -450,7 +466,7 @@ TextureImporter:
       outline: []
       tessellationDetail: -1
     - serializedVersion: 2
-      name: satan_movie_1_28
+      name: satan_movie_3_28
       rect:
         serializedVersion: 2
         x: 0
@@ -463,7 +479,7 @@ TextureImporter:
       outline: []
       tessellationDetail: -1
     - serializedVersion: 2
-      name: satan_movie_1_29
+      name: satan_movie_3_29
       rect:
         serializedVersion: 2
         x: 48
@@ -476,7 +492,7 @@ TextureImporter:
       outline: []
       tessellationDetail: -1
     - serializedVersion: 2
-      name: satan_movie_1_30
+      name: satan_movie_3_30
       rect:
         serializedVersion: 2
         x: 96
@@ -489,7 +505,7 @@ TextureImporter:
       outline: []
       tessellationDetail: -1
     - serializedVersion: 2
-      name: satan_movie_1_31
+      name: satan_movie_3_31
       rect:
         serializedVersion: 2
         x: 144
@@ -502,7 +518,7 @@ TextureImporter:
       outline: []
       tessellationDetail: -1
     - serializedVersion: 2
-      name: satan_movie_1_32
+      name: satan_movie_3_32
       rect:
         serializedVersion: 2
         x: 192
@@ -515,7 +531,7 @@ TextureImporter:
       outline: []
       tessellationDetail: -1
     - serializedVersion: 2
-      name: satan_movie_1_33
+      name: satan_movie_3_33
       rect:
         serializedVersion: 2
         x: 240
@@ -528,7 +544,7 @@ TextureImporter:
       outline: []
       tessellationDetail: -1
     - serializedVersion: 2
-      name: satan_movie_1_34
+      name: satan_movie_3_34
       rect:
         serializedVersion: 2
         x: 288
