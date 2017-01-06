@@ -33,7 +33,16 @@ public class UIManager : Singleton<UIManager>{
 	AnimatableCanvas cover;
 	public AnimatableCanvas getPanel(string name)
 	{
-		return panelsDict[name]; 
+		if(panelsDict.ContainsKey(name))
+		{
+			return panelsDict[name]; 	
+		}
+		else
+		{
+			Debug.LogError(name+"not exist");
+			return null;
+		}
+		
 	}
 
 	public void setCursor()

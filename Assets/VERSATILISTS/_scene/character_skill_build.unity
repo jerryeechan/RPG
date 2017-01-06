@@ -1021,20 +1021,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6cf9f31678ee4bc88b54c9716484f0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  effectRange: 0
-  effectType: 0
-  level: 0
-  mpCost: 0
-  spCost: 0
-  duration: 1
-  applyDelay: 0
-  dependency: 0
-  baseValue: 5
-  initValue: 5
-  calEffectValue: 0
-  applyResult: 0
-  hit: 1
-  parentSkill: {fileID: 0}
 --- !u!114 &174441929
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1753,20 +1739,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6cf9f31678ee4bc88b54c9716484f0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  effectRange: 0
-  effectType: 0
-  level: 0
-  mpCost: 0
-  spCost: 0
-  duration: 1
-  applyDelay: 0
-  dependency: 0
-  baseValue: 5
-  initValue: 5
-  calEffectValue: 0
-  applyResult: 0
-  hit: 1
-  parentSkill: {fileID: 0}
 --- !u!4 &349066604
 Transform:
   m_ObjectHideFlags: 0
@@ -1827,20 +1799,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6cf9f31678ee4bc88b54c9716484f0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  effectRange: 0
-  effectType: 0
-  level: 0
-  mpCost: 0
-  spCost: 0
-  duration: 1
-  applyDelay: 0
-  dependency: 0
-  baseValue: 5
-  initValue: 5
-  calEffectValue: 0
-  applyResult: 0
-  hit: 1
-  parentSkill: {fileID: 0}
 --- !u!114 &391141666
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2881,20 +2839,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6cf9f31678ee4bc88b54c9716484f0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  effectRange: 0
-  effectType: 0
-  level: 0
-  mpCost: 0
-  spCost: 0
-  duration: 1
-  applyDelay: 0
-  dependency: 0
-  baseValue: 5
-  initValue: 5
-  calEffectValue: 0
-  applyResult: 0
-  hit: 1
-  parentSkill: {fileID: 0}
 --- !u!114 &580686547
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4385,21 +4329,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d66f24a7b6bf4b87b71bb51a671f046, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  effectRange: 0
-  effectType: 0
-  level: 0
-  mpCost: 0
-  spCost: 0
-  duration: 1
-  applyDelay: 0
-  dependency: 0
-  baseValue: 0
-  initValue: 0
-  calEffectValue: 0
-  applyResult: 0
-  hit: 1
-  parentSkill: {fileID: 0}
-  atkPower: 1
 --- !u!114 &924039638
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4671,20 +4600,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6cf9f31678ee4bc88b54c9716484f0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  effectRange: 0
-  effectType: 0
-  level: 0
-  mpCost: 0
-  spCost: 0
-  duration: 1
-  applyDelay: 0
-  dependency: 0
-  baseValue: 5
-  initValue: 5
-  calEffectValue: 0
-  applyResult: 0
-  hit: 1
-  parentSkill: {fileID: 0}
 --- !u!114 &977235835
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5961,21 +5876,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d66f24a7b6bf4b87b71bb51a671f046, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  effectRange: 0
-  effectType: 0
-  level: 0
-  mpCost: 0
-  spCost: 0
-  duration: 1
-  applyDelay: 0
-  dependency: 0
-  baseValue: 0
-  initValue: 0
-  calEffectValue: 0
-  applyResult: 0
-  hit: 1
-  parentSkill: {fileID: 0}
-  atkPower: 1
 --- !u!114 &1296723687
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6566,20 +6466,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6cf9f31678ee4bc88b54c9716484f0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  effectRange: 0
-  effectType: 0
-  level: 0
-  mpCost: 0
-  spCost: 0
-  duration: 1
-  applyDelay: 0
-  dependency: 0
-  baseValue: 5
-  initValue: 5
-  calEffectValue: 0
-  applyResult: 0
-  hit: 1
-  parentSkill: {fileID: 0}
 --- !u!114 &1419073419
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6718,20 +6604,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6cf9f31678ee4bc88b54c9716484f0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  effectRange: 0
-  effectType: 0
-  level: 0
-  mpCost: 0
-  spCost: 0
-  duration: 1
-  applyDelay: 0
-  dependency: 0
-  baseValue: 5
-  initValue: 5
-  calEffectValue: 0
-  applyResult: 0
-  hit: 1
-  parentSkill: {fileID: 0}
 --- !u!114 &1448282605
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8588,7 +8460,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1535931219
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: a9403d67fbb604065ae11ffc53042772, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b97dcc354d1f9417b8f17181e9004e8c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -9005,92 +8877,116 @@ MonoBehaviour:
   initStat:
     chName: 
     statname: 
-    _str: 0
-    _int: 0
-    _dex: 0
-    _con: 0
-    _hp: 0
-    maxHP: 0
-    hpRecoverRate: 0
-    hpRecoverBuff: 0
-    phyAtk: 0
-    magAtk: 0
+    hp:
+      _baseValue: 0
+    phyDmg:
+      _baseValue: 0
+    magDmg:
+      _baseValue: 0
+    critDmg:
+      _baseValue: 0
+    critRate:
+      _baseValue: 0
+    phyDef:
+      _baseValue: 0
+    magDef:
+      _baseValue: 0
+    accuracy:
+      _baseValue: 0
+    evasion:
+      _baseValue: 0
+    magAtk:
+      _baseValue: 0
+    phyAtk:
+      _baseValue: 0
+    strAttr:
+      _baseValue: 0
+    intAttr:
+      _baseValue: 0
+    dexAttr:
+      _baseValue: 0
+    conAttr:
+      _baseValue: 0
     lowestPhyDmg: 0
     lowestMagDmg: 0
-    phyDmgBuff: 0
-    magDmgBuff: 0
-    damageVaryLow: 0
-    criticalRate: 0
-    criticalDmg: 0
-    accuracy: 0
-    evasion: 0
     damageUpBound: 0
     damageLowerBound: 0
-    durationBuff: 0
-    phyDef: 0
-    magDef: 0
-    ignorePhyDefensePer: 0
-    ignoreMagDefensePer: 0
     block: 0
   equipStat:
     chName: 
     statname: 
-    _str: 0
-    _int: 0
-    _dex: 0
-    _con: 0
-    _hp: 0
-    maxHP: 0
-    hpRecoverRate: 0
-    hpRecoverBuff: 0
-    phyAtk: 0
-    magAtk: 0
+    hp:
+      _baseValue: 0
+    phyDmg:
+      _baseValue: 0
+    magDmg:
+      _baseValue: 0
+    critDmg:
+      _baseValue: 0
+    critRate:
+      _baseValue: 0
+    phyDef:
+      _baseValue: 0
+    magDef:
+      _baseValue: 0
+    accuracy:
+      _baseValue: 0
+    evasion:
+      _baseValue: 0
+    magAtk:
+      _baseValue: 0
+    phyAtk:
+      _baseValue: 0
+    strAttr:
+      _baseValue: 0
+    intAttr:
+      _baseValue: 0
+    dexAttr:
+      _baseValue: 0
+    conAttr:
+      _baseValue: 0
     lowestPhyDmg: 0
     lowestMagDmg: 0
-    phyDmgBuff: 0
-    magDmgBuff: 0
-    damageVaryLow: 0
-    criticalRate: 0
-    criticalDmg: 0
-    accuracy: 0
-    evasion: 0
     damageUpBound: 0
     damageLowerBound: 0
-    durationBuff: 0
-    phyDef: 0
-    magDef: 0
-    ignorePhyDefensePer: 0
-    ignoreMagDefensePer: 0
     block: 0
   battleStat:
     chName: 
     statname: 
-    _str: 0
-    _int: 0
-    _dex: 0
-    _con: 0
-    _hp: 0
-    maxHP: 0
-    hpRecoverRate: 0
-    hpRecoverBuff: 0
-    phyAtk: 0
-    magAtk: 0
+    hp:
+      _baseValue: 0
+    phyDmg:
+      _baseValue: 0
+    magDmg:
+      _baseValue: 0
+    critDmg:
+      _baseValue: 0
+    critRate:
+      _baseValue: 0
+    phyDef:
+      _baseValue: 0
+    magDef:
+      _baseValue: 0
+    accuracy:
+      _baseValue: 0
+    evasion:
+      _baseValue: 0
+    magAtk:
+      _baseValue: 0
+    phyAtk:
+      _baseValue: 0
+    strAttr:
+      _baseValue: 0
+    intAttr:
+      _baseValue: 0
+    dexAttr:
+      _baseValue: 0
+    conAttr:
+      _baseValue: 0
     lowestPhyDmg: 0
     lowestMagDmg: 0
-    phyDmgBuff: 0
-    magDmgBuff: 0
-    damageVaryLow: 0
-    criticalRate: 0
-    criticalDmg: 0
-    accuracy: 0
-    evasion: 0
     damageUpBound: 0
     damageLowerBound: 0
-    durationBuff: 0
-    phyDef: 0
-    magDef: 0
-    ignorePhyDefensePer: 0
-    ignoreMagDefensePer: 0
     block: 0
   doneActionThisRound: 0
   effectsOnMe: []

@@ -44,6 +44,13 @@ public class Skill : MonoBehaviour {
 			mainEffect = transform.Find("main").GetComponent<SkillEffect>();
 		}
 	}
+	void OnValidate()
+	{
+		if(mainEffect==null)
+		{
+			mainEffect = transform.Find("main").GetComponent<SkillEffect>();
+		}
+	}
 	public void init(Character caster) {
 		this.caster = caster;
 		_effects = new List<SkillEffect>();
@@ -188,7 +195,7 @@ public class Skill : MonoBehaviour {
 		{
 			effect.FirstApply(caster);
 		}
-		float acc_final = accuracy + caster.battleStat.accuracy;
+		float acc_final = accuracy + caster.battleStat.accuracy.finalValue;
 		criticalBonus = caster.battleStat.calCriticalBonus();
 		
 //		print(name);

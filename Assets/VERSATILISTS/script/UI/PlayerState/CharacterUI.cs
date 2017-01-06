@@ -22,7 +22,7 @@ public class CharacterUI : MonoBehaviour,IPointerClickHandler {
 	public Character bindCh{
 		set{
 			ch = value;
-			healthBar.init((int)ch.equipStat.hp);
+			healthBar.init(ch.equipStat.hp.finalValue);
 			expBar.init(ch.chData);
 		}
 		get{
@@ -40,8 +40,8 @@ public class CharacterUI : MonoBehaviour,IPointerClickHandler {
 
 	public void updateUI(CharacterStat stat)
 	{
-		healthBar.init(stat.maxHP);
-		healthBar.healthValue = (int)stat.hp;
+		healthBar.init(stat.hp.finalValue);
+		healthBar.healthValue = stat.hp.currentValue;
 	}
 
 	public void getExp(int exp)

@@ -97,12 +97,12 @@ public class CharacterRenderer : MonoBehaviour {
 	public void init(CharacterStat stat)
 	{
 		if(bar)
-			bar.SetFullValue(stat.hp);
+			bar.SetFullValue(stat.hp.finalValue);
 		
 	}
 	public void updateRenderer(CharacterStat stat)
 	{
-		bar.SetNowValue(stat.hp);
+		bar.SetNowValue(stat.hp.currentValue);
 	}
 	public void PlayCharacterAnimation(CharacterAnimation chAnimation)
 	{

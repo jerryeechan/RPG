@@ -46,13 +46,11 @@ public class CharacterAbilityUIManager : Singleton<CharacterAbilityUIManager>,ID
 		//stats
 		foreach(var property in propertyUIs)
 		{
-			
-			float v = ch.equipStat.getValue<float>(property.name);
-			
-				property.setValue(v);
+//			print(property.name );
+			Attribute attr = ch.equipStat.getValue<Attribute>(property.name);
+			property.setValue(attr.finalValue);
 		}
 	}
-
 	
 	
 	public void statUIClicked(AbilityType statType)

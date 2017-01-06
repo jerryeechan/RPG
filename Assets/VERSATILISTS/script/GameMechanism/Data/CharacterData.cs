@@ -14,10 +14,10 @@ public class CharacterData:StringfyProperty{
 	//public SerializableDictionary<string,int> statValues;
 	
 	public int statPoints;
-	public int strVal = 5;
-	public int conVal = 5;
-	public int intVal = 5;
-	public int dexVal = 5;
+	public int strVal;
+	public int conVal;
+	public int intVal;
+	public int dexVal;
 	
 	public string UITemplateID="player";
 	//public List<ActionData> currentActionData = new List<ActionData>();
@@ -65,12 +65,9 @@ public class CharacterData:StringfyProperty{
 	}
 	public CharacterStat genStat()
 	{
-		CharacterStat stat = new CharacterStat(name);
+		CharacterStat stat = new CharacterStat(name,strVal,intVal,dexVal,conVal);
 		stat.statname = "initstat";
-		stat.strValue = strVal;
-		stat.dexValue = dexVal;
-		stat.intValue = intVal;
-		stat.conValue = conVal;
+		
 		return stat;
 	}
 	public List<Equip> genEquips()

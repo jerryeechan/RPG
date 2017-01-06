@@ -63,9 +63,9 @@ public class TurnBattleManager : Singleton<TurnBattleManager> {
 		int maxHp = 0;
 		foreach(var ch in chs)
 		{
-			if(ch.battleStat.hp>maxHp)
+			if(ch.battleStat.hp.currentValue>maxHp)
 			{
-				maxHp = ch.battleStat.hp;
+				maxHp = ch.battleStat.hp.currentValue;
 				target = ch;
 			}
 		}

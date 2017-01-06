@@ -56,7 +56,6 @@ namespace com.jerrch.rpg{
 			for(i=0;i<count;i++)
 			{
 				CharacterData chData = ClassesDataManager.instance.generateChData();
-				chData.dexVal = 100;
 				Character newPlayer = chData.genCharacter();
 				chs.Add(newPlayer);
 				//newPlayer.chUI = PlayerStateUI.instance.chUIs[i];

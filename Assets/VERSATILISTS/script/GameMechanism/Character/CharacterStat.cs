@@ -7,83 +7,83 @@ using System.Runtime.Serialization.Formatters.Binary;
 using System.IO;
 [System.SerializableAttribute]
 public class CharacterStat:StringfyProperty{
-	public CharacterStat(string name)
+	public CharacterStat(string name,int _str,int _int,int _dex,int _con)
 	{
 		chName = name;
+		magAtk = new Attribute(0);
+		phyAtk = new Attribute(0);
+		strAttr = new Attribute(_str);
+		dexAttr = new Attribute(_dex);
+		intAttr = new Attribute(_int);
+		conAttr = new Attribute(_con);
+
+		hp = new MaxHPAttribute(conAttr);
+		phyDmg = new PhysicalDamageAttribute(phyAtk,strAttr);
+		magDmg = new MagicDamageAttribute(magAtk,intAttr);
+		phyDef = new PhysicalDefenseAttribute(strAttr,conAttr);
+		magDef = new MagicDefenseAttribute(intAttr);
+		critDmg = new CriticalDamageAttribute(strAttr);
+		critRate = new CriticalRateAttribute(dexAttr);
+		accuracy = new AccuracyAttribute(dexAttr);
+		evasion = new EvasionAttribute(dexAttr);
+		
+		attributeDict = new Dictionary<AttributeType,Attribute>();
+		attributeDict.Add(AttributeType.PhyAtk,phyAtk);
+		attributeDict.Add(AttributeType.MagAtk,magAtk);
+		attributeDict.Add(AttributeType.PhyDamage,phyDmg);
+		
 	}
+
 	public string chName;
 	public string statname;
 
-	public int _str  = 0;
-	public int _int = 0;
-	public int _dex = 0;
-	public int _con = 0;
-	public int strValue{
-		get{
-			return _str;
+	public MaxHPAttribute hp;
+	
+	public PhysicalDamageAttribute phyDmg;
+	public MagicDamageAttribute magDmg;
+	public CriticalDamageAttribute critDmg;
+	public CriticalRateAttribute critRate;
+	public PhysicalDefenseAttribute phyDef;
+	public MagicDefenseAttribute magDef;
+
+	public AccuracyAttribute accuracy;
+	public EvasionAttribute evasion;
+
+	public Attribute magAtk;//mainly from equip
+	public Attribute phyAtk;
+
+	public Attribute strAttr;
+	public Attribute intAttr;
+	public Attribute dexAttr;
+	public Attribute conAttr;
+
+	public Dictionary<AttributeType,Attribute> attributeDict;
+	public Attribute getAttribute(AttributeType type)
+	{
+		if(attributeDict.ContainsKey(type))
+		{
+			return attributeDict[type];
 		}
-		set{
-			int diff = value-_str;
-			phyAtk+= diff;
-			criticalDmg += diff*0.02f;
-			_str = value;
+		else{
+			Debug.LogError("attribute doesn't exist");
+			return null;
 		}
 	}
 
-	public int conValue{
-		get{
-			return _con;
-		}
-		set{
-			int diff = value - _con;
-			_con = value;
-			maxHP += diff*3;
-			block += diff*0.01f;
-			hpRecoverRate += 1;
-			phyDef+= diff;
-		}
-	}
-	public int dexValue{
-		get{
-			return _dex;
-		}
-		set{
-			int diff = value - _dex;
-			evasion += diff;
-			accuracy += diff;
-			criticalRate += diff*0.01f;
-			_dex = value;
-		}
-	}
+	//public int conValue{
+		//block += diff*0.01f;
+		
+	//public int dexValue{
+		//accuracy += diff;
+		//evasion += diff;	
+		//criticalRate += diff*0.01f;
+		
 
-	public int intValue{
-		get{
-			return _str;
-		}
-		set{
-			int diff = value-_int;
-			magAtk+= diff;
-			magDef+= diff;
-			_int = value;
-		}
-	}
+	//public int intValue{
 	
-	
-	//basic
-	public int _hp;
-	public int maxHP;
-	public int hp{
-		get{return _hp;}
-		set{
-			_hp = Mathf.Clamp(value,0,maxHP);
-		}
-	} 
+	//		magAtk+= diff;
+	//		magDef+= diff;	
 
-	
-	public float hpRecoverRate = 0;
-	public float hpRecoverBuff;
-	
-	
 	
 	//skill
 	//public float SkillPhyDmgPer = 0;
@@ -91,25 +91,17 @@ public class CharacterStat:StringfyProperty{
 	
 	//Attack
 	
-	public float phyAtk = 0;
-	public float magAtk = 0;
+	public void start()
+	{
+		
+	}
 
 	public float lowestPhyDmg = 0.4f;
 	public float lowestMagDmg = 0.4f;
-	public float phyDmgBuff = 1;
-	public float magDmgBuff = 1;
-	
-	public float damageVaryLow = 0.4f;//damage may hit lower than basic
-	
-	public float criticalRate = 0;//basic critical Rate in percentage
 
-	public float criticalDmg = 0;//highest
-	
-	public float accuracy = 0;
 	/*
 	defense
 	*/
-	public float evasion=0;	//ignore damage totally;
 	public float damageUpBound = 0;//doesn't take the damage higher than it
 	public float damageLowerBound = 0;//doesn't take the damage lower than it
 	
@@ -117,15 +109,13 @@ public class CharacterStat:StringfyProperty{
 	buff
 	*/
 	//public float buffBuff; //bonus rate
-	public float durationBuff=0;
+//	public float durationBuff=0;
 	/*
 	Defense
 	*/
-	public float phyDef=0;  //for physical damage
-	public float magDef=0;
 
-	public float ignorePhyDefensePer = 0;
-	public float ignoreMagDefensePer = 0;
+//	public float ignorePhyDefensePer = 0;
+//	public float ignoreMagDefensePer = 0;
 	public float block = 0; //ignore damage totally;
 	
 	/*
@@ -157,9 +147,9 @@ public class CharacterStat:StringfyProperty{
 	public float calCriticalBonus()
 	{
 		int criticalDice = Random.Range(0,100);
-		if(criticalDice<criticalRate)
+		if(criticalDice < critRate.finalValue)
 		{
-			return  1+criticalDmg;
+			return  1+critDmg.finalValue;
 		}
 		return 1;
 	}
@@ -168,7 +158,7 @@ public class CharacterStat:StringfyProperty{
 	//TODO Evasion formula
 	public bool testHit(float accuracy)
 	{
-		float hit = accuracy/(accuracy+Mathf.Pow(evasion/2,0.8f));
+		float hit = accuracy/(accuracy+Mathf.Pow(evasion.finalValue/2,0.8f));
 		int test =  Random.Range(0,100);
 		Debug.Log("hit chance:"+hit*100+"%,"+test);
 		

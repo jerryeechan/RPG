@@ -23,6 +23,11 @@ namespace com.jerrch.rpg
 		public int cd_count;
 		void OnValidate()
 		{
+			skills = GetComponentsInChildren<Skill>();
+			foreach (var skill in skills)
+			{
+				skill.parentAction = this;
+			}
 			actionData.id = name;
 			if(isPassive)
 			{
@@ -30,6 +35,7 @@ namespace com.jerrch.rpg
 				//energyCost = 0;
 			}
 		}
+		
 		void Awake()
 		{
 			skills = GetComponentsInChildren<Skill>();

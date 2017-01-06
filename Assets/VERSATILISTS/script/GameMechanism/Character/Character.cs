@@ -107,7 +107,7 @@ namespace com.jerrch.rpg
 		public List<Equip> equipList;
 		public void init(CharacterStat stat,List<Equip> equips,List<Action> actions)
 		{
-			stat.hp = stat.maxHP;
+			stat.hp.refresh();
 			initStat = stat;
 			equipList = equips;
 			EquipStart();
@@ -117,9 +117,9 @@ namespace com.jerrch.rpg
 		
 		public void updateValues()
 		{
-			int hp = equipStat.hp;
+			//int hp = equipStat.hp;
 			initStat = chData.genStat();
-			initStat.hp = hp;
+			//initStat.hp = hp;
 			EquipStart();
 		}
 		public void EquipStart()
@@ -191,7 +191,7 @@ namespace com.jerrch.rpg
 		}*/
 		public bool isDead
 		{
-			get{ return battleStat.hp==0?true:false;}
+			get{ return battleStat.hp.currentValue==0?true:false;}
 		}
 		Action usingAction;
 		
