@@ -19,7 +19,7 @@ public class UIManager : Singleton<UIManager>{
 		{
 			panelsDict.Add(panel.name,panel);
 		}	
-		cover = getPanel("cover"); 
+		//cover = getPanel("cover"); 
 	}
 	public void setCanvasScale(float s)
 	{
@@ -50,19 +50,9 @@ public class UIManager : Singleton<UIManager>{
 		//Cursor.
 		//Cursor.SetCursor;
 	}
-	public void ShowCover(OnCompleteDelegate d=null)
-	{
-		cover.show(1,d);
-		//onComplete +=d;
-		//onComplete();
-	}
 	//public delegate void ShowCompleteDelegate();
 	//ShowCompleteDelegate onComplete;
 	
-	public void HideCover(OnCompleteDelegate d=null)
-	{
-		print("hide cover");
-		cover.hide(1,d);
-	}
+	
 }
 }

@@ -31,8 +31,6 @@ public class ClassesDataManager : Singleton<ClassesDataManager>{
 	}
 	public CharacterData generateChData()
 	{
-		
-		
 		if(r==classesDataList.Length)
 			r=0;
 		//classesDataList[r].getChData();

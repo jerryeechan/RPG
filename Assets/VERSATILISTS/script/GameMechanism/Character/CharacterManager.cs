@@ -50,12 +50,22 @@ namespace com.jerrch.rpg{
 		{	
 			//create player characters
 			List<Character> chs = new List<Character>();
-			List<CharacterData> chDataList = DataManager.instance.playerData[0].chData;
+			//List<CharacterData> chDataList = DataManager.instance.playerData[0].chData;
+			List<CharacterData> chDataList = DataManager.instance.rosterSelected;
+			print(chDataList.Count);
 			int count = 3;
 			int i;
 			for(i=0;i<count;i++)
 			{
-				CharacterData chData = ClassesDataManager.instance.generateChData();
+				CharacterData chData;
+				if(chDataList == null||chDataList.Count == 0)
+				{
+					chData = ClassesDataManager.instance.generateChData();
+					print("generate data");
+				}
+				else
+					chData = chDataList[i];
+				
 				Character newPlayer = chData.genCharacter();
 				chs.Add(newPlayer);
 				//newPlayer.chUI = PlayerStateUI.instance.chUIs[i];

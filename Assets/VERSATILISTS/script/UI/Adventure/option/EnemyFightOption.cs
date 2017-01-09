@@ -20,7 +20,10 @@ public class EnemyFightOption: AdventureOption {
 		success();
 		this.myInvoke(1,
 		()=>{
-			UIManager.instance.ShowCover(chooseEvent);
+			PauseMenuManager.instance.Transition((OnCompleteDelegate d)=>{
+				chooseEvent();
+				d();
+			});
 		});	
 	}
 	
@@ -32,7 +35,6 @@ public class EnemyFightOption: AdventureOption {
 		enemySet = MonsterDataEditor.instance.getMonsterSet(enemySetID);
 		//RandomBattleRound.instance.StartBattle(enemySet);
 		TurnBattleManager.instance.StartBattle(enemySet);
-		UIManager.instance.HideCover(); 
 	}
 }
 

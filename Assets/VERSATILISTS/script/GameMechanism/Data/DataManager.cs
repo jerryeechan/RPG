@@ -8,6 +8,7 @@ public class DataManager : Singleton<DataManager> {
 	public PlayerData[] playerData;
 	public PlayerData curPlayerData;
 	
+	public List<CharacterData> rosterSelected;
 	void Awake()
 	{
 		curPlayerData = playerData[0];

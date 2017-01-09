@@ -76,10 +76,12 @@ public class CompositeText : MonoBehaviour {
 
 	string GetLocalText(string key)
 	{
-		string text = LanguageManager.Instance.GetTextValue(key);
-		if(text!=null)
-		return text;
-		else 
+		if(LanguageManager.Instance)
+		{
+			string text = LanguageManager.Instance.GetTextValue(key);
+			if(text!=null)
+				return text;
+		}
 		return key;
 	}
 

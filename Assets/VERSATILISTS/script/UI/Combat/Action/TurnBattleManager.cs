@@ -269,11 +269,11 @@ public class TurnBattleManager : Singleton<TurnBattleManager> {
 		{
 			ch.BattleEnd();
 		}
-		UIManager.instance.ShowCover(()=>{
+		PauseMenuManager.instance.Transition((OnCompleteDelegate hide)=>{
 			GameManager.instance.AdventureMode();
 			AdventureManager.instance.NextEvent();
 			Destroy(stageTransform.gameObject);
-			UIManager.instance.HideCover();
+			hide();
 		});
 	}
 }

@@ -3,8 +3,6 @@ using System.Collections.Generic;
 
 namespace com.jerrch.rpg
 {
-
-
 	public class GameManager : Singleton<GameManager> {
 		
 		public Character currentCh;
@@ -14,17 +12,46 @@ namespace com.jerrch.rpg
 		public InfoManager info;
 		
 		public TestMode testMode;
-		public GameObject Canvas;
+		//public GameObject Canvas;
 		public static float playerAnimationSpeed = 0.5f;
 		void Awake()
 		{
-			Canvas.SetActive(true);
+		//	Canvas.SetActive(true);
 		}
 		void Start()
 		{
 			// DataManager.instance.newPlayerData();
 			StartGame();
+			//UIManager.instance.getPanel("cover").gameObject.SetActive(true);
+			//UIManager.instance.getPanel("cover").hide();
+			//testMode = false;
+		}
+		public void Pause()
+		{
+			PauseMenuManager.instance.show();
+		}
+
+		/*
+		public void StartNewDungeon()
+		{
+			DataManager.instance.newPlayerData();
+			StartGame();
+			DungeonMode();
+			
+			PauseMenuManager.instance.Transition((OnCompleteDelegate d)=>{
+				UIManager.instance.getPanel("mainmenu").hide();
+				UIManager.instance.HideCover();
+				d();
+			});
+		}*/
+		public void StartGame()
+		{
+			//if(stageTransform)
+			//	Destroy(stageTransform.gameObject);
+			//stageTransform = new GameObject("CombatStageContainer").transform;
+			loadCharacter();
 			InfoManager.instance.init();
+			
 			switch(testMode)
 			{
 				case TestMode.Release:
@@ -52,38 +79,7 @@ namespace com.jerrch.rpg
 				case TestMode.Stat:
 				break;
 			}
-			//testMode = false;
-			/*
-			StartGame();
-			if(startWithBattle)
-			{
-				RandomBattleRound.instance.StartBattle(MonsterDataEditor.instance.getMonsterSet("test"));
-			}
-			else
-			{
-				DungeonMode();
-				DungeonManager.instance.newDungeon();
-			}
-			Cursor.visible = true;
-			*/
-		}
-		public void StartNewDungeon()
-		{
-			DataManager.instance.newPlayerData();
-			StartGame();
-			DungeonMode();
 			
-			UIManager.instance.ShowCover(()=>{
-				UIManager.instance.getPanel("mainmenu").hide();
-				UIManager.instance.HideCover();
-			});
-		}
-		public void StartGame()
-		{
-			//if(stageTransform)
-			//	Destroy(stageTransform.gameObject);
-			//stageTransform = new GameObject("CombatStageContainer").transform;
-			loadCharacter();
 		}
 		
 		//load new characters

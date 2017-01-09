@@ -11,9 +11,10 @@ public class InfoTab :AnimatableCanvas{
 		displayables = GetComponentsInChildren<IDisplayable>(true);
 		base.Awake();
 	}
-	void Start()
+	override protected void Start()
 	{
 		InfoManager.instance.currentTab = this;
+		base.Start();
 	}
 	public override void show(OnCompleteDelegate completeEvent=null)
 	{	
@@ -29,9 +30,9 @@ public class InfoTab :AnimatableCanvas{
 		}
 		
 	}
-	public override void hide(OnCompleteDelegate completeEvent=null)
+	public override void hide(OnCompleteDelegate completeEvent)
 	{
-		base.hide();
+		base.hide(completeEvent);
 		if(displayables==null)
 			return;
 		//gameObject.SendMessage("Hide",SendMessageOptions.DontRequireReceiver);

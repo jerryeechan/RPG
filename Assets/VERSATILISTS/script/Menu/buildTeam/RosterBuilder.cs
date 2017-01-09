@@ -108,7 +108,6 @@ public class RosterBuilder : Singleton<RosterBuilder>{
 		bindAction = ActionManager.instance.getActions(btn.bindChData.actionIDs)[0];
 	}
 	RosterButton currentRosterButton;
-	int currentIndex = 0;
 	int checkedPlayerNum = 0;
 	public bool isTeamFull
 	{
@@ -121,14 +120,15 @@ public class RosterBuilder : Singleton<RosterBuilder>{
 		if(isCheck)
 		{
 			checkedPlayerNum++;
-			selectData.Add(rosterButtons[currentIndex].bindChData);
+			
+			selectData.Add(currentRosterButton.bindChData);
 			memberNumText.text = checkedPlayerNum.ToString();
 			currentRosterButton.check();
 		}
 		else
 		{
 			checkedPlayerNum--;
-			selectData.Remove(rosterButtons[currentIndex].bindChData);
+			selectData.Remove(currentRosterButton.bindChData);
 			memberNumText.text = checkedPlayerNum.ToString();
 			currentRosterButton.check();
 		}
@@ -136,16 +136,15 @@ public class RosterBuilder : Singleton<RosterBuilder>{
 		{
 			Ready();
 		}
-		
-		
 	}
 	[SerializeField]
 	RectTransform startPanel;
 	public void Ready()
 	{
+		DataManager.instance.rosterSelected = selectData;
 		//GameManager.instance.loadCharacter(selectData);
-		//print("ready");
 		startPanel.DOAnchorPos(Vector2.zero,1).SetEase(Ease.OutBack);
+		WTHSceneManager.instance.adventureStart();
 	}
 
 	public void Back()

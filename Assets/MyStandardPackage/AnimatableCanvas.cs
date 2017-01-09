@@ -7,21 +7,32 @@ using DG.Tweening;
 public class AnimatableCanvas : MonoBehaviour {
     public bool isAnimating = false;
     public float duration;
+    public bool isHideStart = false;
     CanvasGroup canvasGroup;
 	protected virtual void Awake()
 	{
-        canvasGroup = GetComponent<CanvasGroup>();
+        canvasGroup = GetComponentInChildren<CanvasGroup>();
         if(canvasGroup==null)
         {
             gameObject.AddComponent<CanvasGroup>();
         }
 	}
-    
-    
-	
-    public virtual void hide(OnCompleteDelegate completeEvent=null)
+    protected virtual void Start()
     {
-        hide(duration);
+        if(isHideStart)
+        {
+            hide();
+        }
+    }
+    
+	public virtual void hide()
+    {
+        print("hide");
+        hide(null);
+    }
+    public virtual void hide(OnCompleteDelegate completeEvent)
+    {
+        hide(duration,completeEvent);
     }
 	public void hide(float duration,OnCompleteDelegate completeEvent=null)
 	{   
@@ -32,6 +43,7 @@ public class AnimatableCanvas : MonoBehaviour {
             
             if(canvasGroup)
             {
+                canvasGroup.alpha = 1;
                 //print(canvasGroup.DOKill(true)); 
                 canvasGroup.DOFade(0,duration).OnComplete(
                 ()=>{
@@ -44,13 +56,12 @@ public class AnimatableCanvas : MonoBehaviour {
             else{
                 Debug.LogError(name+"CanvasGroup not exist");
             }
-            
-        
 	}
 	
+    
     public virtual void show(OnCompleteDelegate completeEvent=null)
     {
-        show(duration);
+        show(duration,completeEvent);
     }
 	public void show(float duration,OnCompleteDelegate completeEvent=null)
 	{
@@ -67,7 +78,7 @@ public class AnimatableCanvas : MonoBehaviour {
                 print(name+"show complete");
                 
                 if(completeEvent!=null)
-                completeEvent();
+                    completeEvent();
             });
         }
         else{

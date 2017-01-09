@@ -99,12 +99,14 @@ namespace com.jerrch.rpg
 			{
 				ch.BattleEnd();
 			}
+			/*
 			UIManager.instance.ShowCover(()=>{
 				GameManager.instance.AdventureMode();
 				AdventureManager.instance.NextEvent();
 				Destroy(stageTransform.gameObject);
 				UIManager.instance.HideCover();
 			});
+			*/
 		}
 		public void NextAction()
 		{	
@@ -266,3 +268,7 @@ namespace com.jerrch.rpg
 }
 
 //6 1 2   b3 b3b3 212
+
+//SONG
+//2 5 2 5 1. 2/ 3b 2.. 
+//        1. 7 6 5

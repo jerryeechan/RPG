@@ -272,13 +272,12 @@ public class AdventureManager : Singleton<AdventureManager> {
 				nextStage();
 			}
 			*/
-			UIManager.instance.ShowCover(()=>{
+			PauseMenuManager.instance.Transition((OnCompleteDelegate d)=>{
 				//TODO:
 				currentScene = AdventureStageManager.instance.currentStage.getScene();
 				encounterEvent(currentScene.getEvent());
-				
 				//encounterEvent(testEvent);
-				UIManager.instance.HideCover();
+				d();
 			});
 		}
 	}

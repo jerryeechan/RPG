@@ -266,7 +266,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &111470045
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3519,6 +3519,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isAnimating: 0
   duration: 0
+  isHideStart: 0
 --- !u!225 &1043176189
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -5690,6 +5691,7 @@ MonoBehaviour:
   dialogueTextUI: {fileID: 462200203}
   targetNameTextUI: {fileID: 0}
   npcRenderer: {fileID: 0}
+  iconSpr: {fileID: 0}
 --- !u!1 &1672630001
 GameObject:
   m_ObjectHideFlags: 0

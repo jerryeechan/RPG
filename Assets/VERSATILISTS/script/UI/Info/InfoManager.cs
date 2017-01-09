@@ -20,12 +20,10 @@ public class InfoManager : Singleton<InfoManager> {
 		foreach(var tab in tabPanels)
 		{
 			tabDict.Add(tab.type,tab);
-			
 			if(tab.gameObject.activeSelf)
 			{
 				currentTab = tab;
 			}
-
 		}
 
 		if(currentTab==null)
@@ -36,16 +34,14 @@ public class InfoManager : Singleton<InfoManager> {
 	
 	public void init()
 	{
-		
 		foreach(var tab in tabPanels)
 		{
 			if(tab != currentTab)
 			{
-				tab.show();
-				tab.hide();
+				tab.gameObject.SetActive(true);
+				tab.gameObject.SetActive(false);
 			}
 		}
-	
 		if(isOpen)
 		{
 			Show();
