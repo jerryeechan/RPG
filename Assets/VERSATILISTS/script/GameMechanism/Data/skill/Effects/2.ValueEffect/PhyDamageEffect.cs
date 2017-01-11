@@ -37,7 +37,8 @@ namespace com.jerrch.rpg
 			//defense *= (1-casterStat.ignorePhyDefensePer);//caster's ignore defense
 			//print("defense:"+defense);
 			
-			applyResult = Mathf.Clamp(calEffectValue-defense,1,phyDmgMax);
+			int reduce = stat.damageReduce.finalValue;
+			applyResult = Mathf.Clamp((calEffectValue-defense)*reduce,1,phyDmgMax);
 			//print(" casue damage: "+(int)applyResult);
 			print(casterStat.chName+" do @"+(int)applyResult+"damage to"+stat.chName);
 			stat.hp.changeHP(-(int)applyResult);

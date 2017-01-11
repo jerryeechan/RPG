@@ -10,6 +10,7 @@ public class CursorManager : Singleton<CursorManager> {
 	void Awake()
 	{
 		NormalMode();
+		//Cursor.SetCursor(attackTexture,new Vector2(8,0),CursorMode.Auto);
 	}
 	public void PointerMode()
 	{

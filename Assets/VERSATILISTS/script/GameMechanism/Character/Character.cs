@@ -107,7 +107,6 @@ namespace com.jerrch.rpg
 		public List<Equip> equipList;
 		public void init(CharacterStat stat,List<Equip> equips,List<Action> actions)
 		{
-			stat.hp.refresh();
 			initStat = stat;
 			equipList = equips;
 			EquipStart();
@@ -135,7 +134,9 @@ namespace com.jerrch.rpg
 		{
 			battleStat = equipStat.Clone(); 
 			battleStat.statname = name+"_battlestat";
+			battleStat.hp.refresh();
 			chRenderer.init(battleStat);
+			
 		}
 
 		public void BattleEnd()
@@ -245,7 +246,9 @@ namespace com.jerrch.rpg
 		{
 			chRenderer.PlayCharacterAnimation(CharacterAnimation.die);
 			if(side == CharacterSide.Enemy)
-				RandomBattleRound.instance.EnemyDie(this);
+			{
+				//RandomBattleRound.instance.EnemyDie(this);
+			}
 			else
 			{
 

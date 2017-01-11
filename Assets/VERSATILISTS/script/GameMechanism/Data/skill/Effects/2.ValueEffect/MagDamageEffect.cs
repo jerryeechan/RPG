@@ -19,7 +19,9 @@ namespace com.jerrch.rpg
 		}
 		public override void useBy(Character ch)
 		{
-			calEffectValue = ch.battleStat.magDmg.finalValue * baseValue;
+			casterStat = ch.battleStat;
+			calEffectValue = casterStat.magDmg.finalValue;// * baseValue;
+//			Debug.LogError(calEffectValue);
 			calEffectValue *= Random.Range(casterStat.lowestMagDmg,1);
 			//calEffectValue *= parentSkill.criticalBonus;
 			base.useBy(ch);

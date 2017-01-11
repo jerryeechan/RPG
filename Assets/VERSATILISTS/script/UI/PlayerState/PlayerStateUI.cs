@@ -14,7 +14,7 @@ public class PlayerStateUI : Singleton<PlayerStateUI> {
 	void Awake () {
 		chUIs = GetComponentsInChildren<CharacterUI>();
 		goldPanel = goldText.GetComponentInParent<AnimatableCanvas>();
-		doomPanel = doomText.GetComponentInParent<AnimatableCanvas>();
+		//doomPanel = doomText.GetComponentInParent<AnimatableCanvas>();
 		//lastUI = chUIs[0];
 		//descriptionText.gameObject.SetActive(true);
 	}
@@ -50,12 +50,12 @@ public class PlayerStateUI : Singleton<PlayerStateUI> {
 	public void CombatMode()
 	{
 		goldPanel.hide(0.5f);
-		doomPanel.hide(0.5f);
+//		doomPanel.hide(0.5f);
 	}
 	public void AdventureMode()
 	{
 		goldPanel.show(0.5f);
-		doomPanel.show(0.5f);
+	//	doomPanel.show(0.5f);
 	}
 
 	public CharacterUI lastUI;

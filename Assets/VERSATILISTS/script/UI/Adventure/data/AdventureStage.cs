@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
-
+using System.Collections.Generic;
 public class AdventureStage : MonoBehaviour {
 
 	public string stageName;
@@ -26,13 +26,33 @@ public class AdventureStage : MonoBehaviour {
 		if(stageEventCount == 0)
 		{
 			stageEventCount++;
+			print("special");
 			scene = getSpecialScene();
 		}
 		else
 		{
-			//int r = Random.Range(0,normalScenes.Length);
-			int r = 0;//Fake
-			scene = normalScenes[r];
+			var randomList = new List<int>();
+			for(int i=0;i<normalScenes.Length;i++)
+			{
+				var sc = normalScenes[i];
+				for(int j=0;j<sc.weight;j++)
+				{
+					randomList.Add(i);
+				}
+			}
+			
+			int r = Random.Range(0,randomList.Count);
+			//normalScenes.Length
+			
+			//int r = 0;//Fake
+			scene = normalScenes[randomList[r]];
+		}
+
+		scene.reset();
+		foreach(var sc in normalScenes)
+		{
+			if(sc!=scene)
+			sc.addWeight();
 		}
 		stageEventCount++;
 		return scene;

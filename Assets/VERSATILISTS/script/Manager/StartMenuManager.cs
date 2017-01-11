@@ -11,7 +11,7 @@ public class StartMenuManager : MonoBehaviour {
 	}
 	public void startGameBtnTouched()
 	{
-		WTHSceneManager.instance.startNewGame();
+		WTHSceneManager.instance.seeMovie();
 	}
 	public void fakeGameBtnTouched()
 	{

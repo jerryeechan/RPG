@@ -800,61 +800,6 @@ MonoBehaviour:
   caster: {fileID: 0}
   cd: 3
   cd_count: 0
---- !u!1 &190597394
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 1631880168753292, guid: 8fe6c07aac85740f19927b6787068a5b,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 190597395}
-  - component: {fileID: 190597396}
-  m_Layer: 0
-  m_Name: passive skill
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &190597395
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 4032923724178338, guid: 8fe6c07aac85740f19927b6787068a5b,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 190597394}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 641868746}
-  m_Father: {fileID: 1803239616}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &190597396
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114709544390439028, guid: 8fe6c07aac85740f19927b6787068a5b,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 190597394}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d915518966a0f4025bc01cbb392699ed, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  parentAction: {fileID: 1803239617}
-  followSkill: {fileID: 0}
-  mainEffect: {fileID: 0}
-  accuracy: 1
-  skillAnimationID: 
-  hitAnimationID: 
-  castTiming: 0
-  icon: {fileID: 0}
-  skillState: 0
-  posType: 0
-  criticalBonus: 1
 --- !u!1 &195717364
 GameObject:
   m_ObjectHideFlags: 0
@@ -885,65 +830,6 @@ Transform:
   m_Father: {fileID: 692656750}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &220382279
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 1113254147357638, guid: 8fe6c07aac85740f19927b6787068a5b,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 220382280}
-  - component: {fileID: 220382281}
-  m_Layer: 0
-  m_Name: Heart Stabber
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &220382280
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 4639113656185630, guid: 8fe6c07aac85740f19927b6787068a5b,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 220382279}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 1683952904}
-  m_Father: {fileID: 1594728674}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &220382281
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114797994663698730, guid: 8fe6c07aac85740f19927b6787068a5b,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 220382279}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 559c081501d564701ad04332e9a8adc4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  type: 1
-  diceType: 0
-  skills:
-  - {fileID: 1683952905}
-  description: ss
-  icon: {fileID: 21300030, guid: fe5260ff6edd74691b2caa79354fee98, type: 3}
-  actionAnimationID: 
-  chAnimation: 0
-  actionData:
-    id: Heart Stabber
-    state: 0
-    masterLevel: 0
-  caster: {fileID: 0}
-  cd: 0
-  cd_count: 0
 --- !u!1 &223774176
 GameObject:
   m_ObjectHideFlags: 0
@@ -974,7 +860,7 @@ Transform:
   - {fileID: 2018464959}
   - {fileID: 163547766}
   m_Father: {fileID: 801972301}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &227219799
 GameObject:
@@ -1622,46 +1508,6 @@ Transform:
   m_Father: {fileID: 526879486}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &368073600
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 368073601}
-  - component: {fileID: 368073602}
-  m_Layer: 0
-  m_Name: SceneManger
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &368073601
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 368073600}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 8
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &368073602
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 368073600}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8b90081315fda4b4b9d9a1245c69c66d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &375440711
 GameObject:
   m_ObjectHideFlags: 0
@@ -1904,61 +1750,6 @@ SpriteRenderer:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
---- !u!1 &410982169
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 1224838333264496, guid: 8fe6c07aac85740f19927b6787068a5b,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 410982170}
-  - component: {fileID: 410982171}
-  m_Layer: 0
-  m_Name: passive skill
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &410982170
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 4360840928356004, guid: 8fe6c07aac85740f19927b6787068a5b,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 410982169}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 1624882527}
-  m_Father: {fileID: 539171474}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &410982171
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114366002665285958, guid: 8fe6c07aac85740f19927b6787068a5b,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 410982169}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d915518966a0f4025bc01cbb392699ed, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  parentAction: {fileID: 539171475}
-  followSkill: {fileID: 0}
-  mainEffect: {fileID: 0}
-  accuracy: 1
-  skillAnimationID: 
-  hitAnimationID: 
-  castTiming: 0
-  icon: {fileID: 0}
-  skillState: 0
-  posType: 0
-  criticalBonus: 1
 --- !u!1 &431221382
 GameObject:
   m_ObjectHideFlags: 0
@@ -1988,7 +1779,7 @@ Transform:
   m_Children:
   - {fileID: 544408302}
   m_Father: {fileID: 801972301}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &441549745
 GameObject:
@@ -2396,70 +2187,30 @@ Transform:
 --- !u!114 &497530742
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114991364820182362, guid: 8fe6c07aac85740f19927b6787068a5b,
-    type: 2}
+  m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 497530740}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
+  m_Script: {fileID: 11500000, guid: 72f411085746b4e5f9098eac6a252d14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &498809842
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 1978278786859904, guid: 8fe6c07aac85740f19927b6787068a5b,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 498809843}
-  - component: {fileID: 498809844}
-  m_Layer: 0
-  m_Name: passive skill
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &498809843
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 4456485368780930, guid: 8fe6c07aac85740f19927b6787068a5b,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 498809842}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 1235055383}
-  m_Father: {fileID: 960685018}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &498809844
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114322446922716702, guid: 8fe6c07aac85740f19927b6787068a5b,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 498809842}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d915518966a0f4025bc01cbb392699ed, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  parentAction: {fileID: 960685019}
-  followSkill: {fileID: 0}
-  mainEffect: {fileID: 0}
-  accuracy: 1
-  skillAnimationID: 
-  hitAnimationID: 
-  castTiming: 0
-  icon: {fileID: 0}
-  skillState: 0
-  posType: 0
-  criticalBonus: 1
+  effectRange: 0
+  effectType: 0
+  level: 0
+  mpCost: 0
+  spCost: 0
+  duration: 1
+  applyDelay: 0
+  dependency: 0
+  baseValue: 0.5
+  initValue: 0.5
+  calEffectValue: 0
+  applyResult: 0
+  hit: 1
+  parentSkill: {fileID: 1494928526}
+  baseMultiplier: 0
+  buffType: 8
 --- !u!1 &521232928
 GameObject:
   m_ObjectHideFlags: 0
@@ -2615,65 +2366,6 @@ MonoBehaviour:
   skillState: 1
   posType: 0
   criticalBonus: 1
---- !u!1 &539171473
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 1544219263092740, guid: 8fe6c07aac85740f19927b6787068a5b,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 539171474}
-  - component: {fileID: 539171475}
-  m_Layer: 0
-  m_Name: Deep Wound
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &539171474
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 4301064197494660, guid: 8fe6c07aac85740f19927b6787068a5b,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 539171473}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 410982170}
-  m_Father: {fileID: 1594728674}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &539171475
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114485820225889612, guid: 8fe6c07aac85740f19927b6787068a5b,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 539171473}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 559c081501d564701ad04332e9a8adc4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  type: 1
-  diceType: 0
-  skills:
-  - {fileID: 410982171}
-  description: ss
-  icon: {fileID: 21300030, guid: fe5260ff6edd74691b2caa79354fee98, type: 3}
-  actionAnimationID: 
-  chAnimation: 0
-  actionData:
-    id: Deep Wound
-    state: 0
-    masterLevel: 0
-  caster: {fileID: 0}
-  cd: 0
-  cd_count: 0
 --- !u!1 &542470371
 GameObject:
   m_ObjectHideFlags: 0
@@ -3363,36 +3055,6 @@ MonoBehaviour:
   caster: {fileID: 0}
   cd: 1
   cd_count: 0
---- !u!1 &641868745
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 1305856326369128, guid: 8fe6c07aac85740f19927b6787068a5b,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 641868746}
-  m_Layer: 0
-  m_Name: main
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &641868746
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 4185339340739426, guid: 8fe6c07aac85740f19927b6787068a5b,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 641868745}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 190597395}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &645667906
 GameObject:
   m_ObjectHideFlags: 0
@@ -3816,7 +3478,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 871688254}
-  - {fileID: 1594728674}
   - {fileID: 431221383}
   - {fileID: 223774177}
   m_Father: {fileID: 1921438822}
@@ -4719,65 +4380,6 @@ Transform:
   m_Father: {fileID: 402181611}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &960685017
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 1248672513882916, guid: 8fe6c07aac85740f19927b6787068a5b,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 960685018}
-  - component: {fileID: 960685019}
-  m_Layer: 0
-  m_Name: Stronger
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &960685018
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 4447333403056616, guid: 8fe6c07aac85740f19927b6787068a5b,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 960685017}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 498809843}
-  m_Father: {fileID: 1594728674}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &960685019
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114052972956671370, guid: 8fe6c07aac85740f19927b6787068a5b,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 960685017}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 559c081501d564701ad04332e9a8adc4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  type: 1
-  diceType: 0
-  skills:
-  - {fileID: 498809844}
-  description: ss
-  icon: {fileID: 21300030, guid: fe5260ff6edd74691b2caa79354fee98, type: 3}
-  actionAnimationID: 
-  chAnimation: 0
-  actionData:
-    id: Stronger
-    state: 0
-    masterLevel: 0
-  caster: {fileID: 0}
-  cd: 0
-  cd_count: 0
 --- !u!1 &970579118
 GameObject:
   m_ObjectHideFlags: 0
@@ -4881,49 +4483,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1022170084
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 1065532881039388, guid: 8fe6c07aac85740f19927b6787068a5b,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 1022170085}
-  - component: {fileID: 1022170086}
-  m_Layer: 0
-  m_Name: main
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1022170085
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 4260986830855858, guid: 8fe6c07aac85740f19927b6787068a5b,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1022170084}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1324176923}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1022170086
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114611627130936146, guid: 8fe6c07aac85740f19927b6787068a5b,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1022170084}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1022542688
 GameObject:
   m_ObjectHideFlags: 0
@@ -5978,62 +5537,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   delay: 0
   hitSoundClip: {fileID: 8300000, guid: b01c65caee309400bb94a1d54b7b7315, type: 3}
---- !u!1 &1235055382
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 1267952704151690, guid: 8fe6c07aac85740f19927b6787068a5b,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 1235055383}
-  - component: {fileID: 1235055385}
-  - component: {fileID: 1235055384}
-  m_Layer: 0
-  m_Name: main
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1235055383
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 4607961410523430, guid: 8fe6c07aac85740f19927b6787068a5b,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1235055382}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 498809843}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1235055384
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114561622780268292, guid: 8fe6c07aac85740f19927b6787068a5b,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1235055382}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1235055385
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114962498238444578, guid: 8fe6c07aac85740f19927b6787068a5b,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1235055382}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1265113881
 GameObject:
   m_ObjectHideFlags: 0
@@ -6334,61 +5837,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1324176922
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 1025950644057914, guid: 8fe6c07aac85740f19927b6787068a5b,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 1324176923}
-  - component: {fileID: 1324176924}
-  m_Layer: 0
-  m_Name: passive skill
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1324176923
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 4185114790924740, guid: 8fe6c07aac85740f19927b6787068a5b,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1324176922}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 1022170085}
-  m_Father: {fileID: 1376163310}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1324176924
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114885039422125718, guid: 8fe6c07aac85740f19927b6787068a5b,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1324176922}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d915518966a0f4025bc01cbb392699ed, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  parentAction: {fileID: 1376163311}
-  followSkill: {fileID: 0}
-  mainEffect: {fileID: 0}
-  accuracy: 1
-  skillAnimationID: 
-  hitAnimationID: 
-  castTiming: 0
-  icon: {fileID: 0}
-  skillState: 0
-  posType: 0
-  criticalBonus: 1
 --- !u!1 &1333872466
 GameObject:
   m_ObjectHideFlags: 0
@@ -6511,65 +5959,6 @@ Transform:
   m_Father: {fileID: 1921438822}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1376163309
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 1858169196858012, guid: 8fe6c07aac85740f19927b6787068a5b,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 1376163310}
-  - component: {fileID: 1376163311}
-  m_Layer: 0
-  m_Name: Apple Slasher
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1376163310
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 4361306548332218, guid: 8fe6c07aac85740f19927b6787068a5b,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1376163309}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 1324176923}
-  m_Father: {fileID: 1594728674}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1376163311
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114380870587961904, guid: 8fe6c07aac85740f19927b6787068a5b,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1376163309}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 559c081501d564701ad04332e9a8adc4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  type: 1
-  diceType: 0
-  skills:
-  - {fileID: 1324176924}
-  description: ss
-  icon: {fileID: 21300030, guid: fe5260ff6edd74691b2caa79354fee98, type: 3}
-  actionAnimationID: 
-  chAnimation: 0
-  actionData:
-    id: Apple Slasher
-    state: 0
-    masterLevel: 0
-  caster: {fileID: 0}
-  cd: 0
-  cd_count: 0
 --- !u!1 &1377123576
 GameObject:
   m_ObjectHideFlags: 0
@@ -6692,49 +6081,6 @@ MonoBehaviour:
   shieldIDs:
   - priest_book
   shieldGraphicIDs: []
---- !u!1 &1404315859
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 1857604830994414, guid: 8fe6c07aac85740f19927b6787068a5b,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 1404315860}
-  - component: {fileID: 1404315861}
-  m_Layer: 0
-  m_Name: main
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1404315860
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 4931724582561796, guid: 8fe6c07aac85740f19927b6787068a5b,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1404315859}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1683952904}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1404315861
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114406026034817704, guid: 8fe6c07aac85740f19927b6787068a5b,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1404315859}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1404832330
 GameObject:
   m_ObjectHideFlags: 0
@@ -7166,7 +6512,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parentAction: {fileID: 2018464960}
   followSkill: {fileID: 0}
-  mainEffect: {fileID: 0}
+  mainEffect: {fileID: 497530742}
   accuracy: 1
   skillAnimationID: darks_shield_anim
   hitAnimationID: 
@@ -7209,15 +6555,30 @@ Transform:
 --- !u!114 &1538521439
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114353645659930856, guid: 8fe6c07aac85740f19927b6787068a5b,
-    type: 2}
+  m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1538521437}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
+  m_Script: {fileID: 11500000, guid: 72f411085746b4e5f9098eac6a252d14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  effectRange: 3
+  effectType: 0
+  level: 0
+  mpCost: 0
+  spCost: 0
+  duration: 1
+  applyDelay: 0
+  dependency: 0
+  baseValue: 1
+  initValue: 1
+  calEffectValue: 0
+  applyResult: 0
+  hit: 1
+  parentSkill: {fileID: 1599068024}
+  baseMultiplier: 0
+  buffType: 8
 --- !u!1 &1557139048
 GameObject:
   m_ObjectHideFlags: 0
@@ -7489,41 +6850,6 @@ SpriteRenderer:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
---- !u!1 &1594728673
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 1830559505142816, guid: 8fe6c07aac85740f19927b6787068a5b,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 1594728674}
-  m_Layer: 0
-  m_Name: Passive
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1594728674
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 4487901399027740, guid: 8fe6c07aac85740f19927b6787068a5b,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1594728673}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 960685018}
-  - {fileID: 1376163310}
-  - {fileID: 220382280}
-  - {fileID: 1803239616}
-  - {fileID: 539171474}
-  m_Father: {fileID: 801972301}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1599068022
 GameObject:
   m_ObjectHideFlags: 0
@@ -7570,7 +6896,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parentAction: {fileID: 163547767}
   followSkill: {fileID: 0}
-  mainEffect: {fileID: 0}
+  mainEffect: {fileID: 1538521439}
   accuracy: 1
   skillAnimationID: darks_shield_anim
   hitAnimationID: 
@@ -7710,36 +7036,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1624882526
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 1087040817734098, guid: 8fe6c07aac85740f19927b6787068a5b,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 1624882527}
-  m_Layer: 0
-  m_Name: main
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1624882527
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 4851580178571264, guid: 8fe6c07aac85740f19927b6787068a5b,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1624882526}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 410982170}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1634312049
 GameObject:
@@ -8219,61 +7515,6 @@ MonoBehaviour:
   caster: {fileID: 0}
   cd: 2
   cd_count: 0
---- !u!1 &1683952903
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 1714261355799674, guid: 8fe6c07aac85740f19927b6787068a5b,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 1683952904}
-  - component: {fileID: 1683952905}
-  m_Layer: 0
-  m_Name: passive skill
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1683952904
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 4231918741876468, guid: 8fe6c07aac85740f19927b6787068a5b,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1683952903}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 1404315860}
-  m_Father: {fileID: 220382280}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1683952905
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114880955450905968, guid: 8fe6c07aac85740f19927b6787068a5b,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1683952903}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d915518966a0f4025bc01cbb392699ed, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  parentAction: {fileID: 220382281}
-  followSkill: {fileID: 0}
-  mainEffect: {fileID: 0}
-  accuracy: 1
-  skillAnimationID: 
-  hitAnimationID: 
-  castTiming: 0
-  icon: {fileID: 0}
-  skillState: 0
-  posType: 0
-  criticalBonus: 1
 --- !u!1 &1706653419
 GameObject:
   m_ObjectHideFlags: 0
@@ -8582,65 +7823,6 @@ Transform:
   m_Father: {fileID: 2003734253}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1803239615
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 1438317901072050, guid: 8fe6c07aac85740f19927b6787068a5b,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 1803239616}
-  - component: {fileID: 1803239617}
-  m_Layer: 0
-  m_Name: Bandage
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1803239616
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 4455778297852968, guid: 8fe6c07aac85740f19927b6787068a5b,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1803239615}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 190597395}
-  m_Father: {fileID: 1594728674}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1803239617
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114380377813667196, guid: 8fe6c07aac85740f19927b6787068a5b,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1803239615}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 559c081501d564701ad04332e9a8adc4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  type: 1
-  diceType: 0
-  skills:
-  - {fileID: 190597396}
-  description: ss
-  icon: {fileID: 21300030, guid: fe5260ff6edd74691b2caa79354fee98, type: 3}
-  actionAnimationID: 
-  chAnimation: 0
-  actionData:
-    id: Bandage
-    state: 0
-    masterLevel: 0
-  caster: {fileID: 0}
-  cd: 0
-  cd_count: 0
 --- !u!1 &1813250410
 GameObject:
   m_ObjectHideFlags: 0
@@ -8939,15 +8121,30 @@ Transform:
 --- !u!114 &1859845063
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114227886459639250, guid: 8fe6c07aac85740f19927b6787068a5b,
-    type: 2}
+  m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1859845061}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
+  m_Script: {fileID: 11500000, guid: 72f411085746b4e5f9098eac6a252d14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  effectRange: 4
+  effectType: 1
+  level: 0
+  mpCost: 0
+  spCost: 0
+  duration: 1
+  applyDelay: 0
+  dependency: 0
+  baseValue: 0
+  initValue: 0
+  calEffectValue: 0
+  applyResult: 0
+  hit: 1
+  parentSkill: {fileID: 2054902565}
+  baseMultiplier: 0
+  buffType: 5
 --- !u!1 &1878481658
 GameObject:
   m_ObjectHideFlags: 0
@@ -9881,7 +9078,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parentAction: {fileID: 1022542690}
   followSkill: {fileID: 0}
-  mainEffect: {fileID: 0}
+  mainEffect: {fileID: 1859845063}
   accuracy: 1
   skillAnimationID: darks_shield_anim
   hitAnimationID: 

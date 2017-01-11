@@ -50,7 +50,6 @@ namespace com.jerrch.rpg
 				//energyCost = 0;
 			}
 		}
-
 		public void PassiveApply()
 		{
 			foreach(var skill in skills)

@@ -57,7 +57,7 @@ public class ActionUIManager : Singleton<ActionUIManager> {
 		selectedActionIndex = index;
 		print("action btn touched:"+index);
 
-		RandomBattleRound.instance.selectAction(index);
+		//RandomBattleRound.instance.selectAction(index);
 	}
 
 	int actionNum;

@@ -172,7 +172,7 @@ public class TurnBattleManager : Singleton<TurnBattleManager> {
 		}
 		else
 		{
-			if(count==3)
+			if(count==2)//Fake 1
 			{
 				ActionReady();
 			}
@@ -229,8 +229,6 @@ public class TurnBattleManager : Singleton<TurnBattleManager> {
 	
 	public void ActionDone()
 	{
-		
-		
 		for(int i=0;i<monsters.Count;i++)
 		{
 			var enemy = monsters[i];
@@ -269,11 +267,9 @@ public class TurnBattleManager : Singleton<TurnBattleManager> {
 		{
 			ch.BattleEnd();
 		}
-		PauseMenuManager.instance.Transition((OnCompleteDelegate hide)=>{
-			GameManager.instance.AdventureMode();
+		GameManager.instance.AdventureMode();
 			AdventureManager.instance.NextEvent();
 			Destroy(stageTransform.gameObject);
-			hide();
-		});
 	}
+	
 }

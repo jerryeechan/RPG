@@ -36,6 +36,10 @@ public class ClassesData : MonoBehaviour {
 	}
 	const int actionNumPerClass = 3;
 
+	public int strSeed;
+	public int intSeed;
+	public int conSeed;
+	public int dexSeed;
 	public CharacterData generateChData()
 	{
 		//generate the data of new character
@@ -48,6 +52,11 @@ public class ClassesData : MonoBehaviour {
 		chData.armor = new EquipData(armorIDs[0]);
 		chData.weapon = new EquipData(weaponIDs[0]);
 		chData.shield = new EquipData(shieldIDs[0]);
+
+		chData.conVal = conSeed;
+		chData.dexVal = dexSeed;
+		chData.intVal = intSeed;
+		chData.strVal = strSeed;
 		return chData;
 	}
 

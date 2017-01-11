@@ -121,12 +121,12 @@ public class CompositeText : MonoBehaviour {
 	public void CompleteText()
 	{
 		foreach(Text t in texts)
-			{
-				t.text = "";
-				t.DOKill();
-				t.text = _textValue;
-			}
-			isTyping = false;
+		{
+			t.text = "";
+			t.DOKill();
+			t.text = _textValue;
+		}
+		isTyping = false;
 	}
 	public void PopText(string str)
 	{

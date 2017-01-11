@@ -28,4 +28,5 @@ public enum AttributeType{
 	PhyDamage,MagDamage,
 	PhyDefense,MagDefense,
 	Accuracy,Evasion,
+	DamageReduce
 }

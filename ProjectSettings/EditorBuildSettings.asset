@@ -5,27 +5,17 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/Scenes/Level.unity
-  - enabled: 0
-    path: Assets/9 photo/untitled.unity
-  - enabled: 0
-    path: Assets/VERSATILISTS/scene/battle.unity
-  - enabled: 0
-    path: Assets/VERSATILISTS/_scene/start.unity
-  - enabled: 0
-    path: Assets/VERSATILISTS/_scene/CharacterDataScene.unity
   - enabled: 1
-    path: Assets/VERSATILISTS/_scene/battle.unity
+    path: Assets/VERSATILISTS/_scene/init.unity
   - enabled: 1
-    path: Assets/VERSATILISTS/_scene/menu.unity
+    path: Assets/VERSATILISTS/_scene/scene/_4_battle.unity
   - enabled: 1
-    path: Assets/VERSATILISTS/_scene/setting.unity
+    path: Assets/VERSATILISTS/_scene/scene/_1_menu.unity
+  - enabled: 1
+    path: Assets/VERSATILISTS/_scene/scene/_2_movie.unity
+  - enabled: 1
+    path: Assets/VERSATILISTS/_scene/scene/_3_selectch.unity
   - enabled: 1
     path: Assets/VERSATILISTS/_scene/character_skill_build.unity
   - enabled: 1
-    path: Assets/VERSATILISTS/_scene/satan_scene.unity
-  - enabled: 1
-    path: Assets/VERSATILISTS/_scene/Don't destroy onload.unity
-  - enabled: 1
-    path: Assets/VERSATILISTS/_scene/selectch.unity
+    path: Assets/VERSATILISTS/_scene/setting.unity

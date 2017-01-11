@@ -9,7 +9,7 @@ public class DiceRollerAll : Singleton<DiceRollerAll> {
 	[SerializeField]
 	DiceSlot[] dices;
 	DiceRollResultDelegate diceRollDelegate;
-	int[] rollNum =  {14,21,24,30};
+	int[] rollNum =  {15,20,25,30};
 	int enemyPos;
 	public DiceSlot[] getDices{
 		get{
@@ -25,7 +25,7 @@ public class DiceRollerAll : Singleton<DiceRollerAll> {
 	{
 		 diceRollDelegate+=d;
 		 currentDice = 0;
-		 enemyPos = 3;// Random.Range(0,4);
+		 enemyPos = Random.Range(0,4);
 		 dices[enemyPos].willHaveSpecialResult(enemySprite);
 		 for(int i=0;i<4;i++)
 		 {

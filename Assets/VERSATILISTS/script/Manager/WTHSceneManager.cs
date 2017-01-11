@@ -2,33 +2,46 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
 public class WTHSceneManager : Singleton<WTHSceneManager> {
-
 	void Awake()
 	{
 		SceneManager.sceneLoaded+=Loading;
 		//SceneManager.activeSceneChanged+=ActiveSceneChanged;
-	}
-	public void startNewGame()
-	{
-		loadSceneName = "selectch";
-		PauseMenuManager.instance.Transition(sceneTransition);
-		//SceneManager.LoadSceneAsync("selectch",LoadSceneMode.Additive);
 		
-		//LoadScene("selectch");
 	}
-	public void adventureStart()
+#if UNITY_EDITOR
+
+#else
+	void Start()
 	{
-		//SceneManager.LoadSceneAsync("battle",LoadSceneMode.Additive);
-		//LoadScene("battle");
-		loadSceneName = "battle";
+	
+		BackToMainMenu();
+	}
+#endif
+	//bool isStart = false;
+
+	
+	public void seeMovie()
+	{
+		//isStart = true;
+		loadSceneName = "_2_movie";
+		PauseMenuManager.instance.Transition(sceneTransition);
+	}
+	public void buildTeam()
+	{
+		loadSceneName = "_3_selectch";
+		PauseMenuManager.instance.Transition(sceneTransition);
+	}
+	
+	public void adventureStart()
+	{	
+		loadSceneName = "_4_battle";
 		PauseMenuManager.instance.Transition(sceneTransition);
 	}
 	public void BackToMainMenu()
 	{
 		print("back to menu");
-		loadSceneName = "menu";
+		loadSceneName = "_1_menu";
 		PauseMenuManager.instance.Transition(sceneTransition);
 	}
 
@@ -58,9 +71,10 @@ public class WTHSceneManager : Singleton<WTHSceneManager> {
 	{
 		print("scene loaded");
 		var scene = newLoadedScene;
-		SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene());
-		if(scene.name=="selectch"||scene.name == "battle"||scene.name=="menu")
+		
+		if(scene.name[0]=='_')
 		{
+			SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene());
 			if(SceneManager.SetActiveScene(scene))
 			{
 				print("Succ");
@@ -71,7 +85,6 @@ public class WTHSceneManager : Singleton<WTHSceneManager> {
 		loadComplete();
 		//if(scene.name == "battle")
 		//{
-			
 		//}
 	}
 }

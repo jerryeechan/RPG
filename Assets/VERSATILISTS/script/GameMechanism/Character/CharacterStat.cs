@@ -10,12 +10,13 @@ public class CharacterStat:StringfyProperty{
 	public CharacterStat(string name,int _str,int _int,int _dex,int _con)
 	{
 		chName = name;
-		magAtk = new Attribute(0);
-		phyAtk = new Attribute(0);
+		magAtk = new Attribute(5);
+		phyAtk = new Attribute(5);
 		strAttr = new Attribute(_str);
 		dexAttr = new Attribute(_dex);
 		intAttr = new Attribute(_int);
 		conAttr = new Attribute(_con);
+		damageReduce = new Attribute(0);
 
 		hp = new MaxHPAttribute(conAttr);
 		phyDmg = new PhysicalDamageAttribute(phyAtk,strAttr);
@@ -27,10 +28,17 @@ public class CharacterStat:StringfyProperty{
 		accuracy = new AccuracyAttribute(dexAttr);
 		evasion = new EvasionAttribute(dexAttr);
 		
+		
 		attributeDict = new Dictionary<AttributeType,Attribute>();
 		attributeDict.Add(AttributeType.PhyAtk,phyAtk);
 		attributeDict.Add(AttributeType.MagAtk,magAtk);
+
 		attributeDict.Add(AttributeType.PhyDamage,phyDmg);
+		attributeDict.Add(AttributeType.MagDamage,magDmg);
+
+		attributeDict.Add(AttributeType.PhyDefense,phyDef);
+		attributeDict.Add(AttributeType.MagDefense,magDef);
+		attributeDict.Add(AttributeType.DamageReduce,damageReduce);
 		
 	}
 
@@ -49,6 +57,8 @@ public class CharacterStat:StringfyProperty{
 	public AccuracyAttribute accuracy;
 	public EvasionAttribute evasion;
 
+	public Attribute damageReduce;
+
 	public Attribute magAtk;//mainly from equip
 	public Attribute phyAtk;
 
@@ -65,7 +75,7 @@ public class CharacterStat:StringfyProperty{
 			return attributeDict[type];
 		}
 		else{
-			Debug.LogError("attribute doesn't exist");
+			Debug.LogError(type.ToString()+"attribute doesn't exist");
 			return null;
 		}
 	}

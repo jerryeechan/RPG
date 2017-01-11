@@ -17,12 +17,11 @@ public class EnemyFightOption: AdventureOption {
 	}
 	override public void choose()
 	{
-		success();
+		//success();
 		this.myInvoke(1,
 		()=>{
-			PauseMenuManager.instance.Transition((OnCompleteDelegate d)=>{
+			PauseMenuManager.instance.Transition(()=>{
 				chooseEvent();
-				d();
 			});
 		});	
 	}

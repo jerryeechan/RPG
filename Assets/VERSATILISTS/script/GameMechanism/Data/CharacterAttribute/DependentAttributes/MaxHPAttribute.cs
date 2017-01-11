@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 [System.SerializableAttribute]
 public class MaxHPAttribute : DependentAttribute {
-	public MaxHPAttribute(Attribute conAttr):base(0)
+	public MaxHPAttribute(Attribute conAttr):base(10)
 	{
 		this.conAttr = conAttr;
+		calculateValue();
 	}
 	Attribute conAttr;
 	public override int calculateValue()
@@ -13,10 +14,7 @@ public class MaxHPAttribute : DependentAttribute {
 		_finalValue = baseValue;
 		
 		// Every 5 points in dexterity adds 1 to attack speed
-		
-		
-
-		_finalValue += (int)(conAttr.finalValue*0.02f);
+		_finalValue += (int)(conAttr.finalValue*2);
 			
 		applyRawBonuses();
 		applyFinalBonuses();
@@ -33,7 +31,7 @@ public class MaxHPAttribute : DependentAttribute {
 			return _currentValue;
 		}
 	}
-	int _currentValue;
+	public int _currentValue;
 	public void changeHP(int value)
 	{
 		_currentValue+=value;

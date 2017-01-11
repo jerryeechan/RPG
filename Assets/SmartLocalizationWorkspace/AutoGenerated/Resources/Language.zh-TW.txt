@@ -116,11 +116,35 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+	<data name="line_ch1_bw_fee_1" xml:space="preserve">
+		<value />
+	</data>
+	<data name="line_ch1_bw_fee_2" xml:space="preserve">
+		<value />
+	</data>
+	<data name="line_ch1_bw_fee_3" xml:space="preserve">
+		<value />
+	</data>
+	<data name="line_ch1_bw_fee_3opt1" xml:space="preserve">
+		<value />
+	</data>
+	<data name="line_ch1_bw_fee_3opt2" xml:space="preserve">
+		<value />
+	</data>
+	<data name="line_ch1_bw_fee_3opt3" xml:space="preserve">
+		<value />
+	</data>
+	<data name="line_ch1_bw_fee_4" xml:space="preserve">
+		<value />
+	</data>
 	<data name="CON" xml:space="preserve">
 		<value>體質</value>
 	</data>
 	<data name="DarkPaladin" xml:space="preserve">
 		<value>黑騎士</value>
+	</data>
+	<data name="description_skill_dark_charge" xml:space="preserve">
+		<value />
 	</data>
 	<data name="DEX" xml:space="preserve">
 		<value>敏捷</value>
@@ -149,6 +173,36 @@
 	<data name="line_ch0_lord_of_soil_3" xml:space="preserve">
 		<value>這是我給各位的一點心意，請務必收下。</value>
 	</data>
+	<data name="line_ch1_bw_plot1_1" xml:space="preserve">
+		<value>恩、喔又是你們啊?</value>
+	</data>
+	<data name="line_ch1_bw_plot1_2" xml:space="preserve">
+		<value>看在你們每次都乖乖交過路費的份上，就跟你說件小祕密好了?</value>
+	</data>
+	<data name="line_ch1_bw_plot1_3opt_1" xml:space="preserve">
+		<value>什麼秘密阿?快告訴我</value>
+	</data>
+	<data name="line_ch1_bw_plot1_3opt_2" xml:space="preserve">
+		<value>恩、你說吧</value>
+	</data>
+	<data name="line_ch1_bw_plot1_3opt_3" xml:space="preserve">
+		<value>算了吧、我懶得聽、不用告訴我了</value>
+	</data>
+	<data name="line_ch1_bw_plot1_4_1" xml:space="preserve">
+		<value>你們不會真的以為西方那個大傢伙沒是隨隨便便就跑到這邊來踩房子搞破壞吧?</value>
+	</data>
+	<data name="line_ch1_bw_plot1_4_2" xml:space="preserve">
+		<value>聽說好像是因為跟閻王爺有什麼糾紛呢</value>
+	</data>
+	<data name="line_ch1_bw_plot1_5" xml:space="preserve">
+		<value>咦?原來是這樣嗎?</value>
+	</data>
+	<data name="line_ch1_bw_plot1_6" xml:space="preserve">
+		<value>就是說阿、到最後都是我們這些池魚遭殃(攤手)</value>
+	</data>
+	<data name="line_ch1_bw_plot1_7" xml:space="preserve">
+		<value>這樣啊、那就慢走不送拉~</value>
+	</data>
 	<data name="Mage" xml:space="preserve">
 		<value>魔法師</value>
 	</data>
@@ -169,9 +223,6 @@
 	</data>
 	<data name="skill_dark_slash" xml:space="preserve">
 		<value>暗冥斬</value>
-	</data>
-	<data name="description_skill_dark_charge" xml:space="preserve">
-		<value />
 	</data>
 	<data name="skill_divine_shield" xml:space="preserve">
 		<value>聖盾術</value>
@@ -198,7 +249,7 @@
 		<value>定身符</value>
 	</data>
 	<data name="skill_storm_talisman" xml:space="preserve">
-		<value>啟豐符</value>
+		<value>起風符</value>
 	</data>
 	<data name="skill_thunder_talisman" xml:space="preserve">
 		<value>役雷符</value>

@@ -6,7 +6,7 @@ public class Attribute : BaseAttribute {
 
 		private List<RawBonus>  _rawBonuses;
         private List<FinalBonus> _finalBonuses;
-        protected int _finalValue;
+        public int _finalValue;
          
         public Attribute(int startingValue):base(startingValue) 
         {    

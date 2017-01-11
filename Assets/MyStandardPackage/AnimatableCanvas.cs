@@ -27,7 +27,7 @@ public class AnimatableCanvas : MonoBehaviour {
     
 	public virtual void hide()
     {
-        print("hide");
+        print(gameObject+"hide");
         hide(null);
     }
     public virtual void hide(OnCompleteDelegate completeEvent)
@@ -36,6 +36,7 @@ public class AnimatableCanvas : MonoBehaviour {
     }
 	public void hide(float duration,OnCompleteDelegate completeEvent=null)
 	{   
+        print(gameObject.name+"hide");
             if(!canvasGroup)
             {
                 canvasGroup = GetComponentsInChildren<CanvasGroup>(true)[0];
@@ -44,7 +45,7 @@ public class AnimatableCanvas : MonoBehaviour {
             if(canvasGroup)
             {
                 canvasGroup.alpha = 1;
-                //print(canvasGroup.DOKill(true)); 
+                //canvasGroup.DOKill(true);
                 canvasGroup.DOFade(0,duration).OnComplete(
                 ()=>{
                     if(completeEvent!=null)
@@ -68,7 +69,7 @@ public class AnimatableCanvas : MonoBehaviour {
         print(name+" show start");
         if(canvasGroup==null)
             canvasGroup = GetComponent<CanvasGroup>();
-        canvasGroup.DOKill(true);
+        //canvasGroup.DOKill(true);
         canvasGroup.alpha = 0;
         activate();
         if(canvasGroup)
@@ -79,6 +80,9 @@ public class AnimatableCanvas : MonoBehaviour {
                 
                 if(completeEvent!=null)
                     completeEvent();
+                else{
+                    print(name+"no complete event");
+                }
             });
         }
         else{

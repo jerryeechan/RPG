@@ -136,7 +136,7 @@ public class CharacterRenderer : MonoBehaviour {
 			}
 		}
 		
-		//Cursor.SetCursor()
+
 	}
 	
 	void OnMouseExit()

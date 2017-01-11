@@ -28,7 +28,7 @@ public class AdventureManager : Singleton<AdventureManager> {
 	AdventureOptionBtn[] optionBtns;
 	AdventureOptionDisplayer[] optionDisplayers;
 
-	AdventureDialogueData currentDialogue;
+	public AdventureDialogueData currentDialogue;
 	AdventureEvent currentEvent;
 
 	void Awake()
@@ -49,6 +49,7 @@ public class AdventureManager : Singleton<AdventureManager> {
 	}
 	public void PlayDialogue(AdventureDialogueData dialogue)
 	{
+		Debug.LogError("play dialogue");
 		currentDialogue = dialogue;
 		dialoguePanel.show();
 		dialogue.restart();
@@ -75,6 +76,9 @@ public class AdventureManager : Singleton<AdventureManager> {
 	void ShowOptionDisplayer(int num)
 	{
 		optionDisplayerPanel.show();
+		optionDisplayers[0].interactable = true;
+		optionDisplayers[1].interactable = true;
+		optionDisplayers[2].interactable = true;
 		if(num == 1)
 		{
 			optionDisplayers[0].GetComponent<RectTransform>().SetPositionX(0);
@@ -130,28 +134,31 @@ public class AdventureManager : Singleton<AdventureManager> {
 		}
 	}
 	
+	AdventureDialogueLineData currentLine;
 	//dialogues
 	public void PlayNextLine()
 	{
-		AdventureDialogueLineData line = currentDialogue.nextLine();
 		if(currentEventDone)
 		{
 			NextEvent();
 		}
-		
-		if(line == null)
+
+		if(currentLine == null)
+		{
+			currentLine = currentDialogue.nextLine();
+			Debug.LogError(currentLine);
+		}
+		if(currentLine == null)
 		{	
+			Debug.LogError(currentLine);
 			//temp demo solution
-			if(!currentEvent.hasOption)
+			if(currentEvent.hasOption == false)
 			{
-				NextEvent();
+				currentEventDone = true;
 			}
-			//end of temp demo solution
-			
-			//end of dialogue
-			//display option and wait
-			if(!isOptionDisplayed)
+			else if(!isOptionDisplayed)
 			{
+				Debug.LogError("display option");
 				isOptionDisplayed = true;
 				switch(currentEvent.type)
 				{
@@ -167,10 +174,21 @@ public class AdventureManager : Singleton<AdventureManager> {
 					break;
 				}
 			}
+			//end of temp demo solution
+			
+			//end of dialogue
+			//display option and wait
+			
 		}
 		else
 		{
-			dialoguePlayer.PlayLine(line);
+			
+			if(!dialoguePlayer.testPlaying)
+			{
+				Debug.LogError("play line");
+				dialoguePlayer.PlayLine(currentLine);
+				currentLine = null;
+			}
 			/*
 			if(line.target!=null)
 			{
@@ -186,14 +204,15 @@ public class AdventureManager : Singleton<AdventureManager> {
 	
 	public void encounterEvent(AdventureEvent advEvent)
 	{
+		Debug.LogError("Encounter event");
 		currentEventDone = false;
 		if(advEvent == null)
 		{
 			Debug.LogError("null event");
 		}
-		
 		if(advEvent.dialogue!=null&&advEvent.dialogue.lines.Count>0)
 		{
+			Debug.LogError("has event");
 			switch(advEvent.type)
 			{
 				case AdventureEventType.Dialogue:
@@ -245,11 +264,13 @@ public class AdventureManager : Singleton<AdventureManager> {
 
 	void EventDone()
 	{
+		print("hide option panels all");
 		currentEventDone = true;
 		optionPanel.hide();
 		optionDisplayerPanel.hide();
-		NextEvent();
+		
 	}
+	
 	bool currentEventDone = false;
 
 	
@@ -260,7 +281,7 @@ public class AdventureManager : Singleton<AdventureManager> {
 	{	
 		if(currentEvent.triggerNextEvent)
 		{
-			print("Next Event");
+			Debug.LogError("Next Event");
 			encounterEvent(currentEvent.nextEvent);
 		}
 		else
@@ -272,12 +293,12 @@ public class AdventureManager : Singleton<AdventureManager> {
 				nextStage();
 			}
 			*/
-			PauseMenuManager.instance.Transition((OnCompleteDelegate d)=>{
+			PauseMenuManager.instance.Transition(()=>{
 				//TODO:
 				currentScene = AdventureStageManager.instance.currentStage.getScene();
+				dialoguePlayer.init();
 				encounterEvent(currentScene.getEvent());
 				//encounterEvent(testEvent);
-				d();
 			});
 		}
 	}

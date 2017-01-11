@@ -14,33 +14,51 @@ public class DialoguePlayer : MonoBehaviour {
 	public void show()
 	{
 		npcRenderer.gameObject.SetActive(true);
+		iconSpr.gameObject.SetActive(true);
 	}
 	public void hide()
 	{
 		npcRenderer.gameObject.SetActive(false);
+		iconSpr.gameObject.SetActive(false);
+	}
+	public bool testPlaying
+	{
+		get{
+			if(dialogueTextUI.isTyping)
+			{
+				dialogueTextUI.CompleteText();
+				return true;
+			}
+			else
+				return false;
+			
+		}
+	}
+	public void init()
+	{
+		
+		iconSpr.enabled = false;
+		npcRenderer.sprite = null;
+		targetNameTextUI.text = "";
+		dialogueTextUI.text = "";
 	}
 	public void PlayLine(AdventureDialogueLineData line)
 	{
-		if(dialogueTextUI.isTyping)
+		dialogueTextUI.DOText(line.text);
+		if(line.target!=null)
 		{
-			dialogueTextUI.CompleteText();
+			currentTarget = line.target;
 		}
-		else
-		{
-			dialogueTextUI.DOText(line.text);
-			if(line.target!=null)
-			{
-				currentTarget = line.target;
-			}
 
-			if(currentTarget)
-			{
-				if(targetNameTextUI)
-					targetNameTextUI.text = currentTarget.targetName;
-				iconSpr.transform.position = currentTarget.transform.position;
-				changeNPCSprite(currentTarget.sprite);
-			}
+		if(currentTarget)
+		{
+			if(targetNameTextUI)
+				targetNameTextUI.text = currentTarget.targetName;
+			iconSpr.enabled = true;
+			iconSpr.transform.position = currentTarget.transform.position;
+			changeNPCSprite(currentTarget.sprite);
 		}
+		
 	}
 
 	

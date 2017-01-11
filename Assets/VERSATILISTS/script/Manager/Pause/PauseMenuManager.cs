@@ -19,6 +19,16 @@ public class PauseMenuManager : SingletonCanvas<PauseMenuManager>{
 				transitionDelegate(cover.hide);
 			});
 		}
+		public void Transition(OnCompleteDelegate delegateFunc)
+		{
+			hide();
+			cover.show(()=>
+			{
+				print("Transition ok");
+				delegateFunc();
+				cover.hide(1,null);
+			});
+		}
 }
 
 public delegate void OnTransitionDelegate(OnCompleteDelegate d);

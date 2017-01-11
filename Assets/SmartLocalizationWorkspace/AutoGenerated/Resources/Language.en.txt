@@ -116,10 +116,34 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+	<data name="line_ch1_bw_fee_1" xml:space="preserve">
+		<value />
+	</data>
+	<data name="line_ch1_bw_fee_2" xml:space="preserve">
+		<value />
+	</data>
+	<data name="line_ch1_bw_fee_3" xml:space="preserve">
+		<value />
+	</data>
+	<data name="line_ch1_bw_fee_3opt1" xml:space="preserve">
+		<value />
+	</data>
+	<data name="line_ch1_bw_fee_3opt2" xml:space="preserve">
+		<value />
+	</data>
+	<data name="line_ch1_bw_fee_3opt3" xml:space="preserve">
+		<value />
+	</data>
+	<data name="line_ch1_bw_fee_4" xml:space="preserve">
+		<value />
+	</data>
 	<data name="CON" xml:space="preserve">
 		<value>CON</value>
 	</data>
 	<data name="DarkPaladin" xml:space="preserve">
+		<value />
+	</data>
+	<data name="description_skill_dark_charge" xml:space="preserve">
 		<value />
 	</data>
 	<data name="DEX" xml:space="preserve">
@@ -149,6 +173,36 @@
 	<data name="line_ch0_lord_of_soil_3" xml:space="preserve">
 		<value />
 	</data>
+	<data name="line_ch1_bw_plot1_1" xml:space="preserve">
+		<value />
+	</data>
+	<data name="line_ch1_bw_plot1_2" xml:space="preserve">
+		<value />
+	</data>
+	<data name="line_ch1_bw_plot1_3opt_1" xml:space="preserve">
+		<value />
+	</data>
+	<data name="line_ch1_bw_plot1_3opt_2" xml:space="preserve">
+		<value />
+	</data>
+	<data name="line_ch1_bw_plot1_3opt_3" xml:space="preserve">
+		<value />
+	</data>
+	<data name="line_ch1_bw_plot1_4_1" xml:space="preserve">
+		<value />
+	</data>
+	<data name="line_ch1_bw_plot1_4_2" xml:space="preserve">
+		<value />
+	</data>
+	<data name="line_ch1_bw_plot1_5" xml:space="preserve">
+		<value />
+	</data>
+	<data name="line_ch1_bw_plot1_6" xml:space="preserve">
+		<value />
+	</data>
+	<data name="line_ch1_bw_plot1_7" xml:space="preserve">
+		<value />
+	</data>
 	<data name="Mage" xml:space="preserve">
 		<value />
 	</data>
@@ -168,9 +222,6 @@
 		<value />
 	</data>
 	<data name="skill_dark_slash" xml:space="preserve">
-		<value />
-	</data>
-	<data name="description_skill_dark_charge" xml:space="preserve">
 		<value />
 	</data>
 	<data name="skill_divine_shield" xml:space="preserve">
