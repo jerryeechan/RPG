@@ -20816,7 +20816,7 @@ MonoBehaviour:
   chs: []
   enemies: []
   info: {fileID: 0}
-  testMode: 2
+  testMode: 1
 --- !u!1 &1208425215
 GameObject:
   m_ObjectHideFlags: 0

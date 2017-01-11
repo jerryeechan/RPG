@@ -33,7 +33,10 @@ public class DiceSlot : MonoBehaviour {
 	DiceTypeResultDelegate resultCallback;
 	public void Roll(int num,DiceTypeResultDelegate callback)
 	{
-		currentSpriteSpin = Random.Range(0,3);
+		int firstRandom = Random.RandomRange(0,6);
+		if(firstRandom>3)
+			firstRandom = 0;
+		currentSpriteSpin = firstRandom;//Random.Range(0,3);
 		//currentSpriteSpin = 0; //Fake	
 		resultCallback = callback;
 		rollNum = num;
