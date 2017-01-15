@@ -218,6 +218,207 @@
 	<data name="line_ch1_bw_plot1_7" xml:space="preserve">
 		<value>line_ch1_bw_plot1_7</value>
 	</data>
+	<data name="line_ch1_plot1_fee_1_N_BW" xml:space="preserve">
+		<value>New Value</value>
+	</data>
+	<data name="line_ch1_plot1_fee_2_N_P" xml:space="preserve">
+		<value>New Value</value>
+	</data>
+	<data name="line_ch1_plot1_fee_3_Ask_BW" xml:space="preserve">
+		<value>New Value</value>
+	</data>
+	<data name="line_ch1_plot1_fee_3_Opt_1_P" xml:space="preserve">
+		<value>New Value</value>
+	</data>
+	<data name="line_ch1_plot1_fee_3_Opt_2_P" xml:space="preserve">
+		<value>New Value</value>
+	</data>
+	<data name="line_ch1_plot1_fee_3_Opt_3_P" xml:space="preserve">
+		<value>New Value</value>
+	</data>
+	<data name="line_ch1_plot1_fee_4_Yes_1_BW" xml:space="preserve">
+		<value>New Value</value>
+	</data>
+	<data name="line_ch1_plot1_fee_4_Yes_2_BW" xml:space="preserve">
+		<value>New Value</value>
+	</data>
+	<data name="line_ch1_plot1_fee_5_No_1_BW " xml:space="preserve">
+		<value />
+	</data>
+	<data name="line_ch1_plot1_fee_5_No_2_BW" xml:space="preserve">
+		<value>New Value</value>
+	</data>
+	<data name="line_ch1_plot2_secret_1_N_BW" xml:space="preserve">
+		<value>New Value</value>
+	</data>
+	<data name="line_ch1_plot2_secret_2_Ask_BW" xml:space="preserve">
+		<value>New Value</value>
+	</data>
+	<data name="line_ch1_plot2_secret_3_Opt_1_P" xml:space="preserve">
+		<value>New Value</value>
+	</data>
+	<data name="line_ch1_plot2_secret_3_Opt_2_P" xml:space="preserve">
+		<value>New Value</value>
+	</data>
+	<data name="line_ch1_plot2_secret_3_Opt_3_P" xml:space="preserve">
+		<value>New Value</value>
+	</data>
+	<data name="line_ch1_plot2_secret_4_Yes_1_BW" xml:space="preserve">
+		<value>New Value</value>
+	</data>
+	<data name="line_ch1_plot2_secret_4_Yes_2_BW" xml:space="preserve">
+		<value>New Value</value>
+	</data>
+	<data name="line_ch1_plot2_secret_4_Yes_3_P" xml:space="preserve">
+		<value>New Value</value>
+	</data>
+	<data name="line_ch1_plot2_secret_4_Yes_4_BW" xml:space="preserve">
+		<value>New Value</value>
+	</data>
+	<data name="line_ch1_plot2_secret_5_No_1_BW" xml:space="preserve">
+		<value>New Value</value>
+	</data>
+	<data name="line_ch1_plot3_byroad_1_Ask_SYS" xml:space="preserve">
+		<value>New Value</value>
+	</data>
+	<data name="line_ch1_plot3_byroad_2_Opt_1_P" xml:space="preserve">
+		<value>New Value</value>
+	</data>
+	<data name="line_ch1_plot3_byroad_2_Opt_2_P" xml:space="preserve">
+		<value>New Value</value>
+	</data>
+	<data name="line_ch1_plot3_byroad_2_Opt_3_P" xml:space="preserve">
+		<value>New Value</value>
+	</data>
+	<data name="line_ch1_plot4_avoid_1_N_MP" xml:space="preserve">
+		<value>New Value</value>
+	</data>
+	<data name="line_ch1_plot4_avoid_2_N_MP" xml:space="preserve">
+		<value>New Value</value>
+	</data>
+	<data name="line_ch1_plot4_avoid_3_Ask_MP" xml:space="preserve">
+		<value>New Value</value>
+	</data>
+	<data name="line_ch1_plot4_avoid_4_Opt_1_P" xml:space="preserve">
+		<value>New Value</value>
+	</data>
+	<data name="line_ch1_plot4_avoid_4_Opt_2_P" xml:space="preserve">
+		<value>New Value</value>
+	</data>
+	<data name="line_ch1_plot4_avoid_5_Yes_1_MP" xml:space="preserve">
+		<value>New Value</value>
+	</data>
+	<data name="line_ch1_plot4_avoid_5_Yes_2_P" xml:space="preserve">
+		<value>New Value</value>
+	</data>
+	<data name="line_ch1_plot4_avoid_5_Yes_3_MP" xml:space="preserve">
+		<value>New Value</value>
+	</data>
+	<data name="line_ch1_plot4_avoid_5_Yes_4_MP" xml:space="preserve">
+		<value>New Value</value>
+	</data>
+	<data name="line_ch1_plot4_avoid_5_Yes_5_P" xml:space="preserve">
+		<value>New Value</value>
+	</data>
+	<data name="line_ch1_plot4_avoid_5_Yes_6_MP" xml:space="preserve">
+		<value>New Value</value>
+	</data>
+	<data name="line_ch1_plot4_avoid_6_No_1_MP" xml:space="preserve">
+		<value>New Value</value>
+	</data>
+	<data name="line_ch1_plot5_shh_1_N_BUDA" xml:space="preserve">
+		<value>New Value</value>
+	</data>
+	<data name="line_ch1_plot5_shh_2_N_P" xml:space="preserve">
+		<value>New Value</value>
+	</data>
+	<data name="line_ch1_plot5_shh_3_N_BUDA" xml:space="preserve">
+		<value>New Value</value>
+	</data>
+	<data name="line_ch1_plot5_shh_4_N_P" xml:space="preserve">
+		<value>New Value</value>
+	</data>
+	<data name="line_ch1_plot5_shh_5_N_BUDA" xml:space="preserve">
+		<value>New Value</value>
+	</data>
+	<data name="line_ch1_plot5_shh_6_N_BUDA" xml:space="preserve">
+		<value>New Value</value>
+	</data>
+	<data name="line_ch1_plot6_stolen_1_Ask_GWEN" xml:space="preserve">
+		<value>New Value</value>
+	</data>
+	<data name="line_ch1_plot6_stolen_2_Opt_1_P" xml:space="preserve">
+		<value>New Value</value>
+	</data>
+	<data name="line_ch1_plot6_stolen_2_Opt_2_P" xml:space="preserve">
+		<value>New Value</value>
+	</data>
+	<data name="line_ch1_plot6_stolen_3_Yes_1_P" xml:space="preserve">
+		<value>New Value</value>
+	</data>
+	<data name="line_ch1_plot6_stolen_3_Yes_2_GWEN" xml:space="preserve">
+		<value>New Value</value>
+	</data>
+	<data name="line_ch1_plot6_stolen_3_Yes_3_P" xml:space="preserve">
+		<value>New Value</value>
+	</data>
+	<data name="line_ch1_plot6_stolen_3_Yes_4_Gwen" xml:space="preserve">
+		<value>New Value</value>
+	</data>
+	<data name="line_ch1_plot6_stolen_3_Yes_5_Gwen" xml:space="preserve">
+		<value>New Value</value>
+	</data>
+	<data name="line_ch1_plot6_stolen_3_Yes_6_P" xml:space="preserve">
+		<value>New Value</value>
+	</data>
+	<data name="line_ch1_plot6_stolen_3_Yes_7_Gwen" xml:space="preserve">
+		<value>New Value</value>
+	</data>
+	<data name="line_ch1_plot6_stolen_3_Yes_8_P" xml:space="preserve">
+		<value>New Value</value>
+	</data>
+	<data name="line_ch1_random1_zombie_1_N_STAFF" xml:space="preserve">
+		<value>New Value</value>
+	</data>
+	<data name="line_ch1_random2_ogre_1_N_SYS" xml:space="preserve">
+		<value>New Value</value>
+	</data>
+	<data name="line_ch1_random2_ogre_2_Opt_1_SYS" xml:space="preserve">
+		<value>New Value</value>
+	</data>
+	<data name="line_ch1_random2_ogre_2_Opt_2_SYS" xml:space="preserve">
+		<value>New Value</value>
+	</data>
+	<data name="line_ch1_random2_ogre_3_No_1_P" xml:space="preserve">
+		<value>New Value</value>
+	</data>
+	<data name="line_ch1_random3_gossip_1_N_BW" xml:space="preserve">
+		<value>New Value</value>
+	</data>
+	<data name="line_ch1_random3_gossip_2_Ask_BW" xml:space="preserve">
+		<value>New Value</value>
+	</data>
+	<data name="line_ch1_random3_gossip_3_Opt_1_P" xml:space="preserve">
+		<value>New Value</value>
+	</data>
+	<data name="line_ch1_random3_gossip_3_Opt_2_P" xml:space="preserve">
+		<value>New Value</value>
+	</data>
+	<data name="line_ch1_random3_gossip_4_Yes_1_BW" xml:space="preserve">
+		<value>New Value</value>
+	</data>
+	<data name="line_ch1_random3_gossip_5_No_1_BW" xml:space="preserve">
+		<value>New Value</value>
+	</data>
+	<data name="line_ch1_random3_gossip_5_No_2_SYS" xml:space="preserve">
+		<value>New Value</value>
+	</data>
+	<data name="line_ch1_random3_gossip_6_N_BW" xml:space="preserve">
+		<value>New Value</value>
+	</data>
+	<data name="line_ch1_random3_gossip_7_N_BW" xml:space="preserve">
+		<value>New Value</value>
+	</data>
 	<data name="skill_dark_charge" xml:space="preserve">
 		<value>skill</value>
 	</data>
@@ -235,6 +436,9 @@
 	</data>
 	<data name="skill_divine_shield" xml:space="preserve">
 		<value>skill</value>
+	</data>
+	<data name="skill_divine_smash" xml:space="preserve">
+		<value>New Value</value>
 	</data>
 	<data name="skill_holy_heal" xml:space="preserve">
 		<value>skill</value>
@@ -263,7 +467,106 @@
 	<data name="skill_talisman_thunder" xml:space="preserve">
 		<value>skill</value>
 	</data>
-	<data name="skill_divine_smash" xml:space="preserve">
+	<data name="line_ch1_random4_shopMP_1_N_MP" xml:space="preserve">
+		<value>New Value</value>
+	</data>
+	<data name="line_ch1_random4_shopMP_2_N_MP" xml:space="preserve">
+		<value>New Value</value>
+	</data>
+	<data name="line_ch1_random4_shopMP_3_Ask_MP" xml:space="preserve">
+		<value>New Value</value>
+	</data>
+	<data name="line_ch1_random4_shopMP_4_Opt_1_P" xml:space="preserve">
+		<value>New Value</value>
+	</data>
+	<data name="line_ch1_random4_shopMP_4_Opt_2_P" xml:space="preserve">
+		<value>New Value</value>
+	</data>
+	<data name="line_ch1_random4_shopMP_5_Yes_1_MP" xml:space="preserve">
+		<value>New Value</value>
+	</data>
+	<data name="line_ch1_random5_GiftA_1_N_BUDA" xml:space="preserve">
+		<value>New Value</value>
+	</data>
+	<data name="line_ch1_random5_GiftA_2_N_BUDA" xml:space="preserve">
+		<value>New Value</value>
+	</data>
+	<data name="line_ch1_random5_GiftA_3_N_P" xml:space="preserve">
+		<value>New Value</value>
+	</data>
+	<data name="line_ch1_random5_GiftA_4_N_P" xml:space="preserve">
+		<value>New Value</value>
+	</data>
+	<data name="line_ch1_random5_GiftA_5_N_P" xml:space="preserve">
+		<value>New Value</value>
+	</data>
+	<data name="line_ch1_random5_GiftA_6_N_BUDA" xml:space="preserve">
+		<value>New Value</value>
+	</data>
+	<data name="line_ch1_random5_GiftA_7_N_SYS" xml:space="preserve">
+		<value>New Value</value>
+	</data>
+	<data name="line_ch1_random6_GiftB_1_N_BUDA" xml:space="preserve">
+		<value>New Value</value>
+	</data>
+	<data name="line_ch1_random6_GiftB_2_N_BUDA" xml:space="preserve">
+		<value>New Value</value>
+	</data>
+	<data name="line_ch1_random6_GiftB_3_Ask_BUDA" xml:space="preserve">
+		<value>New Value</value>
+	</data>
+	<data name="line_ch1_random6_GiftB_4_Award_1_SYS" xml:space="preserve">
+		<value>New Value</value>
+	</data>
+	<data name="line_ch1_random6_GiftB_4_Award_2_SYS" xml:space="preserve">
+		<value>New Value</value>
+	</data>
+	<data name="line_ch1_random6_GiftB_4_Award_3_SYS" xml:space="preserve">
+		<value>New Value</value>
+	</data>
+	<data name="line_ch1_random7_story_1_N_BUDA" xml:space="preserve">
+		<value>New Value</value>
+	</data>
+	<data name="line_ch1_random7_story_2_Ask_BUDA" xml:space="preserve">
+		<value>New Value</value>
+	</data>
+	<data name="line_ch1_random7_story_3_Opt_1_P" xml:space="preserve">
+		<value>New Value</value>
+	</data>
+	<data name="line_ch1_random7_story_3_Opt_2_P" xml:space="preserve">
+		<value>New Value</value>
+	</data>
+	<data name="line_ch1_random7_story_4_Yes_1_BUDA" xml:space="preserve">
+		<value>New Value</value>
+	</data>
+	<data name="line_ch1_random7_story_4_Yes_2_BUDA" xml:space="preserve">
+		<value>New Value</value>
+	</data>
+	<data name="line_ch1_random7_story_4_Yes_3_BUDA" xml:space="preserve">
+		<value>New Value</value>
+	</data>
+	<data name="line_ch1_random7_story_4_Yes_4_BUDA" xml:space="preserve">
+		<value>New Value</value>
+	</data>
+	<data name="line_ch1_random7_story_4_Yes_5_P" xml:space="preserve">
+		<value>New Value</value>
+	</data>
+	<data name="line_ch1_random7_story_5_No_1_BUDA" xml:space="preserve">
+		<value>New Value</value>
+	</data>
+	<data name="line_ch1_random8_rest_1_Ask_GWEN" xml:space="preserve">
+		<value>New Value</value>
+	</data>
+	<data name="line_ch1_random8_rest_2_Opt_1_P" xml:space="preserve">
+		<value>New Value</value>
+	</data>
+	<data name="line_ch1_random8_rest_2_Opt_2_P" xml:space="preserve">
+		<value>New Value</value>
+	</data>
+	<data name="line_ch1_random8_rest_3_Yes_1_GWEN" xml:space="preserve">
+		<value>New Value</value>
+	</data>
+	<data name="line_ch1_random8_rest_3_Yes_2_P" xml:space="preserve">
 		<value>New Value</value>
 	</data>
 </root>

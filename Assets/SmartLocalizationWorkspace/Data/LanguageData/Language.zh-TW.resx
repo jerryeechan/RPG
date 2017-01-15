@@ -218,6 +218,309 @@
 	<data name="line_ch1_bw_plot1_7" xml:space="preserve">
 		<value>這樣啊、那就慢走不送拉~</value>
 	</data>
+	<data name="line_ch1_plot1_fee_1_N_BW" xml:space="preserve">
+		<value>此路是我開，此樹是我栽，要打此地過，留下買路財!</value>
+	</data>
+	<data name="line_ch1_plot1_fee_2_N_P" xml:space="preserve">
+		<value>現在竟然還有人打劫用這句話的? </value>
+	</data>
+	<data name="line_ch1_plot1_fee_3_Ask_BW" xml:space="preserve">
+		<value>呃…嘿嘿、別這樣嘛兄弟，這不是手頭有點緊嗎，走在黃泉路總是要給點過路費的吧? </value>
+	</data>
+	<data name="line_ch1_plot1_fee_3_Opt_1_P" xml:space="preserve">
+		<value>既然你誠心誠意的請求了，我們就大發慈悲的給你吧(遞出冥幣30)</value>
+	</data>
+	<data name="line_ch1_plot1_fee_3_Opt_2_P" xml:space="preserve">
+		<value>好像有這種說法呢?那就沒辦法了，給你吧~(遞出冥幣20) </value>
+	</data>
+	<data name="line_ch1_plot1_fee_3_Opt_3_P" xml:space="preserve">
+		<value>恩...不要。我也很窮阿。</value>
+	</data>
+	<data name="line_ch1_plot1_fee_4_Yes_1_BW" xml:space="preserve">
+		<value>真是太感謝了~ </value>
+	</data>
+	<data name="line_ch1_plot1_fee_4_Yes_2_BW" xml:space="preserve">
+		<value>好人會有好報喔~ </value>
+	</data>
+	<data name="line_ch1_plot1_fee_5_No_1_BW " xml:space="preserve">
+		<value>你確定嗎? 外面人間有秩序，地下當然也有的喔~ </value>
+	</data>
+	<data name="line_ch1_plot1_fee_5_No_2_BW" xml:space="preserve">
+		<value>(黑白無常強制徵收過路費50冥幣)</value>
+	</data>
+	<data name="line_ch1_plot2_secret_1_N_BW" xml:space="preserve">
+		<value>恩、又是你們啊?</value>
+	</data>
+	<data name="line_ch1_plot2_secret_2_Ask_BW" xml:space="preserve">
+		<value>看在你們乖乖交過路費的份上，就跟你說件小祕密好了?</value>
+	</data>
+	<data name="line_ch1_plot2_secret_3_Opt_1_P" xml:space="preserve">
+		<value>什麼秘密阿?快告訴我</value>
+	</data>
+	<data name="line_ch1_plot2_secret_3_Opt_2_P" xml:space="preserve">
+		<value>恩、你說吧 </value>
+	</data>
+	<data name="line_ch1_plot2_secret_3_Opt_3_P" xml:space="preserve">
+		<value>算了吧、我懶得聽、不用告訴我了</value>
+	</data>
+	<data name="line_ch1_plot2_secret_4_Yes_1_BW" xml:space="preserve">
+		<value>你們不會真的以為西方那個大傢伙沒是隨隨便便就跑到這邊來踩房子搞破壞吧?</value>
+	</data>
+	<data name="line_ch1_plot2_secret_4_Yes_2_BW" xml:space="preserve">
+		<value>聽說好像是因為跟閻王爺有什麼糾紛呢~</value>
+	</data>
+	<data name="line_ch1_plot2_secret_4_Yes_3_P" xml:space="preserve">
+		<value>咦?原來是這樣嗎?</value>
+	</data>
+	<data name="line_ch1_plot2_secret_4_Yes_4_BW" xml:space="preserve">
+		<value>就是說阿、到最後都是我們這些池魚遭殃(攤手)</value>
+	</data>
+	<data name="line_ch1_plot2_secret_5_No_1_BW" xml:space="preserve">
+		<value>這樣啊、那就慢走不送拉~</value>
+	</data>
+	<data name="line_ch1_plot3_byroad_1_Ask_SYS" xml:space="preserve">
+		<value>有條岔路呢…往哪邊走好呢?</value>
+	</data>
+	<data name="line_ch1_plot3_byroad_2_Opt_1_P" xml:space="preserve">
+		<value>依照DFS的原理，我們應該要繼續直走。</value>
+	</data>
+	<data name="line_ch1_plot3_byroad_2_Opt_2_P" xml:space="preserve">
+		<value>岔路那邊好像可以看到什麼建築物，我們去找人問問剛剛的事情吧？</value>
+	</data>
+	<data name="line_ch1_plot3_byroad_2_Opt_3_P" xml:space="preserve">
+		<value>隨便拉！不要再遇到剛剛那兩個死要錢的傢伙就好。</value>
+	</data>
+	<data name="line_ch1_plot4_avoid_1_N_MP" xml:space="preserve">
+		<value>歡迎來到孟婆便利店，遺忘前塵事，買到新人生，地府知名景點，走過路過，不要錯過!</value>
+	</data>
+	<data name="line_ch1_plot4_avoid_2_N_MP" xml:space="preserve">
+		<value>各位客官好，敝姓孟，大家都叫我孟婆:D</value>
+	</data>
+	<data name="line_ch1_plot4_avoid_3_Ask_MP" xml:space="preserve">
+		<value>哎呀各位是要來買東西的嗎?</value>
+	</data>
+	<data name="line_ch1_plot4_avoid_4_Opt_1_P" xml:space="preserve">
+		<value>是，請讓我逛逛舖子吧!</value>
+	</data>
+	<data name="line_ch1_plot4_avoid_4_Opt_2_P" xml:space="preserve">
+		<value>不，其實是有事情想要請教一下孟婆</value>
+	</data>
+	<data name="line_ch1_plot4_avoid_5_Yes_1_MP" xml:space="preserve">
+		<value>什麼事阿?你們這些小朋友就是問題多。</value>
+	</data>
+	<data name="line_ch1_plot4_avoid_5_Yes_2_P" xml:space="preserve">
+		<value>聽說…閻王爺跟那個西方的深淵惡魔之間有糾紛?</value>
+	</data>
+	<data name="line_ch1_plot4_avoid_5_Yes_3_MP" xml:space="preserve">
+		<value>唉喲這都什麼跟什麼、聽小黑小白說的吧?</value>
+	</data>
+	<data name="line_ch1_plot4_avoid_5_Yes_4_MP" xml:space="preserve">
+		<value>噯噯、不要聽他們亂說，他們就愛亂說這些有的沒的。</value>
+	</data>
+	<data name="line_ch1_plot4_avoid_5_Yes_5_P" xml:space="preserve">
+		<value>那...為甚麼西方的深淵惡魔要破壞東方地域呢?</value>
+	</data>
+	<data name="line_ch1_plot4_avoid_5_Yes_6_MP" xml:space="preserve">
+		<value>這...誰知道呢?阿呀小朋友不需要知道這些，去去去，孟婆我可是忙得很呢!</value>
+	</data>
+	<data name="line_ch1_plot4_avoid_6_No_1_MP" xml:space="preserve">
+		<value>你好，歡迎光臨。</value>
+	</data>
+	<data name="line_ch1_plot5_shh_1_N_BUDA" xml:space="preserve">
+		<value>哎呀呀、各位英雄你們好</value>
+	</data>
+	<data name="line_ch1_plot5_shh_2_N_P" xml:space="preserve">
+		<value>請問西方的深淵惡魔為甚麼要破壞東方地域呢?</value>
+	</data>
+	<data name="line_ch1_plot5_shh_3_N_BUDA" xml:space="preserve">
+		<value>… 關於這件事，佛曰不可說，不可說 …</value>
+	</data>
+	<data name="line_ch1_plot5_shh_4_N_P" xml:space="preserve">
+		<value>真的不能說嗎?</value>
+	</data>
+	<data name="line_ch1_plot5_shh_5_N_BUDA" xml:space="preserve">
+		<value>善惡往往在一念之間，有其因，必有其果。</value>
+	</data>
+	<data name="line_ch1_plot5_shh_6_N_BUDA" xml:space="preserve">
+		<value>事情往往不能只看表面。多聽多看少說你們自然就知道了。</value>
+	</data>
+	<data name="line_ch1_plot6_stolen_1_Ask_GWEN" xml:space="preserve">
+		<value>諸位來此何干?</value>
+	</data>
+	<data name="line_ch1_plot6_stolen_2_Opt_1_P" xml:space="preserve">
+		<value>不好意思打擾了，我們是專程來拜訪菩薩的。</value>
+	</data>
+	<data name="line_ch1_plot6_stolen_2_Opt_2_P" xml:space="preserve">
+		<value>不好意思打擾了，我們只是路過。</value>
+	</data>
+	<data name="line_ch1_plot6_stolen_3_Yes_1_P" xml:space="preserve">
+		<value>事實上，我們有個問題想要請教菩薩。</value>
+	</data>
+	<data name="line_ch1_plot6_stolen_3_Yes_2_GWEN" xml:space="preserve">
+		<value>何事?</value>
+	</data>
+	<data name="line_ch1_plot6_stolen_3_Yes_3_P" xml:space="preserve">
+		<value>請問西方的深淵惡魔為甚麼要破壞東方地域呢?</value>
+	</data>
+	<data name="line_ch1_plot6_stolen_3_Yes_4_Gwen" xml:space="preserve">
+		<value>關於這件事，我知道的也不多。</value>
+	</data>
+	<data name="line_ch1_plot6_stolen_3_Yes_5_Gwen" xml:space="preserve">
+		<value>但據說，在深淵惡魔離開的時候，帶走了一項貴重的寶物。</value>
+	</data>
+	<data name="line_ch1_plot6_stolen_3_Yes_6_P" xml:space="preserve">
+		<value>是什麼樣的寶物?</value>
+	</data>
+	<data name="line_ch1_plot6_stolen_3_Yes_7_Gwen" xml:space="preserve">
+		<value>不清楚，但是據傳是從閻王爺的府衙拿走的，我只知道這些。</value>
+	</data>
+	<data name="line_ch1_plot6_stolen_3_Yes_8_P" xml:space="preserve">
+		<value>謝謝觀音菩薩。</value>
+	</data>
+	<data name="line_ch1_random1_zombie_1_N_STAFF" xml:space="preserve">
+		<value>天啊！又是這些惱人的殭屍，我已經連續工作十二個小時了…可以幫我處理這些傢伙嗎？</value>
+	</data>
+	<data name="line_ch1_random2_ogre_1_N_SYS" xml:space="preserve">
+		<value>警告！警告！前方出現了食人魔！</value>
+	</data>
+	<data name="line_ch1_random2_ogre_2_Opt_1_SYS" xml:space="preserve">
+		<value>戰鬥</value>
+	</data>
+	<data name="line_ch1_random2_ogre_2_Opt_2_SYS" xml:space="preserve">
+		<value>逃跑</value>
+	</data>
+	<data name="line_ch1_random2_ogre_3_No_1_P" xml:space="preserve">
+		<value>逃避雖可恥但有用。</value>
+	</data>
+	<data name="line_ch1_random3_gossip_1_N_BW" xml:space="preserve">
+		<value>阿呀阿呀~</value>
+	</data>
+	<data name="line_ch1_random3_gossip_2_Ask_BW" xml:space="preserve">
+		<value>兄弟，給點過路費吧?幫你打五折喔~</value>
+	</data>
+	<data name="line_ch1_random3_gossip_3_Opt_1_P" xml:space="preserve">
+		<value>怎麼又遇到你們了= =(遞出冥幣10)</value>
+	</data>
+	<data name="line_ch1_random3_gossip_3_Opt_2_P" xml:space="preserve">
+		<value>不好意思、最近真的沒錢&gt;&lt;</value>
+	</data>
+	<data name="line_ch1_random3_gossip_4_Yes_1_BW" xml:space="preserve">
+		<value>多謝拉~</value>
+	</data>
+	<data name="line_ch1_random3_gossip_5_No_1_BW" xml:space="preserve">
+		<value>這樣就沒辦法囉~</value>
+	</data>
+	<data name="line_ch1_random3_gossip_5_No_2_SYS" xml:space="preserve">
+		<value>(黑白無常強制徵收過路費20冥幣)</value>
+	</data>
+	<data name="line_ch1_random3_gossip_6_N_BW" xml:space="preserve">
+		<value>相見即是有緣，免費送你一則八卦</value>
+	</data>
+	<data name="line_ch1_random3_gossip_7_N_BW" xml:space="preserve">
+		<value>聽說又一個鬼差辭職投胎去了，在陰間工作真的很累阿</value>
+	</data>
+	<data name="line_ch1_random4_shopMP_1_N_MP" xml:space="preserve">
+		<value>歡迎來到孟婆便利店，遺忘前塵事，買到新人生，地府知名景點，走過路過，不要錯過!</value>
+	</data>
+	<data name="line_ch1_random4_shopMP_2_N_MP" xml:space="preserve">
+		<value>各位客官好，敝姓孟，大家都叫我孟婆:D</value>
+	</data>
+	<data name="line_ch1_random4_shopMP_3_Ask_MP" xml:space="preserve">
+		<value>哎呀各位是要來買東西的嗎?</value>
+	</data>
+	<data name="line_ch1_random4_shopMP_4_Opt_1_P" xml:space="preserve">
+		<value>是，請讓我逛逛舖子吧!</value>
+	</data>
+	<data name="line_ch1_random4_shopMP_4_Opt_2_P" xml:space="preserve">
+		<value>不、我只是路過而已….</value>
+	</data>
+	<data name="line_ch1_random4_shopMP_5_Yes_1_MP" xml:space="preserve">
+		<value>你好，歡迎光臨。</value>
+	</data>
+	<data name="line_ch1_random5_GiftA_1_N_BUDA" xml:space="preserve">
+		<value>哎呀呀、各位英雄你們好</value>
+	</data>
+	<data name="line_ch1_random5_GiftA_2_N_BUDA" xml:space="preserve">
+		<value>請問你們想要金的佛珠，銀的佛珠，還是本佛祖開光過的佛珠呢?</value>
+	</data>
+	<data name="line_ch1_random5_GiftA_3_N_P" xml:space="preserve">
+		<value>看過伊索寓言的人都知道要選最後一個吧</value>
+	</data>
+	<data name="line_ch1_random5_GiftA_4_N_P" xml:space="preserve">
+		<value>但我想選第一個欸、感覺是24K純金阿…</value>
+	</data>
+	<data name="line_ch1_random5_GiftA_5_N_P" xml:space="preserve">
+		<value>金子阿…那還是選金的好了，反正佛祖手上拿到的應該都不差吧?</value>
+	</data>
+	<data name="line_ch1_random5_GiftA_6_N_BUDA" xml:space="preserve">
+		<value>等等、各位英雄不好意思，我剛剛想到我還有急事要處理，這串佛珠就給你們吧!886~</value>
+	</data>
+	<data name="line_ch1_random5_GiftA_7_N_SYS" xml:space="preserve">
+		<value>得到  “佛祖親自開光過的佛珠” </value>
+	</data>
+	<data name="line_ch1_random6_GiftB_1_N_BUDA" xml:space="preserve">
+		<value>哎呀呀、各位英雄你們好</value>
+	</data>
+	<data name="line_ch1_random6_GiftB_2_N_BUDA" xml:space="preserve">
+		<value>請問你們想要金的佛珠，銀的佛珠，還是本佛祖開光過的佛珠呢?</value>
+	</data>
+	<data name="line_ch1_random6_GiftB_3_Ask_BUDA" xml:space="preserve">
+		<value>等等、各位英雄不好意思，我剛剛想到我的佛珠發完了，這些給你們選一個當作補償好不好？</value>
+	</data>
+	<data name="line_ch1_random6_GiftB_4_Award_1_SYS" xml:space="preserve">
+		<value>藍色的法師帽</value>
+	</data>
+	<data name="line_ch1_random6_GiftB_4_Award_2_SYS" xml:space="preserve">
+		<value>灰色的道士袍</value>
+	</data>
+	<data name="line_ch1_random6_GiftB_4_Award_3_SYS" xml:space="preserve">
+		<value>紅色的牧師帽</value>
+	</data>
+	<data name="line_ch1_random7_story_1_N_BUDA" xml:space="preserve">
+		<value>哎呀呀、各位英雄你們好</value>
+	</data>
+	<data name="line_ch1_random7_story_2_Ask_BUDA" xml:space="preserve">
+		<value>本佛祖最近聽到一則發人深省的故事，想要聽聽嗎?</value>
+	</data>
+	<data name="line_ch1_random7_story_3_Opt_1_P" xml:space="preserve">
+		<value>好的，我最喜歡聽故事了</value>
+	</data>
+	<data name="line_ch1_random7_story_3_Opt_2_P" xml:space="preserve">
+		<value>抱歉，我趕時間</value>
+	</data>
+	<data name="line_ch1_random7_story_4_Yes_1_BUDA" xml:space="preserve">
+		<value>話說很久很久以前…</value>
+	</data>
+	<data name="line_ch1_random7_story_4_Yes_2_BUDA" xml:space="preserve">
+		<value>一個母親叮嚀自己第一天上學的孩子</value>
+	</data>
+	<data name="line_ch1_random7_story_4_Yes_3_BUDA" xml:space="preserve">
+		<value>「別人生氣時，一個微笑送給她。」</value>
+	</data>
+	<data name="line_ch1_random7_story_4_Yes_4_BUDA" xml:space="preserve">
+		<value>哎、佛祖我好感動啊…</value>
+	</data>
+	<data name="line_ch1_random7_story_4_Yes_5_P" xml:space="preserve">
+		<value>… 佛祖你好、佛祖再見。</value>
+	</data>
+	<data name="line_ch1_random7_story_5_No_1_BUDA" xml:space="preserve">
+		<value>最近的年輕人都不喜歡聽老人家講話，桑心。</value>
+	</data>
+	<data name="line_ch1_random8_rest_1_Ask_GWEN" xml:space="preserve">
+		<value>:諸位來此何干?</value>
+	</data>
+	<data name="line_ch1_random8_rest_2_Opt_1_P" xml:space="preserve">
+		<value>不好意思打擾了，我們只是路過</value>
+	</data>
+	<data name="line_ch1_random8_rest_2_Opt_2_P" xml:space="preserve">
+		<value>不好意思打擾了，我們想在這裡休息一下。</value>
+	</data>
+	<data name="line_ch1_random8_rest_3_Yes_1_GWEN" xml:space="preserve">
+		<value>看各位傷痕累累，這玉瓶裡的水只需一小滴就可讓各位痊癒，這便贈了各位。</value>
+	</data>
+	<data name="line_ch1_random8_rest_3_Yes_2_P" xml:space="preserve">
+		<value>謝謝菩薩。</value>
+	</data>
 	<data name="skill_dark_charge" xml:space="preserve">
 		<value>黑暗衝擊</value>
 	</data>
@@ -235,6 +538,9 @@
 	</data>
 	<data name="skill_divine_shield" xml:space="preserve">
 		<value>聖盾術</value>
+	</data>
+	<data name="skill_divine_smash" xml:space="preserve">
+		<value />
 	</data>
 	<data name="skill_holy_heal" xml:space="preserve">
 		<value>治癒術</value>
@@ -262,8 +568,5 @@
 	</data>
 	<data name="skill_talisman_thunder" xml:space="preserve">
 		<value>役雷符</value>
-	</data>
-	<data name="skill_divine_smash" xml:space="preserve">
-		<value />
 	</data>
 </root>
