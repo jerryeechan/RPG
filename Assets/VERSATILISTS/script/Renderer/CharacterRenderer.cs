@@ -98,7 +98,6 @@ public class CharacterRenderer : MonoBehaviour {
 	{
 		if(bar)
 			bar.SetFullValue(stat.hp.finalValue);
-		
 	}
 	public void updateRenderer(CharacterStat stat)
 	{
@@ -115,6 +114,8 @@ public class CharacterRenderer : MonoBehaviour {
 		}
 		//will call playSkill with animation event;
 	}
+	public SpriteRenderer dieBody;
+	
 	//select the characeter
 	void OnMouseEnter()
 	{
@@ -151,14 +152,7 @@ public class CharacterRenderer : MonoBehaviour {
 	}
 
 	//only call in ActionUIManger.instance.setCharacter
-	public void selectByUI()
-	{
-		indicater.gameObject.SetActive(true);
-		
-		if(lastSelected)
-			lastSelected.deselect();
-		lastSelected = this;
-	}
+	
 	static CharacterRenderer lastSelected;
 	public void deselect()
 	{
@@ -217,6 +211,18 @@ public class CharacterRenderer : MonoBehaviour {
 		
 	}
 
+	public void selected()
+	{
+		ActionUIManager.instance.setCharacter(bindCh);
+		BattleChUIManager.instance.setCharacter(bindCh);
+		SoundEffectManager.instance.playSound(BasicSound.UI);
+		TurnBattleManager.instance.selectedPlayer = bindCh;
+		
+		indicater.gameObject.SetActive(true);
+		if(lastSelected)
+			lastSelected.deselect();
+		lastSelected = this;
+	}
 	
 	void OnMouseUpAsButton()
 	{
@@ -236,12 +242,7 @@ public class CharacterRenderer : MonoBehaviour {
 			//TODO: click the character, select character 
 			if(bindCh.side == CharacterSide.Player)
 			{
-				ActionUIManager.instance.setCharacter(bindCh);
-				BattleChUIManager.instance.setCharacter(bindCh);
-				SoundEffectManager.instance.playSound(BasicSound.UI);
-				TurnBattleManager.instance.selectedPlayer = bindCh;
-				//RandomBattleRound.instance.currentPlayer = bindCh;
-				//PlayerStateUI.instance.lastUI.ch.chRenderer.deselect();
+				selected();
 			}
 		}
 		
@@ -274,6 +275,10 @@ public class CharacterRenderer : MonoBehaviour {
 	public void ShowSkill()
 	{
 		transform.parent.SendMessage("PlaySkillEffect");
+	}
+	public void BattleEnd()
+	{
+		indicater.gameObject.SetActive(false);
 	}
 }
 

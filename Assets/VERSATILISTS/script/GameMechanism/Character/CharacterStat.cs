@@ -36,11 +36,16 @@ public class CharacterStat:StringfyProperty{
 
 		attributeDict.Add(AttributeType.PhyDamage,phyDmg);
 		attributeDict.Add(AttributeType.MagDamage,magDmg);
+		
 
 		attributeDict.Add(AttributeType.PhyDefense,phyDef);
 		attributeDict.Add(AttributeType.MagDefense,magDef);
 		attributeDict.Add(AttributeType.DamageReduce,damageReduce);
 		attributeDict.Add(AttributeType.Movable,movable);
+		attributeDict.Add(AttributeType.Accuracy,accuracy);
+		attributeDict.Add(AttributeType.Evasion,evasion);
+		attributeDict.Add(AttributeType.CriticalDmg,critDmg);
+		attributeDict.Add(AttributeType.CriticalRate,critRate);
 		
 	}
 

@@ -37,7 +37,8 @@ public class ItemUIManager : Singleton<ItemUIManager>,IDisplayable,IItemSlotMana
 	
 	public void Show()
 	{
-		loadItems(DataManager.instance.curPlayerData.itemDataList);
+		btnPanel.setup();
+		//loadItems(DataManager.instance.curPlayerData.itemDataList);
 		//loadEquips(DataManager.instance.curPlayerData.equipDataList);		
 	}
 

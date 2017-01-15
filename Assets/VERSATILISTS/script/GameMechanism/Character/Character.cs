@@ -140,6 +140,7 @@ namespace com.jerrch.rpg
 		public void BattleEnd()
 		{
 			equipStat.hp = battleStat.hp;
+			chRenderer.BattleEnd();
 		}
 		public void wearEquips(List<Equip> equips)
 		{
@@ -248,15 +249,17 @@ namespace com.jerrch.rpg
 
 		public void die()
 		{
+
 			chRenderer.PlayCharacterAnimation(CharacterAnimation.die);
 			if(side == CharacterSide.Enemy)
 			{
+				
 				//RandomBattleRound.instance.EnemyDie(this);
 				//BattleChUIManager.instance.allGetExp(bindData.exp);
 			}
 			else
 			{
-
+				
 				GameManager.instance.characterDied(this);
 			}
 				

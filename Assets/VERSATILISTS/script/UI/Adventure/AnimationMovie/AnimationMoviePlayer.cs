@@ -19,15 +19,23 @@ public class AnimationMoviePlayer : MonoBehaviour {
 
 	public MovieClip currentUnit;
 
+	AdventureDialogueLineData currentLine;
 	public void PlayLine()
 	{
-		AdventureDialogueLineData lineData = currentUnit.getNext();
-		if(lineData == null)
+		if(currentLine == null)
 		{
-			MovieDone();
+			currentLine = currentUnit.getNext();
+			if(currentLine == null)
+			{
+				MovieDone();
+			}
 		}
-		else
-			dialoguePlayer.PlayLine(lineData);
+		if(!dialoguePlayer.testPlaying)
+		{
+			dialoguePlayer.PlayLine(currentLine);
+			currentLine = null;
+		}
+		
 	}
 	public void animationDoneCallBack()
 	{

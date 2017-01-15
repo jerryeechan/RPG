@@ -31,5 +31,9 @@ namespace com.jerrch.rpg
 			print(casterStat.chName+"do"+calEffectValue+" def:"+defense+"result: @"+(int)applyResult+"damage to"+stat.chName);
 			stat.hp.changeHP(-(int)applyResult);
 		}	
+		public string description()
+		{
+			return CompositeText.GetLocalText("造成物理傷害")+initValue*100+"%";
+		}
 	}
 }

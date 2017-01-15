@@ -10,6 +10,16 @@ public class SwitchBtnPanel : MonoBehaviour {
 		switchBtns = GetComponentsInChildren<HandButton>();
 	}
 
+	int _curIndex = 0;
+	public int currentIndex{
+		get{
+			return _curIndex;
+		}
+	}
+	public void setup()
+	{
+		switchBtnsTouched(_curIndex);
+	}
 	public void switchBtnsTouched(int index)
 	{
 		for(int i=0;i<switchBtns.Length;i++)
@@ -24,6 +34,7 @@ public class SwitchBtnPanel : MonoBehaviour {
 			}
 		}
 		switchDelegate.switchBtnTouched(index);
+		_curIndex = index;
 	}
 	public SwitchBtnTouchDelegate switchDelegate;
 }

@@ -362,14 +362,6 @@ public class Skill : MonoBehaviour {
 		//if(nextSkill)
 		//	nextSkill.Cast();
 	}
-	
-	public int mpCost()
-	{
-		int mana=0;
-		for(int i=0;i<effects.Count;i++)
-			mana+= effects[i].mpCost;
-		return mana;
-	}
 
 	//is
 	

@@ -62,15 +62,15 @@ public class ShopUIManager : SingletonCanvas<ShopUIManager> ,IItemSlotManager{
 	{
 		//virtual
 		slot.bindItem = item;
-
+		
 		//override
 		if(item==null)
 		{
-			//slot.priceText.GetComponentInChildren<Image>().gameObject.SetActive(false);	
+			slot.priceText.GetComponentInChildren<Image>(true).gameObject.SetActive(false);	
 		}
 		else
 		{
-			//slot.priceText.GetComponentInChildren<Image>().gameObject.SetActive(true);
+			slot.priceText.GetComponentInChildren<Image>(true).gameObject.SetActive(true);
 		}
 	}
 	

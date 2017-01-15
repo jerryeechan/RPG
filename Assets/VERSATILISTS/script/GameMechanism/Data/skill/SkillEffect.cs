@@ -10,8 +10,6 @@ public class SkillEffect : MonoBehaviour {
 	public EffectType effectType;
 	
 	// Use this for initialization
-	public int mpCost=0;
-	public int spCost=0;
 	public float duration = 1;//apply last for, at least 1
 	
 	public int applyDelay=0;

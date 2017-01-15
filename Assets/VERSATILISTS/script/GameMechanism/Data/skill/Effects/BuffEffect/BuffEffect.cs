@@ -23,6 +23,12 @@ public class BuffEffect : SkillEffect{
 		onStat.getAttribute(buffType).removeFinalBonus(bonus);
 		base.RemoveEffect();
 	}
+
+	public string description()
+	{
+		
+		return "Target:"+effectRange.ToString()+"持續"+duration+"回合";
+	}
 }
 
 public enum AttributeType{
@@ -31,5 +37,7 @@ public enum AttributeType{
 	PhyDefense,MagDefense,
 	Accuracy,Evasion,
 	DamageReduce,
-	Movable
+	Movable,
+	CriticalRate,
+	CriticalDmg
 }

@@ -46,9 +46,9 @@ MonoBehaviour:
     classID: 
     level: 0
     exp: 0
-    abilityPoints: 0
-    skillPoints: 0
-    strVal: 5
+    abilityPoints: 5
+    skillPoints: 3
+    strVal: 20
     conVal: 5
     intVal: 0
     dexVal: 10

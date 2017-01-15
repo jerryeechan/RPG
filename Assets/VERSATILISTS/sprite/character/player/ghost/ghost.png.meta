@@ -1,17 +1,13 @@
 fileFormatVersion: 2
-guid: c6e722a8bcbb645479b9793180ac7c7a
-timeCreated: 1484489363
+guid: 9966791fd47fa478791181eaca31134c
+timeCreated: 1484507052
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: sevenyeah_0
-    21300002: sevenyeah_1
-    21300004: sevenyeah_2
-    21300006: sevenyeah_3
-    21300008: sevenyeah_4
-    21300010: sevenyeah_5
-    21300012: sevenyeah_6
-    21300014: sevenyeah_7
+    21300000: ghost_0
+    21300002: ghost_1
+    21300004: ghost_2
+    21300006: ghost_3
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -46,7 +42,7 @@ TextureImporter:
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 7
-  spritePivot: {x: 0.5, y: 0.5}
+  spritePivot: {x: 0.5, y: 0}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spritePixelsToUnits: 1
   alphaUsage: 1
@@ -66,72 +62,56 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
-  - buildTarget: Standalone
-    maxTextureSize: 2048
-    textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-  - buildTarget: Android
-    maxTextureSize: 2048
-    textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: sevenyeah_0
+      name: ghost_0
       rect:
         serializedVersion: 2
-        x: 20
+        x: 0
         y: 0
-        width: 73
-        height: 64
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: -1
-    - serializedVersion: 2
-      name: sevenyeah_5
-      rect:
-        serializedVersion: 2
-        x: 320
-        y: 0
-        width: 64
-        height: 64
+        width: 48
+        height: 48
       alignment: 9
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: -1
     - serializedVersion: 2
-      name: sevenyeah_6
+      name: ghost_1
       rect:
         serializedVersion: 2
-        x: 384
+        x: 48
         y: 0
-        width: 64
-        height: 64
+        width: 48
+        height: 48
       alignment: 9
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: -1
     - serializedVersion: 2
-      name: sevenyeah_7
+      name: ghost_2
       rect:
         serializedVersion: 2
-        x: 448
+        x: 96
         y: 0
-        width: 64
-        height: 64
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ghost_3
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 0
+        width: 48
+        height: 48
       alignment: 9
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

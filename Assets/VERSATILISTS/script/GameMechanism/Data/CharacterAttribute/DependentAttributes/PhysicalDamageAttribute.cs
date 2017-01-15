@@ -13,7 +13,7 @@ public class PhysicalDamageAttribute : DependentAttribute {
 	public override int calculateValue()
 	{
 		_finalValue = baseValue;
-		_finalValue += (int)(strAttr.finalValue / 5) * phyAtk.finalValue;
+		_finalValue += (int)(strAttr.finalValue) * phyAtk.finalValue;
 		applyRawBonuses();
 		applyFinalBonuses();
 			

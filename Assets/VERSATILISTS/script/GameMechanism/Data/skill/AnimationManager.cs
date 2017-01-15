@@ -27,6 +27,7 @@ public class AnimationManager : Singleton<AnimationManager> {
 		chAnimationSpeed.Add(CharacterAnimation.melee,1f);
 		chAnimationSpeed.Add(CharacterAnimation.upmelee,1f);
 		chAnimationSpeed.Add(CharacterAnimation.holdmelee,1f);
+		chAnimationSpeed.Add(CharacterAnimation.die,1f);
 	}
 	public AnimationUnit getSkillHitEffect(string id)
 	{

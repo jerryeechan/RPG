@@ -17,7 +17,7 @@ public class MagicDamageAttribute :DependentAttribute{
 			
 		// Every 5 points in dexterity adds 1 to attack speed
 		
-		_finalValue += (int)((intAttr.finalValue / 5)*magAtk.finalValue);
+		_finalValue += (int)((intAttr.finalValue)*magAtk.finalValue);
 			
 		applyRawBonuses();
 		applyFinalBonuses();

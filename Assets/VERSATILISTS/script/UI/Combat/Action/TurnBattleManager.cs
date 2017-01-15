@@ -6,6 +6,8 @@ using com.jerrch.rpg;
 using DG.Tweening;
 public class TurnBattleManager : Singleton<TurnBattleManager> {
 
+	[SerializeField]
+	AnimatableCanvas victoryPanel;
 	//List<DiceActionSlot> playerSlot;
 
 	//List<DiceActionSlot> slots; //change every time
@@ -17,6 +19,7 @@ public class TurnBattleManager : Singleton<TurnBattleManager> {
 	public List<Character> diedPlayers;
 
 	public Character selectedPlayer;
+	
 
 	Character randomTarget(List<Character> chs)
 	{
@@ -125,6 +128,7 @@ public class TurnBattleManager : Singleton<TurnBattleManager> {
 		}
 		currentPlayer = players[0];
 		StartRound();
+		currentPlayer.chRenderer.selected();
 	}
 	public void StartRound()
 	{
@@ -186,7 +190,7 @@ public class TurnBattleManager : Singleton<TurnBattleManager> {
 	public void ActionReady()
 	{
 		//Enemies' actions 
-		indicator.enabled = true;
+		indicator.gameObject.SetActive(true);
 		diceQueue = new Queue<DiceSlot>();
 		foreach(var dice in dices)
 		{
@@ -270,7 +274,7 @@ public class TurnBattleManager : Singleton<TurnBattleManager> {
 	{
 		print("End of Battle");
 		addExp();
-		
+		victoryPanel.show();
 	}
 
 	void addExp()
@@ -287,6 +291,7 @@ public class TurnBattleManager : Singleton<TurnBattleManager> {
 		GameManager.instance.AdventureMode();
 		AdventureManager.instance.NextEvent();
 		Destroy(stageTransform.gameObject);
+		indicator.gameObject.SetActive(false);
+		victoryPanel.hide();
 	}
-	
 }

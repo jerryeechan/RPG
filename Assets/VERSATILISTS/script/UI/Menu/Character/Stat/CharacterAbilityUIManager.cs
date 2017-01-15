@@ -40,7 +40,8 @@ public class CharacterAbilityUIManager : Singleton<CharacterAbilityUIManager>,Ii
 		foreach(var property in propertyUIs)
 		{
 //			print(property.name );
-			Attribute attr = ch.equipStat.getValue<Attribute>(property.name);
+			Attribute attr = ch.equipStat.getAttribute(property.type);
+			//Attribute attr = ch.equipStat.getValue<Attribute>(property.name);
 			property.setValue(attr.finalValue);
 		}
 	}

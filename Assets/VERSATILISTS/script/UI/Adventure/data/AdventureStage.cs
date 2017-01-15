@@ -13,8 +13,16 @@ public class AdventureStage : MonoBehaviour {
 	AdventureScene[] storyScenes;
 	void OnValidate()
 	{
-		normalScenes = transform.Find("NormalScenes").GetComponentsInChildren<AdventureScene>();
-		storyScenes = transform.Find("StoryScenes").GetComponentsInChildren<AdventureScene>();
+		normalScenes = transform.Find("NormalScenes").GetComponentsInChildren<AdventureScene>(true);
+		foreach(var scen in normalScenes)
+		{
+			scen.gameObject.SetActive(false);
+		}
+		foreach(var scene in storyScenes)
+		{
+			scene.gameObject.SetActive(false);
+		}
+		storyScenes = transform.Find("StoryScenes").GetComponentsInChildren<AdventureScene>(true);
 	}
 
 	[SerializeField]

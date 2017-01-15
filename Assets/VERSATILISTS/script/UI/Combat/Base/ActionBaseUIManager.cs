@@ -11,14 +11,13 @@ public class ActionBaseUIManager : MonoBehaviour {
 
 	}
 	public virtual void inspectCharacter(Character ch)
-	{
-		
+	{	
 		int actionNum = ch.actionList.Count;
 		//print(actionNum);
 		for(int i=0;i<actionNum;i++)
 		{
 			bool btnEnable = actionBtns[i].bindAction = ch.actionList[i];
 		}
-		ch.chRenderer.selectByUI();
+		//ch.chRenderer.selectByUI();
 	}
 }

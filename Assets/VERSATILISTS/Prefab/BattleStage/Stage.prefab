@@ -473,7 +473,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1496994240822250
 GameObject:
   m_ObjectHideFlags: 1
@@ -570,7 +570,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1623765099500752
 GameObject:
   m_ObjectHideFlags: 0
@@ -634,7 +634,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1683120705059358
 GameObject:
   m_ObjectHideFlags: 1
@@ -1647,6 +1647,7 @@ MonoBehaviour:
   scenceName: gate
   candidateEvents:
   - {fileID: 114457053943487196}
+  weight: 1
 --- !u!114 &114036688020673900
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1676,6 +1677,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scenceName: 
   candidateEvents: []
+  weight: 1
 --- !u!114 &114054018299801246
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1751,6 +1753,7 @@ MonoBehaviour:
   - {fileID: 114602338477363682}
   - {fileID: 114628726065812894}
   - {fileID: 114628726065812894}
+  weight: 1
 --- !u!114 &114117916549711448
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1813,10 +1816,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stageName: Forest
-  normalScenes:
-  - {fileID: 114102159372831712}
-  storyScenes:
-  - {fileID: 114019421352013756}
+  normalScenes: []
+  storyScenes: []
   stageEventCount: 10
 --- !u!114 &114192968489099078
 MonoBehaviour:
@@ -1895,8 +1896,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stageName: 
-  normalScenes:
-  - {fileID: 114045424179397844}
+  normalScenes: []
   storyScenes: []
   stageEventCount: 0
 --- !u!114 &114410456082726672
@@ -2224,6 +2224,7 @@ MonoBehaviour:
   scenceName: gate
   candidateEvents:
   - {fileID: 114054018299801246}
+  weight: 1
 --- !u!114 &114833310882460566
 MonoBehaviour:
   m_ObjectHideFlags: 1

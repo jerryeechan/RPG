@@ -291,6 +291,7 @@ public class AdventureManager : Singleton<AdventureManager> {
 			PauseMenuManager.instance.Transition(()=>{
 				//TODO:
 				currentScene = AdventureStageManager.instance.currentStage.getScene();
+
 				dialoguePlayer.init();
 				encounterEvent(currentScene.getEvent());
 				//encounterEvent(testEvent);
@@ -305,7 +306,7 @@ public class AdventureManager : Singleton<AdventureManager> {
 			return _cur_scene;
 		}
 		set{
-			if(_cur_scene)
+			if(_cur_scene != null)
 				_cur_scene.gameObject.SetActive(false);
 			
 			_cur_scene = value;

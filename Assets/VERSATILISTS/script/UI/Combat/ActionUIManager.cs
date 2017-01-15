@@ -84,7 +84,7 @@ public class ActionUIManager : Singleton<ActionUIManager> {
 		{
 			actionBtns[i].disableButton();
 		}
-		ch.chRenderer.selectByUI();
+		//ch.chRenderer.selectByUI();
 	}
 
 	/*

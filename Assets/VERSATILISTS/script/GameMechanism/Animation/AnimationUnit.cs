@@ -37,7 +37,9 @@ public class AnimationUnit : MonoBehaviour {
 		{
 			SoundEffectManager.instance.playSound(hitSoundClip);
 		}
-		Camera.main.DOShakePosition(0.2f,5,30);
+		Camera.main.DOShakePosition(0.2f,5,30).OnComplete(()=>{
+			Camera.main.transform.position = new Vector3(0,0,-175);
+		});
 		playDone();
 	}
 	bool isDone = false;

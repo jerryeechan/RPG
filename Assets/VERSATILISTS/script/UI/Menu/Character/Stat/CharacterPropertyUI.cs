@@ -9,6 +9,7 @@ public class CharacterPropertyUI :MonoBehaviour,IPointerEnterHandler,IPointerExi
 	public string title;
 	public string description;
 	
+	public AttributeType type;
 	public bool isPercentage;
 	// propertyText;
 	CompositeText valueText;

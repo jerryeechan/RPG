@@ -37,6 +37,8 @@ public class ActionPair
 	{	
 		if(!ch.isDead)
 		{
+			if(ch.side == CharacterSide.Player)
+				ch.chRenderer.selected();
 			if(ch.battleStat.movable.randomCheck())
 			{
 				Action action = GameObject.Instantiate(actionTemplate);

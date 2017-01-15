@@ -116,38 +116,32 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-	<data name="line_ch1_bw_fee_1" xml:space="preserve">
-		<value />
-	</data>
-	<data name="line_ch1_bw_fee_2" xml:space="preserve">
-		<value />
-	</data>
-	<data name="line_ch1_bw_fee_3" xml:space="preserve">
-		<value />
-	</data>
-	<data name="line_ch1_bw_fee_3opt1" xml:space="preserve">
-		<value />
-	</data>
-	<data name="line_ch1_bw_fee_3opt2" xml:space="preserve">
-		<value />
-	</data>
-	<data name="line_ch1_bw_fee_3opt3" xml:space="preserve">
-		<value />
-	</data>
-	<data name="line_ch1_bw_fee_4" xml:space="preserve">
-		<value />
-	</data>
-	<data name="CON" xml:space="preserve">
+	<data name="attr_CON" xml:space="preserve">
 		<value>體質</value>
 	</data>
-	<data name="DarkPaladin" xml:space="preserve">
-		<value>黑騎士</value>
+	<data name="attr_DEX" xml:space="preserve">
+		<value>敏捷</value>
 	</data>
-	<data name="description_skill_dark_charge" xml:space="preserve">
+	<data name="attr_INT" xml:space="preserve">
 		<value />
 	</data>
-	<data name="DEX" xml:space="preserve">
-		<value>敏捷</value>
+	<data name="attr_STR" xml:space="preserve">
+		<value>力量</value>
+	</data>
+	<data name="class_DarkPaladin" xml:space="preserve">
+		<value>黑騎士</value>
+	</data>
+	<data name="class_Mage" xml:space="preserve">
+		<value>魔法師</value>
+	</data>
+	<data name="class_Paladin" xml:space="preserve">
+		<value>聖騎士</value>
+	</data>
+	<data name="class_Priest" xml:space="preserve">
+		<value>祭司</value>
+	</data>
+	<data name="class_TaoistPriest" xml:space="preserve">
+		<value>道士</value>
 	</data>
 	<data name="event_enemy_ogre" xml:space="preserve">
 		<value>食人魔出現了</value>
@@ -172,6 +166,27 @@
 	</data>
 	<data name="line_ch0_lord_of_soil_3" xml:space="preserve">
 		<value>這是我給各位的一點心意，請務必收下。</value>
+	</data>
+	<data name="line_ch1_bw_fee_1" xml:space="preserve">
+		<value />
+	</data>
+	<data name="line_ch1_bw_fee_2" xml:space="preserve">
+		<value />
+	</data>
+	<data name="line_ch1_bw_fee_3" xml:space="preserve">
+		<value />
+	</data>
+	<data name="line_ch1_bw_fee_3opt1" xml:space="preserve">
+		<value />
+	</data>
+	<data name="line_ch1_bw_fee_3opt2" xml:space="preserve">
+		<value />
+	</data>
+	<data name="line_ch1_bw_fee_3opt3" xml:space="preserve">
+		<value />
+	</data>
+	<data name="line_ch1_bw_fee_4" xml:space="preserve">
+		<value />
 	</data>
 	<data name="line_ch1_bw_plot1_1" xml:space="preserve">
 		<value>恩、喔又是你們啊?</value>
@@ -203,20 +218,11 @@
 	<data name="line_ch1_bw_plot1_7" xml:space="preserve">
 		<value>這樣啊、那就慢走不送拉~</value>
 	</data>
-	<data name="Mage" xml:space="preserve">
-		<value>魔法師</value>
-	</data>
-	<data name="Paladin" xml:space="preserve">
-		<value>聖騎士</value>
-	</data>
-	<data name="Priest" xml:space="preserve">
-		<value>祭司</value>
-	</data>
-	<data name="revive" xml:space="preserve">
-		<value>輪迴詠唱</value>
-	</data>
 	<data name="skill_dark_charge" xml:space="preserve">
 		<value>黑暗衝擊</value>
+	</data>
+	<data name="skill_dark_charge_description" xml:space="preserve">
+		<value />
 	</data>
 	<data name="skill_dark_shield" xml:space="preserve">
 		<value>渾沌之盾</value>
@@ -224,40 +230,40 @@
 	<data name="skill_dark_slash" xml:space="preserve">
 		<value>暗冥斬</value>
 	</data>
+	<data name="skill_divine_invincible" xml:space="preserve">
+		<value>金鋼護體</value>
+	</data>
 	<data name="skill_divine_shield" xml:space="preserve">
 		<value>聖盾術</value>
 	</data>
-	<data name="skill_elemental_blessing" xml:space="preserve">
-		<value>元素加持</value>
-	</data>
-	<data name="skill_fireball" xml:space="preserve">
-		<value>火球術</value>
-	</data>
-	<data name="skill_firestorm" xml:space="preserve">
-		<value>火焰風暴</value>
-	</data>
-	<data name="skill_heal" xml:space="preserve">
+	<data name="skill_holy_heal" xml:space="preserve">
 		<value>治癒術</value>
 	</data>
-	<data name="skill_holyray" xml:space="preserve">
+	<data name="skill_holy_ray" xml:space="preserve">
 		<value>聖光</value>
 	</data>
-	<data name="skill_invincible" xml:space="preserve">
-		<value>金鋼護體</value>
+	<data name="skill_holy_revive" xml:space="preserve">
+		<value>輪迴詠唱</value>
 	</data>
-	<data name="skill_paralyze_talisman" xml:space="preserve">
+	<data name="skill_mage_elemental_blessing" xml:space="preserve">
+		<value>元素加持</value>
+	</data>
+	<data name="skill_mage_fireball" xml:space="preserve">
+		<value>火球術</value>
+	</data>
+	<data name="skill_mage_firestorm" xml:space="preserve">
+		<value>火焰風暴</value>
+	</data>
+	<data name="skill_talisman_paralyze" xml:space="preserve">
 		<value>定身符</value>
 	</data>
-	<data name="skill_storm_talisman" xml:space="preserve">
+	<data name="skill_talisman_storm" xml:space="preserve">
 		<value>起風符</value>
 	</data>
-	<data name="skill_thunder_talisman" xml:space="preserve">
+	<data name="skill_talisman_thunder" xml:space="preserve">
 		<value>役雷符</value>
 	</data>
-	<data name="STR" xml:space="preserve">
-		<value>力量</value>
-	</data>
-	<data name="TaoistPriest" xml:space="preserve">
-		<value>道士</value>
+	<data name="skill_divine_smash" xml:space="preserve">
+		<value />
 	</data>
 </root>

@@ -876,7 +876,6 @@ RectTransform:
   - {fileID: 1580133485}
   - {fileID: 85977448}
   - {fileID: 1895094095}
-  - {fileID: 1100977017}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2463,8 +2462,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b143b805f62d44e568ab97c3491bed4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  title: Attack
+  title: Physical Damage
   description: The base damage of a physical damage skill can do
+  type: 2
   isPercentage: 0
 --- !u!1 &105511869
 GameObject:
@@ -3533,6 +3533,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   title: Constitution
   description: Increase max hp, hp recover rate, defense and block rate.
+  type: 0
   isPercentage: 0
 --- !u!222 &142382850
 CanvasRenderer:
@@ -3700,6 +3701,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   title: Intelligence
   description: Increase magic, magic armor
+  type: 0
   isPercentage: 0
 --- !u!222 &143608790
 CanvasRenderer:
@@ -6009,6 +6011,7 @@ RectTransform:
   - {fileID: 358039168}
   - {fileID: 184755836}
   - {fileID: 461691016}
+  - {fileID: 1756477555}
   m_Father: {fileID: 27404534}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -6066,6 +6069,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c762d310cd82144919c569a3bbee7a2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  victoryPanel: {fileID: 1756477558}
   monsters: []
   players: []
   diedEnemies: []
@@ -11476,6 +11480,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   title: Physical Defense
   description: Reduce attacks done
+  type: 4
   isPercentage: 0
 --- !u!1 &545934915
 GameObject:
@@ -13629,6 +13634,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   title: Strength
   description: Increase attack, critical damage
+  type: 0
   isPercentage: 0
 --- !u!222 &634407925
 CanvasRenderer:
@@ -14062,8 +14068,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b143b805f62d44e568ab97c3491bed4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  title: Magic
+  title: Magic Damage
   description: The base damage of a magical damage skill can do
+  type: 3
   isPercentage: 0
 --- !u!1 &664009304
 GameObject:
@@ -17575,7 +17582,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -78.1}
+  m_AnchoredPosition: {x: 0, y: -6.899994}
   m_SizeDelta: {x: -8, y: 66}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &813187021
@@ -18791,8 +18798,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b143b805f62d44e568ab97c3491bed4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  title: Reduce magical damage received
-  description: 
+  title: Magic Defense
+  description: Reduce magical damage received
+  type: 5
   isPercentage: 0
 --- !u!114 &870672609
 MonoBehaviour:
@@ -22277,115 +22285,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1094698878}
---- !u!1001 &1100977016
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 27404534}
-    m_Modifications:
-    - target: {fileID: 224346376165537176, guid: 3a3c71b33f4b144dea0a264b68006111,
-        type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 224346376165537176, guid: 3a3c71b33f4b144dea0a264b68006111,
-        type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 224346376165537176, guid: 3a3c71b33f4b144dea0a264b68006111,
-        type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 224346376165537176, guid: 3a3c71b33f4b144dea0a264b68006111,
-        type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 224346376165537176, guid: 3a3c71b33f4b144dea0a264b68006111,
-        type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 224346376165537176, guid: 3a3c71b33f4b144dea0a264b68006111,
-        type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 224346376165537176, guid: 3a3c71b33f4b144dea0a264b68006111,
-        type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 224346376165537176, guid: 3a3c71b33f4b144dea0a264b68006111,
-        type: 2}
-      propertyPath: m_RootOrder
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 224346376165537176, guid: 3a3c71b33f4b144dea0a264b68006111,
-        type: 2}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 224346376165537176, guid: 3a3c71b33f4b144dea0a264b68006111,
-        type: 2}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 224346376165537176, guid: 3a3c71b33f4b144dea0a264b68006111,
-        type: 2}
-      propertyPath: m_SizeDelta.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 224346376165537176, guid: 3a3c71b33f4b144dea0a264b68006111,
-        type: 2}
-      propertyPath: m_SizeDelta.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 224346376165537176, guid: 3a3c71b33f4b144dea0a264b68006111,
-        type: 2}
-      propertyPath: m_AnchorMin.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 224346376165537176, guid: 3a3c71b33f4b144dea0a264b68006111,
-        type: 2}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 224346376165537176, guid: 3a3c71b33f4b144dea0a264b68006111,
-        type: 2}
-      propertyPath: m_AnchorMax.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 224346376165537176, guid: 3a3c71b33f4b144dea0a264b68006111,
-        type: 2}
-      propertyPath: m_AnchorMax.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 224346376165537176, guid: 3a3c71b33f4b144dea0a264b68006111,
-        type: 2}
-      propertyPath: m_Pivot.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 224346376165537176, guid: 3a3c71b33f4b144dea0a264b68006111,
-        type: 2}
-      propertyPath: m_Pivot.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1122007284071778, guid: 3a3c71b33f4b144dea0a264b68006111, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 3a3c71b33f4b144dea0a264b68006111, type: 2}
-  m_IsPrefabParent: 0
---- !u!224 &1100977017 stripped
-RectTransform:
-  m_PrefabParentObject: {fileID: 224346376165537176, guid: 3a3c71b33f4b144dea0a264b68006111,
-    type: 2}
-  m_PrefabInternal: {fileID: 1100977016}
 --- !u!1 &1101723630
 GameObject:
   m_ObjectHideFlags: 0
@@ -23469,7 +23368,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -51.699997}
+  m_AnchoredPosition: {x: 0, y: -181}
   m_SizeDelta: {x: -40, y: 36}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &1138050145
@@ -25166,7 +25065,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1197388367
 RectTransform:
   m_ObjectHideFlags: 0
@@ -26563,6 +26462,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   title: Critical Damage
   description: Deal the increased percentage of damage when a skill do critical hit
+  type: 11
   isPercentage: 1
 --- !u!1 &1259510949
 GameObject:
@@ -28738,6 +28638,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   title: Dexterity
   description: Increase accuracy, avoidance and critical chance
+  type: 0
   isPercentage: 0
 --- !u!222 &1332016964
 CanvasRenderer:
@@ -35158,7 +35059,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   title: 
-  description: 
+  description: "\u8FF4\u907F"
+  type: 7
   isPercentage: 0
 --- !u!1 &1669854301
 GameObject:
@@ -36051,6 +35953,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   title: Critical Rate
   description: The chance to do a critical hit
+  type: 10
   isPercentage: 1
 --- !u!1 &1710256361
 GameObject:
@@ -37037,6 +36940,101 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1751743851}
+--- !u!1 &1756477554
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1756477555}
+  - component: {fileID: 1756477557}
+  - component: {fileID: 1756477556}
+  - component: {fileID: 1756477559}
+  - component: {fileID: 1756477558}
+  m_Layer: 5
+  m_Name: victory
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &1756477555
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1756477554}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 264835558}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 19}
+  m_SizeDelta: {x: 106, y: 46}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1756477556
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1756477554}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 21300000, guid: 10ccc047c6555a54c9fc99378804c05c, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+--- !u!222 &1756477557
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1756477554}
+--- !u!114 &1756477558
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1756477554}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf59c3fd8295f42b695d61697a906026, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isAnimating: 0
+  duration: 0
+  isHideStart: 0
+--- !u!225 &1756477559
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1756477554}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &1759703330
 GameObject:
   m_ObjectHideFlags: 0
@@ -37144,7 +37142,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -55.199997}
+  m_AnchoredPosition: {x: 0, y: -91}
   m_SizeDelta: {x: 0, y: 88}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1768197924
@@ -42487,7 +42485,7 @@ MonoBehaviour:
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
-    m_LineSpacing: 1
+    m_LineSpacing: 1.5
   m_Text: 
 --- !u!222 &2052347839
 CanvasRenderer:
@@ -42508,7 +42506,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefix: 
   postfix: 
-  romanChOnly: 1
+  romanChOnly: 0
   _textValue: 
   isTyping: 0
 --- !u!114 &2052347841

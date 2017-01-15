@@ -116,38 +116,32 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-	<data name="line_ch1_bw_fee_1" xml:space="preserve">
-		<value>New Value</value>
-	</data>
-	<data name="line_ch1_bw_fee_2" xml:space="preserve">
-		<value>New Value</value>
-	</data>
-	<data name="line_ch1_bw_fee_3" xml:space="preserve">
-		<value>New Value</value>
-	</data>
-	<data name="line_ch1_bw_fee_3opt1" xml:space="preserve">
-		<value>New Value</value>
-	</data>
-	<data name="line_ch1_bw_fee_3opt2" xml:space="preserve">
-		<value>New Value</value>
-	</data>
-	<data name="line_ch1_bw_fee_3opt3" xml:space="preserve">
-		<value>New Value</value>
-	</data>
-	<data name="line_ch1_bw_fee_4" xml:space="preserve">
-		<value>New Value</value>
-	</data>
-	<data name="CON" xml:space="preserve">
+	<data name="attr_CON" xml:space="preserve">
 		<value>CON</value>
 	</data>
-	<data name="DarkPaladin" xml:space="preserve">
+	<data name="attr_DEX" xml:space="preserve">
+		<value>DEX</value>
+	</data>
+	<data name="attr_INT" xml:space="preserve">
+		<value>INT</value>
+	</data>
+	<data name="attr_STR" xml:space="preserve">
+		<value>STR</value>
+	</data>
+	<data name="class_DarkPaladin" xml:space="preserve">
 		<value>DarkPaladin</value>
 	</data>
-	<data name="description_skill_dark_charge" xml:space="preserve">
-		<value>New Value</value>
+	<data name="class_Mage" xml:space="preserve">
+		<value>Mage</value>
 	</data>
-	<data name="DEX" xml:space="preserve">
-		<value>DEX</value>
+	<data name="class_Paladin" xml:space="preserve">
+		<value>Paladin</value>
+	</data>
+	<data name="class_Priest" xml:space="preserve">
+		<value>Priest</value>
+	</data>
+	<data name="class_TaoistPriest" xml:space="preserve">
+		<value>TaoistPriest</value>
 	</data>
 	<data name="event_enemy_ogre" xml:space="preserve">
 		<value>New Value</value>
@@ -172,6 +166,27 @@
 	</data>
 	<data name="line_ch0_lord_of_soil_3" xml:space="preserve">
 		<value>line_ch0_lord_of_soil_3</value>
+	</data>
+	<data name="line_ch1_bw_fee_1" xml:space="preserve">
+		<value>New Value</value>
+	</data>
+	<data name="line_ch1_bw_fee_2" xml:space="preserve">
+		<value>New Value</value>
+	</data>
+	<data name="line_ch1_bw_fee_3" xml:space="preserve">
+		<value>New Value</value>
+	</data>
+	<data name="line_ch1_bw_fee_3opt1" xml:space="preserve">
+		<value>New Value</value>
+	</data>
+	<data name="line_ch1_bw_fee_3opt2" xml:space="preserve">
+		<value>New Value</value>
+	</data>
+	<data name="line_ch1_bw_fee_3opt3" xml:space="preserve">
+		<value>New Value</value>
+	</data>
+	<data name="line_ch1_bw_fee_4" xml:space="preserve">
+		<value>New Value</value>
 	</data>
 	<data name="line_ch1_bw_plot1_1" xml:space="preserve">
 		<value>line_ch1_bw_plot1_1</value>
@@ -203,20 +218,11 @@
 	<data name="line_ch1_bw_plot1_7" xml:space="preserve">
 		<value>line_ch1_bw_plot1_7</value>
 	</data>
-	<data name="Mage" xml:space="preserve">
-		<value>Mage</value>
-	</data>
-	<data name="Paladin" xml:space="preserve">
-		<value>Paladin</value>
-	</data>
-	<data name="Priest" xml:space="preserve">
-		<value>Priest</value>
-	</data>
-	<data name="revive" xml:space="preserve">
-		<value>skill</value>
-	</data>
 	<data name="skill_dark_charge" xml:space="preserve">
 		<value>skill</value>
+	</data>
+	<data name="skill_dark_charge_description" xml:space="preserve">
+		<value>New Value</value>
 	</data>
 	<data name="skill_dark_shield" xml:space="preserve">
 		<value>skill</value>
@@ -224,40 +230,40 @@
 	<data name="skill_dark_slash" xml:space="preserve">
 		<value>skill</value>
 	</data>
+	<data name="skill_divine_invincible" xml:space="preserve">
+		<value>skill</value>
+	</data>
 	<data name="skill_divine_shield" xml:space="preserve">
 		<value>skill</value>
 	</data>
-	<data name="skill_elemental_blessing" xml:space="preserve">
+	<data name="skill_holy_heal" xml:space="preserve">
 		<value>skill</value>
 	</data>
-	<data name="skill_fireball" xml:space="preserve">
+	<data name="skill_holy_ray" xml:space="preserve">
 		<value>skill</value>
 	</data>
-	<data name="skill_firestorm" xml:space="preserve">
+	<data name="skill_holy_revive" xml:space="preserve">
 		<value>skill</value>
 	</data>
-	<data name="skill_heal" xml:space="preserve">
+	<data name="skill_mage_elemental_blessing" xml:space="preserve">
 		<value>skill</value>
 	</data>
-	<data name="skill_holyray" xml:space="preserve">
+	<data name="skill_mage_fireball" xml:space="preserve">
 		<value>skill</value>
 	</data>
-	<data name="skill_invincible" xml:space="preserve">
+	<data name="skill_mage_firestorm" xml:space="preserve">
 		<value>skill</value>
 	</data>
-	<data name="skill_paralyze_talisman" xml:space="preserve">
+	<data name="skill_talisman_paralyze" xml:space="preserve">
 		<value>skill</value>
 	</data>
-	<data name="skill_storm_talisman" xml:space="preserve">
+	<data name="skill_talisman_storm" xml:space="preserve">
 		<value>New Value</value>
 	</data>
-	<data name="skill_thunder_talisman" xml:space="preserve">
+	<data name="skill_talisman_thunder" xml:space="preserve">
 		<value>skill</value>
 	</data>
-	<data name="STR" xml:space="preserve">
-		<value>STR</value>
-	</data>
-	<data name="TaoistPriest" xml:space="preserve">
-		<value>TaoistPriest</value>
+	<data name="skill_divine_smash" xml:space="preserve">
+		<value>New Value</value>
 	</data>
 </root>

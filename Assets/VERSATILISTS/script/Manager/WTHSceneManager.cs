@@ -9,15 +9,13 @@ public class WTHSceneManager : Singleton<WTHSceneManager> {
 		//SceneManager.activeSceneChanged+=ActiveSceneChanged;
 		
 	}
-#if UNITY_EDITOR
-
-#else
+	public bool Release = true;
 	void Start()
 	{
-	
-		BackToMainMenu();
+		if(Release == true)
+			BackToMainMenu();
 	}
-#endif
+
 	//bool isStart = false;
 
 	
