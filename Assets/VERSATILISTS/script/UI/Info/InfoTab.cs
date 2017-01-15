@@ -25,7 +25,6 @@ public class InfoTab :AnimatableCanvas{
 			return;
 		foreach(var d in displayables)
 		{
-			print("show:"+d);
 			d.Show();
 		}
 		

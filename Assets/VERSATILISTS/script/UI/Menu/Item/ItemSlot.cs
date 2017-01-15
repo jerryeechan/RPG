@@ -35,7 +35,6 @@ namespace com.jerrch.rpg
 				{
 					if(numText)
 						numText.text = item.bindData.num.ToString();
-					
 				}
 				else
 				{
@@ -112,7 +111,7 @@ namespace com.jerrch.rpg
 		}
 		public void deleteItem()
 		{
-			bindItem.bindData.deleteData();
+			
 			bindItem = null;
 		}
 		public virtual void OnPointerClick(PointerEventData eventData)

@@ -36,7 +36,6 @@ public class DialoguePlayer : MonoBehaviour {
 	}
 	public void init()
 	{
-		
 		iconSpr.enabled = false;
 		npcRenderer.sprite = null;
 		targetNameTextUI.text = "";

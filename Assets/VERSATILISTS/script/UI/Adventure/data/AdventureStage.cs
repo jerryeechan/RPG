@@ -22,7 +22,9 @@ public class AdventureStage : MonoBehaviour {
 	public AdventureScene getScene()
 	{
 		//TODO: when stage Event count to a certain level, get special scene,
-		AdventureScene scene;
+		var scene = getSpecialScene();
+		return scene;
+		//AdventureScene scene;
 		if(stageEventCount == 0)
 		{
 			stageEventCount++;

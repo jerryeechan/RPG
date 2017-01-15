@@ -114,10 +114,10 @@ namespace com.jerrch.rpg{
 			} 
 			return enemies;
 		}
-		public Character generateCharacter(string name,string UITemplateID)
+		public Character generateCharacter(string UITemplateID)
 		{
 			Character ch = GameObject.Instantiate(chTemplate);
-
+			
 			CharacterRenderer chRend = null;
 			if(UITemplateID!="")
 			{
@@ -139,7 +139,6 @@ namespace com.jerrch.rpg{
 			chRend.bindCh = ch;
 			ch.chRenderer = chRend;
 			
-			ch.name = name;
 			//chDict.Add(name,ch);
 			return ch;
 		}

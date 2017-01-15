@@ -48,10 +48,10 @@ public class ClassesData : MonoBehaviour {
 		
 		chData.classID = classID;
 		//TODO: temp fixed as first
-		chData.helmet = new EquipData(helmetIDs[0]);
-		chData.armor = new EquipData(armorIDs[0]);
-		chData.weapon = new EquipData(weaponIDs[0]);
-		chData.shield = new EquipData(shieldIDs[0]);
+		chData.helmet = new EquipData(helmetIDs[0],0);
+		chData.armor = new EquipData(armorIDs[0],0);
+		chData.weapon = new EquipData(weaponIDs[0],0);
+		chData.shield = new EquipData(shieldIDs[0],0);
 		chData.actionDatas = new List<ActionData>();
 
 		var actionIDs = getRandomActionIDs();

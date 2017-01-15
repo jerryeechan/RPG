@@ -14,6 +14,7 @@ public class EquipSlot : ItemSlot {
 	{
 		base.setItem(item);
 		_bindEquip = item as Equip;
+		
 		if(item==null)
 		{
 			itemImage.sprite = slotSprite;

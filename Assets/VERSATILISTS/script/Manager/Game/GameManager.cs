@@ -86,7 +86,7 @@ namespace com.jerrch.rpg
 				case TestMode.Stat:
 				break;
 			}
-			
+			ShopUIManager.instance.init();
 		}
 		
 		//load new characters

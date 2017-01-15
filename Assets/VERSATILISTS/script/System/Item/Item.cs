@@ -5,15 +5,22 @@ public class Item : MonoBehaviour {
 
 	[HideInInspector]
 	public ItemData bindData;
+//TODO:	remove bindData??
+
 	//public ItemUI bindUI;
 	public ItemGraphicAsset asset;
-
 	public string description;
+	public string id;
 	public string itemName;
 	public string recommendationText;
 	public int price;
 	public bool stackable = true;
 	public ItemType itemType;
+
+	void OnValidate()
+	{
+		id = name;
+	}
 	
 	protected virtual void Reset()
 	{
@@ -29,6 +36,8 @@ public class Item : MonoBehaviour {
 		DataManager.instance.curPlayerData.gold += price;
 		remove();
 	}
+
+	//TODO ??
 	public virtual void remove()
 	{
 		if(stackable)
@@ -36,9 +45,13 @@ public class Item : MonoBehaviour {
 			bindData.num--;
 			if(bindData.num == 0)
 			{
-				DataManager.instance.curPlayerData.itemDataList.Remove(bindData);
+				//DataManager.instance.curPlayerData[bindData];
 			}
 		}
+	}
+	public ItemData gerateData()
+	{
+		return new ItemData(id,asset.id);
 	}
 
 

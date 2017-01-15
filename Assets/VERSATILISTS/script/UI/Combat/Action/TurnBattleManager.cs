@@ -269,13 +269,24 @@ public class TurnBattleManager : Singleton<TurnBattleManager> {
 	void EndofBattle()
 	{
 		print("End of Battle");
+		addExp();
+		
+	}
+
+	void addExp()
+	{
+		BattleChUIManager.instance.allGetExp(60,Exit);
+	}
+
+	void Exit()
+	{
 		foreach(var ch in players)
 		{
 			ch.BattleEnd();
 		}
 		GameManager.instance.AdventureMode();
-			AdventureManager.instance.NextEvent();
-			Destroy(stageTransform.gameObject);
+		AdventureManager.instance.NextEvent();
+		Destroy(stageTransform.gameObject);
 	}
 	
 }

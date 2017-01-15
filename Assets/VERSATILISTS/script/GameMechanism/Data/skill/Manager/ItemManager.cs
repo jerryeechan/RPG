@@ -26,11 +26,11 @@ public class ItemManager : Singleton<ItemManager> {
 
 		foreach(var itemGraphic in itemGraphicTemplates)
 		{
-			itemGraphicDict.Add(itemGraphic.name,itemGraphic);
+			itemGraphicDict.Add(itemGraphic.id,itemGraphic);
 		}
 		foreach(var item in itemTemplates)
 		{
-			itemDict.Add(item.name,item);
+			itemDict.Add(item.id,item);
 		}
 	}
 	
@@ -42,16 +42,35 @@ public class ItemManager : Singleton<ItemManager> {
 	}
 	public Item getItem(ItemData data)
 	{
-		Item item = Instantiate(itemDict[data.id]);
-		item.bindData = data;
-		item.asset = itemGraphicDict[data.imageID];
-		return item;
+		if(itemDict.ContainsKey(data.id))
+		{
+			Item item = itemDict[data.id];
+			//item.bindData = data;
+			item.asset = itemGraphicDict[data.imageID];
+			return item;	
+		}
+		else{
+			Debug.LogError("Item Key not found"+data.id);
+			return null;
+		}
 	} 
 	public void playerGetItem(Item item)
 	{
-		ItemData data = new ItemData(item.name,item.asset.name);
-		DataManager.instance.curPlayerData.itemDataList.Add(data);
-		item.bindData = data;
+		switch(item.itemType)
+		{
+			case ItemType.Equip:
+				Equip eq = item as Equip;
+				//EquipData equipData = eq.gerateData();
+				DataManager.instance.curPlayerData.addEquip(eq.gerateData());
+				
+				//eq.bindData = equipData;
+			break;
+			case ItemType.Consume:
+				//ItemData itemData = 
+				DataManager.instance.curPlayerData.addItem(item.gerateData());
+				//item.bindData = itemData;
+			break;
+		}
 	}
 	public List<Item> generateShopItem(int level)
 	{
@@ -72,8 +91,23 @@ public class ItemManager : Singleton<ItemManager> {
 	[SerializeField]
 	//List<DropRate<ItemData>> shopItemTemplatesLevel1;
 	List<ItemDropRate> shopItemTemplatesLevel1;
-	[SerializeField]
-	List<DropRate<EquipData>> shoEquipTemplatesLevel1;
+
+	public List<Item> generateShopItem(List<ItemDropRate> templates)
+	{
+		//TODO: level for different item set
+		List<Item> items = new List<Item>();
+		//int totalNum = Random.Range(4,16);
+		foreach (var itemDropRate in templates)
+		{
+			if(itemDropRate.dropTest())
+			{
+				items.Add(getItem(itemDropRate.data));
+			}
+		}
+		return items;
+	}
+	
+	
 }
 
 [System.SerializableAttribute]
@@ -84,6 +118,7 @@ public class DropRate<T>
 	public bool dropTest()
 	{
 		float r = Random.Range(0.0f,1.0f);
+		Debug.Log("rate:"+rate+"random:"+r);
 		if(rate >= r)
 		{
 			return true;

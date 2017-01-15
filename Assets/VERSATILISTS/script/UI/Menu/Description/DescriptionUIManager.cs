@@ -11,6 +11,12 @@ public class DescriptionUIManager : Singleton<DescriptionUIManager> {
 		rect = GetComponent<RectTransform>();
 		//testBound();
 	}
+
+	public void showDescribable(IDescribable element)
+	{
+		nameText.text = element.title();
+		descriptionText.text = element.description();
+	}
 	public void showItem(Item item)
 	{
 		if(item)
@@ -53,4 +59,9 @@ public class DescriptionUIManager : Singleton<DescriptionUIManager> {
 	Vector3 top;
 	Vector3 bottom;
 	*/
+}
+
+public interface IDescribable{
+	string description();
+	string title();
 }

@@ -31,9 +31,11 @@ public class AdventureOptionDisplayer : AdventureOptionBtn {
     }
 	public void setOption(Item item)
 	{
+
+
 		this.item = item;
 		titleText.text = item.itemName;
-		icon.sprite = item.asset.iconSprite;
+		
 		switch(item.itemType)
 		{
 			case ItemType.Equip:
@@ -41,9 +43,10 @@ public class AdventureOptionDisplayer : AdventureOptionBtn {
 				detailText.text = "Lv:";
 				descriptionText.text = equip.description+equip.getEffectString();
 				requirementText.text = equip.getRequirementString();
+				icon.sprite = equip.bindGraphic.iconSprite;
 			break;
 			case ItemType.Consume:
-				
+				icon.sprite = item.asset.iconSprite;
 				detailText.text = "x"+item.bindData.num;
 				descriptionText.text = item.description;
 			break;

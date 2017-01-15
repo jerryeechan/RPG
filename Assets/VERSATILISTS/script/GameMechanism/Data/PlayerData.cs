@@ -6,7 +6,29 @@ public class PlayerData{
 	public List<CharacterData> chData;
 	
 	//public CharacterData curChData;
-	public List<ItemData> itemDataList = new List<ItemData>();
+	public ItemData[] itemDataList = new ItemData[10];
+	public EquipData[] equipDataList = new EquipData[10];
+	bool addToFirstEmpty<T>(T[] array,T element)
+	{
+		for(int i=0;i<array.Length;i++)
+		{
+			if(array[i]==null)
+			{
+				array[i] = element;
+				return true;
+			}
+		}
+		return false;
+	}
+	public bool addItem(ItemData item)
+	{
+		return addToFirstEmpty<ItemData>(itemDataList,item);
+	}
+	public bool addEquip(EquipData item)
+	{
+		return addToFirstEmpty<EquipData>(equipDataList,item);
+	}
+
 	public List<ActionData> actionDataList;
 	public int gold;
 	

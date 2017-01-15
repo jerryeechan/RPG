@@ -2,7 +2,9 @@
 using System.Collections;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
-public class CharacterPropertyUI :MonoBehaviour,IPointerEnterHandler,IPointerExitHandler{
+using System;
+
+public class CharacterPropertyUI :MonoBehaviour,IPointerEnterHandler,IPointerExitHandler,IDescribable{
 
 	public string title;
 	public string description;
@@ -22,7 +24,6 @@ public class CharacterPropertyUI :MonoBehaviour,IPointerEnterHandler,IPointerExi
 			vText = ""+(int)(v*100)+"%";
 		
 		valueText.text = vText; 
-		
 	}
 	public void OnPointerEnter(PointerEventData eventData)
 	{
@@ -32,4 +33,14 @@ public class CharacterPropertyUI :MonoBehaviour,IPointerEnterHandler,IPointerExi
 	{
 		DescriptionUIManager.instance.hide();
 	}
+
+    string IDescribable.description()
+    {
+		return description;
+    }
+
+    string IDescribable.title()
+    {
+        return title;
+    }
 }

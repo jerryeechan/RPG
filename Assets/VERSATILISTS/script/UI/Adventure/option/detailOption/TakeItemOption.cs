@@ -8,8 +8,8 @@ public class TakeItemOption :AdventureOption {
 		print(item);
 		//if(item==null)
 		//	item = RewardManager.instance.getRewards("default");
-
-		ItemUIManager.instance.pickUpItem(item,1);
+		ItemManager.instance.playerGetItem(item);
+		//ItemUIManager.instance.pickUpItem(item,1);
 	}
 	public Item item;
 	public Item getItemInfo()

@@ -20,6 +20,10 @@ public class ChUIManager : MonoBehaviour {
 		
 	}
 	public Character selectedCh;
+	public void setCharacter()
+	{
+		setCharacter(selectedCh);
+	}
 	public virtual void setCharacter(Character ch)
 	{
 		selectedCh = ch;
@@ -27,6 +31,20 @@ public class ChUIManager : MonoBehaviour {
 		health.currentValue = ch.battleStat.hp.currentValue;
 		exp.bindData = ch.bindData;
 		exp.currentValue = ch.bindData.exp;
+		exp.levelText = level;
+
+		if(headIcon != null)
+		{
+			headIcon.sprite = ch.getEquip(EquipType.Helmet).bindGraphic.iconSprite;
+		}
+		if(chName != null)
+		{
+			chName.text = ch.bindData.nickName;
+		}
+		if(level != null)
+		{
+			level.text = ch.bindData.level.ToString();
+		}
 
 		
 	}

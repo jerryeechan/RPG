@@ -4,12 +4,17 @@ using UnityEngine.UI;
 using System.Collections.Generic;
 using UnityEngine.EventSystems;
 using DG.Tweening;
+using System;
+
 namespace com.jerrch.rpg
 {
-public class ItemUIManager : Singleton<ItemUIManager>,IDisplayable,IItemSlotManager {
+public class ItemUIManager : Singleton<ItemUIManager>,IDisplayable,IItemSlotManager,SwitchBtnTouchDelegate {
 	ItemSlot[] itemSlots;
 	public Image dragTempSlot;
 	public RectTransform buttonPanel;
+	[SerializeField]
+	SwitchBtnPanel btnPanel;
+	
 	void Awake()
 	{
 		_instance = this;
@@ -19,42 +24,71 @@ public class ItemUIManager : Singleton<ItemUIManager>,IDisplayable,IItemSlotMana
 			itemSlots[i].index = i;
 			itemSlots[i].manager = this;
 		}
-
+		
 		dragTempSlot = transform.Find("dragTempSlot").GetComponent<Image>();
+		btnPanel.switchDelegate = this;
 	}
 	void Start()
 	{
 		Show();
 	}
+
+	[SerializeField]
+	
 	public void Show()
 	{
 		loadItems(DataManager.instance.curPlayerData.itemDataList);
+		//loadEquips(DataManager.instance.curPlayerData.equipDataList);		
+	}
+
+	public void switchBtnTouched(int index)
+	{
+		if(index == 0)
+		{
+			loadEquips(DataManager.instance.curPlayerData.equipDataList);
+		}
+		else if(index == 1)
+		{
+			loadItems(DataManager.instance.curPlayerData.itemDataList);
+		}
 	}
 	public void Hide()
 	{
 
 	}
-	public void loadItems(List<ItemData> itemList)
+	public void loadEquips(EquipData[] equipList)
 	{
-		int i=0;
-		if(itemList!=null)
-		{	
-			foreach(var itemData in itemList)
-			{
-				Item item = ItemManager.instance.getItem(itemData);
-				//item.transform.SetParent(saveTransform);
-				setItem(item,i);
-				i++;
-			}
-		}
-		for(;i<itemSlots.Length;i++)
+		for (int i = 0; i < equipList.Length; i++)
 		{
-			setItem(null,i);
+			setItem(equipList[i],i);
+		}
+
+	}
+	public void loadItems(ItemData[] itemList)
+	{
+		
+		for (int i = 0; i < itemList.Length; i++)
+		{
+			setItem(itemList[i],i);	
 		}
 	}
-	public void setItem(Item item,int slotIndex)
+	public void setItem(ItemData itemData,int slotIndex)
 	{
-		itemSlots[slotIndex].bindItem = item;
+		if(itemData==null)
+		{
+			itemSlots[slotIndex].bindItem = null;
+		}
+		else
+		{
+			EquipData eq = itemData as EquipData;
+			if(eq!=null)
+			{
+				itemSlots[slotIndex].bindItem =eq.getItem();	
+			}
+			else
+				itemSlots[slotIndex].bindItem = itemData.getItem();
+		}
+		
 	}
 	int findNextEmptySlot()
 	{
@@ -96,6 +130,8 @@ public class ItemUIManager : Singleton<ItemUIManager>,IDisplayable,IItemSlotMana
 		rectT.anchoredPosition+=d;
 	}
 	
+	//TODO refactor switch tab (seperate item and equip behavior);
+	//TODO: maybe: ItemDataHolder, eaiser to switch?????
 	public void itemOnDrop(ItemSlot dropSlot)
 	{
 		switch(draggingSlot.slotType)
@@ -115,7 +151,9 @@ public class ItemUIManager : Singleton<ItemUIManager>,IDisplayable,IItemSlotMana
 					//is a equipslot, and the equip are same part
 					if((draggingItem as Equip).equipType == (dropSlot as EquipSlot).equipType)
 					{
-						
+						//wear
+						GameManager.instance.currentCh.wear(draggingItem as Equip);
+						DataManager.instance.curPlayerData.equipDataList[draggingSlot.index] = (dropSlot._bindItem as Equip).gerateData();
 						dropSuccess = true;
 					}
 				}
@@ -137,7 +175,6 @@ public class ItemUIManager : Singleton<ItemUIManager>,IDisplayable,IItemSlotMana
 			draggingSlot.bindItem = dropSlot.bindItem;
 			dropSlot.bindItem = draggingItem;
 		}
-		
 	}
 	public bool itemEndDrag()
 	{	
@@ -225,6 +262,7 @@ public class ItemUIManager : Singleton<ItemUIManager>,IDisplayable,IItemSlotMana
 		}
 		return null;
 	}
+	/*
 	public void pickUpItem(Item item,int amount = 1)
 	{
 		if(item.stackable)
@@ -261,7 +299,7 @@ public class ItemUIManager : Singleton<ItemUIManager>,IDisplayable,IItemSlotMana
 			setItem(item,index);
 			return true;
 		}
-	}
+	}*/
 
 	public void sell()
 	{
@@ -273,6 +311,8 @@ public class ItemUIManager : Singleton<ItemUIManager>,IDisplayable,IItemSlotMana
 	{
 		
 	}
-}
 
+       
+    }
+	
 }

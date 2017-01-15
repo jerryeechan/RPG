@@ -148,16 +148,43 @@ namespace com.jerrch.rpg
 			
 			chRenderer.syncAnimation();
 		}
+		
+		
 		public void wear(Equip equip)
 		{
-//			print("wear:"+equip.name);
+			if(equip == null)
+			{
+				Debug.LogError("null equip?");
+				return ;
+			}	
+			
 			equip.transform.SetParent(transform.Find("Equips"));
-			equipsDict.Add(equip.equipType,equip);
+			if(equipsDict.ContainsKey(equip.equipType))
+			{
+				//Take off the wearing same equip
+				takeOff(equip.equipType);
+				equipsDict[equip.equipType] = equip;
+			}
+			else
+			{
+				equipsDict.Add(equip.equipType,equip);
+			}
+			
 			foreach(SkillEffect effect in equip.effects)
 			{
 				effect.ApplyOn(equipStat);
 			}
+			equip.bindCh = this;
 			chRenderer.wearEquip(equip);
+		}
+		public void takeOff(EquipType type)
+		{
+			var lastEquip = equipsDict[type];
+			foreach(SkillEffect effect in lastEquip.effects)
+			{
+				effect.RemoveEffect();
+				//effect.ApplyOn(equipStat);
+			}
 		}
 		public void updateRenderer()
 		{
@@ -198,14 +225,25 @@ namespace com.jerrch.rpg
 					effect.ApplyOn(battleStat);
 			}
 		}
+		public int getLevelFullExp(int level)
+		{
+			return level*50;
+		}
 		public void getExp(int val)
 		{
 			bindData.exp+=val;
+			int fullexp = getLevelFullExp(bindData.level);
+			if(bindData.exp>fullexp)
+			{
+				bindData.exp -= fullexp;
+				levelUp();
+			}
 		}
 		public void levelUp()
 		{
 			bindData.skillPoints+=1;
 			bindData.abilityPoints+=3;
+			bindData.level++;
 		}
 
 		public void die()
@@ -214,7 +252,7 @@ namespace com.jerrch.rpg
 			if(side == CharacterSide.Enemy)
 			{
 				//RandomBattleRound.instance.EnemyDie(this);
-				BattleChUIManager.instance.allGetExp(bindData.exp);
+				//BattleChUIManager.instance.allGetExp(bindData.exp);
 			}
 			else
 			{

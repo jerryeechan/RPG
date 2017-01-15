@@ -11,8 +11,8 @@ public class ItemData{
 	public string id;
 	public string imageID;
 	public int num = 1;
-	public void deleteData()
-	{
-		DataManager.instance.curPlayerData.itemDataList.Remove(this);
+
+	public Item getItem(){
+		return ItemManager.instance.getItem(this);
 	}
 }

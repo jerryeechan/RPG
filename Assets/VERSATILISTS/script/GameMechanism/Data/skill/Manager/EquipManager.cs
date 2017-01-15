@@ -20,14 +20,29 @@ public class EquipManager :Singleton<EquipManager> {
 
 		foreach(var eqG in equipGraphicList)
 		{
-			equipGraphicDict.Add(eqG.name,eqG);
+			if(equipGraphicDict.ContainsKey(eqG.name))
+			{
+				print("Equip exist:"+eqG.name);
+			}
+			else
+				equipGraphicDict.Add(eqG.name,eqG);
 		}
 	}
-	public Equip getEquip(string name,string imageID)
+	public Equip getEquip(ItemData data)
 	{
-		if(equipDict.ContainsKey(name))
+		if(data == null)
 		{
-			Equip eq = Instantiate(equipDict[name]);
+			return null;
+		}
+		else
+			return getEquip(data.id,data.imageID);
+	}
+	public Equip getEquip(string id,string imageID)
+	{
+		if(equipDict.ContainsKey(id))
+		{
+			//TODO: may not need Instantiate
+			Equip eq = Instantiate(equipDict[id]);
 			if(equipGraphicDict.ContainsKey(imageID))
 			{
 				eq.bindGraphic = equipGraphicDict[imageID];
@@ -36,7 +51,10 @@ public class EquipManager :Singleton<EquipManager> {
 			return eq;
 		}
 		else
+		{
+			Debug.LogError("No equip daata"+id);
 			return null;
+		}	
 	}
 	public Equip getEquipFromData(EquipData data)
 	{
@@ -60,5 +78,28 @@ public class EquipManager :Singleton<EquipManager> {
 		//for random stat
 		return null;
 	}
+
+	public List<Item> generateShopEquip(int level)
+	{
+		//TODO
+		return generateShopEquip(shopEquipTemplatesLevel1);
+	}
+
+	public List<Item> generateShopEquip(List<ItemDropRate> templates)
+	{
+		List<Item> items = new List<Item>();
+		int totalNum = Random.Range(4,16);
+		foreach (var itemDropRate in templates)
+		{
+			if(itemDropRate.dropTest())
+			{
+				items.Add(getEquip(itemDropRate.data));
+			}
+		}
+		return items;
+	}
+
+	[SerializeField]
+	List<ItemDropRate> shopEquipTemplatesLevel1;
 	 
 }

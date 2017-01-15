@@ -55,10 +55,13 @@ public class CharacterData:StringfyProperty{
 		equipDatas[1] = weapon;
 		equipDatas[2] = shield;
 		equipDatas[3] = armor;	
-		Character ch = CharacterManager.instance.generateCharacter(name,UITemplateID);
+		Character ch = CharacterManager.instance.generateCharacter(UITemplateID);
+		ch.name = nickName;
 		//foreach()
 		//actionDatas[i]
 		ch.bindData = this;
+		abilityPoints = 5;
+		skillPoints = 3;
 		ch.init(genStat(),genEquips(),ActionManager.instance.getActions(actionDatas));
 		
 		return ch;
@@ -76,7 +79,7 @@ public class CharacterData:StringfyProperty{
 
 		foreach(EquipData eqData in equipDatas)
 		{
-		   	Equip eq = eqData.genEquip();
+		   	Equip eq = eqData.getItem();
 			if(eq)
 				equips.Add(eq);
 		}

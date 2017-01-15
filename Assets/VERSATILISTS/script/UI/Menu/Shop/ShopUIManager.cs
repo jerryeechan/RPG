@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using com.jerrch.rpg;
 using DG.Tweening;
-public class ShopUIManager : Singleton<ShopUIManager> ,IItemSlotManager{
+public class ShopUIManager : SingletonCanvas<ShopUIManager> ,IItemSlotManager{
 
 	[SerializeField]
 	ItemSlot slotTemplate;
@@ -24,31 +24,38 @@ public class ShopUIManager : Singleton<ShopUIManager> ,IItemSlotManager{
 	HandButton buyButton;
 //setup
 	
-	void Awake()
+	protected override void Awake()
 	{
+		base.Awake();
 		generateSlots();
 	}
-	void Start()
-	{
-		init();
-	}
+	
 
+	int currentSlotIndex = 0;
 	public void init()
 	{
+		currentSlotIndex = 0;
 		setItems(ItemManager.instance.generateShopItem(0));
+		setItems(EquipManager.instance.generateShopEquip(0));
+		setNullItem();
 		itemSlotTouched(0);
 	}
 
 	void setItems(List<Item> items)
 	{
-		int i;
-		for (i = 0; i < items.Count; i++)
+		//int stop = currentSlotIndex + items.Count;
+		foreach(var item in items)
 		{
-			setItemToSlot(slots[i],items[i]);
+			setItemToSlot(slots[currentSlotIndex],item);
+			currentSlotIndex++;
 		}
-		for(;i<slots.Count;i++)
+	}
+	void setNullItem()
+	{
+		print(currentSlotIndex);
+		for(;currentSlotIndex<slots.Count;currentSlotIndex++)
 		{
-			setItemToSlot(slots[i],null);
+			setItemToSlot(slots[currentSlotIndex],null);
 		}
 	}
 	protected void setItemToSlot(ItemSlot slot,Item item)
@@ -59,11 +66,11 @@ public class ShopUIManager : Singleton<ShopUIManager> ,IItemSlotManager{
 		//override
 		if(item==null)
 		{
-			slot.priceText.GetComponentInChildren<Image>().gameObject.SetActive(false);	
+			//slot.priceText.GetComponentInChildren<Image>().gameObject.SetActive(false);	
 		}
 		else
 		{
-			slot.priceText.GetComponentInChildren<Image>().gameObject.SetActive(true);
+			//slot.priceText.GetComponentInChildren<Image>().gameObject.SetActive(true);
 		}
 	}
 	
@@ -76,7 +83,7 @@ public class ShopUIManager : Singleton<ShopUIManager> ,IItemSlotManager{
 			for(int i=0;i<4;i++)
 			{
 				var newSlot = Instantiate(slotTemplate);
-				newSlot.transform.SetParent(transform);
+				newSlot.transform.SetParent(transform.Find("shopbkg"));
 				newSlot.GetComponent<RectTransform>().anchoredPosition = new Vector2(3+26*i,-3-32*j);
 				newSlot.index = id;
 				newSlot.manager = this;
@@ -119,13 +126,11 @@ public class ShopUIManager : Singleton<ShopUIManager> ,IItemSlotManager{
 				buyButton.interactable = false;
 			}
 		}
-		
-		
 	}
 	void setIndicator(int index)
 	{
 		indicator.GetComponent<RectTransform>().DOAnchorPos(slots[index].GetComponent<RectTransform>().anchoredPosition,0.2f);
 	}
 	
-
+	
 }

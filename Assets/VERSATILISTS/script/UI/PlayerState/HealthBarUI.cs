@@ -19,13 +19,13 @@ public class HealthBarUI : MonoBehaviour {
 	}
 
 
-	public virtual void addValue(int v)
+	public virtual void addValue(int v,TweenCallback complete)
 	{
 		int oldValue = curValue;
 		setValue(v);
-		animatefillBar();
-		if(text)
-			text.DOValue(oldValue,curValue);
+		animatefillBar(complete);
+		//if(text)
+		//	text.DOValue(oldValue,curValue);
 	}
 	public virtual int currentValue
 	{
@@ -67,8 +67,8 @@ public class HealthBarUI : MonoBehaviour {
 	{
 		fillImage.fillAmount = (float)curValue/fullValue;
 	}
-	protected void animatefillBar()
+	protected void animatefillBar(TweenCallback complete)
 	{
-		fillImage.DOFillAmount((float)curValue/fullValue,1);
+		fillImage.DOFillAmount((float)curValue/fullValue,1).OnComplete(complete);
 	}
 }

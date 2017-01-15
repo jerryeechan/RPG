@@ -8,6 +8,7 @@ namespace com.jerrch.rpg
 		public ActionType type;
 		public ActionDiceType diceType;
 		public Skill[] skills;
+		public string id;
 		public string description;
 		public Sprite icon;
 		public string actionAnimationID;
@@ -34,6 +35,7 @@ namespace com.jerrch.rpg
 				cd = 0;
 				//energyCost = 0;
 			}
+			id = name;
 		}
 		
 		void Awake()
@@ -50,22 +52,20 @@ namespace com.jerrch.rpg
 				//energyCost = 0;
 			}
 		}
-		int _level = 1;
+		
 		public int level{
 			get{
-				return _level;
+				return actionData.level;
 			}
 			set{
-				setLevel(_level);
+				setLevel(value);
 			}
 		}
 		void setLevel(int lv)
 		{
-			_level = lv;
+			actionData.level = lv;
 			foreach (var skill in skills)
 			{
-				print(skill);
-				print(skill.mainEffect);
 				skill.mainEffect.setLevel(lv);
 				/*
 				foreach(var effect in skill.effects)
@@ -73,6 +73,7 @@ namespace com.jerrch.rpg
 					effect.setLevel(lv);
 				}*/
 			}
+			
 		}
 		public void PassiveApply()
 		{
