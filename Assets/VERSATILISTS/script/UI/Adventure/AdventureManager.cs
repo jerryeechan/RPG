@@ -49,7 +49,7 @@ public class AdventureManager : Singleton<AdventureManager> {
 	}
 	public void PlayDialogue(AdventureDialogueData dialogue)
 	{
-		Debug.LogError("play dialogue");
+//		Debug.LogError("play dialogue");
 		currentDialogue = dialogue;
 		dialoguePanel.show();
 		dialogue.restart();
@@ -146,11 +146,9 @@ public class AdventureManager : Singleton<AdventureManager> {
 		if(currentLine == null)
 		{
 			currentLine = currentDialogue.nextLine();
-			Debug.LogError(currentLine);
 		}
 		if(currentLine == null)
 		{	
-			Debug.LogError(currentLine);
 			//temp demo solution
 			if(currentEvent.hasOption == false)
 			{
@@ -158,7 +156,6 @@ public class AdventureManager : Singleton<AdventureManager> {
 			}
 			else if(!isOptionDisplayed)
 			{
-				Debug.LogError("display option");
 				isOptionDisplayed = true;
 				switch(currentEvent.type)
 				{
@@ -185,7 +182,6 @@ public class AdventureManager : Singleton<AdventureManager> {
 			
 			if(!dialoguePlayer.testPlaying)
 			{
-				Debug.LogError("play line");
 				dialoguePlayer.PlayLine(currentLine);
 				currentLine = null;
 			}
@@ -204,7 +200,6 @@ public class AdventureManager : Singleton<AdventureManager> {
 	
 	public void encounterEvent(AdventureEvent advEvent)
 	{
-		Debug.LogError("Encounter event");
 		currentEventDone = false;
 		if(advEvent == null)
 		{
@@ -212,7 +207,7 @@ public class AdventureManager : Singleton<AdventureManager> {
 		}
 		if(advEvent.dialogue!=null&&advEvent.dialogue.lines.Count>0)
 		{
-			Debug.LogError("has event");
+//			Debug.LogError("has event");
 			switch(advEvent.type)
 			{
 				case AdventureEventType.Dialogue:

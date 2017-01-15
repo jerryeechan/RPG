@@ -35,18 +35,20 @@ public class EquipSlot : ItemSlot {
 	{
 		base.Awake();
 		slotType = ItemSlotType.Equip;
+		manager = ItemUIManager.instance;
 	}
 	
 	public override void OnPointerClick(PointerEventData eventData)
 	{
-		ItemUIManager.instance.itemTouched(this);
+		manager.itemSlotTouched(index);
+		//ItemUIManager.instance.itemTouched(this);
 		//ItemUIManager.instance.showItem(false);
 	}
 	public override void OnPointerEnter(PointerEventData eventData)
     {
 		//if(ItemUIManager.instance.selectedItem.)
-		
-        ItemUIManager.instance.OnPointerEnter(this);
+		manager.itemSlotTouched(index);
+        //ItemUIManager.instance.OnPointerEnter(this);
     }
 }
 }

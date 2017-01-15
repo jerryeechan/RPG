@@ -12,6 +12,10 @@ public class TurnBattleManager : Singleton<TurnBattleManager> {
 
 	public List<Character> monsters;
 	public List<Character> players;
+
+	public List<Character> diedEnemies;
+	public List<Character> diedPlayers;
+
 	public Character selectedPlayer;
 
 	Character randomTarget(List<Character> chs)
@@ -109,7 +113,7 @@ public class TurnBattleManager : Singleton<TurnBattleManager> {
 		{
 			players.Add(ch);
 			print(ch.name+"參戰");
-			ch.BattleStart();
+			//ch.BattleStart();
 		}
 		
 		monsters = CharacterManager.instance.loadEnemy(enemySet.getNextWave());
@@ -234,7 +238,8 @@ public class TurnBattleManager : Singleton<TurnBattleManager> {
 			var enemy = monsters[i];
 			if(enemy.isDead)
 			{
-				monsters.RemoveAt(i);
+				diedEnemies.Add(enemy);
+				monsters.Remove(enemy);
 				i--;
 			}
 		}
@@ -249,6 +254,7 @@ public class TurnBattleManager : Singleton<TurnBattleManager> {
 			var player = players[i];
 			if(player.isDead)
 			{
+				diedPlayers.Add(player);
 				players.RemoveAt(i);
 				i--;
 			}

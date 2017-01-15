@@ -9,7 +9,7 @@ public class DiceRollerAll : Singleton<DiceRollerAll> {
 	[SerializeField]
 	DiceSlot[] dices;
 	DiceRollResultDelegate diceRollDelegate;
-	int[] rollNum =  {15,21,25,30};
+	int[] rollNum =  {15,21,26,30};
 	int enemyPos;
 	public DiceSlot[] getDices{
 		get{

@@ -7,13 +7,13 @@ namespace com.jerrch.rpg
 	#region VARIABLES
 		// Use this for initialization≥
 		
-		public CharacterData chData;
+		public CharacterData bindData;
 		public CharacterRenderer chRenderer;
 		public CharacterStat initStat;
 		public CharacterStat equipStat;
 		public CharacterStat battleStat;
 		
-		
+		public int index;
 		public bool doneActionThisRound = false;
 		Dictionary<EquipType,Equip> equipsDict; 
 
@@ -87,8 +87,6 @@ namespace com.jerrch.rpg
 			actionList[index].PassiveRemove();
 			actionList[index] = null;
 		}
-		public List<Action> actionUsed;
-		//public List<ActionData> actionDataList;
 		
 		
 		public CharacterSide side;
@@ -110,14 +108,14 @@ namespace com.jerrch.rpg
 			initStat = stat;
 			equipList = equips;
 			EquipStart();
-			actionList = actions;
-			actionUsed = new List<Action>();
+			BattleStart();
+			actionList = actions;	
 		}
 		
 		public void updateValues()
 		{
 			//int hp = equipStat.hp;
-			initStat = chData.genStat();
+			initStat = bindData.genStat();
 			//initStat.hp = hp;
 			EquipStart();
 		}
@@ -152,7 +150,7 @@ namespace com.jerrch.rpg
 		}
 		public void wear(Equip equip)
 		{
-			print("wear:"+equip.name);
+//			print("wear:"+equip.name);
 			equip.transform.SetParent(transform.Find("Equips"));
 			equipsDict.Add(equip.equipType,equip);
 			foreach(SkillEffect effect in equip.effects)
@@ -173,23 +171,6 @@ namespace com.jerrch.rpg
 				chRenderer.updateRenderer(battleStat);
 			}		
 		}
-		/*
-		public void updateDungeonUI()
-		{
-			//dungeon UI update
-			if(!chUI)
-			{
-				Debug.LogError("no chUI");
-			}
-			else
-			{
-				chUI.updateUI(battleStat);
-			}
-		}
-		public void getExp(int exp)
-		{
-			chUI.getExp(exp);
-		}*/
 		public bool isDead
 		{
 			get{ return battleStat.hp.currentValue==0?true:false;}
@@ -204,31 +185,6 @@ namespace com.jerrch.rpg
 				chRenderer.PlayCharacterAnimation(chAnim);
 			//this.myInvoke(chmove_to_action_delay,OnCharacterAnimationDone);
 		}
-		/*
-		public void useAction(Action action)
-		{
-			
-			usingAction = action.genAction();
-			actionUsed.Add(usingAction);
-			usingAction.start(null);
-			
-		}
-		public void useAction(int index)
-		{
-			if(actionList[index]==null)
-			{
-				Debug.LogError("action null");
-			}
-			useAction(actionList[index]);
-		}*/
-		
-		//animation of character's  move done
-		/*
-		void OnCharacterAnimationDone()
-		{
-			usingAction.start();
-		}*/
-		
 		
 		public void HitByEffect(SkillEffect effect)
 		{
@@ -242,12 +198,23 @@ namespace com.jerrch.rpg
 					effect.ApplyOn(battleStat);
 			}
 		}
+		public void getExp(int val)
+		{
+			bindData.exp+=val;
+		}
+		public void levelUp()
+		{
+			bindData.skillPoints+=1;
+			bindData.abilityPoints+=3;
+		}
+
 		public void die()
 		{
 			chRenderer.PlayCharacterAnimation(CharacterAnimation.die);
 			if(side == CharacterSide.Enemy)
 			{
 				//RandomBattleRound.instance.EnemyDie(this);
+				BattleChUIManager.instance.allGetExp(bindData.exp);
 			}
 			else
 			{
@@ -268,6 +235,11 @@ namespace com.jerrch.rpg
 		public Character allieTarget(SkillSpecificFilter filter)
 		{
 			return TurnBattleManager.instance.filterAllies(side,filter);
+		}
+
+		public Character diedAllie()
+		{
+			 return TurnBattleManager.instance.diedPlayers[0];
 		}
 
 		

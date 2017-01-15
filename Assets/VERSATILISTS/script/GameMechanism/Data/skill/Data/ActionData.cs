@@ -10,23 +10,16 @@ public class ActionData {
 	}
 	//the skill data of characters, can be saved and loaded
 	public string id;
+
+	public int level;
 	
-	public ActionState state = ActionState.Locked;
-	int rank;//1~6, can be put on dice
-	//int availableRank = 1;
-	
+	//public ActionState state = ActionState.Locked;
+	//int rank;//1~6, can be put on dice
 
 	public int masterLevel = 0;
-	static int masterLevelMax = 100;	
-	int genDiceAvailableMask(int from, int to)
-	{
-		int mask = 0;
-		for(int i=from;i<to;i++)
-		{
-			mask &= (1<<i);
-		}
-		return mask;
-	}
+	static int masterLevelMax = 100;
+	public ActionState state;	
+	/*
 	float masterBouns{
 		get{
 			return 1+(float)masterLevel/100;
@@ -48,7 +41,7 @@ public class ActionData {
 	{
 		Action action = ActionManager.instance.getAction(id);
 		return action;
-	}
+	}*/
 	
 }
 

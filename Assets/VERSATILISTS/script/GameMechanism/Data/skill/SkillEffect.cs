@@ -10,7 +10,6 @@ public class SkillEffect : MonoBehaviour {
 	public EffectType effectType;
 	
 	// Use this for initialization
-	public int level = 0;
 	public int mpCost=0;
 	public int spCost=0;
 	public float duration = 1;//apply last for, at least 1
@@ -21,8 +20,10 @@ public class SkillEffect : MonoBehaviour {
 	public enum WithDependency{NONE,DamageDone,CasterHealth,TargetHealth,AllyHealth,EnemyHealth};
 	public WithDependency dependency;
 	
-	public float baseValue;
-	public float initValue;
+	[SerializeField]
+	private float baseValue;
+	[SerializeField]
+	protected float initValue;
 	[HideInInspector]
 	public float calEffectValue;
 
@@ -41,23 +42,35 @@ public class SkillEffect : MonoBehaviour {
 	protected virtual void OnValidate()
 	{
 		parentSkill = transform.parent.GetComponent<Skill>();
-		initValue = baseValue * (1+level*0.1f);
+		calInit();
+		//calLevel();
 	}
+	
 	protected virtual void Awake()
 	{
 		//setLevel(level);
 		parentSkill = transform.parent.GetComponent<Skill>();
-		initValue = baseValue * (1+level*0.1f);
 		//print(GetType().ToString());
 	}
-	public virtual void setLevel(int level)
+	protected virtual void Start()
 	{
-		hasLevelSet = true;
+		calInit();
+	}
+	public int level = 1;
+	public void setLevel(int lv)
+	{
+		level = lv;
+		calInit();
 	}
 	//public SkillType skillType;
 	
 	//public int roundLeft = 0;
 	
+	public void calInit()
+	{
+		initValue = baseValue * (1+(level-1)*0.1f);
+	}
+
 	protected Character onCh;
 	public bool FirstApply(Character ch,float acc = 100,bool avoidable = false)
 	{
@@ -170,6 +183,6 @@ public interface ISkillEffect{
 	void RemoveEffect();
 }
 
-public enum EffectRange{Target,AOE,ExceptTarget,Self,AlliesTarget,AlliesAll,RandomEnemy,RandomAll};
-public enum EffectType{Value,PositiveBuff,NegativeBuff};//Value can't be removed, only with hp, mp, sp
+public enum EffectRange{Target,AOE,ExceptTarget,Self,AlliesTarget,AlliesAll,RandomEnemy,RandomAll,DiedPlayer};
+public enum EffectType{Value,EquipEffect,PositiveBuff,NegativeBuff};//Value can't be removed, only with hp, mp, sp
 }

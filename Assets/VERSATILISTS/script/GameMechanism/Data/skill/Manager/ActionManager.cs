@@ -18,19 +18,21 @@ public class ActionManager : Singleton<ActionManager> {
 		}
 	}
 
-	public List<Action> getActions(List<string> ids)
+	public List<Action> getActions(List<ActionData> dataList)
 	{
 		List<Action> actionList = new List<Action>();
 		int i = 0;
-		foreach(var id in ids)
+		foreach(var data in dataList)
 		{
-			if(actionPool.ContainsKey(id))
+			if(actionPool.ContainsKey(data.id))
 			{
-				actionList.Add(actionPool[id]);
+				var action = Instantiate(actionPool[data.id]);
+				action.level = data.level;
+				actionList.Add(action);
 				i++;
 			}
 			else{
-				Debug.LogError(id+":Character's action does not exist anymore");
+				Debug.LogError(data.id+":Character's action does not exist anymore");
 			}
 		}
 		for(;i<action_max_num;i++)
@@ -60,7 +62,7 @@ public class ActionManager : Singleton<ActionManager> {
 		{
 			Action action = actionPool[name];
 			return action;
-		}	
+		}
 		else
 		{
 			Debug.LogError("No action:"+name);

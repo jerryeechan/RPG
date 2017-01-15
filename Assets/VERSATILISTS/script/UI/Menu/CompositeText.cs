@@ -147,28 +147,51 @@ public class CompositeText : MonoBehaviour {
 	}
 	public void DOValue(int startValue,int diff)
 	{
+		print("dovalue"+startValue+diff);
 		StopCoroutine(number(startValue,diff));
 		StartCoroutine(number(startValue,diff));
 	}
 	IEnumerator number(int startValue,int diff)
 	{
-		float inc = 1;
-		if(diff>5)
+		float inc = Mathf.Abs(diff)/diff;
+		
+		if(Mathf.Abs(diff)>1000)
 		{
-			inc = (float)diff/10;
+			inc*=7;
+		}
+		if(Mathf.Abs(diff)>30)
+		{
+			inc*=2;
 		}
 		
-		for(float i=startValue;i<=startValue+diff;i+=inc)
+		print(inc);
+		
+		float finalValue = startValue+diff;
+
+		float currentValue = startValue;
+		float incAbs = Mathf.Abs(inc);
+		//for(float i=startValue;i<=startValue+diff;i+=inc)
+		while(Mathf.Abs(finalValue-currentValue)>incAbs)
 		{
+			
+			currentValue+=inc;
 			foreach(Text t in texts)
 			{
 				string newString = "";
 					if(prefix!="")
 						newString = LanguageManager.Instance.GetTextValue(prefix);
-					newString += (int)i + LanguageManager.Instance.GetTextValue(postfix);
+					newString += (int)currentValue + LanguageManager.Instance.GetTextValue(postfix);
 					t.text = newString;
 			}
 			yield return new WaitForSeconds(0.05f);
+		}
+		foreach(Text t in texts)
+		{
+			string newString = "";
+				if(prefix!="")
+					newString = LanguageManager.Instance.GetTextValue(prefix);
+				newString += startValue+diff + LanguageManager.Instance.GetTextValue(postfix);
+				t.text = newString;
 		}
 	}
 }

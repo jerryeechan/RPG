@@ -45,13 +45,18 @@ public class ClassesData : MonoBehaviour {
 		//generate the data of new character
 		CharacterData chData = new CharacterData();
 		chData.nickName = TextTokenGenerator.instance.boyName();
-		chData.actionIDs = getRandomActionIDs();
+		
 		chData.classID = classID;
 		//TODO: temp fixed as first
 		chData.helmet = new EquipData(helmetIDs[0]);
 		chData.armor = new EquipData(armorIDs[0]);
 		chData.weapon = new EquipData(weaponIDs[0]);
 		chData.shield = new EquipData(shieldIDs[0]);
+		chData.actionDatas = new List<ActionData>();
+
+		var actionIDs = getRandomActionIDs();
+		for(int i=0;i<actionIDs.Count;i++)
+		chData.actionDatas.Add(new ActionData(actionIDs[i]));
 
 		chData.conVal = conSeed;
 		chData.dexVal = dexSeed;

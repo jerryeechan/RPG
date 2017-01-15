@@ -46,16 +46,18 @@ MonoBehaviour:
     classID: 
     level: 0
     exp: 0
-    statPoints: 0
+    abilityPoints: 0
+    skillPoints: 0
     strVal: 5
     conVal: 5
     intVal: 0
     dexVal: 10
     UITemplateID: zombie_chR
-    actionIDs:
-    - zombie_scratch
-    - zombie_scratch
-    - zombie_scratch
+    actionDatas:
+    - id: zombie_scratch
+      level: 0
+      masterLevel: 0
+      state: 0
     weapon:
       id: 
       imageID: 

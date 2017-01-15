@@ -50,6 +50,30 @@ namespace com.jerrch.rpg
 				//energyCost = 0;
 			}
 		}
+		int _level = 1;
+		public int level{
+			get{
+				return _level;
+			}
+			set{
+				setLevel(_level);
+			}
+		}
+		void setLevel(int lv)
+		{
+			_level = lv;
+			foreach (var skill in skills)
+			{
+				print(skill);
+				print(skill.mainEffect);
+				skill.mainEffect.setLevel(lv);
+				/*
+				foreach(var effect in skill.effects)
+				{
+					effect.setLevel(lv);
+				}*/
+			}
+		}
 		public void PassiveApply()
 		{
 			foreach(var skill in skills)
@@ -91,7 +115,6 @@ namespace com.jerrch.rpg
 		void PlayActionAnimation()
 		{
 			AnimationUnit a = AnimationManager.instance.getActionEffect(actionAnimationID);
-			
 			if(a)
 			{
 				print(actionAnimationID);
@@ -107,7 +130,6 @@ namespace com.jerrch.rpg
 //				Debug.LogError("no action effect:"+actionAnimationID);
 				OnActionAnimationDone();
 			}
-			
 		}
 		void OnActionAnimationDone()
 		{

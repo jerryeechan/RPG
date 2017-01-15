@@ -37,8 +37,6 @@ public class Equip:Item {
 	public void setEffect(int[] available)
 	{
 		effects = new List<SkillEffect>();
-		print(name);
-		print(available);
 		if(available!=null)
 		{
 			for(int i=0;i<available.Length;i++)

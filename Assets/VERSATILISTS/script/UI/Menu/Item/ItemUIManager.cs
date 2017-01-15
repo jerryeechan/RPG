@@ -6,7 +6,7 @@ using UnityEngine.EventSystems;
 using DG.Tweening;
 namespace com.jerrch.rpg
 {
-public class ItemUIManager : Singleton<ItemUIManager>,IDisplayable {
+public class ItemUIManager : Singleton<ItemUIManager>,IDisplayable,IItemSlotManager {
 	ItemSlot[] itemSlots;
 	public Image dragTempSlot;
 	public RectTransform buttonPanel;
@@ -17,6 +17,7 @@ public class ItemUIManager : Singleton<ItemUIManager>,IDisplayable {
 		for(int i=0;i<itemSlots.Length;i++)
 		{
 			itemSlots[i].index = i;
+			itemSlots[i].manager = this;
 		}
 
 		dragTempSlot = transform.Find("dragTempSlot").GetComponent<Image>();
@@ -42,13 +43,13 @@ public class ItemUIManager : Singleton<ItemUIManager>,IDisplayable {
 			{
 				Item item = ItemManager.instance.getItem(itemData);
 				//item.transform.SetParent(saveTransform);
-				ItemUIManager.instance.setItem(item,i);
+				setItem(item,i);
 				i++;
 			}
 		}
 		for(;i<itemSlots.Length;i++)
 		{
-			ItemUIManager.instance.setItem(null,i);
+			setItem(null,i);
 		}
 	}
 	public void setItem(Item item,int slotIndex)
@@ -61,18 +62,13 @@ public class ItemUIManager : Singleton<ItemUIManager>,IDisplayable {
 		{
 			if(itemSlots[i].bindItem==null)
 			{
-				nextEmptyIndex = i;
 				return i;
 			}
 		}
 		return -1;
 	}
 	public ItemSlot selectedSlot;
-	int nextEmptyIndex = 0;
-	public void itemTouched(ItemSlot slot)
-	{
-		selectedSlot =  slot;
-	}
+	
 	ItemSlot draggingSlot;
 	bool dropSuccess;
 	bool startDrag = false;
@@ -158,8 +154,11 @@ public class ItemUIManager : Singleton<ItemUIManager>,IDisplayable {
 	public void OnPointerEnter(ItemSlot hoverSlot)
 	{
 		
-			
 		
+	}
+	public void itemSlotTouched(int index)
+	{
+		selectedSlot =  itemSlots[index];
 	}
 	public void showItem(bool doshowButton)
 	{
@@ -168,7 +167,6 @@ public class ItemUIManager : Singleton<ItemUIManager>,IDisplayable {
 		{
 			if(selectedSlot.bindItem!=null)
 				showButton();
-		
 		}
 	}
 	
@@ -259,7 +257,7 @@ public class ItemUIManager : Singleton<ItemUIManager>,IDisplayable {
 		}
 		else
 		{
-			ItemManager.instance.createItemData(item);
+			//ItemManager.instance.createItemData(item);
 			setItem(item,index);
 			return true;
 		}

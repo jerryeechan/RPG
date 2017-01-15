@@ -105,7 +105,7 @@ public class RosterBuilder : Singleton<RosterBuilder>{
 	{
 		currentRosterButton = btn;
 		bindChData = btn.bindChData;
-		bindAction = ActionManager.instance.getActions(btn.bindChData.actionIDs)[0];
+		bindAction = ActionManager.instance.getActions(btn.bindChData.actionDatas)[0];
 	}
 	RosterButton currentRosterButton;
 	int checkedPlayerNum = 0;

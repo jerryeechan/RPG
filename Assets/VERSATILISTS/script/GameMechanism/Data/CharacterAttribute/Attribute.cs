@@ -4,7 +4,7 @@ using UnityEngine;
 [System.SerializableAttribute]
 public class Attribute : BaseAttribute {
 
-		private List<RawBonus>  _rawBonuses;
+		public List<RawBonus>  _rawBonuses;
         private List<FinalBonus> _finalBonuses;
         public int _finalValue;
          
@@ -14,17 +14,6 @@ public class Attribute : BaseAttribute {
             _rawBonuses = new List<RawBonus>();
             _finalBonuses = new List<FinalBonus>();    
             _finalValue = baseValue;
-        }
-
-        public void OneTurn()
-        {
-            foreach(var fb in _finalBonuses)
-            {
-                if(!fb.OneTurn())
-                {
-                    removeFinalBonus(fb);
-                }
-            }
         }
          
         public void addRawBonus(RawBonus bonus)
@@ -132,6 +121,17 @@ public class Attribute : BaseAttribute {
 				    return calculateValue();
 			}
         }
+        public bool randomCheck()
+        {
+            float r = Random.Range(0.0f,1.0f);
+            if(r<=finalValue)
+            {
+                return true;
+            }
+            else
+                return false;
+        }
+
         public static int operator +(Attribute a1, Attribute a2)  
         {  
             return a1.finalValue+a2.finalValue;

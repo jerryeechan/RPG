@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 namespace com.jerrch.rpg
 {
-public class EquipUIManager : MonoBehaviour,IDisplayable{
+public class EquipUIManager : MonoBehaviour,IinspectPlayerable{
 	public EquipSlot[] equipSlots;
     Dictionary<EquipType,EquipSlot> equipSlotDict;
 	void Awake()
@@ -13,14 +13,8 @@ public class EquipUIManager : MonoBehaviour,IDisplayable{
 			equipSlotDict.Add(eqslot.equipType,eqslot);
 		}
     }
-    public void Show()
-    {
-        inspectCharacter(GameManager.instance.currentCh);
-    }
-    public void Hide(){
-
-    }
-    void inspectCharacter(Character ch)
+    
+    public void inspectCharacter(Character ch)
     {
         foreach(var eqtype in Equip.AllEquipType)
 		{

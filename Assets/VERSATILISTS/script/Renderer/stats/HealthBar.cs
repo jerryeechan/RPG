@@ -24,16 +24,8 @@ public class HealthBar : MonoBehaviour {
 	public void SetFullValue(float fv)
 	{
 		fullValue = fv;
-		
 		//healthBarSpr.color = new Color32(123,195,113,255);//green
 	}
-	/*void ChangeValue(int d)
-	{
-		nowValue+=d;
-		if(nowValue>fullValue)
-			nowValue = fullValue;
-		if()
-	}*/
 	public void SetNowValue(float value)
 	{
 		nowValue = value;
@@ -52,11 +44,6 @@ public class HealthBar : MonoBehaviour {
 	self test scripts below
 	
 	*/
-	void SelfTest()
-	{
-		//for(int i=20;i>=0;i--)
-		InvokeRepeating("minus",1,0.5f);
-	}
 	int v = 20;
 	void minus()
 	{

@@ -5,10 +5,8 @@ public class SoulItem : ConsumableItem {
 
 	public override void use()
 	{
-		DataManager.instance.curPlayerData.curChData.statPoints++;
+		StatChUIManager.instance.getAbilityPoints(3);
 	}
-	public void consume()
-	{
-		
-	}
+
+	//consnum? skill points?
 }

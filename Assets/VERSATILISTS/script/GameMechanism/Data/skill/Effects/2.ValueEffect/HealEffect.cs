@@ -7,7 +7,9 @@ public class HealEffect :SkillEffect {
 	// Use this for initialization
 	public override void useBy(Character ch)
 	{
-		calEffectValue = baseValue*ch.battleStat.intAttr.finalValue;
+		int _int = ch.battleStat.intAttr.finalValue; 
+		int _con = ch.battleStat.conAttr.finalValue; 
+		calEffectValue = initValue*(_int+_con);
 	}
 	// Update is called once per frame
 	public override void ApplyOn (CharacterStat stat)

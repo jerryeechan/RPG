@@ -40,7 +40,7 @@ public class ActionPerkUI : ActionButton, IPointerEnterHandler,IPointerExitHandl
 		bindAction.actionData = data;
 		init();
 	}
-
+	
 	public void init()
 	{
 		switch(bindAction.actionData.state)

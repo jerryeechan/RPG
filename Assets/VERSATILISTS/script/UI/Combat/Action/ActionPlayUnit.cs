@@ -37,10 +37,17 @@ public class ActionPair
 	{	
 		if(!ch.isDead)
 		{
-			Action action = GameObject.Instantiate(actionTemplate);
-			action.caster = ch;
-			ch.doActionMove(action.chAnimation);
-			action.PlayAction(completeFunc);
+			if(ch.battleStat.movable.randomCheck())
+			{
+				Action action = GameObject.Instantiate(actionTemplate);
+				action.caster = ch;
+				ch.doActionMove(action.chAnimation);
+				action.PlayAction(completeFunc);
+			}			
+			else{
+				//can't move
+				Debug.Log("can't move");	
+			}
 		}
 		else
 			completeFunc();

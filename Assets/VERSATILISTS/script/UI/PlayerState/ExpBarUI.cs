@@ -2,70 +2,59 @@
 using System.Collections;
 using UnityEngine.UI;
 using DG.Tweening;
-public class ExpBarUI : MonoBehaviour {
+public class ExpBarUI : HealthBarUI {
 
-	CompositeText expText;
-	Image fillImage;
-	int fullValue;
-	int curValue;
+	CompositeText levelText;
 	//CompositeText text;
 	
-	CharacterData bindData;
-	
-	public int expValue
+	CharacterData _bindData;
+
+	public CharacterData bindData{
+		set
+		{
+			fullValue = getLevelFullExp(value.level);
+			curValue = value.exp;
+			_bindData = value;
+			fillBar();
+		}
+	}
+
+	public override void addValue(int val)
 	{
-		set{
-			if(bindData==null)
-				return;
-			
+		currentValue+=val;
+	}
+
+	public override int currentValue
+	{
+		set{			
 			if(value>=fullValue)
 			{
 				curValue = value%fullValue;
 				int levelIncrease = value/fullValue;
-				bindData.level+=levelIncrease;
+
 				fillImage.DOFillAmount(1,1).OnComplete(()=>{
 					//level up
 					fillImage.fillAmount = 0;
-					fullValue = getLevelFullExp(bindData.level);
+					fullValue = getLevelFullExp(_bindData.level);
 					fillImage.DOFillAmount((float)curValue/fullValue,1);
-					if(expText)
-						expText.text = bindData.level.ToString();
-					bindData.statPoints += 3;
+					if(levelText)
+						levelText.text = _bindData.level.ToString();
 				});
 			}
 			else if(curValue < 0)
+			{
 				curValue = 0;
+			}
 			else
 			{
 				curValue = value;
 				fillImage.DOFillAmount((float)curValue/fullValue,1);
 			}
-			
-			bindData.exp = curValue;
-			
-			//text.DOValue() = curValue.ToString();
+			_bindData.exp = curValue;
 		}
 		get{
 			return curValue;
 		}
-	}
-
-	
-
-	void Awake()
-	{
-		//text = GetComponentInChildren<CompositeText>();
-		fillImage = transform.Find("fill").GetComponent<Image>();
-		expText = GetComponentInChildren<CompositeText>();
-	}
-
-	public void init(CharacterData chData)
-	{	
-		bindData = chData;
-		fullValue = getLevelFullExp(chData.level);
-		expValue = chData.exp;
-		if(expText)
-			expText.text = chData.level.ToString();
 	}
 
 

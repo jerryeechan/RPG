@@ -10,6 +10,7 @@ public class Item : MonoBehaviour {
 
 	public string description;
 	public string itemName;
+	public string recommendationText;
 	public int price;
 	public bool stackable = true;
 	public ItemType itemType;

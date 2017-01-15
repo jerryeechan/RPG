@@ -1,23 +1,37 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using DG.Tweening;
 public class HealthBarUI : MonoBehaviour {
-	Image fillImage;
-	int fullValue = 0;
-	int curValue = 0;
+	protected Image fillImage;
+	public int fullValue = 0;
+	protected int curValue = 0;
 	CompositeText text;
 
-	public int healthValue
+	void setValue(int v)
 	{
-		set{
-			if(value>fullValue)
+		if(v>fullValue)
 				curValue = fullValue;
 			else if(curValue < 0)
 				curValue = 0;
 			else
-				curValue = value;
-			
-			fillImage.fillAmount  = (float)curValue/fullValue;
+				curValue = v;
+	}
+
+
+	public virtual void addValue(int v)
+	{
+		int oldValue = curValue;
+		setValue(v);
+		animatefillBar();
+		if(text)
+			text.DOValue(oldValue,curValue);
+	}
+	public virtual int currentValue
+	{
+		set{
+			setValue(value);
+			fillBar();
 			if(text)
 				text.text = curValue.ToString();
 		}
@@ -32,19 +46,29 @@ public class HealthBarUI : MonoBehaviour {
 		text = GetComponentInChildren<CompositeText>();
 		if(text==null)
 		{
-			Debug.LogError("HealthbarUI no text");
+			//Debug.LogError("HealthbarUI no text");
 		}
 		fillImage = transform.Find("fill").GetComponent<Image>();
 
 		if(fillImage==null)
 		{
-			Debug.LogError("HealthbarUI no fillImage");
+			Debug.LogError("barUI no fillImage");
 		}
 	}
 
 	public void init(int fullValue)
 	{
 		this.fullValue = fullValue;
-		healthValue = fullValue;
+		currentValue = fullValue;
+	}
+
+	
+	protected void fillBar()
+	{
+		fillImage.fillAmount = (float)curValue/fullValue;
+	}
+	protected void animatefillBar()
+	{
+		fillImage.DOFillAmount((float)curValue/fullValue,1);
 	}
 }

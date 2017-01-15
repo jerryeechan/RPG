@@ -10,13 +10,10 @@ public class CharacterAbilityUI : MonoBehaviour ,IPointerClickHandler{
     CompositeText text;
     void Awake()
     {   
-        text = GetComponentInChildren<CompositeText>();
+        text = transform.Find("value").GetComponent<CompositeText>();
     }
     public void updateUI(int val)
     {
-        if(!text)
-            text = GetComponentInChildren<CompositeText>();
-        //string result = labelString+":"+val;
         text.text = val.ToString();
     }
     void IPointerClickHandler.OnPointerClick(PointerEventData data)

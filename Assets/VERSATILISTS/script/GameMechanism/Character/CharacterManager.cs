@@ -33,6 +33,7 @@ namespace com.jerrch.rpg{
 			{
 				CharacterData chData = chDataList[i];
 				Character newPlayer = chData.genCharacter();
+				newPlayer.index = 0;
 				chs.Add(newPlayer);
 				//newPlayer.chUI = PlayerStateUI.instance.chUIs[i];
 				newPlayer.chRenderer.transform.position = playerChPositions[i].position;

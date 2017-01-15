@@ -18,7 +18,18 @@ public class DataManager : Singleton<DataManager> {
 		//ResetSave();
 		//SaveTemplate();
 	}
+	public static PlayerData currentData()
+	{
+		return instance.curPlayerData;
+	}
 
+	public PlayerData createPlayerData()
+	{
+		playerData[0] = new PlayerData();
+		playerData[0].gold = 60;
+		curPlayerData = playerData[0];
+		return playerData[0];
+	}
 	
 	public void newPlayerData()
 	{
@@ -52,7 +63,7 @@ public class DataManager : Singleton<DataManager> {
 		newChData.armor = armor;
 		newChData.shield = shield;
 
-		newChData.statPoints = 10;
+		newChData.abilityPoints = 10;
 
 		playerData[0].chData.Add(newChData);
 	}

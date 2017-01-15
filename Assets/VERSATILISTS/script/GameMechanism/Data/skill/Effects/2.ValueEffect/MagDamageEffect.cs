@@ -11,20 +11,14 @@ namespace com.jerrch.rpg
 		The percentage of the character's magical attack
 		
 		*/
-		public override void setLevel (int level)
-		{
-			baseValue = 100+25*level;
-			mpCost = level*2;
-			base.setLevel(level);
-		}
 		public override void useBy(Character ch)
 		{
-			casterStat = ch.battleStat;
-			calEffectValue = casterStat.magDmg.finalValue;// * baseValue;
+			base.useBy(ch);
+			calEffectValue = initValue*casterStat.magDmg.finalValue;// * baseValue;
 //			Debug.LogError(calEffectValue);
 			calEffectValue *= Random.Range(casterStat.lowestMagDmg,1);
 			//calEffectValue *= parentSkill.criticalBonus;
-			base.useBy(ch);
+			
 		}
 		public override void ApplyOn (CharacterStat stat)
 		{

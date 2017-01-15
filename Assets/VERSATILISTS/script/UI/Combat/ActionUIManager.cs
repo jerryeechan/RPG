@@ -15,7 +15,6 @@ public class ActionUIManager : Singleton<ActionUIManager> {
 		actionBtns = GetComponentsInChildren<ActionCombatButton>(false);
 		selectMask = transform.Find("selectMask").GetComponent<RectTransform>();
 		draggingActionBtn.gameObject.SetActive(false);
-		
 	}
 	void Start()
 	{

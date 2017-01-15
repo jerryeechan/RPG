@@ -14,6 +14,7 @@ public class MaxHPAttribute : DependentAttribute {
 		_finalValue = baseValue;
 		
 		// Every 5 points in dexterity adds 1 to attack speed
+		Debug.Log(conAttr);
 		_finalValue += (int)(conAttr.finalValue*2);
 			
 		applyRawBonuses();

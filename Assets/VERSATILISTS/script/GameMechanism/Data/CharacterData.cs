@@ -13,7 +13,8 @@ public class CharacterData:StringfyProperty{
 	//public Dictionary<string,int> statValues = new Dictionary<string,int>(){{"str",1},{"int",1},{"dex",1}};
 	//public SerializableDictionary<string,int> statValues;
 	
-	public int statPoints;
+	public int abilityPoints;
+	public int skillPoints;
 	public int strVal;
 	public int conVal;
 	public int intVal;
@@ -21,10 +22,9 @@ public class CharacterData:StringfyProperty{
 	
 	public string UITemplateID="player";
 	//public List<ActionData> currentActionData = new List<ActionData>();
-	public List<string> actionIDs = new List<string>();
+	//public List<string> actionIDs = new List<string>();
 	//TODO: complex with actionBundle, add feature to action of each ch.
-
-	//public List<ActionData> availableActionData = new List<ActionData>();
+	public List<ActionData> actionDatas;
 
 	public EquipData weapon; 
 	public EquipData helmet; 
@@ -54,12 +54,12 @@ public class CharacterData:StringfyProperty{
 		equipDatas[0] = helmet;
 		equipDatas[1] = weapon;
 		equipDatas[2] = shield;
-		equipDatas[3] = armor;
-		//return Character;
+		equipDatas[3] = armor;	
 		Character ch = CharacterManager.instance.generateCharacter(name,UITemplateID);
-		//statValues["str"] = 1;
-		ch.chData = this;
-		ch.init(genStat(),genEquips(),ActionManager.instance.getActions(actionIDs));
+		//foreach()
+		//actionDatas[i]
+		ch.bindData = this;
+		ch.init(genStat(),genEquips(),ActionManager.instance.getActions(actionDatas));
 		
 		return ch;
 	}

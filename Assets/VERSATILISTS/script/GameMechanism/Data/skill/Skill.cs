@@ -15,7 +15,7 @@ public class Skill : MonoBehaviour {
 	public enum SkillType{Attack,Buff,ETC};
 	public SkillEffect mainEffect;
 	public float accuracy = 1;
-	List<SkillEffect> _effects;
+	List<SkillEffect> _effects = new List<SkillEffect>();
 	
 	public List<SkillEffect> effects{get{return _effects;}}
 	Character caster;
@@ -32,7 +32,6 @@ public class Skill : MonoBehaviour {
 	public enum CastTiming{Instant,WaitSignal};
 	public CastTiming castTiming;
 	
-	public Sprite icon;
 	bool isCasting;
 	List<Character> hitTargets = new List<Character>();
 	
@@ -53,8 +52,8 @@ public class Skill : MonoBehaviour {
 	}
 	public void init(Character caster) {
 		this.caster = caster;
-		_effects = new List<SkillEffect>();
 		
+			
 		Transform addonTransform = transform.Find("addon");
 		if(addonTransform)
 		{
@@ -67,18 +66,7 @@ public class Skill : MonoBehaviour {
 		}
 		
 	}
-	public Skill GenCopy(Character caster)
-	{
-		Skill skillgened = ((GameObject)Instantiate(gameObject)).GetComponent<Skill>();
-		skillgened.caster = caster;
-		return skillgened;
-	}
-	
-	public Skill AddEffect(SkillEffect effect)
-	{
-		_effects.Add(effect);
-		return this;
-	}
+
 	bool isSkillDoneEffect;
 	/*
 	Do Animation of the skill
@@ -249,6 +237,11 @@ public class Skill : MonoBehaviour {
 				}
 			break;
 			case EffectRange.RandomAll:
+			break;
+			case EffectRange.DiedPlayer:
+				 target = caster.diedAllie();
+				 hit = mainEffect.FirstApply(target,acc_final,true);
+				 PlayAnimation(target,hit);
 			break;
 		}
 		//StartCoroutine(this.CheckSkillDone());

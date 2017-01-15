@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 namespace com.jerrch.rpg
 {
-public class CharacterAbilityUIManager : Singleton<CharacterAbilityUIManager>,IDisplayable{
+public class CharacterAbilityUIManager : Singleton<CharacterAbilityUIManager>,IinspectPlayerable{
 
 	
 	Dictionary<AbilityType,CharacterAbilityUI> chStatUIDict;
@@ -24,24 +24,17 @@ public class CharacterAbilityUIManager : Singleton<CharacterAbilityUIManager>,ID
 			propertyUIs.Add(text);
 		}
 	}
-	public void Show()
-	{
-		inspectCharacter(GameManager.instance.currentCh);
-	}
-	public void Hide()
-	{
 
-	}
 	public void inspectCharacter(Character ch)
 	{
-		CharacterData chData = ch.chData;
-		if(chData.statPoints>0)
+		CharacterData chData = ch.bindData;
+		if(chData.abilityPoints>0)
 			enableStatButtons();
 		
 		//attributes
 		foreach(AbilityType type in chStatUIDict.Keys)
 			chStatUIDict[type].updateUI(chData.getValue(type.ToString().ToLower()+"Val"));
-		pointText.text = chData.statPoints.ToString();
+		pointText.text = chData.abilityPoints.ToString();
 		
 		//stats
 		foreach(var property in propertyUIs)
@@ -55,20 +48,20 @@ public class CharacterAbilityUIManager : Singleton<CharacterAbilityUIManager>,ID
 	
 	public void statUIClicked(AbilityType statType)
 	{
-		CharacterData chData = GameManager.instance.currentCh.chData;
-		if(chData.statPoints==0)
+		CharacterData chData = GameManager.instance.currentCh.bindData;
+		if(chData.abilityPoints==0)
 		{
 			return;
 		}	
-		chData.statPoints--;
+		chData.abilityPoints--;
 		//statUIs[]
-		pointText.text = chData.statPoints.ToString();
+		pointText.text = chData.abilityPoints.ToString();
 
 		//find value in chData, ex:(str+Val)
 		int v = chData.addValue(statType.ToString().ToLower()+"Val",1);
 		chStatUIDict[statType].updateUI(v);
 		
-		if(chData.statPoints==0)
+		if(chData.abilityPoints==0)
 		{
 			disableStatButtons();
 		}

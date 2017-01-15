@@ -7,7 +7,7 @@ namespace com.jerrch.rpg
 		
 		public Character currentCh;
 		public int chCount;
-		public List<Character> chs;	
+		public List<Character> chs;
 		public List<Character> enemies;
 		public InfoManager info;
 		
@@ -49,8 +49,15 @@ namespace com.jerrch.rpg
 			//if(stageTransform)
 			//	Destroy(stageTransform.gameObject);
 			//stageTransform = new GameObject("CombatStageContainer").transform;
+			var pData = DataManager.instance.createPlayerData();
+			
+			pData.chData = DataManager.instance.rosterSelected;
+			pData.gold = 90;
+			PlayerStateUI.instance.init();
+
 			loadCharacter();
 			InfoManager.instance.init();
+			//ShopUIManager.instance.init();//FAKE test shop
 			
 			switch(testMode)
 			{
@@ -98,6 +105,8 @@ namespace com.jerrch.rpg
 			chs = CharacterManager.instance.loadPlayerCharacter();
 			chCount = chs.Count;
 			currentCh = chs[0];
+			
+			
 			/*
 			if(InfoManager.instance)
 				InfoManager.instance.init();
@@ -165,7 +174,8 @@ namespace com.jerrch.rpg
 			
 		}
 		//KeyCode[] keylist = {KeyCode.A,KeyCode.D,KeyCode.W,KeyCode.S};
-		KeyCode[] keylist = {KeyCode.LeftArrow,KeyCode.RightArrow,KeyCode.UpArrow,KeyCode.DownArrow,KeyCode.Z,KeyCode.X};
+//		KeyCode[] keylist = {KeyCode.LeftArrow,KeyCode.RightArrow,KeyCode.UpArrow,KeyCode.DownArrow,KeyCode.Z,KeyCode.X};
+/*
 		void Update() {
 			if (Input.GetKeyDown(KeyCode.Escape))
 			{
@@ -188,9 +198,10 @@ namespace com.jerrch.rpg
 					
 				
 			}
+			
 
 	//		Transform chRenTransform = currentCh.chRenderer.transform;
-			/*
+			
 			if(Input.GetKey(KeyCode.LeftArrow))
 			{
 				chRenTransform.transform.Translate(Vector3.left/2);
@@ -209,10 +220,11 @@ namespace com.jerrch.rpg
 			else if(Input.GetKey(KeyCode.DownArrow))
 			{
 				chRenTransform.Translate(Vector3.down/4);
-			}*/
+			}
 			
 		}
+		*/
 	}
 	public enum GameMode{Combat,Bag,ActionTree,Adventure};
-public enum TestMode{Release,Combat,Adventure,ActionTree,Stat};
+	public enum TestMode{Release,Combat,Adventure,ActionTree,Stat};
 }

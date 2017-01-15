@@ -4,17 +4,19 @@ using UnityEngine;
 using com.jerrch.rpg;
 public class BuffEffect : SkillEffect{
 	[SerializeField]
-	float baseMultiplier;
+	float baseMultiplier = 1; //1: does not change
 	public FinalBonus bonus;
-	public AttributeType buffType;
+	public AttributeType buffType;	
+
 	protected override void Awake()
 	{
 		base.Awake();
-		bonus = new FinalBonus((int)baseValue,baseMultiplier);
+		bonus = new FinalBonus((int)initValue,baseMultiplier);
 	}
 	public override void ApplyOn(CharacterStat stat)
 	{
-		stat.getAttribute(buffType).addFinalBonus(bonus);
+		base.ApplyOn(stat);
+			onStat.getAttribute(buffType).addFinalBonus(bonus);
 	}
 	public override void RemoveEffect()
 	{
@@ -28,5 +30,6 @@ public enum AttributeType{
 	PhyDamage,MagDamage,
 	PhyDefense,MagDefense,
 	Accuracy,Evasion,
-	DamageReduce
+	DamageReduce,
+	Movable
 }

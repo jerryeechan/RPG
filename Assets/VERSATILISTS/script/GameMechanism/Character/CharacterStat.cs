@@ -17,6 +17,7 @@ public class CharacterStat:StringfyProperty{
 		intAttr = new Attribute(_int);
 		conAttr = new Attribute(_con);
 		damageReduce = new Attribute(0);
+		movable = new Attribute(1);
 
 		hp = new MaxHPAttribute(conAttr);
 		phyDmg = new PhysicalDamageAttribute(phyAtk,strAttr);
@@ -39,6 +40,7 @@ public class CharacterStat:StringfyProperty{
 		attributeDict.Add(AttributeType.PhyDefense,phyDef);
 		attributeDict.Add(AttributeType.MagDefense,magDef);
 		attributeDict.Add(AttributeType.DamageReduce,damageReduce);
+		attributeDict.Add(AttributeType.Movable,movable);
 		
 	}
 
@@ -47,21 +49,26 @@ public class CharacterStat:StringfyProperty{
 
 	public MaxHPAttribute hp;
 	
-	public PhysicalDamageAttribute phyDmg;
+	//Dependent attributes
+	public PhysicalDamageAttribute phyDmg;//atk * str...
 	public MagicDamageAttribute magDmg;
 	public CriticalDamageAttribute critDmg;
 	public CriticalRateAttribute critRate;
 	public PhysicalDefenseAttribute phyDef;
 	public MagicDefenseAttribute magDef;
-
 	public AccuracyAttribute accuracy;
 	public EvasionAttribute evasion;
 
-	public Attribute damageReduce;
 
-	public Attribute magAtk;//mainly from equip
+	//
+	public Attribute damageReduce; //direct damage reduce
 	public Attribute phyAtk;
+	public Attribute magAtk;
+	
+	//special attribute
+	public Attribute movable; //行動力，機率，0不能動
 
+	//basic Attribute
 	public Attribute strAttr;
 	public Attribute intAttr;
 	public Attribute dexAttr;
@@ -109,20 +116,6 @@ public class CharacterStat:StringfyProperty{
 	public float lowestPhyDmg = 0.4f;
 	public float lowestMagDmg = 0.4f;
 
-	/*
-	defense
-	*/
-	public float damageUpBound = 0;//doesn't take the damage higher than it
-	public float damageLowerBound = 0;//doesn't take the damage lower than it
-	
-	/*
-	buff
-	*/
-	//public float buffBuff; //bonus rate
-//	public float durationBuff=0;
-	/*
-	Defense
-	*/
 
 //	public float ignorePhyDefensePer = 0;
 //	public float ignoreMagDefensePer = 0;

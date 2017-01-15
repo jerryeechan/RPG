@@ -29,7 +29,7 @@ public class CharacterOptionPanel : MonoBehaviour {
         
         for(int i=0;i<3;i++)
         {
-            actionBtns[i].bindAction = ActionManager.instance.getAction(chData.actionIDs[i]);
+            actionBtns[i].bindAction = ActionManager.instance.getAction(chData.actionDatas[i].id);
         }
         
     }

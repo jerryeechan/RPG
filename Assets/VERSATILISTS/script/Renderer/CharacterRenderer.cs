@@ -237,6 +237,7 @@ public class CharacterRenderer : MonoBehaviour {
 			if(bindCh.side == CharacterSide.Player)
 			{
 				ActionUIManager.instance.setCharacter(bindCh);
+				BattleChUIManager.instance.setCharacter(bindCh);
 				SoundEffectManager.instance.playSound(BasicSound.UI);
 				TurnBattleManager.instance.selectedPlayer = bindCh;
 				//RandomBattleRound.instance.currentPlayer = bindCh;
