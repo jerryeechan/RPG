@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using com.jerrch.rpg;
 using UnityEngine.EventSystems;
 public class HoverUI : MonoBehaviour,IDescribable ,IPointerEnterHandler,IPointerExitHandler{
 	
@@ -18,10 +18,14 @@ public class HoverUI : MonoBehaviour,IDescribable ,IPointerEnterHandler,IPointer
 	}
 	public void OnPointerEnter(PointerEventData eventData)
 	{
-		if(DescriptionUIManager.instance)
+		if(GameManager.instance.gamemode == GameMode.Adventure)
 		{
-			DescriptionUIManager.instance.show(title(),description());
+			if(DescriptionUIManager.instance)
+			{
+				DescriptionUIManager.instance.show(title(),description());
+			}
 		}
+		
 	}
 	public void OnPointerExit(PointerEventData eventData)
 	{

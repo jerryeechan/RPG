@@ -48,10 +48,10 @@ MonoBehaviour:
     exp: 0
     abilityPoints: 5
     skillPoints: 3
-    strVal: 20
-    conVal: 5
+    strVal: 15
+    conVal: 20
     intVal: 0
-    dexVal: 10
+    dexVal: 20
     UITemplateID: zombie_chR
     actionDatas:
     - id: zombie_scratch

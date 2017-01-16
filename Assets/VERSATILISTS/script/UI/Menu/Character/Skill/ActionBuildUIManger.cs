@@ -12,6 +12,9 @@ public class ActionBuildUIManger : ActionBaseUIManager,IinspectPlayerable{
 	[SerializeField]
 	HandButton[] levelBtns;
 
+	[SerializeField]
+	ActionButton[] actionbtns;
+
    public void levelUpBtnTouched(int index)
    {
 	   var curCh = GameManager.instance.currentCh;
@@ -20,9 +23,8 @@ public class ActionBuildUIManger : ActionBaseUIManager,IinspectPlayerable{
 		    curCh.bindData.skillPoints--;
 			spText.text = curCh.bindData.skillPoints.ToString();
 			curCh.actionList[index].level++;
+			DescriptionUIManager.instance.showDescribable(actionbtns[index]);
 	   }
-	   
-	   
    }
 
    public override void inspectCharacter(Character ch)

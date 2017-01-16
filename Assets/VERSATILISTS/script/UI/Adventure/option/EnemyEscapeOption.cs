@@ -3,11 +3,12 @@ using System.Collections;
 
 public class EnemyEscapeOption : AdventureOption {
 	
+	public string enemySetID;
 	override public void choose()
 	{	
 		print("逃跑");
-//		DiceRoller2D.instance.Roll(cancelEvent);
-		cancelEvent(6);
+		success();
+		
 	}
 	public void cancelEvent(int values)
 	{
@@ -31,5 +32,14 @@ public class EnemyEscapeOption : AdventureOption {
 			Debug.Log("Run away fail");
 			fail();
 		}
+	}
+
+	public void failEvent()
+	{
+		EnemySet enemySet;
+		print(enemySetID);
+		enemySet = MonsterDataEditor.instance.getMonsterSet(enemySetID);
+		//RandomBattleRound.instance.StartBattle(enemySet);
+		TurnBattleManager.instance.StartBattle(enemySet);
 	}
 }

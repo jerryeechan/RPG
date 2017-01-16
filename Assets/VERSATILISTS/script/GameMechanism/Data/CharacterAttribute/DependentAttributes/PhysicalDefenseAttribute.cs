@@ -17,7 +17,7 @@ public class PhysicalDefenseAttribute : DependentAttribute {
 		
 		
 
-		_finalValue += (int)(conAttr.finalValue*4+strAttr.finalValue);
+		_finalValue += (int)(conAttr.finalValue*2+strAttr.finalValue);
 			
 		applyRawBonuses();
 		applyFinalBonuses();

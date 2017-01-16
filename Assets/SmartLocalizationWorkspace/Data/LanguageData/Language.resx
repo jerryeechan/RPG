@@ -419,54 +419,6 @@
 	<data name="line_ch1_random3_gossip_7_N_BW" xml:space="preserve">
 		<value>New Value</value>
 	</data>
-	<data name="skill_dark_charge" xml:space="preserve">
-		<value>skill</value>
-	</data>
-	<data name="skill_dark_charge_description" xml:space="preserve">
-		<value>New Value</value>
-	</data>
-	<data name="skill_dark_shield" xml:space="preserve">
-		<value>skill</value>
-	</data>
-	<data name="skill_dark_slash" xml:space="preserve">
-		<value>skill</value>
-	</data>
-	<data name="skill_divine_invincible" xml:space="preserve">
-		<value>skill</value>
-	</data>
-	<data name="skill_divine_shield" xml:space="preserve">
-		<value>skill</value>
-	</data>
-	<data name="skill_divine_smash" xml:space="preserve">
-		<value>New Value</value>
-	</data>
-	<data name="skill_holy_heal" xml:space="preserve">
-		<value>skill</value>
-	</data>
-	<data name="skill_holy_ray" xml:space="preserve">
-		<value>skill</value>
-	</data>
-	<data name="skill_holy_revive" xml:space="preserve">
-		<value>skill</value>
-	</data>
-	<data name="skill_mage_elemental_blessing" xml:space="preserve">
-		<value>skill</value>
-	</data>
-	<data name="skill_mage_fireball" xml:space="preserve">
-		<value>skill</value>
-	</data>
-	<data name="skill_mage_firestorm" xml:space="preserve">
-		<value>skill</value>
-	</data>
-	<data name="skill_talisman_paralyze" xml:space="preserve">
-		<value>skill</value>
-	</data>
-	<data name="skill_talisman_storm" xml:space="preserve">
-		<value>New Value</value>
-	</data>
-	<data name="skill_talisman_thunder" xml:space="preserve">
-		<value>skill</value>
-	</data>
 	<data name="line_ch1_random4_shopMP_1_N_MP" xml:space="preserve">
 		<value>New Value</value>
 	</data>
@@ -568,5 +520,53 @@
 	</data>
 	<data name="line_ch1_random8_rest_3_Yes_2_P" xml:space="preserve">
 		<value>New Value</value>
+	</data>
+	<data name="skill_dark_charge" xml:space="preserve">
+		<value>skill</value>
+	</data>
+	<data name="skill_dark_charge_description" xml:space="preserve">
+		<value>New Value</value>
+	</data>
+	<data name="skill_dark_shield" xml:space="preserve">
+		<value>skill</value>
+	</data>
+	<data name="skill_dark_slash" xml:space="preserve">
+		<value>skill</value>
+	</data>
+	<data name="skill_divine_invincible" xml:space="preserve">
+		<value>skill</value>
+	</data>
+	<data name="skill_divine_shield" xml:space="preserve">
+		<value>skill</value>
+	</data>
+	<data name="skill_divine_smash" xml:space="preserve">
+		<value>New Value</value>
+	</data>
+	<data name="skill_holy_heal" xml:space="preserve">
+		<value>skill</value>
+	</data>
+	<data name="skill_holy_ray" xml:space="preserve">
+		<value>skill</value>
+	</data>
+	<data name="skill_holy_revive" xml:space="preserve">
+		<value>skill</value>
+	</data>
+	<data name="skill_mage_elemental_blessing" xml:space="preserve">
+		<value>skill</value>
+	</data>
+	<data name="skill_mage_fireball" xml:space="preserve">
+		<value>skill</value>
+	</data>
+	<data name="skill_mage_firestorm" xml:space="preserve">
+		<value>skill</value>
+	</data>
+	<data name="skill_tailsman_storm" xml:space="preserve">
+		<value>New Value</value>
+	</data>
+	<data name="skill_talisman_paralyze" xml:space="preserve">
+		<value>skill</value>
+	</data>
+	<data name="skill_talisman_thunder" xml:space="preserve">
+		<value>skill</value>
 	</data>
 </root>

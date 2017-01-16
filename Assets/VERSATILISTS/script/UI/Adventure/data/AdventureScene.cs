@@ -8,7 +8,7 @@ public class AdventureScene : MonoBehaviour {
 	public AdventureEvent[] candidateEvents;
 	public int weight = 1;
 	
-	public AdventureEvent getEvent()
+	public BaseEvent getEvent()
 	{
 		int r = Random.Range(0,candidateEvents.Length);
 		return candidateEvents[r];

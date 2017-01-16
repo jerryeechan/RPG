@@ -50,6 +50,10 @@ public class EquipManager :Singleton<EquipManager> {
 			}
 			return eq;
 		}
+		else if(id=="")
+		{
+			return null;
+		}
 		else
 		{
 			Debug.LogError("No equip daata"+id);

@@ -6,5 +6,6 @@ public class MoveOnOption : AdventureOption {
 	override public void choose()
 	{
 		success();
+		
 	}
 }

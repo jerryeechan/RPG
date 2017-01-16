@@ -1,10 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 [System.SerializableAttribute]
-public class AdventureEvent:MonoBehaviour {
+public class AdventureEvent:BaseEvent {
 	public AdventureEventType type;
-	public AdventureEvent nextEvent;
-	public bool triggerNextEvent = false;
 
 	public  AdventureDialogueData dialogue;
 	public AdventureOption[] options;
@@ -17,8 +15,9 @@ public class AdventureEvent:MonoBehaviour {
 	}
 
 	// Use this for initialization
-	void OnValidate()
+	protected override void OnValidate()
 	{
+		base.OnValidate();
 		for(int i=0;i<options.Length;i++)
 		{
 			options[i].index = i;

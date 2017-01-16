@@ -42,15 +42,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   chData:
     name: Orc
+    nickName: "\u98DF\u4EBA\u9B54"
+    classID: 
     level: 0
     exp: 0
-    statPoints: 0
-    strVal: 0
-    conVal: 5
-    intVal: 0
-    dexVal: 0
+    abilityPoints: 5
+    skillPoints: 3
+    strVal: 50
+    conVal: 100
+    intVal: 1
+    dexVal: 1
     UITemplateID: Orc_chR
-    actionIDs: []
+    actionDatas:
+    - id: ogre_smash
+      level: 0
+      masterLevel: 0
+      state: 1
     weapon:
       id: 
       imageID: 

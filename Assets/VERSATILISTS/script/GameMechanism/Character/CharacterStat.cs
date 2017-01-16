@@ -10,8 +10,8 @@ public class CharacterStat:StringfyProperty{
 	public CharacterStat(string name,int _str,int _int,int _dex,int _con)
 	{
 		chName = name;
-		magAtk = new Attribute(5);
-		phyAtk = new Attribute(5);
+		magAtk = new Attribute(1);
+		phyAtk = new Attribute(1);
 		strAttr = new Attribute(_str);
 		dexAttr = new Attribute(_dex);
 		intAttr = new Attribute(_int);

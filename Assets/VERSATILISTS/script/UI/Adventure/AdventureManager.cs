@@ -42,10 +42,14 @@ public class AdventureManager : Singleton<AdventureManager> {
 	void Start()
 	{
 		//TODO the first event???
+		
+		//encounterEvent(testEvent);
+	}
+	public void init()
+	{
 		currentScene = AdventureStageManager.instance.currentStage.getScene();
 		print(currentScene.name);
 		encounterEvent(currentScene.getEvent());
-		//encounterEvent(testEvent);
 	}
 	public void PlayDialogue(AdventureDialogueData dialogue)
 	{
@@ -196,9 +200,25 @@ public class AdventureManager : Singleton<AdventureManager> {
 		}
 	}
 	
-
+	public void encounterEvent(BaseEvent baseEvent)
+	{
+		AdventureEvent adv = baseEvent as AdventureEvent;
+		if(adv!=null)
+		{
+			encounterEvent(adv);
+		}
+		else
+		{
+			EffectEvent ev = baseEvent as EffectEvent;
+			if(ev!=null)
+			{
+				ev.doEffect();
+				encounterEvent(ev.nextEvent);
+			}
+		}
+	}
 	
-	public void encounterEvent(AdventureEvent advEvent)
+	void encounterEvent(AdventureEvent advEvent)
 	{
 		currentEventDone = false;
 		if(advEvent == null)
@@ -249,7 +269,7 @@ public class AdventureManager : Singleton<AdventureManager> {
 	public void optionSuccess(int index)
 	{
 		playDescription(currentEvent.options[index].successStr);
-		EventDone();
+		//EventDone();
 	}
 	
 	public void optionFail(int index){
@@ -257,13 +277,12 @@ public class AdventureManager : Singleton<AdventureManager> {
 		optionBtns[index].interactable = false;
 	}
 
-	void EventDone()
+	public void EventDone()
 	{
 		print("hide option panels all");
 		currentEventDone = true;
 		optionPanel.hide();
 		optionDisplayerPanel.hide();
-		
 	}
 	
 	bool currentEventDone = false;

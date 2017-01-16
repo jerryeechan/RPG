@@ -80,7 +80,7 @@ public class SkillEffect : MonoBehaviour {
 		}
 		else
 		{
-			hit = testPossibility(acc);
+			hit = true;//testPossibility(acc);
 		}
 
 		if(hit)

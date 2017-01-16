@@ -10,6 +10,8 @@ public class AdventureOption : MonoBehaviour {
 	public string failStr;
 	[HideInInspector]
 	public AdventureEvent parentEvent;
+
+	
 	
 	public virtual void choose()
 	{
@@ -19,6 +21,8 @@ public class AdventureOption : MonoBehaviour {
 	{
 		AdventureManager.instance.optionSuccess(index);
 		CursorManager.instance.NormalMode();
+		AdventureManager.instance.EventDone();
+		//
 	}
 	public void fail()
 	{

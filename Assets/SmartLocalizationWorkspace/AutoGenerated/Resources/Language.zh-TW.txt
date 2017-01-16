@@ -123,7 +123,7 @@
 		<value>敏捷</value>
 	</data>
 	<data name="attr_INT" xml:space="preserve">
-		<value />
+		<value>智力</value>
 	</data>
 	<data name="attr_STR" xml:space="preserve">
 		<value>力量</value>
@@ -381,7 +381,7 @@
 		<value>天啊！又是這些惱人的殭屍，我已經連續工作十二個小時了…可以幫我處理這些傢伙嗎？</value>
 	</data>
 	<data name="line_ch1_random2_ogre_1_N_SYS" xml:space="preserve">
-		<value>警告！警告！前方出現了食人魔！</value>
+		<value>警告！警告！前方出現了可怕的食人魔！</value>
 	</data>
 	<data name="line_ch1_random2_ogre_2_Opt_1_SYS" xml:space="preserve">
 		<value>戰鬥</value>
@@ -435,7 +435,7 @@
 		<value>不、我只是路過而已….</value>
 	</data>
 	<data name="line_ch1_random4_shopMP_5_Yes_1_MP" xml:space="preserve">
-		<value>你好，歡迎光臨。</value>
+		<value>你好，歡迎棺靈。</value>
 	</data>
 	<data name="line_ch1_random5_GiftA_1_N_BUDA" xml:space="preserve">
 		<value>哎呀呀、各位英雄你們好</value>
@@ -507,7 +507,7 @@
 		<value>最近的年輕人都不喜歡聽老人家講話，桑心。</value>
 	</data>
 	<data name="line_ch1_random8_rest_1_Ask_GWEN" xml:space="preserve">
-		<value>:諸位來此何干?</value>
+		<value>施主們來此何干?</value>
 	</data>
 	<data name="line_ch1_random8_rest_2_Opt_1_P" xml:space="preserve">
 		<value>不好意思打擾了，我們只是路過</value>
@@ -560,11 +560,11 @@
 	<data name="skill_mage_firestorm" xml:space="preserve">
 		<value>火焰風暴</value>
 	</data>
+	<data name="skill_tailsman_storm" xml:space="preserve">
+		<value>起風符</value>
+	</data>
 	<data name="skill_talisman_paralyze" xml:space="preserve">
 		<value>定身符</value>
-	</data>
-	<data name="skill_talisman_storm" xml:space="preserve">
-		<value>起風符</value>
 	</data>
 	<data name="skill_talisman_thunder" xml:space="preserve">
 		<value>役雷符</value>

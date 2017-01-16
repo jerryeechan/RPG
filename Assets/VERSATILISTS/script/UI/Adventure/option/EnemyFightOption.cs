@@ -17,6 +17,8 @@ public class EnemyFightOption: AdventureOption {
 	}
 	override public void choose()
 	{
+		AdventureManager.instance.optionSuccess(index);
+		CursorManager.instance.NormalMode();
 		//success();
 		this.myInvoke(1,
 		()=>{

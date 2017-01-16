@@ -31,7 +31,6 @@ public class PlayerStateUI : Singleton<PlayerStateUI> {
 	}
 	public void getGold(int g)
 	{
-
 		int startGold = DataManager.instance.curPlayerData.gold;
 		goldText.DOValue(startGold,g); 
 		DataManager.instance.curPlayerData.gold+=g;

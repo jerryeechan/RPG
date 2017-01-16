@@ -11,8 +11,12 @@ public class AdventureStage : MonoBehaviour {
 	//narrative related
 	[SerializeField]
 	AdventureScene[] storyScenes;
+
+	AdventureScene[] fakeScenes;
 	void OnValidate()
 	{
+		
+		
 		normalScenes = transform.Find("NormalScenes").GetComponentsInChildren<AdventureScene>(true);
 		foreach(var scen in normalScenes)
 		{
@@ -24,48 +28,61 @@ public class AdventureStage : MonoBehaviour {
 		}
 		storyScenes = transform.Find("StoryScenes").GetComponentsInChildren<AdventureScene>(true);
 	}
+	void Awake()
+	{
+		fakeScenes = transform.Find("FakeScenes").GetComponentsInChildren<AdventureScene>(true);
+	}
 
 	[SerializeField]
 	int stageEventCount = 0;
+	public bool isFake = false;
 	public AdventureScene getScene()
 	{
 		//TODO: when stage Event count to a certain level, get special scene,
-		var scene = getSpecialScene();
-		return scene;
-		//AdventureScene scene;
-		if(stageEventCount == 0)
+		if(isFake)
 		{
-			stageEventCount++;
-			print("special");
-			scene = getSpecialScene();
+			var scene = getSpecialScene();
+			return scene;
 		}
 		else
 		{
-			var randomList = new List<int>();
-			for(int i=0;i<normalScenes.Length;i++)
+			AdventureScene scene;
+			//AdventureScene scene;
+			if(stageEventCount == 0)
 			{
-				var sc = normalScenes[i];
-				for(int j=0;j<sc.weight;j++)
-				{
-					randomList.Add(i);
-				}
+				stageEventCount++;
+				print("special");
+				scene = getSpecialScene();
 			}
-			
-			int r = Random.Range(0,randomList.Count);
-			//normalScenes.Length
-			
-			//int r = 0;//Fake
-			scene = normalScenes[randomList[r]];
-		}
+			else
+			{
+				var randomList = new List<int>();
+				for(int i=0;i<normalScenes.Length;i++)
+				{
+					var sc = normalScenes[i];
+					for(int j=0;j<sc.weight;j++)
+					{
+						randomList.Add(i);
+					}
+				}
+				
+				int r = Random.Range(0,randomList.Count);
+				//normalScenes.Length
+				
+				//int r = 0;//Fake
+				scene = normalScenes[randomList[r]];
+			}
 
-		scene.reset();
-		foreach(var sc in normalScenes)
-		{
-			if(sc!=scene)
-			sc.addWeight();
+			scene.reset();
+			foreach(var sc in normalScenes)
+			{
+				if(sc!=scene)
+				sc.addWeight();
+			}
+			stageEventCount++;
+			return scene;
 		}
-		stageEventCount++;
-		return scene;
+		
 		
 	}
 

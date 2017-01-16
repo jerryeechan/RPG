@@ -52,7 +52,6 @@ public class ShopUIManager : SingletonCanvas<ShopUIManager> ,IItemSlotManager{
 	}
 	void setNullItem()
 	{
-		print(currentSlotIndex);
 		for(;currentSlotIndex<slots.Count;currentSlotIndex++)
 		{
 			setItemToSlot(slots[currentSlotIndex],null);

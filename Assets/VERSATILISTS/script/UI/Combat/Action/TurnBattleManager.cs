@@ -8,6 +8,8 @@ public class TurnBattleManager : Singleton<TurnBattleManager> {
 
 	[SerializeField]
 	AnimatableCanvas victoryPanel;
+	[SerializeField]
+	AnimatableCanvas gameOverPanel;
 	//List<DiceActionSlot> playerSlot;
 
 	//List<DiceActionSlot> slots; //change every time
@@ -263,13 +265,24 @@ public class TurnBattleManager : Singleton<TurnBattleManager> {
 				i--;
 			}
 		}
+		if(players.Count==0)
+		{
+			this.myInvoke(2,GameOver);
+			return;
+		}
 
 		Debug.Log("action done");
 		this.myInvoke(0.5f,NextAction);
 		
 		
 	}
-
+	void GameOver()
+	{
+		gameOverPanel.show();
+		this.myInvoke(5,()=>{
+			WTHSceneManager.instance.BackToMainMenu();
+		});
+	}
 	void EndofBattle()
 	{
 		print("End of Battle");

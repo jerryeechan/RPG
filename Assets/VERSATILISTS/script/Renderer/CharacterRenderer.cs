@@ -107,11 +107,18 @@ public class CharacterRenderer : MonoBehaviour {
 	{
 		if(anim)
 			anim.Play(chAnimation.ToString());
+		if(chAnimation==CharacterAnimation.die)
+		{
+
+		}
+		
 		foreach(var equipAnim in equipAnims)
 		{
 			equipAnim.speed = AnimationManager.getChAnimSpeed(chAnimation);
 			equipAnim.Play(chAnimation.ToString(),-1,0);
 		}
+	
+		
 		//will call playSkill with animation event;
 	}
 	public SpriteRenderer dieBody;

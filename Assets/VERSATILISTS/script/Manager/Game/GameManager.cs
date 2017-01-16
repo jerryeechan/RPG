@@ -79,7 +79,9 @@ namespace com.jerrch.rpg
 					TurnBattleManager.instance.gameObject.SetActive(false);
 					this.myInvoke(1,()=>{
 						InfoManager.instance.switchTab(InfoTabType.Adventure);
+						AdventureManager.instance.init();	
 					});
+					
 					break;
 				case TestMode.ActionTree:
 				break;
