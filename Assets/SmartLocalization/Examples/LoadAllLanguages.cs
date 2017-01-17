@@ -10,7 +10,7 @@ namespace SmartLocalization
 using UnityEngine;
 using System.Collections.Generic;
 
-public class LoadAllLanguages : MonoBehaviour 
+public class LoadAllLanguages : Singleton<LoadAllLanguages>
 {
 	private List<string> currentLanguageKeys;
 	private List<SmartCultureInfo> availableLanguages;

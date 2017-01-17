@@ -22,6 +22,15 @@ public class LocalizedTextInspector : Editor
 	public override void OnInspectorGUI ()
 	{
 		base.OnInspectorGUI ();
+		//LanguageManager.Instance.GetSupportedLanguages();
+		 
+		var languageValues = LanguageHandlerEditor.LoadParsedLanguageFile("zh-TW", false);
+		if(languageValues.ContainsKey(selectedKey))
+		{
+			var localText = languageValues[selectedKey].TextValue;
+			GUILayout.TextField(localText);
+		}
+		
 		
 		selectedKey = LocalizedKeySelector.SelectKeyGUI(selectedKey, true, LocalizedObjectType.STRING);
 		
