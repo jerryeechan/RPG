@@ -83,7 +83,7 @@ namespace com.jerrch.rpg
 					AdventureManager.instance.init();
 					
 					break;
-				case TestMode.ActionTree:
+				case TestMode.SkillTree:
 				break;
 				case TestMode.Stat:
 				break;
@@ -113,8 +113,8 @@ namespace com.jerrch.rpg
 			if(InfoManager.instance)
 				InfoManager.instance.init();
 			
-			if(ActionTree.instance)
-				ActionTree.instance.setCharacter(currentCh);
+			if(SkillTree.instance)
+				SkillTree.instance.setCharacter(currentCh);
 			*/
 
 			//update stat ui
@@ -227,6 +227,6 @@ namespace com.jerrch.rpg
 		}
 		*/
 	}
-	public enum GameMode{Combat,Bag,ActionTree,Adventure};
-	public enum TestMode{Release,Combat,Adventure,ActionTree,Stat};
+	public enum GameMode{Combat,Bag,SkillTree,Adventure};
+	public enum TestMode{Release,Combat,Adventure,SkillTree,Stat};
 }

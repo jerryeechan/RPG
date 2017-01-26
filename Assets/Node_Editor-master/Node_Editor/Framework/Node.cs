@@ -1,6 +1,7 @@
 using UnityEngine;
 using System;
 using System.Linq;
+using UnityEditor;
 using System.Collections.Generic;
 
 namespace NodeEditorFramework
@@ -234,13 +235,20 @@ namespace NodeEditorFramework
 			GUI.BeginGroup (bodyRect, GUI.skin.box);
 			bodyRect.position = Vector2.zero;
 			GUILayout.BeginArea (bodyRect, GUI.skin.box);
+
 			// Call NodeGUI
 			GUI.changed = false;
-			NodeGUI ();
+			
+			//var scrollView = new EditorGUILayout.ScrollViewScope(scrollPos, GUILayout.Width (100), GUILayout.Height (100));
+			scrollPos = EditorGUILayout.BeginScrollView(scrollPos, GUILayout.Width (rect.width), GUILayout.Height (rect.height-20));
+				NodeGUI ();
+			EditorGUILayout.EndScrollView();
+			
 			// End NodeGUI frame
 			GUILayout.EndArea ();
 			GUI.EndGroup ();
 		}
+		Vector2 scrollPos = Vector2.zero;
 
 		/// <summary>
 		/// Draws the nodeKnobs

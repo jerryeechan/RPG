@@ -10,9 +10,9 @@ public class TurnBattleManager : Singleton<TurnBattleManager> {
 	AnimatableCanvas victoryPanel;
 	[SerializeField]
 	AnimatableCanvas gameOverPanel;
-	//List<DiceActionSlot> playerSlot;
+	//List<DiceSkillSlot> playerSlot;
 
-	//List<DiceActionSlot> slots; //change every time
+	//List<DiceSkillSlot> slots; //change every time
 
 	public List<Character> monsters;
 	public List<Character> players;
@@ -22,7 +22,11 @@ public class TurnBattleManager : Singleton<TurnBattleManager> {
 
 	public Character selectedPlayer;
 	
-
+	DiceSelectionDisplayer diceDisplayer;
+	void Awake()
+	{
+		diceDisplayer = GetComponentInChildren<DiceSelectionDisplayer>();
+	}
 	Character randomTarget(List<Character> chs)
 	{
 		int r = Random.Range(0,chs.Count);
@@ -88,17 +92,13 @@ public class TurnBattleManager : Singleton<TurnBattleManager> {
 
 	//slot's order should be rearranged
 	
-	//action holder
+	//skill holder
 	
-	//action Queue player
-	Queue<DiceSlot> diceQueue;
-	[SerializeField]
-	Image indicator;
+	//skill Queue player
 	
-	void Awake()
-	{
-		
-	}
+	
+	
+	
 	
 	void Start()
 	{
@@ -132,43 +132,35 @@ public class TurnBattleManager : Singleton<TurnBattleManager> {
 		StartRound();
 		currentPlayer.chRenderer.selected();
 	}
+	[SerializeField]
+	HandButton readyBtn;
 	public void StartRound()
 	{
-		reset();
+		diceDisplayer.reset();
 		DiceRollerAll.instance.Roll(rollDone);
 	}
-	void rollDone(ActionDiceType[] results)
-	{
-		 //useless...?
-	}
-
-	DiceSlot[] dices;
-
-	public void reset()
-	{
-		dices = DiceRollerAll.instance.getDices;
-		indicator.enabled = false;
-		indicator.rectTransform.anchoredPosition = dices[0].GetComponent<RectTransform>().anchoredPosition;
-		currentActionQueue = null;
-
-
-		foreach(var dice in dices)
-		{
-			dice.clear();
-		}
-	}
-
-	[SerializeField]
-	bool isTesting = true;
-	[SerializeField]
-	int testCount = 2;
+	
+	void rollDone(SkillDiceType[] results,int enemyIndex)
+	{	
+		readyBtn.interactable = true;
+		//prepare monster skill;
+		var enemySlot = diceDisplayer.getSkillSlot(enemyIndex);
+		foreach(var enemy in monsters)
+		enemySlot.skillUnit.AddSkill(enemy,enemy.skillList[0]);
+		diceDisplayer.rollDone();
+		print("Rolldone");
+		//TODO: extra bonus of rolling result
+	
+	}	
 	//Ready btn???
+
+	/*
 	public void testReady()
 	{
 		int count = 0;
 		foreach(var dice in dices)
 		{
-			if(dice.actionSlot.actionUnit.actionPairs.Count > 0)
+			if(dice.skillSlot.skillUnit.skillPairs.Count > 0)
 			{
 				count++;
 			}
@@ -177,67 +169,68 @@ public class TurnBattleManager : Singleton<TurnBattleManager> {
 		{
 			if(count==testCount)
 			{
-				ActionReady();
+				SkillReady();
 			}
 		}
 		else
 		{
 			if(count==2)//Fake 1
 			{
-				ActionReady();
+				SkillReady();
 			}
 		}
-	}
-	//complete actions assignment,
-	public void ActionReady()
+	}*/
+	public void selectSkill(Skill skill)
 	{
-		//Enemies' actions 
-		indicator.gameObject.SetActive(true);
-		diceQueue = new Queue<DiceSlot>();
-		foreach(var dice in dices)
-		{
-			if(!dice.isPlayerDice){
-				foreach(var enemy in monsters)
-					dice.actionSlot.actionUnit.AddAction(enemy,enemy.actionList[0]);
-			}
-			diceQueue.Enqueue(dice);
-		}
-		this.myInvoke(0.5f,NextAction);
+		diceDisplayer.selectedDice.setSkill(skill);
+		diceDisplayer.selectNextDice();
+	}
+	public void selectSlot(int index)
+	{
+		diceDisplayer.selectDice(index);
+	}
+
+	public void SkillReady()
+	{
+		//Enemies' skills 
+		diceDisplayer.PrepareToPlay();
+		readyBtn.interactable = false;
+		this.myInvoke(0.5f,NextSkill);
 	}
 	
-	Queue<ActionPair> currentActionQueue;
+	Queue<SkillPair> currentSkillQueue;
 	
 	// Update is called once per frame
-	void NextAction()
+	void NextSkill()
 	{
-		Debug.Log("NextAction");
-		//四郎探母
-		if(currentActionQueue==null||currentActionQueue.Count==0)
+		Debug.Log("NextSkill");
+		
+		if(currentSkillQueue==null||currentSkillQueue.Count==0)
 		{
-			if(diceQueue.Count==0)
+			var dice = diceDisplayer.playNextDice();
+			if(dice==null)
 			{
 				this.myInvoke(1,StartRound);
 				return;	
 			}
-			var dice = diceQueue.Dequeue();
-			currentActionQueue = dice.actionSlot.actionUnit.actionPairs;
-			indicator.rectTransform.DOMove(dice.transform.position,0.2f);
+			currentSkillQueue = dice.skillSlot.skillUnit.skillPairs;
+			
 		}
 		
-		if(currentActionQueue.Count>0)
+		if(currentSkillQueue.Count>0)
 		{
-			ActionPair actionPair =	currentActionQueue.Dequeue();
-			actionPair.PlayAction(ActionDone);
+			SkillPair skillPair =	currentSkillQueue.Dequeue();
+			skillPair.PlaySkill(SkillDone);
 		}
 		else
 		{
-			NextAction();
+			NextSkill();
 		}
 		
 	}
 
 	
-	public void ActionDone()
+	void SkillDone()
 	{
 		for(int i=0;i<monsters.Count;i++)
 		{
@@ -271,8 +264,8 @@ public class TurnBattleManager : Singleton<TurnBattleManager> {
 			return;
 		}
 
-		Debug.Log("action done");
-		this.myInvoke(0.5f,NextAction);
+		Debug.Log("skill done");
+		this.myInvoke(0.5f,NextSkill);
 		
 		
 	}
@@ -304,7 +297,7 @@ public class TurnBattleManager : Singleton<TurnBattleManager> {
 		GameManager.instance.AdventureMode();
 		AdventureManager.instance.NextEvent();
 		Destroy(stageTransform.gameObject);
-		indicator.gameObject.SetActive(false);
+		diceDisplayer.end();
 		victoryPanel.hide();
 	}
 }

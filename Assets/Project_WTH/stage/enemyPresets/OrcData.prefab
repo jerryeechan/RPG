@@ -53,11 +53,11 @@ MonoBehaviour:
     intVal: 1
     dexVal: 1
     UITemplateID: Orc_chR
-    actionDatas:
+    skillDatas:
     - id: ogre_smash
       level: 0
       masterLevel: 0
-      state: 1
+      state: 0
     weapon:
       id: 
       imageID: 

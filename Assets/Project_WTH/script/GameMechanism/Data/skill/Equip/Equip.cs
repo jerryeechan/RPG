@@ -5,6 +5,7 @@ using com.jerrch.rpg;
 //as Equipment template and also the runtime equip to character
 public class Equip:Item {
 	public static EquipType[] AllEquipType ={EquipType.Armor,EquipType.Helmet,EquipType.Weapon,EquipType.Shield}; 
+	public ClassesType bindClasses;
 	EquipState state = EquipState.Template;
 	TemplateEffectSet[] templateEffectSets;
 	[HideInInspector]

@@ -5,60 +5,60 @@ using UnityEngine.UI;
 namespace com.jerrch.rpg
 {
 
-public class ActionPerkUI : ActionButton, IPointerEnterHandler,IPointerExitHandler,IPointerClickHandler,IDragHandler,IBeginDragHandler,IEndDragHandler
+public class SkillPerkUI : SkillButton, IPointerEnterHandler,IPointerExitHandler,IPointerClickHandler,IDragHandler,IBeginDragHandler,IEndDragHandler
 {
 	
 	RectTransform rect;
 
 	//requirements
-	public ActionRequirement[] requirements;
+	public SkillRequirement[] requirements;
 	
 	public AbilityRequirement[] abilityReqs;
 	
-	public int requireActionPoint = 1;
+	public int requireSkillPoint = 1;
 
-	public Action action;
+	public Skill skill;
 	
 	override protected void OnValidate()
 	{
 		base.OnValidate();
-		bindAction = action;
+		bindSkill = skill;
 		init();
 	}
 	override protected void Awake()
 	{
 		base.Awake();
-		bindAction = action;
+		bindSkill = skill;
 		init();
 		rect = GetComponent<RectTransform>();
 		abilityReqs = GetComponents<AbilityRequirement>();
 	}
 	
 
-	public void importData(ActionData data)
+	public void importData(SkillData data)
 	{
-		bindAction.actionData = data;
+		bindSkill.skillData = data;
 		init();
 	}
 	
 	public void init()
 	{
-		switch(bindAction.actionData.state)
+		switch(bindSkill.skillData.state)
 		{
-			case ActionState.Locked:
+			case SkillState.Locked:
 				disableMask.enabled = true;
 			break;
-			case ActionState.Avalible:
+			case SkillState.Avalible:
 				disableMask.enabled = true;
 			break;
-			case ActionState.Learned:
+			case SkillState.Learned:
 				disableMask.enabled = false;
 			break;
 		}
 	}
 	public void learn()
 	{
-		bindAction.actionData.state = ActionState.Learned;
+		bindSkill.skillData.state = SkillState.Learned;
 		//learned = true;
 		disableMask.enabled = false;
 		
@@ -70,33 +70,33 @@ public class ActionPerkUI : ActionButton, IPointerEnterHandler,IPointerExitHandl
 		
 		//GetComponent<ScrollRect>().content.anchoredPosition
         Vector2 position = rect.parent.GetComponent<RectTransform>().anchoredPosition+rect.anchoredPosition;
-		ActionTree.instance.showAction(this,position);
+		SkillTree.instance.showSkill(this,position);
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        ActionTree.instance.hide();
+        SkillTree.instance.hide();
 	}
 
     public void OnPointerClick(PointerEventData eventData)
     {
-		ActionTree.instance.selectPerk(this);
+		SkillTree.instance.selectPerk(this);
     }
 	
     
 
     public void OnBeginDrag(PointerEventData eventData)
     {
-        ActionTree.instance.OnBeginDragActionPerk(this);
+        SkillTree.instance.OnBeginDragSkillPerk(this);
     }
 	public void OnDrag(PointerEventData eventData)
     {
-		ActionTree.instance.OnDragActionPerk(eventData);
+		SkillTree.instance.OnDragSkillPerk(eventData);
     }
 
     public void OnEndDrag(PointerEventData eventData)
     {
-		ActionTree.instance.OnEndDragActionPerk();
+		SkillTree.instance.OnEndDragSkillPerk();
     }
 }
 }

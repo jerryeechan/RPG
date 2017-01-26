@@ -23,8 +23,13 @@ public class Singleton<T> : MonoBehaviour where T : MonoBehaviour
 					               " is needed in the scene, but there is none.");
 				}
 			}
-			
 			return _instance;
 		}
 	}
+
+	protected virtual void OnDestroy()
+	{
+		_instance = null;
+	}
+	
 }

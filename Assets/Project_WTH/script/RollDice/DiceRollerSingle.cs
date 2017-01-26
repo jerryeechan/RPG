@@ -46,7 +46,7 @@ public class DiceRollerSingle : Singleton<DiceRollerSingle> {
 	//The real roll
 	public void Roll()
 	{
-		 isActionUsed =  false;
+		 isSkillUsed =  false;
 		 //panel.gameObject.SetActive(true);
 		 indicator.GetComponent<RectTransform>().SetParent(diceImages[currentIndex].transform);
 		 indicator.GetComponent<RectTransform>().anchoredPosition = Vector2.zero;
@@ -54,16 +54,16 @@ public class DiceRollerSingle : Singleton<DiceRollerSingle> {
 		 //currentSpriteSpin = Random.Range(min,max);
 		 currentSpriteSpin = 0;
 		 StartCoroutine("diceAnimation");
-		// isActionUsed = true;
+		// isSkillUsed = true;
 		 rollButtonText.text = "re-roll";
 		 rollButton.enabled = false;
 	}
-	//if the action used after roll a dice
+	//if the skill used after roll a dice
 	bool isRolling;
-	bool isActionUsed = false;
+	bool isSkillUsed = false;
 	public void RollButtonTouched()
 	{
-		if(!isActionUsed)
+		if(!isSkillUsed)
 		{
 			ReRoll();
 		}
@@ -79,7 +79,7 @@ public class DiceRollerSingle : Singleton<DiceRollerSingle> {
 	public void next()
 	{
 		currentIndex++;
-		isActionUsed = true;
+		isSkillUsed = true;
 		rollButtonText.text = "roll";
 	}
 	int currentIndex = 0;

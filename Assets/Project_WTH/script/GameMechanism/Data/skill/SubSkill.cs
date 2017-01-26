@@ -9,7 +9,7 @@ public class SubSkill : MonoBehaviour {
 
 	//the corresponding skill data of player
 	SkillSpecificFilter targetFilter = SkillSpecificFilter.Random;
-	public Action parentAction;
+	public Skill parentSkill;
 	//public Skill parentSkill;
 	//public SubSkill followSkill;
 	public enum SkillType{Attack,Buff,ETC};
@@ -35,7 +35,7 @@ public class SubSkill : MonoBehaviour {
 	bool isCasting;
 	List<Character> hitTargets = new List<Character>();
 	
-	public SkillState skillState = SkillState.Before;
+	//public SubSkillState subSkillState = SubSkillState.Before;
 	void Awake()
 	{
 		if(mainEffect==null)
@@ -81,7 +81,7 @@ public class SubSkill : MonoBehaviour {
 	
 	public void PlaySkillAnimation(Character target,bool isHit)
 	{
-		AnimationUnit seAnim = AnimationManager.instance.getActionEffect(skillAnimationID);
+		AnimationUnit seAnim = AnimationManager.instance.getSkillEffect(skillAnimationID);
 		
 		//print(hitAnimationID);
 		if(seAnim)
@@ -154,7 +154,7 @@ public class SubSkill : MonoBehaviour {
 	public void DoEffect(OnCompleteDelegate completeFunc)
 	{
 		this.completeFunc = completeFunc;
-		skillState = SkillState.Doing;
+		//subSkillState = SubSkillState.Doing;
 		doingTargetCnt = 0;
 		//apply effects on caster
 		
@@ -253,12 +253,12 @@ public class SubSkill : MonoBehaviour {
 
 	void SkillDone()
 	{
-		skillState = SkillState.Done;
-		//parentAction.checkSkillDone();
+		//skillState = SkillState.Done;
+		//parentSkill.checkSkillDone();
 		this.myInvoke(0.5f,()=>
 		{
 			completeFunc();
-			//parentAction.SkillDoneAndNext();
+			//parentSkill.SkillDoneAndNext();
 		});
 		
 	}
@@ -278,7 +278,7 @@ public class SubSkill : MonoBehaviour {
 		{
 			print("charater die");
 			ch.die();
-			//RandomBattleRound.instance.NextAction();
+			//RandomBattleRound.instance.NextSkill();
 		}
 		
 		hitTargets.Add(ch);
@@ -309,7 +309,7 @@ public class SubSkill : MonoBehaviour {
 			doingTargetCnt--;
 			CheckSkillDone();
 		//}
-		//	RandomBattleRound.instance.NextAction();
+		//	RandomBattleRound.instance.NextSkill();
 		
 	}
 	//timing of apply effects, possibility of success apply, 
@@ -365,13 +365,13 @@ public class SubSkill : MonoBehaviour {
 		//if(isDone&&!followSkill)
 		if(isDone)
 		{
-			Destroy(parentAction.gameObject);
+			Destroy(parentSkill.gameObject);
 			//Destroy(gameObject);
 		}
 	}
 }
 
-	public enum SkillState{Before,Doing,Done}
+	//public enum SubSkillState{Before,Doing,Done}
 
 	public class SkillHitStat
 	{

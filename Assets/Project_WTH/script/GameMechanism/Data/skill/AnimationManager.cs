@@ -4,22 +4,22 @@ using System.Collections.Generic;
 public class AnimationManager : Singleton<AnimationManager> {
 
 	Dictionary<string,AnimationUnit> skillAnimationDict;
-	Dictionary<string,AnimationUnit> actionAnimationDict;
+	Dictionary<string,AnimationUnit> skillHitAnimationDict;
 	void Awake()
 	{
-		AnimationUnit[] actionAnims = transform.Find("actionAnimation").GetComponentsInChildren<AnimationUnit>(true);
-		AnimationUnit[] skillAnims = transform.Find("skillHitAnimation").GetComponentsInChildren<AnimationUnit>(true);
+		AnimationUnit[] skillAnims = transform.Find("skillAnimation").GetComponentsInChildren<AnimationUnit>(true);
+		AnimationUnit[] skillHitAnims = transform.Find("skillHitAnimation").GetComponentsInChildren<AnimationUnit>(true);
 		skillAnimationDict = new Dictionary<string,AnimationUnit>();
-		actionAnimationDict = new Dictionary<string,AnimationUnit>();
-		foreach(var anim in actionAnims)
+		skillHitAnimationDict = new Dictionary<string,AnimationUnit>();
+		foreach(var anim in skillAnims)
 		{	
-			actionAnimationDict.Add(anim.name,anim);
+			skillAnimationDict.Add(anim.name,anim);
 		}
 
 		foreach(var anim in skillAnims)
 		{
 //acti			print(anim.name);
-			skillAnimationDict.Add(anim.name,anim);
+			skillHitAnimationDict.Add(anim.name,anim);
 		}
 
 		chAnimationSpeed = new Dictionary<CharacterAnimation,float>();
@@ -31,18 +31,18 @@ public class AnimationManager : Singleton<AnimationManager> {
 	}
 	public AnimationUnit getSkillHitEffect(string id)
 	{
-		if(skillAnimationDict.ContainsKey(id))
-		return Instantiate(skillAnimationDict[id]);
+		if(skillHitAnimationDict.ContainsKey(id))
+		return Instantiate(skillHitAnimationDict[id]);
 		else
 		{
 //			Debug.LogError("no skill effect:"+id);
 			return null;
 		}
 	}
-	public AnimationUnit getActionEffect(string id){
-		if(actionAnimationDict.ContainsKey(id))
+	public AnimationUnit getSkillEffect(string id){
+		if(skillAnimationDict.ContainsKey(id))
 		{
-			return Instantiate(actionAnimationDict[id]);	
+			return Instantiate(skillAnimationDict[id]);	
 		}
 		else
 		{

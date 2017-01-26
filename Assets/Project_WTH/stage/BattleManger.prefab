@@ -455,9 +455,8 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 224061235668831484}
-  - component: {fileID: 114573234659533636}
   m_Layer: 5
-  m_Name: DiceRollerSingle
+  m_Name: DiceRoller
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -597,7 +596,7 @@ GameObject:
   - component: {fileID: 114840114824258056}
   - component: {fileID: 225192287144071302}
   m_Layer: 5
-  m_Name: GameObject
+  m_Name: bg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -944,7 +943,7 @@ GameObject:
   - component: {fileID: 114923176013571372}
   - component: {fileID: 225717975229380444}
   m_Layer: 5
-  m_Name: draggingAction
+  m_Name: draggingSkillBtn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -963,7 +962,7 @@ GameObject:
   - component: {fileID: 114367790554444046}
   - component: {fileID: 114834833678624166}
   m_Layer: 5
-  m_Name: action (3)
+  m_Name: Skill3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1172,7 +1171,7 @@ GameObject:
   - component: {fileID: 222777628394167056}
   - component: {fileID: 225428407232996532}
   - component: {fileID: 114012715174303284}
-  - component: {fileID: 114248879120349650}
+  - component: {fileID: 114015785357271106}
   m_Layer: 5
   m_Name: gameover
   m_TagString: Untagged
@@ -1226,7 +1225,7 @@ GameObject:
   - component: {fileID: 114287601731803590}
   - component: {fileID: 114683383524702594}
   m_Layer: 5
-  m_Name: action (2)
+  m_Name: SKill2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1295,7 +1294,7 @@ GameObject:
   - component: {fileID: 222287290148764406}
   - component: {fileID: 114055846908477908}
   m_Layer: 5
-  m_Name: Image
+  m_Name: skill_icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1331,7 +1330,7 @@ GameObject:
   - component: {fileID: 114410645697168816}
   - component: {fileID: 225163921064978612}
   m_Layer: 5
-  m_Name: GameObject
+  m_Name: bg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1524,7 +1523,7 @@ GameObject:
   - component: {fileID: 114979572406771300}
   - component: {fileID: 225685867498955962}
   m_Layer: 5
-  m_Name: GameObject
+  m_Name: bg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1767,7 +1766,7 @@ GameObject:
   - component: {fileID: 222417305302888442}
   - component: {fileID: 114323353415364300}
   m_Layer: 5
-  m_Name: actionUImanager
+  m_Name: skillUImanager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1871,7 +1870,7 @@ GameObject:
   - component: {fileID: 222776858638685110}
   - component: {fileID: 114566701944114634}
   m_Layer: 5
-  m_Name: Image
+  m_Name: skill_icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1958,7 +1957,7 @@ GameObject:
   - component: {fileID: 222930232464939990}
   - component: {fileID: 114368642849489856}
   m_Layer: 5
-  m_Name: Image
+  m_Name: skill_icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2393,7 +2392,7 @@ GameObject:
   - component: {fileID: 114514616500059958}
   - component: {fileID: 114887537750491936}
   m_Layer: 5
-  m_Name: action (1)
+  m_Name: Skill1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2656,7 +2655,7 @@ GameObject:
   - component: {fileID: 114667487339812220}
   - component: {fileID: 225004174718418720}
   m_Layer: 5
-  m_Name: GameObject
+  m_Name: bg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2724,7 +2723,7 @@ GameObject:
   - component: {fileID: 222564613831204022}
   - component: {fileID: 114321041373935490}
   m_Layer: 5
-  m_Name: Image
+  m_Name: skill_icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3057,8 +3056,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e729f965987247e996a13d6d7e003d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  actionPanel: {fileID: 1635878140224116}
-  actionDetailPanel: {fileID: 1085876683923846}
+  skillPanel: {fileID: 0}
+  skillDetailPanel: {fileID: 0}
+--- !u!114 &114015785357271106
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1412567783877728}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 21300000, guid: 2d90b99955a37407299eaf57838ba0f9, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
 --- !u!114 &114018163106562358
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4415,39 +4441,6 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
---- !u!114 &114248879120349650
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1412567783877728}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_FontData:
-    m_Font: {fileID: 12800000, guid: fdb53cfa08a9347e791b7933b9c47651, type: 3}
-    m_FontSize: 16
-    m_FontStyle: 0
-    m_BestFit: 0
-    m_MinSize: 0
-    m_MaxSize: 40
-    m_Alignment: 4
-    m_AlignByGeometry: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: Game Over
 --- !u!114 &114251744483299536
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4568,7 +4561,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 114573234659533636}
+      - m_Target: {fileID: 0}
         m_MethodName: RollButtonTouched
         m_Mode: 1
         m_Arguments:
@@ -4628,7 +4621,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   diceSprites: []
-  actionSlot: {fileID: 0}
+  skillSlot: {fileID: 0}
 --- !u!114 &114278974878676056
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4838,7 +4831,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   diceType: 0
-  actionIcon: {fileID: 114368642849489856}
+  skillIcon: {fileID: 114368642849489856}
 --- !u!114 &114319549645658252
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4904,14 +4897,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b870c2ea5d29d445fa004eec84d4d5b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  actionBtns:
-  - {fileID: 0}
-  - {fileID: 114887537750491936}
-  - {fileID: 0}
+  skillBtns: []
   detailPanel: {fileID: 114653851111911278}
-  draggingActionBtn: {fileID: 114923176013571372}
-  isReadyToDoAction: 0
-  isDraggingAction: 0
+  draggingSkillBtn: {fileID: 114923176013571372}
+  isReadyToDoSkill: 0
+  isDraggingSkill: 0
   targetCharacter: {fileID: 0}
 --- !u!114 &114327399546075220
 MonoBehaviour:
@@ -6312,31 +6302,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2855ac88520a4499bad405625b5f6d44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &114573234659533636
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1141353076657496}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3340c140371724a45937b7b4442b2184, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  diceSprites:
-  - {fileID: 21300044, guid: 12206e55e0219487b989efb395874c45, type: 3}
-  - {fileID: 21300046, guid: 12206e55e0219487b989efb395874c45, type: 3}
-  - {fileID: 21300048, guid: 12206e55e0219487b989efb395874c45, type: 3}
-  - {fileID: 21300044, guid: 12206e55e0219487b989efb395874c45, type: 3}
-  - {fileID: 21300046, guid: 12206e55e0219487b989efb395874c45, type: 3}
-  - {fileID: 21300048, guid: 12206e55e0219487b989efb395874c45, type: 3}
-  diceImages:
-  - {fileID: 114146373010388314}
-  - {fileID: 114764106362511566}
-  - {fileID: 114395556172623422}
-  indicator: {fileID: 114175241834005040}
-  rollButton: {fileID: 114271720959710620}
-  panel: {fileID: 0}
 --- !u!114 &114580982607975480
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6808,7 +6773,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   diceType: 0
-  actionIcon: {fileID: 114055846908477908}
+  skillIcon: {fileID: 114055846908477908}
 --- !u!114 &114667487339812220
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6848,7 +6813,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   diceType: 0
-  actionIcon: {fileID: 114321041373935490}
+  skillIcon: {fileID: 114321041373935490}
 --- !u!114 &114680690245937158
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6890,7 +6855,7 @@ MonoBehaviour:
   cdText: {fileID: 114509075763139322}
   skillIcon: {fileID: 114502038780081332}
   diceTypeImage: {fileID: 114117147897242256}
-  _action: {fileID: 0}
+  _skill: {fileID: 0}
   bindCh: {fileID: 0}
 --- !u!114 &114687236897819222
 MonoBehaviour:
@@ -7186,7 +7151,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   diceSprites: []
-  actionSlot: {fileID: 0}
+  skillSlot: {fileID: 0}
 --- !u!114 &114727699788942350
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -7199,7 +7164,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   diceSprites: []
-  actionSlot: {fileID: 0}
+  skillSlot: {fileID: 0}
 --- !u!114 &114729618898264736
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -7747,7 +7712,7 @@ MonoBehaviour:
   cdText: {fileID: 114190319458636662}
   skillIcon: {fileID: 114529300607378230}
   diceTypeImage: {fileID: 114018163106562358}
-  _action: {fileID: 0}
+  _skill: {fileID: 0}
   bindCh: {fileID: 0}
 --- !u!114 &114840114824258056
 MonoBehaviour:
@@ -7940,7 +7905,7 @@ MonoBehaviour:
   cdText: {fileID: 114965681049783970}
   skillIcon: {fileID: 114348661945290542}
   diceTypeImage: {fileID: 114127783841028354}
-  _action: {fileID: 0}
+  _skill: {fileID: 0}
   bindCh: {fileID: 0}
 --- !u!114 &114889015279380710
 MonoBehaviour:
@@ -8111,7 +8076,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   diceType: 0
-  actionIcon: {fileID: 114566701944114634}
+  skillIcon: {fileID: 114566701944114634}
 --- !u!114 &114906986698112056
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -8302,7 +8267,7 @@ MonoBehaviour:
   cdText: {fileID: 114935355701688288}
   skillIcon: {fileID: 114453249158966574}
   diceTypeImage: {fileID: 114383545662757442}
-  _action: {fileID: 0}
+  _skill: {fileID: 0}
 --- !u!114 &114923632275676226
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -8348,7 +8313,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   diceSprites: []
-  actionSlot: {fileID: 0}
+  skillSlot: {fileID: 0}
 --- !u!114 &114934306065536446
 MonoBehaviour:
   m_ObjectHideFlags: 1

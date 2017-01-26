@@ -5,7 +5,7 @@ using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using DG.Tweening;
 namespace com.jerrch.rpg{
-public class ActionTree : Singleton<ActionTree>,IDisplayable {
+public class SkillTree : Singleton<SkillTree>,IDisplayable {
 
 	// Use this for initialization
 	
@@ -15,40 +15,40 @@ public class ActionTree : Singleton<ActionTree>,IDisplayable {
 	public RectTransform detailRect;
 	public HandButton learnBtn;
 	public Image selector;
-	public ActionButton draggingTempAction;
-	public ActionPerkUI[] perkUIs;
-	Dictionary<string,ActionPerkUI> perkUIDict;
-	ActionSlot[] actionSlots;
+	public SkillButton draggingTempSkill;
+	public SkillPerkUI[] perkUIs;
+	Dictionary<string,SkillPerkUI> perkUIDict;
+	SkillSlot[] skillSlots;
 	void Awake()
 	{
 		nameText = detailRect.Find("name").GetComponentInChildren<CompositeText>(true);
 		descriptionText = detailRect.Find("description").GetComponentInChildren<CompositeText>(true);
 		abilityReqTexts = detailRect.Find("req").GetComponentsInChildren<CompositeText>(true);
-		perkUIs = GetComponentsInChildren<ActionPerkUI>(true);
-		actionSlots = GetComponentsInChildren<ActionSlot>(true);
-		perkUIDict = new Dictionary<string,ActionPerkUI>();
+		perkUIs = GetComponentsInChildren<SkillPerkUI>(true);
+		skillSlots = GetComponentsInChildren<SkillSlot>(true);
+		perkUIDict = new Dictionary<string,SkillPerkUI>();
 		foreach(var perk in perkUIs)
 		{
-			perkUIDict.Add(perk.bindAction.actionData.id,perk);
+			perkUIDict.Add(perk.bindSkill.skillData.id,perk);
 		}	
 
 		for(int i=0;i<4;i++)
 		{
-			actionSlots[i].index = i; 
+			skillSlots[i].index = i; 
 		}
 		learnBtn.hideVec = new Vector2(0,-20);
 	}
 	public void Show()
 	{
-		print("action tree show");
-		ActionTree.instance.setCharacter(GameManager.instance.currentCh);
+		print("skill tree show");
+		SkillTree.instance.setCharacter(GameManager.instance.currentCh);
 	}
 	public void Hide()
 	{
 		
 	}
 	
-	public void selectPerk(ActionPerkUI perkUI)
+	public void selectPerk(SkillPerkUI perkUI)
 	{
 		RectTransform rect = perkUI.GetComponent<RectTransform>();
 		rect.parent.GetComponent<RectTransform>().DOAnchorPos(-rect.anchoredPosition,0.5f,true);
@@ -58,27 +58,27 @@ public class ActionTree : Singleton<ActionTree>,IDisplayable {
 		selector.rectTransform.anchoredPosition = Vector2.zero;
 		selectedPerk = perkUI;
 
-		switch(perkUI.bindAction.actionData.state)
+		switch(perkUI.bindSkill.skillData.state)
 		{
-			case ActionState.Locked:
+			case SkillState.Locked:
 				learnBtn.Hide();
 			break;
-			case ActionState.Avalible:
+			case SkillState.Avalible:
 				learnBtn.Show();
-				learnBtn.text.text = "Learn "+perkUI.requireActionPoint+"pt";
+				learnBtn.text.text = "Learn "+perkUI.requireSkillPoint+"pt";
 			break;
-			case ActionState.Learned:
+			case SkillState.Learned:
 				learnBtn.Hide();
 			break;
 		}
 	}
-	ActionPerkUI selectedPerk;
-	public void LearnAction()
+	SkillPerkUI selectedPerk;
+	public void LearnSkill()
 	{
-		//check action Points enough
+		//check skill Points enough
 		selectedPerk.learn();
 	}
-	public void showAction(ActionPerkUI perk,Vector2 pos)
+	public void showSkill(SkillPerkUI perk,Vector2 pos)
 	{
 		pos.y = Mathf.Clamp(pos.y,-40,40);
 		detailRect.gameObject.SetActive(true);
@@ -96,15 +96,15 @@ public class ActionTree : Singleton<ActionTree>,IDisplayable {
 			detailRect.anchoredPosition = pos;
 		}
 			
-		nameText.text =  perk.bindAction.name;
-		descriptionText.text = perk.bindAction.description;
+		nameText.text =  perk.bindSkill.name;
+		descriptionText.text = perk.bindSkill.description;
 		descriptionText.text += "\nreq:\n";
 
 		updateRequirement(perk);
 		
 
 	}
-	void updateRequirement(ActionPerkUI perk)
+	void updateRequirement(SkillPerkUI perk)
 	{
 		for(int i=0;i<2;i++)
 		{
@@ -137,24 +137,24 @@ public class ActionTree : Singleton<ActionTree>,IDisplayable {
 		detailRect.gameObject.SetActive(false);
 	}
 
-	public ActionPerkUI draggingPerk;
-	public void OnBeginDragActionPerk(ActionPerkUI perkUI)
+	public SkillPerkUI draggingPerk;
+	public void OnBeginDragSkillPerk(SkillPerkUI perkUI)
 	{
-		if(perkUI.action.actionData.state == ActionState.Learned)
+		if(perkUI.skill.skillData.state == SkillState.Learned)
 		{
 			draggingPerk = perkUI;
-			draggingTempAction.gameObject.SetActive(true);
-			draggingTempAction.bindAction = perkUI.bindAction;
-			draggingTempAction.transform.position = perkUI.transform.position;
+			draggingTempSkill.gameObject.SetActive(true);
+			draggingTempSkill.bindSkill = perkUI.bindSkill;
+			draggingTempSkill.transform.position = perkUI.transform.position;
 		}
 		
 	}
 
-	public void OnDragActionPerk(PointerEventData eventData)
+	public void OnDragSkillPerk(PointerEventData eventData)
 	{
 		if(draggingPerk)
 		{
-			RectTransform rect = draggingTempAction.GetComponent<RectTransform>();
+			RectTransform rect = draggingTempSkill.GetComponent<RectTransform>();
 			float scale = UIManager.instance.GetComponent<Canvas>().scaleFactor;
 			Vector2 d = eventData.delta/scale;
 			rect.anchoredPosition+=d;
@@ -162,73 +162,71 @@ public class ActionTree : Singleton<ActionTree>,IDisplayable {
 		
 	}
 
-	public void OnDropActionSlot(ActionSlot slot)
+	public void OnDropSkillSlot(SkillSlot slot)
 	{
 		if(draggingPerk==null)
 		return;
 
-		ActionSlot swapSlot=null;
-		foreach(var s in actionSlots)
+		SkillSlot swapSlot=null;
+		foreach(var s in skillSlots)
 		{
 			
-			if(s.bindAction==draggingTempAction.bindAction)
+			if(s.bindSkill==draggingTempSkill.bindSkill)
 			{
 				swapSlot = s;
 				break;
 			}
 		}
 		
-		//slot's action was in other slot's
+		//slot's skill was in other slot's
 		if(swapSlot!=null)
 		{
 			//remove swapslot
-			swapSlot.bindAction = null;
-			GameManager.instance.currentCh.removeAction(swapSlot.index);
+			swapSlot.bindSkill = null;
+			
 		}
 		
-		//add slot's action
+		//add slot's skill
 		
 
-		slot.bindAction = draggingPerk.bindAction;
-		GameManager.instance.currentCh.changeAction(slot.index,slot.bindAction);
-		
+		slot.bindSkill = draggingPerk.bindSkill;		
 	}
-	public void changeAction(Character ch,int index,Action action)
+	public void changeSkill(Character ch,int index,Skill skill)
 	{
-		ch.actionList[index] = action;
+		ch.skillList[index] = skill;
 	}
-	public void OnEndDragActionPerk()
+	public void OnEndDragSkillPerk()
 	{
-		draggingTempAction.gameObject.SetActive(false);
+		draggingTempSkill.gameObject.SetActive(false);
 		draggingPerk = null;
 	}
 	public void setCharacter(Character ch)
 	{
 		print("set character");
 		int i=0;
-		foreach(var action in ch.actionList)
+		foreach(var skill in ch.skillList)
 		{
-			actionSlots[i].bindAction = action;
+			skillSlots[i].bindSkill = skill;
 			i++;
 		} 
 		
 	}
 	
 
-	public List<ActionData> exportActionData()
+	public List<SkillData> exportSkillData()
 	{
-		List<ActionData> actionDataList = new List<ActionData>();
+		List<SkillData> skillDataList = new List<SkillData>();
 		foreach(var perk in perkUIs)
 		{
-			actionDataList.Add(perk.action.actionData);
+			skillDataList.Add(perk.skill.skillData);
 		}
-		return actionDataList;
+		return skillDataList;
 	}
-	public void importActionData(List<ActionData> actionDataList)
+	public void importSkillData(List<SkillData> skillDataList)
 	{
-		foreach(var acData in actionDataList)
+		foreach(var acData in skillDataList)
 		{
-			  perkUIDict[acData.id].bindAction.actionData = acData;
+			  perkUIDict[acData.id].bindSkill.skillData = acData;
 		}
 	}
 }

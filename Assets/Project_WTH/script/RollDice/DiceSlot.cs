@@ -2,12 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-public class DiceSlot : MonoBehaviour {
+using UnityEngine.EventSystems;
+public class DiceSlot : MonoBehaviour,IPointerClickHandler {
 	Image image;
 	public Sprite[] diceSprites;
-	ActionDiceType[] _faceTypes;
+	SkillDiceType[] _faceTypes;
+	public int index;
 
-	public ActionDiceType[] faceTypes
+	public SkillDiceType[] faceTypes
 	{
 		set{
 			_faceTypes = value;
@@ -15,18 +17,20 @@ public class DiceSlot : MonoBehaviour {
 
 	}
 
-	public DiceActionSlot actionSlot;
+
+	[HideInInspector]
+	public DiceSkillSlot skillSlot;
 	
 	void Awake()
 	{
 		image = GetComponent<Image>();
-		actionSlot = GetComponentInChildren<DiceActionSlot>();
+		skillSlot = GetComponentInChildren<DiceSkillSlot>();
 	}
 
 
 	public void clear()
 	{
-		actionSlot.clear();
+		skillSlot.clear();
 		_belongsTo = DiceBelongsTo.Unknown;
 	}
 
@@ -59,7 +63,7 @@ public class DiceSlot : MonoBehaviour {
 	{
 		enemySprite = sprite;
 		_belongsTo = DiceBelongsTo.Enemy;
-		actionSlot.actionUnit.maximum = 10;
+		skillSlot.skillUnit.maximum = 10;
 	}
 
 	int rollNum;
@@ -101,16 +105,20 @@ public class DiceSlot : MonoBehaviour {
 		{
 			image.sprite = enemySprite;
 			enemySprite = null;
+			resultCallback(SkillDiceType.Enemy);
 		}
 		else
 		{
 			_belongsTo = DiceBelongsTo.Player;
-			actionSlot.diceType = _faceTypes[currentSpriteSpin];
-			resultCallback((ActionDiceType)currentSpriteSpin);
+			skillSlot.diceType = _faceTypes[currentSpriteSpin];
+			resultCallback((SkillDiceType)currentSpriteSpin);
 		}
-		
-		
 	}
+	void IPointerClickHandler.OnPointerClick(PointerEventData eventData)
+    {
+		TurnBattleManager.instance.selectSlot(index);
+        SoundEffectManager.instance.playSound(BasicSound.Drop);
+    }
 }
 
 public enum DiceBelongsTo{Unknown,Player,Enemy}

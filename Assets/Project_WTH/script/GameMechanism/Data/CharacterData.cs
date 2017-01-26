@@ -21,10 +21,10 @@ public class CharacterData:StringfyProperty{
 	public int dexVal;
 	
 	public string UITemplateID="player";
-	//public List<ActionData> currentActionData = new List<ActionData>();
-	//public List<string> actionIDs = new List<string>();
-	//TODO: complex with actionBundle, add feature to action of each ch.
-	public List<ActionData> actionDatas;
+	//public List<SkillData> currentSkillData = new List<SkillData>();
+	//public List<string> skillIDs = new List<string>();
+	//TODO: complex with skillBundle, add feature to skill of each ch.
+	public List<SkillData> skillDatas;
 
 	public EquipData weapon; 
 	public EquipData helmet; 
@@ -36,16 +36,16 @@ public class CharacterData:StringfyProperty{
 	// public List<Equip> availableEquips;
 
 	/*
-	public void knowNewActionData(string name)
+	public void knowNewSkillData(string name)
 	{
-		ActionData skilldata = new ActionData(name);
-		availableActionData.Add(skilldata);
+		SkillData skilldata = new SkillData(name);
+		availableSkillData.Add(skilldata);
 	}
 
-	public void replaceCurrentSkillData(ActionData target, ActionData replaceWith)
+	public void replaceCurrentSkillData(SkillData target, SkillData replaceWith)
 	{
-		currentActionData.Remove(target);
-		currentActionData.Add(replaceWith);
+		currentSkillData.Remove(target);
+		currentSkillData.Add(replaceWith);
 	}
 	*/
 	public Character genCharacter()
@@ -58,11 +58,11 @@ public class CharacterData:StringfyProperty{
 		Character ch = CharacterManager.instance.generateCharacter(UITemplateID);
 		ch.name = nickName;
 		//foreach()
-		//actionDatas[i]
+		//skillDatas[i]
 		ch.bindData = this;
 		abilityPoints = 5;
 		skillPoints = 3;
-		ch.init(genStat(),genEquips(),ActionManager.instance.getActions(actionDatas));
+		ch.init(genStat(),genEquips(),SkillManager.instance.getSkills(skillDatas));
 		
 		return ch;
 	}

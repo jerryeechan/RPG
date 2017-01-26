@@ -8,7 +8,7 @@ public class StatChUIManager : SingletonChUIManager<StatChUIManager>,IDisplayabl
 	List<HandButton> chButtons;
 
 	[SerializeField]
-	ActionBuildUIManger actionBuildManager;
+	SkillBuildUIManger skillBuildManager;
 	[SerializeField]
 	CharacterAbilityUIManager abilityManager;
 	[SerializeField]
@@ -19,7 +19,7 @@ public class StatChUIManager : SingletonChUIManager<StatChUIManager>,IDisplayabl
 	{
 		base.Awake();
 		inspectables = new List<IinspectPlayerable>();
-		inspectables.Add(actionBuildManager);
+		inspectables.Add(skillBuildManager);
 		inspectables.Add(abilityManager);
 		inspectables.Add(equipUIManager);
 	}
@@ -75,7 +75,7 @@ public class StatChUIManager : SingletonChUIManager<StatChUIManager>,IDisplayabl
 	public void getSkillPoints(int val)
 	{
 		selectedCh.bindData.skillPoints+=val;
-		actionBuildManager.inspectCharacter(selectedCh);
+		skillBuildManager.inspectCharacter(selectedCh);
 	}
 }
 

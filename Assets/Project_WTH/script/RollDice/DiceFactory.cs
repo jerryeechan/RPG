@@ -25,7 +25,7 @@ public class DiceFactory : Singleton<DiceFactory> {
 		dice.faceTypes = defaultDiceTemplate.faceTypes;
 	}*/
 
-	public bool isInSet(ActionDiceType targetType,ActionDiceType setType)
+	public bool isInSet(SkillDiceType targetType,SkillDiceType setType)
 	{
 		return (targetType & setType)!=0;
 	}

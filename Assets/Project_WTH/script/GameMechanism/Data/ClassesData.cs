@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using com.jerrch.rpg;
 public class ClassesData : MonoBehaviour {
 
 	public string classID;
@@ -9,9 +9,11 @@ public class ClassesData : MonoBehaviour {
 
 	public string description;
 	public string specialty;
-	public string[] attackActionCandidateIDs;
-	public string[] defenseActionCandidateIDs;
-	public string[] specialActionCandidateIDs;
+	//public List<Skill> attackSkillCandidates;
+	//public List<Skill> supportSkillCandidates;
+	// pub/lic List<Skill> specialSkillCandidates;
+	[SerializeField]
+	Transform skillTemplates;
 	
 	public string[] helmetIDs;
 	public string[] helmetGraphicIDs;
@@ -22,19 +24,41 @@ public class ClassesData : MonoBehaviour {
 	public string[] shieldIDs;
 	public string[] shieldGraphicIDs;
 	
+	void OnValidate()
+	{
+		//init();
+	}
+	Dictionary<SkillDiceType,List<Skill>> candidatesDict;
+	void init()
+	{
+		candidatesDict = new Dictionary<SkillDiceType,List<Skill>>();
+		candidatesDict.Add(SkillDiceType.Attack,new List<Skill>());
+		candidatesDict.Add(SkillDiceType.Support,new List<Skill>());
+		candidatesDict.Add(SkillDiceType.Special,new List<Skill>());
+		if(skillTemplates!=null)
+		{
+			var skills = skillTemplates.GetComponentsInChildren<Skill>();
+			foreach(var skill in skills)
+			{
+				candidatesDict[skill.diceType].Add(skill);
+			}
+		}
+	}
 	void Awake()
 	{
-		
+		init();
 	}
-	List<string> mergeActionsList()
+	List<Skill> mergeSkillsList()
 	{
-		List<string> allActionIDs = new List<string>();
-		allActionIDs.AddRange(attackActionCandidateIDs);
-		allActionIDs.AddRange(defenseActionCandidateIDs);
-		allActionIDs.AddRange(specialActionCandidateIDs);
-		return allActionIDs;
+		List<Skill> allSkillIDs = new List<Skill>();
+		foreach(var v in candidatesDict)
+		{
+			//if there are more skills, random select of each type
+			allSkillIDs.AddRange(v.Value);
+		}
+		return allSkillIDs;
 	}
-	const int actionNumPerClass = 3;
+	const int skillNumPerClass = 3;
 
 	public int strSeed;
 	public int intSeed;
@@ -52,11 +76,11 @@ public class ClassesData : MonoBehaviour {
 		chData.armor = new EquipData(armorIDs[0],0);
 		chData.weapon = new EquipData(weaponIDs[0],0);
 		chData.shield = new EquipData(shieldIDs[0],0);
-		chData.actionDatas = new List<ActionData>();
+		chData.skillDatas = new List<SkillData>();
 
-		var actionIDs = getRandomActionIDs();
-		for(int i=0;i<actionIDs.Count;i++)
-		chData.actionDatas.Add(new ActionData(actionIDs[i]));
+		var skillIDs = getRandomSkillIDs();
+		for(int i=0;i<skillIDs.Count;i++)
+		chData.skillDatas.Add(new SkillData(skillIDs[i]));
 
 		chData.conVal = conSeed;
 		chData.dexVal = dexSeed;
@@ -65,20 +89,33 @@ public class ClassesData : MonoBehaviour {
 		return chData;
 	}
 
-	List<string> getRandomActionIDs()
+	List<string> getRandomSkillIDs()
 	{
-		var randomActions = mergeActionsList();
-		//randomActions.Shuffle();
+		var randomSkills = mergeSkillsList();
+		var ids = new List<string>();
+		for(int i=0;i<3;i++)
+		{
+			ids.Add(randomSkills[i].id);
+		}
 		
-		// randomActions.Sort();
-		return randomActions.GetRange(0,3);
+		//randomSkills.Shuffle();
+		
+		// randomSkills.Sort();
+		return ids;
 	}
 }
+public enum ClassesType{
+	None,
+	Paladin,DarkPalidin,
+	Mage,Priest,Taoist
+}
+
+
 
 /*
-		for(int i=0;i<actionNumPerClass;i++)
+		for(int i=0;i<skillNumPerClass;i++)
 		{
-			int r = Random.Range(0,actionIDs.Count);
-			randomActions.Add(actionIDs[r]);
-			actionIDs.RemoveAt(r);
+			int r = Random.Range(0,skillIDs.Count);
+			randomSkills.Add(skillIDs[r]);
+			skillIDs.RemoveAt(r);
 		}*/

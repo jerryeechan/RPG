@@ -17,7 +17,7 @@ public class HealthBar : MonoBehaviour {
 	void Awake () {
 		Transform healthbar = transform.Find("healthbarIn");
 		Transform shieldBar = transform.Find("shieldbarIn");
-		shieldBarSpr = shieldBar.GetComponent<SpriteRenderer>();
+//		shieldBarSpr = shieldBar.GetComponent<SpriteRenderer>();
 		healthBarSpr = healthbar.GetComponent<SpriteRenderer>();
 		//SelfTest();
 	}

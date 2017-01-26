@@ -2,13 +2,13 @@
 using System.Collections;
 
 public class CombatUIManager : Singleton<CombatUIManager> {
-	public GameObject actionPanel;
-	public GameObject actionDetailPanel;
+	public GameObject skillPanel;
+	public GameObject skillDetailPanel;
 	
 	
-	public void UseActionDone()
+	public void UseSkillDone()
 	{
-		//actionDetailPanel.SetActive(false);
+		//skillDetailPanel.SetActive(false);
 	}
 	
 }

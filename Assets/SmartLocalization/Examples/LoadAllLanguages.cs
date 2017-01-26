@@ -7,10 +7,12 @@
 
 namespace SmartLocalization
 {
+using Editor;
+using UnityEditor;
 using UnityEngine;
 using System.Collections.Generic;
-
-public class LoadAllLanguages : Singleton<LoadAllLanguages>
+[ExecuteInEditMode]
+public class LoadAllLanguages : MonoBehaviour
 {
 	private List<string> currentLanguageKeys;
 	private List<SmartCultureInfo> availableLanguages;
@@ -18,10 +20,10 @@ public class LoadAllLanguages : Singleton<LoadAllLanguages>
 	private Vector2 valuesScrollPosition = Vector2.zero;
 	private Vector2 languagesScrollPosition = Vector2.zero;
 
+	static SortedDictionary<string,LocalizedObject> localValues;
 	void Start () 
 	{
 		languageManager = LanguageManager.Instance;
-		
 		SmartCultureInfo deviceCulture = languageManager.GetDeviceCultureIfSupported();
 		if(deviceCulture != null)
 		{
@@ -43,6 +45,10 @@ public class LoadAllLanguages : Singleton<LoadAllLanguages>
 		}
 
 		LanguageManager.Instance.OnChangeLanguage += OnLanguageChanged;
+	}
+	public static string getLocalText(string key)
+	{
+		return LanguageManager.Instance.GetTextValue(key);
 	}
 
 	void OnDestroy()

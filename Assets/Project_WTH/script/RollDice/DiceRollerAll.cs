@@ -23,6 +23,7 @@ public class DiceRollerAll : Singleton<DiceRollerAll> {
 	}
 	public void Roll(DiceRollResultDelegate d)
 	{
+		 print("Roll");
 		 diceRollDelegate+=d;
 		 currentDice = 0;
 		 enemyPos = Random.Range(0,4);
@@ -32,15 +33,20 @@ public class DiceRollerAll : Singleton<DiceRollerAll> {
 			 dices[i].Roll(rollNum[i],rollDoneCallBack);
 		 }
 	}
-	ActionDiceType[] result = {0,0,0};
+	SkillDiceType[] result = {0,0,0,0};
 	int currentDice = 0;
-	public void rollDoneCallBack(ActionDiceType value)
+	public void rollDoneCallBack(SkillDiceType value)
 	{
 		result[currentDice] = value; 
+		currentDice++;
+		if(currentDice==4)
+		{
+			diceRollDelegate(result,enemyPos);
+		}
 	}
 
 	
 }
 
-public delegate void DiceTypeResultDelegate(ActionDiceType type);
-public delegate void DiceRollResultDelegate(ActionDiceType[] values);
+public delegate void DiceTypeResultDelegate(SkillDiceType type);
+public delegate void DiceRollResultDelegate(SkillDiceType[] values,int monsterIndex);

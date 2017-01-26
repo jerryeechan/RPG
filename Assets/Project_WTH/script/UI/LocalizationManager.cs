@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
 using SmartLocalization;
+
 public class LocalizationManager : Singleton<LocalizationManager> {
 	public  List<SmartCultureInfo> availableLanguages;
 	// Use this for initialization
@@ -8,6 +9,7 @@ public class LocalizationManager : Singleton<LocalizationManager> {
 
 	void OnValidate()
 	{
+		
 		if(availableLanguages.Count>current)
 			LanguageManager.Instance.ChangeLanguage(availableLanguages[current]);
 	}

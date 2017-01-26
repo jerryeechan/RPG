@@ -88,4 +88,4 @@ public class InfoManager : Singleton<InfoManager> {
 	}
 }
 
-public enum InfoTabType{Bag,Action,Adventure,Shop,DiceFactory};
+public enum InfoTabType{Bag,Skill,Adventure,Shop,DiceFactory};

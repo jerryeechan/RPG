@@ -128,7 +128,7 @@ public class CharacterRenderer : MonoBehaviour {
 	{
 		if(!isCombatMode)
 			return;
-		if(!ActionUIManager.instance.isDraggingAction)
+		if(!SkillUIManager.instance.isDraggingSkill)
 		{
 			CursorManager.instance.PointerMode();
 		}
@@ -149,16 +149,16 @@ public class CharacterRenderer : MonoBehaviour {
 	
 	void OnMouseExit()
 	{
-		//if(!ActionUIManager.instance.isDraggingAction)
+		//if(!SkillUIManager.instance.isDraggingSkill)
 		//	return;
 		CursorManager.instance.NormalMode();
 		/*
 		if(isCombatMode)
-			ActionUIManager.instance.OverCharacter(null);
+			SkillUIManager.instance.OverCharacter(null);
 			*/
 	}
 
-	//only call in ActionUIManger.instance.setCharacter
+	//only call in SkillUIManger.instance.setCharacter
 	
 	static CharacterRenderer lastSelected;
 	public void deselect()
@@ -180,9 +180,9 @@ public class CharacterRenderer : MonoBehaviour {
 			}
 		}
 		/*
-		if(isCombatMode&&ActionUIManager.instance.isDraggingAction)
+		if(isCombatMode&&SkillUIManager.instance.isDraggingSkill)
 		{
-			ActionUIManager.instance.OverCharacter(bindCh);
+			SkillUIManager.instance.OverCharacter(bindCh);
 			
 			if(bindCh.side == CharacterSide.Player)
 				RandomBattleRound.instance.selectedAllies = bindCh;
@@ -211,18 +211,18 @@ public class CharacterRenderer : MonoBehaviour {
 		print("mosue up");
 		pressCount = 0;
 		isMouseDown = false;
-		if(ActionUIManager.instance.isDraggingAction)
+		if(SkillUIManager.instance.isDraggingSkill)
 		{
-			print("drop action on this ch:"+bindCh.name);
+			print("drop skill on this ch:"+bindCh.name);
 		}
 		
 	}
 
 	public void selected()
 	{
-		ActionUIManager.instance.setCharacter(bindCh);
+		SkillUIManager.instance.setCharacter(bindCh);
 		BattleChUIManager.instance.setCharacter(bindCh);
-		SoundEffectManager.instance.playSound(BasicSound.UI);
+		
 		TurnBattleManager.instance.selectedPlayer = bindCh;
 		
 		indicater.gameObject.SetActive(true);
@@ -250,6 +250,7 @@ public class CharacterRenderer : MonoBehaviour {
 			if(bindCh.side == CharacterSide.Player)
 			{
 				selected();
+				SoundEffectManager.instance.playSound(BasicSound.UI);
 			}
 		}
 		

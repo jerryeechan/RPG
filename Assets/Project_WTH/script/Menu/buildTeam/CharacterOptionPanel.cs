@@ -13,11 +13,11 @@ public class CharacterOptionPanel : MonoBehaviour {
     [SerializeField]
     Image weapon;
 
-    ActionButton[] actionBtns;
+    SkillButton[] skillBtns;
 
     void Awake()
     {
-        actionBtns = GetComponentsInChildren<ActionButton>();
+        skillBtns = GetComponentsInChildren<SkillButton>();
     }
 	
 	public void setCharacter(CharacterData chData)
@@ -29,12 +29,12 @@ public class CharacterOptionPanel : MonoBehaviour {
         
         for(int i=0;i<3;i++)
         {
-            actionBtns[i].bindAction = ActionManager.instance.getAction(chData.actionDatas[i].id);
+            skillBtns[i].bindSkill = SkillManager.instance.getSkill(chData.skillDatas[i].id);
         }
         
     }
     public void btnClick(int index)
     {
-        RosterBuilder.instance.bindAction = actionBtns[index].bindAction;
+        RosterBuilder.instance.bindSkill = skillBtns[index].bindSkill;
     }
 }

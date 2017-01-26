@@ -36,7 +36,7 @@ public class ClassesDataManager : Singleton<ClassesDataManager>{
 		//classesDataList[r].getChData();
 		
 		
-		//assign classes actions
+		//assign classes skills
 		
 		return classesDataList[r++].generateChData();
 	}

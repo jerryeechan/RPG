@@ -7,6 +7,9 @@ using UnityEditor;
 
 using NodeEditorFramework;
 using NodeEditorFramework.Utilities;
+using SmartLocalization.Editor;
+using System.Collections.Generic;
+using SmartLocalization;
 
 namespace NodeEditorFramework.Standard
 {
@@ -60,8 +63,12 @@ namespace NodeEditorFramework.Standard
 			return false;
 		}
 
+		static Dictionary<string,LocalizedObject> languageValues;
 		private void OnEnable()
-		{            
+		{           
+			var languageValues = LanguageHandlerEditor.LoadParsedLanguageFile("zh-TW", false);
+			DialogNode.localTexts = languageValues;
+			
 			_editor = this;
 			NodeEditor.checkInit(false);
 
@@ -139,7 +146,7 @@ namespace NodeEditorFramework.Standard
 //			if (Event.current.type != EventType.Layout)
 //				mainEditorState.canvasRect = canvasRect;
 			NodeEditorGUI.StartNodeGUI ();
-
+			
 			// Perform drawing with error-handling
 			try
 			{

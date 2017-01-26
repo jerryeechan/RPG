@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class ActionUsingUI : MonoBehaviour {
+public class SkillUsingUI : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {

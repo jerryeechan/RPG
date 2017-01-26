@@ -50,7 +50,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4977210737715672}
   m_Layer: 0
-  m_Name: Defend
+  m_Name: Support
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -65,7 +65,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4138880463409688}
   m_Layer: 0
-  m_Name: Defend
+  m_Name: Support
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -159,6 +159,22 @@ GameObject:
   m_Component:
   - component: {fileID: 4073167696876020}
   - component: {fileID: 114628825497422760}
+  m_Layer: 0
+  m_Name: main
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1229474749056078
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4556432942951432}
+  - component: {fileID: 114702788251823332}
   m_Layer: 0
   m_Name: main
   m_TagString: Untagged
@@ -294,6 +310,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1304316797717066
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4925638576886264}
+  m_Layer: 0
+  m_Name: Support
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1306291043241186
 GameObject:
   m_ObjectHideFlags: 1
@@ -320,6 +351,22 @@ GameObject:
   - component: {fileID: 4885980141527108}
   m_Layer: 0
   m_Name: addon
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1324858000397516
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4998923419519916}
+  - component: {fileID: 114286559174385396}
+  m_Layer: 0
+  m_Name: NormalDamage_AOE
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -568,7 +615,7 @@ GameObject:
   - component: {fileID: 4026183391447582}
   - component: {fileID: 114286443900177984}
   m_Layer: 0
-  m_Name: skill_elemental_blessing
+  m_Name: skill_mage_elemental_blessing
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -632,7 +679,7 @@ GameObject:
   - component: {fileID: 4926123806852906}
   - component: {fileID: 114732939403238184}
   m_Layer: 0
-  m_Name: skill_divein_invinsible
+  m_Name: skill_divine_invinsible
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -726,7 +773,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4749440472979560}
   m_Layer: 0
-  m_Name: Defend
+  m_Name: Support
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -889,6 +936,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1615000366545528
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4833872988022354}
+  m_Layer: 0
+  m_Name: addon
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1645762899513420
 GameObject:
   m_ObjectHideFlags: 1
@@ -1007,7 +1069,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4765061307113160}
   m_Layer: 0
-  m_Name: Attacks
+  m_Name: Attack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1295,6 +1357,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1906111348598860
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4242358702520426}
+  - component: {fileID: 114621904511410756}
+  m_Layer: 0
+  m_Name: ogre_smash
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1908714396787860
 GameObject:
   m_ObjectHideFlags: 0
@@ -1304,7 +1382,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4925971407526192}
   m_Layer: 0
-  m_Name: Bishop
+  m_Name: Priest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1395,7 +1473,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4905350582705930}
   m_Layer: 0
-  m_Name: Defense
+  m_Name: Support
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1744,6 +1822,20 @@ Transform:
   m_Father: {fileID: 4888062844390878}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4242358702520426
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1906111348598860}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 4998923419519916}
+  m_Father: {fileID: 4619955720357012}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4246231632184796
 Transform:
   m_ObjectHideFlags: 1
@@ -1920,7 +2012,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1601359097424488}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -640, y: -400, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4619955720357012}
@@ -2031,6 +2123,19 @@ Transform:
   m_Father: {fileID: 4796386202624268}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4556432942951432
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1229474749056078}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4998923419519916}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4559082231615402
 Transform:
   m_ObjectHideFlags: 1
@@ -2111,6 +2216,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4359116631368144}
+  - {fileID: 4242358702520426}
   m_Father: {fileID: 4419321468984300}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2220,6 +2326,7 @@ Transform:
   m_Children:
   - {fileID: 4574288333507978}
   - {fileID: 4855466997738814}
+  - {fileID: 4925638576886264}
   m_Father: {fileID: 4419321468984300}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2380,6 +2487,19 @@ Transform:
   m_Father: {fileID: 4026183391447582}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4833872988022354
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1615000366545528}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4998923419519916}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4835337821262294
 Transform:
   m_ObjectHideFlags: 1
@@ -2530,6 +2650,19 @@ Transform:
   m_Father: {fileID: 4216388216711746}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4925638576886264
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1304316797717066}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4757400227932576}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4925971407526192
 Transform:
   m_ObjectHideFlags: 1
@@ -2646,6 +2779,21 @@ Transform:
   m_Father: {fileID: 4787024143531498}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4998923419519916
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1324858000397516}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 4556432942951432}
+  - {fileID: 4833872988022354}
+  m_Father: {fileID: 4242358702520426}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &114000851695917508
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2657,16 +2805,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 559c081501d564701ad04332e9a8adc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
   diceType: 0
-  skills:
-  - {fileID: 114807107707559928}
+  subSkills: []
   id: 
   description: Kill You
   icon: {fileID: 21300002, guid: fe5260ff6edd74691b2caa79354fee98, type: 3}
-  actionAnimationID: hammerMelee
+  skillAnimationID: 
   chAnimation: 2
-  actionData:
+  skillData:
     id: 
     level: 0
     masterLevel: 0
@@ -2685,17 +2831,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 559c081501d564701ad04332e9a8adc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
   diceType: 2
-  skills:
-  - {fileID: 114815358043896296}
+  subSkills: []
   id: skill_divine_shield
   description: "\u4FDD\u8B77\u968A\u53CB\uFF0C\u4E8C\u56DE\u5408\u5167\u964D\u4F4E\u5176\u53D7\u5230\u7684\u50B7\u5BB350%"
   icon: {fileID: 21300140, guid: fe5260ff6edd74691b2caa79354fee98, type: 3}
-  actionAnimationID: 
+  skillAnimationID: 
   chAnimation: 3
-  actionData:
-    id: skill_divine_shield
+  skillData:
+    id: 
     level: 0
     masterLevel: 0
     state: 0
@@ -2723,7 +2867,7 @@ MonoBehaviour:
   calEffectValue: 0
   applyResult: 0
   hit: 1
-  parentSkill: {fileID: 114591087190415976}
+  parentSubSkill: {fileID: 114591087190415976}
   level: 1
 --- !u!114 &114098490648277854
 MonoBehaviour:
@@ -2746,7 +2890,7 @@ MonoBehaviour:
   calEffectValue: 0
   applyResult: 0
   hit: 1
-  parentSkill: {fileID: 114422281088661666}
+  parentSubSkill: {fileID: 114422281088661666}
   level: 1
 --- !u!114 &114141144509621052
 MonoBehaviour:
@@ -2769,7 +2913,7 @@ MonoBehaviour:
   calEffectValue: 0
   applyResult: 0
   hit: 1
-  parentSkill: {fileID: 114953507736208348}
+  parentSubSkill: {fileID: 114953507736208348}
   level: 1
   baseMultiplier: 0
   bonus:
@@ -2786,14 +2930,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d915518966a0f4025bc01cbb392699ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parentAction: {fileID: 114981761732791448}
-  followSkill: {fileID: 0}
+  parentSkill: {fileID: 0}
   mainEffect: {fileID: 114706566289996330}
   accuracy: 1
   skillAnimationID: holyray_anim
   hitAnimationID: 
   castTiming: 0
-  skillState: 0
   posType: 1
   criticalBonus: 1
 --- !u!114 &114202852567316546
@@ -2817,7 +2959,7 @@ MonoBehaviour:
   calEffectValue: 0
   applyResult: 0
   hit: 1
-  parentSkill: {fileID: 114324556261786214}
+  parentSubSkill: {fileID: 114324556261786214}
   level: 1
   baseMultiplier: 0
   bonus:
@@ -2834,17 +2976,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 559c081501d564701ad04332e9a8adc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
   diceType: 0
-  skills:
-  - {fileID: 114397935018355628}
+  subSkills: []
   id: zombie_scratch
   description: ZombieScratch
   icon: {fileID: 21300040, guid: fe5260ff6edd74691b2caa79354fee98, type: 3}
-  actionAnimationID: none
+  skillAnimationID: 
   chAnimation: 1
-  actionData:
-    id: zombie_scratch
+  skillData:
+    id: 
     level: 0
     masterLevel: 0
     state: 0
@@ -2862,14 +3002,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d915518966a0f4025bc01cbb392699ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parentAction: {fileID: 114541987973759078}
-  followSkill: {fileID: 0}
+  parentSkill: {fileID: 0}
   mainEffect: {fileID: 114999855828288828}
   accuracy: 1
   skillAnimationID: 
   hitAnimationID: strikeHitEffect
   castTiming: 0
-  skillState: 0
   posType: 0
   criticalBonus: 1
 --- !u!114 &114243122496919020
@@ -2883,14 +3021,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d915518966a0f4025bc01cbb392699ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parentAction: {fileID: 114645288801941470}
-  followSkill: {fileID: 0}
+  parentSkill: {fileID: 0}
   mainEffect: {fileID: 114922937213667480}
   accuracy: 1
   skillAnimationID: elementalblessing_anim
   hitAnimationID: 
   castTiming: 0
-  skillState: 0
   posType: 1
   criticalBonus: 1
 --- !u!114 &114243522493110340
@@ -2904,17 +3040,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 559c081501d564701ad04332e9a8adc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
   diceType: 1
-  skills:
-  - {fileID: 114790684034226558}
+  subSkills: []
   id: skill_mage_firestorm
   description: Throw a fireball to an enemy
   icon: {fileID: 21300040, guid: fe5260ff6edd74691b2caa79354fee98, type: 3}
-  actionAnimationID: none
+  skillAnimationID: 
   chAnimation: 3
-  actionData:
-    id: skill_mage_firestorm
+  skillData:
+    id: 
     level: 0
     masterLevel: 0
     state: 0
@@ -2932,14 +3066,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d915518966a0f4025bc01cbb392699ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parentAction: {fileID: 114353038654777242}
-  followSkill: {fileID: 0}
+  parentSkill: {fileID: 0}
   mainEffect: {fileID: 114779014225915360}
   accuracy: 1
   skillAnimationID: darks_shield_anim
   hitAnimationID: 
   castTiming: 0
-  skillState: 0
   posType: 0
   criticalBonus: 1
 --- !u!114 &114264697622432574
@@ -2953,17 +3085,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 559c081501d564701ad04332e9a8adc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
   diceType: 2
-  skills:
-  - {fileID: 114422281088661666}
+  subSkills: []
   id: skill_holy_heal
   description: Increase damage
   icon: {fileID: 21300078, guid: fe5260ff6edd74691b2caa79354fee98, type: 3}
-  actionAnimationID: 
+  skillAnimationID: 
   chAnimation: 3
-  actionData:
-    id: skill_holy_heal
+  skillData:
+    id: 
     level: 0
     masterLevel: 0
     state: 0
@@ -2991,7 +3121,7 @@ MonoBehaviour:
   calEffectValue: 0
   applyResult: 0
   hit: 1
-  parentSkill: {fileID: 114807107707559928}
+  parentSubSkill: {fileID: 114807107707559928}
   level: 1
 --- !u!114 &114274561051469052
 MonoBehaviour:
@@ -3004,14 +3134,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d915518966a0f4025bc01cbb392699ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parentAction: {fileID: 114566611333963370}
-  followSkill: {fileID: 0}
+  parentSkill: {fileID: 0}
   mainEffect: {fileID: 114628825497422760}
   accuracy: 1
   skillAnimationID: elementalblessing_anim
   hitAnimationID: 
   castTiming: 0
-  skillState: 0
   posType: 1
   criticalBonus: 1
 --- !u!114 &114286443900177984
@@ -3025,24 +3153,40 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 559c081501d564701ad04332e9a8adc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
   diceType: 4
-  skills:
-  - {fileID: 114414464413100612}
-  - {fileID: 114324556261786214}
+  subSkills: []
   id: skill_elemental_blessing
   description: Increase damage
   icon: {fileID: 21300046, guid: fe5260ff6edd74691b2caa79354fee98, type: 3}
-  actionAnimationID: 
+  skillAnimationID: 
   chAnimation: 1
-  actionData:
-    id: skill_elemental_blessing
+  skillData:
+    id: 
     level: 0
     masterLevel: 0
     state: 0
   caster: {fileID: 0}
   cd: 2
   cd_count: 0
+--- !u!114 &114286559174385396
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1324858000397516}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d915518966a0f4025bc01cbb392699ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parentSkill: {fileID: 0}
+  mainEffect: {fileID: 114702788251823332}
+  accuracy: 1
+  skillAnimationID: 
+  hitAnimationID: scratchHitEffect
+  castTiming: 0
+  posType: 1
+  criticalBonus: 1
 --- !u!114 &114294155502428288
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3054,17 +3198,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 559c081501d564701ad04332e9a8adc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
   diceType: 4
-  skills:
-  - {fileID: 114839697240773264}
+  subSkills: []
   id: skill_talisman_paralyze
   description: Increase damage
   icon: {fileID: 21300130, guid: fe5260ff6edd74691b2caa79354fee98, type: 3}
-  actionAnimationID: 
+  skillAnimationID: 
   chAnimation: 1
-  actionData:
-    id: skill_talisman_paralyze
+  skillData:
+    id: 
     level: 0
     masterLevel: 0
     state: 0
@@ -3082,14 +3224,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d915518966a0f4025bc01cbb392699ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parentAction: {fileID: 114286443900177984}
-  followSkill: {fileID: 0}
+  parentSkill: {fileID: 0}
   mainEffect: {fileID: 114202852567316546}
   accuracy: 1
   skillAnimationID: elementalblessing_anim
   hitAnimationID: 
   castTiming: 0
-  skillState: 0
   posType: 1
   criticalBonus: 1
 --- !u!114 &114353038654777242
@@ -3103,17 +3243,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 559c081501d564701ad04332e9a8adc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
   diceType: 2
-  skills:
-  - {fileID: 114243702605205504}
+  subSkills: []
   id: skill_dark_shield
   description: "\u9748\u9B42\u805A\u96C6\u800C\u6210\u7684\u9ED1\u6697\u4E4B\u76FE"
   icon: {fileID: 21300146, guid: fe5260ff6edd74691b2caa79354fee98, type: 3}
-  actionAnimationID: 
+  skillAnimationID: 
   chAnimation: 3
-  actionData:
-    id: skill_dark_shield
+  skillData:
+    id: 
     level: 0
     masterLevel: 0
     state: 0
@@ -3131,14 +3269,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d915518966a0f4025bc01cbb392699ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parentAction: {fileID: 114840408885278594}
-  followSkill: {fileID: 0}
+  parentSkill: {fileID: 0}
   mainEffect: {fileID: 114820628007163104}
   accuracy: 1
   skillAnimationID: darkslash_large_anim
   hitAnimationID: strikeHitEffect
   castTiming: 0
-  skillState: 1
   posType: 0
   criticalBonus: 1
 --- !u!114 &114397935018355628
@@ -3152,14 +3288,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d915518966a0f4025bc01cbb392699ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parentAction: {fileID: 114222071451939388}
-  followSkill: {fileID: 0}
+  parentSkill: {fileID: 0}
   mainEffect: {fileID: 114419272264623016}
   accuracy: 1
   skillAnimationID: 
   hitAnimationID: scratchHitEffect
   castTiming: 0
-  skillState: 0
   posType: 1
   criticalBonus: 1
 --- !u!114 &114414464413100612
@@ -3173,14 +3307,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d915518966a0f4025bc01cbb392699ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parentAction: {fileID: 114286443900177984}
-  followSkill: {fileID: 0}
+  parentSkill: {fileID: 0}
   mainEffect: {fileID: 114448077835651098}
   accuracy: 1
   skillAnimationID: elementalblessing_anim
   hitAnimationID: 
   castTiming: 0
-  skillState: 0
   posType: 1
   criticalBonus: 1
 --- !u!114 &114416221195764264
@@ -3194,14 +3326,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d915518966a0f4025bc01cbb392699ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parentAction: {fileID: 114538862725855802}
-  followSkill: {fileID: 0}
+  parentSkill: {fileID: 0}
   mainEffect: {fileID: 114733017827856950}
   accuracy: 1
   skillAnimationID: darkcharge_up_anim
   hitAnimationID: strikeHitEffect
   castTiming: 0
-  skillState: 0
   posType: 0
   criticalBonus: 1
 --- !u!114 &114419272264623016
@@ -3225,7 +3355,7 @@ MonoBehaviour:
   calEffectValue: 0
   applyResult: 0
   hit: 1
-  parentSkill: {fileID: 114397935018355628}
+  parentSubSkill: {fileID: 114397935018355628}
   level: 1
 --- !u!114 &114422281088661666
 MonoBehaviour:
@@ -3238,14 +3368,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d915518966a0f4025bc01cbb392699ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parentAction: {fileID: 114264697622432574}
-  followSkill: {fileID: 0}
+  parentSkill: {fileID: 0}
   mainEffect: {fileID: 114098490648277854}
   accuracy: 1
   skillAnimationID: heal_anim
   hitAnimationID: 
   castTiming: 0
-  skillState: 0
   posType: 0
   criticalBonus: 1
 --- !u!114 &114448077835651098
@@ -3269,7 +3397,7 @@ MonoBehaviour:
   calEffectValue: 0
   applyResult: 0
   hit: 1
-  parentSkill: {fileID: 114414464413100612}
+  parentSubSkill: {fileID: 114414464413100612}
   level: 1
   baseMultiplier: 0
   bonus:
@@ -3286,14 +3414,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d915518966a0f4025bc01cbb392699ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parentAction: {fileID: 114987423532746746}
-  followSkill: {fileID: 0}
+  parentSkill: {fileID: 0}
   mainEffect: {fileID: 114993131239246050}
   accuracy: 1
   skillAnimationID: fireball_anim
   hitAnimationID: fireblast_anim
   castTiming: 0
-  skillState: 0
   posType: 0
   criticalBonus: 1
 --- !u!114 &114538862725855802
@@ -3307,17 +3433,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 559c081501d564701ad04332e9a8adc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
   diceType: 1
-  skills:
-  - {fileID: 114416221195764264}
+  subSkills: []
   id: skill_dark_charge
   description: "\u737B\u7D66\u60E1\u9B54\u9748\u9B42\u5F8C\u767C\u52D5\u7684\u5F37\u529B\u7A81\u64CA\uFF0C\u5C0D\u7B49\u7D1A\u6700\u9AD8\u7684\u6575\u4EBA\u9020\u6210250%\u7269\u7406\u50B7\u5BB3"
   icon: {fileID: 21300148, guid: fe5260ff6edd74691b2caa79354fee98, type: 3}
-  actionAnimationID: dark_charge_anim
+  skillAnimationID: 
   chAnimation: 1
-  actionData:
-    id: skill_dark_charge
+  skillData:
+    id: 
     level: 0
     masterLevel: 0
     state: 0
@@ -3335,17 +3459,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 559c081501d564701ad04332e9a8adc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
   diceType: 1
-  skills:
-  - {fileID: 114227882549142264}
+  subSkills: []
   id: skill_divine_smash
   description: "\u51DD\u805A\u795E\u8056\u529B\u91CF\u63EE\u51FA\u91CD\u64CA\uFF0C\u9020\u6210150%\u7269\u7406\u50B7\u5BB3"
   icon: {fileID: 21300142, guid: fe5260ff6edd74691b2caa79354fee98, type: 3}
-  actionAnimationID: hammerMelee
+  skillAnimationID: 
   chAnimation: 1
-  actionData:
-    id: skill_divine_smash
+  skillData:
+    id: 
     level: 0
     masterLevel: 0
     state: 0
@@ -3363,17 +3485,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 559c081501d564701ad04332e9a8adc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
   diceType: 4
-  skills:
-  - {fileID: 114274561051469052}
+  subSkills: []
   id: skill_tailsman_storm
   description: Increase damage
   icon: {fileID: 21300134, guid: fe5260ff6edd74691b2caa79354fee98, type: 3}
-  actionAnimationID: 
+  skillAnimationID: 
   chAnimation: 1
-  actionData:
-    id: skill_tailsman_storm
+  skillData:
+    id: 
     level: 0
     masterLevel: 0
     state: 0
@@ -3391,14 +3511,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d915518966a0f4025bc01cbb392699ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parentAction: {fileID: 114807980095649112}
-  followSkill: {fileID: 0}
+  parentSkill: {fileID: 0}
   mainEffect: {fileID: 114077519605902692}
   accuracy: 1
   skillAnimationID: thunderwave_anim
   hitAnimationID: 
   castTiming: 0
-  skillState: 0
   posType: 1
   criticalBonus: 1
 --- !u!114 &114591879840485152
@@ -3422,7 +3540,7 @@ MonoBehaviour:
   calEffectValue: 0
   applyResult: 0
   hit: 1
-  parentSkill: {fileID: 114790684034226558}
+  parentSubSkill: {fileID: 114790684034226558}
   level: 1
 --- !u!114 &114609767843676954
 MonoBehaviour:
@@ -3445,12 +3563,38 @@ MonoBehaviour:
   calEffectValue: 0
   applyResult: 0
   hit: 1
-  parentSkill: {fileID: 114815358043896296}
+  parentSubSkill: {fileID: 114815358043896296}
   level: 1
   baseMultiplier: 0
   bonus:
     _baseValue: 0
   buffType: 8
+--- !u!114 &114621904511410756
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1906111348598860}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 559c081501d564701ad04332e9a8adc4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  diceType: 0
+  subSkills: []
+  id: ogre_smash
+  description: ZombieScratch
+  icon: {fileID: 21300040, guid: fe5260ff6edd74691b2caa79354fee98, type: 3}
+  skillAnimationID: 
+  chAnimation: 1
+  skillData:
+    id: 
+    level: 0
+    masterLevel: 0
+    state: 0
+  caster: {fileID: 0}
+  cd: 0
+  cd_count: 0
 --- !u!114 &114628825497422760
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3472,7 +3616,7 @@ MonoBehaviour:
   calEffectValue: 0
   applyResult: 0
   hit: 1
-  parentSkill: {fileID: 114274561051469052}
+  parentSubSkill: {fileID: 114274561051469052}
   level: 1
   baseMultiplier: 0.7
   bonus:
@@ -3489,17 +3633,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 559c081501d564701ad04332e9a8adc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
   diceType: 4
-  skills:
-  - {fileID: 114243122496919020}
+  subSkills: []
   id: skill_holy_revive
   description: Increase damage
   icon: {fileID: 21300076, guid: fe5260ff6edd74691b2caa79354fee98, type: 3}
-  actionAnimationID: 
+  skillAnimationID: 
   chAnimation: 3
-  actionData:
-    id: skill_holy_revive
+  skillData:
+    id: 
     level: 0
     masterLevel: 0
     state: 0
@@ -3527,7 +3669,30 @@ MonoBehaviour:
   calEffectValue: 0
   applyResult: 0
   hit: 1
-  parentSkill: {fileID: 114227882549142264}
+  parentSubSkill: {fileID: 114227882549142264}
+  level: 1
+--- !u!114 &114702788251823332
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1229474749056078}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c430d85959f8d4274a1d8c8ec33b39b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  effectRange: 1
+  effectType: 0
+  duration: 1
+  applyDelay: 0
+  dependency: 0
+  baseValue: 1
+  initValue: 1
+  calEffectValue: 0
+  applyResult: 0
+  hit: 1
+  parentSubSkill: {fileID: 114286559174385396}
   level: 1
 --- !u!114 &114706566289996330
 MonoBehaviour:
@@ -3550,7 +3715,7 @@ MonoBehaviour:
   calEffectValue: 0
   applyResult: 0
   hit: 1
-  parentSkill: {fileID: 114170662825454170}
+  parentSubSkill: {fileID: 114170662825454170}
   level: 1
 --- !u!114 &114711571591397558
 MonoBehaviour:
@@ -3573,7 +3738,7 @@ MonoBehaviour:
   calEffectValue: 0
   applyResult: 0
   hit: 1
-  parentSkill: {fileID: 114839697240773264}
+  parentSubSkill: {fileID: 114839697240773264}
   level: 1
   baseMultiplier: 0
   bonus:
@@ -3590,7 +3755,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 296834ad9ff6c4c1a9eadac5b67639ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  actions: []
+  skills: []
 --- !u!114 &114732939403238184
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3602,17 +3767,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 559c081501d564701ad04332e9a8adc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
   diceType: 2
-  skills:
-  - {fileID: 114953507736208348}
+  subSkills: []
   id: skill_divein_invinsible
   description: Taunt your enemy, increase threat
   icon: {fileID: 21300138, guid: fe5260ff6edd74691b2caa79354fee98, type: 3}
-  actionAnimationID: 
+  skillAnimationID: 
   chAnimation: 3
-  actionData:
-    id: skill_divein_invinsible
+  skillData:
+    id: 
     level: 0
     masterLevel: 0
     state: 0
@@ -3640,7 +3803,7 @@ MonoBehaviour:
   calEffectValue: 0
   applyResult: 0
   hit: 1
-  parentSkill: {fileID: 114416221195764264}
+  parentSubSkill: {fileID: 114416221195764264}
   level: 1
 --- !u!114 &114779014225915360
 MonoBehaviour:
@@ -3663,7 +3826,7 @@ MonoBehaviour:
   calEffectValue: 0
   applyResult: 0
   hit: 1
-  parentSkill: {fileID: 114243702605205504}
+  parentSubSkill: {fileID: 114243702605205504}
   level: 1
   baseMultiplier: 0
   bonus:
@@ -3680,14 +3843,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d915518966a0f4025bc01cbb392699ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parentAction: {fileID: 114243522493110340}
-  followSkill: {fileID: 0}
+  parentSkill: {fileID: 0}
   mainEffect: {fileID: 114591879840485152}
   accuracy: 1
   skillAnimationID: firepillar_anim
   hitAnimationID: fireblast_anim
   castTiming: 0
-  skillState: 0
   posType: 1
   criticalBonus: 1
 --- !u!114 &114807107707559928
@@ -3701,14 +3862,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d915518966a0f4025bc01cbb392699ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parentAction: {fileID: 114000851695917508}
-  followSkill: {fileID: 0}
+  parentSkill: {fileID: 0}
   mainEffect: {fileID: 114268929862104028}
   accuracy: 1
   skillAnimationID: 
   hitAnimationID: strikeHitEffect
   castTiming: 0
-  skillState: 0
   posType: 0
   criticalBonus: 1
 --- !u!114 &114807980095649112
@@ -3722,17 +3881,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 559c081501d564701ad04332e9a8adc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
   diceType: 1
-  skills:
-  - {fileID: 114591087190415976}
+  subSkills: []
   id: skill_talisman_thunder
   description: "\u6025\u6025\u5982\u5F8B\u4EE4\uFF0C\u5C0D\u8840\u91CF\u6700\u4F4E\u7684\u6575\u4EBA\u9020\u6210100%\u50B7\u5BB3"
   icon: {fileID: 21300132, guid: fe5260ff6edd74691b2caa79354fee98, type: 3}
-  actionAnimationID: none
+  skillAnimationID: 
   chAnimation: 1
-  actionData:
-    id: skill_talisman_thunder
+  skillData:
+    id: 
     level: 0
     masterLevel: 0
     state: 0
@@ -3750,14 +3907,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d915518966a0f4025bc01cbb392699ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parentAction: {fileID: 114047510182889200}
-  followSkill: {fileID: 0}
+  parentSkill: {fileID: 0}
   mainEffect: {fileID: 114609767843676954}
   accuracy: 1
   skillAnimationID: darks_shield_anim
   hitAnimationID: 
   castTiming: 0
-  skillState: 0
   posType: 0
   criticalBonus: 1
 --- !u!114 &114820628007163104
@@ -3781,7 +3936,7 @@ MonoBehaviour:
   calEffectValue: 0
   applyResult: 0
   hit: 1
-  parentSkill: {fileID: 114388039575618992}
+  parentSubSkill: {fileID: 114388039575618992}
   level: 1
 --- !u!114 &114839697240773264
 MonoBehaviour:
@@ -3794,14 +3949,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d915518966a0f4025bc01cbb392699ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parentAction: {fileID: 114294155502428288}
-  followSkill: {fileID: 0}
+  parentSkill: {fileID: 0}
   mainEffect: {fileID: 114711571591397558}
   accuracy: 1
   skillAnimationID: paralyze_anim
   hitAnimationID: 
   castTiming: 0
-  skillState: 0
   posType: 1
   criticalBonus: 1
 --- !u!114 &114840408885278594
@@ -3815,17 +3968,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 559c081501d564701ad04332e9a8adc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
   diceType: 1
-  skills:
-  - {fileID: 114388039575618992}
+  subSkills: []
   id: skill_dark_slash
   description: "\u4F7F\u7528\u9ED1\u6697\u4E4B\u529B\u7684\u5FEB\u901F\u65AC\u64CA"
   icon: {fileID: 21300150, guid: fe5260ff6edd74691b2caa79354fee98, type: 3}
-  actionAnimationID: 
+  skillAnimationID: 
   chAnimation: 1
-  actionData:
-    id: skill_dark_slash
+  skillData:
+    id: 
     level: 0
     masterLevel: 0
     state: 0
@@ -3853,7 +4004,7 @@ MonoBehaviour:
   calEffectValue: 0
   applyResult: 0
   hit: 1
-  parentSkill: {fileID: 114243122496919020}
+  parentSubSkill: {fileID: 114243122496919020}
   level: 1
 --- !u!114 &114953507736208348
 MonoBehaviour:
@@ -3866,14 +4017,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d915518966a0f4025bc01cbb392699ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parentAction: {fileID: 114732939403238184}
-  followSkill: {fileID: 0}
+  parentSkill: {fileID: 0}
   mainEffect: {fileID: 114141144509621052}
   accuracy: 1
   skillAnimationID: darks_shield_anim
   hitAnimationID: 
   castTiming: 0
-  skillState: 0
   posType: 0
   criticalBonus: 1
 --- !u!114 &114981761732791448
@@ -3887,17 +4036,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 559c081501d564701ad04332e9a8adc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
   diceType: 1
-  skills:
-  - {fileID: 114170662825454170}
+  subSkills: []
   id: skill_holy_ray
   description: "\u795E\u8056\u4E4B\u5149\u91CD\u64CA\u5996\u602A\uFF0C\u9020\u6210\u7FA4\u9AD4\u50B7\u5BB3150%"
   icon: {fileID: 21300080, guid: fe5260ff6edd74691b2caa79354fee98, type: 3}
-  actionAnimationID: none
+  skillAnimationID: 
   chAnimation: 1
-  actionData:
-    id: skill_holy_ray
+  skillData:
+    id: 
     level: 0
     masterLevel: 0
     state: 0
@@ -3915,17 +4062,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 559c081501d564701ad04332e9a8adc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
   diceType: 1
-  skills:
-  - {fileID: 114488853937077544}
+  subSkills: []
   id: skill_mage_fireball
   description: "\u53EC\u559A\u5F9E\u5929\u800C\u5C07\u7684\u706B\u7403\uFF0C\u5C0D\u96A8\u6A5F\u4E00\u540D\u6575\u4EBA\u9020\u6210100%\u6CD5\u8853\u50B7\u5BB3"
   icon: {fileID: 21300034, guid: fe5260ff6edd74691b2caa79354fee98, type: 3}
-  actionAnimationID: none
+  skillAnimationID: 
   chAnimation: 2
-  actionData:
-    id: skill_mage_fireball
+  skillData:
+    id: 
     level: 0
     masterLevel: 0
     state: 0
@@ -3953,7 +4098,7 @@ MonoBehaviour:
   calEffectValue: 0
   applyResult: 0
   hit: 1
-  parentSkill: {fileID: 114488853937077544}
+  parentSubSkill: {fileID: 114488853937077544}
   level: 1
 --- !u!114 &114999855828288828
 MonoBehaviour:
@@ -3976,5 +4121,5 @@ MonoBehaviour:
   calEffectValue: 0
   applyResult: 0
   hit: 1
-  parentSkill: {fileID: 114227882549142264}
+  parentSubSkill: {fileID: 114227882549142264}
   level: 1

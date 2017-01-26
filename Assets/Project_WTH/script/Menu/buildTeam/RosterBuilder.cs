@@ -61,16 +61,16 @@ public class RosterBuilder : Singleton<RosterBuilder>{
 	CompositeText classDescriptionText;
 
 	[SerializeField]
-	CompositeText actionName;
+	CompositeText skillName;
 	[SerializeField]
-	ActionDescription action_description_panel;
+	SkillDescription skill_description_panel;
 
-	Action _action;
-	public Action bindAction{
+	Skill _skill;
+	public Skill bindSkill{
 		set{
-			_action = value;
-			actionName.text = _action.name;
-			action_description_panel.bindAction = _action;
+			_skill = value;
+			skillName.text = _skill.name;
+			skill_description_panel.bindSkill = _skill;
 			
 		}
 	}
@@ -105,7 +105,7 @@ public class RosterBuilder : Singleton<RosterBuilder>{
 	{
 		currentRosterButton = btn;
 		bindChData = btn.bindChData;
-		bindAction = ActionManager.instance.getActions(btn.bindChData.actionDatas)[0];
+		bindSkill = SkillManager.instance.getSkills(btn.bindChData.skillDatas)[0];
 	}
 	RosterButton currentRosterButton;
 	int checkedPlayerNum = 0;

@@ -1,8 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class EquipRenderer : MonoBehaviour {
-	SpriteRenderer spr;
+public class EquipRenderer : ReSkinRenderer {
+
 	Animator anim;
 	AnimatorOverrideController overrideController;
 	public EquipType type;
@@ -22,11 +22,9 @@ public class EquipRenderer : MonoBehaviour {
 		anim.StartPlayback();
 		print("restart");
 	}
-	public void wearEquip(Sprite sp)
+	public void wearEquip(Equip equip)
 	{
-		if(sp==null)
-		return;
-		spr.sprite = sp;
+		getSprites(equip.bindClasses.ToString()+"/"+equip.id);
 	}
 	public void wearEquip(AnimationClip[] clips)
 	{

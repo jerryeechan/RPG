@@ -29,7 +29,7 @@ public class PlayerData{
 		return addToFirstEmpty<EquipData>(equipDataList,item);
 	}
 
-	public List<ActionData> actionDataList;
+	public List<SkillData> skillDataList;
 	public int gold;
 	
 	//when reach 100, bad things happens

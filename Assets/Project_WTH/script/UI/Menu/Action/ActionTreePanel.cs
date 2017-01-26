@@ -3,7 +3,7 @@ using System.Collections;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class ActionTreePanel : Singleton<ActionTreePanel>, IDragHandler,IBeginDragHandler
+public class SkillTreePanel : Singleton<SkillTreePanel>, IDragHandler,IBeginDragHandler
 {
 	void Awake()
 	{

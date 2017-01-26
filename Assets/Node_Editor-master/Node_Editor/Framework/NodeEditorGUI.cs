@@ -7,6 +7,7 @@ namespace NodeEditorFramework
 {
 	public static class NodeEditorGUI 
 	{
+		public static string str;
 		// static GUI settings, textures and styles
 		public static int knobSize = 16;
 

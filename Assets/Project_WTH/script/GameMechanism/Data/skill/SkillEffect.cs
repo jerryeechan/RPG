@@ -171,8 +171,7 @@ public class SkillEffect : MonoBehaviour {
 	}
 	public string getDescription()
 	{
-		
-		return SkillEffectManager.instance.descriptionDict[GetType().ToString()];
+		return "";
 	}
 }
 public interface ISkillEffect{

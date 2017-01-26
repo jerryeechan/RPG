@@ -14,7 +14,7 @@ namespace com.jerrch.rpg
 		public CharacterStat battleStat;
 		
 		public int index;
-		public bool doneActionThisRound = false;
+		public bool doneSkillThisRound = false;
 		Dictionary<EquipType,Equip> equipsDict; 
 
 		public Equip getEquip(EquipType type)
@@ -38,55 +38,21 @@ namespace com.jerrch.rpg
 		
 		//the skill this character can use, total 4
 		[SerializeField]
-		List<Action> _actions;
-		public List<Action> actionList{
-			get{return _actions;}
+		List<Skill> _skills;
+		public List<Skill> skillList{
+			get{return _skills;}
 			set{
-				print("ActionList modified");
-				_actions = value;
-				foreach(var action in _actions)
+				_skills = value;
+				foreach(var skill in _skills)
 				{
-					if(action)
+					if(skill)
 					{
-						action.caster = this;
-						if(action.isPassive)
-						{
-							action.PassiveApply();
-						}
+						skill.caster = this;
 					}
 				}
 			}
 		}
-		public void changeAction(int index, Action action)
-		{
-			print("change action");
-			Action replaceAction = actionList[index];
-			if(replaceAction)
-			{
-				if(replaceAction.isPassive)
-				replaceAction.PassiveRemove();
-			}
-
-			//replace with new one
-			actionList[index] = action;
-			if(action.isPassive)
-			{
-				action.PassiveApply();
-			}
-		}
-		public void removeAction(int index)
-		{
-			Action action = actionList[index];
-			if(action)
-			{
-				if(action.isPassive)
-				{
-					action.PassiveApply();
-				}
-			}
-			actionList[index].PassiveRemove();
-			actionList[index] = null;
-		}
+		
 		
 		
 		public CharacterSide side;
@@ -103,13 +69,13 @@ namespace com.jerrch.rpg
 			equipsDict = new Dictionary<EquipType,Equip>();
 		}
 		public List<Equip> equipList;
-		public void init(CharacterStat stat,List<Equip> equips,List<Action> actions)
+		public void init(CharacterStat stat,List<Equip> equips,List<Skill> skills)
 		{
 			initStat = stat;
 			equipList = equips;
 			EquipStart();
 			BattleStart();
-			actionList = actions;	
+			skillList = skills;	
 		}
 		
 		public void updateValues()
@@ -203,15 +169,15 @@ namespace com.jerrch.rpg
 		{
 			get{ return battleStat.hp.currentValue==0?true:false;}
 		}
-		Action usingAction;
+		Skill usingSkill;
 		
-		static float chmove_to_action_delay = 0.2f;
+		static float chmove_to_skill_delay = 0.2f;
 
-		public void doActionMove(CharacterAnimation chAnim)
+		public void doSkillMove(CharacterAnimation chAnim)
 		{
 			if(chRenderer)
 				chRenderer.PlayCharacterAnimation(chAnim);
-			//this.myInvoke(chmove_to_action_delay,OnCharacterAnimationDone);
+			//this.myInvoke(chmove_to_skill_delay,OnCharacterAnimationDone);
 		}
 		
 		public void HitByEffect(SkillEffect effect)

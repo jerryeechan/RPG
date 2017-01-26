@@ -13,7 +13,6 @@ public class LocalizedText : MonoBehaviour
 	void Start () 
 	{
 		textObject = this.GetComponent<Text>();
-	
 		//Subscribe to the change language event
 		LanguageManager languageManager = LanguageManager.Instance;
 		languageManager.OnChangeLanguage += OnChangeLanguage;

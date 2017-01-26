@@ -205,12 +205,7 @@ MonoBehaviour:
   iconSprite: {fileID: 21300016, guid: 312b280334e424a86bf484f744c22258, type: 3}
   description: "\u54FC\uFF0C\u6211\u624D\u4E0D\u6703\u7576\u597D\u4EBA\u5462"
   specialty: "\u8F38\u51FA\u3001\u5766\u514B"
-  attackActionCandidateIDs:
-  - skill_dark_charge
-  - skill_dark_slash
-  defenseActionCandidateIDs:
-  - skill_dark_shield
-  specialActionCandidateIDs: []
+  skillTemplates: {fileID: 0}
   helmetIDs:
   - dark_paladin_helmet
   helmetGraphicIDs: []
@@ -253,12 +248,7 @@ MonoBehaviour:
   iconSprite: {fileID: 21300000, guid: d9c5fb6a294bc4a6eab472a4c5f37abd, type: 3}
   description: "\u71C3\u71D2\u5427\uFF0C\u721B\u6383\u628A\uFF0C\u706B\u9CE5"
   specialty: "\u8F38\u51FA\u3001\u8F14\u52A9"
-  attackActionCandidateIDs:
-  - skill_mage_fireball
-  - skill_mage_firestorm
-  defenseActionCandidateIDs: []
-  specialActionCandidateIDs:
-  - skill_mage_elemental_blessing
+  skillTemplates: {fileID: 0}
   helmetIDs:
   - mage_hood
   helmetGraphicIDs: []
@@ -290,12 +280,7 @@ MonoBehaviour:
   iconSprite: {fileID: 21300000, guid: 312b280334e424a86bf484f744c22258, type: 3}
   description: "\u8056\u5149\u6703\u4FDD\u4F51\u4F60\uFF01\u8056\u76FE\u6703\u91CD\u6B7B\u4F60"
   specialty: "\u5766\u514B\u3001\u8F38\u51FA"
-  attackActionCandidateIDs:
-  - skill_divine_smash
-  - skill_divine_shield
-  - skill_divine_invinsible
-  defenseActionCandidateIDs: []
-  specialActionCandidateIDs: []
+  skillTemplates: {fileID: 0}
   helmetIDs:
   - paladin_helmet
   helmetGraphicIDs: []
@@ -327,12 +312,7 @@ MonoBehaviour:
   iconSprite: {fileID: 21300032, guid: 10e0ad0d821e8465eb9311da4557c19d, type: 3}
   description: "\u8305\u5C71\u4F86\u7684\u9053\u58EB\uFF0C\u7CBE\u901A\u5492\u7B26\uFF0C\u6253\u9B3C\u5C08\u5BB6"
   specialty: "\u8F14\u52A9\u3001\u8F38\u51FA"
-  attackActionCandidateIDs:
-  - skill_talisman_thunder
-  defenseActionCandidateIDs: []
-  specialActionCandidateIDs:
-  - skill_talisman_paralyze
-  - skill_tailsman_storm
+  skillTemplates: {fileID: 0}
   helmetIDs:
   - tao_hat
   helmetGraphicIDs: []
@@ -364,12 +344,7 @@ MonoBehaviour:
   iconSprite: {fileID: 21300000, guid: 72b4f13a864bc4acc9fd983fcb1734ba, type: 3}
   description: "\u8ACB\u554F\u4F60\u8981\u4FE1\u6559\u55CE\uFF1F"
   specialty: "\u8F14\u52A9\u3001\u8F38\u51FA"
-  attackActionCandidateIDs:
-  - skill_holy_ray
-  defenseActionCandidateIDs:
-  - skill_holy_heal
-  specialActionCandidateIDs:
-  - skill_holy_revive
+  skillTemplates: {fileID: 0}
   helmetIDs:
   - priest_hat
   helmetGraphicIDs: []

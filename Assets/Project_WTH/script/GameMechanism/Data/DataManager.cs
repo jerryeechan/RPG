@@ -45,7 +45,7 @@ public class DataManager : Singleton<DataManager> {
 		FileStream saveFile = File.Create("Save/player.binary");
 		BinaryFormatter formatter = new BinaryFormatter();
 
-		curPlayerData.actionDataList = new List<ActionData>();
+		curPlayerData.skillDataList = new List<SkillData>();
 		
 		
 

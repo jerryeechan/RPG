@@ -8,6 +8,7 @@ using System.Collections;
 [CustomEditor(typeof(LocalizedText))]
 public class LocalizedTextInspector : Editor 
 {
+	
 	private string selectedKey = null;
 	
 	void Awake()
@@ -17,8 +18,17 @@ public class LocalizedTextInspector : Editor
 		{
 			selectedKey = textObject.localizedKey;
 		}
+		var languageValues = LanguageHandlerEditor.LoadParsedLanguageFile("zh-TW", false);
+		if(languageValues.ContainsKey(selectedKey))
+		{
+			var localText = languageValues[selectedKey].TextValue;
+			GUILayout.TextField(localText);
+		}
 	}
-	
+	public static string getLocalText()
+	{
+		return "aewr";
+	}
 	public override void OnInspectorGUI ()
 	{
 		base.OnInspectorGUI ();

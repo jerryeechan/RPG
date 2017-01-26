@@ -4,5 +4,5 @@ using UnityEngine;
 
 public class DiceTemplate : MonoBehaviour {
 
-	public ActionDiceType[] faceTypes;
+	public SkillDiceType[] faceTypes;
 }
