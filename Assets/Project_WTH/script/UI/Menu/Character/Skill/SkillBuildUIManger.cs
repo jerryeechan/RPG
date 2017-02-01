@@ -10,10 +10,18 @@ public class SkillBuildUIManger : SkillBaseUIManager,IinspectPlayerable{
 	CompositeText spText;
 
 	[SerializeField]
-	HandButton[] levelBtns;
+	List<HandButton> levelBtns;
+	
 
-	[SerializeField]
-	SkillButton[] skillbtns;
+	void Awake()
+	{
+		skillBtns = GetComponentsInChildren<SkillButton>();
+		//levelBtns = new List<HandButton>();
+		foreach(var skillBtn in skillBtns)
+		{
+			levelBtns.Add(skillBtn.transform.parent.Find("levelUp").GetComponent<HandButton>());
+		}
+	}
 
    public void levelUpBtnTouched(int index)
    {
@@ -23,7 +31,7 @@ public class SkillBuildUIManger : SkillBaseUIManager,IinspectPlayerable{
 		    curCh.bindData.skillPoints--;
 			spText.text = curCh.bindData.skillPoints.ToString();
 			curCh.skillList[index].level++;
-			DescriptionUIManager.instance.showDescribable(skillbtns[index]);
+			DescriptionUIManager.instance.showDescribable(skillBtns[index]);
 	   }
    }
 
@@ -31,7 +39,6 @@ public class SkillBuildUIManger : SkillBaseUIManager,IinspectPlayerable{
    {
 	   base.inspectCharacter(ch);
 	   spText.text = ch.bindData.skillPoints.ToString();
-
    }
    
 	

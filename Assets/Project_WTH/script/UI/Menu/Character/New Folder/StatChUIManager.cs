@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 using com.jerrch.rpg;
-public class StatChUIManager : SingletonChUIManager<StatChUIManager>,IDisplayable{
+using System;
+
+public class StatChUIManager : SingletonChUIManager<StatChUIManager>,IDisplayable,ISwitchBtnTouchDelegate {
 
 	[SerializeField]
 	List<HandButton> chButtons;
@@ -10,20 +12,27 @@ public class StatChUIManager : SingletonChUIManager<StatChUIManager>,IDisplayabl
 	[SerializeField]
 	SkillBuildUIManger skillBuildManager;
 	[SerializeField]
-	CharacterAbilityUIManager abilityManager;
+	CharacterMainAttributeUIManager mainAttributeManager;
+
 	[SerializeField]
 	EquipUIManager equipUIManager;
 	
+	[SerializeField]
 	List<IinspectPlayerable> inspectables;
+	
+	
 	override protected void Awake()
 	{
 		base.Awake();
 		inspectables = new List<IinspectPlayerable>();
 		inspectables.Add(skillBuildManager);
-		inspectables.Add(abilityManager);
+		inspectables.Add(mainAttributeManager);
 		inspectables.Add(equipUIManager);
 	}
-	
+	public void init()
+	{
+		base.Awake();
+	}
 	public void Show()
 	{
 		var ch = GameManager.instance.currentCh;
@@ -58,24 +67,45 @@ public class StatChUIManager : SingletonChUIManager<StatChUIManager>,IDisplayabl
 	}
 	void inspectCharacter(Character ch)
 	{
-		
 		GameManager.instance.currentCh = ch;
 		setCharacter(ch);
 		foreach(var ins in inspectables)
 		{
-			ins.inspectCharacter(ch);
+			if(ins!=null)
+			{
+				ins.inspectCharacter(ch);
+			}
+			
 		}
 	}
 	public void getAbilityPoints(int val)
 	{
 		selectedCh.bindData.abilityPoints+=val;
-		CharacterAbilityUIManager.instance.inspectCharacter(selectedCh);
+		mainAttributeManager.inspectCharacter(selectedCh);
 	}
 
 	public void getSkillPoints(int val)
 	{
 		selectedCh.bindData.skillPoints+=val;
 		skillBuildManager.inspectCharacter(selectedCh);
+	}
+
+    public void switchBtnTouched(int index)
+    {
+		if(index == 0)
+		{
+			mainAttributeManager.gameObject.SetActive(false);
+			skillBuildManager.gameObject.SetActive(true);
+		}
+		else if(index==1)
+        {
+			mainAttributeManager.gameObject.SetActive(true);
+			skillBuildManager.gameObject.SetActive(false);
+		}
+    }
+	public void switchToCh(int index)
+	{
+		inspectCharacter(GameManager.instance.chs[index]);
 	}
 }
 

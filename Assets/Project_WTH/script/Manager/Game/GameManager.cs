@@ -9,14 +9,15 @@ namespace com.jerrch.rpg
 		public int chCount;
 		public List<Character> chs;
 		public List<Character> enemies;
-		public InfoManager info;
-		
 		public TestMode testMode;
+		public AdventureManager adventureManager;
+		public StatChUIManager statChUIManager;
+		public ShopUIManager shop;
 		//public GameObject Canvas;
 		public static float playerAnimationSpeed = 0.5f;
 		void Awake()
 		{
-		//	Canvas.SetActive(true);
+
 		}
 		void Start()
 		{
@@ -57,38 +58,27 @@ namespace com.jerrch.rpg
 			PlayerStateUI.instance.init();
 
 			loadCharacter();
-			InfoManager.instance.init();
+//			InfoManager.instance.init();
 			//ShopUIManager.instance.init();//FAKE test shop
 			switch(testMode)
 			{
-				case TestMode.Release:
-					InfoManager.instance.Hide();
-					//UIManager.instance.getPanel("mainmenu").show();
-				break;
 				case TestMode.Combat:
-					CombatMode();
-					//CombatStage stage = CombatStageManager.instance.getTestStage();
-					//stage.transform.SetParent(stageTransform);
+					CombatMode();					
 					EnemySet testEnemySet = MonsterDataEditor.instance.getMonsterSet("test");
-					//RandomBattleRound.instance.StartBattle(testEnemySet);
-					TurnBattleManager.instance.StartBattle(testEnemySet);
-					
-					//DungeonManager.instance.
+					TurnBattleManager.instance.StartBattle(testEnemySet);					
 				break;
 				case TestMode.Adventure:
 					TurnBattleManager.instance.gameObject.SetActive(false);
 					this.myInvoke(1,()=>{
-						InfoManager.instance.switchTab(InfoTabType.Adventure);
+						//InfoManager.instance.switchTab(InfoTabType.Adventure);
 					});
-					AdventureManager.instance.init();
+					adventureManager.init();
+					statChUIManager.init();
+					adventureManager.Show();
 					
 					break;
-				case TestMode.SkillTree:
-				break;
-				case TestMode.Stat:
-				break;
 			}
-			ShopUIManager.instance.init();
+			shop.init();
 		}
 		
 		//load new characters
@@ -126,9 +116,9 @@ namespace com.jerrch.rpg
 		{
 			print("Adventure Mode");
 			UIManager.instance.getPanel("BattleManger").hide();
-			InfoManager.instance.Show();
-			InfoManager.instance.switchTab(InfoTabType.Adventure);
-			AdventureManager.instance.show(); 
+			//InfoManager.instance.Show();
+			//InfoManager.instance.switchTab(InfoTabType.Adventure);
+			adventureManager.Show(); 
 			PlayerStateUI.instance.AdventureMode();
 			CursorManager.instance.NormalMode();
 		}
@@ -142,9 +132,10 @@ namespace com.jerrch.rpg
 			gamemode = GameMode.Combat;
 			print("Combat Mode");
 			UIManager.instance.getPanel("BattleManger").show();
-			AdventureManager.instance.hide();
+			adventureManager.Hide();
 			PlayerStateUI.instance.CombatMode();
-			InfoManager.instance.Hide();
+			//InfoManager.instance.Hide();
+			
 		}
 		GameMode lastMode;
 		GameMode _gameMode;
@@ -227,6 +218,6 @@ namespace com.jerrch.rpg
 		}
 		*/
 	}
-	public enum GameMode{Combat,Bag,SkillTree,Adventure};
+	public enum GameMode{Combat,Bag,Adventure};
 	public enum TestMode{Release,Combat,Adventure,SkillTree,Stat};
 }

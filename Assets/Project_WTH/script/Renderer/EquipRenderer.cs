@@ -1,36 +1,46 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+[ExecuteInEditMode]
 public class EquipRenderer : ReSkinRenderer {
 
 	Animator anim;
 	AnimatorOverrideController overrideController;
 	public EquipType type;
 	// Use this for initialization
+	public EquipGraphicAsset bindEquipGraphic;
 	void Awake()
 	{
 		spr = GetComponent<SpriteRenderer>();
-		anim = GetComponent<Animator>();
-		overrideController = new AnimatorOverrideController();
-		overrideController.runtimeAnimatorController = anim.runtimeAnimatorController;
+		if(bindEquipGraphic)
+		{
+			wearEquip(bindEquipGraphic);
+		}
+		//anim = GetComponent<Animator>();
+		//overrideController = new AnimatorOverrideController();
+		//overrideController.runtimeAnimatorController = anim.runtimeAnimatorController;
 		
 		//changeEquip(clips);
 	}
-	public void restart()
+	void OnValidate()
 	{
-		//anim.Stop();
-		anim.StartPlayback();
-		print("restart");
+		if(bindEquipGraphic)
+		{
+			wearEquip(bindEquipGraphic);
+		}
 	}
-	public void wearEquip(Equip equip)
+	public void wearEquip(EquipGraphicAsset equipGraphic)
 	{
-		getSprites(equip.bindClasses.ToString()+"/"+equip.id);
+		//bindEquip = equip;
+		bindEquipGraphic = equipGraphic;
+		getSprites(equipGraphic.classesType.ToString(),equipGraphic.suitName,equipGraphic.equipTypeName);
 	}
 	public void wearEquip(AnimationClip[] clips)
 	{
 		if(clips==null)
 			return;
 		
+		/*
 		for(int i=0;i<overrideController.clips.Length;i++)
 		{
 			switch(overrideController.clips[i].originalClip.name)
@@ -54,11 +64,9 @@ public class EquipRenderer : ReSkinRenderer {
 						overrideController[overrideController.clips[i].originalClip.name] = clips[3];
 				break;
 			}
-//			overrideController[overrideController.clips[i].originalClip.name] = clips[i];
 		}
 		anim.runtimeAnimatorController = overrideController;
-		
-		//overrideController["attack"] = clips[1];
+		*/
 	}
 
 	

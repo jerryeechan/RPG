@@ -56,7 +56,7 @@ public class EquipManager :Singleton<EquipManager> {
 		}
 		else
 		{
-			Debug.LogError("No equip daata"+id);
+			Debug.LogError("No equip data"+id);
 			return null;
 		}	
 	}

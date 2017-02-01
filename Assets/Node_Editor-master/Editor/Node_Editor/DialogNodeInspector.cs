@@ -19,9 +19,14 @@ using NodeEditorFramework;
 		public override void OnInspectorGUI () 
 		{
 			var languageValues = LanguageHandlerEditor.LoadParsedLanguageFile("zh-TW", false);
-			for(int i=0;i<node.localLines.Count;i++)
+			if(node.localLines!=null)
 			{
-				node.localLines[i] = languageValues[node.lines[i]].TextValue;
+				for(int i=0;i<node.localLines.Count;i++)
+				{
+					node.localLines[i] = languageValues[node.lines[i]].TextValue;
+				}
 			}
+			base.OnInspectorGUI();
+			
 		}
 	}

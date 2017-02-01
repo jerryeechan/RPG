@@ -24,17 +24,18 @@ public class ShopUIManager : SingletonCanvas<ShopUIManager> ,IItemSlotManager{
 	HandButton buyButton;
 //setup
 	
-	protected override void Awake()
-	{
-		base.Awake();
-		generateSlots();
-	}
-	
 
 	int currentSlotIndex = 0;
 	public void init()
 	{
+		base.Awake();
 		currentSlotIndex = 0;
+		generateSlots();
+		generate();
+		
+	}
+	public void generate()
+	{
 		setItems(ItemManager.instance.generateShopItem(0));
 		setItems(EquipManager.instance.generateShopEquip(0));
 		setNullItem();

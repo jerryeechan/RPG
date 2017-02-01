@@ -7,7 +7,7 @@ public class SingletonChUIManager<T> : ChUIManager where T : ChUIManager
 	protected static T _instance;
 	override protected void Awake()
 	{
-		_instance = instance;
+		_instance = GetComponent<T>();
 		base.Awake();
 		
 	}

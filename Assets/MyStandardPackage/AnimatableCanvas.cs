@@ -21,7 +21,7 @@ public class AnimatableCanvas : MonoBehaviour {
     {
         if(isHideStart)
         {
-            hide();
+            hide(0);
         }
     }
     
@@ -33,7 +33,7 @@ public class AnimatableCanvas : MonoBehaviour {
     {
         hide(duration,completeEvent);
     }
-	public void hide(float duration,OnCompleteDelegate completeEvent=null)
+	public virtual void hide(float duration,OnCompleteDelegate completeEvent=null)
 	{   
             if(!canvasGroup)
             {
@@ -57,12 +57,15 @@ public class AnimatableCanvas : MonoBehaviour {
             }
 	}
 	
-    
+    public virtual void show()
+    {
+        show(null);
+    }
     public virtual void show(OnCompleteDelegate completeEvent=null)
     {
         show(duration,completeEvent);
     }
-	public void show(float duration,OnCompleteDelegate completeEvent=null)
+	public virtual void show(float duration,OnCompleteDelegate completeEvent=null)
 	{
 //        print(name+" show start");
         if(canvasGroup==null)

@@ -56,12 +56,12 @@ public class PlayerStateUI : Singleton<PlayerStateUI> {
 	}
 	public void CombatMode()
 	{
-		goldPanel.hide(0.5f);
+		//goldPanel.hide(0.5f);
 //		doomPanel.hide(0.5f);
 	}
 	public void AdventureMode()
 	{
-		goldPanel.show(0.5f);
+		//goldPanel.show(0.5f);
 	//	doomPanel.show(0.5f);
 	}
 	

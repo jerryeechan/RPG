@@ -42,6 +42,7 @@ public class LocalizedTextInspector : Editor
 		}
 		
 		
+		
 		selectedKey = LocalizedKeySelector.SelectKeyGUI(selectedKey, true, LocalizedObjectType.STRING);
 		
 		if(!Application.isPlaying && GUILayout.Button("Use Key", GUILayout.Width(70)))

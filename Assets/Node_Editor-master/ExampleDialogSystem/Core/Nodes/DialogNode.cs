@@ -22,15 +22,15 @@ public class DialogNode : BaseDialogNode
 
         //Previous Node Connections
         node.CreateInput("Previous Node", "DialogForward", NodeSide.Top, 30);
-        node.CreateOutput("Back Node", "DialogBack", NodeSide.Top, 50);
+        //node.CreateOutput("Back Node", "DialogBack", NodeSide.Top, 50);
 
         //Next Node to go to
         node.CreateOutput("Next Node", "DialogForward", NodeSide.Bottom, 30);
-        node.CreateInput("Return Node", "DialogBack", NodeSide.Bottom, 50);
+        //node.CreateInput("Return Node", "DialogBack", NodeSide.Bottom, 50);
 
-        node.SayingCharacterName = "ch name";
-        node.WhatTheCharacterSays = "delete";
-        node.SayingCharacterPotrait = null;
+        //node.SayingCharacterName = "ch name";
+        //node.WhatTheCharacterSays = "delete";
+        //node.SayingCharacterPotrait = null;
         node.lines = new List<String>();
 
         return node;
@@ -38,25 +38,48 @@ public class DialogNode : BaseDialogNode
 
 //display local text of dialog id 
     int lineCount;
+    public List<string> localLines;
+    public static void DrawTextureGUI(Vector2 position, Sprite sprite, Vector2 size)
+     {
+         Rect spriteRect = new Rect(sprite.rect.x / sprite.texture.width, sprite.rect.y / sprite.texture.height,
+                                    sprite.rect.width / sprite.texture.width, sprite.rect.height / sprite.texture.height);
+         Vector2 actualSize = size;
+ 
+         actualSize.y *= (sprite.rect.height / sprite.rect.width);
+         Rect rect = GUILayoutUtility.GetRect(actualSize.x,actualSize.y);
+         GUI.DrawTextureWithTexCoords(new Rect(rect.x, rect.y, actualSize.x, actualSize.y), sprite.texture, spriteRect);
+     }
+   
     protected internal override void NodeGUI()
     {
         var so = new SerializedObject(this);
         
-        GUILayout.BeginHorizontal();
-
-        SayingCharacterName = EditorGUILayout.TextField("Character Name", SayingCharacterName);
-        //EditorGUILayout.PropertyField()
-        GUILayout.EndHorizontal();
         
+
+        //SayingCharacterName = EditorGUILayout.TextField("Character Name", SayingCharacterName);
+        var ch = so.FindProperty("character");
+        ShowElement(ch);
+        
+        GUILayout.BeginHorizontal();
+        //EditorGUILayout.PropertyField()
+        if(character!=null&&character.sprite!=null)
+        {
+             DrawTextureGUI(Vector2.zero,character.sprite,Vector2.one*64);
+             EditorGUILayout.LabelField(localText(character.targetName));
+        }   
+        
+            //DrawOnGUISprite(character.sprite);
+            //GUILayout.Label(character.sprite.texture);
+        GUILayout.EndHorizontal();
         /*
         GUILayout.BeginHorizontal();
         WhatTheCharacterSays = EditorGUILayout.TextField(WhatTheCharacterSays, GUILayout.Height(100));
         GUILayout.EndHorizontal();
         */
         
-        GUILayout.BeginHorizontal();
+        
         //EditorGUILayout.IntField(lines.Count,GUILayout.Height(10));
-        GUILayout.EndHorizontal();
+        
 
         var linesProp = so.FindProperty("lines");
         Show(linesProp,EditorListOption.ListSize|EditorListOption.Buttons);
@@ -83,10 +106,21 @@ public class DialogNode : BaseDialogNode
 
         GUILayout.BeginHorizontal();
 
-        SayingCharacterPotrait = EditorGUILayout.ObjectField("Character Potrait", SayingCharacterPotrait,
-            typeof(Sprite), false) as Sprite;
+        //SayingCharacterPotrait = EditorGUILayout.ObjectField("Character Potrait", SayingCharacterPotrait,typeof(Sprite), false) as Sprite;
 
         GUILayout.EndHorizontal();
+    }
+    public static string localText(string key)
+    {
+        LocalizedObject obj;
+        if(localTexts.TryGetValue(key, out obj))
+        {
+            return obj.TextValue;
+        }
+        else{
+            return key+" as key";
+        }
+
     }
     public static void Show (SerializedProperty list, EditorListOption options = EditorListOption.Default) {
 		if (!list.isArray) {
@@ -118,6 +152,13 @@ public class DialogNode : BaseDialogNode
 			EditorGUI.indentLevel -= 1;
 		}
 	}
+    private static void ShowElement(SerializedProperty property)
+    {
+        EditorGUILayout.BeginHorizontal();
+        EditorGUILayout.PropertyField(property);
+        EditorGUILayout.EndHorizontal();
+
+    }
     private static GUIContent
 		moveButtonContent = new GUIContent("\u21b4", "move down"),
 		duplicateButtonContent = new GUIContent("+", "duplicate"),

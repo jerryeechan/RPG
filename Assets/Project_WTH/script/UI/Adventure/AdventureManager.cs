@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine.UI;
 using com.jerrch.rpg;
-public class AdventureManager : Singleton<AdventureManager> {
+public class AdventureManager : Singleton<AdventureManager>,IDisplayable {
 
-//UI
+	//UI
 	public CompositeText targetName;
 	//public CompositeText dialogueLine;
 	
@@ -14,13 +14,15 @@ public class AdventureManager : Singleton<AdventureManager> {
 	public DialoguePlayer dialoguePlayer;
 //Renderer
 	
-	public void show()
+	public void Show()
 	{
 		dialoguePlayer.show();
+		GetComponent<AnimatableCanvas>().show();
 	}
-	public void hide()
+	public void Hide()
 	{
 		dialoguePlayer.hide();
+		GetComponent<AnimatableCanvas>().hide();
 	}
 // vars
 	
@@ -35,16 +37,10 @@ public class AdventureManager : Singleton<AdventureManager> {
 	{
 		optionBtns = optionPanel.GetComponentsInChildren<AdventureOptionBtn>();
 		optionDisplayers = optionDisplayerPanel.GetComponentsInChildren<AdventureOptionDisplayer>();
-		optionPanel.hide();
-		optionDisplayerPanel.hide();
+		optionPanel.hide(0);
+		optionDisplayerPanel.hide(0);
 	}
 	//public AdventureEvent testEvent;
-	void Start()
-	{
-		//TODO the first event???
-		
-		//encounterEvent(testEvent);
-	}
 	public void init()
 	{
 		currentScene = AdventureStageManager.instance.currentStage.getScene();

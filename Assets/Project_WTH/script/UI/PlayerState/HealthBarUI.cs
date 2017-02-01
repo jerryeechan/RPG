@@ -21,7 +21,7 @@ public class HealthBarUI : MonoBehaviour {
 
 	public virtual void addValue(int v,TweenCallback complete)
 	{
-		int oldValue = curValue;
+//		int oldValue = curValue;
 		setValue(v);
 		animatefillBar(complete);
 		//if(text)

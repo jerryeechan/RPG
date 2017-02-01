@@ -30,9 +30,9 @@ public class MultiPathSelectorNode : BaseDialogNode
         //Previous Node Connections
         node.CreateInput("Previous Node", "DialogForward", NodeSide.Left, 30);        
 
-        node.SayingCharacterName = "Morgen Freeman";
-        node.WhatTheCharacterSays = "I'm GOD";
-        node.SayingCharacterPotrait = null;
+        //node.SayingCharacterName = "Morgen Freeman";
+        //node.WhatTheCharacterSays = "I'm GOD";
+        //node.SayingCharacterPotrait = null;
         node.ValueToTest = DialogBlackboard.EDialogMultiChoiceVariables.Random;
         node._options = new List<DataHolderForOption>();
 

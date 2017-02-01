@@ -29,8 +29,8 @@ namespace NodeEditorFramework.Standard
 		private Rect createCanvasUIPos;
 		private int sideWindowWidth = 400;
 
-		public Rect sideWindowRect { get { return new Rect (position.width - sideWindowWidth, 0, sideWindowWidth, position.height); } }
-		public Rect canvasWindowRect { get { return new Rect (0, 0, position.width - sideWindowWidth, position.height); } }
+		public Rect sideWindowRect { get { return new Rect (0, 0, sideWindowWidth, position.height); } }
+		public Rect canvasWindowRect { get { return new Rect (sideWindowWidth, 0, position.width - sideWindowWidth, position.height); } }
 
 		#region General 
 

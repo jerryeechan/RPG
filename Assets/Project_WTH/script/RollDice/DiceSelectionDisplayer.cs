@@ -53,6 +53,10 @@ public class DiceSelectionDisplayer:MonoBehaviour{
 			selectedDice = dices[index].skillSlot;
 			currentSlotIndex = index;
 		}
+		else
+		{
+			selectNextDice();
+		}
 	}
 	int currentSlotIndex;
 	public void selectNextDice()

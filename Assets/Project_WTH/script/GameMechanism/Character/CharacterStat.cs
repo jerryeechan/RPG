@@ -63,9 +63,10 @@ public class CharacterStat:StringfyProperty{
 	public PhysicalDefenseAttribute phyDef;
 	public MagicDefenseAttribute magDef;
 	public AccuracyAttribute accuracy;
-	public EvasionAttribute evasion;
+	public EvasionAttribute evasion; //dodge
 
-
+	public Attribute controllability;
+	public Attribute resistance;
 	//
 	public Attribute damageReduce; //direct damage reduce
 	public Attribute phyAtk;
@@ -79,6 +80,8 @@ public class CharacterStat:StringfyProperty{
 	public Attribute intAttr;
 	public Attribute dexAttr;
 	public Attribute conAttr;
+	
+	public Attribute sanAttr;
 
 	public Dictionary<AttributeType,Attribute> attributeDict;
 	public Attribute getAttribute(AttributeType type)

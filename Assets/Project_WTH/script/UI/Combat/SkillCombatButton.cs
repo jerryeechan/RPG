@@ -6,7 +6,7 @@ using System;
 using DG.Tweening;
 
 namespace com.jerrch.rpg{
-	public class SkillCombatButton : SkillButton,IPointerClickHandler,IBeginDragHandler,IDragHandler,IEndDragHandler{
+	public class SkillCombatButton : SkillButton,IPointerClickHandler{//,IBeginDragHandler,IDragHandler,IEndDragHandler{
 		
 		public Character bindCh;
 		protected Image cdMask;
@@ -107,7 +107,7 @@ namespace com.jerrch.rpg{
 		{
 			get{
 				
-				return !isLocked&&SkillUIManager.instance.isReadyToDoSkill;
+				return !isLocked&&SkillCombatUIManager.instance.isReadyToDoSkill;
 			}
 		}
 		bool isLocked;
@@ -124,24 +124,24 @@ namespace com.jerrch.rpg{
 		public void selectButton()
 		{
 			//skillNameText.color = Color.yellow;
-			SkillUIManager.instance.detailPanel.setText(bindSkill.name,bindSkill.description);
+			SkillCombatUIManager.instance.detailPanel.setText(bindSkill.name,bindSkill.description);
 		}
 
 		public void OnPointerClick(PointerEventData eventData)
 		{
 			if(isEnable)
 			{
-				//SkillUIManager.instance.skillBtnTouched(skillIndex);
+				//SkillCombatUIManager.instance.skillBtnTouched(skillIndex);
 				TurnBattleManager.instance.selectSkill(bindSkill);
 			}
 		}
-
+		/*
 		public void OnBeginDrag(PointerEventData eventData)
 		{
 			isDragging = true;
 			if(isEnable)
 			{
-				SkillUIManager.instance.OnBeginDrag(eventData,bindSkill,transform.GetComponent<RectTransform>().anchoredPosition);
+				SkillCombatUIManager.instance.OnBeginDrag(eventData,bindSkill,transform.GetComponent<RectTransform>().anchoredPosition);
 				SoundEffectManager.instance.playSound(BasicSound.Press);
 			}
 		
@@ -153,7 +153,7 @@ namespace com.jerrch.rpg{
         public void OnDrag(PointerEventData eventData)
         {
 			if(isDragging)
-            	SkillUIManager.instance.OnDrag(eventData);
+            	SkillCombatUIManager.instance.OnDrag(eventData);
         }
 
         public void OnEndDrag(PointerEventData eventData)
@@ -164,18 +164,11 @@ namespace com.jerrch.rpg{
 			
 			if(isEnable)
 			{
-				SkillUIManager.instance.OnEndDrag();
-				//**TODO: deprecated
-				/*
-				if(SkillUIManager.instance.testDrop())
-				{
-					SkillUIManager.instance.lockAllSkillBtn();
-					this.myInvoke(0.5f,useSkill);
-				}
-				*/
+				SkillCombatUIManager.instance.OnEndDrag();
 			}
 			
         }
+		*/
     }
 }
 

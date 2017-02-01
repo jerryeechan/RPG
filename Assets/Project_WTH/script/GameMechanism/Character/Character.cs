@@ -87,7 +87,7 @@ namespace com.jerrch.rpg
 		}
 		public void EquipStart()
 		{
-			print("equip start");
+//			print("equip start");
 			equipStat = initStat.Clone();
 			equipStat.statname = "equipstat";
 			equipsDict = new Dictionary<EquipType,Equip>();
@@ -113,7 +113,7 @@ namespace com.jerrch.rpg
 			foreach(Equip eq in equips)
 				wear(eq);
 			
-			chRenderer.syncAnimation();
+			//chRenderer.syncAnimation();
 		}
 		
 		

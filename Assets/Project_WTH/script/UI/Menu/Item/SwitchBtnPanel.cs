@@ -8,6 +8,8 @@ public class SwitchBtnPanel : MonoBehaviour {
 	void Awake()
 	{
 		switchBtns = GetComponentsInChildren<HandButton>();
+		if(delegateObj)
+			switchDelegate = delegateObj.GetComponent<ISwitchBtnTouchDelegate>();
 	}
 
 	int _curIndex = 0;
@@ -33,13 +35,23 @@ public class SwitchBtnPanel : MonoBehaviour {
 				switchBtns[i].maskEnable = true;
 			}
 		}
-		switchDelegate.switchBtnTouched(index);
+		if(switchDelegate!=null)
+		{
+			switchDelegate.switchBtnTouched(index);
+		}
+		else{
+			Debug.LogWarning("No switch Btn delegate");
+		}
+		
 		_curIndex = index;
 	}
-	public SwitchBtnTouchDelegate switchDelegate;
+	[SerializeField]
+	GameObject delegateObj;
+	public ISwitchBtnTouchDelegate switchDelegate;
 }
 
-public interface SwitchBtnTouchDelegate
+public interface ISwitchBtnTouchDelegate
 {
 	void switchBtnTouched(int index);
 }
+

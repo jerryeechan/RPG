@@ -4,8 +4,6 @@ using UnityEngine.UI;
 using com.jerrch.rpg;
 public class InfoManager : Singleton<InfoManager> {
 	public bool isOpen = false;
-	
-	
 	Dictionary<InfoTabType,InfoTab> tabDict;
 	InfoTab[] tabPanels;
 	GameObject panel;
@@ -31,7 +29,6 @@ public class InfoManager : Singleton<InfoManager> {
 			currentTab = tabDict[InfoTabType.Adventure];
 		}
 	}
-	
 	public void init()
 	{
 		foreach(var tab in tabPanels)
@@ -53,29 +50,17 @@ public class InfoManager : Singleton<InfoManager> {
 		currentTab.show();
 		PlayerStateUI.instance.descriptionText.text = "";
 		isOpen = true;
-		//ItemUIManager.instance.Show();
-		//inspectCharacter(GameManager.instance.currentCh);
-		
-		
-		
 	}
-
-
-
 
 	public void Hide(){
 		panel.SetActive(false);
 		isOpen = false;
 	}
-
-	
-	
 	public void inspectCharacter(Character ch)
 	{	
 		if(ch == null)
 			return;
 	}
-
 	public InfoTab currentTab;
 	public void switchTab(InfoTabType type)
 	{

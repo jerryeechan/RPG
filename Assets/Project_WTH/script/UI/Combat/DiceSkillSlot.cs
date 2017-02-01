@@ -36,7 +36,7 @@ public class DiceSkillSlot : MonoBehaviour{
 	}
 	public void setSkill()
 	{
-		Skill dropSkill = SkillUIManager.instance.selectedBnt.bindSkill;
+		Skill dropSkill = SkillCombatUIManager.instance.selectedBnt.bindSkill;
 		print(""+dropSkill.diceType+diceType);
 		if(dropSkill.diceType == diceType)
 		{

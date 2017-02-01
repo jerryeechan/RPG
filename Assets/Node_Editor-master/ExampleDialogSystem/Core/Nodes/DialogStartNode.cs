@@ -19,12 +19,12 @@ public class DialogStartNode : DialogNode
         node.rect = new Rect(pos.x, pos.y, 300, 230);
         node.name = "Dailog Start Node";
 
-        node.CreateOutput("Next Node", "DialogForward", NodeSide.Right, 30);
-        node.CreateInput("Return Here", "DialogBack", NodeSide.Right, 50);
+        node.CreateOutput("Next Node", "DialogForward", NodeSide.Bottom, 30);
+        //node.CreateInput("Return Here", "DialogBack", NodeSide.Bottom, 50);
 
-        node.SayingCharacterName = "Morgen Freeman";
-        node.WhatTheCharacterSays = "I'm GOD";
-        node.SayingCharacterPotrait = null;
+        //node.SayingCharacterName = "Morgen Freeman";
+        //node.WhatTheCharacterSays = "I'm GOD";
+        //node.SayingCharacterPotrait = null;
 
         return node;
     }

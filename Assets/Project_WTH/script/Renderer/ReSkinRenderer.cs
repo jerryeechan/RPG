@@ -5,7 +5,9 @@ using System;
 using com.jerrch.rpg;
 public class ReSkinRenderer : MonoBehaviour {
 
-	public string prefix;
+	public string classesName;
+	public string suitName;
+	public string equipTypeName;
 	public string findName;
 
 	
@@ -16,23 +18,40 @@ public class ReSkinRenderer : MonoBehaviour {
 	}
 	
 	Sprite[] subSprties;
-	public void getSprites(string folder)
+	protected void getSprites(string classesName,string suitName,string equipTypeName)
 	{
-		prefix = folder;
-		subSprties = Resources.LoadAll<Sprite>("Characters/"+prefix);
+		this.classesName = classesName;
+		this.suitName = suitName;
+		this.equipTypeName = equipTypeName;
+		//equipTypeName = ch_folder_name;
+		subSprties = Resources.LoadAll<Sprite>("Characters/"+classesName+"/"+suitName+"/"+equipTypeName);
 	}
+	public string directory;
 	void LateUpdate()
 	{
-		var ori_SpriteName = spr.sprite.name;
+		if(subSprties==null)
+		{
+			directory = "Characters/"+classesName+"/"+suitName+"/"+equipTypeName;
+			subSprties = Resources.LoadAll<Sprite>("Characters/"+classesName+"/"+suitName+"/"+equipTypeName);
+		}
 		
-		findName = prefix+"_"+ori_SpriteName;
 		
-		//subSprties = Resources.LoadAll<Sprite>("Characters/"+prefix);
-		//var subSprties = Resources.LoadAll<Sprite>("Characters/"+prefix);
-		var newSprite = Array.Find(subSprties,item => item.name==findName);
-		//print(newSprite);
-		if(newSprite)
-			spr.sprite = newSprite;
+		
+		if(subSprties.Length>1)
+		{
+			var ori_SpriteName = spr.sprite.name;
+			findName = suitName+"_"+equipTypeName+"_"+ori_SpriteName;
+
+			var newSprite = Array.Find(subSprties,item => item.name==findName);
+			//print(newSprite);
+			if(newSprite)
+				spr.sprite = newSprite;
+		}
+		else
+		{
+			spr.sprite = SpriteManager.instance.emptySprite;
+		}
+		
 		//foreach()
 		
 	}

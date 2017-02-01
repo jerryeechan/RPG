@@ -62,7 +62,6 @@ namespace com.jerrch.rpg{
 				if(chDataList == null||chDataList.Count == 0)
 				{
 					chData = ClassesDataManager.instance.generateChData();
-					print("generate data");
 				}
 				else
 					chData = chDataList[i];

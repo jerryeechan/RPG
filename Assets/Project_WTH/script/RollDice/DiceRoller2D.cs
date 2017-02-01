@@ -40,7 +40,7 @@ public class DiceRoller2D : Singleton<DiceRoller2D> {
 	}
 	void Result()
 	{
-		//SkillUIManager.instance.lockAllSkillBtn();
+		//SkillCombatUIManager.instance.lockAllSkillBtn();
 //		int sum = 0;
 		//isDiceReady = true;
 		

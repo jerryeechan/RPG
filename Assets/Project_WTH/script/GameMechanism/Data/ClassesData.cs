@@ -107,7 +107,7 @@ public class ClassesData : MonoBehaviour {
 public enum ClassesType{
 	None,
 	Paladin,DarkPalidin,
-	Mage,Priest,Taoist
+	Mage,Cleric,Taoist
 }
 
 

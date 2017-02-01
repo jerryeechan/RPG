@@ -8,7 +8,7 @@ public class CharacterRenderer : MonoBehaviour {
 	HealthBar bar;
 	
 	static float playerAnimationSpeed = 0.5f;
-	public Animator[] equipAnims;
+	//public Animator[] equipAnims;
 	public Animator anim;
 	public EquipRenderer[] equipRs;
 	public SpriteRenderer indicater;
@@ -28,25 +28,18 @@ public class CharacterRenderer : MonoBehaviour {
 		Transform equipTransform =transform.Find("equip");
 		if(equipTransform)
 		{
-			equipAnims = equipTransform.GetComponentsInChildren<Animator>();
-			foreach (var eqanim in equipAnims)
-			{
-
-				eqanim.speed = playerAnimationSpeed;
-			}
+			//equipAnims = equipTransform.GetComponentsInChildren<Animator>();
+			//foreach (var eqanim in equipAnims)
+			//{
+			//	eqanim.speed = playerAnimationSpeed;
+			//}
+			anim.speed = playerAnimationSpeed;
 			equipUIDicts = new Dictionary<EquipType,EquipRenderer>();
 			equipRs = equipTransform.GetComponentsInChildren<EquipRenderer>();
 			foreach(var eqR in equipRs)
 			{
-//				print(eqR);
 				equipUIDicts.Add(eqR.type,eqR);	
 			}
-/*
-			equipUIDicts.Add(EquipType.Armor,armorRenderer);
-			equipUIDicts.Add(EquipType.Helmet,helmetRenderer);
-			equipUIDicts.Add(EquipType.Weapon,weaponRenderer);
-			equipUIDicts.Add(EquipType.Shield,shieldRenderer);
-			*/
 		}
 
 		
@@ -66,8 +59,9 @@ public class CharacterRenderer : MonoBehaviour {
 			}
 			else
 			{
-				eqr.wearEquip(equipGraphic.equipAnimations);
-				//eqr.wearEquip(equipGraphic.equipSprite);
+				eqr.wearEquip(equip.bindGraphic);
+				//eqr.wearEquip(equip);
+				//eqr.wearEquip(equipGraphic.equipAnimations);
 			}
 			
 		}
@@ -80,18 +74,8 @@ public class CharacterRenderer : MonoBehaviour {
 	}
 	public void syncAnimation()
 	{
-		print("sync");
-		
 		if(equipUIDicts==null)
 			return;
-
-		/*
-		foreach(var eqRenderer in equipUIDicts)
-		{
-			print(eqRenderer);
-			eqRenderer.Value.restart();
-		}
-		*/
 	}
 
 	public void init(CharacterStat stat)
@@ -106,17 +90,18 @@ public class CharacterRenderer : MonoBehaviour {
 	public void PlayCharacterAnimation(CharacterAnimation chAnimation)
 	{
 		if(anim)
-			anim.Play(chAnimation.ToString());
-		if(chAnimation==CharacterAnimation.die)
 		{
-
+			anim.Play(chAnimation.ToString(),-1,0);
+			anim.speed = AnimationManager.getChAnimSpeed(chAnimation);
 		}
 		
+		
+		/*
 		foreach(var equipAnim in equipAnims)
 		{
 			equipAnim.speed = AnimationManager.getChAnimSpeed(chAnimation);
 			equipAnim.Play(chAnimation.ToString(),-1,0);
-		}
+		}*/
 	
 		
 		//will call playSkill with animation event;
@@ -128,7 +113,7 @@ public class CharacterRenderer : MonoBehaviour {
 	{
 		if(!isCombatMode)
 			return;
-		if(!SkillUIManager.instance.isDraggingSkill)
+		if(!SkillCombatUIManager.instance.isDraggingSkill)
 		{
 			CursorManager.instance.PointerMode();
 		}
@@ -149,12 +134,12 @@ public class CharacterRenderer : MonoBehaviour {
 	
 	void OnMouseExit()
 	{
-		//if(!SkillUIManager.instance.isDraggingSkill)
+		//if(!SkillCombatUIManager.instance.isDraggingSkill)
 		//	return;
 		CursorManager.instance.NormalMode();
 		/*
 		if(isCombatMode)
-			SkillUIManager.instance.OverCharacter(null);
+			SkillCombatUIManager.instance.OverCharacter(null);
 			*/
 	}
 
@@ -180,9 +165,9 @@ public class CharacterRenderer : MonoBehaviour {
 			}
 		}
 		/*
-		if(isCombatMode&&SkillUIManager.instance.isDraggingSkill)
+		if(isCombatMode&&SkillCombatUIManager.instance.isDraggingSkill)
 		{
-			SkillUIManager.instance.OverCharacter(bindCh);
+			SkillCombatUIManager.instance.OverCharacter(bindCh);
 			
 			if(bindCh.side == CharacterSide.Player)
 				RandomBattleRound.instance.selectedAllies = bindCh;
@@ -211,7 +196,7 @@ public class CharacterRenderer : MonoBehaviour {
 		print("mosue up");
 		pressCount = 0;
 		isMouseDown = false;
-		if(SkillUIManager.instance.isDraggingSkill)
+		if(SkillCombatUIManager.instance.isDraggingSkill)
 		{
 			print("drop skill on this ch:"+bindCh.name);
 		}
@@ -220,7 +205,7 @@ public class CharacterRenderer : MonoBehaviour {
 
 	public void selected()
 	{
-		SkillUIManager.instance.setCharacter(bindCh);
+		SkillCombatUIManager.instance.setCharacter(bindCh);
 		BattleChUIManager.instance.setCharacter(bindCh);
 		
 		TurnBattleManager.instance.selectedPlayer = bindCh;

@@ -8,7 +8,7 @@ using System;
 
 namespace com.jerrch.rpg
 {
-public class ItemUIManager : Singleton<ItemUIManager>,IDisplayable,IItemSlotManager,SwitchBtnTouchDelegate {
+public class ItemUIManager : Singleton<ItemUIManager>,IDisplayable,IItemSlotManager,ISwitchBtnTouchDelegate {
 	ItemSlot[] itemSlots;
 	public Image dragTempSlot;
 	public RectTransform buttonPanel;

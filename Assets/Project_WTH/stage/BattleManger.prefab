@@ -71,7 +71,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 224344511712563468}
-  - component: {fileID: 114014825480501920}
   - component: {fileID: 114278974878676056}
   - component: {fileID: 225926587163826430}
   - component: {fileID: 114510971405471290}
@@ -145,6 +144,7 @@ GameObject:
   - component: {fileID: 222278796538812550}
   - component: {fileID: 114146373010388314}
   - component: {fileID: 114277461543736202}
+  - component: {fileID: 114081080186087504}
   m_Layer: 5
   m_Name: dice1
   m_TagString: Untagged
@@ -455,6 +455,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 224061235668831484}
+  - component: {fileID: 114248413556436174}
   m_Layer: 5
   m_Name: DiceRoller
   m_TagString: Untagged
@@ -577,6 +578,7 @@ GameObject:
   - component: {fileID: 222143904128007876}
   - component: {fileID: 114395556172623422}
   - component: {fileID: 114933861254025686}
+  - component: {fileID: 114483940863235946}
   m_Layer: 5
   m_Name: dice1 (2)
   m_TagString: Untagged
@@ -613,6 +615,7 @@ GameObject:
   - component: {fileID: 222115223683427820}
   - component: {fileID: 114764106362511566}
   - component: {fileID: 114720652290315536}
+  - component: {fileID: 114411608071080320}
   m_Layer: 5
   m_Name: dice1 (1)
   m_TagString: Untagged
@@ -1945,7 +1948,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1717182798962940
 GameObject:
   m_ObjectHideFlags: 1
@@ -2181,6 +2184,7 @@ GameObject:
   - component: {fileID: 222501703722668658}
   - component: {fileID: 114187259405362152}
   - component: {fileID: 114727699788942350}
+  - component: {fileID: 114509570593860386}
   m_Layer: 5
   m_Name: dice1 (3)
   m_TagString: Untagged
@@ -3045,19 +3049,6 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
---- !u!114 &114014825480501920
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1021192925809482}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3e729f965987247e996a13d6d7e003d5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  skillPanel: {fileID: 0}
-  skillDetailPanel: {fileID: 0}
 --- !u!114 &114015785357271106
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3438,6 +3429,60 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2855ac88520a4499bad405625b5f6d44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114081080186087504
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1037360223167622}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d3b7d679d1814fcb92221d4c91551b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 114146373010388314}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 114248413556436174}
+        m_MethodName: selectDice
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  text: {fileID: 0}
+  hideVec: {x: 0, y: 0}
 --- !u!114 &114084811668688156
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4414,6 +4459,19 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114248413556436174
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1141353076657496}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9846641e29ff4f00a0ce20172c92ef5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  indicator: {fileID: 114368984464959574}
+  selectedDice: {fileID: 0}
 --- !u!114 &114248830456305244
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4480,8 +4538,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: PlayerRoundDone
+      - m_Target: {fileID: 114510971405471290}
+        m_MethodName: SkillReady
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4621,6 +4679,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   diceSprites: []
+  index: 0
   skillSlot: {fileID: 0}
 --- !u!114 &114278974878676056
 MonoBehaviour:
@@ -5348,6 +5407,60 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114411608071080320
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1220941108120114}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d3b7d679d1814fcb92221d4c91551b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 114764106362511566}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 114248413556436174}
+        m_MethodName: selectDice
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  text: {fileID: 0}
+  hideVec: {x: 0, y: 0}
 --- !u!114 &114412165485980178
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5630,6 +5743,60 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114483940863235946
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1191772597815810}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d3b7d679d1814fcb92221d4c91551b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 114395556172623422}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 114248413556436174}
+        m_MethodName: selectDice
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 2
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  text: {fileID: 0}
+  hideVec: {x: 0, y: 0}
 --- !u!114 &114487934459795754
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5743,6 +5910,60 @@ MonoBehaviour:
   romanChOnly: 1
   _textValue: 
   isTyping: 0
+--- !u!114 &114509570593860386
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1825774012795032}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d3b7d679d1814fcb92221d4c91551b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 114187259405362152}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 114248413556436174}
+        m_MethodName: selectDice
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 3
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  text: {fileID: 0}
+  hideVec: {x: 0, y: 0}
 --- !u!114 &114510971405471290
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5762,9 +5983,7 @@ MonoBehaviour:
   diedPlayers: []
   selectedPlayer: {fileID: 0}
   currentPlayer: {fileID: 0}
-  indicator: {fileID: 114368984464959574}
-  isTesting: 0
-  testCount: 1
+  readyBtn: {fileID: 114251744483299536}
 --- !u!114 &114511919550724374
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -7151,6 +7370,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   diceSprites: []
+  index: 0
   skillSlot: {fileID: 0}
 --- !u!114 &114727699788942350
 MonoBehaviour:
@@ -7164,6 +7384,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   diceSprites: []
+  index: 0
   skillSlot: {fileID: 0}
 --- !u!114 &114729618898264736
 MonoBehaviour:
@@ -7500,7 +7721,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: skip
+  m_Text: Reday
 --- !u!114 &114786424670940644
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -8313,6 +8534,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   diceSprites: []
+  index: 0
   skillSlot: {fileID: 0}
 --- !u!114 &114934306065536446
 MonoBehaviour:
@@ -10078,11 +10300,11 @@ RectTransform:
   - {fileID: 224292500493822610}
   - {fileID: 224049575858924796}
   m_Father: {fileID: 224457570226586818}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 54, y: 0}
+  m_AnchoredPosition: {x: 34.5, y: 0}
   m_SizeDelta: {x: 148, y: 0}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!224 &224063802042952350
@@ -10211,7 +10433,7 @@ RectTransform:
   - {fileID: 224908490081783092}
   - {fileID: 224036516417115322}
   m_Father: {fileID: 224457570226586818}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -10702,7 +10924,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -54, y: 0}
+  m_AnchoredPosition: {x: -73.5, y: 0}
   m_SizeDelta: {x: 65, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224246492830379376
@@ -10739,11 +10961,11 @@ RectTransform:
   - {fileID: 224201999959551310}
   - {fileID: 224340796387426940}
   m_Father: {fileID: 224457570226586818}
-  m_RootOrder: 5
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -138.4, y: -6}
+  m_AnchoredPosition: {x: -157.9, y: -6}
   m_SizeDelta: {x: 46, y: -22}
   m_Pivot: {x: 0, y: 1}
 --- !u!224 &224252172767803492
@@ -11387,12 +11609,12 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 224061235668831484}
+  - {fileID: 224248176644068132}
   - {fileID: 224245794163288228}
+  - {fileID: 224061235668831484}
   - {fileID: 224112014491876692}
   - {fileID: 224928852977181984}
   - {fileID: 224587023792231060}
-  - {fileID: 224248176644068132}
   m_Father: {fileID: 224344511712563468}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -11795,12 +12017,12 @@ RectTransform:
   m_Children:
   - {fileID: 224810353897854772}
   m_Father: {fileID: 224457570226586818}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
   m_AnchoredPosition: {x: -9.299988, y: 26.1}
-  m_SizeDelta: {x: 36, y: 14}
+  m_SizeDelta: {x: 36, y: 24}
   m_Pivot: {x: 1, y: 0.5}
 --- !u!224 &224588733825911300
 RectTransform:
@@ -12924,7 +13146,7 @@ RectTransform:
   m_Children:
   - {fileID: 224309643549581746}
   m_Father: {fileID: 224457570226586818}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}

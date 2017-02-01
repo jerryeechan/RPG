@@ -6,13 +6,13 @@ using UnityEditor;
 using UnityEngine;
 
 [Node(false, "Dialog/Dialog With Options Node", new Type[]{typeof(DialogNodeCanvas)})]
-public class DialogMultiOptionsNode : BaseDialogNode
+public class DialogMultiOptionsNode : DialogNode
 {
     private const string Id = "multiOptionDialogNode";
     public override string GetID { get { return Id; } }
     public override Type GetObjectType { get { return typeof(DialogMultiOptionsNode); } }
 
-    private const int StartValue = 222;
+    private const int StartValue = 144;
     private const int SizeValue = 22;
 
     [SerializeField]
@@ -22,46 +22,35 @@ public class DialogMultiOptionsNode : BaseDialogNode
     {
         DialogMultiOptionsNode node = CreateInstance<DialogMultiOptionsNode>();
 
-        node.rect = new Rect(pos.x, pos.y, 300, 265);
+        node.rect = new Rect(pos.x, pos.y, 300, 225);
         node.name = "Dailog with Options Node";
-
+        
         //Previous Node Connections
-        node.CreateInput("Previous Node", "DialogForward", NodeSide.Left, 30);
-        node.CreateOutput("Back Node", "DialogBack", NodeSide.Left, 50);
+        node.CreateInput("Previous Node", "DialogForward", NodeSide.Top, 30);
+        //node.CreateOutput("Back Node", "DialogBack", NodeSide.Left, 50);
 
         ////Next Node to go to
         //node.CreateOutput("Next Node", "DialogForward", NodeSide.Right, 30);
-
-        node.SayingCharacterName = "Morgen Freeman";
-        node.WhatTheCharacterSays = "I'm GOD";
-        node.SayingCharacterPotrait = null;
-
         node._options = new List<DataHolderForOption>();
-
         node.AddNewOption();
         
         return node;
     }
-
+    public override void OnSceneGUI()
+    {   
+        Inputs[0].side = NodeSide.Top;
+    }
+    //public override void OnEnable()
+    
     protected internal override void NodeGUI()
     {
-        GUILayout.BeginHorizontal();
+        rect = new Rect(rect.position.x, rect.position.y, 300, 225+ _options.Count*SizeValue);
+        for(int i=0;i<Outputs.Count;i++)
+        {
+            Outputs[i].SetPosition(StartValue + i * SizeValue,NodeSide.Right);
+        }
 
-        SayingCharacterName = EditorGUILayout.TextField("Character Name", SayingCharacterName);
-
-        GUILayout.EndHorizontal();
-        GUILayout.BeginHorizontal();
-
-        WhatTheCharacterSays = EditorGUILayout.TextArea(WhatTheCharacterSays, GUILayout.Height(100));
-
-        GUILayout.EndHorizontal();
-        GUILayout.BeginHorizontal();
-
-        SayingCharacterPotrait = EditorGUILayout.ObjectField("Character Potrait", SayingCharacterPotrait,
-            typeof(Sprite), false) as Sprite;
-
-        GUILayout.EndHorizontal();
-
+        base.NodeGUI();
         GUILayout.Space(5);
         DrawOptions();
 
@@ -168,8 +157,9 @@ public class DialogMultiOptionsNode : BaseDialogNode
     class DataHolderForOption
     {
         public string OptionDisplay;
-        public int NodeOutputIndex;                
+        public int NodeOutputIndex;             
     }
+    
 
     public List<string> GetAllOptions()
     {

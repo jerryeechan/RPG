@@ -6,7 +6,7 @@ public class SingletonCanvas<T> : AnimatableCanvas where T : AnimatableCanvas
 	protected static T _instance;
 	override protected void Awake()
 	{
-		_instance = instance;
+		_instance = GetComponent<T>();
 		base.Awake();
 		
 	}

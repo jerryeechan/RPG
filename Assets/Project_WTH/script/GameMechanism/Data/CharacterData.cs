@@ -19,6 +19,7 @@ public class CharacterData:StringfyProperty{
 	public int conVal;
 	public int intVal;
 	public int dexVal;
+	public int sanVal;
 	
 	public string UITemplateID="player";
 	//public List<SkillData> currentSkillData = new List<SkillData>();

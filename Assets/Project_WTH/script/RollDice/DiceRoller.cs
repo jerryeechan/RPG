@@ -67,11 +67,11 @@ public class DiceRoller : MonoBehaviour {
 			if(allReady)
 			{
 				//CombatUIManager.instance.DiceRollDone();
-				SkillUIManager.instance.lockAllSkillBtn();
+				SkillCombatUIManager.instance.lockAllSkillBtn();
 				isDiceReady = true;
 				for(int i=0;i<diceNum;i++)
 				{
-					SkillUIManager.instance.unlockSkill(diceValues[i]);
+					SkillCombatUIManager.instance.unlockSkill(diceValues[i]);
 				}
 			}
 		}
@@ -80,10 +80,9 @@ public class DiceRoller : MonoBehaviour {
 	bool isDiceReady;
 	public void Roll()
 	{
-		CombatUIManager.instance.UseSkillDone();
 		
 		
-//		SkillUIManager.instance.lockAllSkillBtn();
+//		SkillCombatUIManager.instance.lockAllSkillBtn();
 		Vector3 force = Random.onUnitSphere*rollForce;
 		foreach(GameObject dice in dices)
 		{

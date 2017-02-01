@@ -721,22 +721,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &1413002358805592
-GameObject:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 4719464036087438}
-  - component: {fileID: 114626733056907266}
-  m_Layer: 0
-  m_Name: mage_book
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!1 &1430334171929938
 GameObject:
   m_ObjectHideFlags: 1
@@ -973,7 +957,7 @@ GameObject:
   - component: {fileID: 4203569555292418}
   - component: {fileID: 114016371367903486}
   m_Layer: 0
-  m_Name: priest_hat
+  m_Name: cleric_hat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1005,7 +989,7 @@ GameObject:
   - component: {fileID: 4217598239860462}
   - component: {fileID: 114697473151666764}
   m_Layer: 0
-  m_Name: mageBlue_hood
+  m_Name: mageBlue_orb
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1721,7 +1705,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4214994820021866}
   m_Layer: 0
-  m_Name: priest
+  m_Name: cleric
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2350,7 +2334,6 @@ Transform:
   m_Children:
   - {fileID: 4141335592754864}
   - {fileID: 4719196865062136}
-  - {fileID: 4719464036087438}
   - {fileID: 4693925320797244}
   - {fileID: 4646177680588890}
   m_Father: {fileID: 4181114389855052}
@@ -2893,7 +2876,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4319828812372022}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4661743305131180
 Transform:
@@ -3032,7 +3015,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4319828812372022}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4708980808384640
 Transform:
@@ -3073,19 +3056,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4319828812372022}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &4719464036087438
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1413002358805592}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 4319828812372022}
-  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4732475884449106
 Transform:
@@ -3468,7 +3438,7 @@ MonoBehaviour:
   calEffectValue: 0
   applyResult: 0
   hit: 1
-  parentSkill: {fileID: 0}
+  parentSubSkill: {fileID: 0}
   level: 1
   bonus:
     _baseValue: 0
@@ -3499,13 +3469,115 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 003033de39a85435caeb68a766636a56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: priest_hat
+  id: cleric_hat
   iconSprite: {fileID: 21300000, guid: 72b4f13a864bc4acc9fd983fcb1734ba, type: 3}
   equipAnimations:
   - {fileID: 7400000, guid: 7448c92143b8c44c4a5b32e8d596e6a2, type: 2}
   - {fileID: 7400000, guid: d61d08fa4c36149e1af20adf249df68f, type: 2}
   - {fileID: 7400000, guid: a2aefb1b4361c4bd5a725d63e18a95a0, type: 2}
   chSprite: {fileID: 21300000, guid: 6a8a13630256a415b9d0898703f71d21, type: 3}
+  sprites:
+  - {fileID: 21300000, guid: 115c37036809d4742b801e6a69fee24d, type: 3}
+  - {fileID: 21300002, guid: 115c37036809d4742b801e6a69fee24d, type: 3}
+  - {fileID: 21300004, guid: 115c37036809d4742b801e6a69fee24d, type: 3}
+  - {fileID: 21300006, guid: 115c37036809d4742b801e6a69fee24d, type: 3}
+  - {fileID: 21300008, guid: 115c37036809d4742b801e6a69fee24d, type: 3}
+  - {fileID: 21300010, guid: 115c37036809d4742b801e6a69fee24d, type: 3}
+  - {fileID: 21300012, guid: 115c37036809d4742b801e6a69fee24d, type: 3}
+  - {fileID: 21300014, guid: 115c37036809d4742b801e6a69fee24d, type: 3}
+  - {fileID: 21300000, guid: 9ed50c62627dd4ca299c6185e0b53939, type: 3}
+  - {fileID: 21300002, guid: 9ed50c62627dd4ca299c6185e0b53939, type: 3}
+  - {fileID: 21300004, guid: 9ed50c62627dd4ca299c6185e0b53939, type: 3}
+  - {fileID: 21300006, guid: 9ed50c62627dd4ca299c6185e0b53939, type: 3}
+  - {fileID: 21300008, guid: 9ed50c62627dd4ca299c6185e0b53939, type: 3}
+  - {fileID: 21300010, guid: 9ed50c62627dd4ca299c6185e0b53939, type: 3}
+  - {fileID: 21300012, guid: 9ed50c62627dd4ca299c6185e0b53939, type: 3}
+  - {fileID: 21300014, guid: 9ed50c62627dd4ca299c6185e0b53939, type: 3}
+  - {fileID: 21300000, guid: 75bc7b85d5a784acdbc55e95f0ae567d, type: 3}
+  - {fileID: 21300002, guid: 75bc7b85d5a784acdbc55e95f0ae567d, type: 3}
+  - {fileID: 21300004, guid: 75bc7b85d5a784acdbc55e95f0ae567d, type: 3}
+  - {fileID: 21300006, guid: 75bc7b85d5a784acdbc55e95f0ae567d, type: 3}
+  - {fileID: 21300008, guid: 75bc7b85d5a784acdbc55e95f0ae567d, type: 3}
+  - {fileID: 21300010, guid: 75bc7b85d5a784acdbc55e95f0ae567d, type: 3}
+  - {fileID: 21300012, guid: 75bc7b85d5a784acdbc55e95f0ae567d, type: 3}
+  - {fileID: 21300014, guid: 75bc7b85d5a784acdbc55e95f0ae567d, type: 3}
+  - {fileID: 21300000, guid: 6a8a13630256a415b9d0898703f71d21, type: 3}
+  - {fileID: 21300002, guid: 6a8a13630256a415b9d0898703f71d21, type: 3}
+  - {fileID: 21300004, guid: 6a8a13630256a415b9d0898703f71d21, type: 3}
+  - {fileID: 21300006, guid: 6a8a13630256a415b9d0898703f71d21, type: 3}
+  - {fileID: 21300008, guid: 6a8a13630256a415b9d0898703f71d21, type: 3}
+  - {fileID: 21300010, guid: 6a8a13630256a415b9d0898703f71d21, type: 3}
+  - {fileID: 21300012, guid: 6a8a13630256a415b9d0898703f71d21, type: 3}
+  - {fileID: 21300014, guid: 6a8a13630256a415b9d0898703f71d21, type: 3}
+  - {fileID: 21300000, guid: db53d8466c8604aa7a1c7e8dae665c73, type: 3}
+  - {fileID: 21300002, guid: db53d8466c8604aa7a1c7e8dae665c73, type: 3}
+  - {fileID: 21300004, guid: db53d8466c8604aa7a1c7e8dae665c73, type: 3}
+  - {fileID: 21300006, guid: db53d8466c8604aa7a1c7e8dae665c73, type: 3}
+  - {fileID: 21300008, guid: db53d8466c8604aa7a1c7e8dae665c73, type: 3}
+  - {fileID: 21300010, guid: db53d8466c8604aa7a1c7e8dae665c73, type: 3}
+  - {fileID: 21300012, guid: db53d8466c8604aa7a1c7e8dae665c73, type: 3}
+  - {fileID: 21300014, guid: db53d8466c8604aa7a1c7e8dae665c73, type: 3}
+  - {fileID: 21300000, guid: d3ae731686fab43caa8f5a6c33716dd4, type: 3}
+  - {fileID: 21300002, guid: d3ae731686fab43caa8f5a6c33716dd4, type: 3}
+  - {fileID: 21300004, guid: d3ae731686fab43caa8f5a6c33716dd4, type: 3}
+  - {fileID: 21300006, guid: d3ae731686fab43caa8f5a6c33716dd4, type: 3}
+  - {fileID: 21300008, guid: d3ae731686fab43caa8f5a6c33716dd4, type: 3}
+  - {fileID: 21300010, guid: d3ae731686fab43caa8f5a6c33716dd4, type: 3}
+  - {fileID: 21300012, guid: d3ae731686fab43caa8f5a6c33716dd4, type: 3}
+  - {fileID: 21300014, guid: d3ae731686fab43caa8f5a6c33716dd4, type: 3}
+  - {fileID: 21300000, guid: 2e12f6dad715b4c41a275cda2a68304a, type: 3}
+  - {fileID: 21300002, guid: 2e12f6dad715b4c41a275cda2a68304a, type: 3}
+  - {fileID: 21300004, guid: 2e12f6dad715b4c41a275cda2a68304a, type: 3}
+  - {fileID: 21300006, guid: 2e12f6dad715b4c41a275cda2a68304a, type: 3}
+  - {fileID: 21300008, guid: 2e12f6dad715b4c41a275cda2a68304a, type: 3}
+  - {fileID: 21300010, guid: 2e12f6dad715b4c41a275cda2a68304a, type: 3}
+  - {fileID: 21300012, guid: 2e12f6dad715b4c41a275cda2a68304a, type: 3}
+  - {fileID: 21300014, guid: 2e12f6dad715b4c41a275cda2a68304a, type: 3}
+  - {fileID: 21300000, guid: 8645446d9e8b54b21aa162a382df3842, type: 3}
+  - {fileID: 21300002, guid: 8645446d9e8b54b21aa162a382df3842, type: 3}
+  - {fileID: 21300004, guid: 8645446d9e8b54b21aa162a382df3842, type: 3}
+  - {fileID: 21300006, guid: 8645446d9e8b54b21aa162a382df3842, type: 3}
+  - {fileID: 21300008, guid: 8645446d9e8b54b21aa162a382df3842, type: 3}
+  - {fileID: 21300010, guid: 8645446d9e8b54b21aa162a382df3842, type: 3}
+  - {fileID: 21300012, guid: 8645446d9e8b54b21aa162a382df3842, type: 3}
+  - {fileID: 21300014, guid: 8645446d9e8b54b21aa162a382df3842, type: 3}
+  - {fileID: 21300000, guid: d777dee256d0241d5b90acea78c75080, type: 3}
+  - {fileID: 21300002, guid: d777dee256d0241d5b90acea78c75080, type: 3}
+  - {fileID: 21300004, guid: d777dee256d0241d5b90acea78c75080, type: 3}
+  - {fileID: 21300006, guid: d777dee256d0241d5b90acea78c75080, type: 3}
+  - {fileID: 21300008, guid: d777dee256d0241d5b90acea78c75080, type: 3}
+  - {fileID: 21300010, guid: d777dee256d0241d5b90acea78c75080, type: 3}
+  - {fileID: 21300012, guid: d777dee256d0241d5b90acea78c75080, type: 3}
+  - {fileID: 21300014, guid: d777dee256d0241d5b90acea78c75080, type: 3}
+  - {fileID: 21300000, guid: 61a26a26b740542aab6591a8723444c0, type: 3}
+  - {fileID: 21300002, guid: 61a26a26b740542aab6591a8723444c0, type: 3}
+  - {fileID: 21300004, guid: 61a26a26b740542aab6591a8723444c0, type: 3}
+  - {fileID: 21300006, guid: 61a26a26b740542aab6591a8723444c0, type: 3}
+  - {fileID: 21300008, guid: 61a26a26b740542aab6591a8723444c0, type: 3}
+  - {fileID: 21300010, guid: 61a26a26b740542aab6591a8723444c0, type: 3}
+  - {fileID: 21300012, guid: 61a26a26b740542aab6591a8723444c0, type: 3}
+  - {fileID: 21300014, guid: 61a26a26b740542aab6591a8723444c0, type: 3}
+  - {fileID: 21300000, guid: 3f419ed01c4644ac69bacaa7808d6a3a, type: 3}
+  - {fileID: 21300002, guid: 3f419ed01c4644ac69bacaa7808d6a3a, type: 3}
+  - {fileID: 21300004, guid: 3f419ed01c4644ac69bacaa7808d6a3a, type: 3}
+  - {fileID: 21300006, guid: 3f419ed01c4644ac69bacaa7808d6a3a, type: 3}
+  - {fileID: 21300008, guid: 3f419ed01c4644ac69bacaa7808d6a3a, type: 3}
+  - {fileID: 21300010, guid: 3f419ed01c4644ac69bacaa7808d6a3a, type: 3}
+  - {fileID: 21300012, guid: 3f419ed01c4644ac69bacaa7808d6a3a, type: 3}
+  - {fileID: 21300014, guid: 3f419ed01c4644ac69bacaa7808d6a3a, type: 3}
+  - {fileID: 21300000, guid: 66dc1a1e216e845dfa0900808754078f, type: 3}
+  - {fileID: 21300002, guid: 66dc1a1e216e845dfa0900808754078f, type: 3}
+  - {fileID: 21300004, guid: 66dc1a1e216e845dfa0900808754078f, type: 3}
+  - {fileID: 21300006, guid: 66dc1a1e216e845dfa0900808754078f, type: 3}
+  - {fileID: 21300008, guid: 66dc1a1e216e845dfa0900808754078f, type: 3}
+  - {fileID: 21300010, guid: 66dc1a1e216e845dfa0900808754078f, type: 3}
+  - {fileID: 21300012, guid: 66dc1a1e216e845dfa0900808754078f, type: 3}
+  - {fileID: 21300014, guid: 66dc1a1e216e845dfa0900808754078f, type: 3}
+  - {fileID: 21300000, guid: 531aeb592eb82454abba989d02896253, type: 3}
+  type: 0
+  classesType: 4
+  suitName: cleric
+  equipTypeName: book
 --- !u!114 &114030160410631012
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3529,6 +3601,7 @@ MonoBehaviour:
   price: 0
   stackable: 0
   itemType: 1
+  bindClasses: 0
   bindCh: {fileID: 0}
   effects: []
   equipType: 0
@@ -3552,6 +3625,11 @@ MonoBehaviour:
   - {fileID: 7400000, guid: e0072dd0c5f61419097ce2cb35df4589, type: 2}
   - {fileID: 7400000, guid: a823a2b8b2dcd40d5bc38189f27edc04, type: 2}
   chSprite: {fileID: 21300000, guid: e0126e864f64545e78fae8424367acb5, type: 3}
+  sprites: []
+  type: 3
+  classesType: 0
+  suitName: 
+  equipTypeName: 
 --- !u!114 &114035555174673312
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3571,6 +3649,11 @@ MonoBehaviour:
   - {fileID: 7400000, guid: 33bcd4e3b0a664290ad06b80a058be89, type: 2}
   - {fileID: 7400000, guid: 33bcd4e3b0a664290ad06b80a058be89, type: 2}
   chSprite: {fileID: 21300000, guid: 6d042f4d85a424f66893a5e64e9ba7a0, type: 3}
+  sprites: []
+  type: 0
+  classesType: 0
+  suitName: 
+  equipTypeName: 
 --- !u!114 &114050693668246948
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3604,6 +3687,11 @@ MonoBehaviour:
   - {fileID: 7400000, guid: d551406cbce99459a983ad4c1472c04a, type: 2}
   - {fileID: 7400000, guid: d551406cbce99459a983ad4c1472c04a, type: 2}
   chSprite: {fileID: 21300000, guid: f5775d4dbe17748539911a92ff5f0700, type: 3}
+  sprites: []
+  type: 0
+  classesType: 0
+  suitName: 
+  equipTypeName: 
 --- !u!114 &114066848409759020
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3625,7 +3713,7 @@ MonoBehaviour:
   calEffectValue: 0
   applyResult: 0
   hit: 1
-  parentSkill: {fileID: 0}
+  parentSubSkill: {fileID: 0}
   level: 1
   bonus:
     _baseValue: 0
@@ -3666,7 +3754,7 @@ MonoBehaviour:
   calEffectValue: 0
   applyResult: 0
   hit: 1
-  parentSkill: {fileID: 0}
+  parentSubSkill: {fileID: 0}
   level: 1
   bonus:
     _baseValue: 0
@@ -3703,6 +3791,11 @@ MonoBehaviour:
   - {fileID: 7400000, guid: 0fe14ca7859fd4fe589885f4bf7b755c, type: 2}
   - {fileID: 7400000, guid: e4f4dff347fed42f7b3477b17cffddd0, type: 2}
   chSprite: {fileID: 21300000, guid: 32591ee30a8d641aa99f10e60c2a2fbc, type: 3}
+  sprites: []
+  type: 0
+  classesType: 0
+  suitName: 
+  equipTypeName: 
 --- !u!114 &114123188604356496
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3722,6 +3815,35 @@ MonoBehaviour:
   - {fileID: 7400000, guid: b882ad59424c24a08b645ea94aeb6705, type: 2}
   - {fileID: 7400000, guid: ebef69ba281454f47ab24b7f2578bcc2, type: 2}
   chSprite: {fileID: 21300000, guid: b9b2d54d2d79646b098cb7e57419b6fe, type: 3}
+  sprites:
+  - {fileID: 21300000, guid: b9b2d54d2d79646b098cb7e57419b6fe, type: 3}
+  - {fileID: 21300002, guid: b9b2d54d2d79646b098cb7e57419b6fe, type: 3}
+  - {fileID: 21300004, guid: b9b2d54d2d79646b098cb7e57419b6fe, type: 3}
+  - {fileID: 21300006, guid: b9b2d54d2d79646b098cb7e57419b6fe, type: 3}
+  - {fileID: 21300008, guid: b9b2d54d2d79646b098cb7e57419b6fe, type: 3}
+  - {fileID: 21300010, guid: b9b2d54d2d79646b098cb7e57419b6fe, type: 3}
+  - {fileID: 21300012, guid: b9b2d54d2d79646b098cb7e57419b6fe, type: 3}
+  - {fileID: 21300014, guid: b9b2d54d2d79646b098cb7e57419b6fe, type: 3}
+  - {fileID: 21300000, guid: a5f79319fe64d4a1aa005f9a35a7624c, type: 3}
+  - {fileID: 21300002, guid: a5f79319fe64d4a1aa005f9a35a7624c, type: 3}
+  - {fileID: 21300004, guid: a5f79319fe64d4a1aa005f9a35a7624c, type: 3}
+  - {fileID: 21300006, guid: a5f79319fe64d4a1aa005f9a35a7624c, type: 3}
+  - {fileID: 21300008, guid: a5f79319fe64d4a1aa005f9a35a7624c, type: 3}
+  - {fileID: 21300010, guid: a5f79319fe64d4a1aa005f9a35a7624c, type: 3}
+  - {fileID: 21300012, guid: a5f79319fe64d4a1aa005f9a35a7624c, type: 3}
+  - {fileID: 21300014, guid: a5f79319fe64d4a1aa005f9a35a7624c, type: 3}
+  - {fileID: 21300000, guid: fce1cab1e9d45494bbb32264010fbfa3, type: 3}
+  - {fileID: 21300002, guid: fce1cab1e9d45494bbb32264010fbfa3, type: 3}
+  - {fileID: 21300004, guid: fce1cab1e9d45494bbb32264010fbfa3, type: 3}
+  - {fileID: 21300006, guid: fce1cab1e9d45494bbb32264010fbfa3, type: 3}
+  - {fileID: 21300008, guid: fce1cab1e9d45494bbb32264010fbfa3, type: 3}
+  - {fileID: 21300010, guid: fce1cab1e9d45494bbb32264010fbfa3, type: 3}
+  - {fileID: 21300012, guid: fce1cab1e9d45494bbb32264010fbfa3, type: 3}
+  - {fileID: 21300014, guid: fce1cab1e9d45494bbb32264010fbfa3, type: 3}
+  type: 3
+  classesType: 3
+  suitName: mage
+  equipTypeName: silverstaff
 --- !u!114 &114136304396992352
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3760,6 +3882,7 @@ MonoBehaviour:
   price: 0
   stackable: 0
   itemType: 1
+  bindClasses: 0
   bindCh: {fileID: 0}
   effects: []
   equipType: 1
@@ -3796,6 +3919,11 @@ MonoBehaviour:
   - {fileID: 7400000, guid: 2d848387b7fb446a8b973847d0fbb8b0, type: 2}
   - {fileID: 7400000, guid: 0c09536d516f04f50b98220c8cd9633c, type: 2}
   chSprite: {fileID: 0}
+  sprites: []
+  type: 0
+  classesType: 0
+  suitName: 
+  equipTypeName: 
 --- !u!114 &114181256888737300
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3815,6 +3943,35 @@ MonoBehaviour:
   - {fileID: 7400000, guid: 8a7925d43d2ce48569b59c6d1b236018, type: 2}
   - {fileID: 7400000, guid: 1299fb3bdcf83436f8693a25c676e406, type: 2}
   chSprite: {fileID: 21300000, guid: ef49ae4c1f8b548a380c2ceb2fa07d4a, type: 3}
+  sprites:
+  - {fileID: 21300000, guid: ef49ae4c1f8b548a380c2ceb2fa07d4a, type: 3}
+  - {fileID: 21300002, guid: ef49ae4c1f8b548a380c2ceb2fa07d4a, type: 3}
+  - {fileID: 21300004, guid: ef49ae4c1f8b548a380c2ceb2fa07d4a, type: 3}
+  - {fileID: 21300006, guid: ef49ae4c1f8b548a380c2ceb2fa07d4a, type: 3}
+  - {fileID: 21300008, guid: ef49ae4c1f8b548a380c2ceb2fa07d4a, type: 3}
+  - {fileID: 21300010, guid: ef49ae4c1f8b548a380c2ceb2fa07d4a, type: 3}
+  - {fileID: 21300012, guid: ef49ae4c1f8b548a380c2ceb2fa07d4a, type: 3}
+  - {fileID: 21300014, guid: ef49ae4c1f8b548a380c2ceb2fa07d4a, type: 3}
+  - {fileID: 21300000, guid: 8a5ae83e7719245bb8b3a0cc061bfb88, type: 3}
+  - {fileID: 21300002, guid: 8a5ae83e7719245bb8b3a0cc061bfb88, type: 3}
+  - {fileID: 21300004, guid: 8a5ae83e7719245bb8b3a0cc061bfb88, type: 3}
+  - {fileID: 21300006, guid: 8a5ae83e7719245bb8b3a0cc061bfb88, type: 3}
+  - {fileID: 21300008, guid: 8a5ae83e7719245bb8b3a0cc061bfb88, type: 3}
+  - {fileID: 21300010, guid: 8a5ae83e7719245bb8b3a0cc061bfb88, type: 3}
+  - {fileID: 21300012, guid: 8a5ae83e7719245bb8b3a0cc061bfb88, type: 3}
+  - {fileID: 21300014, guid: 8a5ae83e7719245bb8b3a0cc061bfb88, type: 3}
+  - {fileID: 21300000, guid: b0a2bfde9c6604e5ca640fb54b9e7d96, type: 3}
+  - {fileID: 21300002, guid: b0a2bfde9c6604e5ca640fb54b9e7d96, type: 3}
+  - {fileID: 21300004, guid: b0a2bfde9c6604e5ca640fb54b9e7d96, type: 3}
+  - {fileID: 21300006, guid: b0a2bfde9c6604e5ca640fb54b9e7d96, type: 3}
+  - {fileID: 21300008, guid: b0a2bfde9c6604e5ca640fb54b9e7d96, type: 3}
+  - {fileID: 21300010, guid: b0a2bfde9c6604e5ca640fb54b9e7d96, type: 3}
+  - {fileID: 21300012, guid: b0a2bfde9c6604e5ca640fb54b9e7d96, type: 3}
+  - {fileID: 21300014, guid: b0a2bfde9c6604e5ca640fb54b9e7d96, type: 3}
+  type: 1
+  classesType: 3
+  suitName: mage
+  equipTypeName: armor
 --- !u!114 &114184555110915662
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3833,6 +3990,11 @@ MonoBehaviour:
   - {fileID: 7400000, guid: 10d3f6d5ae34c4fa7a1c45af515f6fe1, type: 2}
   - {fileID: 7400000, guid: 2f96ae91750a24e41bf44b8ad5037325, type: 2}
   chSprite: {fileID: 21300000, guid: c42eb5a67126f41dfa759440ba4292b6, type: 3}
+  sprites: []
+  type: 0
+  classesType: 0
+  suitName: 
+  equipTypeName: 
 --- !u!114 &114197609905772852
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3851,6 +4013,11 @@ MonoBehaviour:
   - {fileID: 7400000, guid: fb7b2b200980b4e2f8baba430ad2bc5d, type: 2}
   - {fileID: 7400000, guid: 7a401c727b3bb4948a987335b5a22c2d, type: 2}
   chSprite: {fileID: 21300000, guid: d0e6a55a1b0d64e55b9e3b03128b76c2, type: 3}
+  sprites: []
+  type: 0
+  classesType: 0
+  suitName: 
+  equipTypeName: 
 --- !u!114 &114204030499684762
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3883,6 +4050,11 @@ MonoBehaviour:
   - {fileID: 7400000, guid: d23ce432b5d984c1a875daca3c2f13ce, type: 2}
   - {fileID: 7400000, guid: ef78d392fa6ae4755b43f315fdb2bc00, type: 2}
   chSprite: {fileID: 21300000, guid: 61a26a26b740542aab6591a8723444c0, type: 3}
+  sprites: []
+  type: 0
+  classesType: 0
+  suitName: 
+  equipTypeName: 
 --- !u!114 &114217705513471058
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3902,6 +4074,11 @@ MonoBehaviour:
   - {fileID: 7400000, guid: a0288caeaa1a34891bae2a6a910505a9, type: 2}
   - {fileID: 7400000, guid: a0288caeaa1a34891bae2a6a910505a9, type: 2}
   chSprite: {fileID: 21300000, guid: 32365f4232d3247f19903b7622d9835a, type: 3}
+  sprites: []
+  type: 0
+  classesType: 0
+  suitName: 
+  equipTypeName: 
 --- !u!114 &114226281011351838
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3920,6 +4097,29 @@ MonoBehaviour:
   - {fileID: 7400000, guid: 11e7404a151d94329b88dd197325e9c3, type: 2}
   - {fileID: 7400000, guid: f99e4eb2a7ae1451a97fa2a53f7b01f6, type: 2}
   chSprite: {fileID: 21300000, guid: f41942d695329475b829c037f6a26d8d, type: 3}
+  sprites:
+  - {fileID: 21300000, guid: 211ef1a4e30d942459242040006356e3, type: 3}
+  - {fileID: 21300002, guid: 211ef1a4e30d942459242040006356e3, type: 3}
+  - {fileID: 21300004, guid: 211ef1a4e30d942459242040006356e3, type: 3}
+  - {fileID: 21300006, guid: 211ef1a4e30d942459242040006356e3, type: 3}
+  - {fileID: 21300008, guid: 211ef1a4e30d942459242040006356e3, type: 3}
+  - {fileID: 21300010, guid: 211ef1a4e30d942459242040006356e3, type: 3}
+  - {fileID: 21300000, guid: e70739a057cb446ccbb5ccb01e118562, type: 3}
+  - {fileID: 21300002, guid: e70739a057cb446ccbb5ccb01e118562, type: 3}
+  - {fileID: 21300004, guid: e70739a057cb446ccbb5ccb01e118562, type: 3}
+  - {fileID: 21300006, guid: e70739a057cb446ccbb5ccb01e118562, type: 3}
+  - {fileID: 21300008, guid: e70739a057cb446ccbb5ccb01e118562, type: 3}
+  - {fileID: 21300010, guid: e70739a057cb446ccbb5ccb01e118562, type: 3}
+  - {fileID: 21300000, guid: d1d0364e93d564c048006e39e84ed94b, type: 3}
+  - {fileID: 21300002, guid: d1d0364e93d564c048006e39e84ed94b, type: 3}
+  - {fileID: 21300004, guid: d1d0364e93d564c048006e39e84ed94b, type: 3}
+  - {fileID: 21300006, guid: d1d0364e93d564c048006e39e84ed94b, type: 3}
+  - {fileID: 21300008, guid: d1d0364e93d564c048006e39e84ed94b, type: 3}
+  - {fileID: 21300010, guid: d1d0364e93d564c048006e39e84ed94b, type: 3}
+  type: 0
+  classesType: 3
+  suitName: magBlue
+  equipTypeName: hood
 --- !u!114 &114233138596166178
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3938,6 +4138,11 @@ MonoBehaviour:
   - {fileID: 7400000, guid: 2df2e2788468b47c1a908e43d8537a90, type: 2}
   - {fileID: 7400000, guid: f7d5b433682c44dcda60f0c5b6178679, type: 2}
   chSprite: {fileID: 21300000, guid: cceaf20e9593f4085b470dd41db605bb, type: 3}
+  sprites: []
+  type: 0
+  classesType: 0
+  suitName: 
+  equipTypeName: 
 --- !u!114 &114240485097971818
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3961,6 +4166,7 @@ MonoBehaviour:
   price: 0
   stackable: 0
   itemType: 1
+  bindClasses: 0
   bindCh: {fileID: 0}
   effects: []
   equipType: 3
@@ -4002,6 +4208,7 @@ MonoBehaviour:
   price: 0
   stackable: 0
   itemType: 1
+  bindClasses: 0
   bindCh: {fileID: 0}
   effects: []
   equipType: 2
@@ -4029,6 +4236,7 @@ MonoBehaviour:
   price: 0
   stackable: 0
   itemType: 1
+  bindClasses: 0
   bindCh: {fileID: 0}
   effects: []
   equipType: 1
@@ -4056,6 +4264,7 @@ MonoBehaviour:
   price: 0
   stackable: 0
   itemType: 1
+  bindClasses: 0
   bindCh: {fileID: 0}
   effects: []
   equipType: 1
@@ -4106,6 +4315,11 @@ MonoBehaviour:
   - {fileID: 7400000, guid: 775ff115aa7cc46f4b23e56bfd109489, type: 2}
   - {fileID: 7400000, guid: 4217e7ee3461c4c86841d8e4157211cc, type: 2}
   chSprite: {fileID: 21300000, guid: 2e12f6dad715b4c41a275cda2a68304a, type: 3}
+  sprites: []
+  type: 0
+  classesType: 0
+  suitName: 
+  equipTypeName: 
 --- !u!114 &114303055691735440
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4139,6 +4353,11 @@ MonoBehaviour:
   - {fileID: 7400000, guid: 11158c02d574647a3b2fcaf5d81af7a7, type: 2}
   - {fileID: 7400000, guid: ebee5d9bbae314ce28b71676893b85a3, type: 2}
   chSprite: {fileID: 0}
+  sprites: []
+  type: 0
+  classesType: 0
+  suitName: 
+  equipTypeName: 
 --- !u!114 &114306894609222452
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4158,6 +4377,11 @@ MonoBehaviour:
   - {fileID: 7400000, guid: 5f4a8ce66a3ea418bbbf6bc1eb4fc3ee, type: 2}
   - {fileID: 7400000, guid: 5f4a8ce66a3ea418bbbf6bc1eb4fc3ee, type: 2}
   chSprite: {fileID: 21300000, guid: 5af8a95c003f54177a737a06aa8f9d82, type: 3}
+  sprites: []
+  type: 0
+  classesType: 0
+  suitName: 
+  equipTypeName: 
 --- !u!114 &114324111314718290
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4181,6 +4405,7 @@ MonoBehaviour:
   price: 0
   stackable: 0
   itemType: 1
+  bindClasses: 0
   bindCh: {fileID: 0}
   effects: []
   equipType: 1
@@ -4203,6 +4428,11 @@ MonoBehaviour:
   - {fileID: 7400000, guid: a7e0e19a678d84b0ba6fed1cae721ef0, type: 2}
   - {fileID: 7400000, guid: 79e57713a56a4415a8f62ec60a6aee4b, type: 2}
   chSprite: {fileID: 21300000, guid: 26a37e9d97602485d838719608ee936d, type: 3}
+  sprites: []
+  type: 0
+  classesType: 0
+  suitName: 
+  equipTypeName: 
 --- !u!114 &114333215892268860
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4226,6 +4456,7 @@ MonoBehaviour:
   price: 0
   stackable: 0
   itemType: 1
+  bindClasses: 0
   bindCh: {fileID: 0}
   effects: []
   equipType: 1
@@ -4262,6 +4493,11 @@ MonoBehaviour:
   - {fileID: 7400000, guid: f22ab9d7e96bc48a09d7c76479222e83, type: 2}
   - {fileID: 7400000, guid: 637d2c02a619840f4a576c4625547825, type: 2}
   chSprite: {fileID: 0}
+  sprites: []
+  type: 0
+  classesType: 0
+  suitName: 
+  equipTypeName: 
 --- !u!114 &114371258854288070
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4273,12 +4509,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf306a5f8e8ef48b3ba376c6dff2edcf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shopEquipTemplatesLevel1:
-  - data:
-      id: mageBlue_hood
-      imageID: mageBlue_hood
-      num: 0
-    rate: 1
+  shopEquipTemplatesLevel1: []
 --- !u!114 &114372966543448886
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4297,6 +4528,11 @@ MonoBehaviour:
   - {fileID: 7400000, guid: 048bc705752dd432080de4ee0201515c, type: 2}
   - {fileID: 7400000, guid: 9864680190eea44039940e9be2e4dd9d, type: 2}
   chSprite: {fileID: 21300016, guid: 4a1fe73b99b674f68ab2ce694bf016d4, type: 3}
+  sprites: []
+  type: 0
+  classesType: 0
+  suitName: 
+  equipTypeName: 
 --- !u!114 &114380191939073672
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4315,6 +4551,11 @@ MonoBehaviour:
   - {fileID: 7400000, guid: cf6d0166bb4504efbbea9c82d115ec85, type: 2}
   - {fileID: 7400000, guid: 00db3144c723b47b1bc2fea2b122a534, type: 2}
   chSprite: {fileID: 21300000, guid: 62dcb5bc3c6e043e7a082730fc13764e, type: 3}
+  sprites: []
+  type: 0
+  classesType: 0
+  suitName: 
+  equipTypeName: 
 --- !u!114 &114380768955872884
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4347,6 +4588,11 @@ MonoBehaviour:
   - {fileID: 7400000, guid: cdc194b3ec0924da2bd2f8ad97748694, type: 2}
   - {fileID: 7400000, guid: 99eaf04d07e39446bbcf9a48050b0da1, type: 2}
   chSprite: {fileID: 21300000, guid: 194ea08bc04b74642af9ba64f1ffe170, type: 3}
+  sprites: []
+  type: 0
+  classesType: 0
+  suitName: 
+  equipTypeName: 
 --- !u!114 &114399477239507356
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4365,6 +4611,11 @@ MonoBehaviour:
   - {fileID: 7400000, guid: b2d041d753f7d4b2eaa2d54eb91fdcc9, type: 2}
   - {fileID: 7400000, guid: 4f1f3b4b6ce3547448fea65c938fc458, type: 2}
   chSprite: {fileID: 21300000, guid: 115c37036809d4742b801e6a69fee24d, type: 3}
+  sprites: []
+  type: 0
+  classesType: 0
+  suitName: 
+  equipTypeName: 
 --- !u!114 &114404268917102334
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4386,7 +4637,7 @@ MonoBehaviour:
   calEffectValue: 0
   applyResult: 0
   hit: 1
-  parentSkill: {fileID: 0}
+  parentSubSkill: {fileID: 0}
   level: 1
   bonus:
     _baseValue: 0
@@ -4414,6 +4665,7 @@ MonoBehaviour:
   price: 0
   stackable: 0
   itemType: 1
+  bindClasses: 3
   bindCh: {fileID: 0}
   effects: []
   equipType: 2
@@ -4441,6 +4693,7 @@ MonoBehaviour:
   price: 0
   stackable: 0
   itemType: 1
+  bindClasses: 0
   bindCh: {fileID: 0}
   effects: []
   equipType: 2
@@ -4464,6 +4717,11 @@ MonoBehaviour:
   - {fileID: 7400000, guid: 71da3367385a84453808955826567a2f, type: 2}
   - {fileID: 7400000, guid: 71da3367385a84453808955826567a2f, type: 2}
   chSprite: {fileID: 21300000, guid: fc971a78851a24617833b372d788916a, type: 3}
+  sprites: []
+  type: 0
+  classesType: 0
+  suitName: 
+  equipTypeName: 
 --- !u!114 &114460393580361416
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4483,6 +4741,11 @@ MonoBehaviour:
   - {fileID: 7400000, guid: e0305191077dc4bcb89b1f313f689aba, type: 2}
   - {fileID: 7400000, guid: e0305191077dc4bcb89b1f313f689aba, type: 2}
   chSprite: {fileID: 21300000, guid: 9db97d0b370204c6a91fed2d6dec2e3a, type: 3}
+  sprites: []
+  type: 0
+  classesType: 0
+  suitName: 
+  equipTypeName: 
 --- !u!114 &114471165220584302
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4506,6 +4769,7 @@ MonoBehaviour:
   price: 0
   stackable: 0
   itemType: 1
+  bindClasses: 0
   bindCh: {fileID: 0}
   effects: []
   equipType: 0
@@ -4531,7 +4795,7 @@ MonoBehaviour:
   calEffectValue: 0
   applyResult: 0
   hit: 1
-  parentSkill: {fileID: 0}
+  parentSubSkill: {fileID: 0}
   level: 1
   bonus:
     _baseValue: 0
@@ -4554,6 +4818,11 @@ MonoBehaviour:
   - {fileID: 7400000, guid: 11adc8d0fea144eefa3e1571b381c167, type: 2}
   - {fileID: 7400000, guid: 884f6abb886ad4fe1adb23b090271b46, type: 2}
   chSprite: {fileID: 21300000, guid: 679617540ef274d819695cbe9ffbd1a9, type: 3}
+  sprites: []
+  type: 0
+  classesType: 0
+  suitName: 
+  equipTypeName: 
 --- !u!114 &114504430723224120
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4573,6 +4842,11 @@ MonoBehaviour:
   - {fileID: 7400000, guid: 865cd80cc4337459bb778a165ea29d63, type: 2}
   - {fileID: 7400000, guid: 865cd80cc4337459bb778a165ea29d63, type: 2}
   chSprite: {fileID: 21300000, guid: bc8e51a7c351e4357aaca549d9d0eb55, type: 3}
+  sprites: []
+  type: 0
+  classesType: 0
+  suitName: 
+  equipTypeName: 
 --- !u!114 &114520803882062936
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4591,6 +4865,11 @@ MonoBehaviour:
   - {fileID: 7400000, guid: 8f8daebc23889432a97409642e39337e, type: 2}
   - {fileID: 7400000, guid: ccba031df1c5d45099338b1f94759375, type: 2}
   chSprite: {fileID: 21300000, guid: ae890312a44ae4ce8a15e76d3c63c289, type: 3}
+  sprites: []
+  type: 0
+  classesType: 0
+  suitName: 
+  equipTypeName: 
 --- !u!114 &114549013024676420
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4628,6 +4907,7 @@ MonoBehaviour:
   price: 0
   stackable: 0
   itemType: 1
+  bindClasses: 0
   bindCh: {fileID: 0}
   effects: []
   equipType: 2
@@ -4655,6 +4935,7 @@ MonoBehaviour:
   price: 0
   stackable: 0
   itemType: 1
+  bindClasses: 0
   bindCh: {fileID: 0}
   effects: []
   equipType: 1
@@ -4677,6 +4958,11 @@ MonoBehaviour:
   - {fileID: 7400000, guid: 45f03b338c34e4ed8947643b35bf92ea, type: 2}
   - {fileID: 7400000, guid: cd63f4d5fdef04825811c2d3eaa715ed, type: 2}
   chSprite: {fileID: 21300000, guid: a25a43da628774f90acbaa8b7c20cd43, type: 3}
+  sprites: []
+  type: 0
+  classesType: 0
+  suitName: 
+  equipTypeName: 
 --- !u!114 &114565466759807860
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4696,6 +4982,11 @@ MonoBehaviour:
   - {fileID: 7400000, guid: f65e72f990b9f4e738ee4802e93dcc1c, type: 2}
   - {fileID: 7400000, guid: f65e72f990b9f4e738ee4802e93dcc1c, type: 2}
   chSprite: {fileID: 21300000, guid: c18ca2c78fcd64963a083994a04cef18, type: 3}
+  sprites: []
+  type: 0
+  classesType: 0
+  suitName: 
+  equipTypeName: 
 --- !u!114 &114572101677679194
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4719,6 +5010,7 @@ MonoBehaviour:
   price: 0
   stackable: 0
   itemType: 1
+  bindClasses: 0
   bindCh: {fileID: 0}
   effects: []
   equipType: 0
@@ -4755,6 +5047,11 @@ MonoBehaviour:
   - {fileID: 7400000, guid: 698c6563ffc47468882d11fefca29d0a, type: 2}
   - {fileID: 7400000, guid: c25dfdb9d4feb4e4ebf22f66493199be, type: 2}
   chSprite: {fileID: 21300000, guid: 470deda171f2c4a07a0ec17b8e2ca41a, type: 3}
+  sprites: []
+  type: 0
+  classesType: 0
+  suitName: 
+  equipTypeName: 
 --- !u!114 &114600730085736540
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4773,6 +5070,11 @@ MonoBehaviour:
   - {fileID: 7400000, guid: 05f777f22b48a4341a28a5cd3579683f, type: 2}
   - {fileID: 7400000, guid: 5376046751acd476a94aada99715e085, type: 2}
   chSprite: {fileID: 21300000, guid: a517a15793ec94bbaa6c3d4d429f9882, type: 3}
+  sprites: []
+  type: 0
+  classesType: 0
+  suitName: 
+  equipTypeName: 
 --- !u!114 &114618031377219028
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4791,6 +5093,11 @@ MonoBehaviour:
   - {fileID: 7400000, guid: ac0935843d8ab447fa39c6a973f4560b, type: 2}
   - {fileID: 7400000, guid: 59454c99caaf34d48a1be40dc8864c46, type: 2}
   chSprite: {fileID: 21300000, guid: 80ca0cec7dc6c493faad889dc2d6d6c6, type: 3}
+  sprites: []
+  type: 0
+  classesType: 0
+  suitName: 
+  equipTypeName: 
 --- !u!114 &114624240186383048
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4814,29 +5121,11 @@ MonoBehaviour:
   price: 0
   stackable: 0
   itemType: 1
+  bindClasses: 0
   bindCh: {fileID: 0}
   effects: []
   equipType: 3
   abilityReqs: []
---- !u!114 &114626733056907266
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1413002358805592}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 003033de39a85435caeb68a766636a56, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  id: mage_book
-  iconSprite: {fileID: 21300004, guid: d9c5fb6a294bc4a6eab472a4c5f37abd, type: 3}
-  equipAnimations:
-  - {fileID: 7400000, guid: cc4395db4af414e7693ffdef0a0530db, type: 2}
-  - {fileID: 7400000, guid: a576e1c2b76d742758d82fa4efe97a7a, type: 2}
-  - {fileID: 7400000, guid: 4e590a021193f425ea2ba74a1f1b6891, type: 2}
-  - {fileID: 7400000, guid: 4e590a021193f425ea2ba74a1f1b6891, type: 2}
-  chSprite: {fileID: 0}
 --- !u!114 &114644073186486436
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4869,6 +5158,11 @@ MonoBehaviour:
   - {fileID: 7400000, guid: f48a04897b70a4fbfa996c032f28245a, type: 2}
   - {fileID: 7400000, guid: 818f5c5f1a0e54bef9ebdc2fafec9967, type: 2}
   chSprite: {fileID: 21300000, guid: fe68be65434b24d65abd28cc6d8a6810, type: 3}
+  sprites: []
+  type: 0
+  classesType: 0
+  suitName: 
+  equipTypeName: 
 --- !u!114 &114681964676361676
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4887,6 +5181,11 @@ MonoBehaviour:
   - {fileID: 7400000, guid: a10d33987d3604a8f8524a39587564c9, type: 2}
   - {fileID: 7400000, guid: be88f84424164436a93ac5e0c895f743, type: 2}
   chSprite: {fileID: 21300000, guid: dc7ee34aa13ce4185b4971742ea347b0, type: 3}
+  sprites: []
+  type: 0
+  classesType: 0
+  suitName: 
+  equipTypeName: 
 --- !u!114 &114685115923132512
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4905,6 +5204,11 @@ MonoBehaviour:
   - {fileID: 7400000, guid: 3a45031d376ca4c8ab9d8f9577d90bda, type: 2}
   - {fileID: 7400000, guid: 91fb31f14a9e3409a8661e7962cee85c, type: 2}
   chSprite: {fileID: 21300000, guid: 44db77be46b204b15b1e5ae976e49f89, type: 3}
+  sprites: []
+  type: 0
+  classesType: 0
+  suitName: 
+  equipTypeName: 
 --- !u!114 &114695685803635148
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4924,6 +5228,29 @@ MonoBehaviour:
   - {fileID: 7400000, guid: 8eeaeaa90972e4713abdaeb8bbfffe2f, type: 2}
   - {fileID: 7400000, guid: 9c17ccecf1e26436883632f8b3d65107, type: 2}
   chSprite: {fileID: 21300000, guid: f5bc5ffc6b85c456b8f81fb52a70c9e2, type: 3}
+  sprites:
+  - {fileID: 21300000, guid: 6b2c709cd57434aea93a12ba943cc71b, type: 3}
+  - {fileID: 21300002, guid: 6b2c709cd57434aea93a12ba943cc71b, type: 3}
+  - {fileID: 21300004, guid: 6b2c709cd57434aea93a12ba943cc71b, type: 3}
+  - {fileID: 21300006, guid: 6b2c709cd57434aea93a12ba943cc71b, type: 3}
+  - {fileID: 21300008, guid: 6b2c709cd57434aea93a12ba943cc71b, type: 3}
+  - {fileID: 21300010, guid: 6b2c709cd57434aea93a12ba943cc71b, type: 3}
+  - {fileID: 21300000, guid: c51be7cf962164f49bc0bd1a9143d903, type: 3}
+  - {fileID: 21300002, guid: c51be7cf962164f49bc0bd1a9143d903, type: 3}
+  - {fileID: 21300004, guid: c51be7cf962164f49bc0bd1a9143d903, type: 3}
+  - {fileID: 21300006, guid: c51be7cf962164f49bc0bd1a9143d903, type: 3}
+  - {fileID: 21300008, guid: c51be7cf962164f49bc0bd1a9143d903, type: 3}
+  - {fileID: 21300010, guid: c51be7cf962164f49bc0bd1a9143d903, type: 3}
+  - {fileID: 21300000, guid: 1255e020c31024702a5464f7c4d72bd5, type: 3}
+  - {fileID: 21300002, guid: 1255e020c31024702a5464f7c4d72bd5, type: 3}
+  - {fileID: 21300004, guid: 1255e020c31024702a5464f7c4d72bd5, type: 3}
+  - {fileID: 21300006, guid: 1255e020c31024702a5464f7c4d72bd5, type: 3}
+  - {fileID: 21300008, guid: 1255e020c31024702a5464f7c4d72bd5, type: 3}
+  - {fileID: 21300010, guid: 1255e020c31024702a5464f7c4d72bd5, type: 3}
+  type: 2
+  classesType: 3
+  suitName: magBlue
+  equipTypeName: orb
 --- !u!114 &114697473151666764
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4939,17 +5266,18 @@ MonoBehaviour:
     id: 
     imageID: 
     num: 1
-  asset: {fileID: 114226281011351838}
+  asset: {fileID: 114695685803635148}
   description: "\u597D\u6234\uFF0C\u6234\u4E86\u667A\u529B+5"
-  id: mageBlue_hood
+  id: mageBlue_orb
   itemName: "\u85CD\u8272\u6CD5\u5E2B\u5E3D"
   recommendationText: "\u597D\u6234\uFF0C\u6234\u4E86\u667A\u529B+5"
   price: 45
   stackable: 0
   itemType: 1
+  bindClasses: 3
   bindCh: {fileID: 0}
   effects: []
-  equipType: 0
+  equipType: 2
   abilityReqs: []
 --- !u!114 &114699290027212106
 MonoBehaviour:
@@ -4969,6 +5297,11 @@ MonoBehaviour:
   - {fileID: 7400000, guid: e1bb369834b46471fa20c223c7bc8a9d, type: 2}
   - {fileID: 7400000, guid: 903a06c74fafa48ed803d4ea922c3e6d, type: 2}
   chSprite: {fileID: 0}
+  sprites: []
+  type: 0
+  classesType: 0
+  suitName: 
+  equipTypeName: 
 --- !u!114 &114706174341061442
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4992,6 +5325,7 @@ MonoBehaviour:
   price: 100
   stackable: 0
   itemType: 1
+  bindClasses: 0
   bindCh: {fileID: 0}
   effects: []
   equipType: 0
@@ -5019,6 +5353,7 @@ MonoBehaviour:
   price: 0
   stackable: 0
   itemType: 1
+  bindClasses: 0
   bindCh: {fileID: 0}
   effects: []
   equipType: 0
@@ -5070,6 +5405,11 @@ MonoBehaviour:
   - {fileID: 7400000, guid: 4d74b7e7b0c9e42f780fa42bac451ae3, type: 2}
   - {fileID: 7400000, guid: 53ee681a0a7c94b9d812e270e2fb7eac, type: 2}
   chSprite: {fileID: 21300000, guid: fd4571a935bbd4d2fb4d4e3cef2221aa, type: 3}
+  sprites: []
+  type: 0
+  classesType: 0
+  suitName: 
+  equipTypeName: 
 --- !u!114 &114765941641980346
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5107,6 +5447,7 @@ MonoBehaviour:
   price: 0
   stackable: 0
   itemType: 1
+  bindClasses: 0
   bindCh: {fileID: 0}
   effects: []
   equipType: 3
@@ -5134,6 +5475,7 @@ MonoBehaviour:
   price: 0
   stackable: 0
   itemType: 1
+  bindClasses: 0
   bindCh: {fileID: 0}
   effects: []
   equipType: 0
@@ -5157,6 +5499,35 @@ MonoBehaviour:
   - {fileID: 7400000, guid: 12008e30b01cb42cb9caec2d1a8b6508, type: 2}
   - {fileID: 7400000, guid: 12008e30b01cb42cb9caec2d1a8b6508, type: 2}
   chSprite: {fileID: 21300000, guid: 6eec0e5db72194a27ab6c5e46a98fe51, type: 3}
+  sprites:
+  - {fileID: 21300000, guid: 6eec0e5db72194a27ab6c5e46a98fe51, type: 3}
+  - {fileID: 21300002, guid: 6eec0e5db72194a27ab6c5e46a98fe51, type: 3}
+  - {fileID: 21300004, guid: 6eec0e5db72194a27ab6c5e46a98fe51, type: 3}
+  - {fileID: 21300006, guid: 6eec0e5db72194a27ab6c5e46a98fe51, type: 3}
+  - {fileID: 21300008, guid: 6eec0e5db72194a27ab6c5e46a98fe51, type: 3}
+  - {fileID: 21300010, guid: 6eec0e5db72194a27ab6c5e46a98fe51, type: 3}
+  - {fileID: 21300012, guid: 6eec0e5db72194a27ab6c5e46a98fe51, type: 3}
+  - {fileID: 21300014, guid: 6eec0e5db72194a27ab6c5e46a98fe51, type: 3}
+  - {fileID: 21300000, guid: 869f5caddb586466fbd2e8ca9ae3c1a9, type: 3}
+  - {fileID: 21300002, guid: 869f5caddb586466fbd2e8ca9ae3c1a9, type: 3}
+  - {fileID: 21300004, guid: 869f5caddb586466fbd2e8ca9ae3c1a9, type: 3}
+  - {fileID: 21300006, guid: 869f5caddb586466fbd2e8ca9ae3c1a9, type: 3}
+  - {fileID: 21300008, guid: 869f5caddb586466fbd2e8ca9ae3c1a9, type: 3}
+  - {fileID: 21300010, guid: 869f5caddb586466fbd2e8ca9ae3c1a9, type: 3}
+  - {fileID: 21300012, guid: 869f5caddb586466fbd2e8ca9ae3c1a9, type: 3}
+  - {fileID: 21300014, guid: 869f5caddb586466fbd2e8ca9ae3c1a9, type: 3}
+  - {fileID: 21300016, guid: 48e4fe7719f3241be83be9b295de84e2, type: 3}
+  - {fileID: 21300018, guid: 48e4fe7719f3241be83be9b295de84e2, type: 3}
+  - {fileID: 21300020, guid: 48e4fe7719f3241be83be9b295de84e2, type: 3}
+  - {fileID: 21300022, guid: 48e4fe7719f3241be83be9b295de84e2, type: 3}
+  - {fileID: 21300024, guid: 48e4fe7719f3241be83be9b295de84e2, type: 3}
+  - {fileID: 21300026, guid: 48e4fe7719f3241be83be9b295de84e2, type: 3}
+  - {fileID: 21300028, guid: 48e4fe7719f3241be83be9b295de84e2, type: 3}
+  - {fileID: 21300030, guid: 48e4fe7719f3241be83be9b295de84e2, type: 3}
+  type: 2
+  classesType: 3
+  suitName: mage
+  equipTypeName: orb
 --- !u!114 &114793258964910038
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5203,6 +5574,11 @@ MonoBehaviour:
   - {fileID: 7400000, guid: 46ca8e93fee5f4a858d09669c1756703, type: 2}
   - {fileID: 7400000, guid: ced4eca2bb33d46269be62e7a1708a6b, type: 2}
   chSprite: {fileID: 21300000, guid: b096c2723ad13400bb38bf22d51d4454, type: 3}
+  sprites: []
+  type: 0
+  classesType: 0
+  suitName: 
+  equipTypeName: 
 --- !u!114 &114871638779748542
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5226,6 +5602,7 @@ MonoBehaviour:
   price: 0
   stackable: 0
   itemType: 1
+  bindClasses: 0
   bindCh: {fileID: 0}
   effects: []
   equipType: 2
@@ -5253,6 +5630,7 @@ MonoBehaviour:
   price: 0
   stackable: 0
   itemType: 1
+  bindClasses: 0
   bindCh: {fileID: 0}
   effects: []
   equipType: 3
@@ -5276,6 +5654,11 @@ MonoBehaviour:
   - {fileID: 7400000, guid: 4ba26cae39a9a48b1a9a8facb619d817, type: 2}
   - {fileID: 7400000, guid: 4ba26cae39a9a48b1a9a8facb619d817, type: 2}
   chSprite: {fileID: 21300000, guid: 60ba59e4b81564db0ba5084181a35d1b, type: 3}
+  sprites: []
+  type: 0
+  classesType: 0
+  suitName: 
+  equipTypeName: 
 --- !u!114 &114918012893263842
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5309,6 +5692,11 @@ MonoBehaviour:
   - {fileID: 7400000, guid: c9b120fb71c58483a8c6152b3bdde5cc, type: 2}
   - {fileID: 7400000, guid: a687185ed81c34f8dac65ece48395fec, type: 2}
   chSprite: {fileID: 21300000, guid: aaaff911c7b9e4eccbd794145418fce0, type: 3}
+  sprites: []
+  type: 0
+  classesType: 0
+  suitName: 
+  equipTypeName: 
 --- !u!114 &114942300570695104
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5332,6 +5720,7 @@ MonoBehaviour:
   price: 0
   stackable: 0
   itemType: 1
+  bindClasses: 0
   bindCh: {fileID: 0}
   effects: []
   equipType: 3
@@ -5354,6 +5743,11 @@ MonoBehaviour:
   - {fileID: 7400000, guid: ea33468e8a13648f38d96b2b427174e4, type: 2}
   - {fileID: 7400000, guid: ea33468e8a13648f38d96b2b427174e4, type: 2}
   chSprite: {fileID: 0}
+  sprites: []
+  type: 0
+  classesType: 0
+  suitName: 
+  equipTypeName: 
 --- !u!114 &114954251835426742
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5375,7 +5769,7 @@ MonoBehaviour:
   calEffectValue: 0
   applyResult: 0
   hit: 1
-  parentSkill: {fileID: 0}
+  parentSubSkill: {fileID: 0}
   level: 1
   bonus:
     _baseValue: 0
@@ -5417,6 +5811,7 @@ MonoBehaviour:
   price: 0
   stackable: 0
   itemType: 1
+  bindClasses: 0
   bindCh: {fileID: 0}
   effects: []
   equipType: 3
@@ -5440,6 +5835,35 @@ MonoBehaviour:
   - {fileID: 7400000, guid: 7b4aa0ba789dd4650a000c707951aaae, type: 2}
   - {fileID: 7400000, guid: e42f2a76179f846fc81bd280cd65bfce, type: 2}
   chSprite: {fileID: 21300000, guid: c506eb24fc056440590fc109d00bd7f2, type: 3}
+  sprites:
+  - {fileID: 21300000, guid: c506eb24fc056440590fc109d00bd7f2, type: 3}
+  - {fileID: 21300002, guid: c506eb24fc056440590fc109d00bd7f2, type: 3}
+  - {fileID: 21300004, guid: c506eb24fc056440590fc109d00bd7f2, type: 3}
+  - {fileID: 21300006, guid: c506eb24fc056440590fc109d00bd7f2, type: 3}
+  - {fileID: 21300008, guid: c506eb24fc056440590fc109d00bd7f2, type: 3}
+  - {fileID: 21300010, guid: c506eb24fc056440590fc109d00bd7f2, type: 3}
+  - {fileID: 21300012, guid: c506eb24fc056440590fc109d00bd7f2, type: 3}
+  - {fileID: 21300014, guid: c506eb24fc056440590fc109d00bd7f2, type: 3}
+  - {fileID: 21300000, guid: 0d0c0e336e64e4a6b9f8be28343017ec, type: 3}
+  - {fileID: 21300002, guid: 0d0c0e336e64e4a6b9f8be28343017ec, type: 3}
+  - {fileID: 21300004, guid: 0d0c0e336e64e4a6b9f8be28343017ec, type: 3}
+  - {fileID: 21300006, guid: 0d0c0e336e64e4a6b9f8be28343017ec, type: 3}
+  - {fileID: 21300008, guid: 0d0c0e336e64e4a6b9f8be28343017ec, type: 3}
+  - {fileID: 21300010, guid: 0d0c0e336e64e4a6b9f8be28343017ec, type: 3}
+  - {fileID: 21300012, guid: 0d0c0e336e64e4a6b9f8be28343017ec, type: 3}
+  - {fileID: 21300014, guid: 0d0c0e336e64e4a6b9f8be28343017ec, type: 3}
+  - {fileID: 21300000, guid: ae9b5c841b16143d3a58ba6c19804269, type: 3}
+  - {fileID: 21300002, guid: ae9b5c841b16143d3a58ba6c19804269, type: 3}
+  - {fileID: 21300004, guid: ae9b5c841b16143d3a58ba6c19804269, type: 3}
+  - {fileID: 21300006, guid: ae9b5c841b16143d3a58ba6c19804269, type: 3}
+  - {fileID: 21300008, guid: ae9b5c841b16143d3a58ba6c19804269, type: 3}
+  - {fileID: 21300010, guid: ae9b5c841b16143d3a58ba6c19804269, type: 3}
+  - {fileID: 21300012, guid: ae9b5c841b16143d3a58ba6c19804269, type: 3}
+  - {fileID: 21300014, guid: ae9b5c841b16143d3a58ba6c19804269, type: 3}
+  type: 0
+  classesType: 3
+  suitName: mage
+  equipTypeName: hat
 --- !u!114 &114977474364030500
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5459,6 +5883,11 @@ MonoBehaviour:
   - {fileID: 7400000, guid: e20cf84f0bff84474a970ac14109cb82, type: 2}
   - {fileID: 7400000, guid: 62ca8e1c6611649cc9c428a1ad3d82c9, type: 2}
   chSprite: {fileID: 21300000, guid: 3367bc2b1e90f43f4908a4077bde379d, type: 3}
+  sprites: []
+  type: 1
+  classesType: 0
+  suitName: 
+  equipTypeName: 
 --- !u!114 &114989635088142400
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -10,13 +10,13 @@ public abstract class BaseDialogNode : Node
 {
     public override bool AllowRecursion { get { return true; } }
     public abstract Type GetObjectType { get; }
-
-    public AdventureTarget target;
+    public AdventureTarget character;
     public List<string> lines;
-    public List<string> localLines;
-    public string SayingCharacterName;
-    public Sprite SayingCharacterPotrait;
-    public string WhatTheCharacterSays;
+    
+    //public string SayingCharacterName;
+    //public Sprite SayingCharacterPotrait;
+
+    //public string WhatTheCharacterSays;
 
     public abstract BaseDialogNode Input(int inputValue);
     public abstract bool IsBackAvailable();
